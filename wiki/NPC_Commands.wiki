@@ -2,6 +2,8 @@
 
 List of #IF and #ACT NPC Commands.
 
+Will Update soon.
+
 
 || *Command* || *Description* ||
 || Give || Give the player a item ||
