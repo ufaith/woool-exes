@@ -1,0 +1,17 @@
+[@main]
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\无限排名\元神排行\女战士.txt S0 0
+
+#IF
+equal S0 无
+#SAY
+　　天下第一元神女战士\
+\
+　　普天之下，唯我独尊。想要申请天下第一名号，速到中\
+州422 176处找魔法阵大祭司申请。\
+\
+　　<离开/@exit>
+#ELSESAY
+<$STR(A82)>

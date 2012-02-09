@@ -1,0 +1,17 @@
+[@Main]
+哈哈！你终于发现了谜之门，你要进入吗？\
+\
+<是的，我要进入/@comein>\
+<怪吓人的，还是算了！/@exit>
+
+[@comein]
+#IF
+CheckLevelEx < 42
+#ACT
+break
+#SAY
+只有等级达到43级以上的玩家才可以进入！\
+\
+<离开/@exit>
+#ELSEACT
+mapmove NL013 81 226

@@ -1,0 +1,30 @@
+09/02/2012 20:22:28 Has Read 1Guild Information...
+09/02/2012 20:22:28 Has Read 1Castle Information...
+09/02/2012 20:22:29 登录服务器(127.0.0.1:5600)连接成功...
+09/02/2012 20:22:32 Database Server(127.0.0.1:6000)Connection Is Successful...
+09/02/2012 20:22:32 游戏网关[0](127.0.0.1:1331)已打开...
+09/02/2012 20:23:00 [等级调整] gamelord (40 -> 20)
+09/02/2012 20:26:31 Division by zero
+09/02/2012 20:27:01 Division by zero
+09/02/2012 20:27:31 Division by zero
+09/02/2012 20:28:02 Division by zero
+09/02/2012 20:28:32 Division by zero
+09/02/2012 20:29:02 Division by zero
+09/02/2012 20:29:33 Division by zero
+09/02/2012 20:30:03 Division by zero
+09/02/2012 20:30:33 Division by zero
+09/02/2012 20:31:03 Division by zero
+09/02/2012 20:31:34 Division by zero
+09/02/2012 20:32:04 Division by zero
+09/02/2012 20:32:27 在线数: 1
+09/02/2012 20:32:35 Division by zero
+09/02/2012 20:33:06 Division by zero
+09/02/2012 20:33:37 Division by zero
+09/02/2012 20:34:07 Division by zero
+09/02/2012 20:34:38 Division by zero
+09/02/2012 20:35:09 Division by zero
+09/02/2012 20:35:39 Division by zero
+09/02/2012 20:36:09 Division by zero
+09/02/2012 20:36:39 Division by zero
+09/02/2012 20:37:10 Division by zero
+09/02/2012 20:37:32 游戏网关[0](127.0.0.1:1331)已关闭...

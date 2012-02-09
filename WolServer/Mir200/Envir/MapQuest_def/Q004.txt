@@ -1,0 +1,8 @@
+﻿[@main]
+#IF
+CheckMapMonNameCount 1 230 340 20 Deer -15
+#ACT
+PARAM1 1
+PARAM2 230
+PARAM3 340
+MonGen Deer 30 30

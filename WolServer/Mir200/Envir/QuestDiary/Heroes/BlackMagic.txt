@@ -1,0 +1,758 @@
+[@Blackmagic]
+{
+#IF
+checkitem  1 JadeStone
+equal $STR(S2) JadeStone
+#ACT
+take JadeStone 1
+goto @领取奖励
+goto @显示奖励
+break
+
+#IF
+equal $STR(S2) JadeStone
+#ACT
+break
+#SAY
+You do not have any JadeStones in your bag.\
+\
+<Exit/@exit>\
+
+#IF
+checkitem 一星珠 1
+equal $STR(S2) Pearl
+#ACT
+take 一星珠 1
+goto @领取奖励
+goto @显示奖励
+break
+
+#IF
+checkitem 二星珠 1
+equal $STR(S2) Pearl
+#ACT
+take 二星珠 1
+goto @领取奖励
+goto @显示奖励
+break
+
+#IF
+checkitem 三星珠 1
+equal $STR(S2) Pearl
+#ACT
+take 三星珠 1
+goto @领取奖励
+goto @显示奖励
+break
+
+#IF
+checkitem 四星珠 1
+equal $STR(S2) Pearl
+#ACT
+take 四星珠 1
+goto @领取奖励
+goto @显示奖励
+break
+
+#IF
+checkitem 五星珠 1
+equal $STR(S2) Pearl
+#ACT
+take 五星珠 1
+goto @领取奖励
+goto @显示奖励
+break
+
+#IF
+checkitem 六星珠 1
+equal $STR(S2) Pearl
+#ACT
+take 六星珠 1
+goto @领取奖励
+goto @显示奖励
+break
+
+#IF
+checkitem 七星珠 1
+equal $STR(S2) Pearl
+#ACT
+take 七星珠 1
+goto @领取奖励
+goto @显示奖励
+#ELSESAY
+您的包裹里没有Pearl。\
+\
+<赶快去收集Pearl/@exit>\
+
+[@领取奖励]
+#IF
+random 35
+#ACT
+goto @怪物攻城
+mov P0 7
+break
+
+#IF
+random 30
+#ACT
+goto @铁血令
+CREDITPOINT + 1
+movr P0 7
+inc P0 5
+mov G6 $STR(P0)
+mov P1 $STR(P0)
+mov P0 4
+break
+
+#IF
+random 25
+#ACT
+goto @声望令牌
+goto @提高魔力
+mov P0 9
+break
+
+#IF
+random 20
+#ACT
+goto @唤醒怪物
+mov P0 5
+break
+
+#IF
+random 15
+#ACT
+goto @损失声望
+mov P0 8
+break
+
+#IF
+random 10
+#ACT
+goto @招怪物
+goto @降低魔力
+mov P0 3
+break
+
+#IF
+random 8
+#ACT
+goto @招幸运怪
+goto @提高魔力
+mov P0 2
+break
+
+#IF
+random 5
+#ACT
+goto @字体
+goto @提高魔力
+mov P0 1
+break
+
+#IF
+random 1
+#ACT
+goto @普通
+break
+
+[@铁血令]
+#IF
+random 3
+#ACT
+give 铁血令1 1
+break
+
+#IF
+random 2
+#ACT
+give 铁血令2 1
+break
+
+#IF
+random 1
+#ACT
+give 铁血令3 1
+break
+
+[@提高魔力]
+#IF
+equal $PARAM(11) 声望令牌(五)
+#ACT
+inc G6 4
+mov P1 4
+break
+
+#IF
+equal $PARAM(11) 声望令牌(三)
+#ACT
+inc G6 3
+mov P1 3
+break
+
+#IF
+random 10
+#ACT
+inc G6 3
+MOV P1 3
+break
+
+#IF
+random 5
+#ACT
+inc G6 2
+MOV P1 2
+break
+
+#IF
+random 1
+#ACT
+inc G6 1
+MOV P1 1
+
+[@降低魔力]
+#IF
+random 10
+#ACT
+dec G6 3
+MOV P1 3
+break
+
+#IF
+random 5
+#ACT
+dec G6 2
+MOV P1 2
+break
+
+#IF
+random 1
+#ACT
+dec G6 1
+MOV P1 1
+
+[@声望令牌]
+#IF
+random 2
+#ACT
+give 声望令牌(三) 1
+mov S1 声望令牌(三)
+
+#IF
+random 1
+#ACT
+give 声望令牌(五) 1
+mov S1 声望令牌(五) 
+
+[@损失声望]
+#IF
+random 1
+#ACT
+movr P2 4
+
+#IF
+equal P2 0
+#ACT
+dec G6 4
+mov P1 4
+map j006
+break
+
+#IF
+equal P2 1
+#ACT
+dec G6 4
+mov P1 4
+map s023
+break
+
+#IF
+equal P2 2
+#ACT
+dec G6 5
+mov P1 5
+map tt006
+break
+
+#IF
+equal P2 3
+#ACT
+dec G6 6
+CREDITPOINT - 2
+mov P1 6
+mov S1 2
+break
+
+[@怪物攻城]
+#IF
+random 1
+#ACT
+MISSION 0 476 154
+PARAM1 366
+PARAM2 108
+PARAM3 5
+MOBPLACE 火烈鸟
+MOBPLACE 兽骑兵
+MOBPLACE 兽骑统领
+MOBPLACE 召魂使
+MISSION 0 476 154
+PARAM1 366
+PARAM2 108
+PARAM3 1
+MOBPLACE 通天教主
+mov S1 通天教主军团
+break
+
+#IF
+random 1
+#ACT
+MISSION 0 476 154
+PARAM1 466
+PARAM2 140
+PARAM3 5
+MOBPLACE 黑蛇妖
+MOBPLACE 红蛇妖
+MOBPLACE 魔甲虫
+MOBPLACE 三头蛇
+MOBPLACE 圣甲虫
+MISSION 0 476 154
+PARAM1 466
+PARAM2 140
+PARAM3 1
+MOBPLACE 白蛇妖
+mov S1 白蛇妖军团
+break
+
+#IF
+random 1
+#ACT
+MISSION 0 476 154
+PARAM1 359
+PARAM2 333
+PARAM3 5
+MOBPLACE 幽魂
+MOBPLACE 猛魔刀斧手
+MOBPLACE 猛魔统领
+MOBPLACE 幽影武士
+MISSION 0 476 154
+PARAM1 359
+PARAM2 333
+PARAM3 1
+MOBPLACE 铁血魔王
+mov S1 铁血魔王军团
+break
+
+[@唤醒怪物]
+#IF
+random 4
+#ACT
+MONGENEX 0 774 126 逆魔 1 5
+mov S1 逆魔
+break
+
+#IF
+random 3
+#ACT
+MONGENEX 0 157 110 机关巨兽 1 5
+mov S1 机关巨兽
+break
+
+#IF
+random 2
+#ACT
+MONGENEX 0 230 675 尸霸 1 5
+mov S1 尸霸
+break
+
+#IF
+random 1
+#ACT
+MONGENEX 0 759 153 白蛇妖 1 5
+mov S1 白蛇妖
+break
+
+[@招怪物]
+#IF
+random 3
+#ACT
+MONGENEX 0 432 176 三头蛇 3 5
+mov S1 三头蛇
+break
+
+#IF
+random 2
+#ACT
+MONGENEX 0 432 176 炎魔 1 5
+mov S1 炎魔
+break
+
+#IF
+random 1
+#ACT
+MONGENEX 0 432 176 白蛇妖 1 5
+mov S1 白蛇妖
+break
+
+[@招幸运怪]
+#IF
+random 12
+#ACT
+MONGENEX 0 432 176 宝石雪人 2 5
+mov S1 宝石雪人
+break
+
+#IF
+random 3
+#ACT
+MONGENEX 0 432 176 招财猪 2 5
+mov S1 招财猪
+break
+
+#IF
+random 2
+#ACT
+MONGENEX 0 432 176 幸运兔 2 5
+mov S1 幸运兔
+break
+
+#IF
+random 1
+#ACT
+MONGENEX 0 432 176 进宝牛 2 5
+mov S1 进宝牛
+break
+
+[@字体]
+#IF
+random 7
+#ACT
+give 姹紫嫣红 1
+break
+
+#IF
+random 6
+#ACT
+give 天若有情 1
+break
+
+#IF
+random 5
+#ACT
+give 红粉佳人 1
+break
+
+#IF
+random 4
+#ACT
+give 魔法字体(楷) 1
+break
+
+#IF
+random 3
+#ACT
+give 魔法字体(黑) 1
+break
+
+#IF
+random 2
+#ACT
+give 魔法字体(幼圆) 1
+break
+
+#IF
+random 1
+#ACT
+give 魔法字体(宋斜) 1
+break
+
+[@普通]
+#IF
+random 1
+#ACT
+movr P2 16
+
+#IF
+equal P2 0
+#ACT
+give 魔力强效神水 1
+break
+
+#IF
+equal P2 1
+#ACT
+give 体力强效神水 1
+break
+
+#IF
+equal P2 2
+#ACT
+give 攻击神水 1
+break
+
+#IF
+equal P2 3
+#ACT
+give 魔力神水 1
+break
+
+#IF
+equal P2 4
+#ACT
+give 精神神水 1
+break
+
+#IF
+equal P2 5
+#ACT
+give 极速神水 1
+break
+
+#IF
+equal P2 6
+#ACT
+give 回城卷轴 1
+break
+
+#IF
+equal P2 7
+#ACT
+give 祝福神油 1
+break
+
+#IF
+equal P2 8
+#ACT
+give 治疗药水 1
+break
+
+#IF
+equal P2 9
+#ACT
+give 强效太阳神水 1
+break
+
+#IF
+equal P2 10
+#ACT
+give 地牢逃脱卷包 1
+break
+
+#IF
+equal P2 11
+#ACT
+give 随机传送卷包 1
+break
+
+#IF
+equal P2 12
+#ACT
+give 随机传送卷包 1
+break
+
+#IF
+equal P2 13
+#ACT
+give 红包 1
+break
+
+#IF
+equal P2 14
+#ACT
+give 马牌(空) 1
+break
+
+#IF
+equal P2 15
+#ACT
+give 金币 5000
+mov S1 金币
+break
+
+[@显示奖励]
+#IF
+equal P0 1
+#ACT
+SENDMSG 14 "%s of <$STR(S2)> increased BlackMagic by <$STR(P1)> Points! Also received <$PARAM(11)>!"
+
+#IF
+equal P0 2
+#ACT
+SENDMSG 14 太神奇了！%s的<$STR(S2)>使魔法阵的威力提高了<$STR(P1)>点！还发现了2个<$STR(S1)>！
+
+#IF
+equal P0 3
+#ACT
+SENDMSG 14 %s的运气很差，他的<$STR(S2)>使得魔法阵威力降低了<$STR(P1)>点，身边还出现了<$STR(S1)>！
+
+#IF
+equal P0 4
+#ACT
+SENDMSG 14 %s的<$STR(S2)>使魔法阵的威力提高了<$STR(P1)>点！不仅获得了魔城的重要信物铁血令，还提高了1点声望！
+
+#IF
+equal P0 7
+equal S1 通天教主军团
+#ACT
+SENDMSG 14 %s投入的<$STR(S2)>蕴藏邪恶的召唤力量，魔兽正在366，108聚集准备攻打皇宫！勇士们快去阻止他们！
+
+#IF
+equal P0 7
+equal S1 白蛇妖军团
+#ACT
+SENDMSG 14 %s投入的<$STR(S2)>蕴藏邪恶的召唤力量，魔兽正在466，140聚集准备攻打皇宫！勇士们快去阻止他们！
+
+#IF
+equal P0 7
+equal S1 铁血魔王军团
+#ACT
+SENDMSG 14 %s投入的<$STR(S2)>蕴藏邪恶的召唤力量，魔兽正在359，333聚集准备攻打皇宫！勇士们快去阻止他们！
+
+#IF
+equal P0 0
+#SAY
+运气一般！<$STR(S2)>没有起到任何作用！\
+
+#IF
+large P0 0
+small P0 3
+#SAY
+你的<$STR(S2)>使魔法阵的威力提高了<$STR(P0)>点！\
+
+#IF
+equal P0 0
+#SAY
+但你获得了<$PARAM(11)>
+
+#IF
+equal S1 金币
+#SAY
+5000金币
+
+#IF
+equal P0 0
+#SAY
+。\
+
+#IF
+equal P0 1
+#SAY
+你还获得了<$PARAM(11)>。\
+
+#IF
+equal P0 2
+#SAY
+你还发现了2个<$STR(S1)>。\
+
+#IF
+equal P0 3
+#SAY
+你的<$STR(S2)>使魔法阵的威力降低了<$STR(P1)>点。更糟糕的是竟\
+然在身边还出现了<$STR(S1)>\
+
+#IF
+equal P0 4
+#SAY
+不可思议！仅一个<$STR(S2)>竟然使魔法阵的威力提高了6点！
+
+#IF
+equal P0 5
+equal $STR(S1) 白蛇妖 
+#SAY
+真不幸，你投入的<$STR(S2)>唤醒了一个可怕的怪物，\
+他正在759， 135伏击路人，一定要尽快消灭它！\
+
+#IF
+equal P0 5
+equal $STR(S1) 尸霸
+#SAY
+真不幸，你投入的<$STR(S2)>唤醒了一个可怕的怪物，\
+他正在230， 675伏击路人，一定要尽快消灭它！\
+
+#IF
+equal P0 5
+equal $STR(S1) 机关巨兽
+#SAY
+真不幸，你投入的<$STR(S2)>唤醒了一个可怕的怪物，\
+他正在157， 110伏击路人，一定要尽快消灭它！\
+
+#IF
+equal P0 5
+equal $STR(S1) 逆魔
+#SAY
+真不幸，你投入的<$STR(S2)>唤醒了一个可怕的怪物，\
+他正在774， 126伏击路人，一定要尽快消灭它！
+
+#IF
+equal P0 8
+equal P2 0
+#ACT
+SENDMSG 14 %s的<$STR(S2)>使魔法阵的威力降低了4点！他还被传送到了禁地生死门！
+break
+#SAY
+太倒霉了！同样是JadeStone竟然使魔法阵的威力降低了4点！\
+奇怪的是你还被传送到了禁地生死门！危险！
+
+#IF
+equal P0 8
+equal P2 1
+#ACT
+SENDMSG 14 %s的<$STR(S2)>使魔法阵的威力降低了4点！他还被传送到了逆魔古刹六层！
+break
+#SAY
+太倒霉了！同样是<$STR(S2)>竟然使魔法阵的威力降低了4点！\
+奇怪的是你还被传送到了逆魔古刹六层！危险！
+
+#IF
+equal P0 8
+equal P2 2
+#ACT
+SENDMSG 14 %s的<$STR(S2)>使魔法阵的威力降低了5点！他还被传送到了通天塔六层！
+break
+#SAY
+太倒霉了！同样是<$STR(S2)>竟然使魔法阵的威力降低了5点！\
+奇怪的是你还被传送到了通天塔六层！危险！
+
+#IF
+equal P0 8
+equal P2 3
+#ACT
+SENDMSG 14 太糟糕了，%s的<$STR(S2)>使魔法阵的威力降低了6点！他还因此失去了2点声望！
+#SAY
+太倒霉了！同样是<$STR(S2)>竟然使魔法阵的威力降低了6点！\
+你还为此失去了2点声望！\
+
+#IF
+equal P0 9
+equal $PARAM(11) 声望令牌(五)
+#ACT
+SENDMSG 14 %s的<$STR(S2)>使魔法阵的威力提高了4点！还获得了一块声望令牌(五)！
+#SAY
+不可思议！仅一块JadeStone竟然使魔法阵的威力提高了4点！\
+你还获得了声望令牌(五)！
+
+#IF
+equal P0 9
+equal $PARAM(11) 声望令牌(三)
+#ACT
+SENDMSG 14 %s的<$STR(S2)>使魔法阵的威力提高了3点！还获得了一块声望令牌(三)！
+#SAY
+不可思议！仅一块JadeStone竟然使魔法阵的威力提高了3点！\
+你还获得了声望令牌(三)！
+
+#IF
+#SAY
+\
+#IF
+equal $STR(S2) Pearl
+#SAY
+<再次投入Pearl/@Dragon&Pearl>\
+
+#IF
+equal $STR(S2) JadeStone
+#SAY
+<再次投入JadeStone/@Dragon&JadeStone>\
+
+#IF
+#SAY
+<离开/@exit>\
+}

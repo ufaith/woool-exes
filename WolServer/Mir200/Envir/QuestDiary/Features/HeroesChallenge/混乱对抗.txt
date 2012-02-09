@@ -1,0 +1,698 @@
+[@contest3]
+{
+#IF
+CHECKVAR HUMAN ArenaCompetition > 0
+#ACT
+break
+#SAY
+请先领取上一场比赛的奖金再来吧。\
+\
+<现在领取/@bonus>\
+<退出/@exit>
+
+#IF
+#SAY
+欢迎各位英雄前来摆擂攻擂、观摩比赛，比赛选手进入场地\
+的准备时间为2分钟。每场比赛将会收取5万金币作为场地\
+使用费。比赛之前，请认真阅读本擂台相关比赛规则。\
+\
+<我要进入/@mob>        <我要观看/@audience3>\
+<打擂规则/@rules>        <返回/@main>
+
+[[@rules2]
+在打擂比赛之前，请先仔细阅读比赛规则：\
+一、进入比赛地图需要比赛金10万，当比赛地图进入人数达到8人\
+　　时，比赛自动开始，比赛时间为20分钟。\
+二、比赛未开始，杀死其他对手无效。被杀死玩家在比赛未开始期\
+　　间可以再次进入，不再收取比赛金。\
+三、比赛结束时间内，顺利将其他所有玩家清出场地的选手获得此\
+　　场比赛的胜利，获得此场比赛的所有奖金。\
+　　　　　　　　　　　　　　　　　　　　　　　　<下一页/@nextpage2>
+
+[@nextpage2]
+四、比赛正式开始后，被杀死玩家与其他玩家将无法再进入比赛\
+　　场地。\
+五、比赛时间结束，场地内人数大于1，则比赛为平局。\
+\
+\
+\
+\
+\
+　　　　　　　　　　　　　　　　　　<上一页/@rules2>　　　　<返回/@main>
+
+
+[@audience3]
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 1
+#ACT
+mov S0 %s
+inc S0  
+inc S0 观众模式
+inc S0  
+inc S0 20min
+SENDMSG 6 <$STR(S0)>
+CALCVAR HUMAN ArenaCondition = 观
+Gmexecute changemode 4
+mapmove ARENA010 23 29
+#ELSESAY
+比赛尚未开始，请稍后再来。\
+\
+<返回/@main>
+
+[@mob]
+#IF
+!checkhum ARENA010 1
+!CHECKVAR GLOBAL 混乱对抗状态 = 1
+#CALL [\Features\HeroesChallenge\混乱对抗.txt] @混乱对抗清理
+
+#IF
+#SAY
+目前正在此擂台的英雄资料：\
+参加者姓名						职业		等级	|	参加者姓名						职业		等级\
+<$GLOBAL(混乱对抗信息1)>|	<$GLOBAL(混乱对抗信息6)>\
+<$GLOBAL(混乱对抗信息2)>|	<$GLOBAL(混乱对抗信息7)>\
+<$GLOBAL(混乱对抗信息3)>|	<$GLOBAL(混乱对抗信息8)>\
+<$GLOBAL(混乱对抗信息4)>|	------										----		--			\
+<$GLOBAL(混乱对抗信息5)>|	------										----		--			\
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名1 =
+#SAY
+比赛金：\
+#ELSESAY
+比赛金：<$GLOBAL(混乱对抗赛金)>金币\
+
+#IF
+#SAY
+你要加入吗？		<加入/@addmob&100000>		<返回/@main>
+
+[@addmob] 
+#IF
+!CHECKVAR GLOBAL 混乱对抗状态 = 0
+#ACT
+break
+#SAY
+该擂台人数已达上限，请重新选择。\
+\
+<返回/@main>
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 摆
+CHECKVAR HUMAN ArenaCompetition = 0
+#ACT
+break
+#SAY
+你已经申请守擂，不能申请攻擂。\
+\
+<离开/@exit>
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 攻
+CHECKVAR HUMAN ArenaCompetition = 0
+#ACT
+break
+#SAY
+你已经申请攻擂，不能再次申请。\
+\
+<离开/@exit>
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 守
+CHECKVAR HUMAN ArenaCompetition = 0
+#ACT
+break
+#SAY
+你已经申请守擂，不能再次申请。\
+\
+<离开/@exit>
+
+#IF
+!checkgold $SCRIPTPARAM(1)
+#ACT
+break
+#SAY
+你没有足够的比赛金。\
+\
+<离开/@exit>
+
+#IF
+random 1
+#ACT
+mov S1 $USERNAME
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+Insert S1 17 $JOB
+Insert S1 23 $LEVEL
+dec S1 28 999
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名1 =
+#ACT
+Gmexecute 全服触发 @比武擂台10传出
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 混乱对抗赛金 = $SCRIPTPARAM(1)
+Calcvar GLOBAL 混乱对抗人名1 = $USERNAME
+Calcvar GLOBAL 混乱对抗信息1 = $STR(S1)
+mapmove ARENA010 32 38 4
+CHANGENAMECOLOR 69
+CLEARMAPMON $M
+CLEARMAPBODY $M
+CLEARMAPITEM $M
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台混乱对抗赛中，还需要7位英雄加入，比赛即将开始，欢迎众位英雄前来挑战
+break
+#SAY
+申请成功，等待其他玩家加入，请做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名2 =
+#ACT
+#ACT
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 混乱对抗人名2 = $USERNAME
+Calcvar GLOBAL 混乱对抗信息2 = $STR(S1)
+mapmove ARENA010 32 38 4
+CHANGENAMECOLOR 255
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台混乱对抗赛中，还需要6位英雄加入，比赛即将开始，欢迎众位英雄前来挑战
+break
+#SAY
+申请成功，等待其他玩家加入，请做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名3 =
+#ACT
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 混乱对抗人名3 = $USERNAME
+Calcvar GLOBAL 混乱对抗信息3 = $STR(S1)
+mapmove ARENA010 32 38 4
+CHANGENAMECOLOR 255
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台混乱对抗赛中，还需要5位英雄加入，比赛即将开始，欢迎众位英雄前来挑战
+break
+#SAY
+申请成功，等待其他玩家加入，请做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名4 =
+#ACT
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 混乱对抗人名4 = $USERNAME
+Calcvar GLOBAL 混乱对抗信息4 = $STR(S1)
+mapmove ARENA010 32 38 4
+CHANGENAMECOLOR 255
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台混乱对抗赛中，还需要4位英雄加入，比赛即将开始，欢迎众位英雄前来挑战
+break
+#SAY
+申请成功，等待其他玩家加入，请做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名5 =
+#ACT
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 混乱对抗人名5 = $USERNAME
+Calcvar GLOBAL 混乱对抗信息5 = $STR(S1)
+mapmove ARENA010 32 38 4
+CHANGENAMECOLOR 255
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台混乱对抗赛中，还需要3位英雄加入，比赛即将开始，欢迎众位英雄前来挑战
+break
+#SAY
+申请成功，等待其他玩家加入，请做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名6 =
+#ACT
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 混乱对抗人名6 = $USERNAME
+Calcvar GLOBAL 混乱对抗信息6 = $STR(S1)
+mapmove ARENA010 32 38 4
+CHANGENAMECOLOR 255
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台混乱对抗赛中，还需要2位英雄加入，比赛即将开始，欢迎众位英雄前来挑战
+break
+#SAY
+申请成功，等待其他玩家加入，请做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名7 =
+#ACT
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 混乱对抗人名7 = $USERNAME
+Calcvar GLOBAL 混乱对抗信息7 = $STR(S1)
+mapmove ARENA010 32 38 4
+CHANGENAMECOLOR 255
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台混乱对抗赛中，还需要1位英雄加入，比赛即将开始，欢迎众位英雄前来挑战
+break
+#SAY
+申请成功，等待其他玩家加入，请做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名8 =
+#ACT
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 混乱对抗状态 = 1
+Calcvar GLOBAL 混乱对抗人名8 = $USERNAME
+Calcvar GLOBAL 混乱对抗信息8 = $STR(S1)
+mapmove ARENA010 32 38 4
+CHANGENAMECOLOR 255
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台混乱对抗赛中，比赛已经开始，欢迎众位英雄前来观看
+MONGENEX ARENA010 32 38 Sheyao 4 1
+MONGENEX ARENA010 32 38 Ghost 4 3
+SetRobotTimer 0 系统控制 @ARENA010限时
+SetRobotTimer 1200 系统控制 @ARENA010限时
+SetRobotTimer 0 系统控制 @混乱检测离场
+SetRobotTimer 1 系统控制 @混乱检测离场 1200
+break
+
+[@混乱检测离场]
+#IF
+$GLOBAL(混乱对抗人名1).!CHECKMAPNAME ARENA010
+#ACT
+$GLOBAL(混乱对抗人名1).goto @混乱下线死亡
+
+#IF
+$GLOBAL(混乱对抗人名2).!CHECKMAPNAME ARENA010
+#ACT
+$GLOBAL(混乱对抗人名2).goto @混乱下线死亡
+
+#IF
+$GLOBAL(混乱对抗人名3).!CHECKMAPNAME ARENA010
+#ACT
+$GLOBAL(混乱对抗人名3).goto @混乱下线死亡
+
+#IF
+$GLOBAL(混乱对抗人名4).!CHECKMAPNAME ARENA010
+#ACT
+$GLOBAL(混乱对抗人名4).goto @混乱下线死亡
+
+#IF
+$GLOBAL(混乱对抗人名5).!CHECKMAPNAME ARENA010
+#ACT
+$GLOBAL(混乱对抗人名5).goto @混乱下线死亡
+
+#IF
+$GLOBAL(混乱对抗人名6).!CHECKMAPNAME ARENA010
+#ACT
+$GLOBAL(混乱对抗人名6).goto @混乱下线死亡
+
+#IF
+$GLOBAL(混乱对抗人名7).!CHECKMAPNAME ARENA010
+#ACT
+$GLOBAL(混乱对抗人名7).goto @混乱下线死亡
+
+#IF
+$GLOBAL(混乱对抗人名8).!CHECKMAPNAME ARENA010
+#ACT
+$GLOBAL(混乱对抗人名8).goto @混乱下线死亡
+
+[@ARENA010限时]
+#CALL [\Features\HeroesChallenge\混乱对抗.txt] @混乱对抗胜负
+
+#IF
+large I41 1
+#ACT
+mov I41 $GLOBAL(混乱对抗赛金)
+dec I41 50000
+$GLOBAL(混乱对抗人名1).CALCVAR HUMAN ArenaCompetition = $STR(I41)
+$GLOBAL(混乱对抗人名2).CALCVAR HUMAN ArenaCompetition = $STR(I41)
+$GLOBAL(混乱对抗人名3).CALCVAR HUMAN ArenaCompetition = $STR(I41)
+$GLOBAL(混乱对抗人名4).CALCVAR HUMAN ArenaCompetition = $STR(I41)
+$GLOBAL(混乱对抗人名5).CALCVAR HUMAN ArenaCompetition = $STR(I41)
+$GLOBAL(混乱对抗人名6).CALCVAR HUMAN ArenaCompetition = $STR(I41)
+$GLOBAL(混乱对抗人名7).CALCVAR HUMAN ArenaCompetition = $STR(I41)
+$GLOBAL(混乱对抗人名8).CALCVAR HUMAN ArenaCompetition = $STR(I41)
+$GLOBAL(混乱对抗人名1).CALCVAR HUMAN ArenaCondition = 平
+$GLOBAL(混乱对抗人名2).CALCVAR HUMAN ArenaCondition = 平
+$GLOBAL(混乱对抗人名3).CALCVAR HUMAN ArenaCondition = 平
+$GLOBAL(混乱对抗人名4).CALCVAR HUMAN ArenaCondition = 平
+$GLOBAL(混乱对抗人名5).CALCVAR HUMAN ArenaCondition = 平
+$GLOBAL(混乱对抗人名6).CALCVAR HUMAN ArenaCondition = 平
+$GLOBAL(混乱对抗人名7).CALCVAR HUMAN ArenaCondition = 平
+$GLOBAL(混乱对抗人名8).CALCVAR HUMAN ArenaCondition = 平
+SENDMSG 0 混乱对抗赛中的各位英雄实力不相上下，此场比赛为平局
+goto @混乱对抗清理
+
+[@import]
+#CALL [\Features\HeroesChallenge\下线死亡.txt] @混乱下线死亡
+}
+
+[@混乱信息排列]
+{
+#IF
+CHECKVAR GLOBAL 混乱对抗人名1 = $USERNAME
+#ACT
+goto @混乱排列2-1
+goto @混乱排列3-2
+goto @混乱排列4-3
+goto @混乱排列5-4
+goto @混乱排列6-5
+goto @混乱排列7-6
+goto @混乱排列8-7
+goto @混乱排列9-8
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名2 = $USERNAME
+#ACT
+goto @混乱排列3-2
+goto @混乱排列4-3
+goto @混乱排列5-4
+goto @混乱排列6-5
+goto @混乱排列7-6
+goto @混乱排列8-7
+goto @混乱排列9-8
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名3 = $USERNAME
+#ACT
+goto @混乱排列4-3
+goto @混乱排列5-4
+goto @混乱排列6-5
+goto @混乱排列7-6
+goto @混乱排列8-7
+goto @混乱排列9-8
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名4 = $USERNAME
+#ACT
+goto @混乱排列5-4
+goto @混乱排列6-5
+goto @混乱排列7-6
+goto @混乱排列8-7
+goto @混乱排列9-8
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名5 = $USERNAME
+#ACT
+goto @混乱排列6-5
+goto @混乱排列7-6
+goto @混乱排列8-7
+goto @混乱排列9-8
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名6 = $USERNAME
+#ACT
+goto @混乱排列7-6
+goto @混乱排列8-7
+goto @混乱排列9-8
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名7 = $USERNAME
+#ACT
+goto @混乱排列8-7
+goto @混乱排列9-8
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名8 = $USERNAME
+#ACT
+goto @混乱排列9-8
+break
+
+[@混乱排列2-1]
+#ACT
+Calcvar GLOBAL 混乱对抗人名1 = $GLOBAL(混乱对抗人名2)
+Calcvar GLOBAL 混乱对抗信息1 = $GLOBAL(混乱对抗信息2)
+$GLOBAL(混乱对抗人名1).CHANGENAMECOLOR 69
+
+[@混乱排列3-2]
+#ACT
+Calcvar GLOBAL 混乱对抗人名2 = $GLOBAL(混乱对抗人名3)
+Calcvar GLOBAL 混乱对抗信息2 = $GLOBAL(混乱对抗信息3)
+
+[@混乱排列4-3]
+#ACT
+Calcvar GLOBAL 混乱对抗人名3 = $GLOBAL(混乱对抗人名4)
+Calcvar GLOBAL 混乱对抗信息3 = $GLOBAL(混乱对抗信息4)
+
+[@混乱排列5-4]
+#ACT
+Calcvar GLOBAL 混乱对抗人名4 = $GLOBAL(混乱对抗人名5)
+Calcvar GLOBAL 混乱对抗信息4 = $GLOBAL(混乱对抗信息5)
+
+[@混乱排列6-5]
+#ACT
+Calcvar GLOBAL 混乱对抗人名5 = $GLOBAL(混乱对抗人名6)
+Calcvar GLOBAL 混乱对抗信息5 = $GLOBAL(混乱对抗信息6)
+
+[@混乱排列7-6]
+#ACT
+Calcvar GLOBAL 混乱对抗人名6 = $GLOBAL(混乱对抗人名7)
+Calcvar GLOBAL 混乱对抗信息6 = $GLOBAL(混乱对抗信息7)
+
+[@混乱排列8-7]
+#ACT
+Calcvar GLOBAL 混乱对抗人名7 = $GLOBAL(混乱对抗人名8)
+Calcvar GLOBAL 混乱对抗信息7 = $GLOBAL(混乱对抗信息8)
+
+[@混乱排列9-8]
+#ACT
+mov A13 ------
+inc A13 #9
+inc A13 #9	
+inc A13 #9
+inc A13 #9	
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 ----
+inc A13 #9
+inc A13 #9
+inc A13 --
+inc A13 #9
+inc A13 #9
+inc A13 #9
+Calcvar GLOBAL 混乱对抗信息8 = $STR(A13)
+}
+
+[@混乱对抗胜负]
+{
+#IF
+random 1
+#ACT
+mov I41 0
+
+#IF
+$GLOBAL(混乱对抗人名1).CHECKMAPNAME ARENA010
+#ACT
+inc I41 1
+
+#IF
+$GLOBAL(混乱对抗人名2).CHECKMAPNAME ARENA010
+#ACT
+inc I41 1
+
+#IF
+$GLOBAL(混乱对抗人名3).CHECKMAPNAME ARENA010
+#ACT
+inc I41 1
+
+#IF
+$GLOBAL(混乱对抗人名4).CHECKMAPNAME ARENA010
+#ACT
+inc I41 1
+
+#IF
+$GLOBAL(混乱对抗人名5).CHECKMAPNAME ARENA010
+#ACT
+inc I41 1
+
+#IF
+$GLOBAL(混乱对抗人名6).CHECKMAPNAME ARENA010
+#ACT
+inc I41 1
+
+#IF
+$GLOBAL(混乱对抗人名7).CHECKMAPNAME ARENA010
+#ACT
+inc I41 1
+
+#IF
+$GLOBAL(混乱对抗人名8).CHECKMAPNAME ARENA010
+#ACT
+inc I41 1
+
+#IF
+large I41 1
+#ACT
+break
+
+#IF
+CheckOnline $GLOBAL(混乱对抗人名1)
+#ACT
+$GLOBAL(混乱对抗人名1).goto @混乱对抗胜利
+break
+
+#IF
+CheckOnline $GLOBAL(混乱对抗人名2)
+#ACT
+$GLOBAL(混乱对抗人名2).goto @混乱对抗胜利
+break
+
+#IF
+CheckOnline $GLOBAL(混乱对抗人名3)
+#ACT
+$GLOBAL(混乱对抗人名3).goto @混乱对抗胜利
+break
+
+#IF
+CheckOnline $GLOBAL(混乱对抗人名4)
+#ACT
+$GLOBAL(混乱对抗人名4).goto @混乱对抗胜利
+break
+
+#IF
+CheckOnline $GLOBAL(混乱对抗人名5)
+#ACT
+$GLOBAL(混乱对抗人名5).goto @混乱对抗胜利
+break
+
+#IF
+CheckOnline $GLOBAL(混乱对抗人名6)
+#ACT
+$GLOBAL(混乱对抗人名6).goto @混乱对抗胜利
+break
+
+#IF
+CheckOnline $GLOBAL(混乱对抗人名7)
+#ACT
+$GLOBAL(混乱对抗人名7).goto @混乱对抗胜利
+break
+
+#IF
+CheckOnline $GLOBAL(混乱对抗人名8)
+#ACT
+$GLOBAL(混乱对抗人名8).goto @混乱对抗胜利
+break
+
+[@混乱对抗胜利]
+#ACT
+CALCVAR HUMAN ArenaCompetition = $GLOBAL(混乱对抗赛金)
+CALCVAR HUMAN ArenaCompetition * 8
+CALCVAR HUMAN ArenaCompetition - 50000
+CALCVAR GLOBAL 混乱对抗赛金 * 7
+SENDMSG 0 %s在英雄擂台混乱对抗赛取得成功，赢取了<$GLOBAL(混乱对抗赛金)>金币的奖励，欢迎众位英雄前来挑战
+Calcvar HUMAN ArenaCondition = 攻
+#CALL [\Features\HeroesChallenge\混乱对抗.txt] @混乱对抗清理
+}
+
+[@混乱对抗离场]
+{
+#ACT
+CHANGENAMECOLOR 255
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名1 = $USERNAME
+#ACT
+Calcvar GLOBAL 混乱对抗人名1 =
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名2 = $USERNAME
+#ACT
+Calcvar GLOBAL 混乱对抗人名2 =
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名3 = $USERNAME
+#ACT
+Calcvar GLOBAL 混乱对抗人名3 =
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名4 = $USERNAME
+#ACT
+Calcvar GLOBAL 混乱对抗人名4 =
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名5 = $USERNAME
+#ACT
+Calcvar GLOBAL 混乱对抗人名5 =
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名6 = $USERNAME
+#ACT
+Calcvar GLOBAL 混乱对抗人名6 =
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名7 = $USERNAME
+#ACT
+Calcvar GLOBAL 混乱对抗人名7 =
+
+#IF
+CHECKVAR GLOBAL 混乱对抗人名8 = $USERNAME
+#ACT
+Calcvar GLOBAL 混乱对抗人名8 =
+}
+
+[@混乱对抗清理]
+{
+#ACT
+mov A13 ------
+inc A13 #9
+inc A13 #9	
+inc A13 #9
+inc A13 #9	
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 ----
+inc A13 #9
+inc A13 #9
+inc A13 --
+inc A13 #9
+inc A13 #9
+inc A13 #9
+Calcvar GLOBAL 混乱对抗信息1 = $STR(A13)
+Calcvar GLOBAL 混乱对抗信息2 = $STR(A13)
+Calcvar GLOBAL 混乱对抗信息3 = $STR(A13)
+Calcvar GLOBAL 混乱对抗信息4 = $STR(A13)
+Calcvar GLOBAL 混乱对抗信息5 = $STR(A13)
+Calcvar GLOBAL 混乱对抗信息6 = $STR(A13)
+Calcvar GLOBAL 混乱对抗信息7 = $STR(A13)
+Calcvar GLOBAL 混乱对抗信息8 = $STR(A13)
+Calcvar GLOBAL 混乱对抗状态 =
+Calcvar GLOBAL 混乱对抗赛金 =
+Calcvar GLOBAL 混乱对抗人名1 =
+Calcvar GLOBAL 混乱对抗人名2 =
+Calcvar GLOBAL 混乱对抗人名3 =
+Calcvar GLOBAL 混乱对抗人名4 =
+Calcvar GLOBAL 混乱对抗人名5 =
+Calcvar GLOBAL 混乱对抗人名6 =
+Calcvar GLOBAL 混乱对抗人名7 =
+Calcvar GLOBAL 混乱对抗人名8 =
+}

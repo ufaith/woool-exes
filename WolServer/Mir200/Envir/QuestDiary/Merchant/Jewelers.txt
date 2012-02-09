@@ -1,0 +1,12 @@
+[@merchandise]
+{
+IronBracelet	20	10
+CopperBrace	20	10
+CopperRing	20	10
+CrystalRing		20	10
+OctagonalRing	20	10
+GoldNecklace	20	10
+AccurateNeck		20	10
+PureNeck		20	10
+ThinBracelet		20	10
+}

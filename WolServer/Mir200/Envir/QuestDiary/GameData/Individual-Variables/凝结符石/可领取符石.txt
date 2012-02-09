@@ -1,0 +1,14 @@
+[zerberoz]
+ReceiveRunestone=0
+[dazz]
+ReceiveRunestone=0
+[qqqq]
+ReceiveRunestone=0
+[qwer]
+ReceiveRunestone=0
+[dfsdfsfd]
+ReceiveRunestone=0
+[xvxcvxv]
+ReceiveRunestone=0
+[sanity]
+ReceiveRunestone=0

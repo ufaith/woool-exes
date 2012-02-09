@@ -1,0 +1,14 @@
+[zerberoz]
+WindingTime=0
+[dazz]
+WindingTime=0
+[qqqq]
+WindingTime=0
+[qwer]
+WindingTime=0
+[dfsdfsfd]
+WindingTime=0
+[xvxcvxv]
+WindingTime=0
+[sanity]
+WindingTime=0

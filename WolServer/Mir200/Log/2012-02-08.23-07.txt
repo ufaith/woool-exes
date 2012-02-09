@@ -1,0 +1,44 @@
+08/02/2012 23:07:53 Has Read 1Guild Information...
+08/02/2012 23:07:53 Has Read 1Castle Information...
+08/02/2012 23:07:53 脚本错误2: ADDBSL 1 + 1 第:81 行: .\Envir\Market_Def\StagnantWaters\Warehouse-7.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 2 + 1 第:93 行: .\Envir\Market_Def\StagnantWaters\Warehouse-7.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 3 + 1 第:105 行: .\Envir\Market_Def\StagnantWaters\Warehouse-7.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 1 + 1 第:113 行: .\Envir\Market_Def\WesternRegion\Warehouse-SH041.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 2 + 1 第:125 行: .\Envir\Market_Def\WesternRegion\Warehouse-SH041.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 3 + 1 第:137 行: .\Envir\Market_Def\WesternRegion\Warehouse-SH041.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 1 + 1 第:81 行: .\Envir\Market_Def\WesternRegion\Warehouse-5.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 2 + 1 第:93 行: .\Envir\Market_Def\WesternRegion\Warehouse-5.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 3 + 1 第:105 行: .\Envir\Market_Def\WesternRegion\Warehouse-5.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 1 + 1 第:81 行: .\Envir\Market_Def\ForbiddenLand\Warehouse-4.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 2 + 1 第:93 行: .\Envir\Market_Def\ForbiddenLand\Warehouse-4.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 3 + 1 第:105 行: .\Envir\Market_Def\ForbiddenLand\Warehouse-4.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 1 + 1 第:86 行: .\Envir\Market_Def\HorsePlains\Warehouse-SH020.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 2 + 1 第:98 行: .\Envir\Market_Def\HorsePlains\Warehouse-SH020.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 3 + 1 第:110 行: .\Envir\Market_Def\HorsePlains\Warehouse-SH020.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 1 + 1 第:86 行: .\Envir\Market_Def\HorsePlains\Warehouse-3.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 2 + 1 第:98 行: .\Envir\Market_Def\HorsePlains\Warehouse-3.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 3 + 1 第:110 行: .\Envir\Market_Def\HorsePlains\Warehouse-3.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 1 + 1 第:85 行: .\Envir\Market_Def\Wilderness\Warehouse-SH023.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 2 + 1 第:97 行: .\Envir\Market_Def\Wilderness\Warehouse-SH023.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 3 + 1 第:109 行: .\Envir\Market_Def\Wilderness\Warehouse-SH023.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 1 + 1 第:85 行: .\Envir\Market_Def\Wilderness\Warehouse-SH022.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 2 + 1 第:97 行: .\Envir\Market_Def\Wilderness\Warehouse-SH022.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 3 + 1 第:109 行: .\Envir\Market_Def\Wilderness\Warehouse-SH022.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 1 + 1 第:86 行: .\Envir\Market_Def\Wilderness\Warehouse-2.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 2 + 1 第:98 行: .\Envir\Market_Def\Wilderness\Warehouse-2.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 3 + 1 第:110 行: .\Envir\Market_Def\Wilderness\Warehouse-2.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 1 + 1 第:83 行: .\Envir\Market_Def\CapeVillage\Warehouse-0.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 2 + 1 第:95 行: .\Envir\Market_Def\CapeVillage\Warehouse-0.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 3 + 1 第:107 行: .\Envir\Market_Def\CapeVillage\Warehouse-0.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 1 + 1 第:83 行: .\Envir\Market_Def\PenIsland\Warehouse-1.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 2 + 1 第:95 行: .\Envir\Market_Def\PenIsland\Warehouse-1.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 3 + 1 第:107 行: .\Envir\Market_Def\PenIsland\Warehouse-1.txt
+08/02/2012 23:07:53 脚本错误1: PosInList $STR(S0) ..\QuestDiary\GameRead\碎片物品.txt S1 第:575 行: .\Envir\Market_Def\CentralPlains\CastingTeacher-0.txt
+08/02/2012 23:07:53 脚本错误1: PosInList $PARAM(1) ..\QuestDiary\GameData\各种排行\黑暗武器.txt S0 第:3053 行: .\Envir\Market_Def\CentralPlains\CastingTeacher-0.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 1 + 1 第:79 行: .\Envir\Market_Def\CentralPlains\Warehouse-0.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 2 + 1 第:91 行: .\Envir\Market_Def\CentralPlains\Warehouse-0.txt
+08/02/2012 23:07:53 脚本错误2: ADDBSL 3 + 1 第:103 行: .\Envir\Market_Def\CentralPlains\Warehouse-0.txt
+08/02/2012 23:07:54 登录服务器(127.0.0.1:5600)连接成功...
+08/02/2012 23:07:56 Database Server(127.0.0.1:6000)Connection Is Successful...
+08/02/2012 23:07:57 游戏网关[0](127.0.0.1:4101)已打开...
+08/02/2012 23:10:23 游戏网关[0](127.0.0.1:4101)已关闭...

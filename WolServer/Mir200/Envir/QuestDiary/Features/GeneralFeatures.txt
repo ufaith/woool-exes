@@ -1,0 +1,58 @@
+[@返回中州]
+{
+#ACT
+mapmove 0 470 225
+}
+
+[@返回热砂]
+{
+#ACT
+map 2
+}
+
+[@狂魔]
+{
+#IF
+large $PKPOINT 2999
+#ACT
+SETRANKLEVELNAME %s\狂魔
+#ELSEACT
+SETRANKLEVELNAME %s
+}
+
+[@元神探魔]
+{
+#IF
+$PNEUMANAME.CheckLevelEx < 46
+#ACT
+break
+
+#IF
+CheckMapMonNameCount $M 0 0 999 固本心魔0 1
+#ACT
+$PNEUMANAME.goto @有心魔
+break
+
+#IF
+CheckMapMonNameCount $M 0 0 999 培元心魔0 1
+#ACT
+$PNEUMANAME.goto @有心魔
+break
+
+#IF
+CheckMapMonNameCount $M 0 0 999 明心心魔0 1
+#ACT
+$PNEUMANAME.goto @有心魔
+break
+
+#IF
+CheckMapMonNameCount $M 0 0 999 大悟心魔0 1
+#ACT
+$PNEUMANAME.goto @有心魔
+break
+
+[@有心魔] PNEUMA
+#ACT
+SENDMSG 5 主人，我感应到心魔在本地图出现。
+SENDMSG 21 主人，我感应到心魔在本地图出现。
+}

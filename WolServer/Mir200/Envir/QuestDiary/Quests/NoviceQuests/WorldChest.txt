@@ -1,0 +1,74 @@
+[@老兵4]
+{
+#IF
+equal $Task(40) 2
+#SAY
+可以完成的任务：\
+<NoviceQuests--WorldChest/@_RW_fulfilTaskDesp_301_fulfil>\
+
+#IF
+equal $Task(40) 1
+#SAY
+可以完成的任务：\
+<NoviceQuests--WorldChest/@_RW_fulfilTaskDesp_300_fulfil>\
+
+#IF
+HasTask 20
+#SAY
+<Quests--反击将军坟/@_RW_fulfilTaskDesp_313_goingon>\
+\
+<离开/@exit>
+#ELSESAY
+可以接的任务：\
+<Quests--反击将军坟/@_RW_taskDesp_313>\
+\
+<离开/@exit>
+
+[@_RW_fulfilTaskDesp_300_fulfil]
+　　勇士，你已经查看过商城了？是否看到了那个可以开启\
+神秘宝箱的神秘钥匙？\
+\
+<我已经看过商城了/@_RW_fulfilTask_300>                <我一会儿就去看/@exit>
+
+[@_RW_fulfilTask_300]
+#ACT
+give 神秘宝箱1 2
+give 神秘钥匙1 1
+UpdateTask 40 2
+#SAY
+<color=green 双击神秘宝箱就可以打开宝箱了，24级以后再来找我吧>。\
+<离开/@exit>
+
+[@_RW_fulfilTaskDesp_301_fulfil]
+　　<color=green 你打开了宝箱吗？它可以让你在短时间内就大幅度提升>\
+<color=green 自己的修炼水平。24级后找我，我会给你新任务。>\
+\
+<我这就去/@_RW_fulfilTask_301>                <我一会儿就去看/@exit>
+
+[@_RW_fulfilTask_301]
+#IF
+CheckLevelEx > 23
+#SAY
+    恩？你已经到24级了啊，看来我需要交给你一项更加艰\
+巨的任务了。\
+在苍茫的天空中，传说有一条路可以通达天庭，世人称之为\
+天关。天关之中弥漫着无法琢磨的瘴气和无尽的宝藏，普通\
+人类根本抵挡不住瘴气的侵蚀。只有随身佩戴天界流传下来\
+的灵符，才能不受瘴气的伤害，安全进入天关。\
+我这里有个灵符，你帮我去天关中打探一下吧。\
+<给我灵符，我去。/@_RW_accept_307>                <真可怕，我不干。/@exit>
+#ELSESAY
+等你24级后来找我，我会给你新任务。\
+\
+<离开/@eixt>
+
+[@_RW_accept_307]
+#ACT
+give 灵符1 1
+EndTask 40
+AddTask 41
+#SAY
+　　灵符乃是仙界通灵之物，拥有无上法力。它能帮你抵挡\
+瘴气的侵蚀。快去找皇宫中的天关守卫完成任务吧！\
+<离开/@exit>
+}

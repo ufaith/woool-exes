@@ -1,0 +1,415 @@
+[@mainleftBOSS刷新]
+{
+<color=orange 【>BOSSRefresh<color=orange 】>　<color=orange 【><AchievementSystem/@mainleft成就系统><color=orange 】><color=red New>\
+\
+<color=green 所在地图　　　　　　BOSS名字　　　　　　重生时间>\
+<GeneralPalace/@BOSS传送&GeneralPalace&4&H074&112&110>          　　CorpseTyrant    　　　　  　
+#IF
+CHECKVAR GLOBAL BOSS001 < 241
+#SAY
+<$GLOBAL(BOSS001)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<战士炼狱十一层/@BOSS传送&战士炼狱十一层&2&MH023>  　　CorpseTyrant    　　　　  　
+#IF
+CHECKVAR GLOBAL BOSS002 < 121
+#SAY
+<$GLOBAL(BOSS002)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<法师炼狱十一层/@BOSS传送&法师炼狱十一层&2&MH024>  　　CorpseTyrant      　　　　　
+#IF
+CHECKVAR GLOBAL BOSS003 < 121
+#SAY
+<$GLOBAL(BOSS003)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<道士炼狱十一层/@BOSS传送&道士炼狱十一&2&MH025>  　　CorpseTyrant      　　　　　
+#IF
+CHECKVAR GLOBAL BOSS004 < 121
+#SAY
+<$GLOBAL(BOSS004)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<MainCenterHall/@BOSS传送&MainCenterHall&1&M018>        　　BigGame　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS005 < 61
+#SAY
+<$GLOBAL(BOSS005)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<战士炼狱八层/@BOSS传送&战士炼狱八层&1&MH016>    　　BigGame　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS006 < 31
+#SAY
+<$GLOBAL(BOSS006)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<法师炼狱八层/@BOSS传送&法师炼狱八层&1&MH017>    　　BigGame　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS007 < 31
+#SAY
+<$GLOBAL(BOSS007)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<道士炼狱八层/@BOSS传送&道士炼狱八层&1&MH018>    　　BigGame　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS008 < 31
+#SAY
+<$GLOBAL(BOSS008)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<SnakePalace/@BOSS传送&SnakePalace&2&N008>    　　　　　SnakeQueen　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS033 < 121
+#SAY
+<$GLOBAL(BOSS033)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<战士炼狱十五层/@BOSS传送&战士炼狱十五层&1&MH033>    　SnakeQueen　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS034 < 61
+#SAY
+<$GLOBAL(BOSS034)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<法师炼狱十五层/@BOSS传送&法师炼狱十五层&1&MH034>    　SnakeQueen　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS035 < 61
+#SAY
+<$GLOBAL(BOSS035)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<法师炼狱十五层/@BOSS传送&法师炼狱十五层&1&MH035>    　SnakeQueen　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS036 < 61
+#SAY
+<$GLOBAL(BOSS036)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<CounterHall/@BOSS传送&CounterHall&4&S026&72&76>        　　EvilCounter　　　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS009 < 241
+#SAY
+<$GLOBAL(BOSS009)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<战士炼狱十八层/@BOSS传送&战士炼狱十八层&2&MH040>  　　EvilCounter　　　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS010 < 121
+#SAY
+<$GLOBAL(BOSS010)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<法师炼狱十八层/@BOSS传送&法师炼狱十八层&2&MH041>  　　EvilCounter　　　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS010 < 121
+#SAY
+<$GLOBAL(BOSS010)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<道士炼狱十八层/@BOSS传送&道士炼狱十八层&2&MH042>  　　EvilCounter　　　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS012 < 121
+#SAY
+<$GLOBAL(BOSS012)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<DarkSamsara/@BOSS传送&DarkSamsara&6&J008>        　　SharpClaws　　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS013 < 361
+#SAY
+<$GLOBAL(BOSS013)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<DarkSamsara/@BOSS传送&DarkSamsara&6&J008>        　　EvilSpirit　　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS014 < 361
+#SAY
+<$GLOBAL(BOSS014)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<EvilSpiritHole/@BOSS传送&EvilSpiritHole&6&J010>            　　Fiendish　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS015 < 361
+#SAY
+<$GLOBAL(BOSS015)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<PurgatoryBorder8/@BOSS传送&PurgatoryBorder8&1&NL008>    　　SharpClaws　　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS016 < 241
+#SAY
+<$GLOBAL(BOSS016)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<PurgatoryBorder8/@BOSS传送&PurgatoryBorder8&1&NL008>    　　EvilSpirit　　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS017 < 241
+#SAY
+<$GLOBAL(BOSS017)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<PurgatoryBorder8/@BOSS传送&PurgatoryBorder8&1&NL008>    　　Fiendish　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS018 < 241
+#SAY
+<$GLOBAL(BOSS018)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<Yunsiao/@BOSS传送&Yunsiao&4&TT009&155&232>        　　HighFounder　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS019 < 241
+#SAY
+<$GLOBAL(BOSS019)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<PurgatoryBorder9/@BOSS传送&PurgatoryBorder9&2&NL009&155&232>    　　HighFounder　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS020 < 241
+#SAY
+<$GLOBAL(BOSS020)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<Underground8/@BOSS传送&Underground8&6&MC008&207&179>    　　IronBlood　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS021 < 361
+#SAY
+<$GLOBAL(BOSS021)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<IronBloodPalace/@BOSS传送&IronBloodPalace&6&86&77>        　　IronBlood　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS022 < 361
+#SAY
+<$GLOBAL(BOSS022)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+#IF
+#SAY
+<AshuraTemple/@BOSS传送&AshuraTemple&6&AS004&235&57>        　　AshuraGod　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS023 < 361
+#SAY
+<$GLOBAL(BOSS023)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<PurgatoryBorder10/@BOSS传送&PurgatoryBorder10&3&NL010>    　　HellAngel　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS024 < 181
+#SAY
+<$GLOBAL(BOSS024)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<CounterHall/@BOSS传送&CounterHall&8&NB001>        　　CounterKing　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS025 < 481
+#SAY
+<$GLOBAL(BOSS025)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<GeneralPalace/@BOSS传送&GeneralPalace&6&NB002>        　　CrazyTyrant　　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS026 < 361
+#SAY
+<$GLOBAL(BOSS026)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<IcePalace/@BOSS传送&IcePalace&6&NB003>          　　SnakeKing　　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS027 < 361
+#SAY
+<$GLOBAL(BOSS027)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<ThousandHalls/@BOSS传送&ThousandHalls&2&HD003>        　　CorpseTyrant　　　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS023 < 61
+#SAY
+<$GLOBAL(BOSS028)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<ThousandHalls/@BOSS传送&ThousandHalls&2&HD003>        　　EvilCounter　　　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS029 < 121
+#SAY
+<$GLOBAL(BOSS029)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<ThousandHalls/@BOSS传送&ThousandHalls&2&HD003>        　　HighFounder　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS030 < 121
+#SAY
+<$GLOBAL(BOSS030)>分\
+#ELSESAY
+<color=red 已刷新>\
+#IF
+#SAY
+<ThousandHalls/@BOSS传送&ThousandHalls&2&HD003>        　　Fiendish　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS031 < 121
+#SAY
+<$GLOBAL(BOSS031)>分\
+#ELSESAY
+<color=red 已刷新>\
+
+#IF
+#SAY
+<PeachGarden/@BOSS传送&PeachGarden&4&MH054>        　　　　BigGame　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS037 < 61
+#SAY
+<$GLOBAL(BOSS037)>分\
+#ELSESAY
+<color=red 已刷新>\
+
+#IF
+#SAY
+<PeachGarden/@BOSS传送&PeachGarden&4&MH054>        　　　　SnakeQueen　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS038 < 61
+#SAY
+<$GLOBAL(BOSS038)>分\
+#ELSESAY
+<color=red 已刷新>\
+
+#IF
+#SAY
+<PeachGarden/@BOSS传送&PeachGarden&4&MH054>        　　　　CorpseTyrant　　　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS039 < 121
+#SAY
+<$GLOBAL(BOSS039)>分\
+#ELSESAY
+<color=red 已刷新>\
+
+#IF
+#SAY
+<PeachGarden/@BOSS传送&PeachGarden&4&MH054>        　　　　EvilCounter　　　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS040 < 121
+#SAY
+<$GLOBAL(BOSS040)>分\
+#ELSESAY
+<color=red 已刷新>\
+
+#IF
+#SAY
+<PeachGarden/@BOSS传送&PeachGarden&4&MH054>        　　　　Fiendish　　　　　　
+#IF
+CHECKVAR GLOBAL BOSS041 < 121
+#SAY
+<$GLOBAL(BOSS041)>分\
+#ELSESAY
+<color=red 已刷新>\
+
+[@BOSS传送] TRUE
+#ACT
+QUERYMSG 传送到<$SCRIPTPARAM(1)>需要消耗<$SCRIPTPARAM(2)>点遁地符使用次数，你确定要传送吗？ @BOSS传送
+
+[@BOSS传送1]
+#IF
+small $ITEMINFO[$ITEMMAKEINDEX(遁地符)].DURAMAX $SCRIPTPARAM(2)
+#ACT
+MessageBox 你的遁地符点数不够！
+break
+
+#IF
+POS $SCRIPTPARAM(1) 战士
+!CHECKJOB WARR
+#ACT
+MessageBox 只有战士职业玩家才能进入该地图！
+break
+
+#IF
+POS $SCRIPTPARAM(1) 法师
+!CHECKJOB WIZARD
+#ACT
+MessageBox 只有战士职业玩家才能进入该地图！
+break
+
+#IF
+POS $SCRIPTPARAM(1) 道士
+!CHECKJOB TAOS
+#ACT
+MessageBox 只有战士职业玩家才能进入该地图！
+break
+
+#IF
+random 1
+#ACT
+UPGRADEUSERITEM $ITEMMAKEINDEX(遁地符) 20 - $SCRIPTPARAM(2)
+
+#IF
+equal $SCRIPTPARAM(4)
+#ACT
+map $SCRIPTPARAM(3)
+#ELSEACT
+mapmove $SCRIPTPARAM(3) $SCRIPTPARAM(4) $SCRIPTPARAM(5)
+}

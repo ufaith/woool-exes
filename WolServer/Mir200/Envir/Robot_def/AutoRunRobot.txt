@@ -1,0 +1,60 @@
+#AutoRun NPC RUNONDAY 17:45 @deletepurgatorylist
+#AutoRun NPC Min 1 @每分触发
+#AutoRun NPC MIN 1 @EliteRelease
+#AutoRun NPC HOUR 1 @SoulBeads
+#AutoRun NPC Min 30 @游戏公告1
+#AutoRun NPC RUNONDAY 23:59 @今日日期记录
+#AutoRun NPC RUNONDAY 0:00 @0点系统更新
+#AutoRun NPC RUNONDAY 8:00 @清理王城诏令记录
+#AutoRun NPC RUNONWEEK 1:00:00 @清理每周数据
+#AutoRun NPC RUNONWEEK 4:00:00 @清理王城捐献
+#AutoRun NPC RUNONDAY 20:00 @通灵塔维护
+#AutoRun NPC RUNONDAY 10:00 @骑兵竞技开始
+#AutoRun NPC RUNONDAY 10:10 @骑兵竞技公告
+#AutoRun NPC RUNONDAY 10:20 @骑兵竞技公告
+#AutoRun NPC RUNONDAY 10:30 @骑兵竞技公告
+#AutoRun NPC RUNONDAY 10:40 @骑兵竞技公告
+#AutoRun NPC RUNONDAY 10:50 @骑兵竞技公告
+#AutoRun NPC RUNONDAY 11:00 @骑兵竞技结束
+
+#AutoRun NPC RUNONDAY 11:00 @暗之通天教主
+
+#AutoRun NPC RUNONDAY 12:30 @魔戒现身公告
+#AutoRun NPC RUNONDAY 12:40 @魔戒现身公告1
+#AutoRun NPC RUNONDAY 12:50 @魔戒现身公告2
+#AutoRun NPC RUNONDAY 13:00 @魔戒现身开始
+#AutoRun NPC RUNONDAY 14:00 @魔戒现身结束
+
+#AutoRun NPC RUNONDAY 19:00 @夺宝奇兵提示
+#AutoRun NPC RUNONDAY 19:10 @夺宝奇兵提示1
+#AutoRun NPC RUNONDAY 19:20 @夺宝奇兵提示2
+#AutoRun NPC RUNONDAY 19:30 @夺宝奇兵开始
+
+#AutoRun NPC RUNONDAY 23:00 @闯关任务开始
+#AutoRun NPC RUNONDAY 23:57 @闯关任务结束
+
+#AutoRun NPC RUNONDAY 16:00 @魔六霸主
+#AutoRun NPC RUNONDAY 17:00 @魔六霸主
+#AutoRun NPC RUNONDAY 18:00 @魔六霸主
+#AutoRun NPC RUNONDAY 19:00 @魔六霸主
+#AutoRun NPC RUNONDAY 20:00 @魔六霸主
+#AutoRun NPC RUNONDAY 21:00 @魔六霸主
+#AutoRun NPC RUNONDAY 22:00 @魔六霸主
+
+#AutoRun NPC RUNONDAY 17:00 @暗之密令
+
+#AutoRun NPC RUNONDAY 15:45 @天魔宝藏提示
+#AutoRun NPC RUNONDAY 15:50 @天魔宝藏提示1
+#AutoRun NPC RUNONDAY 15:55 @天魔宝藏提示2
+#AutoRun NPC RUNONDAY 16:00 @天魔宝藏开启
+#AutoRun NPC RUNONDAY 17:30 @天魔宝藏提示3
+#AutoRun NPC RUNONDAY 17:35 @天魔宝藏提示4
+#AutoRun NPC RUNONDAY 17:45 @天魔宝藏提示5
+#AutoRun NPC RUNONDAY 17:50 @天魔宝藏提示6
+#AutoRun NPC RUNONDAY 17:55 @天魔宝藏提示7
+
+#AutoRun NPC RUNONWEEK 6:17:00 @比武招亲开始
+#AutoRun NPC RUNONWEEK 7:17:00 @比武招亲开始
+
+#AutoRun NPC RUNONDAY 6:00 @经验卡检测
+#AutoRun NPC RUNONDAY 18:00 @经验卡检测

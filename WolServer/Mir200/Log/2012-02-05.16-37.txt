@@ -1,0 +1,30 @@
+05/02/2012 16:37:15 Has Read 0Guild Information...
+05/02/2012 16:37:15 Has Read 1Castle Information...
+05/02/2012 16:37:16 登录服务器(127.0.0.1:5600)连接成功...
+05/02/2012 16:37:18 Database Server(127.0.0.1:6000)Connection Is Successful...
+05/02/2012 16:37:19 游戏网关[0](127.0.0.1:2032)已打开...
+05/02/2012 16:41:19 Division by zero
+05/02/2012 16:41:50 Division by zero
+05/02/2012 16:42:20 Division by zero
+05/02/2012 16:42:51 Division by zero
+05/02/2012 16:43:21 Division by zero
+05/02/2012 16:43:42 [制造物品] Dazz WarGodArm(M)(1073741862)
+05/02/2012 16:43:51 Division by zero
+05/02/2012 16:43:56 [制造物品] Dazz WizGodArm(M)(1073741863)
+05/02/2012 16:44:21 Division by zero
+05/02/2012 16:44:30 [制造物品] Dazz 麒麟石(1073741864)
+05/02/2012 16:44:52 Division by zero
+05/02/2012 16:45:18 [制造物品] Dazz LegendarySword(1073741865)
+05/02/2012 16:45:23 Division by zero
+05/02/2012 16:45:54 Division by zero
+05/02/2012 16:46:03 [制造物品] Dazz HorseWhip(1073741866)
+05/02/2012 16:46:25 Division by zero
+05/02/2012 16:46:55 Division by zero
+05/02/2012 16:47:14 在线数: 1
+05/02/2012 16:47:26 Division by zero
+05/02/2012 16:47:56 Division by zero
+05/02/2012 16:48:27 Division by zero
+05/02/2012 16:48:57 Division by zero
+05/02/2012 16:49:28 Division by zero
+05/02/2012 16:49:58 Division by zero
+05/02/2012 16:50:25 游戏网关[0](127.0.0.1:2032)已关闭...

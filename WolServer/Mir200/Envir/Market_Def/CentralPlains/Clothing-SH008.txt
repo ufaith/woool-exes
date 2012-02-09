@@ -1,0 +1,53 @@
+(@fastbuy @buy @sell @repair @s_repair)
+%100
++10
++11
++15
++58
++81
+[@import]
+#CALL [\Merchant\ClothingStore.txt] @merchandise
+
+[@main]
+\\
+Welcome, how may i help you?\
+<Quick Buy/@fastbuy>\
+<Buy/@buy>
+<Sell/@sell>\
+<Repair/@repair>\
+<Special Repair/@s_repair>
+<Exit/@exit>
+
+[@fastbuy]
+\\
+Please select the items you wish to purchase.\
+\
+<Product List/@buy>\
+<Back/@main>
+
+[@buy]
+\\
+要购买什么吗？\
+\
+<Product List/@buy>\
+<Back/@main>
+
+[@sell]
+\\
+请放上去要卖的衣服，我给估价。\
+头盔、帽子、靴子和腰带也收购，\
+最好在这儿一起卖吧。\
+\
+<Back/@main>
+
+[@repair]
+\\
+可以修复衣服，头盔，帽子。另外，还可以修复靴子和\
+腰带！\
+
+[@s_repair]
+\\
+要特殊修理吗？\
+价格会比普通修理贵的。\
+\
+<Back/@main>

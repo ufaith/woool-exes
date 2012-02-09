@@ -1,0 +1,44 @@
+[@main]
+　　行走江湖，没有我百晓生不知道的事情。\
+　　我不但了解各行会的最新情况，还知道很多江湖奇闻。\
+　　炼狱是个神奇的地方，集天地日月之精华，在这里练功\
+还可以得到双倍经验。\
+　　<Color=green   30级以上的人>每天都可以来我这里领取宝箱，你现在就领\
+吗？\
+　　<免费领取宝箱/@getChest>  <离开/@exit> \
+
+[@getChest]
+#IF
+CheckLevelEx < 30
+#ACT
+break
+#SAY
+　　您等级太低，请到30级之后再来吧。\
+\
+　　<离开/@exit>\
+
+#IF
+checknamelist ..\QuestDiary\GameData\炼狱领宝箱.txt
+#ACT
+break
+#SAY
+今天你已经领过宝箱了，请明天在来！\
+\ \
+<离开/@exit>
+
+
+#IF
+checkbagsize 7
+#SAY
+#ACT
+give 神秘宝箱 2
+give 赤金宝箱 2
+give 白银宝箱 2
+give 精秘宝箱(五) 1
+addnamelist ..\QuestDiary\GameData\炼狱领宝箱.txt
+#SAY
+<多谢/@exit>
+#ELSESAY
+您的包裹空间不足，请整理后再来。\
+\
+<离开/@exit>

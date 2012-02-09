@@ -1,0 +1,39 @@
+[@main]
+Welcome, do you fancy a new hair style?\
+Well you come to the right place!\
+\
+<Change Hair/@faxing>\
+<Exit/@exit>
+
+[@faxing]
+#IF
+GENDER MAN
+#SAY
+Each hair style will cost 15000 Gold.\
+Please select your style.\
+\
+<Cool/@f&0>,<Bold/@f&3>,<Famous/@f&1>,<Knight/@f&2>\
+\
+<Back/@main>
+#ELSESAY
+Each hair style will cost 15000 Gold.\
+Please select your style.\
+\
+<Easy/@f&4>,<Lady/@f&5>,<Active/@f&6>,<Noble/@f&7>\
+\
+<Back/@main>
+
+[@f] 
+#IF
+CHECKGOLD 15000
+#ACT
+take Gold 15000
+HAIRSTYLE $SCRIPTPARAM(1)
+#say
+Your hair is ready.\
+\
+<Exit/@exit>
+#ELSESAY
+Sorry, you do not have enough Gold.\
+\
+<Exit/@exit>

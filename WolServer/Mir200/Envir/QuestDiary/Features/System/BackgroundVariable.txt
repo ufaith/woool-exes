@@ -1,0 +1,61 @@
+[@DeclareBackgroundVariable]
+{
+#IF
+random 1
+#ACT
+VAR String GLOBAL 游戏运行于
+VAR String GLOBAL 游戏模式
+VAR Integer GLOBAL 元宝消费总数
+VAR Integer GLOBAL 元宝消费
+VAR Integer GLOBAL 新进玩家
+VAR Integer GLOBAL 最高在线人数
+VAR String GLOBAL 发生在
+VAR Integer GLOBAL 闯天关
+VAR Integer GLOBAL 神威狱
+VAR Integer GLOBAL 迷仙阵
+VAR Integer GLOBAL TreasureBox
+VAR Integer GLOBAL 焰火屠魔
+VAR Integer GLOBAL 神饰除魔
+VAR Integer GLOBAL 天魔宝藏
+VAR Integer GLOBAL 营救公主
+VAR String GLOBAL 昨日信息
+
+VAR Integer GLOBAL 客服QQ
+VAR String GLOBAL 官方网站
+VAR String GLOBAL 下线挂机
+VAR String GLOBAL 经验倍数
+VAR String GLOBAL 开区时间
+VAR String GLOBAL 商店物品
+VAR String GLOBAL 老兵传送
+}
+
+[@ReadBackgroundVariables]
+{
+#IF
+random 1
+#ACT
+LOADVAR GLOBAL 游戏运行于 ..\QuestDiary\GameData\PublicVariables\后台管理.txt
+LOADVAR GLOBAL 游戏模式 ..\QuestDiary\GameData\PublicVariables\后台管理.txt
+LOADVAR GLOBAL 元宝消费总数 ..\QuestDiary\GameData\PublicVariables\后台管理.txt
+LOADVAR GLOBAL 元宝消费 ..\QuestDiary\GameData\PublicVariables\每日清除.txt
+LOADVAR GLOBAL 新进玩家 ..\QuestDiary\GameData\PublicVariables\每日清除.txt
+LOADVAR GLOBAL 最高在线人数 ..\QuestDiary\GameData\PublicVariables\每日清除.txt
+LOADVAR GLOBAL 发生在 ..\QuestDiary\GameData\PublicVariables\每日清除.txt
+LOADVAR GLOBAL 闯天关 ..\QuestDiary\GameData\PublicVariables\每日清除.txt
+LOADVAR GLOBAL 神威狱 ..\QuestDiary\GameData\PublicVariables\每日清除.txt
+LOADVAR GLOBAL 迷仙阵 ..\QuestDiary\GameData\PublicVariables\每日清除.txt
+LOADVAR GLOBAL TreasureBox ..\QuestDiary\GameData\PublicVariables\每日清除.txt
+LOADVAR GLOBAL 焰火屠魔 ..\QuestDiary\GameData\PublicVariables\每日清除.txt
+LOADVAR GLOBAL 神饰除魔 ..\QuestDiary\GameData\PublicVariables\每日清除.txt
+LOADVAR GLOBAL 天魔宝藏 ..\QuestDiary\GameData\PublicVariables\每日清除.txt
+LOADVAR GLOBAL 营救公主 ..\QuestDiary\GameData\PublicVariables\每日清除.txt
+
+LOADVAR GLOBAL 客服QQ ..\QuestDiary\GameData\PublicVariables\后台管理.txt
+LOADVAR GLOBAL 官方网站 ..\QuestDiary\GameData\PublicVariables\后台管理.txt
+LOADVAR GLOBAL 下线挂机 ..\QuestDiary\GameData\PublicVariables\后台管理.txt
+LOADVAR GLOBAL 游戏模式 ..\QuestDiary\GameData\PublicVariables\后台管理.txt
+LOADVAR GLOBAL 经验倍数 ..\QuestDiary\GameData\PublicVariables\后台管理.txt
+LOADVAR GLOBAL 开区时间 ..\QuestDiary\GameData\PublicVariables\后台管理.txt
+LOADVAR GLOBAL 商店物品 ..\QuestDiary\GameData\PublicVariables\后台管理.txt
+LOADVAR GLOBAL 老兵传送 ..\QuestDiary\GameData\PublicVariables\后台管理.txt
+}

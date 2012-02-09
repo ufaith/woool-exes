@@ -1,0 +1,395 @@
+[@幻化开始]
+{
+;成功率	  最高	属性
+;50%	  255	生命 魔法值（固定的，使用封元印也不会改变）
+;50%	  100	资质（固定的，使用封元印也不会改变）
+;10% 18%  7	攻击、魔法防御上下限 4级迅天雷豹加了20%成功率
+;10% 18%  7	攻击、魔法、道术攻击上下限
+;10% 18%  31	躲避、魔法躲避、中毒躲避
+;10% 18%  31	命中、魔法命中、中毒命中
+;	  3	幸运
+;	  1	骑战速度
+
+#IF
+!large $PARAM(1) 0
+!large $PARAM(2) 0
+#ACT
+break
+
+#IF
+equal $PARAM(0) 1
+#ACT
+goto @幻化属性
+break
+
+#IF
+random 1
+#ACT
+mov M0 10
+mov S0 
+mov S1
+mov S2
+mov S3
+mov S4
+
+#IF
+large $PARAM(3) 0
+#ACT
+inc M0 8
+mov S3 在封元印的作用下
+mov S2 在封元印和灵力的双重力量下，
+#ELSEACT
+mov S2 在灵力的力量下，
+
+#IF
+equal $ITEMINFO[$PARAM(2)].PET.RELIVE 1
+#ACT
+inc M0 10
+
+#IF
+equal $ITEMINFO[$PARAM(2)].PET.RELIVE 2
+#ACT
+inc M0 20
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.LUCK 0
+#ACT
+inc S0 1点幸运属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.EVADET 0
+#ACT
+inc S0 1点物理躲避属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.ANTIMAGIC 0
+#ACT
+inc S0 1点魔法躲避属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.ANTIPOISON 0
+#ACT
+inc S0 1点中毒躲避属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.NICETY 0
+#ACT
+inc S0 1点物理命中属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.MAGICNICETY 0
+#ACT
+inc S0 1点魔法命中属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.POISONNICETY 0
+#ACT
+inc S0 1点中毒命中属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.DC1 0
+#ACT
+inc S0 1点攻击力下限属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.DC2 0
+#ACT
+inc S0 1点攻击力上限属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.MC1 0
+#ACT
+inc S0 1点魔法攻击下限属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.MC2 0
+#ACT
+inc S0 1点魔法攻击上限属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.SC1 0
+#ACT
+inc S0 1点道术攻击下限属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.SC2 0
+#ACT
+inc S0 1点道术攻击上限属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.AC1 0
+#ACT
+inc S0 1点物理防御下限属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.AC2 0
+#ACT
+inc S0 1点物理防御上限属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.MAC1 0
+#ACT
+inc S0 1点魔防下限属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.MAC2 0
+#ACT
+inc S0 1点魔防上限属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.APTITUDE 40
+#ACT
+inc S1 50％的概率继承到1点资质，
+
+#IF
+POS $STR(S0) 属性
+#ACT
+MOV S4 <$STR(M0)>％的概率继承到<$STR(S0)>
+
+#IF
+#ACT
+ShowAdditionalInfo 3 0 10 20 <$STR(S3)>您的主灵兽可以有<$STR(S4)><$STR(S1)>50％的概率继承到1点生命值或魔法值
+
+[@幻化属性]
+#IF
+random 1
+#ACT
+movr M1 100
+mov S0
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.LUCK 0
+large M0 $STR(M1)
+#ACT
+SETPETATTRIBUTE $PARAM(1) 26 + 1
+inc S0 1点幸运属性，
+
+#IF
+random 1
+#ACT
+movr M1 100
+#IF
+large $ITEMINFO[$PARAM(2)].PET.EVADET 0
+large M0 $STR(M1)
+#ACT
+SETPETATTRIBUTE $PARAM(1) 9 + 1
+inc S0 1点物理躲避属性，
+
+#IF
+random 1
+#ACT
+movr M1 100
+#IF
+large $ITEMINFO[$PARAM(2)].PET.ANTIMAGIC 0
+large M0 $STR(M1)
+#ACT
+SETPETATTRIBUTE $PARAM(1) 12 + 1
+inc S0 1点魔法躲避属性，
+
+#IF
+random 1
+#ACT
+movr M1 100
+#IF
+large $ITEMINFO[$PARAM(2)].PET.ANTIPOISON 0
+large M0 $STR(M1)
+#ACT
+SETPETATTRIBUTE $PARAM(1) 5 + 1
+inc S0 1点中毒躲避属性，
+
+#IF
+random 1
+#ACT
+movr M1 100
+#IF
+large $ITEMINFO[$PARAM(2)].PET.NICETY 0
+large M0 $STR(M1)
+#ACT
+SETPETATTRIBUTE $PARAM(1) 25 + 1
+inc S0 1点物理命中属性，
+
+#IF
+#ACT
+movr M1 100
+#IF
+large $ITEMINFO[$PARAM(2)].PET.MAGICNICETY 0
+large M0 $STR(M1)
+#ACT
+SETPETATTRIBUTE $PARAM(1) 8 + 1
+inc S0 1点魔法命中属性，
+
+#IF
+random 1
+#ACT
+movr M1 100
+#IF
+large $ITEMINFO[$PARAM(2)].PET.POISONNICETY 0
+large M0 $STR(M1)
+#ACT
+SETPETATTRIBUTE $PARAM(1) 13 + 1
+inc S0 1点中毒命中属性，
+
+#IF
+random 1
+#ACT
+movr M1 100
+#IF
+large $ITEMINFO[$PARAM(2)].PET.DC1 0
+large M0 $STR(M1)
+#ACT
+SETPETATTRIBUTE $PARAM(1) 23 + 1
+inc S0 1点攻击力下限属性，
+
+#IF
+random 1
+#ACT
+movr M1 100
+#IF
+large $ITEMINFO[$PARAM(2)].PET.DC2 0
+large M0 $STR(M1)
+#ACT
+SETPETATTRIBUTE $PARAM(1) 24 + 1
+inc S0 1点攻击力上限属性，
+
+#IF
+random 1
+#ACT
+movr M1 100
+#IF
+large $ITEMINFO[$PARAM(2)].PET.MC1 0
+large M0 $STR(M1)
+#ACT
+SETPETATTRIBUTE $PARAM(1) 19 + 1
+inc S0 1点魔法攻击下限属性，
+
+#IF
+random 1
+#ACT
+movr M1 100
+#IF
+large $ITEMINFO[$PARAM(2)].PET.SC2 0
+large M0 $STR(M1)
+#ACT
+SETPETATTRIBUTE $PARAM(1) 20 + 1
+inc S0 1点魔法攻击上限属性，
+
+#IF
+random 1
+#ACT
+movr M1 100
+#IF
+large $ITEMINFO[$PARAM(2)].PET.SC1 0
+large M0 $STR(M1)
+#ACT
+SETPETATTRIBUTE $PARAM(1) 21 + 1
+inc S0 1点道术下限属性，
+
+#IF
+random 1
+#ACT
+movr M1 100
+#IF
+large $ITEMINFO[$PARAM(2)].PET.SC2 0
+large M0 $STR(M1)
+#ACT
+SETPETATTRIBUTE $PARAM(1) 22 + 1
+inc S0 1点道术上限属性，
+
+#IF
+random 1
+#ACT
+movr M1 100
+#IF
+large $ITEMINFO[$PARAM(2)].PET.AC1 0
+large M0 $STR(M1)
+#ACT
+SETPETATTRIBUTE $PARAM(1) 10 + 1
+inc S0 1点物理防御下限属性，
+
+#IF
+random 1
+#ACT
+movr M1 100
+#IF
+large $ITEMINFO[$PARAM(2)].PET.AC2 0
+large M0 $STR(M1)
+#ACT
+SETPETATTRIBUTE $PARAM(1) 11 + 1
+inc S0 1点物理防御上限属性，
+
+#IF
+random 1
+#ACT
+movr M1 100
+#IF
+large $ITEMINFO[$PARAM(2)].PET.MAC1 0
+large M0 $STR(M1)
+#ACT
+SETPETATTRIBUTE $PARAM(1) 6 + 1
+inc S0 1点魔防下限属性，
+
+#IF
+random 1
+#ACT
+movr M1 100
+#IF
+large $ITEMINFO[$PARAM(2)].PET.MAC2 0
+large M0 $STR(M1)
+#ACT
+SETPETATTRIBUTE $PARAM(1) 7 + 1
+inc S0 1点魔防上限属性，
+
+#IF
+large $ITEMINFO[$PARAM(2)].PET.APTITUDE 40
+large M0 $STR(M1)
+random 2
+#ACT
+SETPETATTRIBUTE $PARAM(1) 2 + 1
+inc S0 1点资质属性，
+
+#IF
+random 1
+#ACT
+movr M0 4
+
+#IF
+equal M0 0
+#ACT
+SETPETATTRIBUTE $PARAM(1) 3 + 1
+inc S0 1点生命值属性
+
+#IF
+equal M0 1
+#ACT
+SETPETATTRIBUTE $PARAM(1) 4 + 1
+inc S0 1点魔法值属性
+
+#IF
+!checkgold 200000
+#ACT
+ShowAdditionalInfo 3 2 0 0 金币不足，无法进行幻化。
+break
+
+#IF
+small $NIMBUSPOINT 20
+#ACT
+ShowAdditionalInfo 3 2 0 0 灵力不足，无法进行幻化。
+break
+
+#IF
+#ACT
+take 金币 200000
+NIMBUSPOINT - 20
+takem $PARAM(2)
+takem $PARAM(3)
+
+#IF
+!equal S0
+#ACT
+;成功提示
+SETPETATTRIBUTE $PARAM(1) 1 + 1
+ShowAdditionalInfo 3 1 0 0 <$STR(S2)>你的主灵兽继承了副灵兽<$STR(S0)>
+#ELSEACT
+;失败提示
+ShowAdditionalInfo 3 2 0 0 此次幻化主灵兽并未继承到副灵兽任何属性
+}

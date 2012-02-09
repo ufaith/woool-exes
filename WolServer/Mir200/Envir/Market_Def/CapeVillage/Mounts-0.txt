@@ -1,0 +1,40 @@
+(@fastbuy @buy @sell)
+%100
+
+[@main]
+Welcome, how may i help you?\
+<Buy Mounts/@fastbuy>\
+<Sell Mounts/@sell>\
+<Upgrade Mount/@upgrade>\
+<Help/@helpguide>\
+<Exit/@exit>
+
+
+[@Upgrade]
+#ACT
+UPGRADEUSERITEM $PARAM(10) 20 + 999
+
+#IF
+#ACT
+give 凤凰石 1
+
+#IF
+random 1
+#ACT
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+UPGRADEUSERITEM $PARAM(10) 8 = 1
+UPGRADEUSERITEM $PARAM(10) 9 = 2
+UPGRADEUSERITEM $PARAM(10) 27 = 1
+MOV M0 $PARAM(10)
+;;#CALL [\Features\Consonance\滴血认主.txt] @灵兽加属性
+
+[@fastbuy]
+Please select the items you wish to purchase.\
+\
+<Product List/@buy>\
+<Back/@main>
+
+[goods]
+豹魔石	40	10
+
+

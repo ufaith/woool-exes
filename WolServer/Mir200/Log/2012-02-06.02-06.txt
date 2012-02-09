@@ -1,0 +1,6 @@
+06/02/2012 02:06:34 Has Read 0Guild Information...
+06/02/2012 02:06:34 Has Read 1Castle Information...
+06/02/2012 02:06:34 script error, load fail: \Features\1TriggerBody.txt@本体升级
+06/02/2012 02:06:34 script error, load fail: \Features\1TriggerBody.txt@本体升级
+06/02/2012 02:06:34 script error, load fail: \Features\1TriggerBody.txt@本体升级
+06/02/2012 02:06:34 script error, load fail: \Features\1TriggerBody.txt@本体升级

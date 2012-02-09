@@ -1,0 +1,303 @@
+[@单人下线死亡]
+{
+#IF
+CHECKMAPNAME ARENA001
+CHECKVAR GLOBAL 单团擂台状态1 < 4
+#ACT
+mov S0 $GLOBAL(单团擂台状态1)
+mov S1 $GLOBAL(单人攻擂人名1)
+mov S2 $GLOBAL(单人擂主名称1)
+goto @英雄擂台
+break
+
+#IF
+CHECKMAPNAME ARENA002
+CHECKVAR GLOBAL 单团擂台状态2 < 4
+#ACT
+mov S0 $GLOBAL(单团擂台状态2)
+mov S1 $GLOBAL(单人攻擂人名2)
+mov S2 $GLOBAL(单人擂主名称2)
+goto @英雄擂台
+break
+
+#IF
+CHECKMAPNAME ARENA003
+CHECKVAR GLOBAL 单团擂台状态3 < 4
+#ACT
+mov S0 $GLOBAL(单团擂台状态3)
+mov S1 $GLOBAL(单人攻擂人名3)
+mov S2 $GLOBAL(单人擂主名称3)
+goto @英雄擂台
+break
+
+#IF
+CHECKMAPNAME ARENA004
+CHECKVAR GLOBAL 单团擂台状态4 < 4
+#ACT
+mov S0 $GLOBAL(单团擂台状态4)
+mov S1 $GLOBAL(单人攻擂人名4)
+mov S2 $GLOBAL(单人擂主名称4)
+goto @英雄擂台
+break
+
+#IF
+CHECKMAPNAME ARENA005
+CHECKVAR GLOBAL 单团擂台状态5 < 4
+#ACT
+mov S0 $GLOBAL(单团擂台状态5)
+mov S1 $GLOBAL(单人攻擂人名5)
+mov S2 $GLOBAL(单人擂主名称5)
+goto @英雄擂台
+break
+
+#IF
+CHECKMAPNAME ARENA006
+CHECKVAR GLOBAL 单团擂台状态6 < 4
+#ACT
+mov S0 $GLOBAL(单团擂台状态6)
+mov S1 $GLOBAL(单人攻擂人名6)
+mov S2 $GLOBAL(单人擂主名称6)
+goto @英雄擂台
+break
+
+#IF
+CHECKMAPNAME ARENA007
+CHECKVAR GLOBAL 单团擂台状态7 < 4
+#ACT
+mov S0 $GLOBAL(单团擂台状态7)
+mov S1 $GLOBAL(单人攻擂人名7)
+mov S2 $GLOBAL(单人擂主名称7)
+goto @英雄擂台
+break
+
+#IF
+CHECKMAPNAME ARENA008
+CHECKVAR GLOBAL 单团擂台状态8 < 4
+#ACT
+mov S0 $GLOBAL(单团擂台状态8)
+mov S1 $GLOBAL(单人攻擂人名8)
+mov S2 $GLOBAL(单人擂主名称8)
+goto @英雄擂台
+break
+
+#IF
+CHECKMAPNAME ARENA009
+CHECKVAR GLOBAL 单团擂台状态9 < 4
+#ACT
+mov S0 $GLOBAL(单团擂台状态9)
+mov S1 $GLOBAL(单人攻擂人名9)
+mov S2 $GLOBAL(单人擂主名称9)
+goto @英雄擂台
+break
+#ELSEACT
+goto @人物状态
+
+[@英雄擂台]
+#IF
+!equal S0 3
+#ACT
+break
+
+#IF
+equal S1 $USERNAME
+#ACT
+$STR(S2).goto @单人守擂成功
+break
+
+#IF
+equal S2 $USERNAME
+#ACT
+$STR(S1).goto @单人攻擂成功
+break
+
+#IF
+!CHECKVAR HUMAN ArenaCompetition > 0
+#ACT
+goto @人物状态
+
+[@import]
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @单人守擂成功
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @单人攻擂成功
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @人物状态
+}
+
+[@混乱下线死亡]
+{
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 1
+#ACT
+goto @混乱对抗离场
+goto @混乱对抗胜负
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 0
+CHECKVAR GLOBAL 混乱对抗人名1 = $USERNAME
+#ACT
+goto @混乱退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 0
+CHECKVAR GLOBAL 混乱对抗人名2 = $USERNAME
+#ACT
+goto @混乱退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 0
+CHECKVAR GLOBAL 混乱对抗人名3 = $USERNAME
+#ACT
+goto @混乱退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 0
+CHECKVAR GLOBAL 混乱对抗人名4 = $USERNAME
+#ACT
+goto @混乱退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 0
+CHECKVAR GLOBAL 混乱对抗人名5 = $USERNAME
+#ACT
+goto @混乱退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 0
+CHECKVAR GLOBAL 混乱对抗人名6 = $USERNAME
+#ACT
+goto @混乱退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 0
+CHECKVAR GLOBAL 混乱对抗人名7 = $USERNAME
+#ACT
+goto @混乱退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 0
+CHECKVAR GLOBAL 混乱对抗人名8 = $USERNAME
+#ACT
+goto @混乱退出比赛
+break
+
+[@混乱退出比赛]
+#ACT
+CHANGENAMECOLOR 255
+Calcvar HUMAN ArenaCompetition = $GLOBAL(混乱对抗赛金)
+goto @混乱信息排列
+break
+
+[@import]
+#CALL [\Features\HeroesChallenge\混乱对抗.txt] @混乱信息排列
+#CALL [\Features\HeroesChallenge\混乱对抗.txt] @混乱对抗胜负
+#CALL [\Features\HeroesChallenge\混乱对抗.txt] @混乱对抗离场
+}
+
+[@混乱下线死亡1]
+{
+#IF
+!CHECKMAPNAME ARENA010
+#CALL [\Features\HeroesChallenge\下线死亡.txt] @混乱下线死亡
+}
+
+[@生存下线死亡]
+{
+#IF
+CHECKVAR GLOBAL 生存挑战状态 = 1
+#ACT
+goto @生存挑战胜负
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战状态 = 0
+CHECKVAR GLOBAL 生存挑战人名1 = $USERNAME
+#ACT
+goto @生存退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战状态 = 0
+CHECKVAR GLOBAL 生存挑战人名2 = $USERNAME
+#ACT
+goto @生存退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战状态 = 0
+CHECKVAR GLOBAL 生存挑战人名3 = $USERNAME
+#ACT
+goto @生存退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战状态 = 0
+CHECKVAR GLOBAL 生存挑战人名4 = $USERNAME
+#ACT
+goto @生存退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战状态 = 0
+CHECKVAR GLOBAL 生存挑战人名5 = $USERNAME
+#ACT
+goto @生存退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战状态 = 0
+CHECKVAR GLOBAL 生存挑战人名6 = $USERNAME
+#ACT
+goto @生存退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战状态 = 0
+CHECKVAR GLOBAL 生存挑战人名7 = $USERNAME
+#ACT
+goto @生存退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战状态 = 0
+CHECKVAR GLOBAL 生存挑战人名8 = $USERNAME
+#ACT
+goto @生存退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战状态 = 0
+CHECKVAR GLOBAL 生存挑战人名9 = $USERNAME
+#ACT
+goto @生存退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战状态 = 0
+CHECKVAR GLOBAL 生存挑战人名10 = $USERNAME
+#ACT
+goto @生存退出比赛
+break
+
+[@生存退出比赛]
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(生存挑战赛金)
+goto @生存信息排列
+break
+
+[@import]
+#CALL [\Features\HeroesChallenge\生存挑战.txt] @生存信息排列
+#CALL [\Features\HeroesChallenge\生存挑战.txt] @生存挑战胜负
+}
+
+[@生存下线死亡1]
+{
+#IF
+!CHECKMAPNAME ARENA011
+#CALL [\Features\HeroesChallenge\下线死亡.txt] @生存下线死亡
+}

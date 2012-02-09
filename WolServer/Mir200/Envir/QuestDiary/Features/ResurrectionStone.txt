@@ -1,0 +1,30 @@
+[@还魂时间]
+{
+#IF
+!CHECKVARLIST $M ..\QuestDiary\GameRead\禁止传送地图.txt
+#ACT
+Calcvar HUMAN 还魂记时 = 10
+#ELSEACT
+SENDMSG 5 此地图不允许使用还魂石
+}
+
+[@使用还魂石]
+{
+#ACT
+ChangeEatItemDura + 1
+
+#IF
+CHECKVAR HUMAN 还魂记时 > 0
+#ACT
+ChangeEatItemDura - 1
+GMEXECUTE SignMove
+SHOWHUMEFFECT 30
+#ELSEACT
+ChangeEatItemDura + 1
+SENDMSG 5 已超过还魂时间，无法使用
+}
+
+[@还魂上线]
+{
+;检测离线多少分钟，再减还魂剩余时间
+}

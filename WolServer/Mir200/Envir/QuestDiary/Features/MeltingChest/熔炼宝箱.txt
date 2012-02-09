@@ -1,0 +1,348 @@
+;装备的价格\5000=成功率
+;装备的价格\5=破碎后获得的经验
+;装备的价格=破碎后获得的金币
+[@@commoncodense]
+{
+#IF
+CHECKVARLIST $ITEMINFO[$PARAM(1)].STDMODE ..\QuestDiary\Features\MeltingChest\允许熔炼的类型.txt
+CHECKVARLIST $ITEMINFO[$PARAM(2)].STDMODE ..\QuestDiary\Features\MeltingChest\允许熔炼的类型.txt
+CHECKVARLIST $ITEMINFO[$PARAM(3)].STDMODE ..\QuestDiary\Features\MeltingChest\允许熔炼的类型.txt
+CHECKVARLIST $ITEMINFO[$PARAM(4)].STDMODE ..\QuestDiary\Features\MeltingChest\允许熔炼的类型.txt
+CHECKVARLIST $ITEMINFO[$PARAM(5)].STDMODE ..\QuestDiary\Features\MeltingChest\允许熔炼的类型.txt
+CHECKVARLIST $ITEMINFO[$PARAM(6)].STDMODE ..\QuestDiary\Features\MeltingChest\允许熔炼的类型.txt
+#ACT
+SMELTBOXRESULT 1 5 1
+#ELSEACT
+SMELTBOXRESULT 0 5 1
+SENDMSG 5 只能放入衣服、首饰、矿石进行熔炼。
+
+[@@commoncodenseok]
+#ACT
+mov P0
+inc P0 $ITEMINFO[$PARAM(1)].PRICE
+inc P0 $ITEMINFO[$PARAM(2)].PRICE
+inc P0 $ITEMINFO[$PARAM(3)].PRICE
+inc P0 $ITEMINFO[$PARAM(4)].PRICE
+inc P0 $ITEMINFO[$PARAM(5)].PRICE
+inc P0 $ITEMINFO[$PARAM(6)].PRICE
+DIV P0 5000
+movr P1 100
+
+#IF
+POS $ITEMINFO[$PARAM(7)].NAME 幸运符
+#ACT
+UPGRADEUSERITEM $PARAM(7) 20 - 1
+inc P0 10
+
+#IF
+large P0 $STR(P1)
+#ACT
+goto @熔炼成功
+break
+
+#IF
+random 1
+#ACT
+mov P0 0
+
+#IF
+equal $ITEMINFO[$PARAM(1)].STDMODE 43
+#ACT
+inc P0 $ITEMINFO[$PARAM(1)].DURA
+
+#IF
+!equal $ITEMINFO[$PARAM(1)].STDMODE 43
+#ACT
+inc P0 $ITEMINFO[$PARAM(1)].PRICE
+
+#IF
+random 2
+#ACT
+give 金币 $STR(P0)
+SENDMSG 5 熔炼破碎的<$ITEMINFO[$PARAM(1)].NAME>让您获得<$STR(P0)>金钱。
+takeM $PARAM(1) 1
+
+#IF
+!equal $ITEMINFO[$PARAM(1)].NAME
+#ACT
+DIV P0 5
+CHANGEEXP + $STR(P0)
+SENDMSG 5 熔炼破碎的<$ITEMINFO[$PARAM(1)].NAME>让您获得<$STR(P0)>经验。
+takeM $PARAM(1) 1
+
+#IF
+random 1
+#ACT
+mov P0 0
+
+#IF
+equal $ITEMINFO[$PARAM(2)].STDMODE 43
+#ACT
+inc P0 $ITEMINFO[$PARAM(2)].DURA
+
+#IF
+!equal $ITEMINFO[$PARAM(2)].STDMODE 43
+#ACT
+inc P0 $ITEMINFO[$PARAM(2)].PRICE
+
+#IF
+random 2
+#ACT
+give 金币 $STR(P0)
+SENDMSG 5 熔炼破碎的<$ITEMINFO[$PARAM(2)].NAME>让您获得<$STR(P0)>金钱。
+takeM $PARAM(2) 1
+
+#IF
+!equal $ITEMINFO[$PARAM(2)].NAME
+#ACT
+DIV P0 5
+CHANGEEXP + $STR(P0)
+SENDMSG 5 熔炼破碎的<$ITEMINFO[$PARAM(2)].NAME>让您获得<$STR(P0)>经验。
+takeM $PARAM(2) 1
+
+#IF
+random 1
+#ACT
+mov P0 0
+
+#IF
+equal $ITEMINFO[$PARAM(3)].STDMODE 43
+#ACT
+inc P0 $ITEMINFO[$PARAM(3)].DURA
+
+#IF
+!equal $ITEMINFO[$PARAM(3)].STDMODE 43
+#ACT
+inc P0 $ITEMINFO[$PARAM(3)].PRICE
+
+#IF
+random 2
+#ACT
+give 金币 $STR(P0)
+SENDMSG 5 熔炼破碎的<$ITEMINFO[$PARAM(3)].NAME>让您获得<$STR(P0)>金钱。
+takeM $PARAM(3) 1
+
+#IF
+!equal $ITEMINFO[$PARAM(3)].NAME
+#ACT
+DIV P0 5
+CHANGEEXP + $STR(P0)
+SENDMSG 5 熔炼破碎的<$ITEMINFO[$PARAM(3)].NAME>让您获得<$STR(P0)>经验。
+takeM $PARAM(3) 1
+
+#IF
+random 1
+#ACT
+mov P0 0
+
+#IF
+equal $ITEMINFO[$PARAM(4)].STDMODE 43
+#ACT
+inc P0 $ITEMINFO[$PARAM(4)].DURA
+
+#IF
+!equal $ITEMINFO[$PARAM(4)].STDMODE 43
+#ACT
+inc P0 $ITEMINFO[$PARAM(4)].PRICE
+
+#IF
+random 2
+#ACT
+give 金币 $STR(P0)
+SENDMSG 5 熔炼破碎的<$ITEMINFO[$PARAM(4)].NAME>让您获得<$STR(P0)>金钱。
+takeM $PARAM(4) 1
+
+#IF
+!equal $ITEMINFO[$PARAM(4)].NAME
+#ACT
+DIV P0 5
+CHANGEEXP + $STR(P0)
+SENDMSG 5 熔炼破碎的<$ITEMINFO[$PARAM(4)].NAME>让您获得<$STR(P0)>经验。
+takeM $PARAM(4) 1
+
+#IF
+random 1
+#ACT
+mov P0 0
+
+#IF
+equal $ITEMINFO[$PARAM(5)].STDMODE 43
+#ACT
+inc P0 $ITEMINFO[$PARAM(5)].DURA
+
+#IF
+!equal $ITEMINFO[$PARAM(5)].STDMODE 43
+#ACT
+inc P0 $ITEMINFO[$PARAM(5)].PRICE
+
+#IF
+random 2
+#ACT
+give 金币 $STR(P0)
+SENDMSG 5 熔炼破碎的<$ITEMINFO[$PARAM(5)].NAME>让您获得<$STR(P0)>金钱。
+takeM $PARAM(5) 1
+
+#IF
+!equal $ITEMINFO[$PARAM(5)].NAME
+#ACT
+DIV P0 5
+CHANGEEXP + $STR(P0)
+SENDMSG 5 熔炼破碎的<$ITEMINFO[$PARAM(5)].NAME>让您获得<$STR(P0)>经验。
+takeM $PARAM(5) 1
+
+#IF
+random 1
+#ACT
+mov P0 0
+
+#IF
+equal $ITEMINFO[$PARAM(6)].STDMODE 43
+#ACT
+inc P0 $ITEMINFO[$PARAM(6)].DURA
+
+#IF
+!equal $ITEMINFO[$PARAM(6)].STDMODE 43
+#ACT
+inc P0 $ITEMINFO[$PARAM(6)].PRICE
+
+#IF
+random 2
+#ACT
+give 金币 $STR(P0)
+SENDMSG 5 熔炼破碎的<$ITEMINFO[$PARAM(6)].NAME>让您获得<$STR(P0)>金钱。
+takeM $PARAM(6) 1
+
+#IF
+random 1
+#ACT
+DIV P0 5
+CHANGEEXP + $STR(P0)
+SENDMSG 5 熔炼破碎的<$ITEMINFO[$PARAM(6)].NAME>让您获得<$STR(P0)>经验。
+takeM $PARAM(6) 1
+
+#IF
+random 1
+#ACT
+SENDMSG 5 很遗憾，装备熔炼失败。
+
+[@熔炼成功]
+#IF
+random 1
+#ACT
+#ACT
+takeM $PARAM(1) 1
+takeM $PARAM(2) 1
+takeM $PARAM(3) 1
+takeM $PARAM(4) 1
+takeM $PARAM(5) 1
+takeM $PARAM(6) 1
+takeM $PARAM(8) 1
+goto @熔出装备
+give $STR(S0) 1
+SENDMSG 5 恭喜你，熔炼出了<$PARAM(11)>。
+SENDMSG 10 恭喜玩家%s成功熔炼出<$PARAM(11)>！
+SMELTBOXRESULT 1 5 0
+
+#IF
+POS $ITEMINFO[$PARAM(7)].NAME 幸运符
+#ACT
+SENDMSG 10 恭喜玩家%s在幸运符的护佑下成功熔炼出<$PARAM(11)>！
+
+#IF
+equal $ITEMINFO[$PARAM(2)].WEIGHT 1
+random 10
+#ACT
+goto @提升属性
+
+#IF
+equal $ITEMINFO[$PARAM(2)].WEIGHT 2
+random 7
+#ACT
+goto @提升属性
+
+#IF
+equal $ITEMINFO[$PARAM(2)].WEIGHT 3
+random 4
+#ACT
+goto @提升属性
+
+#IF
+equal $ITEMINFO[$PARAM(2)].WEIGHT 4
+random 1
+#ACT
+goto @提升属性
+
+[@提升属性]
+#IF
+random 5
+#ACT
+UPGRADEUSERITEM $PARAM(10) 1 + 1
+break
+
+#IF
+random 4
+#ACT
+UPGRADEUSERITEM $PARAM(10) 3 + 1
+break
+
+#IF
+random 3
+#ACT
+UPGRADEUSERITEM $PARAM(10) 5 + 1
+break
+
+#IF
+random 2
+#ACT
+UPGRADEUSERITEM $PARAM(10) 7 + 1
+break
+
+#IF
+random 1
+#ACT
+UPGRADEUSERITEM $PARAM(10) 9 + 1
+break
+
+[@熔出装备]
+#IF
+random 300
+#ACT
+ReadRandomStr ..\QueStDiary\Features\MeltingChest\奖励\300.txt S0
+break
+
+#IF
+random 250
+#ACT
+ReadRandomStr ..\QueStDiary\Features\MeltingChest\奖励\250.txt S0
+break
+
+#IF
+random 50
+#ACT
+ReadRandomStr ..\QueStDiary\Features\MeltingChest\奖励\50.txt S0
+break
+
+#IF
+random 12
+#ACT
+ReadRandomStr ..\QueStDiary\Features\MeltingChest\奖励\12.txt S0
+break
+
+#IF
+random 10
+#ACT
+ReadRandomStr ..\QueStDiary\Features\MeltingChest\奖励\10.txt S0
+break
+
+#IF
+random 3
+#ACT
+ReadRandomStr ..\QueStDiary\Features\MeltingChest\奖励\3.txt S0
+break
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QueStDiary\Features\MeltingChest\奖励\1.txt S0
+break
+}

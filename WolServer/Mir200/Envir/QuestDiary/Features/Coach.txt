@@ -1,0 +1,340 @@
+[@拜师]
+{
+#ACT
+QUERYVAL 0 0 15 @拜师检测 你想拜谁为师？请告诉我他（她）的名字：
+
+[@拜师检测]
+#IF
+checkismaster
+#ACT
+SENDMSG 5 你已经是别人的师傅
+break
+
+#IF
+checkmaster
+#ACT
+SENDMSG 5 你已有师傅
+break
+
+#IF
+!CheckOnline $STR(S0)
+#ACT
+SENDMSG 5 "Other is not online"
+break
+
+#IF
+$STR(S0).CHECKPRENTICECOUNT > 2
+#ACT
+SENDMSG 5 "Opposite party has accepted apprentice"
+break
+
+#IF
+CheckLevelEx > 28
+#ACT
+SENDMSG 5 "Your level is too high, can not become a Teacher"
+break
+
+#IF
+$STR(S0).CheckLevelEx < 35
+#ACT
+SENDMSG 5 "Opposite party level is insufficient"
+break
+
+#IF
+random 1
+#ACT
+mov A13 $M
+
+#IF
+$STR(S0).CHECKMAPNAME $STR(A13)
+#ACT
+mov A13 $USERNAME
+$STR(S0).MOV S1 $STR(A13)
+$STR(S0).GOTO @拜师请求
+#ELSEACT
+SENDMSG 5 "Opposite party is not on this map"
+break
+
+[@拜师请求]
+<$STR(S1)>要拜你为师\
+\
+<Yes/@愿意>\
+<No/@不愿意>
+
+[@愿意]
+#ACT
+Gmexecute MasterName $STR(S1) $USERNAME
+Gmexecute MasterName $USERNAME $STR(S1) 1
+close
+
+[@不愿意]
+#ACT
+$STR(S1).SENDMSG 5 "Opposite party rejects"
+close
+}
+
+[@查询声望]
+{
+Your present prestige is <$CREDITPOINT> Points\
+\
+<Exit/@exit>
+}
+
+[@修理勋章]
+{
+Repair the Medal of Honor?\
+\
+<Back/@main>
+}
+
+[@兑换勋章]
+{
+How many points do you want to pay in exchange for Medal?\
+Pay more for better medal chances.\
+\
+<10 Points/@nomedal&10>\
+<20 Points/@nomedal&20>\
+<30 Points/@nomedal&30>\
+<40 Points/@nomedal&40>\
+<70 Points/@nomedal&70>\
+<Back/@main>
+
+[@nomedal] 
+#IF
+CHECKCREDITPOINT > $SCRIPTPARAM(1)
+checkbagsize 1
+#ACT
+CREDITPOINT - $SCRIPTPARAM(1)
+MOV S0 $SCRIPTPARAM(1)
+goto @换取勋章
+break
+
+#IF
+checkbagsize 1
+#SAY
+Sorry you do not have enough\
+Points or not eligible for this Medal.\
+\
+<Exit/@exit>
+#ELSESAY
+Not enough room in bag.\
+<Exit/@exit>
+
+[@换取勋章]
+#IF
+equal S0 70
+#ACT
+MOV S1 荣誉勋章5
+movr P0 6
+inc P0 1
+inc S1 $STR(P0)
+inc S1 号
+give $STR(S1) 1
+break
+
+#IF
+equal S0 40
+#ACT
+MOV S1 荣誉勋章4
+movr P0 6
+inc P0 1
+inc S1 $STR(P0)
+inc S1 号
+give $STR(S1) 1
+break
+
+#IF
+equal S0 30
+#ACT
+MOV S1 荣誉勋章3
+movr P0 6
+inc P0 1
+inc S1 $STR(P0)
+inc S1 号
+give $STR(S1) 1
+break
+
+#IF
+equal S0 20
+#ACT
+MOV S1 荣誉勋章2
+movr P0 6
+inc P0 1
+inc S1 $STR(P0)
+inc S1 号
+give $STR(S1) 1
+break
+
+#IF
+equal S0 10
+#ACT
+MOV S1 荣誉勋章1
+movr P0 6
+inc P0 1
+inc S1 $STR(P0)
+inc S1 号
+give $STR(S1) 1
+}
+
+[@声望之迷]
+{
+我告诉你一个有关声望的秘密吧，只要你的声望超过\
+200点，我就给你五次向本服务器广播的机会。请妥\
+善使用哦，如果你使用了不文明的文字，那么你的消\
+息就会被屏蔽。你确信现在就要申请吗？\
+<Apply now/@apply>\
+<Use Prestige Reel/@usescroll>\
+<Back/@main>
+
+[@apply]
+#IF
+check [23] 1
+#ACT
+break
+#SAY
+Sorry, you already received the reel.\
+<Exit/@exit>
+
+#IF
+CHECKCREDITPOINT > 199
+checkbagsize 5
+#ACT
+set [23] 1
+give 声望广播卷轴 5
+break
+#SAY
+这里有五个声望广播卷轴，每一个卷轴都有一次向本服务器\
+公告一次的机会。每次广播的字数不得超过30个，如果你使\
+用了不规范的文字，那么你的消息就会系统屏蔽。您现在就\
+想使用吗？\
+<Use Prestige Reel/@usescroll>\
+<Exit/@exit>
+
+#IF
+checkbagsize 5
+#SAY
+Not enough room in bag.
+#ELSESAY
+Your Prestige Points is insufficient.
+
+[@usescroll]
+#IF
+checkitem 声望广播卷轴 1
+#ACT
+QUERYVAL 0 0 60 @声望广播 请输入您想要说的肺腑之言：
+#ELSESAY
+Sorry, you do not have a broadcast reel.\
+<Exit/@exit>
+
+[@声望广播]
+#ACT
+take 声望广播卷轴 1
+SENDMSG 14 %sPlayers:<$STR(S0)>
+close
+}
+
+[@取消拜师]
+{
+#IF
+equal $STR(S0)
+equal $USERNAME $STR(S1)
+#ACT
+$STR(S0).close
+#SAY
+Apprentice request has been canceled.\
+\
+<Exit/@exit>
+#ELSESAY
+You did not request Teacher.\
+\
+<Exit/@exit>
+}
+
+[@解除关系]
+{
+徒弟脱离师父要交五万金币，\
+师傅开除徒弟需要十万金币。\
+你是否需要解除师徒关系？\
+<Yes/@leftteacher>\
+<Back/@baishishoutu>
+
+[@leftteacher]
+#IF
+checkmaster
+checkgold 50000
+#ACT
+take 金币 50000
+SENDMSG 5 "You have <$MASTERNAME> Lifted mentoring relationship"
+unmaster requestunmaster force
+break
+#SAY
+Your mentoring relationship has been lifted.\
+\
+<Exit/@exit>
+
+#IF
+checkmaster
+!checkgold 50000
+#ACT
+break
+#SAY
+Do not have enough Gold!
+
+#IF
+large $PRENTICECOUNT 0
+#ACT
+QUERYVAL 0 0 100 @师傅开徒弟 输入徒弟名字
+#ELSESAY
+现在你没有师徒关系。\
+\
+<关闭/@exit>
+
+[@师傅开徒弟]
+#IF
+equal $PRENTICENAME(1) $STR(S0)
+checkgold 100000
+#ACT
+take 金币 100000
+SENDMSG 5 你已与<$PRENTICENAME(1)>解除师徒关系
+unmaster requestunmaster force $PRENTICENAME(1)
+break
+#SAY
+你的师徒关系已经解除了。\
+\
+<离开/@exit>
+
+#IF
+equal $PRENTICENAME(2) $STR(S0)
+checkgold 100000
+#ACT
+take 金币 100000
+SENDMSG 5 你已与<$PRENTICENAME(3)>解除师徒关系
+unmaster requestunmaster force $PRENTICENAME(2)
+break
+#SAY
+你的师徒关系已经解除了。\
+\
+<离开/@exit>
+
+#IF
+equal $PRENTICENAME(3) $STR(S0)
+checkgold 100000
+#ACT
+take 金币 100000
+SENDMSG 5 你已与<$PRENTICENAME(3)>解除师徒关系
+unmaster requestunmaster force $PRENTICENAME(3)
+break
+#SAY
+你的师徒关系已经解除了。\
+\
+<离开/@exit>
+
+#IF
+checkgold 100000
+#SAY
+解除徒弟失败。\
+\
+<关闭/@exit>
+#ELSESAY
+没有足够的金币
+}

@@ -1,0 +1,330 @@
+[@ExecutiveHero] PNEUMA
+{
+#IF
+!ISPNEUMA
+#ACT
+BREAK
+
+#IF
+CHECKJOB WARR
+CheckLevelEx = 7
+#ACT
+ADDSKILL Fencing
+SendMsg 6 "Have learned the primary sword"
+
+#IF
+CHECKJOB WARR
+CheckLevelEx = 19
+#ACT
+ADDSKILL Slaying
+ADDSKILL Infuriating
+SendMsg 6 已学会攻杀剑法
+SendMsg 6 已学会护身真气
+
+#IF
+CHECKJOB WARR
+CheckLevelEx = 25
+#ACT
+ADDSKILL Thrusting
+SendMsg 6 已学会刺杀剑术
+
+#IF
+CHECKJOB WARR
+CheckLevelEx = 28
+#ACT
+ADDSKILL HalfMoon
+SendMsg 6 已学会半月弯刀
+
+#IF
+CHECKJOB WARR
+CheckLevelEx = 30
+#ACT
+ADDSKILL ShoulderDash
+SendMsg 6 已学会野蛮冲撞
+
+#IF
+CHECKJOB WARR
+CheckLevelEx = 35
+#ACT
+ADDSKILL FlamingSword
+ADDSKILL WarriorSoul
+SendMsg 6 已学会烈火剑法
+SendMsg 6 已学会战魂真悟
+
+#IF
+CHECKJOB WARR
+CheckLevelEx = 36
+#ACT
+ADDSKILL SpoilSword
+SendMsg 6 已学会破击剑法
+
+#IF
+CHECKJOB WARR
+CheckLevelEx = 37
+#ACT
+ADDSKILL ChopBio
+SendMsg 6 已学会突斩
+
+#IF
+CHECKJOB WARR
+CheckLevelEx = 39
+#ACT
+ADDSKILL SpoilShield
+SendMsg 6 已学会破盾斩
+
+#IF
+CHECKJOB WARR
+CheckLevelEx = 41
+#ACT
+ADDSKILL GoldProtecti
+SendMsg 6 已学会金刚护体
+
+#IF
+CHECKJOB WIZARD
+CheckLevelEx = 7
+#ACT
+ADDSKILL Fireball
+SendMsg 6 已学会小火球
+
+#IF
+CHECKJOB WIZARD
+CheckLevelEx = 12
+#ACT
+ADDSKILL Repulsion
+SendMsg 6 已学会抗拒火环
+
+#IF
+CHECKJOB WIZARD
+CheckLevelEx = 17
+#ACT
+ADDSKILL ThunderBolt
+SendMsg 6 已学会雷电术
+
+#IF
+CHECKJOB WIZARD
+CheckLevelEx = 31
+#ACT
+ADDSKILL MagicShield
+SendMsg 6 已学会魔法盾
+
+#IF
+CHECKJOB WIZARD
+CheckLevelEx = 35
+#ACT
+ADDSKILL MagicSoul
+SendMsg 6 已学会法之魄
+
+#IF
+CHECKJOB TAOS
+CheckLevelEx = 7
+#ACT
+ADDSKILL Healing
+SendMsg 6 已学会治疗术
+
+#IF
+CHECKJOB TAOS
+CheckLevelEx = 9
+#ACT
+ADDSKILL SpiritSword
+SendMsg 6 已学会精神战法
+
+#IF
+CHECKJOB TAOS
+CheckLevelEx = 14
+#ACT
+ADDSKILL Poison
+SendMsg 6 已学会施毒术
+
+#IF
+CHECKJOB TAOS
+CheckLevelEx = 18
+#ACT
+ADDSKILL SoulFireBall
+SendMsg 6 已学会灵魂道符
+
+#IF
+CHECKJOB TAOS
+CheckLevelEx = 19
+#ACT
+ADDSKILL SummonSkele
+SendMsg 6 已学会骷髅召唤术
+
+#IF
+CHECKJOB TAOS
+CheckLevelEx = 22
+#ACT
+ADDSKILL SpiritShield
+SendMsg 6 已学会幽灵盾
+
+#IF
+CHECKJOB TAOS
+CheckLevelEx = 25
+#ACT
+ADDSKILL HolyArmor
+SendMsg 6 已学会神圣战甲术
+
+#IF
+CHECKJOB TAOS
+CheckLevelEx = 26
+#ACT
+ADDSKILL LionsRoar
+SendMsg 6 已学会狮子吼
+
+#IF
+gender man
+CHECKJOB WARR
+#ACT
+mov P0
+mov S3 男战士
+goto @元神排列
+BREAK
+
+#IF
+!gender man
+CHECKJOB WARR
+#ACT
+mov P0
+mov S3 女战士
+goto @元神排列
+BREAK
+
+#IF
+gender man
+CHECKJOB WIZARD
+#ACT
+mov P0
+mov S3 男法师
+goto @元神排列
+BREAK
+
+#IF
+!gender man
+CHECKJOB WIZARD
+#ACT
+mov P0
+mov S3 女法师
+goto @元神排列
+BREAK
+
+#IF
+gender man
+CHECKJOB TAOS
+#ACT
+mov P0
+mov S3 男道士
+goto @元神排列
+BREAK
+
+#IF
+!gender man
+CHECKJOB TAOS
+#ACT
+mov P0
+mov S3 女道士
+goto @元神排列
+BREAK
+
+[@元神排列] PNEUMA
+#IF
+equal P0 0
+#ACT
+mov S0 $USERNAME
+inc S0 |
+
+#IF
+equal P0 0
+PosInList $STR(S0) ..\QuestDiary\GameData\VariousRanks\元神排行\<$STR(S3)>.txt S0
+#ACT
+DELVARLIST $STR(S0) ..\QuestDiary\GameData\VariousRanks\元神排行\<$STR(S3)>.txt
+
+#IF
+large P0 10
+#ACT
+break
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanks\元神排行\<$STR(S3)>.txt S0 $STR(P0)
+mov P1
+
+#IF
+!equal S0
+#ACT
+mov S1
+GETVALIDSTR $STR(S0) | S1 S2
+GETVALIDSTR $STR(S2) | P1 S4
+
+#IF
+CheckLevelEx > $STR(P1)
+#ACT
+mov P1 $STR(P0)
+inc P1 1
+FORMATSTR S0 %s|%s|%25s%s <$USERNAME>|<$LEVEL>|<$PNEUMANAME>的元神：|<$USERNAME>
+INSERTVARLIST $STR(P0) $STR(S0) ..\QuestDiary\GameData\VariousRanks\元神排行\<$STR(S3)>.txt
+goto @元神天下第一
+#ELSEACT
+inc P0 1
+goto @元神排列
+break
+
+[@元神天下第一] PNEUMA
+#IF
+!equal P0 0
+#ACT
+break
+
+#IF
+gender man
+CHECKJOB WARR
+#ACT
+FORMATSTR S0 第一元神男战士\%s $USERNAME
+SETNPCNAME 7 $STR(S0)
+FORMATSTR A33 天下第一元神男战士：#32{Color=green#32%s}\他是#32{Color=green#32%s}的元神，目前等级为：#32{Color=green#32%s}。\纷扰乱世群雄追鹿。{Color=green#32%s}的元神#32{Color=green#32%s}\资质甚高，领悟非凡，奋勇抵抗修罗魔族的侵略，在战火\四起的传世大陆中成为了天下第一，至今没人可以超越。\今天的天下第一元神是{Color=green#32%s}，明天将会是谁呢？\申请天下第一名号，请速到中州魔法阵祭祀处申请。\<离开/@exit> <$USERNAME>|<$PNEUMANAME>|<$LEVEL>|<$PNEUMANAME>|<$USERNAME>|<$USERNAME>
+break
+
+#IF
+!gender man
+CHECKJOB WARR
+#ACT
+FORMATSTR S0 第一元神女战士\%s $USERNAME
+SETNPCNAME 8 $STR(S0)
+FORMATSTR A34 天下第一元神女战士：#32{Color=green#32%s}\她是#32{Color=green#32%s}的元神，目前等级为：#32{Color=green#32%s}。\纷扰乱世群雄追鹿。{Color=green#32%s}的元神#32{Color=green#32%s}\资质甚高，领悟非凡，勇闯铁血魔宫，奋战修罗魔族，在\战火四起的传世大陆中成为了天下第一，至今没人可以超\越\今天的天下第一元神是{Color=green#32%s}，明天将会是谁呢？\申请天下第一名号，请速到中州魔法阵祭祀处申请。\<离开/@exit> <$USERNAME>|<$PNEUMANAME>|<$LEVEL>|<$PNEUMANAME>|<$USERNAME>|<$USERNAME>
+break
+
+#IF
+gender man
+CHECKJOB WIZARD
+#ACT
+FORMATSTR S0 第一元神男法师\%s $USERNAME
+SETNPCNAME 9 $STR(S0)
+FORMATSTR A35 天下第一元神男法师：#32{Color=green#32%s}\他是#32{Color=green#32%s}的元神，目前等级为：#32{Color=green#32%s}。\纷扰乱世群雄追鹿。{Color=green#32%s}的元神#32{Color=green#32%s}\释放强大的组合神技，抗击修罗天和铁血魔王，在战火四\起的传世大陆中成为了天下第一，至今没人可以超越。\今天的天下第一元神是{Color=green#32%s}，明天将会是谁呢？\申请天下第一名号，请速到中州魔法阵祭祀处申请。\<离开/@exit> <$USERNAME>|<$PNEUMANAME>|<$LEVEL>|<$PNEUMANAME>|<$USERNAME>|<$USERNAME>
+break
+
+#IF
+!gender man
+CHECKJOB WIZARD
+#ACT
+FORMATSTR S0 第一元神女法师\%s $USERNAME
+SETNPCNAME 10 $STR(S0)
+FORMATSTR A36 天下第一元神女法师：#32{Color=green#32%s}\她是#32{Color=green#32%s}的元神，目前等级为：#32{Color=green#32%s}。\纷扰乱世群雄追鹿。{Color=green#32%s}的元神#32{Color=green#32%s}\资质甚高，领悟非凡，熟练地驾御着电与火的力量，在战\火四起的传世大陆中成为了天下第一，至今没人可以超越\今天的天下第一元神是{Color=green#32%s}，明天将会是谁呢？\申请天下第一名号，请速到中州魔法阵祭祀处申请。\<离开/@exit> <$USERNAME>|<$PNEUMANAME>|<$LEVEL>|<$PNEUMANAME>|<$USERNAME>|<$USERNAME>
+break
+
+#IF
+gender man
+CHECKJOB TAOS
+#ACT
+FORMATSTR S0 第一元神男道士\%s $USERNAME
+SETNPCNAME 11 $STR(S0)
+FORMATSTR A37 天下第一元神男道士：#32{Color=green#32%s}\他是#32{Color=green#32%s}的元神，目前等级为：#32{Color=green#32%s}。\纷扰乱世群雄追鹿。{Color=green#32%s}的元神{Color=green#32%s}\领悟非凡，秉承了道尊的元神神力，施展修为精深的道术\力斩妖魔，在战火四起的传世大陆中成为了天下第一至今\没人可以超越。\今天的天下第一元神是{Color=green#32%s}，明天将会是谁呢？\申请天下第一名号，请速到中州魔法阵祭祀处申请。\<离开/@exit> <$USERNAME>|<$PNEUMANAME>|<$LEVEL>|<$PNEUMANAME>|<$USERNAME>|<$USERNAME>
+break
+
+#IF
+!gender man
+CHECKJOB TAOS
+#ACT
+FORMATSTR S0 第一元神女道士\%s $USERNAME
+SETNPCNAME 12 $STR(S0)
+FORMATSTR A38 天下第一元神女道士：#32{Color=green#32%s}\她是#32{Color=green#32%s}的元神，目前等级为：#32{Color=green#32%s}。\纷扰乱世群雄追鹿。{Color=green#32%s}的元神#32{Color=green#32%s}\具有极高的悟性和韧力，释放威力十足的组合神技力斩妖\除魔，在战火四起的传世大陆中成为了天下第一，至今没\人可以超越。\今天的天下第一元神是{Color=green#32%s}，明天将会是谁呢？\申请天下第一名号，请速到中州魔法阵祭祀处申请。\<离开/@exit> <$USERNAME>|<$PNEUMANAME>|<$LEVEL>|<$PNEUMANAME>|<$USERNAME>|<$USERNAME>
+break
+}

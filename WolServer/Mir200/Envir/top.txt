@@ -1,0 +1,3 @@
+;Top Players List
+[top]
+1=gamelord/LOMCN/70/09/02/2012/0/ÄÐÕ½Ê¿

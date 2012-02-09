@@ -1,0 +1,5 @@
+[GLOBAL]
+昨日信息=<基本信息/@游戏信息>│<COLOR=green 新进玩家:>??3  <COLOR=green 最高在线人数:>  <COLOR=green 发生在:>\<今日信息/@今日信息>│<COLOR=green 元宝消费:>  <COLOR=green 消费最多玩家:>  <COLOR=green 消费数:>\<COLOR=red 昨日信息>│<color=orange 各种活动的元宝消费数>\<沙城信息/@沙城信息>│<COLOR=green 闯天关:>   <COLOR=green 焰火屠魔:>\        │<COLOR=green 神威狱:>   <COLOR=green 神饰除魔:>\        │<COLOR=green 迷仙阵:>0       <COLOR=green 天魔宝藏:>0\        │<COLOR=green TreasureBox:>0       <COLOR=green 营救公主:>
+新进玩家=13
+最高在线人数=1
+发生在=<$TIME.HOUR>:<$TIME.MIN>

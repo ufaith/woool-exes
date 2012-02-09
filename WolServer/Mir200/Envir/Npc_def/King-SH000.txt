@@ -1,0 +1,166 @@
+[@main]
+This is the palace of CentralPlains. I'm the King\
+who is in charge of the city. How may i help you?\
+\
+<Guild Information/@aboutGuild>\
+<Request SabukWar/@requestcastlewar>\
+
+
+[@aboutGuild]
+Intrested creating a guild?\
+<Create Guild/@buildguildnow>\
+<Ask how to establish Guild/@buildguildexp>\
+<Upgrade Guild/@updateguild>\
+<Request Guild war/@guildwar>\
+<Ask about Guild war/@guildwarexp>\
+<Back/@main>\
+
+[@Buildguild]
+#IF
+HAVEGUILD
+#ACT
+MessageBox "You are in a guild already."
+break
+#IF
+CHECKLEVELEX > 19
+#ACT
+QUERYVAL 1 0 40 @Guildname "Please enter the name of your Guild.":
+break
+#ELSEACT
+MessageBox "You must be level 25 to create a guild."
+break
+
+[@Guildname]
+#ACT
+Getstring s5
+DEC S5 15 20
+#IF
+CHECKLEVELEX > 0
+#ACT
+#ELSEACT
+break
+#IF
+checkitem BattleHorn 1
+#ELSEACT
+MessageBox "Your do not have a BattleHorn"
+break
+#IF
+CHECKGOLD 999999
+#ELSEACT
+MessageBox "You do not have 100000 Gold"
+break
+#IF
+EQUAL S5 暂无行会
+#ACT
+SENDMSG 5 (*)"Guild name is taken, please try another"
+break
+#IF
+CHECKVARLIST $STR(S5) ..\GuildBase\Guildlist.txt
+#ACT
+SENDMSG 5 (*)"Guild name is taken, please try another"
+break
+#IF
+CHECKGOLD 999999
+checkitem BattleHorn 1
+#ACT
+TAKE Gold 1000000
+take BattleHorn 1
+GMEXECUTE Addguild $STR(S5) $USERNAME
+SHOWHUMEFFECT 24
+SENDMSG 5 "Guild has been successfully created!"
+SENDMSG 5 "You can recruit: <$GUILD.MEMBERMAX> People into your guild."
+break
+close
+
+
+[@buildguildexp]
+In order to build a guild you should prove that you qualify.\
+To verify your qualification you should provide 1 million Gold\
+and horn of CorpseTyrant who lives deeo inside of GeneralCave\
+located East of CentralPlains.\
+\
+<Back/@aboutGuild>
+
+[@updateguild]
+#IF
+HAVEGUILD
+#SAY
+In devlopment.\
+\
+<About Guilds/@aboutGuild>
+#ELSESAY
+You do not belong to a guild!\
+\
+<Exit/@exit>
+
+[@guildwar]
+Let me know name of opponent Guild you wish to war.\
+Allowing legal Guild war cost you 30000 Gold.\
+\
+<Click then type name of guild to war/@guildwar_d>\
+<Back/@aboutGuild>\
+
+[@guildwarexp]
+<GuildWar/@guildwar2> means war done by legal conquest.\
+At present, because there are many guilds and many stiggles,\
+goverment will approve <legal/@warrule> Guild war.\
+If it is <requested/@propose> war will be allowed for 3 hours.\
+You should pay 30000 Gold as request fee.\
+\
+<Continue/@guildwar2>
+
+[@guildwar2]
+When you request guild war, name of same guild member will appear\
+in blue colour. on the other side, name of enemy guild member will\
+appear orange.
+If you connect during a Guild war, the message:\
+"War with certain guild" will appear in chat window and\
+if you kill a member of the enemy guild fighting with you, you\
+will not be regarded as a murderer.
+\
+<Back/@guildwarexp>\
+
+[@warrule]
+Guild war cannot take place in any village.\
+it can be executed out of certain rangers from village\
+or inside contest area (inside some buildings).\
+however, if you PK your name will be red in colour\
+even during war.\
+<Back/@guildwarexp>\
+
+[@propose]
+Proposal of guild war can only be requested\
+by Guildchief.
+\
+<Back/@guildwarexp>\
+
+[@requestcastlewar]
+To request wall conquest war you should have piece of ZumaTaurus.\
+Do you have it?\
+If you requested war ill be started in 3 days.\
+\
+<Give ZumaRelic/@ApplyPower>\
+<Back/@main>\
+
+[@ApplyPower]
+#IF
+HAVEGUILD
+checkitem DevilStatue 1
+checkgold 2000000
+large $GUILD.GUILDEXP 10000000
+#ACT
+take DevilStatue 1
+take Gold 2000000
+GUILDEXP $GUILDNAME - 10000000
+ADDCASTLEWARGUILD SELF 沙城 4
+#SAY
+;Unfinished
+;Success prompted the city to apply power
+#ELSEACT
+SENDMSG 5 "Sorry you do not meet the Conditions."
+close
+
+[~@request_ok]
+war Battle proposal was accepted.\
+Remember your war time.\
+Time is the War battle<$CASTLEWARDATE> 20:00.\

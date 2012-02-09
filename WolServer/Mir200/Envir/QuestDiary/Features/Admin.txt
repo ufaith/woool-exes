@@ -1,0 +1,79 @@
+[@后台管理]
+{
+#IF
+CHECKNAMELIST ..\QuestDiary\GameData\ManagementList.txt
+#SAY
+<Admin/@Admin>\
+<Animation/@Animation>\
+<Items/@Items>\
+<Monsters/@Monsters>\
+<Change Weather/@Weather>\
+
+
+[@Weather]
+\
+<weather1/@weather1>   <weather1/@weather2>  <weather1/@weather3>  <weather1/@weather4>\
+<weather1/@weather5>   <weather1/@weather6>  <weather1/@weather7>  <weather1/@weather8>\
+<weather1/@weather9>   <weather1/@weather10>  <weather1/@weather11>  <weather1/@weather12>\
+
+
+[@weather1]
+#ACT
+WEATHER 11
+break
+
+[@weather2]
+#ACT
+WEATHER 10
+break
+
+[@weather3]
+#ACT
+WEATHER 5
+break
+
+[@weather4]
+#ACT
+WEATHER 4
+break
+
+[@weather5]
+#ACT
+WEATHER 3
+break
+
+[@weather6]
+#ACT
+WEATHER 2
+break
+
+[@weather7]
+#ACT
+WEATHER 6
+break
+
+[@weather8]
+#ACT
+WEATHER 7
+break
+
+[@weather9]
+#ACT
+WEATHER 8
+break
+
+[@weather10]
+#ACT
+WEATHER 9
+break
+
+[@weather11]
+#ACT
+WEATHER 1
+break
+
+[@weather12]
+#ACT
+WEATHER 13
+break
+

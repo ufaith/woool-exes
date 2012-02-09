@@ -1,0 +1,29 @@
+[@main]
+要离开这里吗？\
+\
+<返回海岛/@mocheng1>\
+<到上一层/@mocheng0>\
+<再等等/@exit>
+
+[@mocheng1]
+#ACT
+mapmove MH001 66 77
+
+[@mocheng0]
+#IF
+checkjob warrior
+#ACT
+mapmove NL014 230 48
+break
+
+#IF
+checkjob wizard
+#ACT
+mapmove NL015 230 48
+break
+
+#IF
+checkjob taoist
+#ACT
+mapmove NL016 230 48
+break

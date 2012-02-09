@@ -1,0 +1,77 @@
+[@封魔阵]
+{
+#IF
+random 1
+#ACT
+MOV D0 5
+MOV D1 0
+MOV D2 0
+MOV D3 0
+MOV D4 0
+MOV D5 0
+MonClear $M
+CLEARMAPMON $M
+CLEARMAPBODY $M
+CLEARMAPITEM $M
+CALCVAR GLOBAL $M = 0
+take 五行令旗 66
+GIVE 五行令旗 1
+PlayDefence 4 0
+PlayDefence 5 720
+PlayDefence 3 $STR(D0) 1
+DelayCall 17 @Defensive
+DelayCall 720 @防守计时
+StartTimer 0
+break
+
+[@防守计时]
+#IF
+POS $M WXXG
+#ACT
+mapmove MH001 108 80
+break
+
+[@Defensive]
+#IF
+EQUAL $STR(D1) 0
+#ACT
+MOV S10 僵尸77
+MOV S11 尸王77
+DelayCall 3 @MobMonster1 17
+DelayCall 54 @MobMonster2
+break
+
+[@MobMonster1]
+#IF
+!CHECKHUM $M 1
+#ACT
+break
+#IF
+random 1
+#ACT
+INC D2 1
+MISSION $M 35 35
+PARAM1 18
+PARAM2 54
+PARAM3 1
+PARAM4 0
+MOBPLACE $STR(S10)
+break
+
+[@MobMonster2]
+#IF
+!CHECKHUM $M 1
+#ACT
+break
+#IF
+random 1
+#ACT
+INC D2 1
+MISSION $M 35 35
+PARAM1 18
+PARAM2 54
+PARAM3 1
+PARAM4 0
+MOBPLACE $STR(S11)
+break
+}

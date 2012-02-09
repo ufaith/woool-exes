@@ -1,0 +1,1902 @@
+[@mainleft成就系统]
+{
+<color=orange 【><BOSSRefresh/@mainleftBOSS刷新><color=orange 】>　<color=orange 【>AchievementSystem<color=orange 】><color=red New>　\
+\
+　　　<成就奖励/@mainleft成就奖励>　　<color=black ★> 成就值：<$HUMAN(成就值)> <color=black ★>　　<成就排行/@mainleft成就排行>\
+\
+<color=purple [>综合<color=purple ]>  <color=purple [><怪物/@mainleft成就系统-怪物><color=purple ]>  <color=purple [><物品/@mainleft成就系统-物品><color=purple ]>  <color=purple [><等级/@mainleft成就系统-等级><color=purple ]>  <color=purple [><任务/@mainleft成就系统-任务><color=purple ]>  <color=purple [><活动/@mainleft成就系统-活动><color=purple ]>  <color=purple [><全服/@mainleft成就系统-全服><color=purple ]>\
+\ 
+<color=green 条件                                         状况>\
+
+#IF
+CHECKVAR HUMAN CJ001 > 19
+#SAY
+<color=red 从玉净瓶中释放20只心魔                       完成>\
+#ELSESAY
+从玉净瓶中释放20只心魔                       <$HUMAN(CJ001)>/20\
+
+#IF
+CHECKVAR HUMAN CJ002 = 1
+#SAY
+<color=red 从玉净瓶中释放1只固本心魔                    完成>\
+#ELSESAY
+从玉净瓶中释放1只固本心魔                    未完成\
+
+#IF
+CHECKVAR HUMAN CJ003 = 1
+#SAY
+<color=red 从玉净瓶中释放1只培元心魔                    完成>\
+#ELSESAY
+从玉净瓶中释放1只培元心魔                    未完成\
+
+#IF
+CHECKVAR HUMAN CJ004 = 1
+#SAY
+<color=red 从玉净瓶中释放1只明心心魔                    完成>\
+#ELSESAY
+从玉净瓶中释放1只明心心魔                    未完成\
+
+#IF
+CHECKVAR HUMAN CJ005 = 1
+#SAY
+<color=red 从玉净瓶中释放1只大悟心魔                    完成>\
+#ELSESAY
+从玉净瓶中释放1只大悟心魔                    未完成\
+
+#IF
+CHECKVAR HUMAN CJ006 = 1
+#SAY
+<color=red 升级成功一次武器黑暗属性                     完成>\
+#ELSESAY
+升级成功一次武器黑暗属性                     未完成\
+
+#IF
+CHECKVAR HUMAN CJ007 = 1
+#SAY
+<color=red 升级成功一次衣服黑暗属性                     完成>\
+#ELSESAY
+升级成功一次衣服黑暗属性                     未完成\
+
+#IF
+CHECKVAR HUMAN CJ008 > 9
+#SAY
+<color=red 分解10次装备                                 完成>\
+#ELSESAY
+分解10次装备                                 <$HUMAN(CJ008)>/10\
+
+#IF
+CHECKVAR HUMAN CJ008 > 49
+#SAY
+<color=red 分解50次装备                                 完成>\
+#ELSESAY
+分解50次装备                                 <$HUMAN(CJ008)>/50\
+
+#IF
+CHECKVAR HUMAN CJ008 > 69
+#SAY
+<color=red 分解100次装备                                完成>\
+#ELSESAY
+分解100次装备                                <$HUMAN(CJ008)>/100\
+
+#IF
+CHECKVAR HUMAN CJ010 = 3
+#SAY
+<color=red 在单人擂台中连胜3局                          完成>\
+#ELSESAY
+在单人擂台中连胜3局                          <$HUMAN(CJ010)>/3\
+
+#IF
+CHECKVAR HUMAN CJ011 > 0
+#SAY
+<color=red 在单人擂台中胜利1次                          完成>\
+#ELSESAY
+在单人擂台中胜利1次                          未完成\
+
+#IF
+CHECKVAR HUMAN CJ011 > 9
+#SAY
+<color=red 在单人擂台中胜利10次                         完成>\
+#ELSESAY
+在单人擂台中胜利10次                         <$HUMAN(CJ011)>/10\
+
+#IF
+CHECKVAR HUMAN CJ012 > 0
+#SAY
+<color=red 在团体擂台中胜利1次                          完成>\
+#ELSESAY
+在团体擂台中胜利1次                          未完成\
+
+#IF
+CHECKVAR HUMAN CJ012 > 9
+#SAY
+<color=red 在团体擂台中胜利10次                         完成>\
+#ELSESAY
+在团体擂台中胜利10次                         <$HUMAN(CJ012)>/10\
+
+#IF
+CHECKVAR HUMAN CJ013 > 0
+#SAY
+<color=red 在混乱擂台中胜利1次                          完成>\
+#ELSESAY
+在混乱擂台中胜利1次                          未完成\
+
+#IF
+CHECKVAR HUMAN CJ013 > 9
+#SAY
+<color=red 在混乱擂台中胜利10次                         完成>\
+#ELSESAY
+在混乱擂台中胜利10次                         <$HUMAN(CJ013)>/10\
+
+#IF
+CHECKVAR HUMAN CJ014 > 0
+#SAY
+<color=red 在生存擂台中胜利1次                          完成>\
+#ELSESAY
+在生存擂台中胜利1次                          未完成\
+
+#IF
+CHECKVAR HUMAN CJ014 > 9
+#SAY
+<color=red 在生存擂台中胜利10次                         完成>\
+#ELSESAY
+在生存擂台中胜利10次                         <$HUMAN(CJ014)>/10\
+
+#IF
+CHECKVAR HUMAN CJ015 > 0
+#SAY
+<color=red 拥有盛大10点积分                             完成>\
+#ELSESAY
+拥有盛大10点积分                             0/10\
+
+#IF
+CHECKVAR HUMAN CJ015 > 1
+#SAY
+<color=red 拥有盛大50点积分                             完成>\
+#ELSESAY
+拥有盛大50点积分                             0/50\
+
+#IF
+CHECKVAR HUMAN CJ015 > 2
+#SAY
+<color=red 拥有盛大200点积分                            完成>\
+#ELSESAY
+拥有盛大200点积分                            0/200\
+
+#IF
+CHECKVAR HUMAN CJ016 > 9
+#SAY
+<color=red 开启青木宝箱10次                             完成>\
+#ELSESAY
+开启青木宝箱10次                             <$HUMAN(CJ016)>/10\
+
+#IF
+CHECKVAR HUMAN CJ017 > 9
+#SAY
+<color=red 开启白银宝箱10次                             完成>\
+#ELSESAY
+开启白银宝箱10次                             <$HUMAN(CJ017)>/10\
+
+#IF
+CHECKVAR HUMAN CJ018 > 9
+#SAY
+<color=red 开启赤金宝箱10次                             完成>\
+#ELSESAY
+开启赤金宝箱10次                             <$HUMAN(CJ018)>/10\
+
+#IF
+CHECKVAR HUMAN CJ019 > 9
+#SAY
+<color=red 开启神秘宝箱10次                             完成>\
+#ELSESAY
+开启神秘宝箱10次                             <$HUMAN(CJ019)>/10\
+
+#IF
+CHECKVAR HUMAN CJ020 > 0
+#SAY
+<color=red 1名徒弟出师                                  完成>\
+#ELSESAY
+1名徒弟出师                                  <$HUMAN(CJ020)>/1\
+
+#IF
+CHECKVAR HUMAN CJ020 > 1
+#SAY
+<color=red 2名徒弟出师                                  完成>\
+#ELSESAY
+2名徒弟出师                                  <$HUMAN(CJ020)>/2\
+
+#IF
+CHECKVAR HUMAN CJ020 > 2
+#SAY
+<color=red 3名徒弟出师                                  完成>\
+#ELSESAY
+3名徒弟出师                                  <$HUMAN(CJ020)>/3\
+
+#IF
+CHECKVAR HUMAN CJ021 > 0
+#SAY
+<color=red 武器圣灵属性威力达到6%                       完成>\
+#ELSESAY
+武器圣灵属性威力达到6%                       未完成\
+
+#IF
+CHECKVAR HUMAN CJ021 > 1
+#SAY
+<color=red 武器圣灵属性威力达到12%                      完成>\
+#ELSESAY
+武器圣灵属性威力达到12%                      未完成\
+
+#IF
+CHECKVAR HUMAN CJ021 > 2
+#SAY
+<color=red 武器圣灵属性威力达到24%                      完成>\
+#ELSESAY
+武器圣灵属性威力达到24%                      未完成\
+
+#IF
+CHECKVAR HUMAN CJ021 > 3
+#SAY
+<color=red 武器圣灵属性威力达到48%                      完成>\
+#ELSESAY
+武器圣灵属性威力达到48%                      未完成\
+
+#IF
+CHECKVAR HUMAN CJ022 = 1
+#SAY
+<color=red 拥有100万金币                                完成>\
+#ELSESAY
+拥有100万金币                                <点击完成/@成就拥有金币&1000000>\
+
+#IF
+CHECKVAR HUMAN CJ023 = 1
+#SAY
+<color=red 拥有500万金币                                完成>\
+#ELSESAY
+拥有500万金币                                <点击完成/@成就拥有金币&5000000>\
+
+#IF
+CHECKVAR HUMAN CJ024 = 1
+#SAY
+<color=red 拥有1000万金币                               完成>\
+#ELSESAY
+拥有1000万金币                               <点击完成/@成就拥有金币&10000000>\
+
+#IF
+CHECKVAR HUMAN CJ025 > 0
+#SAY
+<color=red 极品修炼值达到50000                          完成>\
+#ELSESAY
+极品修炼值达到50000                          未完成\
+
+#IF
+CHECKVAR HUMAN CJ025 > 1
+#SAY
+<color=red 极品修炼值达到100000                         完成>\
+#ELSESAY
+极品修炼值达到100000                         未完成\
+
+#IF
+CHECKVAR HUMAN CJ025 > 2
+#SAY
+<color=red 极品修炼值达到200000                         完成>\
+#ELSESAY
+极品修炼值达到200000                         未完成\
+
+#IF
+CHECKVAR HUMAN CJ026 > 0
+#SAY
+<color=red 武器极品修炼成功1次                          完成>\
+#ELSESAY
+武器极品修炼成功1次                          未完成\
+
+#IF
+CHECKVAR HUMAN CJ027 > 0
+#SAY
+<color=red 精炼成功1次                                  完成>\
+#ELSESAY
+精炼成功1次                                  <$HUMAN(CJ026)>/1\
+
+#IF
+CHECKVAR HUMAN CJ027 > 9
+#SAY
+<color=red 精炼成功10次                                 完成>\
+#ELSESAY
+精炼成功10次                                 <$HUMAN(CJ026)>/10\
+
+#IF
+CHECKVAR HUMAN CJ028 = 1
+#SAY
+<color=red 本体强化技能修炼到第五重                     完成>\
+#ELSESAY
+本体强化技能修炼到第五重                     未完成\
+
+#IF
+CHECKVAR HUMAN CJ029 = 1
+#SAY
+<color=red 元神强化技能修炼到第五重                     完成>\
+#ELSESAY
+元神强化技能修炼到第五重                     未完成\
+
+#IF
+CHECKVAR HUMAN CJ030 = 1
+#SAY
+<color=red 骑战技能修炼到专家级                         完成>\
+#ELSESAY
+骑战技能修炼到专家级                         未完成\
+
+#IF
+CHECKVAR HUMAN CJ031 = 1
+#SAY
+<color=red 声望达到10                                   完成>\
+#ELSESAY
+声望达到10                                   <点击完成/@成就声望&10>\
+
+#IF
+CHECKVAR HUMAN CJ032 = 1
+#SAY
+<color=red 声望达到50                                   完成>\
+#ELSESAY
+声望达到50                                   <点击完成/@成就声望&50>\
+
+#IF
+CHECKVAR HUMAN CJ033 = 1
+#SAY
+<color=red 声望达到200                                  完成>\
+#ELSESAY
+声望达到200                                  <点击完成/@成就声望&200>\
+
+#IF
+CHECKVAR HUMAN CJ034 = 1
+#SAY
+<color=red 成为狂魔                                     完成>\
+#ELSESAY
+成为狂魔                                     未完成\
+
+#IF
+CHECKVAR HUMAN CJ035 > 0
+#SAY
+<color=red 灵兽完成一转                                 完成>\
+#ELSESAY
+灵兽完成一转                                 未完成\
+
+#IF
+CHECKVAR HUMAN CJ036 > 0
+CHECKJOB WARR
+#SAY
+<color=red 人物攻击力达到70                             完成>\
+
+#IF
+CHECKVAR HUMAN CJ036 = 0
+CHECKJOB WARR
+#SAY
+人物攻击力达到70                             未完成\
+
+#IF
+CHECKVAR HUMAN CJ036 > 0
+CHECKJOB WIZARD
+#SAY
+<color=red 人物魔法攻击达到50                           完成>\
+
+#IF
+CHECKVAR HUMAN CJ036 = 0
+CHECKJOB WIZARD
+#SAY
+人物魔法攻击达到50                           未完成\
+
+#IF
+CHECKVAR HUMAN CJ036 > 0
+CHECKJOB TAOS
+#SAY
+<color=red 人物道术攻击达到50                           完成>\
+
+#IF
+CHECKVAR HUMAN CJ036 = 0
+CHECKJOB TAOS
+#SAY
+人物道术攻击达到50                           未完成\
+
+#IF
+CHECKVAR HUMAN CJ036 > 1
+CHECKJOB WARR
+#SAY
+<color=red 人物攻击力达到80                             完成>\
+
+#IF
+CHECKVAR HUMAN CJ036 < 2
+CHECKJOB WARR
+#SAY
+人物攻击力达到80                             未完成\
+
+#IF
+CHECKVAR HUMAN CJ036 > 1
+CHECKJOB WIZARD
+#SAY
+<color=red 人物魔法攻击达到60                           完成>\
+
+#IF
+CHECKVAR HUMAN CJ036 < 2
+CHECKJOB WIZARD
+#SAY
+人物魔法攻击达到60                           未完成\
+
+#IF
+CHECKVAR HUMAN CJ036 > 1
+CHECKJOB TAOS
+#SAY
+<color=red 人物道术攻击达到60                           完成>\
+
+#IF
+CHECKVAR HUMAN CJ036 < 2
+CHECKJOB TAOS
+#SAY
+人物道术攻击达到60                           未完成\
+
+#IF
+CHECKVAR HUMAN CJ036 > 2
+CHECKJOB WARR
+#SAY
+<color=red 人物攻击力达到90                             完成>\
+
+#IF
+CHECKVAR HUMAN CJ036 < 3
+CHECKJOB WARR
+#SAY
+人物攻击力达到90                             未完成\
+
+#IF
+CHECKVAR HUMAN CJ036 > 2
+CHECKJOB WIZARD
+#SAY
+<color=red 人物魔法攻击达到70                           完成>\
+
+#IF
+CHECKVAR HUMAN CJ036 < 3
+CHECKJOB WIZARD
+#SAY
+人物魔法攻击达到70                           未完成\
+
+#IF
+CHECKVAR HUMAN CJ036 > 2
+CHECKJOB TAOS
+#SAY
+<color=red 人物道术攻击达到70                           完成>\
+
+#IF
+CHECKVAR HUMAN CJ036 < 3
+CHECKJOB TAOS
+#SAY
+人物道术攻击达到70                           未完成\
+
+#IF
+CHECKVAR HUMAN CJ036 > 3
+CHECKJOB WARR
+#SAY
+<color=red 人物攻击力达到100                            完成>\
+
+#IF
+CHECKVAR HUMAN CJ036 < 4
+CHECKJOB WARR
+#SAY
+人物攻击力达到100                            未完成\
+
+#IF
+CHECKVAR HUMAN CJ036 > 3
+CHECKJOB WIZARD
+#SAY
+<color=red 人物魔法攻击达到80                           完成>\
+
+#IF
+CHECKVAR HUMAN CJ036 < 4
+CHECKJOB WIZARD
+#SAY
+人物魔法攻击达到80                           未完成\
+
+#IF
+CHECKVAR HUMAN CJ036 > 3
+CHECKJOB TAOS
+#SAY
+<color=red 人物道术攻击达到80                           完成>\
+
+#IF
+CHECKVAR HUMAN CJ036 < 4
+CHECKJOB TAOS
+#SAY
+人物道术攻击达到80                           未完成\
+
+#IF
+CHECKVAR HUMAN CJ037 = 1
+#SAY
+<color=red 试炼幻境中获得S级评价                        完成>\
+#ELSESAY
+试炼幻境中获得S级评价                        未完成\
+
+#IF
+CHECKVAR HUMAN CJ038 > 59
+#SAY
+<color=red 连续在线60分钟                               完成>\
+#ELSESAY
+连续在线60分钟                               <$HUMAN(CJ038)>/60\
+
+#IF
+CHECKVAR HUMAN CJ009 > 179
+#SAY
+<color=red 连续在线180分钟                              完成>\
+#ELSESAY
+连续在线180分钟                              <$HUMAN(CJ009)>/180\
+
+#IF
+CHECKVAR HUMAN CJ039 > 1
+#SAY
+<color=red 连续登陆游戏2天                              完成>\
+#ELSESAY
+连续登陆游戏2天                              <$HUMAN(CJ039)>/2\
+
+#IF
+CHECKVAR HUMAN CJ039 > 4
+#SAY
+<color=red 连续登陆游戏5天                              完成>\
+#ELSESAY
+连续登陆游戏5天                              <$HUMAN(CJ039)>/5\
+
+#IF
+CHECKACCOUNTLIST ..\QuestDiary\GameData\PlatinumAccount.txt
+#SAY
+<color=red 成为白金帐号                                 完成>\
+#ELSESAY
+成为白金帐号                                 未完成\
+
+#IF
+CHECKACCOUNTLIST ..\QuestDiary\GameData\DiamondAccount.txt
+#SAY
+<color=red 成为钻石帐号                                 完成>\
+#ELSESAY
+成为钻石帐号                                 未完成\
+
+[@成就拥有金币] TRUE
+#IF
+checkgold $SCRIPTPARAM(1)
+equal $SCRIPTPARAM(1) 1000000
+#ACT
+Calcvar HUMAN CJ022 = 1
+Calcvar HUMAN 成就值 + 10
+SendMsg 15 成就完成　拥有100万金币　成就值+10
+MessageBox 成就完成　拥有100万金币　成就值+10
+goto @mainleft成就系统
+break
+close
+#CALL [\Features\HandedCollection\AchievementSystem.txt] @成就排行
+
+#IF
+checkgold $SCRIPTPARAM(1)
+equal $SCRIPTPARAM(1) 5000000
+#ACT
+Calcvar HUMAN CJ023 = 1
+Calcvar HUMAN 成就值 + 20
+SendMsg 15 成就完成　拥有500万金币　成就值+20
+MessageBox 成就完成　拥有500万金币　成就值+20
+goto @mainleft成就系统
+break
+close
+#CALL [\Features\HandedCollection\AchievementSystem.txt] @成就排行
+
+#IF
+checkgold $SCRIPTPARAM(1)
+equal $SCRIPTPARAM(1) 10000000
+#ACT
+Calcvar HUMAN CJ024 = 1
+Calcvar HUMAN 成就值 + 30
+SendMsg 15 成就完成　拥有1000万金币　成就值+30
+MessageBox 成就完成　拥有1000万金币　成就值+30
+goto @mainleft成就系统
+break
+close
+#CALL [\Features\HandedCollection\AchievementSystem.txt] @成就排行
+#ELSEACT
+MessageBox 你没有达到要求，无法完成此成就。
+
+[@成就声望] TRUE
+#IF
+CHECKCREDITPOINT \ $SCRIPTPARAM(1)
+equal $SCRIPTPARAM(1) 10
+#ACT
+Calcvar HUMAN CJ031 = 1
+Calcvar HUMAN 成就值 + 10
+SendMsg 15 成就完成　声望达到10　成就值+10
+MessageBox 成就完成　声望达到10　成就值+10
+goto @mainleft成就系统
+break
+close
+#CALL [\Features\HandedCollection\AchievementSystem.txt] @成就排行
+
+#IF
+CHECKCREDITPOINT \ $SCRIPTPARAM(1)
+equal $SCRIPTPARAM(1) 50
+#ACT
+Calcvar HUMAN CJ032 = 1
+Calcvar HUMAN 成就值 + 20
+SendMsg 15 成就完成　声望达到50　成就值+20
+MessageBox 成就完成　声望达到50　成就值+20
+goto @mainleft成就系统
+break
+close
+#CALL [\Features\HandedCollection\AchievementSystem.txt] @成就排行
+
+#IF
+CHECKCREDITPOINT \ $SCRIPTPARAM(1)
+equal $SCRIPTPARAM(1) 200
+#ACT
+Calcvar HUMAN CJ033 = 1
+Calcvar HUMAN 成就值 + 30
+SendMsg 15 成就完成　声望达到200　成就值+30
+MessageBox 成就完成　声望达到200　成就值+30
+goto @mainleft成就系统
+break
+close
+#CALL [\Features\HandedCollection\AchievementSystem.txt] @成就排行
+#ELSEACT
+MessageBox 你没有达到要求，无法完成此成就。
+
+[@mainleft成就系统-怪物]
+<color=orange 【><BOSSRefresh/@mainleftBOSS刷新><color=orange 】>　<color=orange 【>AchievementSystem<color=orange 】><color=red New>　\
+\
+　　　<成就奖励/@mainleft成就奖励>　　<color=black ★> 成就值：<$HUMAN(成就值)> <color=black ★>　　<成就排行/@mainleft成就排行>\
+\
+<color=purple [><综合/@mainleft成就系统><color=purple ]>  <color=purple [>怪物<color=purple ]>  <color=purple [><物品/@mainleft成就系统-物品><color=purple ]>  <color=purple [><等级/@mainleft成就系统-等级><color=purple ]>  <color=purple [><任务/@mainleft成就系统-任务><color=purple ]>  <color=purple [><活动/@mainleft成就系统-活动><color=purple ]>  <color=purple [><全服/@mainleft成就系统-全服><color=purple ]>\
+\ 
+<color=green 条件                                         状况>\
+
+#IF
+CHECKVAR HUMAN CJ040 > 99
+#SAY
+<color=red 累计消灭怪物100只                            完成>\
+#ELSESAY
+累计消灭怪物100只                            <$HUMAN(CJ040)>/100\
+
+#IF
+CHECKVAR HUMAN CJ040 > 299
+#SAY
+<color=red 累计消灭怪物300只                            完成>\
+#ELSESAY
+累计消灭怪物300只                            <$HUMAN(CJ040)>/300\
+
+#IF
+CHECKVAR HUMAN CJ040 > 499
+#SAY
+<color=red 累计消灭怪物500只                            完成>\
+#ELSESAY
+累计消灭怪物500只                            <$HUMAN(CJ040)>/500\
+
+#IF
+CHECKVAR HUMAN CJ040 > 999
+#SAY
+<color=red 累计消灭怪物1000只                          完成>\
+#ELSESAY
+累计消灭怪物1000只                          <$HUMAN(CJ040)>/1000\
+
+#IF
+CHECKVAR HUMAN CJ041 > 19
+#SAY
+<color=red 消灭20只金刚人                               完成>\
+#ELSESAY
+消灭20只金刚人                               <$HUMAN(CJ041)>/20\
+
+#IF
+CHECKVAR HUMAN CJ042 > 19
+#SAY
+<color=red 消灭20只白蛇妖                               完成>\
+#ELSESAY
+消灭20只白蛇妖                               <$HUMAN(CJ042)>/20\
+
+#IF
+CHECKVAR HUMAN CJ043 > 19
+#SAY
+<color=red 消灭20只妖力士                               完成>\
+#ELSESAY
+消灭20只妖力士                               <$HUMAN(CJ043)>/20\
+
+#IF
+CHECKVAR HUMAN CJ044 > 49
+#SAY
+<color=red 消灭50只幽影武士                             完成>\
+#ELSESAY
+消灭50只幽影武士                             <$HUMAN(CJ044)>/50\
+
+#IF
+CHECKVAR HUMAN CJ045 > 49
+#SAY
+<color=red 消灭50只黑袍修罗长老                         完成>\
+#ELSESAY
+消灭50只黑袍修罗长老                         <$HUMAN(CJ045)>/50\
+
+#IF
+CHECKVAR HUMAN CJ046 = 1
+#SAY
+<color=red 消灭将军殿的尸霸                             完成>\
+#ELSESAY
+消灭将军殿的尸霸                             未完成\
+
+#IF
+CHECKVAR HUMAN CJ047 = 1
+#SAY
+<color=red 消灭中枢大殿的机关巨兽                       完成>\
+#ELSESAY
+消灭中枢大殿的机关巨兽                       未完成\
+
+#IF
+CHECKVAR HUMAN CJ048 = 1
+#SAY
+<color=red 消灭五蛇殿的三头蛇王                         完成>\
+#ELSESAY
+消灭五蛇殿的三头蛇王                         未完成\
+
+#IF
+CHECKVAR HUMAN CJ049 = 1
+#SAY
+<color=red 消灭逆魔大殿的逆魔                           完成>\
+#ELSESAY
+消灭逆魔大殿的逆魔                           未完成\
+
+#IF
+CHECKVAR HUMAN CJ050 = 1
+#SAY
+<color=red 消灭黑暗轮回的利爪魔                         完成>\
+#ELSESAY
+消灭黑暗轮回的利爪魔                         未完成\
+
+#IF
+CHECKVAR HUMAN CJ051 = 1
+#SAY
+<color=red 消灭黑暗轮回的闪电魔                         完成>\
+#ELSESAY
+消灭黑暗轮回的闪电魔                         未完成\
+
+#IF
+CHECKVAR HUMAN CJ052 = 1
+#SAY
+<color=red 消灭魔穴的禁地魔王                           完成>\
+#ELSESAY
+消灭魔穴的禁地魔王                           未完成\
+
+#IF
+CHECKVAR HUMAN CJ053 = 1
+#SAY
+<color=red 消灭九重云霄的通天教主                       完成>\
+#ELSESAY
+消灭九重云霄的通天教主                       未完成\
+
+#IF
+CHECKVAR HUMAN CJ054 = 1
+#SAY
+<color=red 消灭地下魔域八层的铁血魔王                   完成>\
+#ELSESAY
+消灭地下魔域八层的铁血魔王                   未完成\
+
+#IF
+CHECKVAR HUMAN CJ055 = 1
+#SAY
+<color=red 消灭修罗神殿的阿修罗神                       完成>\
+#ELSESAY
+消灭修罗神殿的阿修罗神                       未完成\
+
+#IF
+CHECKVAR HUMAN CJ056 = 1
+#SAY
+<color=red 消灭炼狱魔境十层的炼狱魔君                   完成>\
+#ELSESAY
+消灭炼狱魔境十层的炼狱魔君                   未完成\
+
+#IF
+CHECKVAR HUMAN CJ057 = 1
+#SAY
+<color=red 消灭逆魔大殿的逆魔之王                       完成>\
+#ELSESAY
+消灭逆魔大殿的逆魔之王                       未完成\
+
+#IF
+CHECKVAR HUMAN CJ058 = 1
+#SAY
+<color=red 消灭真将军殿的狂尸霸                         完成>\
+#ELSESAY
+消灭真将军殿的狂尸霸                         未完成\
+
+#IF
+CHECKVAR HUMAN CJ059 = 1
+#SAY
+<color=red 消灭玄冰殿的蛇妖王                           完成>\
+#ELSESAY
+消灭玄冰殿的蛇妖王                           未完成\
+
+[@mainleft成就系统-物品]
+<color=orange 【><BOSSRefresh/@mainleftBOSS刷新><color=orange 】>　<color=orange 【>AchievementSystem<color=orange 】><color=red New>　\
+\
+　　　<成就奖励/@mainleft成就奖励>　　<color=black ★> 成就值：<$HUMAN(成就值)> <color=black ★>　　<成就排行/@mainleft成就排行>\
+\
+<color=purple [><综合/@mainleft成就系统><color=purple ]>  <color=purple [><怪物/@mainleft成就系统-怪物><color=purple ]>  <color=purple [>物品<color=purple ]>  <color=purple [><等级/@mainleft成就系统-等级><color=purple ]>  <color=purple [><任务/@mainleft成就系统-任务><color=purple ]>  <color=purple [><活动/@mainleft成就系统-活动><color=purple ]>  <color=purple [><全服/@mainleft成就系统-全服><color=purple ]>\
+\ 
+<color=green 条件                                         状况>\
+
+#IF
+CHECKVAR HUMAN CJ060 = 1
+CHECKJOB WARR
+#SAY
+<color=red 装备上圣战套装                               完成>\
+
+#IF
+CHECKVAR HUMAN CJ060 = 0
+CHECKJOB WARR
+#SAY
+装备上圣战套装                               未完成\
+
+#IF
+CHECKVAR HUMAN CJ060 = 1
+CHECKJOB WIZARD
+#SAY
+<color=red 装备上法神套装                               完成>\
+
+#IF
+CHECKVAR HUMAN CJ060 = 0
+CHECKJOB WIZARD
+#SAY
+装备上法神套装                               未完成\
+
+#IF
+CHECKVAR HUMAN CJ060 = 1
+CHECKJOB TAOS
+#SAY
+<color=red 装备上天尊套装                               完成>\
+
+#IF
+CHECKVAR HUMAN CJ060 = 0
+CHECKJOB TAOS
+#SAY
+装备上天尊套装                               未完成\
+
+#IF
+CHECKVAR HUMAN CJ061 = 1
+CHECKJOB WARR
+#SAY
+<color=red 装备上神武套装                               完成>\
+
+#IF
+CHECKVAR HUMAN CJ061 = 0
+CHECKJOB WARR
+#SAY
+装备上神武套装                               未完成\
+
+#IF
+CHECKVAR HUMAN CJ061 = 1
+CHECKJOB WIZARD
+#SAY
+<color=red 装备上幻魔套装                               完成>\
+
+#IF
+CHECKVAR HUMAN CJ061 = 0
+CHECKJOB WIZARD
+#SAY
+装备上幻魔套装                               未完成\
+
+#IF
+CHECKVAR HUMAN CJ061 = 1
+CHECKJOB TAOS
+#SAY
+<color=red 装备上天玄套装                               完成>\
+
+#IF
+CHECKVAR HUMAN CJ061 = 0
+CHECKJOB TAOS
+#SAY
+装备上天玄套装                               未完成\
+
+#IF
+CHECKVAR HUMAN CJ062 = 1
+CHECKJOB WARR
+#SAY
+<color=red 装备上战神套装                               完成>\
+
+#IF
+CHECKVAR HUMAN CJ062 = 0
+CHECKJOB WARR
+#SAY
+装备上战神套装                               未完成\
+
+#IF
+CHECKVAR HUMAN CJ062 = 1
+CHECKJOB WIZARD
+#SAY
+<color=red 装备上魔神套装                               完成>\
+
+#IF
+CHECKVAR HUMAN CJ062 = 0
+CHECKJOB WIZARD
+#SAY
+装备上魔神套装                               未完成\
+
+#IF
+CHECKVAR HUMAN CJ062 = 1
+CHECKJOB TAOS
+#SAY
+<color=red 装备上道神套装                               完成>\
+
+#IF
+CHECKVAR HUMAN CJ062 = 0
+CHECKJOB TAOS
+#SAY
+装备上道神套装                               未完成\
+
+#IF
+CHECKVAR HUMAN CJ063 = 1
+CHECKJOB WARR
+#SAY
+<color=red 装备上血煞套装                               完成>\
+
+#IF
+CHECKVAR HUMAN CJ063 = 0
+CHECKJOB WARR
+#SAY
+装备上血煞套装                               未完成\
+
+#IF
+CHECKVAR HUMAN CJ063 = 1
+CHECKJOB WIZARD
+#SAY
+<color=red 装备上魔雷套装                               完成>\
+
+#IF
+CHECKVAR HUMAN CJ063 = 0
+CHECKJOB WIZARD
+#SAY
+装备上魔雷套装                               未完成\
+
+#IF
+CHECKVAR HUMAN CJ063 = 1
+CHECKJOB TAOS
+#SAY
+<color=red 装备上幽泉套装                               完成>\
+
+#IF
+CHECKVAR HUMAN CJ063 = 0
+CHECKJOB TAOS
+#SAY
+装备上幽泉套装                               未完成\
+
+#IF
+CHECKVAR HUMAN CJ064 = 1
+CHECKJOB WARR
+#SAY
+<color=red 装备上蟠龙傲天套装                           完成>\
+
+#IF
+CHECKVAR HUMAN CJ064 = 0
+CHECKJOB WARR
+#SAY
+装备上蟠龙傲天套装                           未完成\
+
+#IF
+CHECKVAR HUMAN CJ064 = 1
+CHECKJOB WIZARD
+#SAY
+<color=red 装备上蟠龙幻天套装                           完成>\
+
+#IF
+CHECKVAR HUMAN CJ064 = 0
+CHECKJOB WIZARD
+#SAY
+装备上蟠龙幻天套装                           未完成\
+
+#IF
+CHECKVAR HUMAN CJ064 = 1
+CHECKJOB TAOS
+#SAY
+<color=red 装备上蟠龙玄天套装                           完成>\
+
+#IF
+CHECKVAR HUMAN CJ064 = 0
+CHECKJOB TAOS
+#SAY
+装备上蟠龙玄天套装                           未完成\
+
+#IF
+CHECKVAR HUMAN CJ065 = 1
+CHECKJOB WARR
+#SAY
+<color=red 装备上雷霆怒斩                               完成>\
+
+#IF
+CHECKVAR HUMAN CJ065 = 0
+CHECKJOB WARR
+#SAY
+装备上雷霆怒斩                               未完成\
+
+#IF
+CHECKVAR HUMAN CJ065 = 1
+CHECKJOB WIZARD
+#SAY
+<color=red 装备上龙牙利刃                               完成>\
+
+#IF
+CHECKVAR HUMAN CJ065 = 0
+CHECKJOB WIZARD
+#SAY
+装备上龙牙利刃                               未完成\
+
+#IF
+CHECKVAR HUMAN CJ065 = 1
+CHECKJOB TAOS
+#SAY
+<color=red 装备上逍遥无极扇                             完成>\
+
+#IF
+CHECKVAR HUMAN CJ065 = 0
+CHECKJOB TAOS
+#SAY
+装备上逍遥无极扇                             未完成\
+
+#IF
+CHECKVAR HUMAN CJ066 = 1
+CHECKJOB WARR
+#SAY
+<color=red 装备上屠龙刀                                 完成>\
+
+#IF
+CHECKVAR HUMAN CJ066 = 0
+CHECKJOB WARR
+#SAY
+装备上屠龙刀                                 未完成\
+
+#IF
+CHECKVAR HUMAN CJ066 = 1
+CHECKJOB WIZARD
+#SAY
+<color=red 装备上嗜魂                                   完成>\
+
+#IF
+CHECKVAR HUMAN CJ066 = 0
+CHECKJOB WIZARD
+#SAY
+装备上嗜魂                                   未完成\
+
+#IF
+CHECKVAR HUMAN CJ066 = 1
+CHECKJOB TAOS
+#SAY
+<color=red 装备上倚天剑                                 完成>\
+
+#IF
+CHECKVAR HUMAN CJ066 = 0
+CHECKJOB TAOS
+#SAY
+装备上倚天剑                                 未完成\
+
+
+#IF
+CHECKVAR HUMAN CJ067 = 1
+CHECKJOB WARR
+#SAY
+<color=red 装备上无赦                                   完成>\
+
+#IF
+CHECKVAR HUMAN CJ067 = 0
+CHECKJOB WARR
+#SAY
+装备上无赦                                   未完成\
+
+#IF
+CHECKVAR HUMAN CJ067 = 1
+CHECKJOB WIZARD
+#SAY
+<color=red 装备上夺魄                                   完成>\
+
+#IF
+CHECKVAR HUMAN CJ067 = 0
+CHECKJOB WIZARD
+#SAY
+装备上夺魄                                   未完成\
+
+#IF
+CHECKVAR HUMAN CJ067 = 1
+CHECKJOB TAOS
+#SAY
+<color=red 装备上聚灵                                   完成>\
+
+#IF
+CHECKVAR HUMAN CJ067 = 0
+CHECKJOB TAOS
+#SAY
+装备上聚灵                                   未完成\
+
+#IF
+CHECKVAR HUMAN CJ068 > 9
+#SAY
+<color=red 服用10个1级经验丹                            完成>\
+#ELSESAY
+服用10个1级经验丹                            <$HUMAN(CJ068)>/10\
+
+#IF
+CHECKVAR HUMAN CJ069 > 9
+#SAY
+<color=red 服用10个2级经验丹                            完成>\
+#ELSESAY
+服用10个2级经验丹                            <$HUMAN(CJ069)>/10\
+
+#IF
+CHECKVAR HUMAN CJ070 > 9
+#SAY
+<color=red 服用10个3级经验丹                            完成>\
+#ELSESAY
+服用10个3级经验丹                            <$HUMAN(CJ070)>/10\
+
+#IF
+CHECKVAR HUMAN CJ071 > 0
+#SAY
+<color=red 从魔隐村千年藤妖处获得一顶花冠               完成>\
+#ELSESAY
+从魔隐村千年藤妖处获得一顶花冠               未完成\
+
+#IF
+CHECKVAR HUMAN CJ072 > 9
+#SAY
+<color=red 从魔隐村炼金魔处获得一把命运                 完成>\
+#ELSESAY
+从魔隐村炼金魔处获得一把命运                 未完成\
+
+#IF
+CHECKVAR HUMAN CJ073 > 19
+#SAY
+<color=red 交还20枚赏金令牌                             完成>\
+#ELSESAY
+交还20枚赏金令牌                             <$HUMAN(CJ073)>/20\
+
+#IF
+CHECKVAR HUMAN CJ074 = 1
+#SAY
+<color=red 使用神秘符石打造一件武器                     完成>\
+#ELSESAY
+使用神秘符石打造一件武器                     未完成\
+
+#IF
+CHECKVAR HUMAN CJ075 = 1
+#SAY
+<color=red 在朱雀炉炼出一件神饰                         完成>\
+#ELSESAY
+在朱雀炉炼出一件神饰                         未完成\
+
+#IF
+CHECKVAR HUMAN CJ076 > 4
+#SAY
+<color=red 使用5次修罗军团封印                          完成>\
+#ELSESAY
+使用5次修罗军团封印                          <$HUMAN(CJ076)>/5\
+
+[@mainleft成就系统-等级]
+<color=orange 【><BOSSRefresh/@mainleftBOSS刷新><color=orange 】>　<color=orange 【>AchievementSystem<color=orange 】><color=red New>　\
+\
+　　　<成就奖励/@mainleft成就奖励>　　<color=black ★> 成就值：<$HUMAN(成就值)> <color=black ★>　　<成就排行/@mainleft成就排行>\
+\
+<color=purple [><综合/@mainleft成就系统><color=purple ]>  <color=purple [><怪物/@mainleft成就系统-怪物><color=purple ]>  <color=purple [><物品/@mainleft成就系统-物品><color=purple ]>  <color=purple [>等级<color=purple ]>  <color=purple [><任务/@mainleft成就系统-任务><color=purple ]>  <color=purple [><活动/@mainleft成就系统-活动><color=purple ]>  <color=purple [><全服/@mainleft成就系统-全服><color=purple ]>\
+\ 
+<color=green 条件                                         状况>\
+
+#IF
+CHECKVAR HUMAN CJ077 > 0
+#SAY
+<color=red 等级达到45级                                 完成>\
+#ELSESAY
+等级达到45级                                 <$LEVEL>/45\
+
+#IF
+CHECKVAR HUMAN CJ077 > 1
+#SAY
+<color=red 等级达到50级                                 完成>\
+#ELSESAY
+等级达到50级                                 <$LEVEL>/50\
+
+#IF
+CHECKVAR HUMAN CJ077 > 2
+#SAY
+<color=red 等级达到55级                                 完成>\
+#ELSESAY
+等级达到55级                                 <$LEVEL>/55\
+
+#IF
+CHECKVAR HUMAN CJ077 > 3
+#SAY
+<color=red 等级达到60级                                 完成>\
+#ELSESAY
+等级达到60级                                 <$LEVEL>/60\
+
+#IF
+CHECKVAR HUMAN CJ077 > 4
+#SAY
+<color=red 等级达到65级                                 完成>\
+#ELSESAY
+等级达到65级                                 <$LEVEL>/65\
+
+#IF
+CHECKVAR HUMAN CJ077 > 5
+#SAY
+<color=red 等级达到70级                                 完成>\
+#ELSESAY
+等级达到70级                                 <$LEVEL>/70\
+
+#IF
+$PNEUMANAME.checknamelist ..\QuestDiary\GameData\RelatedSoul\HeroState.txt
+#SAY
+<color=red 分身达到培元境界                             完成>\
+#ELSESAY
+分身达到培元境界                             未完成\
+
+#IF
+$PNEUMANAME.checknamelist ..\QuestDiary\GameData\RelatedSoul\UnderstandState.txt
+#SAY
+<color=red 分身达到明心境界                             完成>\
+#ELSESAY
+分身达到明心境界                             未完成\
+
+#IF
+$PNEUMANAME.checknamelist ..\QuestDiary\GameData\RelatedSoul\DawuState.txt
+#SAY
+<color=red 分身达到大悟境界                             完成>\
+#ELSESAY
+分身达到大悟境界                             未完成\
+
+#IF
+CHECKVAR HUMAN RescuesPrincessTimes > 0
+#SAY
+<color=red 获得王城勇士称号                             完成>\
+#ELSESAY
+获得王城勇士称号                             未完成\
+
+#IF
+CHECKVAR HUMAN RescuesPrincessTimes > 9
+#SAY
+<color=red 获得王城侍卫称号                             完成>\
+#ELSESAY
+获得王城侍卫称号                             未完成\
+
+#IF
+CHECKVAR HUMAN RescuesPrincessTimes > 19
+#SAY
+<color=red 获得侍卫统帅称号                             完成>\
+#ELSESAY
+获得侍卫统帅称号                             未完成\
+
+#IF
+CHECKVAR HUMAN RescuesPrincessTimes > 39
+#SAY
+<color=red 获得威武将军称号                             完成>\
+#ELSESAY
+获得威武将军称号                             未完成\
+
+#IF
+CHECKVAR HUMAN RescuesPrincessTimes > 79
+#SAY
+<color=red 获得神策将军称号                             完成>\
+#ELSESAY
+获得神策将军称号                             未完成\
+
+#IF
+CHECKVAR HUMAN RescuesPrincessTimes > 159
+#SAY
+<color=red 获得镇国将军称号                             完成>\
+#ELSESAY
+获得镇国将军称号                             未完成\
+
+#IF
+CHECKVAR HUMAN RescuesPrincessTimes > 319
+#SAY
+<color=red 获得神武大将军称号                           完成>\
+#ELSESAY
+获得神武大将军称号                           未完成\
+
+#IF
+large $ATTACHEPOINT 99
+#SAY
+<color=red 获得初级学徒称号                             完成>\
+#ELSESAY
+获得初级学徒称号                             未完成\
+
+#IF
+large $ATTACHEPOINT 199
+#SAY
+<color=red 获得略有小成称号                             完成>\
+#ELSESAY
+获得略有小成称号                             未完成\
+
+#IF
+large $ATTACHEPOINT 299
+#SAY
+<color=red 获得架轻就熟称号                             完成>\
+#ELSESAY
+获得架轻就熟称号                             未完成\
+
+#IF
+large $ATTACHEPOINT 399
+#SAY
+<color=red 获得青出于蓝称号                             完成>\
+#ELSESAY
+获得青出于蓝称号                             未完成\
+
+#IF
+large $ATTACHEPOINT 499
+#SAY
+<color=red 获得融会贯通称号                             完成>\
+#ELSESAY
+获得融会贯通称号                             未完成\
+
+#IF
+large $ATTACHEPOINT 599
+#SAY
+<color=red 获得出类拔萃称号                             完成>\
+#ELSESAY
+获得出类拔萃称号                             未完成\
+
+#IF
+large $ATTACHEPOINT 699
+#SAY
+<color=red 获得一代宗师称号                             完成>\
+#ELSESAY
+获得一代宗师称号                             未完成\
+
+#IF
+CHECKVAR HUMAN ShenweiPrisonNumber > 9
+#SAY
+<color=red 获得镇魔天师称号                             完成>\
+#ELSESAY
+获得镇魔天师称号                             未完成\
+
+#IF
+CHECKVAR HUMAN ShenweiPrisonNumber > 19
+#SAY
+<color=red 获得镇魔天将称号                             完成>\
+#ELSESAY
+获得镇魔天将称号                             未完成\
+
+#IF
+CHECKVAR HUMAN ShenweiPrisonNumber > 29
+#SAY
+<color=red 获得镇魔天帅称号                             完成>\
+#ELSESAY
+获得镇魔天帅称号                             未完成\
+
+#IF
+CHECKVAR HUMAN ShenweiPrisonNumber > 39
+#SAY
+<color=red 获得御魔天师称号                             完成>\
+#ELSESAY
+获得御魔天师称号                             未完成\
+
+#IF
+CHECKVAR HUMAN ShenweiPrisonNumber > 49
+#SAY
+<color=red 获得御魔天将称号                             完成>\
+#ELSESAY
+获得御魔天将称号                             未完成\
+
+#IF
+CHECKVAR HUMAN ShenweiPrisonNumber > 59
+#SAY
+<color=red 获得御魔天帅称号                             完成>\
+#ELSESAY
+获得御魔天帅称号                             未完成\
+
+#IF
+CHECKVAR HUMAN ShenweiPrisonNumber > 69
+#SAY
+<color=red 获得神魔天帝称号                             完成>\
+#ELSESAY
+获得神魔天帝称号                             未完成\
+
+[@mainleft成就系统-任务]
+<color=orange 【><BOSSRefresh/@mainleftBOSS刷新><color=orange 】>　<color=orange 【>AchievementSystem<color=orange 】><color=red New>　\
+\
+　　　<成就奖励/@mainleft成就奖励>　　<color=black ★> 成就值：<$HUMAN(成就值)> <color=black ★>　　<成就排行/@mainleft成就排行>\
+\
+<color=purple [><综合/@mainleft成就系统><color=purple ]>  <color=purple [><怪物/@mainleft成就系统-怪物><color=purple ]>  <color=purple [><物品/@mainleft成就系统-物品><color=purple ]>  <color=purple [><等级/@mainleft成就系统-等级><color=purple ]>  <color=purple [>任务<color=purple ]>  <color=purple [><活动/@mainleft成就系统-活动><color=purple ]>  <color=purple [><全服/@mainleft成就系统-全服><color=purple ]>\
+\ 
+<color=green 条件                                         状况>\
+
+#IF
+CHECKVAR HUMAN CJ078 = 1
+#SAY
+<color=red 完成新手系列任务                             完成>\
+#ELSESAY
+完成新手系列任务                             未完成\
+
+#IF
+CHECKVAR HUMAN CJ079 = 1
+#SAY
+<color=red 完成绝世好剑任务                             完成>\
+#ELSESAY
+完成绝世好剑任务                             未完成\
+
+#IF
+CHECKVAR HUMAN CJ080 = 1
+#SAY
+<color=red 完成桃花祭任务                               完成>\
+#ELSESAY
+完成桃花祭任务                               未完成\
+
+#IF
+CHECKVAR HUMAN CJ081 = 1
+#SAY
+<color=red 发布1次悬赏任务                              完成>\
+#ELSESAY
+发布1次悬赏任务                              未完成\
+
+#IF
+CHECKVAR HUMAN CJ082 = 1
+#SAY
+<color=red 完成1轮皇榜任务                              完成>\
+#ELSESAY
+完成1轮皇榜任务                              未完成\
+
+#IF
+CHECKVAR HUMAN CJ083 = 1
+#SAY
+<color=red 20分钟内完成皇榜任务                         完成>\
+#ELSESAY
+20分钟内完成皇榜任务                         未完成\
+
+#IF
+CHECKVAR HUMAN CJ084 = 1
+#SAY
+<color=red 60分钟内完成军机令任务                       完成>\
+#ELSESAY
+60分钟内完成军机令任务                       未完成\
+
+#IF
+CHECKVAR HUMAN CJ085 > 4
+#SAY
+<color=red 一天内完成5次军机令任务                      完成>\
+#ELSESAY
+一天内完成5次军机令任务                      <$HUMAN(CJ085)>/5\
+
+#IF
+CHECKVAR HUMAN CJ086 = 1
+#SAY
+<color=red 完成1轮王城诏令                              完成>\
+#ELSESAY
+完成1轮王城诏令                              未完成\
+
+#IF
+CHECKVAR HUMAN CJ087 = 1
+#SAY
+<color=red 10分钟内完成单人挖宝任务                     完成>\
+#ELSESAY
+10分钟内完成单人挖宝任务                     未完成\
+
+#IF
+CHECKVAR HUMAN CJ088 = 1
+#SAY
+<color=red 通过精密宝箱任务中魔鬼记忆的考验              完成>\
+#ELSESAY
+通过精密宝箱任务中魔鬼记忆的考验             未完成\
+
+#IF
+CHECKVAR HUMAN CJ089 = 1
+#SAY
+<color=red 通过精密宝箱任务中障碍跑赛的考验              完成>\
+#ELSESAY
+通过精密宝箱任务中障碍跑赛的考验             未完成\
+
+#IF
+CHECKVAR HUMAN CJ090 = 1
+#SAY
+<color=red 通过精密宝箱任务中真假魔王的考验              完成>\
+#ELSESAY
+通过精密宝箱任务中真假魔王的考验             未完成\
+
+#IF
+CHECKVAR HUMAN CJ091 = 1
+#SAY
+<color=red 通过精密宝箱任务中追杀僵尸的考验              完成>\
+#ELSESAY
+通过精密宝箱任务中追杀僵尸的考验             未完成\
+
+#IF
+CHECKVAR HUMAN CJ092 = 1
+#SAY
+<color=red 通过精密宝箱任务中怪物生存赛的考验            完成>\
+#ELSESAY
+通过精密宝箱任务中怪物生存赛的考验           未完成\
+
+#IF
+CHECKVAR HUMAN CJ093 > 29
+#SAY
+<color=red 完成30次极品值任务                            完成>\
+#ELSESAY
+完成30次极品值任务                           <$HUMAN(CJ093)>/30\
+
+[@mainleft成就系统-活动]
+<color=orange 【><BOSSRefresh/@mainleftBOSS刷新><color=orange 】>　<color=orange 【>AchievementSystem<color=orange 】><color=red New>　\
+\
+　　　<成就奖励/@mainleft成就奖励>　　<color=black ★> 成就值：<$HUMAN(成就值)> <color=black ★>　　<成就排行/@mainleft成就排行>\
+\
+<color=purple [><综合/@mainleft成就系统><color=purple ]>  <color=purple [><怪物/@mainleft成就系统-怪物><color=purple ]>  <color=purple [><物品/@mainleft成就系统-物品><color=purple ]>  <color=purple [><等级/@mainleft成就系统-等级><color=purple ]>  <color=purple [><任务/@mainleft成就系统-任务><color=purple ]>  <color=purple [>活动<color=purple ]>  <color=purple [><全服/@mainleft成就系统-全服><color=purple ]>\
+\ 
+<color=green 条件                                         状况>\
+
+#IF
+CHECKVAR HUMAN CJ094 = 1
+#SAY
+<color=red 20分钟内通关锁妖塔                           完成>\
+#ELSESAY
+20分钟内通关锁妖塔                           未完成\
+
+#IF
+CHECKVAR HUMAN CJ095 = 1
+#SAY
+<color=red 120分钟内通关救公主                          完成>\
+#ELSESAY
+120分钟内通关救公主                          未完成\
+
+#IF
+CHECKVAR HUMAN CJ096 > 19
+#SAY
+<color=red 完成20次闯天关                               完成>\
+#ELSESAY
+完成20次闯天关                               <$HUMAN(CJ096)>/20\
+
+#IF
+CHECKVAR HUMAN CJ097 > 4
+#SAY
+<color=red 对夺宝心魔进行5次搜索                        完成>\
+#ELSESAY
+对夺宝心魔进行5次搜索                        <$HUMAN(CJ097)>/5\
+
+#IF
+CHECKVAR HUMAN CJ098 = 1
+#SAY
+<color=red 通关1次神威狱                                完成>\
+#ELSESAY
+通关1次神威狱                                未完成\
+
+#IF
+CHECKVAR HUMAN CJ099 > 39
+#SAY
+<color=red 在天魔宝藏地图中连续呆上40分钟               完成>\
+#ELSESAY
+在天魔宝藏地图中连续呆上40分钟               未完成\
+
+#IF
+CHECKVAR HUMAN CJ100 > 49
+#SAY
+<color=red 累计献火玫瑰50朵                             完成>\
+#ELSESAY
+累计献火玫瑰50朵                             <$HUMAN(CJ100)>/50\
+
+#IF
+CHECKVAR HUMAN CJ101 > 49
+#SAY
+<color=red 累计献雪玫瑰50朵                             完成>\
+#ELSESAY
+累计献雪玫瑰50朵                             <$HUMAN(CJ101)>/50\
+
+#IF
+CHECKVAR HUMAN CJ102 = 1
+#SAY
+<color=red 获得骑兵竞技的冠军                           完成>\
+#ELSESAY
+获得骑兵竞技的冠军                           未完成\
+
+#IF
+CHECKVAR HUMAN CJ103 = 1
+#SAY
+<color=red 达到神饰除魔的魔王殿                         完成>\
+#ELSESAY
+达到神饰除魔的魔王殿                         未完成\
+
+#IF
+CHECKVAR HUMAN CJ104 = 1
+#SAY
+<color=red 在魔戒现身活动中获得一枚黑暗之戒             完成>\
+#ELSESAY
+在魔戒现身活动中获得一枚黑暗之戒             未完成\
+
+[@mainleft成就系统-全服]
+<color=orange 【><BOSSRefresh/@mainleftBOSS刷新><color=orange 】>　<color=orange 【>AchievementSystem<color=orange 】><color=red New>　\
+\
+　　　<成就奖励/@mainleft成就奖励>　　<color=black ★> 成就值：<$HUMAN(成就值)> <color=black ★>　　<成就排行/@mainleft成就排行>\
+\
+<color=purple [><综合/@mainleft成就系统><color=purple ]>  <color=purple [><怪物/@mainleft成就系统-怪物><color=purple ]>  <color=purple [><物品/@mainleft成就系统-物品><color=purple ]>  <color=purple [><等级/@mainleft成就系统-等级><color=purple ]>  <color=purple [><任务/@mainleft成就系统-任务><color=purple ]>  <color=purple [><活动/@mainleft成就系统-活动><color=purple ]>  <color=purple [>全服<color=purple ]>\
+\ 
+<color=green 条件                                         完成者>\
+
+#IF
+!equal A52
+#ACT
+FORMATSTR S0 {color=red#32第一个击杀修罗神殿的阿修罗神%23s} <$STR(A52)>
+#SAY
+<$STR(S0)>\
+#ELSESAY
+第一个击杀修罗神殿的阿修罗神               　？？？\
+
+#IF
+!equal A53
+#ACT
+FORMATSTR S1 {color=red#32第一个击杀九重云霄的通天教主%23s} <$STR(A53)>
+#SAY
+<$STR(S1)>\
+#ELSESAY
+第一个击杀九重云霄的通天教主               　？？？\
+
+#IF
+!equal A54
+#ACT
+FORMATSTR S2 {color=red#32第一个击杀地下魔域八层的铁血魔王%19s} <$STR(A54)>
+#SAY
+<$STR(S2)>\
+#ELSESAY
+第一个击杀地下魔域八层的铁血魔王           　？？？\
+
+#IF
+!equal A55
+#ACT
+FORMATSTR S3 {color=red#32第一个击杀天魔巢穴的无相天魔%23s} <$STR(A55)>
+#SAY
+<$STR(S3)>\
+#ELSESAY
+第一个击杀天魔巢穴的无相天魔               　？？？\
+
+#IF
+!equal A56
+#ACT
+FORMATSTR S4 {color=red#32第一个击杀炼狱魔境十层的炼狱魔君%19s} <$STR(A56)>
+#SAY
+<$STR(S4)>\
+#ELSESAY
+第一个击杀炼狱魔境十层的炼狱魔君           　？？？\
+
+#IF
+!equal A57
+#ACT
+FORMATSTR S5 {color=red#32第一个等级达到70级的战士%27s} <$STR(A57)>
+#SAY
+<$STR(S5)>\
+#ELSESAY
+第一个等级达到70级的战士                   　？？？\
+
+#IF
+!equal A58
+#ACT
+FORMATSTR S6 {color=red#32第一个等级达到70级的法师%27s} <$STR(A58)>
+#SAY
+<$STR(S6)>\
+#ELSESAY
+第一个等级达到70级的法师                   　？？？\
+
+#IF
+!equal A59
+#ACT
+FORMATSTR S7 {color=red#32第一个等级达到70级的道士%27s} <$STR(A59)>
+#SAY
+<$STR(S7)>\
+#ELSESAY
+第一个等级达到70级的道士                   　？？？\
+
+#IF
+!equal A60
+#ACT
+FORMATSTR S8 {color=red#32第一个将灵兽进行二转%31s} <$STR(A60)>
+#SAY
+<$STR(S8)>\
+#ELSESAY
+第一个将灵兽进行二转                       　？？？\
+
+[@mainleft成就奖励]
+<color=orange 【><BOSSRefresh/@mainleftBOSS刷新><color=orange 】>　<color=orange 【>AchievementSystem<color=orange 】><color=red New>　\
+\
+　　　成就奖励　　<color=black ★> 成就值：<$HUMAN(成就值)> <color=black ★>　　<成就排行/@mainleft成就排行>\
+\
+<color=purple [><综合/@mainleft成就系统><color=purple ]>  <color=purple [><怪物/@mainleft成就系统-怪物><color=purple ]>  <color=purple [><物品/@mainleft成就系统-物品><color=purple ]>  <color=purple [><等级/@mainleft成就系统-等级><color=purple ]>  <color=purple [><任务/@mainleft成就系统-任务><color=purple ]>  <color=purple [><活动/@mainleft成就系统-活动><color=purple ]>  <color=purple [><全服/@mainleft成就系统-全服><color=purple ]>\
+\
+<color=green 条件                                         状况>\
+成就奖励尚未推出，敬请期待！\
+
+[@mainleft成就排行]
+#ACT
+
+#SAY
+<color=orange 【><BOSSRefresh/@mainleftBOSS刷新><color=orange 】>　<color=orange 【>AchievementSystem<color=orange 】><color=red New>　\
+\
+　　　<成就奖励/@mainleft成就奖励>　　<color=black ★> 成就值：<$HUMAN(成就值)> <color=black ★>　　成就排行\
+\
+<color=purple [><综合/@mainleft成就系统><color=purple ]>  <color=purple [><怪物/@mainleft成就系统-怪物><color=purple ]>  <color=purple [><物品/@mainleft成就系统-物品><color=purple ]>  <color=purple [><等级/@mainleft成就系统-等级><color=purple ]>  <color=purple [><任务/@mainleft成就系统-任务><color=purple ]>  <color=purple [><活动/@mainleft成就系统-活动><color=purple ]>  <color=purple [><全服/@mainleft成就系统-全服><color=purple ]>\
+\
+　　　　　　　　　　<color=red 全服成就值TOP10>\
+<color=green 名次　　　　　　人名　　　　　　　　　　　成就值>\
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanks\成就值.txt S0 0
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+FORMATSTR S2 %-16s%-26s%s\ 第一名|<$STR(S0)>|<$STR(S1)>
+#SAY
+<$STR(S2)>
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanks\成就值.txt S0 1
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+FORMATSTR S3 %-16s%-26s%s\ 第二名|<$STR(S0)>|<$STR(S1)>
+#SAY
+<$STR(S3)>
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanks\成就值.txt S0 2
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+FORMATSTR S4 %-16s%-26s%s\ 第三名|<$STR(S0)>|<$STR(S1)>
+#SAY
+<$STR(S4)>
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanks\成就值.txt S0 3
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+FORMATSTR S5 %-16s%-26s%s\ 第四名|<$STR(S0)>|<$STR(S1)>
+#SAY
+<$STR(S5)>
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanks\成就值.txt S0 4
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+FORMATSTR S6 %-16s%-26s%s\ 第五名|<$STR(S0)>|<$STR(S1)>
+#SAY
+<$STR(S6)>
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanks\成就值.txt S0 4
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+FORMATSTR S7 %-16s%-26s%s\ 第六名|<$STR(S0)>|<$STR(S1)>
+#SAY
+<$STR(S7)>
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanks\成就值.txt S0 4
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+FORMATSTR S8 %-16s%-26s%s\ 第七名|<$STR(S0)>|<$STR(S1)>
+#SAY
+<$STR(S8)>
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanks\成就值.txt S0 4
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+FORMATSTR S9 %-16s%-26s%s\ 第八名|<$STR(S0)>|<$STR(S1)>
+#SAY
+<$STR(S9)>
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanks\成就值.txt S0 4
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+FORMATSTR S10 %-16s%-26s%s\ 第九名|<$STR(S0)>|<$STR(S1)>
+#SAY
+<$STR(S10)>
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanks\成就值.txt S0 4
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+FORMATSTR S11 %-16s%-26s%s\ 第十名|<$STR(S0)>|<$STR(S1)>
+#SAY
+<$STR(S11)>
+}
+
+[@成就修炼值]
+{
+#IF
+CHECKVAR HUMAN CJ025 = 0
+large $REFINEPOINT 49999
+#ACT
+Calcvar HUMAN CJ025 = 1
+Calcvar HUMAN 成就值 + 10
+SendMsg 15 成就完成　极品修炼值达到50000　成就值+10
+#CALL [\Features\HandedCollection\AchievementSystem.txt] @成就排行
+
+#IF
+CHECKVAR HUMAN CJ025 = 1
+large $REFINEPOINT 99999
+#ACT
+Calcvar HUMAN CJ025 = 2
+Calcvar HUMAN 成就值 + 20
+SendMsg 15 成就完成　极品修炼值达到100000　成就值+20
+#CALL [\Features\HandedCollection\AchievementSystem.txt] @成就排行
+
+#IF
+CHECKVAR HUMAN CJ025 = 2
+large $REFINEPOINT 199999
+#ACT
+Calcvar HUMAN CJ025 = 3
+Calcvar HUMAN 成就值 + 30
+SendMsg 15 成就完成　极品修炼值达到200000　成就值+30
+#CALL [\Features\HandedCollection\AchievementSystem.txt] @成就排行
+}
+
+[@成就排行]
+{
+#ACT
+mov P0
+goto @成就排行1
+
+[@成就排行1]
+#IF
+equal P0 0
+#ACT
+mov S0 $USERNAME
+inc S0 |
+
+#IF
+equal P0 0
+PosInList $STR(S0) ..\QuestDiary\GameData\VariousRanks\成就值.txt S0
+#ACT
+DELVARLIST $STR(S0) ..\QuestDiary\GameData\VariousRanks\成就值.txt
+
+#IF
+large P0 10
+#ACT
+break
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanks\成就值.txt S0 $STR(P0)
+mov P1
+
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S1 P1
+
+#IF
+CHECKVAR HUMAN 成就值 > $STR(P1)
+#ACT
+FORMATSTR S0 %s|%s <$USERNAME>|<$HUMAN(成就值)>
+INSERTVARLIST $STR(P0) $STR(S0) ..\QuestDiary\GameData\VariousRanks\成就值.txt
+#ELSEACT
+inc P0 1
+goto @成就排行1
+}

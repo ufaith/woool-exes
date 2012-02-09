@@ -1,0 +1,7 @@
+09/02/2012 02:47:11 Has Read 1Guild Information...
+09/02/2012 02:47:11 Has Read 1Castle Information...
+09/02/2012 02:47:11 ConciergeMerchant Initalize fail... (m.PEnvir=nil)
+09/02/2012 02:47:11 script error, load fail: \Features\GodStove.txt@紫金神炉
+09/02/2012 02:47:11 脚本文件未找到: .\Envir\Market_Def\CentralPlains\Historiographer-0.txt
+09/02/2012 02:47:19 UPDATED：2010/11/15
+09/02/2012 02:47:19 Contact：DXENGINE@DXWOOOL.COM

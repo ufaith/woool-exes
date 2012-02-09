@@ -1,0 +1,226 @@
+;S0 有几率获得的物品
+;S1 显示获得经验数
+;S2 获得物品的几率
+
+[@祈愿树]
+{
+　　有道是，冥冥中自有天意。云游道长云游四海，自幼得\
+高人传授，深谙占卜之道，观星相而知天命。如今发现了这\
+棵万年神树，国王下令将神树迁到中州来。\
+　　万民只要有祈愿符，并将物品投掷到这棵祈愿树上，就\
+可获得祈愿树的祈福。\
+\
+　　<向祈愿树祈福/@openBless>\
+　　<了解神树的传说/@liaojie>\
+　　<了解可祈愿物品/@wupin>\
+
+[@liaojie]
+　　上万年的风风雨雨，上万年的饱经沧桑，这棵老神树用\
+它那孤单的臂膀，挡风遮雨，庇护着传世大陆上的人们。\
+　　云游道长首先发现了这棵神树，惊叹于这棵神树的灵力\
+并称其为“祈愿树”。在祈福树的每一层，都挂着琳琅满目的\
+物品。只要向树祈愿，更有几率获得祈福树上的物品。\
+\
+　　<向祈愿树祈福/@openBless>\
+
+[@wupin]
+　　世间万物都蕴涵各种灵力，但只有灵力充沛的物品才能\
+用来向祈愿树祈福。\
+　　各种高级装备(圣战级以上)、高级武器(无极类以上)、\
+高级技能书、高级勋章，以及所有宝石都可以向祈愿树祈福\
+当然一些商城道具也蕴涵大量灵力可以用于祈福。\
+　　此外，所有绑定和固化的装备道具由于灵力被锁，所以\
+均无法用于祈福。还有你可以将装备道具和祈愿符一起放上\
+祈愿树下的物品格，<Color=green 如蓄力槽无变化则说明该物品无法祈福。>\
+　　<向祈愿树祈福/@openBless>\
+
+[@openBless]
+#IF
+CheckUserGap < 5
+#ACT
+SendBlessItemList ..\QuestDiary\GameRead\祈愿树\
+#ELSESAY
+你离树太远了...\
+\
+<走近点/@exit>
+
+[@StartBless]
+#IF
+equal $PARAM(0) 0
+!CHECKVARLIST $ITEMINFO[$PARAM(1)].NAME ..\QuestDiary\GameRead\祈愿树\树上物品1.txt
+!CHECKVARLIST $ITEMINFO[$PARAM(1)].NAME ..\QuestDiary\GameRead\祈愿树\树上物品2.txt
+!CHECKVARLIST $ITEMINFO[$PARAM(1)].NAME ..\QuestDiary\GameRead\祈愿树\树上物品3.txt
+!CHECKVARLIST $ITEMINFO[$PARAM(1)].NAME ..\QuestDiary\GameRead\祈愿树\可祈愿物品.txt
+#ACT
+MessageBox 无法用该物品进行祈愿
+break
+
+#IF
+random 9
+equal $PARAM(0) 0
+#ACT
+SetBlessPower 3
+ReadRandomStr ..\QuestDiary\GameRead\祈愿树\BlessItem3.txt S0
+break
+
+#IF
+random 3
+equal $PARAM(0) 0
+#ACT
+SetBlessPower 2
+ReadRandomStr ..\QuestDiary\GameRead\祈愿树\BlessItem2.txt S0
+break
+
+#IF
+equal $PARAM(0) 0
+#ACT
+SetBlessPower 1
+ReadRandomStr ..\QuestDiary\GameRead\祈愿树\BlessItem1.txt S0
+break
+
+#IF
+CHECKVARLIST $ITEMINFO[$PARAM(1)].NAME ..\QuestDiary\GameRead\祈愿树\树上物品1.txt
+#ACT
+movr P0 40
+inc P0 40
+mov S2 6
+
+#IF
+CHECKVARLIST $ITEMINFO[$PARAM(1)].NAME ..\QuestDiary\GameRead\祈愿树\树上物品2.txt
+#ACT
+movr P0 120
+inc P0 120
+mov S2 3
+
+#IF
+CHECKVARLIST $ITEMINFO[$PARAM(1)].NAME ..\QuestDiary\GameRead\祈愿树\树上物品3.txt
+#ACT
+movr P0 360
+inc P0 360
+mov S2 1
+
+#IF
+CHECKVARLIST $ITEMINFO[$PARAM(1)].NAME ..\QuestDiary\GameRead\祈愿树\可祈愿物品.txt
+#ACT
+movr P0 1080
+inc P0 1080
+mov S2 1
+
+#IF
+equal $PARAM(0) 1
+#ACT
+mov S3 $ITEMINFO[$PARAM(1)].NAME
+takem $PARAM(1)
+UPGRADEUSERITEM $PARAM(2) 20 - 1
+
+#IF
+equal $PARAM(0) 1
+#ACT
+MULT P0 10000
+mov S1 $STR(P0)
+CHANGEEXP + $STR(P0)
+SENDMSG 5 你获得了<$STR(S1)>经验
+
+#IF
+equal $PARAM(0) 1
+random $STR(S2)
+#ACT
+DELVARLIST $STR(S0) ..\QuestDiary\GameRead\祈愿树\BlessItem1.txt
+SENDMSG 10 %s向祈愿树许下愿望，并从祈愿树上获得了<$STR(S0)>，快去中州的祈愿树许下你的愿望。
+give $STR(S0) 1
+goto @是否留在树上
+
+[@是否留在树上]
+#IF
+CHECKVARLIST $STR(S0) ..\QuestDiary\GameRead\祈愿树\树上物品1.txt
+CHECKVARLIST $STR(S3) ..\QuestDiary\GameRead\祈愿树\树上物品1.txt
+#ACT
+DELVARLIST $STR(S0) ..\QuestDiary\GameRead\祈愿树\BlessItem1.txt
+ADDVARLIST $STR(S3) ..\QuestDiary\GameRead\祈愿树\BlessItem1.txt 1
+SENDMSG 10 %s向祈愿树许下愿望，并将<$STR(S3)>留在了祈愿树上，快去中州的祈愿树许下你的愿望。
+break
+
+#IF
+CHECKVARLIST $STR(S0) ..\QuestDiary\GameRead\祈愿树\树上物品2.txt
+CHECKVARLIST $STR(S3) ..\QuestDiary\GameRead\祈愿树\树上物品2.txt
+#ACT
+DELVARLIST $STR(S0) ..\QuestDiary\GameRead\祈愿树\BlessItem2.txt
+ADDVARLIST $STR(S3) ..\QuestDiary\GameRead\祈愿树\BlessItem2.txt 1
+SENDMSG 10 %s向祈愿树许下愿望，并将<$STR(S3)>留在了祈愿树上，快去中州的祈愿树许下你的愿望。
+break
+
+#IF
+CHECKVARLIST $STR(S0) ..\QuestDiary\GameRead\祈愿树\树上物品3.txt
+CHECKVARLIST $STR(S3) ..\QuestDiary\GameRead\祈愿树\树上物品3.txt
+#ACT
+DELVARLIST $STR(S0) ..\QuestDiary\GameRead\祈愿树\BlessItem3.txt
+ADDVARLIST $STR(S3) ..\QuestDiary\GameRead\祈愿树\BlessItem3.txt 1
+SENDMSG 10 %s向祈愿树许下愿望，并将<$STR(S3)>留在了祈愿树上，快去中州的祈愿树许下你的愿望。
+#ELSEACT
+#ECALL [\Features\PrayerTree.txt] @祈愿树读取
+}
+
+[@祈愿树读取]
+{
+#ACT
+goto @祈愿树物品1
+goto @祈愿树物品2
+goto @祈愿树物品3
+
+[@祈愿树物品1]
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameRead\祈愿树\BlessItem1.txt S0 49
+
+#IF
+equal S0
+#ACT
+ReadRandomStr ..\QuestDiary\GameRead\祈愿树\树上物品1.txt S0
+ADDVARLIST $STR(S0) ..\QuestDiary\GameRead\祈愿树\BlessItem1.txt 1
+goto @祈愿树物品1
+
+[@祈愿树物品2]
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameRead\祈愿树\BlessItem2.txt S0 49
+
+#IF
+equal S0
+random 3
+#ACT
+ReadRandomStr ..\QuestDiary\GameRead\祈愿树\树上物品2.txt S0
+ADDVARLIST $STR(S0) ..\QuestDiary\GameRead\祈愿树\BlessItem2.txt 1
+goto @祈愿树物品2
+break
+
+#IF
+equal S0
+#ACT
+ReadRandomStr ..\QuestDiary\GameRead\祈愿树\树上物品1.txt S0
+ADDVARLIST $STR(S0) ..\QuestDiary\GameRead\祈愿树\BlessItem2.txt 1
+goto @祈愿树物品2
+
+[@祈愿树物品3]
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameRead\祈愿树\BlessItem3.txt S0 49
+
+#IF
+equal S0
+random 3
+#ACT
+ReadRandomStr ..\QuestDiary\GameRead\祈愿树\树上物品3.txt S0
+ADDVARLIST $STR(S0) ..\QuestDiary\GameRead\祈愿树\BlessItem3.txt 1
+goto @祈愿树物品3
+break
+
+#IF
+equal S0
+#ACT
+ReadRandomStr ..\QuestDiary\GameRead\祈愿树\树上物品2.txt S0
+ADDVARLIST $STR(S0) ..\QuestDiary\GameRead\祈愿树\BlessItem3.txt 1
+goto @祈愿树物品3
+}

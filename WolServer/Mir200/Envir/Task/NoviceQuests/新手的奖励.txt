@@ -1,0 +1,5 @@
+[setup]
+stepcount = 1
+title = NoviceQuests--新手的奖励
+ID = 42
+stepDESC1 = <color=graygolden 任务目的：>出<Palace/@@goplace SH000 12,54>去找<新手关怀大使/@@goto 0 新手关怀大使 468,245>领取大礼\<color=graygolden 任务奖励：>\</@@!PIC2 10,951>经验：100000\<color=graygolden 任务介绍:>\    快去找<color=green 新手关怀大使>吧，她会有一份大礼送给你的！\

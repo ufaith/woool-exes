@@ -1,0 +1,8 @@
+[@main]
+#IF
+CheckMapMonNameCount 1 200 300 10 Rabbit -15
+#ACT
+PARAM1 1
+PARAM2 200
+PARAM3 300
+MonGen Rabbit 30 30

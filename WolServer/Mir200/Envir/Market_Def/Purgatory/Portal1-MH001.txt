@@ -1,0 +1,57 @@
+[@main]
+#IF
+CheckUserGap < 5
+#SAY
+你要进入炼狱的更深层吗？\
+按照你职业的不同，所走的道路也不相同，\
+不过最终的终点是相同的。你准备好了吗？\
+<我准备好了，前进/@go>\
+<直接前往海滨平原/@gonew>\
+<直接前往炼狱魔境六层/@gonew1>\
+<进入炼狱淘金场/@wcsb>\
+<离开炼狱/@freegoout>\
+<还没准备好，等等/@exit>
+#ELSESAY
+<太远了，过不去..../@exit>
+
+[@wcsb]
+请选择要去的地方。\
+\
+<去炼狱猎场一/@out1>    <去炼狱猎场二/@out2>\
+<去炼狱猎场三/@out3>    <去炼狱林场一/@out4>\
+<去炼狱林场二/@out5>    <去炼狱焰火屠魔场/@out6>\
+<离开/@exit>
+
+[@out1]
+#ACT
+map 炼狱猎魔场 82 41
+
+[@gonew]
+#ACT
+mapmove MH008 34 113
+
+[@go]
+#IF
+checkjob warrior
+#ACT
+mapmove MH002 69 121
+break
+
+#IF
+checkjob wizard
+#ACT
+mapmove MH003 41 76
+break
+
+#IF
+checkjob taoist
+#ACT
+mapmove MH004 111 50
+
+[@freegoout]
+#ACT
+map 0
+
+[@gonew1]
+#ACT
+mapmove NL006 36 28

@@ -1,0 +1,375 @@
+;天之裁决类武器 需要2块
+;天之圣战战甲类 需要2块
+;天之神武级首饰 需要4块
+;天之神武战甲类 需要12块
+;天之战神级首饰 需要12块
+
+[@天之玄兵]
+{
+　　你得到了这传说中的天之玄兵？这些神兵埋藏日久，大\
+半都失去了锋锐的属性，有些虽然仍然可以使用，但是本身\
+的杀气太盛，难以驯服，一有机会便会破空飞去。只有用神\
+奇的<color=green 天之神铁>淬炼，才能彻底炼化它们，如果运气好还能炼\.
+出威力更大的极品。\
+　　不过不同的神兵需要的<color=green 天之神铁>多少不同，你还是尽量\
+多找一些吧，我会把你身上的神铁全都收走的。\
+　　<请帮我炼化天之玄兵/@meltN>    <我的天之玄兵是生锈的，怎么办啊？/@xuanbin>\
+　　<返回/@main>\
+
+[@meltN]
+#ACT
+Showspotdlg 6 请放上你的天之玄兵 @炼化检测
+#SAY
+　　待我好好看看你要炼化的天之玄兵，这不同的玄兵炼化\
+需要的材料火候全不相同，实在是马虎不得啊。\
+　　不过你一定要准备好足够的<color=green 天之神铁>，待会儿需要多少\
+我会告诉你的。\
+\
+　　<算了/@exit>
+
+[@炼化检测]
+#IF
+equal $PARAM(0) 天之裁决
+#ACT
+mov S0 $PARAM(0)
+mov S1 2
+mov S2 99
+break
+#SAY
+　　这件天之玄兵用<color=green 两块天之神铁>就可以炼化了，不过你\
+要有<color=green 加倍的神铁>，我自信可以帮你炼出威力更大的极品，\
+现在就开始吗？\
+\
+　　<开始炼化/@meltNowN>\
+　　<容我想想/@exit>\
+
+#IF
+equal $PARAM(0) 天之骨玉
+#ACT
+mov S0 $PARAM(0)
+mov S1 2
+mov S2 99
+break
+#SAY
+　　这件天之玄兵用<color=green 两块天之神铁>就可以炼化了，不过你\
+要有<color=green 加倍的神铁>，我自信可以帮你炼出威力更大的极品，\
+现在就开始吗？\
+\
+　　<开始炼化/@meltNowN>\
+　　<容我想想/@exit>\
+
+#IF
+equal $PARAM(0) 天之龙纹
+#ACT
+mov S0 $PARAM(0)
+mov S1 2
+mov S2 99
+break
+#SAY
+　　这件天之玄兵用<color=green 两块天之神铁>就可以炼化了，不过你\
+要有<color=green 加倍的神铁>，我自信可以帮你炼出威力更大的极品，\
+现在就开始吗？\
+\
+　　<开始炼化/@meltNowN>\
+　　<容我想想/@exit>\
+
+#IF
+equal $ITEMINFO[$PARAM(1)].SOURCE 2
+equal $ITEMINFO[$PARAM(1)].RESERVED 99
+#ACT
+mov S0 $PARAM(0)
+mov S1 2
+mov S2 99
+break
+#SAY
+　　这件天之玄兵用<color=green 两块天之神铁>就可以炼化了，不过你\
+要有<color=green 加倍的神铁>，我自信可以帮你炼出威力更大的极品，\
+现在就开始吗？\
+\
+　　<开始炼化/@meltNowN>\
+　　<容我想想/@exit>\
+
+#IF
+equal $ITEMINFO[$PARAM(1)].SOURCE 4
+equal $ITEMINFO[$PARAM(1)].RESERVED 99
+#ACT
+mov S0 $PARAM(0)
+mov S1 4
+mov S2 99
+break
+#SAY
+　　这件天之玄兵用<color=green 四块天之神铁>就可以炼化了，不过你\
+要有<color=green 加倍的神铁>，我自信可以帮你炼出威力更大的极品，\
+现在就开始吗？\
+\
+　　<开始炼化/@meltNowN>\
+　　<容我想想/@exit>\
+
+#IF
+equal $ITEMINFO[$PARAM(1)].SOURCE 4
+equal $ITEMINFO[$PARAM(1)].RESERVED 100
+#ACT
+mov S0 $PARAM(0)
+mov S1 4
+mov S2 100
+break
+#SAY
+　　这件天之玄兵用<color=green 四块天之神铁>就可以炼化了，\
+现在就开始吗？\
+\
+　　<开始炼化/@meltNowN>\
+　　<容我想想/@exit>\
+
+#IF
+equal $ITEMINFO[$PARAM(1)].SOURCE 12
+equal $ITEMINFO[$PARAM(1)].RESERVED 100
+#ACT
+mov S0 $PARAM(0)
+mov S1 12
+mov S2 100
+#SAY
+　　这件天之玄兵用<color=green 十二块天之神铁>就可以炼化了，\
+现在就开始吗？\
+\
+　　<开始炼化/@meltNowN>\
+　　<容我想想/@exit>\
+#ELSESAY
+恐怕这不是天之玄兵吧。 \
+\
+\
+<我再找找/@exit>
+
+[@meltNowN]
+#ACT
+Showspotdlg 6 请放上你的天之玄兵 @炼化天之
+#SAY
+　　把你要炼化的天之玄兵放上去吧\
+\
+　　<算了/@exit>
+
+[@炼化天之]
+#IF
+!equal S0 $PARAM(0)
+#ACT
+break
+#SAY
+恐怕这不是刚才你给我的那件天之玄兵吧。 \
+\
+\
+<我再找找/@exit>
+
+#IF
+!checkitem 天之神铁 $STR(S1)
+#ACT
+break
+#SAY
+　　我不是跟你开玩笑，就你带来的这些材料，只怕还没有\
+开始炼，就先把天之玄兵毁了。你还是好好的去找找天之神\
+铁吧。\
+\
+　　<返回/@meltSky>
+
+#IF
+random 1
+#ACT
+take $PARAM(0) 1
+dec S0 1 4
+give $STR(S0) 1
+
+#IF
+equal S1 2
+#ACT
+take 天之神铁 4
+
+#IF
+equal S1 4
+equal S2 99
+#ACT
+take 天之神铁 8
+
+#IF
+equal S1 4
+equal S2 100
+#ACT
+take 天之神铁 4
+
+#IF
+equal S1 12
+#ACT
+take 天之神铁 12
+
+#IF
+small $PARAM(12) 4
+equal S2 99
+#ACT
+break
+#SAY
+　　终于成功了啊，现在这件神兵已经完全被炼化。不过可\
+惜没有更多的材料，不然我一定可以炼出来威力更大的极品\
+神兵。\
+\
+　　<返回/@exit>
+
+#IF
+equal S2 100
+#ACT
+break
+#SAY
+　　终于成功了啊，现在这件神兵已经完全被炼化。\
+\
+　　<返回/@exit>
+
+#IF
+equal S2 99
+#SAY
+　　终于成功了啊，现在这件神兵已经完全被炼化。\
+看上去还是一件极品。\
+\
+　　<返回/@exit>
+
+#IF
+large $ITEMINFO[$PARAM(10)].STDMODE 4
+small $ITEMINFO[$PARAM(10)].STDMODE 7
+large $ITEMINFO[$PARAM(10)].DC2 0
+#ACT
+;应该是下限加1点
+UPGRADEUSERITEM $PARAM(10) 0 + 1
+break
+
+#IF
+large $ITEMINFO[$PARAM(10)].STDMODE 4
+small $ITEMINFO[$PARAM(10)].STDMODE 7
+large $ITEMINFO[$PARAM(10)].MC2 0
+#ACT
+;应该是下限加1点
+UPGRADEUSERITEM $PARAM(10) 2 + 1
+break
+
+#IF
+large $ITEMINFO[$PARAM(10)].STDMODE 4
+small $ITEMINFO[$PARAM(10)].STDMODE 7
+large $ITEMINFO[$PARAM(10)].SC2 0
+#ACT
+;应该是下限加1点
+UPGRADEUSERITEM $PARAM(10) 4 + 1
+break
+
+#IF
+large $ITEMINFO[$PARAM(10)].DC2 0
+#ACT
+;应该是下限加1点
+UPGRADEUSERITEM $PARAM(10) 0 + 1
+break
+
+#IF
+large $ITEMINFO[$PARAM(10)].MC2 0
+#ACT
+;应该是下限加1点
+UPGRADEUSERITEM $PARAM(10) 2 + 1
+break
+
+#IF
+large $ITEMINFO[$PARAM(10)].SC2 0
+#ACT
+;应该是下限加1点
+UPGRADEUSERITEM $PARAM(10) 4 + 1
+break
+
+[@xuanbin]
+　　哦，这种天之玄兵深埋地下历万年，已经锈迹斑斑，得\
+设法将锈迹炼去，这样才能恢复天之玄兵的锋锐。你找到<color=green 3块>\
+<color=green 纯度都在10以上的黑铁矿石>，我可以帮你炼出真正的天之玄\
+兵。我很忙的，你自己配好矿石，我直接一包裹都拿去炼。\
+　　其实这么炼出的天之玄兵戾气太重，很难掌控，一不留\
+神就会自行飞走，真正炼化成为得心应手的神器还需要依靠\
+<color=green 天之神铁>的力量。不多说了，开始吧！\
+<熔炼天之裁决/@ronlianA>  <熔炼天之骨玉/@ronlianB>  <熔炼天之龙纹/@ronlianC>\
+<返回/@meltSky>\
+
+[@ronlianA]
+#IF
+!checkitem 生锈的天之裁决 1
+#ACT
+break
+#SAY
+年轻人，欺骗是不对的，你没有生锈的天之裁决！你应该对\
+你的一言一行负责，才能在未来的生活中赢得尊重。\
+\
+<好惭愧/@exit>
+
+#IF
+checkitem 生锈的天之裁决 1
+CHECKITEMDURE 黑铁矿石 10000 3
+#ACT
+take 生锈的天之裁决 1
+TAKEDUREITEM 黑铁矿石 10000 3
+give 天之裁决 1
+#SAY
+恭喜您的天之裁决威力得到完全释放！\
+\
+<谢谢/@exit>
+#ELSESAY
+你仔细看看，可能你没有3块黑铁矿石或者黑铁矿石的纯度\
+没有达到10以上。这样会毁了天之玄兵的，你符合要求了\
+再来吧。\
+\
+<多谢指点/@exit>
+
+[@ronlianB]
+#IF
+!checkitem 生锈的天之骨玉 1
+#ACT
+break
+#SAY
+年轻人，欺骗是不对的，你没有生锈的天之骨玉！你应该对\
+你的一言一行负责，才能在未来的生活中赢得尊重。\
+\
+<好惭愧/@exit>
+
+#IF
+checkitem 生锈的天之骨玉 1
+CHECKITEMDURE 黑铁矿石 10000 3
+#ACT
+take 生锈的天之骨玉 1
+TAKEDUREITEM 黑铁矿石 10000 3
+give 天之骨玉 1
+#SAY
+恭喜您的天之骨玉威力得到完全释放！\
+\
+<谢谢/@exit>
+#ELSESAY
+你仔细看看，可能你没有3块黑铁矿石或者黑铁矿石的纯度\
+没有达到10以上。这样会毁了天之玄兵的，你符合要求了\
+再来吧。\
+\
+<多谢指点/@exit>
+
+[@ronlianC]
+#IF
+!checkitem 生锈的天之龙纹 1
+#ACT
+break
+#SAY
+年轻人，欺骗是不对的，你没有生锈的天之龙纹！你应该对\
+你的一言一行负责，才能在未来的生活中赢得尊重。\
+\
+<好惭愧/@exit>
+
+#IF
+checkitem 生锈的天之龙纹 1
+CHECKITEMDURE 黑铁矿石 10000 3
+#ACT
+take 生锈的天之龙纹 1
+TAKEDUREITEM 黑铁矿石 10000 3
+give 天之龙纹 1
+#SAY
+恭喜您的天之龙纹威力得到完全释放！\
+\
+<谢谢/@exit>
+#ELSESAY
+你仔细看看，可能你没有3块黑铁矿石或者黑铁矿石的纯度\
+没有达到10以上。这样会毁了天之玄兵的，你符合要求了\
+再来吧。\
+\
+<多谢指点/@exit>
+}

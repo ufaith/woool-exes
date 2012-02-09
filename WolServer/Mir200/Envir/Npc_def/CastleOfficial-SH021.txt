@@ -1,0 +1,188 @@
+[@Main]
+Current Castle Gold is <$CASTLEGOLD> Gold.\
+Today's income is <$TODAYINCOME> Gold.\
+\
+
+#IF
+ISCASTLEMASTER
+#SAY
+<Take Out Funds/@withdrawal>           <Store Resources/@receipts>\
+<Editing Guild Declaration/@manifesto>\
+<Switch Gate Command/@treatdoor>\
+<Repair Castle/@repaircastle>\
+<Guard Command/@hirearchers>\
+
+#IF
+#SAY
+<Exit/@exit>\
+
+[@manifesto]
+恭喜您成功占领沙城，荣登沙城城主的宝座。为了纪念这\
+个伟大的时刻，我们会在沙城（190 405）树立以您的大名\
+命名的个人雕像，您还可以输入您的城主宣言\
+（不超过50个汉字）！\
+\
+<Edit Declaration/@雕像宣言>　<Exit/@exit>
+
+[@雕像宣言]
+#ACT
+QUERYVAL 0 0 100 @雕像宣言0 输入你的宣言
+
+[@雕像宣言0]
+#SAY
+Your personal statue has built successful!
+
+#IF
+CHECKJOB WARR
+#ACT
+GOTO @战士
+BREAK
+
+#IF
+CHECKJOB WIZARD
+#ACT
+GOTO @法师
+BREAK
+
+#IF
+CHECKJOB TAOS
+#ACT
+GOTO @道士
+BREAK
+
+[@战士]
+#IF
+CHECKJOB WARR
+#ACT
+MOV S1 沙城霸主\
+INC S1 $GUILDNAME
+INC S1 \
+INC S1 $USERNAME
+SETNPCNAME 13 $STR(S1)
+#IF
+GENDER MAN
+#ACT
+SETNPCAPPR 13 100
+#ELSEACT
+SETNPCAPPR 13 101
+#IF
+random 1
+#ACT
+MOV A18 城主名字：
+INC A18 $USERNAME
+INC A18 　
+INC A18 职业：
+INC A18 $GENDER
+INC A18 $JOB
+INC A18 　
+INC A18 级别：
+INC A18 $LEVEL
+INC A18 \城主宣言：\
+INC A18 $STR(S0)
+INC A18 \\<离开/@EXIT>
+BREAK
+
+[@法师]
+#IF
+CHECKJOB WIZARD
+#ACT
+MOV S1 沙城霸主\
+INC S1 $USERNAME
+INC S1 \
+SETNPCNAME 13 $STR(S1)
+#IF
+GENDER MAN
+#ACT
+SETNPCAPPR 13 104
+#ELSEACT
+SETNPCAPPR 13 105
+#IF
+random 1
+#ACT
+MOV A18 城主名字：
+INC A18 $USERNAME
+INC A18 　
+INC A18 职业：
+INC A18 $GENDER
+INC A18 $JOB
+INC A18 　
+INC A18 级别：
+INC A18 $LEVEL
+INC A18 \城主宣言：\
+INC A18 $STR(S0)
+INC A18 \\<离开/@EXIT>
+BREAK
+
+[@道士]
+#IF
+CHECKJOB TAOS
+#ACT
+MOV S1 沙城霸主\
+INC S1 $USERNAME
+INC S1 \
+SETNPCNAME 13 $STR(S1)
+#IF
+GENDER MAN
+#ACT
+SETNPCAPPR 13 102
+#ELSEACT
+SETNPCAPPR 13 103
+#IF
+random 1
+#ACT
+MOV A18 城主名字：
+INC A18 $USERNAME
+INC A18 　
+INC A18 职业：
+INC A18 $GENDER
+INC A18 $JOB
+INC A18 　
+INC A18 级别：
+INC A18 $LEVEL
+INC A18 \城主宣言：\
+INC A18 $STR(S0)
+INC A18 \\<离开/@EXIT>
+BREAK
+
+[@treatdoor]
+Sabuk Gate current condition is: <$CASTLEDOORSTATE>\ \
+<Close Main Gate/@CLOSEMAINdoor>\
+<Open Main Gate/@openMAINdoor>\ \
+<Back/@MAIN>\
+
+[@openMAINdoor]
+The Sabuk gate is already open.\ \
+<Back/@treatdoor>\
+
+[@CLOSEMAINdoor]
+The Sabuk gate already closed.\ \
+<Back/@treatdoor>\
+
+[@repaircastle]
+Please select the location you want to repair.\ \
+<Repair Main Gate/@repairdoor>\
+<Repair Walls/@repairwalls>\ \
+<Back/@MAIN>\
+
+[@repairdoor]
+It will cost you:<$REPAIRDOORGOLD> Gold.\ \
+<Repair Gate/@repairdoornow>\
+<Back/@repaircastle>\
+
+[@repairwalls]
+It will cost you:<$REPAIRWALLGOLD> Gold.\ \
+<Repair Wall 1/@repairwallnow1>\
+<Repair Wall 2/@repairwallnow2>\
+<Repair Wall 3/@repairwallnow3>\ \
+<Back/@repaircastle>\
+
+[@hirearchers]
+Hire Archers to protect your Castle.\
+It will cost you <$ARCHERFEE> Gold.\
+Please select the Archers you would like to hire.: \
+<Left Wall Archers I/@hirearchernow1>  <Left Wall Archers II/@hirearchernow2>  <Left Wall Archers III/@hirearchernow3>\
+<Right Wall Archers I/@hirearchernow4>  <Right Wall Archers II/@hirearchernow5>  <Right Wall Archers III/@hirearchernow6>\
+<Palace Left Archers/@hirearchernow11>  <Palace Right Archers II/@hirearchernow12>\
+<Palace Floor Archers/@hirearchernow7>  <Palace Left Archers II/@hirearchernow8>\
+<Palace Right Archers/@hirearchernow9>  <Palace Floor Archers II/@hirearchernow10>\
+<返回/@MAIN>\

@@ -1,0 +1,14 @@
+[zerberoz]
+ConsignmentReceiveGold=0
+[dazz]
+ConsignmentReceiveGold=0
+[qqqq]
+ConsignmentReceiveGold=0
+[qwer]
+ConsignmentReceiveGold=0
+[dfsdfsfd]
+ConsignmentReceiveGold=0
+[xvxcvxv]
+ConsignmentReceiveGold=0
+[sanity]
+ConsignmentReceiveGold=0

@@ -1,0 +1,1112 @@
+[@contest4]
+{
+#IF
+CHECKVAR HUMAN ArenaCompetition > 0
+#ACT
+break
+#SAY
+请先领取上一场比赛的奖金再来吧。\
+\
+<现在领取/@bonus>\
+<退出/@exit>
+
+#IF
+#SAY
+欢迎各位英雄前来摆擂攻擂、观摩比赛，比赛选手进入场地\
+的准备时间为2分钟。每场比赛将会收取5万金币作为场地\
+使用费。比赛之前，请认真阅读本擂台相关比赛规则。\
+\
+<我要参加/@mob1>\
+<打擂规则/@rules4>        <返回/@main>
+
+[@rules4]
+在打擂比赛之前，请先仔细阅读比赛规则：\
+一、进入比赛地图需要比赛金20万，比赛时间为3分钟，比赛场地\
+　　累积满6人，最先申请“生存挑战赛”的房主就可以选择比赛\
+　　开始。当比赛场地累积满10人，比赛将自动开始。(房主名字\
+　　显示为橙色)。\
+二、比赛开始后，地面出现亮点的区域内都会降落雷电，有一定概\
+　　率击中选手，选手必须躲避闪电方可生存，离开比赛场地、被\
+　　<下一页/@nextpage4>                              <返回/@main>
+
+[@nextpage4]
+　　击倒都将输掉此场比赛。\
+　　比赛期间场地内会随机出现大量“幸运魔盒”，可能随机产生\
+　　如下功能：冰冻他人角色、冰冻本人角色、伤害他人角色、伤\
+　　害本人角色、治愈本人角色等\
+三、比赛时间结束，场地内人数大于1，则比赛为平局；比赛结束\
+　　之前，场地内最后一名幸存者将获得奖金100万。\
+　　　　　　　　　　　　　　　　　　<上一页/@rules>　　　　<返回/@main>
+
+
+[@mob1]
+#IF
+!checkhum ARENA001 1
+!CHECKVAR GLOBAL 生存挑战状态 = 1
+#ACT
+Calcvar GLOBAL 生存挑战状态 =
+
+#IF
+#SAY
+目前正在此擂台的英雄资料：\
+参加者姓名						职业		等级	|	参加者姓名						职业		等级\
+<$GLOBAL(生存挑战信息1)>|	<$GLOBAL(生存挑战信息6)>\
+<$GLOBAL(生存挑战信息2)>|	<$GLOBAL(生存挑战信息7)>\
+<$GLOBAL(生存挑战信息3)>|	<$GLOBAL(生存挑战信息8)>\
+<$GLOBAL(生存挑战信息4)>|	<$GLOBAL(生存挑战信息9)>\
+<$GLOBAL(生存挑战信息5)>|	<$GLOBAL(生存挑战信息10)>\
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名1 =
+#SAY
+比赛金：\
+#ELSESAY
+比赛金：<$GLOBAL(生存挑战赛金)>金币\
+
+#IF
+#SAY
+你要加入吗？		<加入/@addmob1&200000>		<返回/@main>
+
+[@addmob1] 
+#IF
+!CHECKVAR GLOBAL 生存挑战状态 = 0
+#ACT
+break
+#SAY
+你申请的比赛场地已被占用，请选择其他比赛场地。\
+\
+<返回/@main>
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 摆
+CHECKVAR HUMAN ArenaCompetition = 0
+#ACT
+break
+#SAY
+你已经申请守擂，不能申请攻擂。\
+\
+<离开/@exit>
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 攻
+CHECKVAR HUMAN ArenaCompetition = 0
+#ACT
+break
+#SAY
+你已经申请攻擂，不能再次申请。\
+\
+<离开/@exit>
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 守
+CHECKVAR HUMAN ArenaCompetition = 0
+#ACT
+break
+#SAY
+你已经申请守擂，不能再次申请。\
+\
+<离开/@exit>
+
+#IF
+!checkgold $SCRIPTPARAM(1)
+#ACT
+break
+#SAY
+你没有足够的比赛金。\
+\
+<离开/@exit>
+
+#IF
+random 1
+#ACT
+mov S1 $USERNAME
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+Insert S1 17 $JOB
+Insert S1 23 $LEVEL
+dec S1 28 999
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名1 =
+#ACT
+Gmexecute 全服触发 @比武擂台11传出
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 生存挑战赛金 = $SCRIPTPARAM(1)
+Calcvar GLOBAL 生存挑战人名1 = $USERNAME
+Calcvar GLOBAL 生存挑战信息1 = $STR(S1)
+mapmove ARENA011 32 38 4
+CHANGENAMECOLOR 69
+CLEARMAPMON $M
+CLEARMAPBODY $M
+CLEARMAPITEM $M
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台生存挑战赛中，还需要9位英雄加入，比赛即将开始，欢迎众位英雄前来挑战
+mov A13 ------
+inc A13 #9
+inc A13 #9	
+inc A13 #9
+inc A13 #9	
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 ----
+inc A13 #9
+inc A13 #9
+inc A13 --
+inc A13 #9
+inc A13 #9
+inc A13 #9
+Calcvar GLOBAL 生存挑战信息2 = $STR(A13)
+Calcvar GLOBAL 生存挑战信息3 = $STR(A13)
+Calcvar GLOBAL 生存挑战信息4 = $STR(A13)
+Calcvar GLOBAL 生存挑战信息5 = $STR(A13)
+Calcvar GLOBAL 生存挑战信息6 = $STR(A13)
+Calcvar GLOBAL 生存挑战信息7 = $STR(A13)
+Calcvar GLOBAL 生存挑战信息8 = $STR(A13)
+Calcvar GLOBAL 生存挑战信息9 = $STR(A13)
+Calcvar GLOBAL 生存挑战信息10 = $STR(A13)
+Calcvar GLOBAL 生存挑战状态 =
+Calcvar GLOBAL 生存挑战人名2 =
+Calcvar GLOBAL 生存挑战人名3 =
+Calcvar GLOBAL 生存挑战人名4 =
+Calcvar GLOBAL 生存挑战人名5 =
+Calcvar GLOBAL 生存挑战人名6 =
+Calcvar GLOBAL 生存挑战人名7 =
+Calcvar GLOBAL 生存挑战人名8 =
+Calcvar GLOBAL 生存挑战人名9 =
+Calcvar GLOBAL 生存挑战人名10 =
+SetRobotTimer 0 系统控制 @ARENA011限时
+SetRobotTimer 0 系统控制 @生存挑战刷怪1
+SetRobotTimer 0 系统控制 @生存挑战刷怪2
+SetRobotTimer 0 系统控制 @生存挑战宝箱
+SetRobotTimer 0 系统控制 @生存检测离场
+break
+#SAY
+申请成功，等待其他玩家加入，请做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名2 =
+#ACT
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 生存挑战人名2 = $USERNAME
+Calcvar GLOBAL 生存挑战信息2 = $STR(S1)
+Gmexecute changemode 1
+mapmove ARENA011 32 38 4
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台生存挑战赛中，还需要8位英雄加入，比赛即将开始，欢迎众位英雄前来挑战
+break
+#SAY
+申请成功，等待其他玩家加入，请做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名3 =
+#ACT
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 生存挑战人名3 = $USERNAME
+Calcvar GLOBAL 生存挑战信息3 = $STR(S1)
+Gmexecute changemode 1
+mapmove ARENA011 32 38 4
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台生存挑战赛中，还需要7位英雄加入，比赛即将开始，欢迎众位英雄前来挑战
+break
+#SAY
+申请成功，等待其他玩家加入，请做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名4 =
+#ACT
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 生存挑战人名4 = $USERNAME
+Calcvar GLOBAL 生存挑战信息4 = $STR(S1)
+Gmexecute changemode 1
+mapmove ARENA011 32 38 4
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台生存挑战赛中，还需要6位英雄加入，比赛即将开始，欢迎众位英雄前来挑战
+break
+#SAY
+申请成功，等待其他玩家加入，请做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名5 =
+#ACT
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 生存挑战人名5 = $USERNAME
+Calcvar GLOBAL 生存挑战信息5 = $STR(S1)
+Gmexecute changemode 1
+mapmove ARENA011 32 38 4
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台生存挑战赛中，还需要5位英雄加入，比赛即将开始，欢迎众位英雄前来挑战
+break
+#SAY
+申请成功，等待其他玩家加入，请做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名6 =
+#ACT
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 生存挑战人名6 = $USERNAME
+Calcvar GLOBAL 生存挑战信息6 = $STR(S1)
+Gmexecute changemode 1
+mapmove ARENA011 32 38 4
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台生存挑战赛中，还需要4位英雄加入，比赛即将开始，欢迎众位英雄前来挑战
+break
+#SAY
+申请成功，等待其他玩家加入，请做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名7 =
+#ACT
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 生存挑战人名7 = $USERNAME
+Calcvar GLOBAL 生存挑战信息7 = $STR(S1)
+Gmexecute changemode 1
+mapmove ARENA011 32 38 4
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台生存挑战赛中，还需要3位英雄加入，比赛即将开始，欢迎众位英雄前来挑战
+break
+#SAY
+申请成功，等待其他玩家加入，请做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名8 =
+#ACT
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 生存挑战人名8 = $USERNAME
+Calcvar GLOBAL 生存挑战信息8 = $STR(S1)
+Gmexecute changemode 1
+mapmove ARENA011 32 38 4
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台生存挑战赛中，还需要2位英雄加入，比赛即将开始，欢迎众位英雄前来挑战
+break
+#SAY
+申请成功，等待其他玩家加入，请做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名9 =
+#ACT
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 生存挑战人名9 = $USERNAME
+Calcvar GLOBAL 生存挑战信息9 = $STR(S1)
+Gmexecute changemode 1
+mapmove ARENA011 32 38 4
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台生存挑战赛中，还需要1位英雄加入，比赛即将开始，欢迎众位英雄前来挑战
+break
+#SAY
+申请成功，等待其他玩家加入，请做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名10 =
+#ACT
+take 金币 $SCRIPTPARAM(1)
+Calcvar GLOBAL 生存挑战人名10 = $USERNAME
+Calcvar GLOBAL 生存挑战信息10 = $STR(S1)
+Gmexecute changemode 1
+mapmove ARENA011 32 38 4
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>加入到英雄擂台生存挑战赛中，比赛已经开始
+break
+#CALL [\Features\HeroesChallenge\生存挑战.txt] @生存挑战开始
+#SAY
+申请成功，等待其他玩家加入，请做好战斗准备。\
+\
+<关闭/@exit>
+}
+
+[@生存挑战开始]
+{
+#ACT
+Calcvar GLOBAL 生存挑战状态 = 1
+SetRobotTimer 0 系统控制 @ARENA011限时
+SetRobotTimer 180 系统控制 @ARENA011限时
+SetRobotTimer 1 系统控制 @生存挑战刷怪1
+SetRobotTimer 3 系统控制 @生存挑战刷怪2
+SetRobotTimer 10 系统控制 @生存挑战宝箱
+SetRobotTimer 0 系统控制 @生存检测离场
+SetRobotTimer 1 系统控制 @生存检测离场 180
+
+[@生存检测离场]
+#IF
+$GLOBAL(生存挑战人名1).!CHECKMAPNAME ARENA011
+#ACT
+$GLOBAL(生存挑战人名1).goto @生存下线死亡
+
+#IF
+$GLOBAL(生存挑战人名2).!CHECKMAPNAME ARENA011
+#ACT
+$GLOBAL(生存挑战人名2).goto @生存下线死亡
+
+#IF
+$GLOBAL(生存挑战人名3).!CHECKMAPNAME ARENA011
+#ACT
+$GLOBAL(生存挑战人名3).goto @生存下线死亡
+
+#IF
+$GLOBAL(生存挑战人名4).!CHECKMAPNAME ARENA011
+#ACT
+$GLOBAL(生存挑战人名4).goto @生存下线死亡
+
+#IF
+$GLOBAL(生存挑战人名5).!CHECKMAPNAME ARENA011
+#ACT
+$GLOBAL(生存挑战人名5).goto @生存下线死亡
+
+#IF
+$GLOBAL(生存挑战人名6).!CHECKMAPNAME ARENA011
+#ACT
+$GLOBAL(生存挑战人名6).goto @生存下线死亡
+
+#IF
+$GLOBAL(生存挑战人名7).!CHECKMAPNAME ARENA011
+#ACT
+$GLOBAL(生存挑战人名7).goto @生存下线死亡
+
+#IF
+$GLOBAL(生存挑战人名8).!CHECKMAPNAME ARENA011
+#ACT
+$GLOBAL(生存挑战人名8).goto @生存下线死亡
+
+#IF
+$GLOBAL(生存挑战人名9).!CHECKMAPNAME ARENA011
+#ACT
+$GLOBAL(生存挑战人名9).goto @生存下线死亡
+
+#IF
+$GLOBAL(生存挑战人名10).!CHECKMAPNAME ARENA011
+#ACT
+$GLOBAL(生存挑战人名10).goto @生存下线死亡
+
+[@生存挑战刷怪1]
+#ACT
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+SetRobotTimer 3 系统控制 @生存挑战刷怪1
+
+[@生存挑战刷怪2]
+#ACT
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+CreateGroupLight 1 $STR(A13) 3 400 0
+SetRobotTimer 3 系统控制 @生存挑战刷怪2
+
+[@生存挑战宝箱]
+#ACT
+ReadRandomStr ..\QueStDiary\Features\HeroesChallenge\雷电宝盒.txt A13
+DropItemDown 幸运宝盒 1 $STR(A13) 10 1
+SetRobotTimer 10 系统控制 @生存挑战宝箱
+
+[@ARENA011限时]
+#CALL [\Features\HeroesChallenge\生存挑战.txt] @生存挑战胜负
+
+#IF
+large I41 1
+#ACT
+mov I41 $GLOBAL(生存挑战赛金)
+dec I41 50000
+$GLOBAL(生存挑战人名1).CALCVAR HUMAN ArenaCompetition = $STR(I41)
+$GLOBAL(生存挑战人名2).CALCVAR HUMAN ArenaCompetition = $STR(I41)
+$GLOBAL(生存挑战人名3).CALCVAR HUMAN ArenaCompetition = $STR(I41)
+$GLOBAL(生存挑战人名4).CALCVAR HUMAN ArenaCompetition = $STR(I41)
+$GLOBAL(生存挑战人名5).CALCVAR HUMAN ArenaCompetition = $STR(I41)
+$GLOBAL(生存挑战人名6).CALCVAR HUMAN ArenaCompetition = $STR(I41)
+$GLOBAL(生存挑战人名7).CALCVAR HUMAN ArenaCompetition = $STR(I41)
+$GLOBAL(生存挑战人名8).CALCVAR HUMAN ArenaCompetition = $STR(I41)
+$GLOBAL(生存挑战人名1).CALCVAR HUMAN ArenaCondition = 平
+$GLOBAL(生存挑战人名2).CALCVAR HUMAN ArenaCondition = 平
+$GLOBAL(生存挑战人名3).CALCVAR HUMAN ArenaCondition = 平
+$GLOBAL(生存挑战人名4).CALCVAR HUMAN ArenaCondition = 平
+$GLOBAL(生存挑战人名5).CALCVAR HUMAN ArenaCondition = 平
+$GLOBAL(生存挑战人名6).CALCVAR HUMAN ArenaCondition = 平
+$GLOBAL(生存挑战人名7).CALCVAR HUMAN ArenaCondition = 平
+$GLOBAL(生存挑战人名8).CALCVAR HUMAN ArenaCondition = 平
+SENDMSG 0 生存挑战赛中的各位英雄实力不相上下，此场比赛为平局
+goto @生存挑战清理
+
+[@import]
+#CALL [\Features\HeroesChallenge\下线死亡.txt] @生存下线死亡
+}
+
+[@生存信息排列]
+{
+#IF
+CHECKVAR GLOBAL 生存挑战人名1 = $USERNAME
+#ACT
+goto @生存排列2-1
+goto @生存排列3-2
+goto @生存排列4-3
+goto @生存排列5-4
+goto @生存排列6-5
+goto @生存排列7-6
+goto @生存排列8-7
+goto @生存排列9-8
+goto @生存排列10-9
+goto @生存排列11-10
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名2 = $USERNAME
+#ACT
+goto @生存排列3-2
+goto @生存排列4-3
+goto @生存排列5-4
+goto @生存排列6-5
+goto @生存排列7-6
+goto @生存排列8-7
+goto @生存排列9-8
+goto @生存排列10-9
+goto @生存排列11-10
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名3 = $USERNAME
+#ACT
+goto @生存排列4-3
+goto @生存排列5-4
+goto @生存排列6-5
+goto @生存排列7-6
+goto @生存排列8-7
+goto @生存排列9-8
+goto @生存排列10-9
+goto @生存排列11-10
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名4 = $USERNAME
+#ACT
+goto @生存排列5-4
+goto @生存排列6-5
+goto @生存排列7-6
+goto @生存排列8-7
+goto @生存排列9-8
+goto @生存排列10-9
+goto @生存排列11-10
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名5 = $USERNAME
+#ACT
+goto @生存排列6-5
+goto @生存排列7-6
+goto @生存排列8-7
+goto @生存排列9-8
+goto @生存排列10-9
+goto @生存排列11-10
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名6 = $USERNAME
+#ACT
+goto @生存排列7-6
+goto @生存排列8-7
+goto @生存排列9-8
+goto @生存排列10-9
+goto @生存排列11-10
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名7 = $USERNAME
+#ACT
+goto @生存排列8-7
+goto @生存排列9-8
+goto @生存排列10-9
+goto @生存排列11-10
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名8 = $USERNAME
+#ACT
+goto @生存排列9-8
+goto @生存排列10-9
+goto @生存排列11-10
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名9 = $USERNAME
+#ACT
+goto @生存排列10-9
+goto @生存排列11-10
+break
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名10 = $USERNAME
+#ACT
+goto @生存排列11-10
+break
+
+[@生存排列2-1]
+#ACT
+Calcvar GLOBAL 生存挑战人名1 = $GLOBAL(生存挑战人名2)
+Calcvar GLOBAL 生存挑战信息1 = $GLOBAL(生存挑战信息2)
+$GLOBAL(生存挑战人名1).CHANGENAMECOLOR 69
+
+[@生存排列3-2]
+#ACT
+Calcvar GLOBAL 生存挑战人名2 = $GLOBAL(生存挑战人名3)
+Calcvar GLOBAL 生存挑战信息2 = $GLOBAL(生存挑战信息3)
+
+[@生存排列4-3]
+#ACT
+Calcvar GLOBAL 生存挑战人名3 = $GLOBAL(生存挑战人名4)
+Calcvar GLOBAL 生存挑战信息3 = $GLOBAL(生存挑战信息4)
+
+[@生存排列5-4]
+#ACT
+Calcvar GLOBAL 生存挑战人名4 = $GLOBAL(生存挑战人名5)
+Calcvar GLOBAL 生存挑战信息4 = $GLOBAL(生存挑战信息5)
+
+[@生存排列6-5]
+#ACT
+Calcvar GLOBAL 生存挑战人名5 = $GLOBAL(生存挑战人名6)
+Calcvar GLOBAL 生存挑战信息5 = $GLOBAL(生存挑战信息6)
+
+[@生存排列7-6]
+#ACT
+Calcvar GLOBAL 生存挑战人名6 = $GLOBAL(生存挑战人名7)
+Calcvar GLOBAL 生存挑战信息6 = $GLOBAL(生存挑战信息7)
+
+[@生存排列8-7]
+#ACT
+Calcvar GLOBAL 生存挑战人名7 = $GLOBAL(生存挑战人名8)
+Calcvar GLOBAL 生存挑战信息7 = $GLOBAL(生存挑战信息8)
+
+[@生存排列9-8]
+#ACT
+Calcvar GLOBAL 生存挑战人名8 = $GLOBAL(生存挑战人名9)
+Calcvar GLOBAL 生存挑战信息8 = $GLOBAL(生存挑战信息9)
+
+[@生存排列10-9]
+#ACT
+Calcvar GLOBAL 生存挑战人名9 = $GLOBAL(生存挑战人名10)
+Calcvar GLOBAL 生存挑战信息9 = $GLOBAL(生存挑战信息10)
+
+[@混乱排列11-10]
+#ACT
+mov A13 ------
+inc A13 #9
+inc A13 #9	
+inc A13 #9
+inc A13 #9	
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 ----
+inc A13 #9
+inc A13 #9
+inc A13 --
+inc A13 #9
+inc A13 #9
+inc A13 #9
+Calcvar GLOBAL 生存挑战信息10 = $STR(A13)
+
+[@生存挑战胜负]
+{
+#IF
+!CHECKVAR GLOBAL 生存挑战状态 = 1
+#ACT
+break
+
+#IF
+random 1
+#ACT
+mov I41 0
+
+#IF
+$GLOBAL(生存挑战人名1).CHECKMAPNAME ARENA011
+!CHECKVAR GLOBAL 生存挑战人名1 = $USERNAME
+#ACT
+inc I41 1
+
+#IF
+$GLOBAL(生存挑战人名2).CHECKMAPNAME ARENA011
+!CHECKVAR GLOBAL 生存挑战人名2 = $USERNAME
+#ACT
+inc I41 1
+
+#IF
+$GLOBAL(生存挑战人名3).CHECKMAPNAME ARENA011
+!CHECKVAR GLOBAL 生存挑战人名3 = $USERNAME
+#ACT
+inc I41 1
+
+#IF
+$GLOBAL(生存挑战人名4).CHECKMAPNAME ARENA011
+!CHECKVAR GLOBAL 生存挑战人名4 = $USERNAME
+#ACT
+inc I41 1
+
+#IF
+$GLOBAL(生存挑战人名5).CHECKMAPNAME ARENA011
+!CHECKVAR GLOBAL 生存挑战人名5 = $USERNAME
+#ACT
+inc I41 1
+
+#IF
+$GLOBAL(生存挑战人名6).CHECKMAPNAME ARENA011
+!CHECKVAR GLOBAL 生存挑战人名6 = $USERNAME
+#ACT
+inc I41 1
+
+#IF
+$GLOBAL(生存挑战人名7).CHECKMAPNAME ARENA011
+!CHECKVAR GLOBAL 生存挑战人名7 = $USERNAME
+#ACT
+inc I41 1
+
+#IF
+$GLOBAL(生存挑战人名8).CHECKMAPNAME ARENA011
+!CHECKVAR GLOBAL 生存挑战人名8 = $USERNAME
+#ACT
+inc I41 1
+
+#IF
+$GLOBAL(生存挑战人名9).CHECKMAPNAME ARENA011
+!CHECKVAR GLOBAL 生存挑战人名9 = $USERNAME
+#ACT
+inc I41 1
+
+#IF
+$GLOBAL(生存挑战人名10).CHECKMAPNAME ARENA011
+!CHECKVAR GLOBAL 生存挑战人名10 = $USERNAME
+#ACT
+inc I41 1
+
+#IF
+large I41 1
+#ACT
+break
+
+#IF
+CheckOnline $GLOBAL(生存挑战人名1)
+#ACT
+$GLOBAL(生存挑战人名1).goto @生存挑战胜利
+break
+
+#IF
+CheckOnline $GLOBAL(生存挑战人名2)
+#ACT
+$GLOBAL(生存挑战人名2).goto @生存挑战胜利
+break
+
+#IF
+CheckOnline $GLOBAL(生存挑战人名3)
+#ACT
+$GLOBAL(生存挑战人名3).goto @生存挑战胜利
+break
+
+#IF
+CheckOnline $GLOBAL(生存挑战人名4)
+#ACT
+$GLOBAL(生存挑战人名4).goto @生存挑战胜利
+break
+
+#IF
+CheckOnline $GLOBAL(生存挑战人名5)
+#ACT
+$GLOBAL(生存挑战人名5).goto @生存挑战胜利
+break
+
+#IF
+CheckOnline $GLOBAL(生存挑战人名6)
+#ACT
+$GLOBAL(生存挑战人名6).goto @生存挑战胜利
+break
+
+#IF
+CheckOnline $GLOBAL(生存挑战人名7)
+#ACT
+$GLOBAL(生存挑战人名7).goto @生存挑战胜利
+break
+
+#IF
+CheckOnline $GLOBAL(生存挑战人名8)
+#ACT
+$GLOBAL(生存挑战人名8).goto @生存挑战胜利
+break
+
+#IF
+CheckOnline $GLOBAL(生存挑战人名9)
+#ACT
+$GLOBAL(生存挑战人名9).goto @生存挑战胜利
+break
+
+#IF
+CheckOnline $GLOBAL(生存挑战人名10)
+#ACT
+$GLOBAL(生存挑战人名10).goto @生存挑战胜利
+break
+
+[@生存挑战胜利]
+#IF
+random 1
+#ACT
+CALCVAR HUMAN ArenaCompetition = $GLOBAL(生存挑战赛金)
+CALCVAR HUMAN ArenaCompetition * 10
+CALCVAR HUMAN ArenaCompetition - 50000
+CALCVAR GLOBAL 生存挑战赛金 * 10
+SENDMSG 0 %s在英雄擂台生存挑战赛取得成功，赢取了<$GLOBAL(生存挑战赛金)>金币的奖励，欢迎众位英雄前来挑战GGGGGGGG
+Calcvar HUMAN ArenaCondition = 攻
+SetRobotTimer 0 系统控制 @生存挑战结束
+SetRobotTimer 10 系统控制 @生存挑战结束
+$GLOBAL(生存挑战人名1).CHANGENAMECOLOR 255
+goto @生存挑战清理
+
+[@生存挑战清理]
+#ACT
+SetRobotTimer 0 系统控制 @生存挑战刷怪1
+SetRobotTimer 0 系统控制 @生存挑战刷怪2
+SetRobotTimer 0 系统控制 @生存挑战宝箱
+mov A13 ------
+inc A13 #9
+inc A13 #9	
+inc A13 #9
+inc A13 #9	
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 #9
+inc A13 ----
+inc A13 #9
+inc A13 #9
+inc A13 --
+inc A13 #9
+inc A13 #9
+inc A13 #9
+Calcvar GLOBAL 生存挑战信息1 = $STR(A13)
+Calcvar GLOBAL 生存挑战信息2 = $STR(A13)
+Calcvar GLOBAL 生存挑战信息3 = $STR(A13)
+Calcvar GLOBAL 生存挑战信息4 = $STR(A13)
+Calcvar GLOBAL 生存挑战信息5 = $STR(A13)
+Calcvar GLOBAL 生存挑战信息6 = $STR(A13)
+Calcvar GLOBAL 生存挑战信息7 = $STR(A13)
+Calcvar GLOBAL 生存挑战信息8 = $STR(A13)
+Calcvar GLOBAL 生存挑战信息9 = $STR(A13)
+Calcvar GLOBAL 生存挑战信息10 = $STR(A13)
+Calcvar GLOBAL 生存挑战状态 =
+Calcvar GLOBAL 生存挑战赛金 =
+Calcvar GLOBAL 生存挑战人名1 =
+Calcvar GLOBAL 生存挑战人名2 =
+Calcvar GLOBAL 生存挑战人名3 =
+Calcvar GLOBAL 生存挑战人名4 =
+Calcvar GLOBAL 生存挑战人名5 =
+Calcvar GLOBAL 生存挑战人名6 =
+Calcvar GLOBAL 生存挑战人名7 =
+Calcvar GLOBAL 生存挑战人名8 =
+Calcvar GLOBAL 生存挑战人名9 =
+Calcvar GLOBAL 生存挑战人名10 =
+
+[@生存挑战结束]
+#ACT
+Gmexecute 集体传送 ARENA011 ARENA000
+}
+
+[@幸运宝盒]
+{
+#IF
+random 1
+#ACT
+take 幸运宝盒 66
+
+#IF
+random 1
+#ACT
+goto @冰冻
+break
+
+#IF
+random 2
+#ACT
+goto @伤害
+break
+
+#IF
+random 1
+#ACT
+goto @治疗
+break
+
+[@冰冻]
+#IF
+random 2
+#ACT
+goto @生存擂台麻痹
+DelayCall 3 @麻痹恢复
+break
+#ELSEACT
+SENDMSG 5 幸运宝盒的效果使其他玩家被麻痹住了
+
+#IF
+$GLOBAL(生存挑战人名1).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名1) $USERNAME
+#ACT
+goto @生存擂台麻痹
+DelayCall 3 @麻痹恢复
+
+#IF
+$GLOBAL(生存挑战人名2).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名2) $USERNAME
+#ACT
+goto @生存擂台麻痹
+DelayCall 3 @麻痹恢复
+
+#IF
+$GLOBAL(生存挑战人名4).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名4) $USERNAME
+#ACT
+goto @生存擂台麻痹
+DelayCall 3 @麻痹恢复
+
+#IF
+$GLOBAL(生存挑战人名5).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名5) $USERNAME
+#ACT
+goto @生存擂台麻痹
+DelayCall 3 @麻痹恢复
+
+#IF
+$GLOBAL(生存挑战人名6).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名6) $USERNAME
+#ACT
+goto @生存擂台麻痹
+DelayCall 3 @麻痹恢复
+
+#IF
+$GLOBAL(生存挑战人名7).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名7) $USERNAME
+#ACT
+goto @生存擂台麻痹
+DelayCall 3 @麻痹恢复
+
+#IF
+$GLOBAL(生存挑战人名8).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名8) $USERNAME
+#ACT
+goto @生存擂台麻痹
+DelayCall 3 @麻痹恢复
+
+#IF
+$GLOBAL(生存挑战人名9).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名9) $USERNAME
+#ACT
+goto @生存擂台麻痹
+DelayCall 3 @麻痹恢复
+
+#IF
+$GLOBAL(生存挑战人名10).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名10) $USERNAME
+#ACT
+goto @生存擂台麻痹
+DelayCall 3 @麻痹恢复
+
+[@生存擂台麻痹]
+#ACT
+Gmexecute CHANGEMODE 16
+SENDMSG 5 幸运宝盒的效果使你被麻痹住了
+
+[@麻痹恢复]
+#ACT
+Gmexecute CHANGEMODE 16
+
+[@治疗]
+#IF
+random 2
+#ACT
+goto @生存擂台加HP
+break
+#ELSEACT
+SENDMSG 5 幸运宝盒的效果使其他玩家HP得到恢复
+
+#IF
+$GLOBAL(生存挑战人名1).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名1) $USERNAME
+#ACT
+goto @生存擂台加HP
+
+#IF
+$GLOBAL(生存挑战人名2).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名2) $USERNAME
+#ACT
+goto @生存擂台加HP
+
+#IF
+$GLOBAL(生存挑战人名4).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名4) $USERNAME
+#ACT
+goto @生存擂台加HP
+
+#IF
+$GLOBAL(生存挑战人名5).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名5) $USERNAME
+#ACT
+goto @生存擂台加HP
+
+#IF
+$GLOBAL(生存挑战人名6).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名6) $USERNAME
+#ACT
+goto @生存擂台加HP
+
+#IF
+$GLOBAL(生存挑战人名7).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名7) $USERNAME
+#ACT
+goto @生存擂台加HP
+
+#IF
+$GLOBAL(生存挑战人名8).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名8) $USERNAME
+#ACT
+goto @生存擂台加HP
+
+#IF
+$GLOBAL(生存挑战人名9).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名9) $USERNAME
+#ACT
+goto @生存擂台加HP
+
+#IF
+$GLOBAL(生存挑战人名10).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名10) $USERNAME
+#ACT
+goto @生存擂台加HP
+
+[@生存擂台加HP]
+#ACT
+$GLOBAL(生存挑战人名10).HUMANHP + 500
+$GLOBAL(生存挑战人名10).SENDMSG 5 幸运宝盒的效果使你生命值恢复了500点
+
+[@伤害]
+#IF
+random 2
+#ACT
+goto @生存擂台减HP
+break
+#ELSEACT
+SENDMSG 5 幸运宝盒的效果使其他玩家HP减少
+
+#IF
+$GLOBAL(生存挑战人名1).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名1) $USERNAME
+#ACT
+goto @生存擂台减HP
+
+#IF
+$GLOBAL(生存挑战人名2).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名2) $USERNAME
+#ACT
+goto @生存擂台减HP
+
+#IF
+$GLOBAL(生存挑战人名4).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名4) $USERNAME
+#ACT
+goto @生存擂台减HP
+
+#IF
+$GLOBAL(生存挑战人名5).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名5) $USERNAME
+#ACT
+goto @生存擂台减HP
+
+#IF
+$GLOBAL(生存挑战人名6).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名6) $USERNAME
+#ACT
+goto @生存擂台减HP
+
+#IF
+$GLOBAL(生存挑战人名7).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名7) $USERNAME
+#ACT
+goto @生存擂台减HP
+
+#IF
+$GLOBAL(生存挑战人名8).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名8) $USERNAME
+#ACT
+goto @生存擂台减HP
+
+#IF
+$GLOBAL(生存挑战人名9).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名9) $USERNAME
+#ACT
+goto @生存擂台减HP
+
+#IF
+$GLOBAL(生存挑战人名10).CHECKMAPNAME ARENA011
+!equal $GLOBAL(生存挑战人名10) $USERNAME
+#ACT
+goto @生存擂台减HP
+
+[@生存擂台减HP]
+#ACT
+HUMANHP - 500
+SENDMSG 5 幸运宝盒的效果使你生命值减少了500点
+}

@@ -1,0 +1,45 @@
+(@fastbuy @buy @sell @repair @s_repair)
+%100
++10
++11
++15
++58
++81
+[@import]
+#CALL [\Merchant\ClothingStore.txt] @merchandise
+
+[@main]
+Welcome, how may i help you?\
+\
+<Quick Buy/@fastbuy>\
+<Buy/@buy>\
+<Sell/@sell>\
+<Repair/@repair>\
+<Special Repair/@s_repair>\
+<Exit/@exit>
+
+
+[@fastbuy]
+Please select the items you wish to purchase.\
+\
+<Product List/@buy>\
+<Back/@main>
+
+[@buy]
+Please select the items you wish to purchase.\
+\
+<Product List/@buy>\
+<Back/@main>
+
+[@sell]
+Please select the items you wish to sell.\
+\
+<Back/@main>
+
+[@repair]
+Please select the items you wish to repair.\
+
+[@s_repair]
+Please select the items you wish to special repair.\
+\
+<Back/@main>

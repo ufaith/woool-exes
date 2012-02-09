@@ -1,0 +1,21 @@
+(@callboard)
+[@mainleft]
+#SAY
+Quick teleport to NPC's free service.\
+<Bookstore/@MAPNAME&SH010&8&12>\
+<HorseGroom/@MAPNAME&0&409&263>\
+<Warehouse/@MAPNAME&SH045&7&13>\
+<Coach/@MAPNAME&0&550&200>\
+<Jewelers/@MAPNAME&0&471&254>\
+<Clothing/@MAPNAME&SH008&12&15>\
+<Blacksmith/@MAPNAME&0&421&248>\
+<Exit/@exit>\
+
+[@MAPNAME]
+#ACT
+MAPMOVE $SCRIPTPARAM(1) $SCRIPTPARAM(2) $SCRIPTPARAM(3)
+break
+
+[@mainright]
+#SAY
+Gem Storage Bugged.\

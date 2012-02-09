@@ -1,0 +1,21 @@
+08/02/2012 23:35:57 Has Read 1Guild Information...
+08/02/2012 23:35:57 Has Read 1Castle Information...
+08/02/2012 23:35:57 ConciergeMerchant Initalize fail... (m.PEnvir=nil)
+08/02/2012 23:35:57 脚本错误2: DELAY 2 @显示窗口1 第:31 行: .\Envir\Market_Def\CentralPlains\DragonStove-0.txt
+08/02/2012 23:35:57 脚本错误2: DELAY 2 @显示窗口2 第:46 行: .\Envir\Market_Def\CentralPlains\DragonStove-0.txt
+08/02/2012 23:35:57 脚本错误2: DELAY 2 @显示窗口3 第:56 行: .\Envir\Market_Def\CentralPlains\DragonStove-0.txt
+08/02/2012 23:35:57 脚本错误2: DELAY 2 @随机成功率 第:66 行: .\Envir\Market_Def\CentralPlains\DragonStove-0.txt
+08/02/2012 23:35:57 script error, load fail: \Features\GodStove.txt@紫金神炉
+08/02/2012 23:35:57 脚本错误2: DELAY 2 @显示窗口1 第:31 行: .\Envir\Market_Def\CentralPlains\TigerStove-0.txt
+08/02/2012 23:35:57 脚本错误2: DELAY 2 @显示窗口2 第:46 行: .\Envir\Market_Def\CentralPlains\TigerStove-0.txt
+08/02/2012 23:35:57 脚本错误2: DELAY 2 @显示窗口3 第:56 行: .\Envir\Market_Def\CentralPlains\TigerStove-0.txt
+08/02/2012 23:35:57 脚本错误2: DELAY 2 @随机成功率 第:66 行: .\Envir\Market_Def\CentralPlains\TigerStove-0.txt
+08/02/2012 23:35:57 脚本错误2: DELAY 2 @显示窗口1 第:32 行: .\Envir\Market_Def\CentralPlains\BasalticStove-0.txt
+08/02/2012 23:35:57 脚本错误2: DELAY 2 @显示窗口2 第:47 行: .\Envir\Market_Def\CentralPlains\BasalticStove-0.txt
+08/02/2012 23:35:57 脚本错误2: DELAY 2 @显示窗口3 第:57 行: .\Envir\Market_Def\CentralPlains\BasalticStove-0.txt
+08/02/2012 23:35:57 脚本错误2: DELAY 2 @随机成功率 第:67 行: .\Envir\Market_Def\CentralPlains\BasalticStove-0.txt
+08/02/2012 23:35:57 脚本错误2: DELAY 2 @显示窗口1 第:40 行: .\Envir\Market_Def\CentralPlains\RosefinchStove-0.txt
+08/02/2012 23:35:57 脚本错误2: DELAY 2 @显示窗口2 第:55 行: .\Envir\Market_Def\CentralPlains\RosefinchStove-0.txt
+08/02/2012 23:35:57 脚本错误2: DELAY 2 @显示窗口3 第:65 行: .\Envir\Market_Def\CentralPlains\RosefinchStove-0.txt
+08/02/2012 23:35:57 脚本错误2: DELAY 2 @随机成功率 第:75 行: .\Envir\Market_Def\CentralPlains\RosefinchStove-0.txt
+08/02/2012 23:35:57 脚本文件未找到: .\Envir\Market_Def\CentralPlains\Historiographer-0.txt

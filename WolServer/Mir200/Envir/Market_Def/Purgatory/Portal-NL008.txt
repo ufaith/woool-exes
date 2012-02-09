@@ -1,0 +1,13 @@
+[@main]
+#IF
+CheckUserGap < 5
+#SAY
+你准备返回炼狱魔境六层吗？\
+<是的/@out>\
+<不/@exit>
+#ELSESAY
+<太远了，过不去..../@exit>
+
+[@out]
+#ACT
+mapmove NL006 47 35

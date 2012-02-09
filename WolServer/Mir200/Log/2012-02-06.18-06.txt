@@ -1,0 +1,52 @@
+06/02/2012 18:06:10 Has Read 0Guild Information...
+06/02/2012 18:06:10 Has Read 1Castle Information...
+06/02/2012 18:06:12 登录服务器(127.0.0.1:5600)连接成功...
+06/02/2012 18:06:14 Database Server(127.0.0.1:6000)Connection Is Successful...
+06/02/2012 18:06:15 游戏网关[0](127.0.0.1:3003)已打开...
+06/02/2012 18:10:13 Division by zero
+06/02/2012 18:10:44 Division by zero
+06/02/2012 18:11:14 Division by zero
+06/02/2012 18:11:45 Division by zero
+06/02/2012 18:12:16 Division by zero
+06/02/2012 18:12:46 Division by zero
+06/02/2012 18:13:16 Division by zero
+06/02/2012 18:13:47 Division by zero
+06/02/2012 18:14:17 Division by zero
+06/02/2012 18:14:48 Division by zero
+06/02/2012 18:15:18 Division by zero
+06/02/2012 18:15:48 Division by zero
+06/02/2012 18:16:10 在线数: 1
+06/02/2012 18:16:19 Division by zero
+06/02/2012 18:16:49 Division by zero
+06/02/2012 18:17:19 Division by zero
+06/02/2012 18:17:50 Division by zero
+06/02/2012 18:18:21 Division by zero
+06/02/2012 18:18:52 Division by zero
+06/02/2012 18:19:22 Division by zero
+06/02/2012 18:19:53 Division by zero
+06/02/2012 18:20:24 Division by zero
+06/02/2012 18:20:54 Division by zero
+06/02/2012 18:21:25 Division by zero
+06/02/2012 18:21:56 Division by zero
+06/02/2012 18:22:26 Division by zero
+06/02/2012 18:22:56 Division by zero
+06/02/2012 18:23:26 Division by zero
+06/02/2012 18:23:57 Division by zero
+06/02/2012 18:24:28 Division by zero
+06/02/2012 18:24:59 Division by zero
+06/02/2012 18:25:29 Division by zero
+06/02/2012 18:25:59 Division by zero
+06/02/2012 18:26:10 在线数: 1
+06/02/2012 18:26:30 Division by zero
+06/02/2012 18:27:00 Division by zero
+06/02/2012 18:27:31 Division by zero
+06/02/2012 18:28:01 Division by zero
+06/02/2012 18:28:31 Division by zero
+06/02/2012 18:29:02 Division by zero
+06/02/2012 18:29:33 Division by zero
+06/02/2012 18:30:03 Division by zero
+06/02/2012 18:30:33 Division by zero
+06/02/2012 18:31:04 Division by zero
+06/02/2012 18:31:34 Division by zero
+06/02/2012 18:32:05 Division by zero
+06/02/2012 18:32:19 游戏网关[0](127.0.0.1:3003)已关闭...

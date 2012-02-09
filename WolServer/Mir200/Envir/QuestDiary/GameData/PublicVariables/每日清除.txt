@@ -1,0 +1,4 @@
+[GLOBAL]
+新进玩家=70
+最高在线人数=1
+发生在=<$TIME.HOUR>:<$TIME.MIN>

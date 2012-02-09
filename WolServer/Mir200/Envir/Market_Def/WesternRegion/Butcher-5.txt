@@ -1,0 +1,13 @@
+(@sell)
+%100
++40
+[@main]
+Welcome, do you have any meat for me today?\
+\
+<Sell Meats/@sell>\
+<Exit/@exit>
+
+[@sell]
+Please select the Meats you wish to sell.\
+\
+<Back/@main>

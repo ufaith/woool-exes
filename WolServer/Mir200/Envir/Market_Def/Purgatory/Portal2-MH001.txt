@@ -1,0 +1,21 @@
+[@main]
+#IF
+CheckUserGap < 5
+#SAY
+穿过这里，就是炼狱魔境，一条截然不同的道路。\
+任何职业都可以在这里并肩战斗，拥有共同的终点。\
+迎接又一轮挑战，你准备好了吗？\
+\
+<进入炼狱魔境/@go>\
+<离开炼狱/@freegoout>\
+<还没准备好，等等/@exit>
+#ELSESAY
+<太远了，过不去..../@exit>
+
+[@go]
+#ACT
+mapmove NL001 86 195
+
+[@freegoout]
+#ACT
+map 0

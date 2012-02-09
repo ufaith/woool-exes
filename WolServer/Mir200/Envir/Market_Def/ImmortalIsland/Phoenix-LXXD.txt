@@ -1,0 +1,10 @@
+[@main]
+　　我辈灵兽，以灵铸体，顿悟天道，以先天资质为贵。\
+资质高者可及早迈入二转之境。\
+资质高于<Color=green 20>者一转<Color=green 7级1800点经验>可进行二转。\
+资质高于<Color=green 30>者一转<Color=green 7级1600点经验>可进行二转。\
+资质高于<Color=green 40>者一转<Color=green 7级1400点经验>可进行二转。\
+资质高于<Color=green 50>者一转<Color=green 7级1200点经验>可进行二转。\
+资质高于<Color=green 60>者一转<Color=green 7级1000点经验>可进行二转。\
+资质高于<Color=green 70>者一转<Color=green 7级 800点经验>可进行二转。\
+<原来灵兽也有这么多讲究！/@exit>\

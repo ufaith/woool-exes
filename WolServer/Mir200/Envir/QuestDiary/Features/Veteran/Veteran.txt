@@ -1,0 +1,56 @@
+[@挑战神威狱]
+{
+#ACT
+MAP SWYZB
+Gmexecute readbook 1
+}
+[@记录回城]
+{
+<我要记录回城点/@_LB_loading>\
+<了解回城石和回城神石的使用方法/@_LB_know>\
+<离开/@exit>
+
+[@_LB_know]
+首先，携带回城石或回城神石在各个城市老兵处记录回城\
+的地点。然后，双击回行石或回城神石就直接回到您最后\
+一次记录点的城市。不过要注意回城神石每使用一次持久\
+就会减少一点，当没有持久后就不能再使用了。\
+\
+<好的，我明白了！/@exit>
+
+[@_LB_loading]
+#IF
+checkitem 回城神石 1
+#ACT
+goto @记录地点
+break
+
+#IF
+checkitem 回城神石(大) 1
+#ACT
+goto @记录地点
+#ELSESAY
+对不起，您身上没有回城石或回城神石，请登陆商城购买。\
+\
+<离开/@exit>
+
+[@记录地点]
+请选择您要记录的回城点：\
+\
+<PenIsland/@开始记录&1&249&246>\
+<王城/@开始记录&0&471&218>\
+<土城/@开始记录&2&225&450>\
+<Forbidden/@开始记录&4&350&164>\
+<WesternRegion/@开始记录&5&464&112>\
+<StagnantWaters/@开始记录&7&55&41>
+
+[@开始记录] 
+#ACT
+CHOOSEPOS $SCRIPTPARAM(1) $SCRIPTPARAM(2) $SCRIPTPARAM(3)
+#SAY
+请放上你的回城石或回城神石。\
+\
+\
+<关闭/@exit>
+}
+

@@ -1,0 +1,16 @@
+06/02/2012 00:18:58 Has Read 0Guild Information...
+06/02/2012 00:18:58 Has Read 1Castle Information...
+06/02/2012 00:18:58 脚本错误2: AmbitLevel + 1 第:1866 行: .\Envir\Market_Def\QFunction-0.txt
+06/02/2012 00:18:58 脚本错误2: AmbitLevel + 1 第:1877 行: .\Envir\Market_Def\QFunction-0.txt
+06/02/2012 00:18:58 脚本错误2: AmbitLevel = 99 第:1914 行: .\Envir\Market_Def\QFunction-0.txt
+06/02/2012 00:18:58 脚本错误2: AmbitLevel = 99 第:1921 行: .\Envir\Market_Def\QFunction-0.txt
+06/02/2012 00:18:58 脚本错误2: ElementForceMax + 15 第:1928 行: .\Envir\Market_Def\QFunction-0.txt
+06/02/2012 00:18:58 脚本错误2: ElementForce = $ELEMENTFORCEMAX 第:1929 行: .\Envir\Market_Def\QFunction-0.txt
+06/02/2012 00:18:58 脚本错误2: ElementForceMax + 8 第:1934 行: .\Envir\Market_Def\QFunction-0.txt
+06/02/2012 00:18:58 脚本错误2: ElementForce = $ELEMENTFORCEMAX 第:1935 行: .\Envir\Market_Def\QFunction-0.txt
+06/02/2012 00:18:58 脚本错误2: ElementForceMax + 12 第:1940 行: .\Envir\Market_Def\QFunction-0.txt
+06/02/2012 00:18:58 脚本错误2: ElementForce = $ELEMENTFORCEMAX 第:1941 行: .\Envir\Market_Def\QFunction-0.txt
+06/02/2012 00:18:58 脚本错误2: AmbitLevel + 1 第:2120 行: .\Envir\Market_Def\QFunction-0.txt
+06/02/2012 00:18:58 脚本错误2: AmbitLevel + 1 第:2129 行: .\Envir\Market_Def\QFunction-0.txt
+06/02/2012 00:18:58 脚本错误2: AmbitLevel = 99 第:2141 行: .\Envir\Market_Def\QFunction-0.txt
+06/02/2012 00:18:58 脚本错误2: AmbitLevel = 99 第:2148 行: .\Envir\Market_Def\QFunction-0.txt

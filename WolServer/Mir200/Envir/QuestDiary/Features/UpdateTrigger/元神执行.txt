@@ -1,0 +1,85 @@
+[@元神执行] PNEUMA
+{
+#IF
+!ISPNEUMA
+#ACT
+BREAK
+
+#IF
+CHECKLEVELEX > 64
+CHECKLEVELEX < 72
+#ACT
+GOTO @检测是否天人
+#IF
+CHECKLEVELEX > 71
+#ACT
+GOTO @检测是否天人
+CHANGELEVEL = 71
+#ELSEACT
+SENDMSG 5 元神升级了
+
+#IF
+RANDOM 1
+#ACT
+mov S0 $EXTRALEVELNAME
+#CALL [\Features\UpdateTrigger\元神排行.txt] @元神排行
+
+#IF
+!equal $STR(S0) $EXTRALEVELNAME
+#ACT
+goto @清除体魄
+
+[@清除体魄] PNEUMA
+#IF
+checknamelist ..\QuestDiary\GameData\Hero-Related\GradePhysical.txt
+#ACT
+USEBONUSPOINT HP - 20
+
+#IF
+checknamelist ..\QuestDiary\GameData\Hero-Related\QualityGoods.txt
+#ACT
+USEBONUSPOINT HP - 70
+
+#IF
+RANDOM 1
+#ACT
+delnamelist ..\QuestDiary\GameData\Hero-Related\GradePhysical.txt
+delnamelist ..\QuestDiary\GameData\Hero-Related\QualityGoods.txt
+addnamelist ..\QuestDiary\GameData\Hero-Related\GeneralBody.txt
+
+[@检测是否天人] PNEUMA
+#IF
+LARGE $AMBITKIND 4
+SMALL $AMBITKIND 7
+#ACT
+AmbitLevel + 1
+GOTO @检测天仙境界
+#CALL [\Features\System\HeroLogin.txt] @元神登陆1
+break
+#IF
+LARGE $AMBITKIND 2
+SMALL $AMBITKIND 5
+#ACT
+AmbitLevel + 1
+GOTO @检测天人境界
+#CALL [\Features\System\HeroLogin.txt] @元神登陆1
+break
+#ELSEACT
+#CALL [\Features\System\HeroLogin.txt] @元神登陆1
+
+[@检测天仙境界] PNEUMA
+#IF
+LARGE $AMBITLEVEL 99
+#ACT
+AmbitLevel = 99
+SENDMSG 5 天仙境界最高为九十九重，请继续修复。
+break
+
+[@检测天人境界] PNEUMA
+#IF
+LARGE $AMBITLEVEL 99
+#ACT
+AmbitLevel = 99
+SENDMSG 5 天人境界最高为九十九重，天人九十九满经验者可去青凌天界飞仙。
+break
+}

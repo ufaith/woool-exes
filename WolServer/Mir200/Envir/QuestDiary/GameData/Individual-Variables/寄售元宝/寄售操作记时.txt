@@ -1,0 +1,14 @@
+[zerberoz]
+ConsignmentOperation=0
+[dazz]
+ConsignmentOperation=0
+[qqqq]
+ConsignmentOperation=0
+[qwer]
+ConsignmentOperation=0
+[dfsdfsfd]
+ConsignmentOperation=0
+[xvxcvxv]
+ConsignmentOperation=0
+[sanity]
+ConsignmentOperation=0

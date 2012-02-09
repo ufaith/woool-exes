@@ -1,0 +1,63 @@
+Guardian 0 393 297 5
+Guardian 0 399 303 5
+Guardian 0 404 285 1
+Guardian 0 411 292 1
+
+Guardian 0 386 143 7
+Guardian 0 393 136 7
+Guardian 0 396 157 3
+Guardian 0 402 151 3
+
+Guardian 0 541 146 1
+Guardian 0 548 151 1
+Guardian 0 539 163 5
+Guardian 0 533 157 5
+
+Guardian 0 554 304 3
+Guardian 0 548 310 3
+Guardian 0 536 298 7
+Guardian 0 543 291 7
+
+Guardian 0 478 211 5
+Guardian 0 489 222 5
+
+;º£½Ç´å
+Guardian 0 388 587 7
+Guardian 0 393 582 7
+
+Guardian 0 425 587 1
+Guardian 0 431 591 1
+
+;ÂäÏ¼´å
+Guardian 1 284 201 1
+Guardian 1 279 196 1
+
+Guardian 1 213 201 7
+Guardian 1 208 206 7
+
+Guardian 1 213 287 5
+Guardian 1 219 293 5
+
+Guardian 1 279 282 3
+Guardian 1 285 275 3
+
+;Wilderness
+Guardian 2 149 440 7
+Guardian 2 144 445 7
+
+Guardian 2 267 478 3
+Guardian 2 260 485 3
+
+;Forbidden
+Guardian 4 312 205 5
+Guardian 4 317 210 5
+
+Guardian 4 391 156 3
+Guardian 4 395 152 3
+
+Guardian 4 425 202 3
+Guardian 4 429 198 3
+
+;WesternRegion
+Guardian 5 500 165 3
+Guardian 5 504 161 3

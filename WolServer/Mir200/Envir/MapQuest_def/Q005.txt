@@ -1,0 +1,51 @@
+[@main]
+#IF
+small $Task(19) 3
+#ACT
+goto @ID19
+
+#IF
+small $Task(20) 3
+#ACT
+goto @ID20
+
+#IF
+equal $Task(37) 2
+#ACT
+give 传世史记 1
+UpdateTask 37 3
+SENDMSG 5 你获得了传世史记！
+
+[@ID19]
+#IF
+equal $Task(19) 1
+#ACT
+CALCVAR HUMAN RENWU001 = 4
+UpdateTask 19 2
+
+#IF
+equal $Task(19) 2
+CHECKVAR HUMAN RENWU001 > 0
+#ACT
+CALCVAR HUMAN RENWU001 - 1
+RefreshTask 19 2
+#ELSEACT
+#ACT
+set [2] 1
+UpdateTask 19 3
+
+[@ID20]
+#IF
+equal $Task(20) 1
+#ACT
+CALCVAR HUMAN RENWU002 = 19
+UpdateTask 20 2
+
+#IF
+equal $Task(20) 2
+CHECKVAR HUMAN RENWU002 > 0
+#ACT
+CALCVAR HUMAN RENWU002 - 1
+RefreshTask 20 2
+#ELSEACT
+UpdateTask 20 3

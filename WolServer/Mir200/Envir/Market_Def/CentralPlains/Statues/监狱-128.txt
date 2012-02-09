@@ -1,0 +1,54 @@
+[@main]
+#ACT
+MOV P5 $STR(G5)
+DEC P5 $HUMAN(监记)
+#IF
+CHECKLEVELEX > 0
+#ACT
+#ELSEACT
+break
+#IF
+CHECKVAR HUMAN 监狱 > $STR(P5)
+#ACT
+MOV P6 $HUMAN(监狱)
+DEC P6 $STR(P5)
+#SAY
+你能出现在这里，说明你一定违反了游戏规定，使用了加速\
+外挂、或其它违法行为，你需要在这里面壁思过，根据你所\
+犯罪行的不同，你要蹲监狱的时间也不同。\\
+你当前已经服刑时间：<color=red [><$STR(P5)><color=red ]>分钟\
+　　你总共需蹲大牢：<color=red [><$HUMAN(监狱)><color=red ]>分钟\\
+<刑满释放，我要出狱了/@我要出狱了>\
+<关闭/@exit>
+#ELSESAY
+你能出现在这里，说明你一定违反了游戏规定，使用了加速\
+外挂、或其它违法行为，你需要在这里面壁思过，根据你所\
+犯罪行的不同，你要蹲监狱的时间也不同。\\
+你当前已经服刑时间：<color=red [>0<color=red ]>分钟\
+　　你总共需蹲大牢：<color=red [><$HUMAN(监狱)><color=red ]>分钟\\
+<刑满释放，我要出狱了/@我要出狱了>\
+<关闭/@exit>
+
+[@我要出狱了]
+#ACT
+MOV P5 $STR(G5)
+DEC P5 $HUMAN(监记)
+#IF
+CHECKLEVELEX > 0
+#ACT
+#ELSEACT
+break
+#IF
+CHECKVAR HUMAN 监狱 > $STR(P5)
+#SAY
+小子，你的服刑期还没有满呢，难道你想逃狱不成？\\
+<不是，继续服刑/@exit>
+#ELSEACT
+CALCVAR HUMAN 监记 = 0
+SAVEVAR HUMAN 监记 ..\QUESTDIARY\数据文件\个人变量\个人变量.txt
+CALCVAR HUMAN 监狱 = 0
+SAVEVAR HUMAN 监狱 ..\QUESTDIARY\数据文件\个人变量\个人变量.txt
+MAPMOVE 0
+SENDMSG 5 恭喜你服刑期满，正式从监狱释放了，出去后要好好做人
+SENDMSG 5 .....日，老子下次还来......
+break

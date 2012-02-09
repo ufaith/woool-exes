@@ -1,0 +1,7 @@
+[@main]
+#IF
+CheckUserGap < 5
+#ACT
+mapmove NL008 132 40
+#ELSESAY
+<太远了，过不去..../@exit>

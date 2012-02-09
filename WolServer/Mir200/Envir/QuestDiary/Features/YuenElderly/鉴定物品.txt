@@ -1,0 +1,161 @@
+[@鉴定物品]
+{
+　　洞察玄机，鉴定天地。关于鉴定的问题，你找我玄玄老\
+道绝对错不了。不知道你是想鉴定物品呢，是想学习有关鉴\
+定的知识，还是要我购买鉴定卷轴，哈哈！\
+\
+　　<鉴定物品/@authenticate>\
+　　<了解有关鉴定的知识/@knowledge2>\
+　　<购入鉴定卷轴/@salereel5>\
+　　<离开/@exit>\
+
+[@authenticate]
+#ACT
+Showspotdlg 6 鉴定: @鉴定
+#SAY
+我玄玄老人可不是吹的！快拿你的宝贝来鉴定吧！\
+\
+<谢谢！/@exit>\
+
+[@鉴定]
+#IF
+equal $PARAM(0) 腰带(未鉴定)
+#ACT
+take 腰带(未鉴定) 1
+goto @鉴定腰带
+break
+
+#IF
+equal $PARAM(0) 靴子(未鉴定)
+#ACT
+take 靴子(未鉴定) 1
+goto @鉴定靴子
+#ELSEACT
+MessageBox 你不能鉴定这个物品
+
+[@鉴定腰带]
+#SAY
+您的腰带(未鉴定)已经鉴定好了。\
+<返回/@main>
+
+#IF
+random 30
+#ACT
+ReadRandomStr ..\QuestDiary\GameFeatures\YuenElderly\鉴定腰带\30.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 15
+#ACT
+ReadRandomStr ..\QuestDiary\GameFeatures\YuenElderly\鉴定腰带\15.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 8
+#ACT
+ReadRandomStr ..\QuestDiary\GameFeatures\YuenElderly\鉴定腰带\8.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 4
+#ACT
+ReadRandomStr ..\QuestDiary\GameFeatures\YuenElderly\鉴定腰带\4.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 2
+#ACT
+ReadRandomStr ..\QuestDiary\GameFeatures\YuenElderly\鉴定腰带\2.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameFeatures\YuenElderly\鉴定腰带\1.txt S0
+give $STR(S0) 1
+break
+
+[@鉴定靴子]
+#ACT
+ReadRandomStr ..\QuestDiary\GameFeatures\YuenElderly\鉴定靴子\30.txt S0
+#SAY
+您的靴子(未鉴定)已经鉴定好了。\
+<返回/@main>
+
+#IF
+random 30
+#ACT
+ReadRandomStr ..\QuestDiary\GameFeatures\YuenElderly\鉴定靴子\30.txt S0
+give $STR(S0) 1
+break
+#say
+
+#IF
+random 15
+#ACT
+ReadRandomStr ..\QuestDiary\GameFeatures\YuenElderly\鉴定靴子\15.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 8
+#ACT
+ReadRandomStr ..\QuestDiary\GameFeatures\YuenElderly\鉴定靴子\8.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 4
+#ACT
+ReadRandomStr ..\QuestDiary\GameFeatures\YuenElderly\鉴定靴子\4.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 2
+#ACT
+ReadRandomStr ..\QuestDiary\GameFeatures\YuenElderly\鉴定靴子\2.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameFeatures\YuenElderly\鉴定靴子\1.txt S0
+give $STR(S0) 1
+break
+
+[@knowledge2]
+在上一场正邪之战中，牺牲的英雄们留下了一些神奇的宝\
+物（战靴和腰带）。怪物们由于惧怕宝物正义的力量，用\
+妖力将它们封印，使它们看起来与普通的物品一样。所以，\
+这些战靴和腰带必须经过“鉴定”才会显露出它们强大的\
+力量！除了回城让我来鉴定之外，你也可以随身备一些鉴\
+定卷轴，这样就可以随时一睹上古宝物的真容了。\
+\
+<离开/@exit>
+
+[@salereel5]
+哈！看来你的运气还真不错，我随身带了不少鉴定卷轴。\
+你可以从我这里轻松的获得，当然这些鉴定卷轴的价格\
+不菲需要花费你20000金币。不然枉费我从大老远带来了！\
+\
+<购入鉴定卷轴/@salereel1a>\
+<离开/@exit>
+
+[@salereel1a]
+#IF
+checkgold 20000
+#ACT
+take 金币 20000
+give 鉴定卷轴 1
+#ELSESAY
+金币不足，购买失败！\
+\
+<关闭/@exit>
+}

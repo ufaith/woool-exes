@@ -1,0 +1,204 @@
+[@SpiritualPower]
+{
+　　灵力是乃是修真者的能量基础，灵力的多少决定了修真\
+者的能力。而且<Color=green 灵力还可以用来炼丹药、修炼元神装备，>你\
+要是带来了<Color=green 七魄灵石或灵皓石>，我就把灵石里面的灵力打入\
+你的体内。<Color=green 两点灵石灵力可以变成一点>灵力。\
+　　<Color=green (灵皓石可以增加50点元神分身灵力>)。\
+\
+　　<请帮我炼制高灵力灵石/@mesy1>\
+　　<我带来了灵石，请帮我/@shadowlingli1>\
+　　<我去找灵石/@exit>\
+
+[@mesy1] 
+　　我会把你包裹所有同类型的灵石炼制为高灵力灵石。炼\
+制后高灵力灵石将含有所有同类型灵石的灵力点数。\
+\
+　　<请帮我炼制高灵力灵石/@mesy>\
+　　<返回/@main>\
+
+[@mesy]
+#IF
+random 1
+#ACT
+mov P0 1000
+mov P1 1000
+mov P2 1000
+mov P3 1000
+mov P4 1000
+mov P5 1000
+mov P6 1000
+mov P7 1000
+mov P8 1000
+mov P9 1000
+MULT P0 $HUNPO(1)
+MULT P1 $HUNPO(2)
+MULT P2 $HUNPO(3)
+MULT P3 $HUNPO(4)
+MULT P4 $HUNPO(5)
+MULT P5 $HUNPO(6)
+MULT P6 $HUNPO(7)
+MULT P7 $HUNPO(8)
+MULT P8 $HUNPO(9)
+MULT P9 $HUNPO(10)
+
+#IF
+large P0 1000
+#ACT
+take 天魂灵石 66
+give 天魂灵石 1
+UPGRADEUSERITEM $PARAM(10) 20 = $STR(P0)
+
+#IF
+large P1 1000
+#ACT
+take 地魂灵石 66
+give 地魂灵石 1
+UPGRADEUSERITEM $PARAM(10) 20 = $STR(P1)
+
+#IF
+large P2 1000
+#ACT
+take 命魂灵石 66
+give 命魂灵石 1
+UPGRADEUSERITEM $PARAM(10) 20 = $STR(P2)
+
+#IF
+large P3 1000
+#ACT
+take 天冲灵石 66
+give 天冲灵石 1
+UPGRADEUSERITEM $PARAM(10) 20 = $STR(P3)
+
+#IF
+large P4 1000
+#ACT
+take 灵慧灵石 66
+give 灵慧灵石 1
+UPGRADEUSERITEM $PARAM(10) 20 = $STR(P4)
+
+#IF
+large P5 1000
+#ACT
+take 力魄灵石 66
+give 力魄灵石 1
+UPGRADEUSERITEM $PARAM(10) 20 = $STR(P5)
+
+#IF
+large P6 1000
+#ACT
+take 山海精华 66
+give 山海精华 1
+UPGRADEUSERITEM $PARAM(10) 20 = $STR(P6)
+
+#IF
+large P7 1000
+#ACT
+take 草木之灵 66
+give 草木之灵 1
+UPGRADEUSERITEM $PARAM(10) 20 = $STR(P7)
+
+#IF
+large P8 1000
+#ACT
+take 昆仑玄铁 66
+give 昆仑玄铁 1
+UPGRADEUSERITEM $PARAM(10) 20 = $STR(P8)
+
+#IF
+large P9 1000
+#ACT
+take 中枢灵石 66
+give 中枢灵石 1
+UPGRADEUSERITEM $PARAM(10) 20 = $STR(P9)
+
+#IF
+equal P0 0
+equal P1 0
+equal P2 0
+equal P3 0
+equal P4 0
+equal P5 0
+equal P6 0
+equal P7 0
+equal P8 0
+equal P9 0
+#SAY
+　　恐怕你并没有带灵石来吧？这叫我如何帮你？你还是再去\
+找找吧。\
+\
+\
+　　<我知道了，我马上去找寻灵石。/@exit>\
+#ELSEACT
+close
+
+[@shadowlingli1]
+　　提升灵力将收走你包裹中的所有灵皓石和七魄灵石，你\
+决定要提升吗？\
+\
+\
+　　<我要提升灵力！/@chonglingshi>\
+　　<我去找灵石/@exit>\
+
+[@chonglingshi]
+#IF
+random 1
+#ACT
+mov P0 0
+mov P1 0
+inc P0 $HUNPO(1)
+inc P0 $HUNPO(2)
+inc P0 $HUNPO(3)
+inc P0 $HUNPO(4)
+inc P0 $HUNPO(5)
+inc P0 $HUNPO(6)
+inc P0 $HUNPO(7)
+inc P0 $HUNPO(8)
+inc P0 $HUNPO(9)
+inc P0 $HUNPO(10)
+
+#IF
+checkitem 元灵晶石 1
+#ACT
+take 元灵晶石 66
+mov P1 5
+MULT P1 $PARAM(12)
+inc P0 $STR(P1)
+
+#IF
+checkitem 灵皓石 1
+#ACT
+take 灵皓石 66
+mov P1 50
+MULT P1 $PARAM(12)
+inc P0 $STR(P1)
+
+#IF
+large P0 0
+#ACT
+take 天魂灵石 66
+take 地魂灵石 66
+take 命魂灵石 66
+take 天冲灵石 66
+take 灵慧灵石 66
+take 力魄灵石 66
+take 山海精华 66
+take 草木之灵 66
+take 昆仑玄铁 66
+take 中枢灵石 66
+DIV P0 2
+inc P0 $STR(P1)
+NIMBUSPOINT + $STR(P0)
+#SAY
+　　你的分身已经增加了{Color=green <$STR(P0)>}点灵力。再去找些七魄灵石来继\
+续修炼你的分身灵力。\
+\
+\
+　　<多谢。/@exit>
+#ELSESAY
+　　你的七魄灵石呢？快点耐心去找吧。是天冲灵石、灵慧\
+灵石、力魄灵石、中枢灵石、山海精华、昆仑玄铁、草木之\
+灵这七种，记住了吗？随便一种都行的。\
+\
+　　<我去找灵石/@exit>\
+}

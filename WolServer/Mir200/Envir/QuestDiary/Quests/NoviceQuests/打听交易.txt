@@ -1,0 +1,67 @@
+[@落霞岛2]
+{
+可以完成的任务：\
+<NoviceQuests--打听交易/@_RW_fulfilTaskDesp_344_fulfil>\
+#IF
+HasTask 1
+#SAY
+<Quests--拯救村民/@_RW_fulfilTaskDesp_999_fulfil>\
+\
+<离开/@exit>
+#ELSESAY
+可以接的任务：\
+<Quests--拯救村民/@_RW_taskDesp_999>\
+\
+<离开/@exit>
+
+[@_RW_fulfilTaskDesp_344_fulfil]
+年轻人，谢谢你帮我的忙呢！你找我有什么事情吗？\
+<打听交易/@_RW_fulfilTask_344>                <没事/@exit>
+
+[@_RW_fulfilTask_344]
+#ACT
+CHANGEEXP + 1400
+give 金币 800
+EndTask 11
+AddTask 12
+#SAY
+想跟玩家交易的话，需要跟对方面对面站到一起，并且对方\
+要是和平攻击模式才可以哦。如果觉得这么作麻烦的话，也\
+可以直接右键点对方的头像进行交易操作。\
+你现在去首饰店掌柜那里看看，他会教你如何摆摊的。\
+<离开/@exit>
+}
+
+[@海角村2]
+{
+可以完成的任务：\
+<NoviceQuests--打听交易/@_RW_fulfilTaskDesp_344_fulfil>\
+#IF
+HasTask 1
+#SAY
+<Quests--拯救村民/@_RW_fulfilTaskDesp_999_fulfil>\
+\
+<离开/@exit>
+#ELSESAY
+可以接的任务：\
+<Quests--拯救村民/@_RW_taskDesp_999>\
+\
+<离开/@exit>
+
+[@_RW_fulfilTaskDesp_344_fulfil]
+年轻人，谢谢你帮我的忙呢！你找我有什么事情吗？\
+<打听交易/@_RW_fulfilTask_344>                <没事/@exit>
+
+[@_RW_fulfilTask_344]
+#ACT
+CHANGEEXP + 1400
+give 金币 800
+EndTask 28
+AddTask 29
+#SAY
+想跟玩家交易的话，需要跟对方面对面站到一起，并且对方\
+要是和平攻击模式才可以哦。如果觉得这么作麻烦的话，也\
+可以直接右键点对方的头像进行交易操作。\
+你现在去首饰店掌柜那里看看，他会教你如何摆摊的。\
+<离开/@exit>
+}

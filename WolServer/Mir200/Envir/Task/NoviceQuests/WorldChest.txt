@@ -1,0 +1,6 @@
+[setup]
+stepcount = 2
+title = NoviceQuests--WorldChest
+ID = 40
+stepDESC1 = <color=graygolden 任务目的：>查看商城\<color=graygolden 任务介绍:>\    <color=green 点击“宝”字就可以进入商城>，查看开启神秘宝箱的神\秘钥匙的情况。将查看好的情况告诉中州老兵\
+stepDESC2 = <color=graygolden 任务目的：>使用神秘钥匙打开神秘宝箱\<color=graygolden 任务介绍:>\<color=green 双击神秘宝箱就可以打开宝箱了，24级以后再来找我吧>。

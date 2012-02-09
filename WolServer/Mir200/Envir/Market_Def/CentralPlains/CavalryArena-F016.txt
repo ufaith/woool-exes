@@ -1,0 +1,53 @@
+[@main]
+欢迎来到骑兵竞技场，国王的铁骑军团正需要像你这样的人才，请\
+在此多加训练，成为一位保家卫国的英雄骑兵。为了鼓励大家积极\
+练习骑马技术，国王还设下了重赏，只要你能够在骑兵竞技场场里\
+跑出好成绩，还可以获得丰厚的奖金，祝你好运！\\
+<开始比赛/@KSBS>\
+<离开赛场/@lik>\
+<关闭/@exit>
+
+[@lik]
+#ACT
+MAPMOVE 0
+
+[@KSBS]
+#IF
+hour 10 10
+#ACT
+goto @keyishi
+break
+#ELSEsay
+很抱歉，现在还不是赛马比赛时间！\\
+\
+<哦！/@exit>\
+
+[@keyishi]
+#IF
+random 4
+#ACT
+MOV D65 0
+MAPMOVE XF016 128 65
+settimer $USERNAME 1 @跑马计时
+break
+#IF
+random 3
+#ACT
+MOV D65 0
+MAPMOVE XF016 131 68
+settimer $USERNAME 1 @跑马计时
+break
+#IF
+random 2
+#ACT
+MOV D65 0
+MAPMOVE XF016 134 71
+settimer $USERNAME 1 @跑马计时
+break
+#IF
+random 1
+#ACT
+MOV D65 0
+MAPMOVE XF016 136 74
+settimer $USERNAME 1 @跑马计时
+break

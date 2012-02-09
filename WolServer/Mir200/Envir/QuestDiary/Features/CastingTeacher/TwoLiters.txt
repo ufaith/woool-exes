@@ -1,0 +1,352 @@
+[@二升极品]
+{
+\\
+绝世名匠欧冶子，升级武器的巧技天下无双；然而少为人知的\
+是，他锻造首饰和防具的技艺，也是独步天下。我有幸受到欧\
+冶子的教诲，懂得了一些皮毛。你有武器、首饰和防具，都可\
+以拿来给我升级；只要消耗你一些极品修炼值，你要升级什么\
+属性都可以，而且是100%成功哦。你确定要第二次升级你的装\
+备吗？如果不是升级过一次的装备可以先去升一次再拿来。\
+<查看防具首饰升级所需极品值/@二级需要> <COLOR=RED 二次升级>\
+<确定/@XiuLian2Item>    <返回/@main>\
+
+[@二级需要]
+\\
+<COLOR=GREEN 防具首饰一次升级需消耗修炼值　攻击　道术　魔法　防御　魔防>\
+\
+\
+圣战项链、圣战手镯、圣战戒指\
+法神项链、法神手镯、法神戒指　80万　80万　80万　无法升级\
+天尊项链、天尊手镯、天尊戒指　　　　　　　修炼值\
+天羽项链\
+\
+<返回/@二升极品>　　　　　　　<下一页/@二级需要1>
+
+[@二级需要1]
+\\
+<COLOR=GREEN 防具首饰一次升级需消耗修炼值　攻击　道术　魔法　防御　魔防>\
+\
+神武项链、神武手镯、神武戒指\
+幻魔项链、幻魔手镯、幻魔戒指\
+天玄项链、天玄手镯、天玄戒指　160万　160万　160万　无法升级\
+狂魔手镯、镇神项链、神恩项链　　　　　　　修炼值\
+龙魂项链、魂珠项链、如意项链\
+通灵项链\
+<返回/@二升极品>　　<上一页/@二级需要>　　<下一页/@二级需要2>
+
+[@二级需要2]
+\\
+<COLOR=GREEN 防具首饰一次升级需消耗修炼值　攻击　道术　魔法　防御　魔防>\
+\
+圣战头盔、法神头盔、天尊头盔\
+天魔战甲、法神披风、天尊道袍\
+圣战战甲、法神羽衣、天师道袍　96万　96万　96万　无法升级\
+雷霆腰带、魔龙腰带、风云腰带　　　　　　　修炼值\
+雷霆战靴、魔龙法靴、风云道靴\
+\
+<返回/@二升极品>　　<上一页/@二级需要1>　　<下一页/@二级需要3>
+
+[@二级需要3]
+\\
+<COLOR=GREEN 防具首饰一次升级需消耗修炼值　攻击　道术　魔法　防御　魔防>\
+\
+神武头盔、幻魔头盔、天玄头盔\
+圣战腰带、法神腰带、天尊腰带\
+圣战靴子、法神靴子、天尊道靴　200万　200万　200万　无法升级\
+明王头盔　　　　　　　　　　　　　　　　　修炼值\
+\
+\
+<返回/@二升极品>　　<上一页/@二级需要1>　　<下一页/@二级需要4>
+
+[@二级需要4]
+\\
+<COLOR=GREEN 防具首饰一次升级需消耗修炼值　攻击　道术　魔法　防御　魔防>\
+\
+\
+神武战甲、幻魔披风、天玄道袍\
+神武战袍、幻魔羽衣、天玄道衣　600万　600万　600万　无法升级\
+神武腰带、幻魔腰带、天玄腰带　　　　　　　修炼值\
+神武战靴、幻魔法靴、天玄道靴\
+\
+<返回/@二升极品>　　<上一页/@二级需要3>
+
+[@XiuLian2Item]
+#IF
+#SAY
+\\
+选择你要升级的属性。\
+\
+<攻击/@ChoosePoint2&攻击>      <魔法/@ChoosePoint2&魔法>      <道术/@ChoosePoint2&道术>\
+\
+\
+<离开/@exit>
+
+[@ChoosePoint2] 
+#ACT
+mov S0 $SCRIPTPARAM(1)
+Showspotdlg 6 请放入装备： @检测装备2
+#SAY
+\\
+哦，原来你想提升<$STR(S0)>，先给我看看你的物品吧，\
+我可不保证一定能帮上什么忙！\
+<离开/@exit>
+
+[@检测装备2]
+#IF
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\UpgradeEquipment.txt
+#ELSEACT
+break
+#ELSESAY
+\\
+抱歉，该物品不能被升级！\
+<升级其他装备/@XiuLian2Item>\
+<离开/@exit>
+
+#IF
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Weapon.txt
+#ACT
+break
+#SAY
+\\
+抱歉，该物品不能被升级！\
+<升级其他装备/@XiuLian2Item>\
+<离开/@exit>
+
+#IF
+CHECKVARLIST $ITEMINFO[$PARAM(1)].STDMODE ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\AllowUpgrade.txt
+#ELSEACT
+Showspotdlg 6 请放入装备： @检测装备2
+break
+#ELSESAY
+\\
+请把你要升级的首饰或者防具放上去，谢谢！\
+\
+<确定/@exit>
+
+#IF
+random 1
+#ACT
+mov P0 0
+mov P1 0
+inc P1 $ITEMINFO[$PARAM(1)].VALUE(0)
+inc P1 $ITEMINFO[$PARAM(1)].VALUE(1)
+inc P1 $ITEMINFO[$PARAM(1)].VALUE(5)
+inc P1 $ITEMINFO[$PARAM(1)].VALUE(6)
+inc P1 $ITEMINFO[$PARAM(1)].VALUE(7)
+
+#IF
+small P1 1
+#ACT
+break
+#SAY
+\\
+你不是要二次升级自己的装备吗？你给我的装备好像还没升级\
+过啊，去升过一次再拿来吧！\
+<返回/@main>     <离开/@exit>
+
+#IF
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\UpgradeEquipment.txt
+large P1 1
+#ACT
+goto @升级满了
+break
+
+#IF
+random 1
+#ACT
+mov P0 1
+
+#IF
+random 10
+#ACT
+mov P0 2
+
+#IF
+equal S0 攻击
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Armor.txt
+#ACT
+goto @防具攻击二级
+break
+
+#IF
+equal S0 魔法
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Armor.txt
+#ACT
+goto @防具魔法二级
+break
+
+#IF
+equal S0 道术
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Armor.txt
+#ACT
+goto @防具道术二级
+break
+
+#IF
+equal S0 攻击
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Jewelry.txt
+#ACT
+goto @首饰攻击二级
+break
+
+#IF
+equal S0 魔法
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Jewelry.txt
+#ACT
+goto @首饰魔法二级
+break
+
+#IF
+equal S0 道术
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Jewelry.txt
+#ACT
+goto @首饰道术二级
+break
+#ELSESAY
+\\
+对不起，你这个装备不能升级这种属性，直说吧！我没有办\
+法来帮你！\
+<升级其他装备/@XiuLianItem>\
+<离开/@exit>
+
+[@防具攻击二级]
+#IF
+equal S0 攻击
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Armor1.txt
+large $REFINEPOINT 960000
+#ACT
+give 极品值 -960000
+goto @防具攻击
+break
+
+#IF
+equal S0 攻击
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Armor2.txt
+large $REFINEPOINT 2000000
+#ACT
+give 极品值 -2000000
+goto @防具攻击
+break
+
+#IF
+equal S0 攻击
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Armor3.txt
+large $REFINEPOINT 6000000
+#ACT
+give 极品值 -6000000
+goto @防具攻击
+break
+
+[@防具魔法二级]
+#IF
+equal S0 魔法
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Armor1.txt
+large $REFINEPOINT 960000
+#ACT
+give 极品值 -960000
+goto @防具魔法
+break
+
+#IF
+equal S0 魔法
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Armor2.txt
+large $REFINEPOINT 2000000
+#ACT
+give 极品值 -2000000
+goto @防具魔法
+break
+
+#IF
+equal S0 魔法
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Armor3.txt
+large $REFINEPOINT 6000000
+#ACT
+give 极品值 -6000000
+goto @防具魔法
+break
+
+[@防具道术二级]
+#IF
+equal S0 道术
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Armor1.txt
+large $REFINEPOINT 96000
+#ACT
+give 极品值 -960000
+goto @防具道术
+break
+
+#IF
+equal S0 道术
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Armor2.txt
+large $REFINEPOINT 2000000
+#ACT
+give 极品值 -2000000
+goto @防具道术
+break
+
+#IF
+equal S0 道术
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Armor3.txt
+large $REFINEPOINT 6000000
+#ACT
+give 极品值 -6000000
+goto @防具道术
+break
+
+[@首饰攻击二级]
+#IF
+equal S0 攻击
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Jewelry1.txt
+large $REFINEPOINT 800000
+#ACT
+give 极品值 -800000
+goto @首饰攻击
+break
+
+#IF
+equal S0 攻击
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Jewelry2.txt
+large $REFINEPOINT 1600000
+#ACT
+give 极品值 -1600000
+goto @首饰攻击
+break
+
+[@首饰魔法二级]
+#IF
+equal S0 魔法
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Jewelry1.txt
+large $REFINEPOINT 800000
+#ACT
+give 极品值 -800000
+goto @首饰魔法
+break
+
+#IF
+equal S0 魔法
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Jewelry2.txt
+large $REFINEPOINT 1600000
+#ACT
+give 极品值 -1600000
+goto @首饰魔法
+break
+
+[@首饰道术二级]
+#IF
+equal S0 道术
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Jewelry1.txt
+large $REFINEPOINT 800000
+#ACT
+give 极品值 -800000
+goto @首饰道术
+break
+
+#IF
+equal S0 道术
+CHECKVARLIST $PARAM(0) ..\QuestDiary\GameFeatures\CastingTeacher\Cultivation\Jewelry2.txt
+large $REFINEPOINT 1600000
+#ACT
+give 极品值 -1600000
+goto @首饰道术
+break
+}

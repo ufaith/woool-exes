@@ -1,0 +1,164 @@
+[@main]
+　　骑战之术、攻之巅峰、持枪御兽、纵横无忌，但这种高\
+超的战斗技巧并非普通人所能领悟。 \
+　　我当年幸得“灵犀仙人”的指点，得以略窥骑战门径，\
+仙人飞升后，本着普济众生的想法特命我留守灵犀仙岛，指\
+点后人领悟骑战技能。\
+　　<Color=green 骑战技能书残章可以在通天塔和修罗天界的怪物身上获得。>\
+　　<请帮我讲解骑战技能/@qizhanjineng>    <合成骑战技能书/@hecheng>\
+　　<拆分骑战技能书残章/@chaijie>    <离开灵犀仙岛/@likai>\
+
+[@likai]
+#ACT
+map MH001
+
+[@chaijie]
+#ACT
+ShowSpotDlg 255 4 @拆分技能残章
+
+[@拆分技能残章]
+#ACT
+UPGRADEUSERITEM $PARAM(0) 20 - $PARAM(2)
+give $ITEMINFO[$PARAM(0)].NAME 1
+UPGRADEUSERITEM $PARAM(10) 20 = $PARAM(2)
+SENDMSG 5 成功拆分骑战技能书残章!
+
+[@qizhanjineng]
+　　骑战技能共有三类，分别为战士、法师、道士所用。战\
+士的<Color=green “翱风斩”>颠峰体现、纵横千里。法师的<Color=green “纵雷诀”>人\
+兽一体、驭电飞行。道士的<Color=green “毒凌波”>所毒之处生命立减、\
+无术可复！\
+　　学习领悟初级骑战技能需要本体47级灵兽10级、中级需\
+要本体48级灵兽20级、高级需要本体49级灵兽35级、专家级\
+需要本体50级灵兽50级。\
+\
+　　<了解“翱风斩”/@aofengzhan>  <了解“纵雷诀”/@zongleijue>  <了解“毒凌波”/@dulinbo>\
+
+[@aofengzhan]
+　　<Color=green “翱风斩”>乃骑术之颠峰体现，纵马凌空、驭风横斩，\
+纵横千里而无人可阻。\
+　　此类技能讲究骑战者内心与坐骑能力的完美结合，故骑\
+战者体内<Color=green “内敛元神”>以及<Color=green 坐骑>的等级境界越高，该技能的\
+威力也越大，一刀之间断山破海也不无可能！\
+　　<Color=green （翱风斩共分初、中、高、专四级，技能可通过使用升>\
+<Color=green 级，也可以直接学习相应的技能书获得）>\
+\
+　　<如此神技，不知我何日能拥有/@jieshao>\
+
+[@zongleijue]
+　　<Color=green “纵雷诀”>人兽一体、驭电飞行，所过之处，九天罡雷\
+相随其后，只见电光而不见其真身所在！\
+　　此类技能讲究骑战者内心与坐骑能力的完美结合，故骑\
+战者体内<Color=green “内敛元神”>以及<Color=green 坐骑>的等级境界越高，该技能的\
+威力也越大，一瞬之间电光遍地、众生覆灭！\
+　　<Color=green （纵雷诀共分初、中、高、专四级，技能可通过使用升>\
+<Color=green 级，也可以直接学习相应的技能书获得）>\
+\
+　　<如此神技，不知我何日能拥有/@jieshao>\
+
+[@dulinbo]
+　　<Color=green “毒凌波”>可将天地浑浊之气汇入灵兽体内形成“毒\
+丸”，由灵兽口中吐出腐浊四方，中毒者生命立减、无术可复！\
+　　此类技能讲究骑战者内心与坐骑能力的完美结合，故骑\
+战者体内<Color=green “内敛元神”>以及<Color=green 坐骑>的等级境界越高，该技能的\
+威力也越大，吐纳之间万魔四生、吞噬四方！\
+　　<Color=green （毒凌波共分初、中、高、专四级，技能可通过使用升>\
+<Color=green 级，也可以直接学习相应的技能书获得）>\
+\
+　　<如此神技，不知我何日能拥有/@jieshao>\
+
+[@jieshao]
+　　仙岛西北有个上古仙人留下的法阵，名曰“迷仙”，据\
+说在此法阵中有骑战技能秘籍出现，至于能不能获得就要\
+看你的福缘了。\
+\
+　　<多谢指点，我这就去迷仙阵中探索一番/@chuansong>\
+　　<知道了/@main>\
+
+[@chuansong]
+#ACT
+mapmove LXXD 40 36
+
+[@hecheng]
+　　骑战技能书共有4个级别：初级、中级、高级、专家。\
+不同级别的技能书需要的残章数不同:<color=green 初级需要5个；中级>\
+<color=green 需要50个；高级需要250个；专家级需要500个。>你只要有足\
+够的残章，都可来合成。\
+　　你想合成哪类书呢？\
+\
+　　<战士--翱风斩/@hechengA>\
+　　<法师--纵雷诀/@hechengB>\
+　　<道士--毒凌波/@hechengC>\
+　　<返回/@main>\
+
+[@hechengA]
+　　你想要合成哪个级别的翱风斩？\
+　　\
+　　<初级翱风斩/@zaihe&5&初级&翱风斩>\
+　　<中级翱风斩/@zaihe&50&中级&翱风斩>\
+　　<高级翱风斩/@zaihe&250&高级&翱风斩>\
+　　<专家级翱风斩/@zaihe&500&专家级&翱风斩>\
+
+[@hechengB]
+　　你想要合成哪个级别的纵雷诀？\
+　　\
+　　<初级纵雷诀/@zaihe&5&初级&纵雷诀>\
+　　<中级纵雷诀/@zaihe&50&中级&纵雷诀>\
+　　<高级纵雷诀/@zaihe&250&高级&纵雷诀>\
+　　<专家级纵雷诀/@zaihe&500&专家级&纵雷诀>\
+
+[@hechengC]
+　　你想要合成哪个级别的毒凌波？\
+　　\
+　　<初级毒凌波/@zaihe&5&初级&毒凌波>\
+　　<中级毒凌波/@zaihe&50&中级&毒凌波>\
+　　<高级毒凌波/@zaihe&250&高级&毒凌波>\
+　　<专家级毒凌波/@zaihe&500&专家级&毒凌波>\
+
+[@zaihe] 
+#IF
+#ACT
+Showspotdlg 6 请放入<$SCRIPTPARAM(3)>残章 @合成技能书
+#SAY
+    合成<$SCRIPTPARAM(2)>的<$SCRIPTPARAM(3)>需要{color=green <$SCRIPTPARAM(1)>个<$SCRIPTPARAM(3)>残章}，如果你有的话\
+请交给我吧。\
+
+[@合成技能书]
+#IF
+!POS $PARAM(0) 残章
+#ACT
+break
+#SAY
+　　你似乎给错东西了，年轻人！\
+\
+\
+　　<啊，给错了？我再找找/@main>
+
+#IF
+!checkbagsize 1
+#ACT
+break
+#SAY
+　　请先将包裹整理出1个位置再来，谢谢。\
+\
+　　<离开/@exit>
+
+#IF
+small $ITEMINFO[$PARAM(1)].DURA $SCRIPTPARAM(1)
+#SAY
+　　没有足够的残章，不能合成<$SCRIPTPARAM(2)><$SCRIPTPARAM(3)>。\
+\
+\
+　　<离开/@exit>
+#ELSEACT
+UPGRADEUSERITEM $PARAM(1) 20 - $SCRIPTPARAM(1)
+mov S0 $SCRIPTPARAM(3)
+inc S0 (
+inc S0 $SCRIPTPARAM(2)
+inc S0 )
+give $STR(S0) 1
+#ELSESAY
+　　{color=green <$SCRIPTPARAM(2)><$SCRIPTPARAM(3)>}合成成功！\
+\
+\
+　　<离开/@exit>
