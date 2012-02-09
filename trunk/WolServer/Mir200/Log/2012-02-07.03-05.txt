@@ -1,6 +1,0 @@
-07/02/2012 03:05:44 Has Read 0Guild Information...
-07/02/2012 03:05:44 Has Read 1Castle Information...
-07/02/2012 03:05:44 脚本错误1: CHECKTASKSTEP(21) 2 第:7 行: .\Envir\Market_Def\CapeVillage\Butcher-0.txt
-07/02/2012 03:05:44 脚本错误1: CHECKTASKSTEP(21) 5 第:8 行: .\Envir\Market_Def\CapeVillage\Butcher-0.txt
-07/02/2012 03:05:44 脚本错误1: CHECKTASKSTEP(21) 1 第:13 行: .\Envir\Market_Def\CapeVillage\Butcher-0.txt
-07/02/2012 03:05:44 脚本错误2: ========================================================================== 第:624 行: .\Envir\Market_Def\QFunction-0.txt

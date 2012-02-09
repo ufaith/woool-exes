@@ -1,9 +1,0 @@
-07/02/2012 23:26:40 Has Read 1Guild Information...
-07/02/2012 23:26:40 Has Read 1Castle Information...
-07/02/2012 23:26:41 script error, load fail: \GameFeatures\Notice.txt@mainleft左边
-07/02/2012 23:26:41 script error, load fail: \Quests\ImperialOrders.txt@mainright王城诏令
-07/02/2012 23:26:41 script error, load fail: \GameFeatures\Notice.txt@mainright升级补丁
-07/02/2012 23:26:41 script error, load fail: \GameFeatures\Veteran\老兵.txt@挑战炼狱
-07/02/2012 23:26:41 script error, load fail: \GameFeatures\Notice.txt@mainright其它事情
-07/02/2012 23:26:41 script error, load fail: \Features\Admin.txt@后台管理
-07/02/2012 23:26:41 脚本错误2: ADDITEMEVIL 第:128 行: .\Envir\Market_Def\QFunction-0.txt
