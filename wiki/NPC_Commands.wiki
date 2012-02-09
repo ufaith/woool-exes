@@ -3,7 +3,7 @@
 List of #IF and #ACT NPC Commands.
 
 
-|| Command* || Description ||
+|| *Command* || Description ||
 || Give || Give the player a item ||
 || CheckItem || Checks to see if you have a item ||
 || TakeItem || Takes the item from player ||
