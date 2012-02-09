@@ -1,0 +1,15 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+List of #IF and #ACT NPC Commands, currently unfiltered. Majority of these commands can be used on a Hero by adding Hero. to the front of the commands. For example: HERO.GIVE Candle
+
+
+|| Command || Description ||
+|| $TASK || -10 ||
+|| 1910 || -15 ||
+|| 1920 || -10 ||
+|| 1930 || _N/A_ ||
+|| 1940 || -2 ||
+
+
