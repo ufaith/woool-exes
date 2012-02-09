@@ -1,6 +1,0 @@
-05/02/2012 21:34:54 Has Read 0Guild Information...
-05/02/2012 21:34:54 Has Read 1Castle Information...
-05/02/2012 21:34:54 脚本错误2: AmbitLevel + 1 第:2010 行: .\Envir\Market_Def\QFunction-0.txt
-05/02/2012 21:34:54 脚本错误2: AmbitLevel + 1 第:2019 行: .\Envir\Market_Def\QFunction-0.txt
-05/02/2012 21:34:54 脚本错误2: AmbitLevel = 99 第:2031 行: .\Envir\Market_Def\QFunction-0.txt
-05/02/2012 21:34:54 脚本错误2: AmbitLevel = 99 第:2038 行: .\Envir\Market_Def\QFunction-0.txt
