@@ -1,0 +1,88 @@
+[@main]
+#IF
+small $Task(2) 6
+#ACT
+goto @ID2
+
+#IF
+small $Task(34) 6
+#ACT
+goto @ID34
+
+[@ID2]
+#IF
+CheckMapMonNameCount 1 210 160 30 FishPerson -15
+#ACT
+PARAM1 1
+PARAM2 210
+PARAM3 160
+MonGen FishPerson 30 30
+
+#IF
+equal $Task(2) 1
+#ACT
+UpdateTask 2 2
+break
+
+#IF
+equal $Task(2) 2
+#ACT
+UpdateTask 2 3
+break
+
+#IF
+equal $Task(2) 3
+#ACT
+UpdateTask 2 4
+break
+
+#IF
+equal $Task(2) 4
+#ACT
+UpdateTask 2 5
+break
+
+#IF
+equal $Task(2) 5
+#ACT
+UpdateTask 2 6
+break
+
+[@ID34]
+#IF
+CheckMapMonNameCount 0 400 560 10 FishPerson -10
+#ACT
+PARAM1 0
+PARAM2 400
+PARAM3 560
+MonGen FishPerson 10 10
+
+#IF
+equal $Task(34) 1
+#ACT
+UpdateTask 34 2
+break
+
+#IF
+equal $Task(34) 2
+#ACT
+UpdateTask 34 3
+break
+
+#IF
+equal $Task(34) 3
+#ACT
+UpdateTask 34 4
+break
+
+#IF
+equal $Task(34) 4
+#ACT
+UpdateTask 34 5
+break
+
+#IF
+equal $Task(34) 5
+#ACT
+UpdateTask 34 6
+break

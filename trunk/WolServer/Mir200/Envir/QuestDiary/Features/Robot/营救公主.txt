@@ -1,0 +1,47 @@
+[@机器人-营救公主]
+{
+#IF
+random 1
+#ACT
+mov P0 0
+mov P1 0
+mov S0
+goto @机器人-营救公主-增加天数
+ReadRandomStr ..\QuestDiary\GameData\各种排行\营救公主.txt S0 0
+CLEARNAMELIST ..\QuestDiary\GameData\各种排行\营救公主.txt
+
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S1 S0
+FORMATSTR S0 %s|%s月%s日|0 <$STR(S1)>|<$STR(A21)>|<$STR(A22)>
+INSERTVARLIST 0 $STR(S0) ..\QuestDiary\GameData\公主第一.txt
+break
+
+[@机器人-营救公主-增加天数]
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\公主第一.txt S0 $STR(P0)
+DELVARLIST ..\QuestDiary\GameData\公主第一.txt $STR(P0)
+
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S2
+GETVALIDSTR $STR(S2) | S1 P1
+inc P1 1
+FORMATSTR S2 %s|%s|%s <$STR(S0)>|<$STR(S1)>|<$STR(P1)>
+INSERTVARLIST $STR(P0) $STR(S2) ..\QuestDiary\GameData\公主第一.txt
+
+#IF
+large P1 7
+#ACT
+DELVARLIST $STR(S2) ..\QuestDiary\GameData\公主第一.txt
+
+#IF
+small P0 7
+#ACT
+inc P0 1
+goto @机器人-营救公主-增加天数
+}

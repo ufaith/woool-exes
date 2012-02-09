@@ -1,0 +1,13 @@
+[@下线记时]
+{
+;#ACT
+;Calcvar HUMAN 下线记时 = $TIME.HOUR
+;SAVEVAR HUMAN 下线记时 ..\QuestDiary\GameData\个人变量\凝结符石\下线记时.txt
+;Calcvar HUMAN 下线记分 = $TIME.MIR
+;SAVEVAR HUMAN 下线记分 ..\QuestDiary\GameData\个人变量\凝结符石\下线记分.txt
+}
+
+[@时间记算]
+{
+
+}

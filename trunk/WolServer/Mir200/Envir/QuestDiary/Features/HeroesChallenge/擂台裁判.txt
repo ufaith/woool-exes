@@ -1,0 +1,464 @@
+[@擂台裁判]
+{
+#IF
+CHECKMAPNAME ARENA011
+#SAY
+What need to do for you?\
+\
+<阅读比赛规则/@allrules>\
+<开始/@start>       <离开这里/@checkspectator1>        <退出/@exit>
+#ELSESAY
+有什么需要我帮忙的吗？\
+\
+<阅读比赛规则/@allrules>\
+<离开这里/@checkspectator>\
+<等等/@exit>
+
+[@checkspectator1]
+#ACT
+Gmexecute changemode 1
+goto @离开场地
+goto @生存挑战胜负
+goto @生存信息排列
+
+[@start]
+#IF
+CHECKVAR GLOBAL 生存挑战人名1 = $USERNAME
+CHECKVAR GLOBAL 生存挑战状态 = 0
+!CHECKVAR GLOBAL 生存挑战人名6 =
+#ACT
+Calcvar GLOBAL 生存挑战状态 = 1
+break
+close
+#CALL [\Features\HeroesChallenge\生存挑战.txt] @生存挑战开始
+
+#IF
+!CHECKVAR GLOBAL 生存挑战人名1 = $USERNAME
+#ACT
+break
+#SAY
+只有房主才可以开始比赛！\
+\
+<离开/@exit>
+
+#IF
+CHECKVAR GLOBAL 生存挑战状态 = 1
+#ACT
+break
+#SAY
+比赛已经开始！\
+\
+<离开/@exit>
+
+#IF
+CHECKVAR GLOBAL 生存挑战人名6 =
+#ACT
+break
+#SAY
+人数不够，现在还不能开始比赛！\
+\
+<离开/@exit>
+
+[@离开场地]
+#ACT
+CHANGENAMECOLOR 255
+map ARENA000
+
+[@checkspectator]
+#IF
+CHECKVAR HUMAN ArenaCondition = 观
+#ACT
+Gmexecute changemode 4
+goto @离开场地
+break
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @人物状态
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 攻
+CHECKVAR GLOBAL 单人攻擂人名1 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人擂主名称1).goto @单人守擂成功
+break
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 攻
+CHECKVAR GLOBAL 单人攻擂人名2 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人擂主名称2).goto @单人守擂成功
+break
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 攻
+CHECKVAR GLOBAL 单人攻擂人名3 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人擂主名称3).goto @单人守擂成功
+break
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 攻
+CHECKVAR GLOBAL 单人攻擂人名4 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人擂主名称4).goto @单人守擂成功
+break
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 攻
+CHECKVAR GLOBAL 单人攻擂人名5 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人擂主名称5).goto @单人守擂成功
+break
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 攻
+CHECKVAR GLOBAL 单人攻擂人名6 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人擂主名称6).goto @单人守擂成功
+break
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 攻
+CHECKVAR GLOBAL 单人攻擂人名7 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人擂主名称7).goto @单人守擂成功
+break
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 攻
+CHECKVAR GLOBAL 单人攻擂人名8 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人擂主名称8).goto @单人守擂成功
+break
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 攻
+CHECKVAR GLOBAL 单人攻擂人名9 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人擂主名称9).goto @单人守擂成功
+break
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 守
+CHECKVAR GLOBAL 单人擂主名称1 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人攻擂人名1).goto @单人攻擂成功
+break
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 守
+CHECKVAR GLOBAL 单人擂主名称2 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人攻擂人名2).goto @单人攻擂成功
+break
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 守
+CHECKVAR GLOBAL 单人擂主名称3 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人攻擂人名3).goto @单人攻擂成功
+break
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 守
+CHECKVAR GLOBAL 单人擂主名称4 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人攻擂人名4).goto @单人攻擂成功
+break
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 守
+CHECKVAR GLOBAL 单人擂主名称5 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人攻擂人名5).goto @单人攻擂成功
+break
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 守
+CHECKVAR GLOBAL 单人擂主名称6 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人攻擂人名6).goto @单人攻擂成功
+break
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 守
+CHECKVAR GLOBAL 单人擂主名称7 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人攻擂人名7).goto @单人攻擂成功
+break
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 守
+CHECKVAR GLOBAL 单人擂主名称8 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人攻擂人名8).goto @单人攻擂成功
+break
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 守
+CHECKVAR GLOBAL 单人擂主名称9 = $USERNAME
+#ACT
+goto @离开场地
+$GLOBAL(单人攻擂人名9).goto @单人攻擂成功
+break
+
+#IF
+CHECKMAPNAME ARENA001
+#ACT
+goto @离开场地
+goto @ARENA001检测
+break
+
+#IF
+CHECKMAPNAME ARENA002
+#ACT
+goto @离开场地
+goto @ARENA002检测
+break
+
+#IF
+CHECKMAPNAME ARENA003
+#ACT
+goto @离开场地
+goto @ARENA003检测
+break
+
+#IF
+CHECKMAPNAME ARENA004
+#ACT
+goto @离开场地
+goto @ARENA004检测
+break
+
+#IF
+CHECKMAPNAME ARENA005
+#ACT
+goto @离开场地
+goto @ARENA005检测
+break
+
+#IF
+CHECKMAPNAME ARENA006
+#ACT
+goto @离开场地
+goto @ARENA006检测
+break
+
+#IF
+CHECKMAPNAME ARENA007
+#ACT
+goto @离开场地
+goto @ARENA007检测
+break
+
+#IF
+CHECKMAPNAME ARENA008
+#ACT
+goto @离开场地
+goto @ARENA008检测
+break
+
+#IF
+CHECKMAPNAME ARENA009
+#ACT
+goto @离开场地
+goto @ARENA009检测
+break
+
+#IF
+!CHECKMAPNAME ARENA010
+#ACT
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 1
+#ACT
+goto @离开场地
+goto @混乱对抗离场
+goto @混乱对抗胜负
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 0
+CHECKVAR GLOBAL 混乱对抗人名1 = $USERNAME
+#ACT
+goto @混乱退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 0
+CHECKVAR GLOBAL 混乱对抗人名2 = $USERNAME
+#ACT
+goto @混乱退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 0
+CHECKVAR GLOBAL 混乱对抗人名3 = $USERNAME
+#ACT
+goto @混乱退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 0
+CHECKVAR GLOBAL 混乱对抗人名4 = $USERNAME
+#ACT
+goto @混乱退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 0
+CHECKVAR GLOBAL 混乱对抗人名5 = $USERNAME
+#ACT
+goto @混乱退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 0
+CHECKVAR GLOBAL 混乱对抗人名6 = $USERNAME
+#ACT
+goto @混乱退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 0
+CHECKVAR GLOBAL 混乱对抗人名7 = $USERNAME
+#ACT
+goto @混乱退出比赛
+break
+
+#IF
+CHECKVAR GLOBAL 混乱对抗状态 = 0
+CHECKVAR GLOBAL 混乱对抗人名8 = $USERNAME
+#ACT
+goto @混乱退出比赛
+break
+#ELSEACT
+goto @离开场地
+
+[@混乱退出比赛]
+#ACT
+goto @离开场地
+Calcvar HUMAN ArenaCompetition = $GLOBAL(混乱对抗赛金)
+goto @混乱信息排列
+break
+
+[@allrules]
+<单人擂台/@rules0>    <团体擂台/@rules1>    <混乱对抗赛/@rules2>    <生存挑战赛/@rules3>\
+\
+<离开/@exit>
+
+[@rules0]
+在打擂比赛之前，请先仔细阅读比赛规则：\
+一、比赛时间为20分钟，双方选手进入比武场地后，离开比武\
+　　区域到观众区域或者下线死亡，都将被判负。\
+二、比赛准备时间为2分钟，比赛正式开始时必须在比武准备\
+　　场等候，否则将被判负。\
+三、摆擂期间内有人发出攻擂申请时必须在线，否则将被判负。\
+四、摆擂期间20分钟之内无人攻擂，摆擂将被取消。\
+\
+　　　　　　　　　　　　　　　　　　　　　　　　<下一页/@nextpage>
+
+[@nextpage]
+五、胜方将获得双份比赛金并支付场地费5万金币，负方、摆\
+　　擂取消或者观看比赛，都不收取场地费。\
+六、在上述规则内双方都未分出胜负，则比赛被判为平局，返\
+　　还双方比赛金，并各收取场地费5万金币。\
+七、摆擂取消、打擂胜利或者平局，可以从我这里领回比赛金。\
+八、比武场地内不增加PK值，被击倒不掉落任何物品装备。\
+\
+　　　　　　　　　　　　　　　　　　<上一页/@rules0>　　　　<返回/@main>
+
+[@rules1]
+在打擂比赛之前，请先仔细阅读比赛规则：\
+一、比赛双方分为A队和B队，每支队伍人数上限为5人，每场比\
+　　赛时间为20分钟。\
+二、加入其中一方队伍，需经过队长同意（与其组队）。\
+三、比赛准备时间为2分钟，准备时间到，不论对方到场几人，\
+　　比赛将自动开始。\
+四、比赛结束按照击倒对方人数多者取胜，如击倒对方数量相同，\
+　　　　　　　　　　　　　　　　　　　　　　　　<下一页/@nextpage1>
+
+[@nextpage1]
+则按照人数较少的方队取胜的原则进行判定。如以上判定条件皆\
+相同，则此场比赛为平局，返还比赛金，仅收取5万场地费。\
+\
+\
+\
+\
+\
+　　　　　　　　　　　　　　　　　　<上一页/@rules1>　　　　<返回/@main>
+
+[@rules2]
+在打擂比赛之前，请先仔细阅读比赛规则：\
+一、进入比赛地图需要比赛金10万，当比赛地图进入人数达到8人\
+　　时，比赛自动开始，比赛时间为20分钟。\
+二、比赛未开始，杀死其他对手无效。被杀死玩家在比赛未开始期\
+　　间可以再次进入，不再收取比赛金。\
+三、比赛结束时间内，顺利将其他所有玩家清出场地的选手获得此\
+　　场比赛的胜利，获得此场比赛的所有奖金。\
+　　　　　　　　　　　　　　　　　　　　　　　　<下一页/@nextpage2>
+
+[@nextpage2]
+四、比赛正式开始后，被杀死玩家与其他玩家将无法再进入比赛\
+　　场地。\
+五、比赛时间结束，场地内人数大于1，则比赛为平局。\
+\
+\
+\
+\
+\
+　　　　　　　　　　　　　　　　　　<上一页/@rules2>　　　　<返回/@main>
+
+[@rules3]
+在打擂比赛之前，请先仔细阅读比赛规则：\
+一、进入比赛地图需要比赛金20万，比赛时间为3分钟，比赛场地\
+　　累积满6人，最先申请“生存挑战赛”的房主就可以选择比赛\
+　　开始。当比赛场地累积满10人，比赛将自动开始。(房主名字\
+　　显示为橙色)。\
+二、比赛开始后，地面出现亮点的区域内都会降落雷电，有一定概\
+　　率击中选手，选手必须躲避闪电方可生存，离开比赛场地、被\
+　　　　　　　　　　　　　　　　　　　　　　　<下一页/@nextpage3>
+
+[@nextpage3]
+　　击倒都将输掉此场比赛。\
+　　比赛期间场地内会随机出现大量“幸运魔盒”，可能随机产生\
+　　如下功能：冰冻他人角色、冰冻本人角色、伤害他人角色、伤\
+　　害本人角色、治愈本人角色等\
+三、比赛时间结束，场地内人数大于1，则比赛为平局；比赛结束\
+　　之前，场地内最后一名幸存者将获得奖金100万。\
+　　　　　　　　　　　　　　　　　　<上一页/@rules3>　　　　<返回/@main>
+
+[@import]
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @单人攻擂成功
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @单人守擂成功
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA001检测
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA002检测
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA003检测
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA004检测
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA005检测
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA006检测
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA007检测
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA008检测
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA009检测
+#CALL [\Features\HeroesChallenge\混乱对抗.txt] @混乱信息排列
+#CALL [\Features\HeroesChallenge\混乱对抗.txt] @混乱对抗胜负
+#CALL [\Features\HeroesChallenge\混乱对抗.txt] @混乱对抗离场
+#CALL [\Features\HeroesChallenge\生存挑战.txt] @生存挑战胜负
+#CALL [\Features\HeroesChallenge\生存挑战.txt] @生存信息排列
+}

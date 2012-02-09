@@ -1,0 +1,14 @@
+[dgfdfg]
+CondensationRemaining=0
+[fgdfg]
+CondensationRemaining=0
+[rrefd]
+CondensationRemaining=0
+[sefsdf]
+CondensationRemaining=0
+[asdasd]
+CondensationRemaining=0
+[sdfsdfsfd]
+CondensationRemaining=0
+[fdsfsdf]
+CondensationRemaining=0

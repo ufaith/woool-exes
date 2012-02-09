@@ -1,0 +1,51 @@
+[@元神升级] PNEUMA
+{
+#IF
+!ISPNEUMA
+#ACT
+BREAK
+
+#IF
+LARGE $AMBITKIND 2
+#ACT
+goto @天人等级限制
+#ELSEACT
+goto @凡人等级限制
+break
+
+[@凡人人等级限制] PNEUMA
+#IF
+RANDOM 1
+#ACT
+#CALL [\Features\System\HeroLogin.txt] @元神登陆1
+SENDMSG 6 恭喜你升级到<$LEVEL>级！
+
+
+[@天人等级限制] PNEUMA
+#IF
+LARGE $AMBITKIND 2
+SMALL $AMBITKIND 5
+#ACT
+;#CALL [\Features\UpgradeTrigger\ImplementationHero.txt] @天人元神执行
+#CALL [\Features\System\HeroLogin.txt] @元神登陆1
+FORMATSTR S0 飞升期%s重 $NUMTOCHR($AMBITLEVEL)
+SENDMSG 6 恭喜你的境界提升到<$STR(S0)>！
+
+#IF
+LARGE $AMBITKIND 4
+SMALL $AMBITKIND 7
+#ACT
+;#CALL [\Features\UpgradeTrigger\ImplementationHero.txt] @天人元神执行
+#CALL [\Features\System\ClassTitle.txt] @ClassTitle
+FORMATSTR S0 天仙期%s重 $NUMTOCHR($AMBITLEVEL)
+SENDMSG 6 恭喜你的境界提升到<$STR(S0)>！
+
+#IF
+LARGE $AMBITKIND 6
+SMALL $AMBITKIND 9
+#ACT
+;#CALL [\Features\UpgradeTrigger\ImplementationHero.txt] @天人元神执行
+#CALL [\Features\System\ClassTitle.txt] @ClassTitle
+FORMATSTR S0 上仙期%s重 $NUMTOCHR($AMBITLEVEL)
+SENDMSG 6 恭喜你的境界提升到<$STR(S0)>！
+}

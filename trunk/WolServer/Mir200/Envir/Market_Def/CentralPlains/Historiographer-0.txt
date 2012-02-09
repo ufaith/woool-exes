@@ -1,0 +1,88 @@
+[@main]
+
+    国王有令:为天下最强的勇士们在中州大道树立雕像,彰显\
+他们名号.天下群豪尽可以到我这里来登记在案,看看到底\
+谁是群雄中的最强者.如果来登记的勇士中你是最强的一位,\
+你从此以后就可以名扬天下了.\
+<我是天下第一/@我是天下>\
+<天下第一有谁/@天下有谁>\
+<离开/@exit>\
+
+[@我是天下]
+#IF
+CHECKLEVELEX < 45
+#SAY
+看来你很有信心，不过你连进入名人堂的资格还没有达到，你需要\
+46级来证明你的实力，现在来申请天下第一恐怕还嫌早。\
+<离开/@exit>
+#ACT
+break
+#IF
+gender man
+checkjob warrior
+CHECKLEVELEX > $STR(G7)
+#ACT
+MOV G7 $LEVEL
+UPDATETOP 1
+goto @天下第一
+#IF
+gender man
+checkjob wizard
+CHECKLEVELEX > $STR(G9)
+#ACT
+MOV G9 $LEVEL
+UPDATETOP 3
+goto @天下第一
+#IF
+gender man
+checkjob taoist
+CHECKLEVELEX > $STR(G11)
+#ACT
+MOV G11 $LEVEL
+UPDATETOP 5
+goto @天下第一
+#IF
+gender woman
+checkjob warrior
+CHECKLEVELEX > $STR(G8)
+#ACT
+MOV G8 $LEVEL
+UPDATETOP 2
+goto @天下第一
+#IF
+gender woman
+checkjob wizard
+CHECKLEVELEX > $STR(G10)
+#ACT
+MOV G10 $LEVEL
+UPDATETOP 4
+goto @天下第一
+#IF
+gender woman
+checkjob taoist
+CHECKLEVELEX > $STR(G12)
+#ACT
+MOV G12 $LEVEL
+UPDATETOP 6
+goto @天下第一
+#ELSESAY
+须知人外有人，天外有天。现在的天下至强者还不是你\
+能超越的。不过假以时日，江山代有强豪出，指点天下\
+的强者也自会有努力者一席之地的。\
+<返回/@main>\
+
+
+[@天下第一]
+你已经通过你的实力证明了你才是天下第一\
+但是，想要保持你现在的地位你还得努力。\
+你的伟绩我已经帮你记录下来了。\\
+<返回/@exit>\
+
+[@天下有谁]
+当前天下第一男战士是：[<$GLOBAL(TXDY01)>]　等级为:<$STR(G7)>级\
+当前天下第一女战士是：[<$GLOBAL(TXDY02)>]　等级为:<$STR(G8)>级\
+当前天下第一男法师是：[<$GLOBAL(TXDY11)>]　等级为:<$STR(G9)>级\
+当前天下第一女法师是：[<$GLOBAL(TXDY12)>]　等级为:<$STR(G10)>级\
+当前天下第一男道士是：[<$GLOBAL(TXDY21)>]　等级为:<$STR(G11)>级\
+当前天下第一女道士是：[<$GLOBAL(TXDY22)>]　等级为:<$STR(G12)>级\
+<离开/@exit>

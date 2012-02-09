@@ -1,0 +1,69 @@
+[@落霞岛1]
+{
+可以完成的任务：\
+<NoviceQuests--打听拜师/@_RW_fulfilTaskDesp_342_fulfil>\
+#IF
+HasTask 2
+#ACT
+break
+#SAY
+<Quests--复仇鱼人/@_RW_fulfilTaskDesp_329_goingon>\
+\
+<离开/@exit>
+#ELSESAY
+可以接的任务：\
+<Quests--复仇鱼人/@_RW_taskDesp_329>\
+\
+<离开/@exit>
+
+[@_RW_fulfilTaskDesp_342_fulfil]
+年轻人，谢谢你帮我的忙呢！你找我有什么事情吗？\
+<打听拜师/@_RW_fulfilTask_342>                <没事/@exit>
+
+[@_RW_fulfilTask_342]
+#ACT
+CHANGEEXP + 1400
+give 金币 800
+EndTask 9
+AddTask 10
+#SAY
+你可以在新手向导或者中州武馆教头处拜师，点击“拜师”\
+选项后输入师父的名字就可以了，前提是师父必须到场。\
+你现在去服装店老板那里看看，他会教你如何结婚的。\
+<离开/@exit>
+}
+
+[@海角村1]
+{
+可以完成的任务：\
+<NoviceQuests--打听拜师/@_RW_fulfilTaskDesp_342_fulfil>\
+#IF
+HasTask 2
+#ACT
+break
+#SAY
+<Quests--复仇鱼人/@_RW_fulfilTaskDesp_329_goingon>\
+\
+<离开/@exit>
+#ELSESAY
+可以接的任务：\
+<Quests--复仇鱼人/@_RW_taskDesp_329>\
+\
+<离开/@exit>
+
+[@_RW_fulfilTaskDesp_342_fulfil]
+年轻人，谢谢你帮我的忙呢！你找我有什么事情吗？\
+<打听拜师/@_RW_fulfilTask_342>                <没事/@exit>
+
+[@_RW_fulfilTask_342]
+#ACT
+CHANGEEXP + 1400
+give 金币 800
+EndTask 26
+AddTask 27
+#SAY
+你可以在新手向导或者中州武馆教头处拜师，点击“拜师”\
+选项后输入师父的名字就可以了，前提是师父必须到场。\
+你现在去服装店老板那里看看，他会教你如何结婚的。\
+<离开/@exit>
+}

@@ -1,0 +1,21 @@
+[@main]
+#IF
+CheckUserGap < 5
+#SAY
+　　神秘的空间之门为你而开启，请问你是要回到炼狱魔境\
+六层，还是想去桃园仙境？\
+\
+　　<我想回炼狱魔境六层/@GoNL006>\
+　　<太惊喜了，送我去桃园仙境吧/@GoTaoyuan>\
+　　<离开/@exit>\
+#ELSESAY
+<太远了，过不去..../@exit>
+
+[@GoNL006]
+#ACT
+mapmove NL006 47 35
+
+[@GoTaoyuan]
+#ACT
+map MH054
+SENDMSG 5 神秘的力量破碎了虚空，你穿越空间来到了美丽的桃园仙境！

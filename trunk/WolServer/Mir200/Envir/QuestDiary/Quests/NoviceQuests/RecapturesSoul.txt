@@ -1,0 +1,34 @@
+[@史官2]
+{
+可以完成的任务：\
+<NoviceQuests--RecapturesSoul/@_RW_fulfilTaskDesp_27_goingon>\
+\
+<离开/@exit>
+
+[@_RW_fulfilTaskDesp_27_goingon]
+　　恩，你的实力以远远超过了我的预期，也许你就是那个\
+有缘人，是时候了。传世大陆上还有一个世界被称为“炼狱”，\
+那里几乎拥有这个世界中所有的地形和怪物，同时也拥有无\
+穷的财宝。至于这个世界是怎么形成的，也许只有创世神才\
+知道，你愿意前往这个传说中的世界吗？\
+<我愿意去/@_RW_taskGoingOn_27>                <没有兴趣/@exit>
+
+[@_RW_taskGoingOn_27]
+#IF
+equal $Task(38) 2
+checkitem 地魂灵石 1
+#ACT
+EndTask 38
+AddTask 39
+CHANGEEXP + 50000
+#SAY
+　　哈哈，很好！去找中州老兵吧，他会告诉你怎样才可以\
+进入<color=green 炼狱>的。\
+\
+<离开/@exit>
+#ELSESAY
+　　快去将军坟南杀死尸卫勇士，你就能得到地魂灵石了。\
+这种灵石对于修炼元神分身的人，将有神奇的帮助。\
+\
+<离开/@exit>
+}

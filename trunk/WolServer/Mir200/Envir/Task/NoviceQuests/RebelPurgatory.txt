@@ -1,0 +1,7 @@
+[setup]
+stepcount = 3
+title = NoviceQuests--RebelPurgatory
+ID = 39
+stepDESC1 = <color=graygolden 任务目的：>去找<王城老兵/@@goto 0 老兵 468,226>\<color=graygolden 任务奖励：>\</@@!PIC 炼狱体验卡>		</@@!PIC2 10,951>经验：100000\<color=graygolden 任务介绍:>\    哈哈，很好！去找中州老兵吧，他会告诉你怎样才可以\进入<color=green 炼狱>的。\
+stepDESC2 = <color=graygolden 任务目的：>去炼狱魔境一层杀尸卫找回神秘宝箱\<color=graygolden 任务奖励：>\</@@!PIC 神秘宝箱>		</@@!PIC2 10,951>经验：150000  </@@!PIC2 10,229>金币：2000\<color=graygolden 任务介绍:>\    快去<color=green 炼狱魔境一层杀尸卫>找回<color=green 神秘宝箱>吧，你可以<color=green 双击>\<color=green 包裹中的炼狱体验卡>到海岛，再从那里的<传送门/@@goto MH001 传送门 125,90>进入炼狱\魔境。快去吧！\
+stepDESC3 = <color=graygolden 任务奖励：>\</@@!PIC2 10,951>经验：300000  </@@!PIC2 10,229>金币：5000\<color=graygolden 任务介绍:>\    恭喜你，你成功的从尸卫那找到了<color=green 神秘宝箱>，马上回中\州老兵那吧。

@@ -1,0 +1,1 @@
+<$USERNAME>, you have been playing for <$LOGINLONG>

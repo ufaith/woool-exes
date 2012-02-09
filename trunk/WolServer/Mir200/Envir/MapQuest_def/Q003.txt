@@ -1,0 +1,191 @@
+[@main]
+#IF
+equal $Task(14) 4
+#ACT
+goto @ID14
+
+#IF
+equal $Task(31) 4
+#ACT
+goto @ID31
+
+#IF
+small $Task(3) 11
+#ACT
+goto @ID3
+
+#IF
+small $Task(35) 11
+#ACT
+goto @ID35
+
+[@ID14]
+#IF
+CheckMapMonNameCount 1 150 200 30 StickDog -15
+#ACT
+PARAM1 1
+PARAM2 150
+PARAM3 200
+MonGen StickDog 15 15
+
+#IF
+equal $Task(14) 4
+#ACT
+give 结婚戒指 1
+UpdateTask 14 5
+SENDMSG 5 你获得了结婚戒指！
+break
+
+[@ID3]
+#IF
+equal $GROUPMASTER
+#ACT
+break
+
+#IF
+equal $Task(3) 1
+#ACT
+UpdateTask 3 2
+break
+
+#IF
+equal $Task(3) 2
+#ACT
+UpdateTask 3 3
+break
+
+#IF
+equal $Task(3) 3
+#ACT
+UpdateTask 3 4
+break
+
+#IF
+equal $Task(3) 4
+#ACT
+UpdateTask 3 5
+break
+
+#IF
+equal $Task(3) 5
+#ACT
+UpdateTask 3 6
+break
+
+#IF
+equal $Task(3) 6
+#ACT
+UpdateTask 3 7
+break
+
+#IF
+equal $Task(3) 7
+#ACT
+UpdateTask 3 8
+break
+
+#IF
+equal $Task(3) 8
+#ACT
+UpdateTask 3 9
+break
+
+#IF
+equal $Task(3) 9
+#ACT
+UpdateTask 3 10
+break
+
+#IF
+equal $Task(3) 10
+#ACT
+UpdateTask 3 11
+break
+
+[@ID31]
+#IF
+CheckMapMonNameCount 0 380 660 10 StickDog -10
+#ACT
+PARAM1 0
+PARAM2 380
+PARAM3 660
+MonGen StickDog 10 10
+
+#IF
+equal $Task(31) 4
+#ACT
+give 结婚戒指 1
+UpdateTask 31 5
+SENDMSG 5 你获得了结婚戒指！
+break
+
+#IF
+equal $GROUPMASTER
+#ACT
+break
+
+[@ID35]
+#IF
+equal $GROUPMASTER
+#ACT
+break
+
+#IF
+equal $Task(35) 1
+#ACT
+UpdateTask 35 2
+break
+
+#IF
+equal $Task(35) 2
+#ACT
+UpdateTask 35 3
+break
+
+#IF
+equal $Task(35) 3
+#ACT
+UpdateTask 35 4
+break
+
+#IF
+equal $Task(35) 4
+#ACT
+UpdateTask 35 5
+break
+
+#IF
+equal $Task(35) 5
+#ACT
+UpdateTask 35 6
+break
+
+#IF
+equal $Task(35) 6
+#ACT
+UpdateTask 35 7
+break
+
+#IF
+equal $Task(35) 7
+#ACT
+UpdateTask 35 8
+break
+
+#IF
+equal $Task(35) 8
+#ACT
+UpdateTask 35 9
+break
+
+#IF
+equal $Task(35) 9
+#ACT
+UpdateTask 35 10
+break
+
+#IF
+equal $Task(35) 10
+#ACT
+UpdateTask 35 11
+break

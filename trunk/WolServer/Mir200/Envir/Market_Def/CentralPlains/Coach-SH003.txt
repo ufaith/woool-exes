@@ -1,0 +1,343 @@
+(@s_repair)
+%100
++30
+[@main]
+I am Instructor Wu Guan, how may i help you today?\
+\
+<Apprentice/@baishishoutu>\
+<Martial Arts Integral/@wuguanjifen>\
+<Medal of Honor/@rongyuxunzhang>\
+<Exit/@exit>\
+
+[@rongyuxunzhang]
+　　荣誉勋章可以用声望换领。声望可以通过拜师收徒等不\
+断累加。拥有了荣誉勋章后，你的相关属性都会得到提高。\
+\
+<Check my Prestige Points/@check>\
+<Receive Medal of Honor/@get>\
+<Repair Medal of Honor/@s_repair>\
+<Back/@Newmain>\
+
+[@check]
+#CALL [\Features\Coach.txt] @查询声望
+
+[@s_repair]
+#CALL [\Features\Coach.txt] @修理勋章
+
+[@get]
+#CALL [\Features\Coach.txt] @兑换勋章
+
+[@baishishoutu]
+　　作为师傅，将负担起提携新人的责任。当然，徒弟在出\
+师后也应回报师傅的教导之恩。\
+<Color=green I am new, I want to:>\
+<Understand Coach/@askbaishi>  <Request Teacher/@needteacher>\
+<Quit Mentoring/@left>     <Quit Apprentice/@cancel>\
+<Color=green I am the master, I would like:>\
+<Receive Teacher Reward/@getmoney>\
+<Teacher Command/@tonglingbaoyu>  <Quit Mentoring/@left>\
+<Back/@Newmain>\
+
+[@cancel]
+#CALL [\Features\Coach.txt] @取消拜师
+
+[@askbaishi]
+    古之学者必有师，师傅可以传道受业解惑也。每一位28\
+级以下的新手都可以拜35级以上的勇士为师。徒弟们在恩师\
+的教导下，如沐春风，更加出色。\
+<拜师有什么好处/@askteacher>\
+<我要拜师/@needteacher>\
+<返回/@main>
+
+[@askteacher]
+    徒弟在拜师后。能获得以下好处：\
+    1．	<经验和声望的增加/@jingyan>\
+    2．	<可以得到师傅元神的帮助/@daguai> \
+    现在赶快点击<Color=green “天下名师榜”>，找寻一位适合你的勇士\
+拜师。记住，必须双方都在时才能拜师，中州的武馆教头和\
+我那都可以主持拜师。\
+\
+<返回/@askbaishi>
+
+[@jingyan]
+    随着你等级的提升，你将会得到经验和声望的累加。有\
+了声望就可以穿高级的衣服，同时，声望还可以换取勋章和\
+灵佩等。\
+\
+<返回/@askteacher>\
+
+[@daguai]
+    现在人类都在慢慢摸索修炼高级元神之法，总有一天，\
+他们可将元神分离出本体。到那时，当你师傅繁忙，不能和\
+你一起练级杀怪的时候。<Color=green 你有可能借用他的元神，让他的元>\
+<Color=green 神来帮助你砍妖杀魔，助你练级一臂之力。>\
+\
+<返回/@askteacher>\
+
+[@needteacher]
+如果你想要拜师的话，请你要拜的师傅到场，\
+请点击下面的“拜师”选项，\
+并输入对方的名字。\
+<拜师/@d_teacher>\
+<Exit/@exit>
+
+[@d_teacher]
+#CALL [\Features\Coach.txt] @拜师
+
+[@left]
+#CALL [\Features\Coach.txt] @解除关系
+
+[@getmoney]
+　　你教导出的徒弟为中州作的每件事情，都有你的一份功\
+劳在。他从<color=green 出师到46级之前>，<color=green 杀怪屠魔获得的经验和天关>\
+<color=green 恶魔城用的灵符>会被记录下来，根据他的贡献。我奉国王之\
+命奖励你<color=green 部分经验和灵符>。并且，你每带一个徒弟出师，我\
+都将额外<color=green 奖励你灵符。>这是你的弟子对你教导之恩的报答。\
+　　你每天可以来我这里领取一次为人师表应得的酬劳，但\
+是如果<color=green 超过七天>没有来领取，酬劳将作废。\
+　　<现在就领取作为师傅该得的酬劳/@getStudentOffer>\
+　　<Exit/@exit>
+
+[@getStudentOffer]
+#IF
+checknamelist ..\QuestDiary\GameData\师父奖励领取.txt
+#ACT
+break
+#SAY
+　　对不起，你每天只能领取一次。\
+\
+\
+　　<知道了/@exit>
+
+#IF
+random 1
+#ACT
+LOADVAR HUMAN 师父灵符奖励 ..\QuestDiary\GameData\个人变量\师父灵符奖励.txt
+LOADVAR HUMAN 师父经验奖励 ..\QuestDiary\GameData\个人变量\师父经验奖励.txt
+mov M0 $Human(师父经验奖励)
+mov M1 $Human(师父灵符奖励)
+DIV M0 1000
+DIV M1 10
+
+#IF
+equal M0 0
+equal M1 0
+#ACT
+break
+#SAY
+　　对不起，你没有可以领取的报酬。\
+　　如果你的徒弟出师后尚处于46级以下，那么徒弟在战斗\
+中增加经验时，将额外产生一定比例的经验给师傅；徒弟在\
+天关或恶魔城中战斗消耗灵符时，也会额外产生一定比例的\
+灵符给师傅。并且，每带出一个徒弟出师也有灵符的奖励。\
+　　希望你培养出更多的好徒弟！\
+　　<知道了/@exit>
+
+#IF
+large M0 0
+#ACT
+CHANGEEXP + $STR(M0)
+MULT M0 1000
+CalcVar Human 师父经验奖励 - $STR(M0)
+SaveVar HUMAN 师父经验奖励 ..\QuestDiary\GameData\个人变量\师父经验奖励.txt
+DIV M0 1000
+#SAY
+你领取了<$STR(M0)>经验！\
+
+#IF
+large M1 0
+CHECKBAGSIZE $STR(M1)
+#ACT
+give 灵符 $STR(M1)
+MULT M1 10
+CalcVar Human 师父灵符奖励 - $STR(M1)
+SaveVar HUMAN 师父灵符奖励 ..\QuestDiary\GameData\个人变量\师父灵符奖励.txt
+DIV M1 10
+#SAY
+你领取了<$STR(M1)>个灵符！\
+
+#IF
+large M1 9
+CHECKBAGSIZE 10
+#ACT
+give 灵符 10
+dec M1 10 
+CalcVar Human 师父灵符奖励 - 100
+SaveVar HUMAN 师父灵符奖励 ..\QuestDiary\GameData\个人变量\师父灵符奖励.txt
+#SAY
+你领取了10个灵符！\
+还剩<$STR(M1)>个未领取\
+请将包裹保留10格以上空位后再来领取。\
+
+#IF
+#ACT
+addnamelist ..\QuestDiary\GameData\师父奖励领取.txt
+#SAY
+\
+<Exit/@exit>
+
+
+;#IF
+;#SAY
+;　　对不起，你已经超过一个礼拜没有来领取报酬了，\
+;所以以前的报酬都已做废，下次记得早点来。\
+;\
+;\
+;　　<知道了/@exit>
+
+[@tonglingbaoyu]
+　　师尊令，汇聚着天地之灵气。当徒弟有难的时候，就可\
+用师尊令<color=green 随时呼唤师傅>，请求师傅<color=green 元神出窍助其>一臂之力。\
+　　当师傅的元神在<color=green 培元境界时可领取一枚师尊令>，到达<color=green 培>\
+<color=green 元后期时可领取二枚，明心期和大悟期可领取三枚>。师傅随\
+时可从徒弟那收回师尊令。\
+　　我这里也可以代为保管师尊令，收取<color=green  5千元的保管费。> \
+　　<领取师尊令/@lingqu>\
+　　<存放师尊令/@cunfang>\
+　　<我知道了/@exit>\
+
+[@lingqu]
+#IF
+!PNEUMARELEASED
+#ACT
+break
+#SAY
+　　你的分身呢？都没有释放出来，我需要你分身的一点灵\
+力来打造师尊令牌。\
+\
+\
+　　<我马上放出我的分身。/@exit>\
+
+#IF
+#SAY
+　　你还没有徒弟，所以没必要领取师尊令。\
+\
+　　<我知道了/@exit>
+
+[@cunfang]
+　　你身上并没有师尊令啊。是不是糊涂了？\
+\
+　　<我弄错了/@exit> \
+
+[@wuguanjifen]
+　　武馆积分越高，就可拥有越高的封号。通过精密宝箱和\
+挖宝任务等你可以得到武馆积分的奖励。\
+　　<查询我的武馆积分/@SmallGameMarkPos>\
+　　<查询全服积分排名/@Top50>\    <领取武馆薪资/@GetSmallGamePrize>\
+　　<我还有其他事情需要你帮忙。/@Newmain>\
+
+[@SmallGameMarkPos]
+#IF
+large $ATTACHEPOINT 0
+#SAY
+你目前的积分情况为：\
+姓    名: <$USERNAME>\
+职    业: <$JOB>\
+等    级: <$LEVEL>\
+积    分: <$ATTACHEPOINT>\
+称    号: {color=red <$ATTACHENAME>}\
+本周排名: {color=red <$ATTACHERANK>}\
+\
+<Exit/@exit>
+#ELSESAY
+现在还没有你的积分!\
+\
+<Exit/@exit>
+
+[@Top50]
+#ACT
+TOPLIST 1
+
+[@GetSmallGamePrize]
+#IF
+small $ATTACHEPOINT 100
+#SAY
+没有你的奖金，你去努力争取吧！\
+\
+<Exit/@exit>
+
+#IF
+checknamelist ..\QuestDiary\GameData\MartialArtsPay.txt
+#ACT
+break
+#SAY
+奖励每周只能领取一次！\
+\
+<Exit/@exit>
+
+;一代宗师
+#IF
+large $ATTACHEPOINT 699
+#ACT
+addnamelist ..\QuestDiary\GameData\MartialArtsPay.txt
+give 金币 1400000
+#SAY
+恭喜你，获得了1400000金币的奖励！\
+\
+<离开>
+
+;出类拔萃
+#IF
+large $ATTACHEPOINT 599
+#ACT
+addnamelist ..\QuestDiary\GameData\MartialArtsPay.txt
+give 金币 1200000
+#SAY
+恭喜你，获得了1200000金币的奖励！\
+\
+<离开>
+
+;融会贯通
+#IF
+large $ATTACHEPOINT 499
+#ACT
+addnamelist ..\QuestDiary\GameData\MartialArtsPay.txt
+give 金币 1000000
+#SAY
+恭喜你，获得了1000000金币的奖励！\
+\
+<离开>
+
+;青出于蓝
+#IF
+large $ATTACHEPOINT 399
+#ACT
+addnamelist ..\QuestDiary\GameData\MartialArtsPay.txt
+give 金币 800000
+#SAY
+恭喜你，获得了800000金币的奖励！\
+\
+<Exit/@exit>
+
+;架轻就熟
+#IF
+large $ATTACHEPOINT 299
+#ACT
+addnamelist ..\QuestDiary\GameData\MartialArtsPay.txt
+give 金币 600000
+#SAY
+恭喜你，获得了600000金币的奖励！\
+\
+<Exit/@exit>
+
+;略有小成
+#IF
+large $ATTACHEPOINT 199
+#ACT
+addnamelist ..\QuestDiary\GameData\MartialArtsPay.txt
+give 金币 400000
+#SAY
+恭喜你，获得了400000金币的奖励！\
+\
+<Exit/@exit>
+
+;初级学徒
+#IF
+large $ATTACHEPOINT 99
+#ACT
+addnamelist ..\QuestDiary\GameData\MartialArtsPay.txt
+give 金币 200000
+#SAY
+恭喜你，获得了200000金币的奖励！\
+\
+<Exit/@exit>

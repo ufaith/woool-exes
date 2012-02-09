@@ -1,0 +1,98 @@
+(@fastbuy @buy @sell)
+%100
++3
++25
+[@main]
+哈哈，欢迎你，要我帮你什么？\
+
+#IF
+equal $OWNERGUILD 游戏管理
+#SAY
+根据城堡主人的命令,对沙城当前行会的成员提供30%折扣\
+#ELSESAY
+根据城堡主人<$LORD>的命令,对<$OWNERGUILD>的成员提供30%折扣\
+
+#IF
+#SAY
+\
+<Quick Buy/@fastbuy>\
+<Buy/@buy>\
+<Sell/@sell>\
+<询问商品/@questionprize>\
+<Exit/@exit>
+
+[@fastbuy]
+Please select the items you wish to purchase.\
+\
+<Product List/@buy>\
+<Back/@main>
+
+[@buy]
+这里有随机卷轴，地牢卷轴等等\
+\
+\
+<Product List/@buy>\
+<Back/@main>
+
+[@sell]
+你想卖点什么？\
+\
+<Back/@main>
+
+[@questionprize]
+我们店有<DungeonEscape/@_ZH_teleport>,\
+<RandomTeleport/@_ZH_teleport2>, <RepairOil/@_ZH_repairoil> 等等。\
+据说还有从妖怪身上拿到的<TownTeleport/@_ZH_steleport>。\
+<Back/@main>
+
+[@_ZH_teleport]
+使用地牢卷轴可以把自己从可怕的\
+地下迷宫里瞬间移动到地面。\
+当然和回城卷轴相比，它的威力还算弱，\
+但是救自己一条命，已经足够了。\
+\
+<返 回/@questionprize>
+
+[@_ZH_teleport2]
+随机卷轴能让你在自己所在的地图上\
+随机移动。尽管比较危险，但如果你还\
+剩很多药的话，会对你打猎有帮助。\
+\
+<返 回/@questionprize>
+
+[@_ZH_repairoil]
+修复油是提高自己拿着的武器的耐久力的油。\
+但是因为没有特殊修理的效果，\
+用修理油修理的武器的耐久力会越来越小。\
+如果不是很贵的武器，带着一个用来做修理，\
+会对你长久时间打猎有帮助。\
+\
+<返 回/@questionprize>
+
+[@_ZH_steleport]
+回城卷轴是从古代传下来的技术，\
+可惜的是没能传到人类身上，所以不能再制造。\
+据说有的妖怪有此技术。\
+用它就可以直接回到最后离开的村庄。\
+\
+<返 回/@questionprize>
+
+[@mission]
+运气真不好，现在猪肉制品滞销了。\
+\
+<Exit/@exit>
+
+[InGotGoods]
+672 灵符 1
+673 灵符(捆) 20
+
+[goods]
+DungeonEscape	40	10
+RandomTeleport	40	10
+HomeTeleport	40	10
+RepairOil		40	10
+Amulet		40	10
+Amulet(M)	40	10
+DungeonEsc(B)	40	10
+HomeTele(B)	40	10
+RandomTele(B)	40	10

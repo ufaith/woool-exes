@@ -1,0 +1,176 @@
+[@Cleverness]
+{
+Welcome to ImmortalIsland.\
+Here you can capture wild beast and tame them to be\
+your mount. But this is no easy task! once you capture\
+one you will need to bring it too me to be transformed\
+into a mount before you can ride one.\
+<Mount Upgrade/@_animal_Zhuansheng>          <Special Abilities/@_animal_OpenZiZhi>\
+<Mount Special Upgrade/@_animal_HuanHua>\
+<How to catch a Mount/@_animal_buzhuolingshou>\\
+
+[@_animal_OpenZiZhi]
+#CALL [\Features\Cleverness\RecognizeHost.txt] @滴血认主
+
+[@_animal_HuanHua]
+　　所有的灵兽都可进行幻化。幻化时需要一个主灵兽和一\
+个副灵兽。幻化后，主灵兽将会继承副灵兽上的部分属性。\
+　　<Color=green 而副灵兽的等级越高，幻化时的成功概率也越高，同时>\
+<Color=green 能通过幻化转移的属性也越多。>\
+　　<Color=green 无论幻化是否成功，副灵兽都会消失。>\
+　　在幻化时加入封元印，还可提高幻化的成功率。幻化时\
+需要<Color=green 10点灵力和20万金币>。\
+\
+　　<进行幻化/@@HUANHUA>　　<购买封元印/@购买封元印>\
+　　<返回/@main>\
+
+[@购买封元印]
+　　你需要哪种封元印呢？\
+\
+　　<购买地火兽弓箭手封元印/@封元印>\
+　　<购买地猛魔统领封元印/@封元印1>\
+
+[@封元印]
+#IF
+CHECKGAMEGOLD > 0
+#ACT
+GAMEGOLD - 1
+give 封元印 1
+close
+#ELSEACT
+SENDMSG 5 购买失败
+close
+
+[@封元印1]
+#IF
+CHECKGAMEGOLD > 0
+#ACT
+GAMEGOLD - 1
+give 封元印1 1
+close
+#ELSEACT
+SENDMSG 5 购买失败
+close
+
+[@_animal_Zhuansheng]
+Mount transform is divided into three stages.\
+Level 1 will be stronger Mount.\
+Level 2 will have it's armor so you can ride it.\
+Level 3 is war mount stage were you can ride and\
+fight with it.\
+\
+<First Transformation/@_animal_SpecialUpgrade>      <First Upgrade Requirements/@_animal_SpecialUpgrade1Info>\
+<Second Transformation/@_animal_SpecialUpgrade2>     <Second Upgrade Requirements/@_animal_SpecialUpgrade2Info>\
+
+[@_animal_SpecialUpgrade1Info]
+How to upgrade your mount.\
+1, You must have your mount at level 7 or above.\
+2, You must have "踏云玄铠" inside your bag.\
+3, Your mount must be alive and out,\
+　　<Back/@_animal_Zhuansheng>
+
+[@_animal_SpecialUpgrade2Info]
+　　灵兽进行二转后，其外貌、品质、功能等都将有天翻地\
+覆的变化。<Color=green 踏云豹将变为迅天雷豹，震天狮将变为战天狂狮>\
+<Color=green 而圣麒麟将变为玄天麒麟。>\
+　　灵兽在二转后，被开启了资质，佩带了新的灵兽铠甲，\
+更获得了<Color=green 五行属性。并且当灵兽骑战时，本体更能继承灵兽>\
+<Color=green 身上的所有属性，使用五行攻击力。>\
+\
+　　<返回/@_animal_Zhuansheng>
+
+[@_animal_SpecialUpgrade]
+　　只有7级的<Color=green 丛林豹、天狮兽和麒麟兽>才可进行一转，转\
+生还需要一副灵兽铠。\
+　　请在包裹中准备好灵兽铠，并且释放出你需要转生的小\
+灵兽。\
+\
+　　<我准备好了替小灵兽转生/@_animal_SpecialUpgradeAAA>\    <返回/@_animal_Zhuansheng>
+
+[@_animal_SpecialUpgradeAAA]
+#IF
+CHECKITEM 踏云玄铠 1
+#ACT
+take 踏云玄铠 1
+UPGRADEMON
+break
+#SAY
+You have succesfully upgrade mount to level 1!\
+\
+<谢谢/@exit>
+
+#IF
+equal $PET.RELIVE 0
+CHECKITEM 灵兽铠 1
+#ACT
+take 灵兽铠 1
+UPGRADEMON
+break
+#SAY
+You have succesfully upgrade mount to level 1!\
+\
+<Exit/@exit>
+
+#IF
+equal $PET.RELIVE 0
+#SAY
+Sorry you do not meet the requirements.\
+\
+\
+<Exit/@exit>\
+#ELSESAY
+Sorry you do not meet the requirements.\
+\
+\
+<Exit/@exit>\
+
+[@_animal_SpecialUpgrade2]
+So you wish to upgrade your mount to level 2?\
+Remember to have your mount out and make sure you\
+have read the requirements for Second upgrade.\
+\
+<Proceed Second Upgrade/@_animal_checkready>\    <Back/@_animal_Zhuansheng>
+
+[@_animal_checkready]
+#IF
+!equal $PET.RELIVE 1
+#ACT
+break
+#SAY
+Your mount must be alive and released.\
+\
+<Exit/@exit>
+
+#IF
+!checkitem 兽神水 1
+#ACT
+break
+#SAY
+Sorry you do not have "兽神水".\
+\
+<Exit/@exit>
+
+#IF
+#ACT
+take 兽神水 1
+UPGRADEMON
+UPGRADEUSERITEM $PETMAKEINDEX 59 = 1
+#SAY
+　　你的灵兽很聪明，也多亏了灵力和兽神水的神奇功效，\
+我已替你的灵兽完成了转生过程。我也顺便完成了对它的骑\
+乘训练，它会成为助你驰？天下的得力伙伴。并且，灵兽已\
+经进行了“滴血认主”，真正成为只臣服于你一人的灵兽。\
+　　你可以按<Color=green Ctrl+Z>键来控制灵兽的吼叫，如果灵兽处\
+于非骑乘状态，鼠标所指方向将是你灵兽吼叫的方向。并且\
+<Color=green 在骑战状态下更有概率可将其他勇士吼下灵兽。>\
+\
+<Exit/@exit>
+
+[@_animal_buzhuolingshou]
+　　灵犀仙岛上灵兽众多，其资质等都比起普通灵兽来更胜\
+一筹。如想捕捉到这些野生灵兽，可乘其体力虚弱之时，使\
+用<Color=green “灵兽项圈”>将其收服捕捉。\
+　　<Color=green “灵兽项圈”可放入快捷栏上使用。>\
+　　<如此神奇，我这就去抓几个。/@exit>\
+
+}

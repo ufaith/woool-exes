@@ -1,0 +1,71 @@
+[@周一炼狱屠魔]
+{
+<Quests--周一炼狱屠魔/@_RW_taskDesp322>\
+\
+<离开/@exit>
+
+[@_RW_taskDesp322]
+#IF
+!HasTask 70
+#ACT
+break
+#SAY
+炼狱魔境的魔军们每天都要到我这里抢夺财物，真是恨死他\
+们了！你帮我杀掉他们报仇，我会给你我珍藏多年的宝物作\
+为报答！你可以跟朋友组队完成任务。\
+<好，义不容辞/@_RW_accept322>                <懒得去/@exit>
+
+#IF
+CHECKVAR HUMAN RENWU011 = 100
+#ACT
+break
+#SAY
+快去炼狱魔境一层杀100只尸卫吧，完成任务后找我领赏。\
+\
+<离开/@exit>
+
+#IF
+CHECKVAR HUMAN RENWU011 = 0
+#ACT
+goto @屠魔奖励
+EndTask 70
+break
+#SAY
+恭喜你！你已经完成了任务，这是给你的奖赏。\
+<离开/@exit>
+#ELSESAY
+还要杀<$HUMAN(RENWU011)>只尸卫
+
+[@_RW_accept322]
+#ACT
+CALCVAR HUMAN RENWU011 = 100
+AddTask 70
+#SAY
+快去炼狱魔境一层杀100只尸卫吧，完成任务后找我领赏。\
+<离开/@exit>
+
+[@屠魔奖励]
+#IF
+random 4
+#ACT
+give 6级宝宝卷轴 1
+break
+
+#IF
+random 3
+#ACT
+give 6级金刚卷轴 1
+break
+
+#IF
+random 2
+#ACT
+give 6级真气卷轴 1
+break
+
+#IF
+random 1
+#ACT
+CHANGEEXP + 200000
+break
+}

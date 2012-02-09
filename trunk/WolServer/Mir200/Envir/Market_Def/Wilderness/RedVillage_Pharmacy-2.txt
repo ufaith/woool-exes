@@ -1,0 +1,34 @@
+(@fastbuy @buy @sell)
+%100
++0
++42
+[@main]
+有些事情我就不多说了，我是个生意人只要\
+肯多给钱，我谁的生意都做。我这里东西不\
+算多，但我想这是谁都需要的东西。\
+<Quick Buy/@fastbuy>\
+<购入药品/@buy>\
+<出售药品/@sell>\
+<Exit/@exit>
+
+[@fastbuy]
+Please select the items you wish to purchase.\
+\
+<Product List/@buy>\
+<Back/@main>
+
+[@buy]
+需要买什么药吗？\
+\
+\
+<Back/@main>
+
+[@sell]
+请给要卖的东西，我会给好价钱的。\
+\
+\
+<Back/@main>
+
+[goods]
+HPPotion(L)	40	1
+MPPotion(L)	40	1

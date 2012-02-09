@@ -1,0 +1,1189 @@
+;此脚为登录脚本，人物每次登录时都会执行此脚本，所有人物初始设置都可以放在此脚本中。
+;修改脚本内容，可用@ReloadManage命令重新加载该脚本，不须重启程序。
+
+[@GlobalVar]
+#CALL [\Features\System\BackgroundVariable.txt] @DeclareBackgroundVariable
+#CALL [\Features\System\BackgroundVariable.txt] @ReadBackgroundVariables
+
+[@GuildVar]
+#CALL [\Features\System\GuildVariable.txt] @声明行会变量
+#CALL [\Features\System\GuildVariable.txt] @读取行会变量
+
+[@Initialize]
+#CALL [\Features\System\IndividualVariable.txt] @声明个人变量
+#CALL [\Features\System\IndividualVariable.txt] @读取个人变量
+
+[@Login] PNEUMA
+#IF
+ISPNEUMA
+#ACT
+break
+#CALL [\Features\System\HeroLogin.txt] @HeroLogin
+
+#IF
+#CALL [\Features\System\MainLogin.txt] @MainLogin
+
+[@import]
+#CALL [\Features\System\BonusExperience.txt] @BonusExperience
+
+[@新手上线]
+#IF
+random 1
+#ACT
+give 回城神石1 1
+give 超级天山雪莲2 1
+BAGSIZE 66
+Gmexecute 使用物品 传世宝典
+
+#IF
+CHECKMAPNAME 0
+#ACT
+AddTask 21
+goto @新人广告
+break
+
+#IF
+CHECKMAPNAME 1
+#ACT
+AddTask 4
+goto @新人广告
+break
+
+[@新人广告]
+#IF
+ISNEWHUMAN
+checkjob warrior
+#ACT
+SENDMSG 0 "Welcome to Dragon WoOOL new Warrior [<$USERNAME>]!"
+SENDMSG 14 "Welcome to Dragon WoOOL new Warrior [<$USERNAME>]!"
+break
+#IF
+ISNEWHUMAN
+checkjob wizard
+#ACT
+SENDMSG 0 "Welcome to Dragon WoOOL new Wizard [<$USERNAME>]!"
+SENDMSG 14 "Welcome to Dragon WoOOL new Wizard [<$USERNAME>]!"
+break
+#IF
+ISNEWHUMAN
+checkjob taoist
+#ACT
+SENDMSG 0 "Welcome to Dragon WoOOL new Taoist [<$USERNAME>]!"
+SENDMSG 14 "Welcome to Dragon WoOOL new Taoist [<$USERNAME>]!"
+break
+
+#IF
+!ISCASTLEMASTER
+checkitem SupremeSlayer 1
+#ACT
+take SupremeSlayer 66
+SENDMSG 5 "You have lost the Extreme Dragon Slayer!"
+
+#IF
+!ISCASTLEMASTER
+checkitemw SupremeSlayer 1
+#ACT
+takew SupremeSlayer 66
+SENDMSG 5 "You have lost the Extreme Dragon Slayer!"
+
+[@0点清理数据]
+#IF
+random 1
+#CALL [\Features\StartingTrigger\自定义变量保存.txt] @自定义变量保存
+#CALL [\Features\System\IndividualVariable.txt] @读取个人变量
+
+[@江湖告急]
+#IF
+CHECKOFGUILD $STR(A14)
+#ACT
+SENDMSG 5 <$STR(A13)>
+
+[@ReadBook1]
+#ACT
+SENDMSG 15 飞射快捷栏中镇魔符或镇魔神符可以召唤其他心魔帮助战斗
+SENDMSG 15 镇魔符和镇魔神符可以维持被召唤心魔的战斗力
+SENDMSG 15 快速激发心魔战斗力可以换来一段时间的强力攻击
+SENDMSG 15 如有问题彩虹精灵将随时提供查询服务
+SENDMSG 15 Ctrl+P可以呼出心魔控制界面
+SENDMSG 15 神威狱试炼场以体验为主，各种奖励请到神威狱中获取
+
+[@礼物一计]
+#IF
+Check [49] 0
+#ACT
+SET [49] 1
+CHANGEEXP + 500000
+GIVE 月光宝盒(小) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+GIVE 治疗神水 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+give 金币 100000
+#SAY
+　　恭喜你获得了:<COLOR=GREEN 月光宝盒(小)、治疗神水>，得知您修炼\
+进展十分顺利，举国上下，万分欣喜。\
+10分钟后，您将收到第2份礼物：<COLOR=GREEN 双倍经验包天卡、回城神石>\
+各1个。国王期望着您的成长，请继续努力。\
+请您不要离开游戏\\
+<COLOR=GREEN (领取前，请保持包裹里至少有2个空位)>\\
+　　<好的，谢谢/@exit>
+
+
+[@礼物二计]
+#IF
+Check [50] 0
+#ACT
+SET [50] 1
+give 金币 200000
+give 双倍经验包天卡 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+give 回城神石 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+CALCVAR HUMAN 炼狱时间时 + 5
+SENDMSG 5 炼狱体验卡为你充值了5小时炼狱时间，你当前炼狱时间剩余：<$HUMAN(炼狱时间时)>小时<$HUMAN(炼狱时间秒)>秒
+#SAY
+　　恭喜你获得了:<COLOR=GREEN 双倍经验包天卡、回城神石>，得知您修炼\
+进展十分顺利，举国上下，万分欣喜。\
+10分钟后，您将收到第2份礼物：<COLOR=GREEN 灵兽石、御兽天袍(衣)>\
+各1个。国王期望着您的成长，请继续努力。\
+请您不要离开游戏\\
+<COLOR=GREEN (领取前，请保持包裹里至少有2个空位)>\\
+　　<好的，谢谢/@exit>
+
+
+[@礼物三计]
+#IF
+Check [51] 0
+#SAY
+　　恭喜你获得了:<COLOR=GREEN 灵兽石、御兽天袍(衣)>各1个。\
+传世大陆还有很秘密需要你去探索，但是前提是你必须拥有强\
+大的能力和装备，<COLOR=GREEN 新手关怀大使>正好准备了\
+一份丰厚的大礼，你可以花少量的元宝即可获得，每个玩家\
+只有一次这样的机会。\\
+　　<好的，谢谢/@exit>
+#ACT
+SET [51] 1
+SET [48] 1
+GIVE 豹魔石 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+UPGRADEUSERITEM $PARAM(10) 8 = 1
+UPGRADEUSERITEM $PARAM(10) 9 = 1
+UPGRADEUSERITEM $PARAM(10) 27 = 1
+MOV M0 $PARAM(10)
+#CALL [\Features\Cleverness\RecognizeHost.txt] @灵兽加属性
+SENDMSG 18 所有在线礼物领取完毕，祝福你游戏愉快！
+#IF
+gender MAN
+#ACT
+GIVE 御兽天袍 1
+break
+#IF
+gender WOMAN
+#ACT
+GIVE 御兽天衣 1
+break
+
+[@每分触发]
+#IF
+CHECKVAR HUMAN 凝结中符石 > 0
+#CALL [\Features\Blacksmith\MysteriousRunes.txt] @凝结记时
+
+#IF
+CHECKVAR HUMAN 还魂记时 > 0
+#ACT
+CALCVAR HUMAN 还魂记时 - 1
+
+#IF
+CHECKVAR HUMAN 炼制玄铁 > 0
+#ACT
+CALCVAR HUMAN 炼制玄铁 - 1
+
+#IF
+CHECKVAR HUMAN 炼制雪银 > 0
+#ACT
+CALCVAR HUMAN 炼制雪银 - 1
+
+#IF
+CHECKVAR HUMAN 炼制赤金 > 0
+#ACT
+CALCVAR HUMAN 炼制赤金 - 1
+
+#IF
+CHECKVAR HUMAN 炼制神饰 > 0
+#ACT
+CALCVAR HUMAN 炼制神饰 - 1
+
+[@炼狱时间]
+#IF
+random 1
+#ACT
+CALCVAR HUMAN 炼狱时间秒 - 1
+
+#IF
+CHECKVAR HUMAN 炼狱时间秒 < 1
+#ACT
+CALCVAR HUMAN 炼狱时间秒 = 0
+
+#IF
+CHECKVAR HUMAN 炼狱时间时 > 0
+CHECKVAR HUMAN 炼狱时间秒 < 1
+#ACT
+CALCVAR HUMAN 炼狱时间时 - 1
+CALCVAR HUMAN 炼狱时间秒 = 3600
+
+#IF
+CHECKGAMEGOLD < 1
+CHECKVAR HUMAN 炼狱时间秒 < 1
+#ACT
+mapmove 0 469 224
+goto @显示炼狱时间
+break
+
+#IF
+CHECKGAMEGOLD > 0
+CHECKVAR HUMAN 炼狱时间秒 < 1
+#ACT
+GAMEGOLD - 1
+CALCVAR HUMAN 炼狱时间时 + 2
+SENDMSG 5 由于您的炼狱时间不足，系统已自动扣除1元宝来转换成您的炼狱时间！
+goto @显示炼狱时间
+
+
+[@0点清理数据]
+#IF
+random 1
+#CALL [\Features\StartingTrigger\自定义变量保存.txt] @自定义变量保存
+#CALL [\Features\System\IndividualVariable.txt] @读取个人变量
+
+[@江湖告急]
+#IF
+CHECKOFGUILD $STR(A14)
+#ACT
+SENDMSG 5 <$STR(A13)>
+
+[@天魔加经验]
+#IF
+CHECKMAPNAME SWYTONGDAO
+#ACT
+CHANGEEXP + 100
+break
+
+#IF
+CheckLevelEx > 60
+#ACT
+CHANGEEXP + 5000
+break
+
+#IF
+CheckLevelEx > 50
+#ACT
+CHANGEEXP + 2500
+break
+
+#IF
+CheckLevelEx > 45
+#ACT
+CHANGEEXP + 1000
+break
+
+#IF
+CheckLevelEx > 40
+#ACT
+CHANGEEXP + 500
+break
+
+#IF
+CheckLevelEx < 40
+#ACT
+CHANGEEXP + 250
+break
+
+[@比武擂台1传出]
+#IF
+CHECKMAPNAME ARENA001
+#ACT
+goto @比武擂台传出
+break
+
+#IF
+CHECKMAPNAME ARENA001
+CHECKVAR HUMAN 擂台人物状态 = 观
+#ACT
+goto @取消观众模式
+
+[@比武擂台2传出]
+#IF
+CHECKMAPNAME ARENA002
+#ACT
+goto @比武擂台传出
+break
+
+#IF
+CHECKMAPNAME ARENA002
+CHECKVAR HUMAN 擂台人物状态 = 观
+#ACT
+goto @取消观众模式
+
+[@比武擂台3传出]
+#IF
+CHECKMAPNAME ARENA003
+#ACT
+goto @比武擂台传出
+break
+
+#IF
+CHECKMAPNAME ARENA003
+CHECKVAR HUMAN 擂台人物状态 = 观
+#ACT
+goto @取消观众模式
+
+[@比武擂台4传出]
+#IF
+CHECKMAPNAME ARENA004
+#ACT
+goto @比武擂台传出
+break
+
+#IF
+CHECKMAPNAME ARENA004
+CHECKVAR HUMAN 擂台人物状态 = 观
+#ACT
+goto @取消观众模式
+
+[@比武擂台5传出]
+#IF
+CHECKMAPNAME ARENA005
+#ACT
+goto @比武擂台传出
+break
+
+#IF
+CHECKMAPNAME ARENA005
+CHECKVAR HUMAN 擂台人物状态 = 观
+#ACT
+goto @取消观众模式
+
+[@比武擂台6传出]
+#IF
+CHECKMAPNAME ARENA006
+#ACT
+goto @比武擂台传出
+break
+
+#IF
+CHECKMAPNAME ARENA006
+CHECKVAR HUMAN 擂台人物状态 = 观
+#ACT
+goto @取消观众模式
+
+[@比武擂台7传出]
+#IF
+CHECKMAPNAME ARENA007
+#ACT
+goto @比武擂台传出
+break
+
+#IF
+CHECKMAPNAME ARENA007
+CHECKVAR HUMAN 擂台人物状态 = 观
+#ACT
+goto @取消观众模式
+
+[@比武擂台8传出]
+#IF
+CHECKMAPNAME ARENA008
+#ACT
+goto @比武擂台传出
+break
+
+#IF
+CHECKMAPNAME ARENA008
+CHECKVAR HUMAN 擂台人物状态 = 观
+#ACT
+goto @取消观众模式
+
+[@比武擂台9传出]
+#IF
+CHECKMAPNAME ARENA009
+#ACT
+goto @比武擂台传出
+break
+
+#IF
+CHECKMAPNAME ARENA009
+CHECKVAR HUMAN 擂台人物状态 = 观
+#ACT
+goto @取消观众模式
+
+[@比武擂台10传出]
+#IF
+CHECKMAPNAME ARENA010
+#ACT
+goto @比武擂台传出
+break
+
+#IF
+CHECKMAPNAME ARENA010
+CHECKVAR HUMAN 擂台人物状态 = 观
+#ACT
+goto @取消观众模式
+
+[@比武擂台11传出]
+#IF
+CHECKMAPNAME ARENA011
+#ACT
+goto @比武擂台传出
+break
+
+
+[@比武擂台传出]
+#ACT
+CHANGENAMECOLOR 255
+map ARENA000
+
+
+[@取消观众模式]
+#ACT
+CHANGENAMECOLOR 255
+Gmexecute changemode 4
+map ARENA000
+
+[@扩展包裹]
+#IF
+!checkgold 100000
+#ACT
+SENDMSG 5 你的剩余金币不足，不能扩充包裹
+break
+
+#IF
+CHECKGAMEGOLD > 4
+#ACT
+take 金币 100000
+GAMEGOLD - 5
+SET [17] 1
+BAGSIZE 66
+break
+SENDMSG 5 恭喜你的包裹扩充成功！
+#ELSEACT
+SENDMSG 5 你的剩余元宝不足，不能扩充包裹
+
+[@扩展元神包裹]
+#IF
+!checkgold 100000
+#ACT
+SENDMSG 5 你的剩余金币不足，不能扩充包裹
+break
+
+#IF
+CHECKGAMEGOLD > 4
+#ACT
+take 金币 100000
+GAMEGOLD - 5
+$PNEUMANAME.BagSize 60
+break
+$PNEUMANAME.SENDMSG 5 恭喜你的包裹扩充成功！
+#ELSEACT
+$PNEUMANAME.SENDMSG 5 你的剩余元宝不足，不能扩充包裹
+
+[@ReleaseYuan]
+#IF
+!CHECKITEMID $PARAM(0)
+#ACT
+break
+
+#IF
+equal $ITEMINFO[$PARAM(0)].VALUE(1) 5
+#ACT
+PlayDefence 6 地火兽弓箭手77 $PARAM(1) $PARAM(2)
+DEC D0 2
+PlayDefence 3 $STR(D0) 1
+takeM $PARAM(0)
+BREAK
+
+#IF
+equal $ITEMINFO[$PARAM(0)].VALUE(1) 6
+#ACT
+PlayDefence 6 猛魔统领77 $PARAM(1) $PARAM(2)
+DEC D0 2
+PlayDefence 3 $STR(D0) 1
+takeM $PARAM(0)
+BREAK
+
+[@BrightShadow]
+#IF
+EQUAL $PARAM(0) 0
+#ACT
+take 五行令旗 66
+mapmove MH001 108 80
+SHOWHUMEFFECT 29
+BREAK
+#IF
+EQUAL $PARAM(0) 1
+#ACT
+MonClear $M
+CLEARMAPMON $M 
+CLEARMAPBODY $M
+CLEARMAPITEM $M
+CHANGEEXP + $STR(D4)
+MOVR P0 20
+INC P0 1
+GIVE 神秘符石 1
+UPGRADEUSERITEM $PARAM(10) 71 + $STR(P0)
+BREAK
+#IF
+EQUAL $PARAM(0) 2
+#ACT
+#CALL [\Features\BrightShadowBot.txt] @封魔阵
+BREAK
+
+[@封魔阵减时]
+#IF
+!CHECKHUM $M 1
+#ACT
+break
+#IF
+EQUAL $STR(D2) 0
+#ACT
+break
+#IF
+EQUAL $M WXXG001
+#ACT
+MOV S12 $GLOBAL(WXXG001)
+PlayDefence 4 $GLOBAL(WXXG001)
+#IF
+EQUAL $M WXXG002
+#ACT
+MOV S12 $GLOBAL(WXXG002)
+PlayDefence 4 $GLOBAL(WXXG002)
+#IF
+EQUAL $M WXXG003
+#ACT
+MOV S12 $GLOBAL(WXXG003)
+PlayDefence 4 $GLOBAL(WXXG003)
+#IF
+EQUAL $M WXXG004
+#ACT
+MOV S12 $GLOBAL(WXXG004)
+PlayDefence 4 $GLOBAL(WXXG004)
+#IF
+EQUAL $M WXXG005
+#ACT
+MOV S12 $GLOBAL(WXXG005)
+PlayDefence 4 $GLOBAL(WXXG005)
+#IF
+EQUAL $M WXXG006
+#ACT
+MOV S12 $GLOBAL(WXXG006)
+PlayDefence 4 $GLOBAL(WXXG006)
+#IF
+EQUAL $M WXXG007
+#ACT
+MOV S12 $GLOBAL(WXXG007)
+PlayDefence 4 $GLOBAL(WXXG007)
+#IF
+EQUAL $$M WXXG008
+#ACT
+MOV S12 $GLOBAL(WXXG008)
+PlayDefence 4 $GLOBAL(WXXG008)
+#IF
+EQUAL $M WXXG009
+#ACT
+MOV S12 $GLOBAL(WXXG009)
+PlayDefence 4 $GLOBAL(WXXG009)
+#IF
+EQUAL $M WXXG010
+#ACT
+MOV S12 $GLOBAL(WXXG010)
+PlayDefence 4 $GLOBAL(WXXG010)
+#IF
+LARGE $STR(S12) 19
+#ACT
+StopTimer 0 D3
+DIV D3 1000
+MOV D2 0
+MonClear $M
+CLEARMAPMON $M
+CLEARMAPBODY $M
+CLEARMAPITEM $M
+ShowAdditionalInfo 4 $STR(D3) 0 $STR(S12)
+break
+#IF
+EQUAL $MAPMONCOUNT($M).12 0
+LARGE $STR(D2) 17
+#ACT
+GOTO @计算奖励
+break
+
+[@计算奖励]
+#IF
+random 1
+#ACT
+INC D1 1
+#IF
+SMALL $STR(S12) 20 
+LARGE $STR(S12) 10
+#ACT
+MOVR P1 7
+INC P1 5
+MULT P1 10000
+MOV D2 0
+PlayDefence 2 $STR(D1) 1 $STR(P1)
+CHANGEEXP + $STR(P1)
+DelayCall 3 @准备防守
+break
+#IF
+SMALL $STR(S12) 11
+LARGE $STR(S12) 0
+#ACT
+MOVR P1 9
+INC P1 6
+MULT P1 10000
+MOV D2 0
+PlayDefence 2 $STR(D1) 2 $STR(P1)
+CHANGEEXP + $STR(P1)
+DelayCall 3 @准备防守
+break
+#IF
+EQUAL $STR(S12) 0
+#ACT
+MOVR P1 10
+INC P1 8
+MULT P1 10000
+MOV D2 0
+PlayDefence 2 $STR(D1) 3 $STR(P1)
+CHANGEEXP + $STR(P1)
+DelayCall 3 @准备防守
+break
+
+[@准备防守]
+#IF
+EQUAL $STR(D1) 1
+#ACT
+GOTO @JJGW
+MOV S11 尸霸77
+DelayCall 3 @STARBOSS 17
+DelayCall 54 @STARBOSS1
+break
+#IF
+EQUAL $STR(D1) 2
+#ACT
+GOTO @SDGW
+MOV S11 白蛇妖77
+DelayCall 3 @STARBOSS 17
+DelayCall 54 @STARBOSS1
+break
+#IF
+EQUAL $STR(D1) 3
+#ACT
+GOTO @JGGW
+MOV S11 金刚人77
+DelayCall 3 @STARBOSS 17
+DelayCall 54 @STARBOSS1
+break
+#IF
+EQUAL $STR(D1) 4
+#ACT
+GOTO @TTGW
+MOV S11 召魂使77
+DelayCall 3 @STARBOSS 17
+DelayCall 54 @STARBOSS1
+break
+#IF
+EQUAL $STR(D1) 5
+#ACT
+GOTO @TKGW
+MOV S11 无相天魔77
+DelayCall 3 @STARBOSS 17 
+DelayCall 54 @STARBOSS1
+break
+#IF
+EQUAL $STR(D1) 6
+#ACT
+StopTimer 0 D3
+DIV D3 1000
+MonClear $M
+CLEARMAPMON $M
+CLEARMAPBODY $M
+CLEARMAPITEM $M
+#IF
+EQUAL $STR(D1) 6
+SMALL $STR(S12) 20 
+LARGE $STR(S12) 10
+#ACT
+GOTO @计算时间
+ShowAdditionalInfo 4 $STR(D3) 1 $STR(S12) $STR(S13)
+#IF
+EQUAL $STR(D1) 6
+SMALL $STR(S12) 11
+LARGE $STR(S12) 0
+#ACT
+GOTO @计算时间
+ShowAdditionalInfo 4 $STR(D3) 2 $STR(S12) $STR(S13)
+#IF
+EQUAL $STR(D1) 6
+EQUAL $STR(S12) 0
+#ACT
+GOTO @计算时间
+ShowAdditionalInfo 4 $STR(D3) 3 $STR(S12) $STR(S13)
+break
+
+[@计算时间]
+#IF
+LARGE $STR(D3) 500
+#ACT
+MOVR D4 10
+INC D4 8
+MULT D4 100000
+MOV S13 $STR(D4)
+INC S13 经验/神秘符石
+break
+#IF
+LARGE $STR(D3) 400
+#ACT
+MOVR D4 20
+INC D4 10
+MULT D4 100000
+MOV S13 $STR(D4)
+INC S13 经验/神秘符石
+break
+#IF
+LARGE $STR(D3) 300
+#ACT
+MOVR D4 40
+INC D4 20
+MULT D4 100000
+MOV S13 $STR(D4)
+INC S13 经验/神秘符石
+break
+#IF
+SMALL $STR(D3) 200
+#ACT
+MOVR D4 100
+INC D4 80
+MULT D4 100000
+MOV S13 $STR(D4)
+INC S13 经验/神秘符石
+break
+
+[@STARBOSS]
+#IF
+!CHECKHUM $M 1
+#ACT
+break
+#IF
+random 1
+#ACT
+INC D2 1
+MISSION $M 35 35
+PARAM1 18
+PARAM2 54
+PARAM3 1
+PARAM4 0
+MOBPLACE $STR(S10)
+break
+
+[@STARBOSS1]
+#IF
+!CHECKHUM $M 1
+#ACT
+break
+#IF
+random 1
+#ACT
+INC D2 1
+MISSION $M 35 35
+PARAM1 18
+PARAM2 54
+PARAM3 1
+PARAM4 0
+MOBPLACE $STR(S11)
+break
+
+[@JJGW]
+#IF
+random 3
+#ACT
+MOV S10 尸卫战将77
+break
+#IF
+random 2
+#ACT
+MOV S10 尸卫勇士77
+break
+#IF
+random 1
+#ACT
+MOV S10 尸卫77
+break
+
+[@SDGW]
+#IF
+random 3
+#ACT
+MOV S10 三头蛇77
+break
+#IF
+random 2
+#ACT
+MOV S10 红蛇妖77
+break
+#IF
+random 1
+#ACT
+MOV S10 黑蛇妖77
+break
+
+[@JGGW]
+#IF
+random 3
+#ACT
+MOV S10 青铜兽77
+break
+#IF
+random 2
+#ACT
+MOV S10 滚刀手77
+break
+#IF
+random 1
+#ACT
+MOV S10 铜人77
+break
+
+[@TTGW]
+#IF
+random 2
+#ACT
+MOV S10 兽骑统领77
+break
+#IF
+random 1
+#ACT
+MOV S10 兽骑兵77
+break
+
+[@TKGW]
+#IF
+random 3
+#ACT
+MOV S10 黑袍修罗77
+break
+#IF
+random 2
+#ACT
+MOV S10 魔神修罗77
+break
+#IF
+random 1
+#ACT
+MOV S10 暗影修罗77
+break
+
+[@炼化内丹]
+#IF
+equal $ITEMINFO[$PARAM(0)].Stdmode 71
+SMALL $ADDITIONALABIL(0) 4
+#ACT
+mov P0 5
+inc P0 1
+SetAdditionalAbil 1 + $STR(P0)
+takeM $PARAM(0)
+#IF
+equal $ITEMINFO[$PARAM(0)].NAME 灵符
+SMALL $ADDITIONALABIL(0) 4
+#ACT
+mov P0 10
+inc P0 1
+SetAdditionalAbil 1 + $STR(P0)
+takeM $PARAM(0)
+#IF
+SMALL $ADDITIONALABIL(0) 4
+equal $ITEMINFO[$PARAM(0)].NAME 灵皓石
+#ACT
+mov P0 100
+inc P0 20
+SetAdditionalAbil 1 + $STR(P0)
+takeM $PARAM(0)
+#IF
+equal $ADDITIONALABIL(0) 1
+LARGE $ADDITIONALABIL(1) 99
+#ACT
+SetAdditionalAbil 0 = 2
+SENDMSG 5 恭喜你成功炼化出-青丹，您可以继续修炼成红丹
+break
+#IF
+equal $ADDITIONALABIL(0) 2
+LARGE $ADDITIONALABIL(1) 999
+#ACT
+SetAdditionalAbil 0 = 3
+SENDMSG 5 恭喜你成功炼化出-红丹，您可以继续修炼成金丹
+break
+#IF
+equal $ADDITIONALABIL(0) 3
+LARGE $ADDITIONALABIL(1) 2999
+#ACT
+SetAdditionalAbil 0 = 4
+SENDMSG 5 恭喜你成功炼化出-金丹，当前内丹已经炼化到最高境界
+break
+
+[@BuildsYuan]
+#IF
+SMALL $ADDITIONALABIL(3) 100
+equal $ITEMINFO[$PARAM(0)].NAME 灵符(捆)
+#ACT
+SetAdditionalAbil 3 + 100
+SetAdditionalAbil 4 + 100
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(3) 100
+equal $ITEMINFO[$PARAM(0)].NAME 灵皓石
+#ACT
+SetAdditionalAbil 3 + 50
+SetAdditionalAbil 4 + 50
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(4) 100
+equal $ITEMINFO[$PARAM(0)].NAME 灵符(捆)
+#ACT
+SetAdditionalAbil 3 + 100
+SetAdditionalAbil 4 + 100
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(4) 100
+equal $ITEMINFO[$PARAM(0)].NAME 灵皓石
+#ACT
+SetAdditionalAbil 3 + 50
+SetAdditionalAbil 4 + 50
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(4) 100
+equal $ITEMINFO[$PARAM(0)].NAME 灵符
+#ACT
+mov P0 10
+inc P0 1
+SetAdditionalAbil 3 + $STR(P0)
+SetAdditionalAbil 4 + $STR(P0)
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(3) 100
+equal $ITEMINFO[$PARAM(0)].NAME 灵符
+#ACT
+mov P0 10
+inc P0 1
+SetAdditionalAbil 3 + $STR(P0)
+SetAdditionalAbil 4 + $STR(P0)
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(3) 100
+equal $ITEMINFO[$PARAM(0)].Stdmode 71
+equal $ITEMINFO[$PARAM(0)].Shape 1
+#ACT
+mov P0 5
+inc P0 1
+SetAdditionalAbil 3 + $STR(P0)
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(3) 100
+equal $ITEMINFO[$PARAM(0)].Stdmode 71
+equal $ITEMINFO[$PARAM(0)].Shape 9
+#ACT
+mov P0 5
+inc P0 1
+SetAdditionalAbil 3 + $STR(P0)
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(5) 100
+equal $ITEMINFO[$PARAM(0)].NAME 灵符(捆)
+#ACT
+SetAdditionalAbil 5 + 100
+SetAdditionalAbil 6 + 100
+SetAdditionalAbil 7 + 100
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(6) 100
+equal $ITEMINFO[$PARAM(0)].NAME 灵符(捆)
+#ACT
+SetAdditionalAbil 5 + 100
+SetAdditionalAbil 6 + 100
+SetAdditionalAbil 7 + 100
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(7) 100
+equal $ITEMINFO[$PARAM(0)].NAME 灵符(捆)
+#ACT
+SetAdditionalAbil 5 + 100
+SetAdditionalAbil 6 + 100
+SetAdditionalAbil 7 + 100
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(5) 100
+equal $ITEMINFO[$PARAM(0)].NAME 灵皓石
+#ACT
+SetAdditionalAbil 5 + 50
+SetAdditionalAbil 6 + 50
+SetAdditionalAbil 7 + 50
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(6) 100
+equal $ITEMINFO[$PARAM(0)].NAME 灵皓石
+#ACT
+SetAdditionalAbil 5 + 50
+SetAdditionalAbil 6 + 50
+SetAdditionalAbil 7 + 50
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(7) 100
+equal $ITEMINFO[$PARAM(0)].NAME 灵皓石
+#ACT
+SetAdditionalAbil 5 + 50
+SetAdditionalAbil 6 + 50
+SetAdditionalAbil 7 + 50
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(5) 100
+equal $ITEMINFO[$PARAM(0)].NAME 灵符
+#ACT
+mov P0 10
+inc P0 1
+SetAdditionalAbil 5 + $STR(P0)
+SetAdditionalAbil 6 + $STR(P0)
+SetAdditionalAbil 7 + $STR(P0)
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(6) 100
+equal $ITEMINFO[$PARAM(0)].NAME 灵符
+#ACT
+mov P0 10
+inc P0 1
+SetAdditionalAbil 5 + $STR(P0)
+SetAdditionalAbil 6 + $STR(P0)
+SetAdditionalAbil 7 + $STR(P0)
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(7) 100
+equal $ITEMINFO[$PARAM(0)].NAME 灵符
+#ACT
+mov P0 10
+inc P0 1
+SetAdditionalAbil 5 + $STR(P0)
+SetAdditionalAbil 6 + $STR(P0)
+SetAdditionalAbil 7 + $STR(P0)
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(5) 100
+equal $ITEMINFO[$PARAM(0)].Stdmode 71
+equal $ITEMINFO[$PARAM(0)].Shape 6
+#ACT
+mov P0 5
+inc P0 1
+SetAdditionalAbil 5 + $STR(P0)
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(5) 100
+equal $ITEMINFO[$PARAM(0)].Stdmode 71
+equal $ITEMINFO[$PARAM(0)].Shape 10
+#ACT
+mov P0 5
+inc P0 1
+SetAdditionalAbil 5 + $STR(P0)
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(6) 100
+equal $ITEMINFO[$PARAM(0)].Stdmode 71
+equal $ITEMINFO[$PARAM(0)].Shape 4
+#ACT
+mov P0 5
+inc P0 1
+SetAdditionalAbil 6 + $STR(P0)
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(6) 100
+equal $ITEMINFO[$PARAM(0)].Stdmode 71
+equal $ITEMINFO[$PARAM(0)].Shape 8
+#ACT
+mov P0 5
+inc P0 1
+SetAdditionalAbil 6 + $STR(P0)
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(7) 100
+equal $ITEMINFO[$PARAM(0)].Stdmode 71
+equal $ITEMINFO[$PARAM(0)].Shape 5
+#ACT
+mov P0 5
+inc P0 1
+SetAdditionalAbil 7 + $STR(P0)
+takeM $PARAM(0)
+BREAK
+
+#IF
+SMALL $ADDITIONALABIL(7) 100
+equal $ITEMINFO[$PARAM(0)].Stdmode 71
+equal $ITEMINFO[$PARAM(0)].Shape 3
+#ACT
+mov P0 5
+inc P0 1
+SetAdditionalAbil 7 + $STR(P0)
+takeM $PARAM(0)
+BREAK
+
+[@元婴散魂]
+#ACT
+SetAdditionalAbil 3 = 0
+SetAdditionalAbil 4 = 0
+SetAdditionalAbil 5 = 0
+SetAdditionalAbil 6 = 0
+SetAdditionalAbil 7 = 0
+BREAK
+
+[@江湖告急令]
+#IF
+EQUAL T8 $GUILDNAME
+#ACT
+SENDMSG 5 <$STR(T9)>:江湖告急<$GUILDNAME>行会的兄弟们，我在<$HUMANINFO.$STR(T9).$MAPNAME>坐标<$HUMANINFO.$STR(T9).$X>:<$HUMANINFO.$STR(T9).$Y>附近被人杀，是兄弟的就来帮忙，本人感激不尽！
+break
+
+
+[@PlusEquipment]
+#CALL [\Features\FateStone.txt] @命运石

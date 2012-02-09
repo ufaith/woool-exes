@@ -1,0 +1,64 @@
+07/02/2012 18:18:28 Has Read 1Guild Information...
+07/02/2012 18:18:28 Has Read 1Castle Information...
+07/02/2012 18:18:30 登录服务器(127.0.0.1:5600)连接成功...
+07/02/2012 18:18:32 Database Server(127.0.0.1:6000)Connection Is Successful...
+07/02/2012 18:18:33 游戏网关[0](127.0.0.1:2601)已打开...
+07/02/2012 18:22:30 Division by zero
+07/02/2012 18:23:01 Division by zero
+07/02/2012 18:23:32 Division by zero
+07/02/2012 18:24:03 Division by zero
+07/02/2012 18:24:33 Division by zero
+07/02/2012 18:25:04 Division by zero
+07/02/2012 18:25:34 Division by zero
+07/02/2012 18:26:05 Division by zero
+07/02/2012 18:26:33 [制造物品] gamelord HalfMoon(1073741881)
+07/02/2012 18:26:35 Division by zero
+07/02/2012 18:27:06 Division by zero
+07/02/2012 18:27:37 Division by zero
+07/02/2012 18:27:53 [等级调整] gamelord (60 -> 99)
+07/02/2012 18:28:07 Division by zero
+07/02/2012 18:28:28 在线数: 1
+07/02/2012 18:28:30 [制造物品] gamelord TownGodNeck(1073741882)
+07/02/2012 18:28:38 Division by zero
+07/02/2012 18:28:46 [制造物品] gamelord ParalysisRing(1073741883)
+07/02/2012 18:28:59 [制造物品] gamelord AraliaRing(1073741884)
+07/02/2012 18:29:08 Division by zero
+07/02/2012 18:29:16 [制造物品] gamelord 紫心宝石(1073741885)
+07/02/2012 18:29:39 Division by zero
+07/02/2012 18:29:57 [制造物品] gamelord 圣天头盔碎片1(1073741886)
+07/02/2012 18:30:03 [制造物品] gamelord 蟠龙傲天勋章(1073741887)
+07/02/2012 18:30:10 Division by zero
+07/02/2012 18:30:15 [制造物品] gamelord 战神勋章(1073741888)
+07/02/2012 18:30:25 [制造物品] gamelord NecroTaoBrace(1073741889)
+07/02/2012 18:30:41 Division by zero
+07/02/2012 18:30:52 [制造物品] gamelord AvernusBrace-A(1073741890)
+07/02/2012 18:31:03 [制造物品] gamelord AvernusBrace-A(1073741891)
+07/02/2012 18:31:11 [制造物品] gamelord AvernusRing-A(1073741892)
+07/02/2012 18:31:12 Division by zero
+07/02/2012 18:31:19 [制造物品] gamelord AvernusBelt-A(1073741893)
+07/02/2012 18:31:26 [制造物品] gamelord AvernusBoots-A(1073741894)
+07/02/2012 18:31:38 [制造物品] gamelord AvernusNeck-A(1073741895)
+07/02/2012 18:31:42 Division by zero
+07/02/2012 18:31:47 [制造物品] gamelord AvernusHelm-A(1073741896)
+07/02/2012 18:32:12 Division by zero
+07/02/2012 18:32:22 [制造物品] gamelord StormDrug(1073741897)
+07/02/2012 18:32:22 [制造物品] gamelord StormDrug(1073741898)
+07/02/2012 18:32:22 [制造物品] gamelord StormDrug(1073741899)
+07/02/2012 18:32:33 [制造物品] gamelord SunDrugBag(L)(1073741900)
+07/02/2012 18:32:43 Division by zero
+07/02/2012 18:33:13 Division by zero
+07/02/2012 18:33:27 [制造物品] gamelord Beckon(1073741901)
+07/02/2012 18:33:44 Division by zero
+07/02/2012 18:33:47 [制造物品] gamelord Defiance(1073741902)
+07/02/2012 18:34:14 Division by zero
+07/02/2012 18:34:44 Division by zero
+07/02/2012 18:34:49 [制造物品] gamelord SunDrugBag(L)(1073741903)
+07/02/2012 18:34:49 [制造物品] gamelord SunDrugBag(L)(1073741904)
+07/02/2012 18:35:15 Division by zero
+07/02/2012 18:35:45 Division by zero
+07/02/2012 18:36:15 Division by zero
+07/02/2012 18:36:46 Division by zero
+07/02/2012 18:37:16 Division by zero
+07/02/2012 18:37:46 Division by zero
+07/02/2012 18:38:15 游戏网关[0](127.0.0.1:2601)已关闭...
+07/02/2012 18:38:17 Division by zero

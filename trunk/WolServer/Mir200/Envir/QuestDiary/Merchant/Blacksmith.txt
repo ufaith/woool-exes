@@ -1,0 +1,14 @@
+[@merchandise]
+{
+[goods]
+Stiletto 40 10
+Horsewhip 40 10
+Singlestick 40 10
+BronzeAxe 40 10
+CopperSword 40 10
+IronSword 40 10
+EbonySword 40 10
+Dagger 40 10
+Pickaxe 40 10
+FellingAxe 40 10
+}

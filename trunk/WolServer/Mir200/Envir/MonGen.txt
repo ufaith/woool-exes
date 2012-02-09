@@ -1,0 +1,3680 @@
+;天魔巢穴
+SWYBOSS	140	60	固本心魔11	10	1	10
+SWYBOSS	140	60	固本心魔22	10	1	10
+SWYBOSS	140	60	固本心魔33	10	1	10
+SWYBOSS	140	60	固本心魔44	10	1	10
+SWYBOSS	140	60	固本心魔55	10	1	10
+SWYBOSS	140	60	固本心魔66	10	1	10
+
+SWYBOSS	50	50	明心心魔11	50	3	10
+SWYBOSS	50	50	明心心魔22	50	3	10
+SWYBOSS	50	50	明心心魔33	50	3	10
+SWYBOSS	50	50	明心心魔44	50	3	10
+SWYBOSS	50	50	明心心魔55	50	3	10
+SWYBOSS	50	50	明心心魔66	50	3	10
+
+SWYBOSS	50	50	大悟心魔11	50	3	10
+SWYBOSS	50	50	大悟心魔22	50	3	10
+SWYBOSS	50	50	大悟心魔33	50	3	10
+SWYBOSS	50	50	大悟心魔44	50	3	10
+SWYBOSS	50	50	大悟心魔55	50	3	10
+SWYBOSS	50	50	大悟心魔66	50	3	10
+
+;中州到热砂
+0	724	39	GuardArcher	0	1	1
+0	729	39	GuardArcher	0	1	1
+;热砂到中州
+2	438	974	GuardArcher	0	1	1
+2	442	974	GuardArcher	0	1	1
+;蛇谷到禁地
+10	60	15	GuardArcher	0	1	1
+10	65	15	GuardArcher	0	1	1
+;禁地到蛇谷
+4	180	477	GuardArcher	0	1	1
+4	184	477	GuardArcher	0	1	1
+;禁地到西域
+4	14	64	GuardArcher	0	1	1
+4	14	71	GuardArcher	0	1	1
+;西域到禁地
+5	598	612	GuardArcher	0	1	1
+5	601	606	GuardArcher	0	1	1
+;死水沼泽到中州
+7	15	20	GuardArcher	0	1	1
+7	17	15	GuardArcher	0	1	1
+;中州到死水沼泽
+0	780	520	GuardArcher	0	1	1
+0	780	530	GuardArcher	0	1	1
+
+;王城
+0	414	276	GuardArcher	0	1	1
+0	420	282	GuardArcher	0	1	1
+0	432	258	GuardArcher	0	1	1
+0	438	264	GuardArcher	0	1	1
+0	457	245	GuardArcher	0	1	1
+0	451	239	GuardArcher	0	1	1
+0	403	164	GuardArcher	0	1	1
+0	409	158	GuardArcher	0	1	1
+0	429	178	GuardArcher	0	1	1
+0	423	184	GuardArcher	0	1	1
+0	449	210	GuardArcher	0	1	1
+0	455	204	GuardArcher	0	1	1
+0	500	190	GuardArcher	0	1	1
+0	506	196	GuardArcher	0	1	1
+0	522	180	GuardArcher	0	1	1
+0	516	174	GuardArcher	0	1	1
+0	532	170	GuardArcher	0	1	1
+0	526	164	GuardArcher	0	1	1
+0	496	257	GuardArcher	0	1	1
+0	502	251	GuardArcher	0	1	1
+0	521	270	GuardArcher	0	1	1
+0	515	276	GuardArcher	0	1	1
+0	535	284	GuardArcher	0	1	1
+0	529	290	GuardArcher	0	1	1
+0	467	86	GuardArcher	0	1	1
+0	604	223	GuardArcher	0	1	1
+0	333	217	GuardArcher	0	1	1
+
+SH006	11	18	Practice		0	1	1
+
+;CentralPlains
+0	635	615	树		100	40	25
+0	655	465	树		80	30	20
+0	716	336	树		40	10	20
+0	718	91	树		40	10	20
+0	193	434	树		100	20	25
+0	155	177	树		110	30	25
+
+;林场
+0	305	635	树		40	150	20
+0	704	228	树		50	200	20
+
+;渔村内
+0	439	629	Pig		60	100	3
+0	439	629	Toad		40	50	3
+
+;渔村外
+0	305	635	KnifeDog		50	50	4
+0	305	635	StickDog		50	50	4
+0	305	635	FishPerson		50	50	5
+0	305	635	KnifeDog0		50	2	4
+0	305	635	StickDog0		50	2	4
+0	305	635	FishPerson0		50	2	5
+
+;王城内
+0	478	318	Pig		75	40	3
+0	478	338	Toad		55	30	3
+0	478	318	KnifeDog		25	1	4
+
+0	380	217	Pig		80	40	3
+0	358	205	Toad		60	30	3
+0	380	217	StickDog		25	1	4
+
+0	554	144	Pig		35	20	3
+0	554	144	Toad		20	10	3
+
+0	468	89	Pig		30	20	3
+0	468	89	Toad		25	10	3
+
+0	605	228	Pig		30	20	3
+0	605	228	Toad		25	10	3
+
+;王城外围
+0	621	89	KnifeDog		40	40	4
+0	621	89	StickDog		40	40	4
+0	621	89	Python		20	20	5
+0	621	89	KnifeDog0		40	2	4
+0	621	89	StickDog0		40	2	4
+0	621	89	Python0		20	1	5
+
+0	704	228	KnifeDog		80	40	4
+0	704	228	StickDog		80	40	4
+0	704	228	稻草人		80	40	4
+0	704	228	KnifeDog0		80	2	4
+0	704	228	StickDog0		80	2	4
+0	704	228	Scarecrow0		80	2	4
+
+0	435	476	KnifeDog		110	90	4
+0	435	476	StickDog		110	90	4
+0	435	476	FishPerson		110	90	5
+0	435	476	稻草人		110	70	4
+0	435	476	KnifeDog0		110	4	4
+0	435	476	StickDog0		110	4	4
+0	435	476	FishPerson0		110	4	5
+0	435	476	Scarecrow0		110	3	4
+
+0	618	317	KnifeDog		50	40	4
+0	618	317	StickDog		50	40	4
+0	618	317	稻草人		50	60	4
+0	618	317	KnifeDog0		50	2	4
+0	618	317	StickDog0		50	2	4
+0	618	317	Scarecrow0		50	3	4
+
+0	351	330	KnifeDog		30	20	4
+0	351	330	StickDog		30	20	4
+0	351	330	稻草人		30	20	4
+0	351	330	KnifeDog0		30	1	4
+0	351	330	StickDog0		30	1	4
+0	351	330	Scarecrow0		30	1	4
+
+0	325	110	Toad		65	50	4
+0	325	110	稻草人		65	20	4
+0	325	110	Scarecrow0		65	1	4
+
+;王城东北
+0	718	91	Piranha		50	60	6
+0	718	91	Python		50	50	6
+0	718	91	Spider		50	30	6
+0	718	91	Python0		50	2	6
+0	718	91	枣红马1		50	3	15
+0	718	91	雪龙1		50	1	180
+
+;将军坟东
+0	716	336	Piranha		50	50	6
+0	716	336	Python		50	70	6
+0	716	336	Python0		50	3	6
+0	716	336	枣红马1		50	4	15
+
+0	655	465	Piranha		100	100	6
+0	655	465	Python		100	90	6
+0	655	465	Spider		100	80	6
+0	655	465	Python0		100	4	6
+0	655	465	GreatApe0		100	1	20
+0	655	465	枣红马1		100	9	15
+0	655	465	乌骓1		100	1	30
+
+0	635	615	Piranha		120	120	6
+0	635	615	Python		120	100	6
+0	635	615	Spider		120	70	6
+0	635	615	Python0		120	5	6
+0	635	615	GreatApe0		120	2	20
+0	635	615	枣红马1		120	11	15
+0	635	615	乌骓1		120	2	30
+
+0	662	728	FishPerson		50	30	5
+0	662	728	FishPerson0		50	1	5
+
+;将军坟南
+0	201	627	FishPerson		50	80	6
+0	201	627	Python		50	30	6
+0	201	627	FishPerson0		50	4	6
+0	201	627	Python0		50	1	6
+
+0	193	434	Piranha		120	100	6
+0	193	434	Python		120	100	6
+0	193	434	Spider		80	40	7
+0	193	434	Python0		120	5	6
+0	193	434	枣红马1		120	8	15
+
+0	120	579	FishPerson		25	30	6
+0	120	579	FishPerson0		25	1	6
+
+;将军坟北
+0	155	177	Piranha		125	100	6
+0	155	177	Python		125	120	6
+0	155	177	Spider		125	70	6
+0	155	177	Python0		125	6	6
+0	155	177	枣红马1		125	10	15
+0	155	177	乌骓1		125	2	30
+
+;任务怪
+0	373	599	Pig		10	20	5
+0	380	660	StickDog		10	20	5
+0	400	560	FishPerson		10	20	5
+0	460	600	Toad		10	20	5
+
+;;PenIsland
+
+;落霞村
+1	250	245	Rabbit		110	150	3
+1	250	245	Deer		110	400	3
+1	250	245	树		200	30	20
+
+;村外
+1	430	355	Python		55	70	6
+1	430	355	Piranha		55	40	6
+1	430	355	GreatApe0		30	1	20
+1	430	355	KnifeDog		90	120	4
+1	430	355	StickDog		90	120	4
+1	430	355	KnifeDog0		90	7	4
+1	430	355	StickDog0		90	7	4
+
+1	80	230	FishPerson		70	100	5
+1	80	230	KnifeDog		70	70	4
+1	80	230	StickDog		70	70	4
+1	80	230	Toad		70	50	4
+1	80	230	FishPerson0		70	4	5
+1	80	230	KnifeDog0		70	2	4
+1	80	230	StickDog0		70	2	4
+1	80	230	Scarecrow0		70	2	4
+
+1	244	65	KnifeDog		40	60	4
+1	244	65	StickDog		40	60	4
+1	244	65	KnifeDog0		40	4	4
+1	244	65	StickDog0		40	4	4
+1	244	65	Scarecrow0		40	4	4
+
+1	170	120	FishPerson		50	80	5
+1	170	120	StickDog		50	70	4
+1	170	120	KnifeDog		50	70	4
+1	170	120	FishPerson0		50	5	5
+1	170	120	StickDog0		50	4	4
+1	170	120	KnifeDog0		50	4	4
+1	170	120	Scarecrow0		50	3	4
+
+1	400	415	Python		40	60	6
+1	400	415	Spider		40	20	7
+1	400	415	GreatApe0		40	1	20
+1	400	415	Python0		40	4	6
+
+1	372	473	Toad		30	40	4
+1	372	473	FishPerson		30	30	5
+1	372	473	FishPerson0		30	2	5
+
+1	133	381	FishPerson		50	50	5
+1	133	381	Python		50	50	5
+1	133	381	稻草人		50	50	4
+1	133	381	FishPerson0		50	3	6
+1	133	381	Python0		50	3	5
+1	133	381	Scarecrow0		50	3	5
+
+1	259	403	FishPerson		50	50	4
+1	259	403	稻草人		50	50	4
+1	259	403	KnifeDog		50	50	4
+1	259	403	StickDog		50	50	4
+1	259	403	FishPerson0		50	3	5
+1	259	403	Scarecrow0		50	3	4
+1	259	403	KnifeDog0		50	3	4
+1	259	403	StickDog0		50	3	4
+
+1	333	69	Python		60	40	5
+1	333	69	稻草人		60	40	4
+1	333	69	Spider		30	30	6
+1	333	69	Python0		60	2	5
+1	333	69	Scarecrow0		60	2	4
+
+;任务怪
+1	200	300	Rabbit		10	30	5
+1	210	160	FishPerson		30	30	5
+1	150	200	StickDog		30	30	5
+1	230	340	Deer		30	30	5
+
+;MiningEntrance
+T011	75	81	HoleMaggot	75	30	10
+T011	75	81	GoldMonster1	10	1	60
+T011	75	81	Zombie2	75	60	10
+T011	75	81	Zombie3	75	40	10
+
+T011	75	81	Zombie20	75	2	10
+T011	75	81	Zombie30	75	2	10
+
+;SouthernMine
+T012	53	50	HoleMaggot	50	10	8
+T012	53	50	Zombie2	50	70	8
+T012	53	50	Zombie3	50	30	8
+
+T012	53	50	Zombie20	50	2	16
+T012	53	50	Zombie30	50	2	16
+
+;NorthernMine
+T013	50	45	HoleMaggot	50	10	8
+T013	50	45	Zombie2	50	40	8
+T013	50	45	Zombie3	50	60	8
+
+T013	50	45	Zombie20	50	2	16
+T013	50	45	Zombie30	50	2	16
+
+;WesternMine
+T017	73	70	Zombie1	65	20	9
+T017	73	70	Zombie2	75	60	8
+T017	73	70	Zombie3	75	40	8
+
+T017	73	70	Zombie10	65	1	18
+T017	73	70	Zombie20	75	2	16
+T017	73	70	Zombie30	75	2	16
+
+;NorthernMine
+T018	77	87	Zombie1	65	20	9
+T018	77	87	Zombie2	75	40	8
+T018	77	87	Zombie3	75	60	8
+
+T018	77	87	Zombie10	65	1	18
+T018	77	87	Zombie20	75	2	16
+T018	77	87	Zombie30	75	2	16
+
+;SouthernFault
+T014	39	48	Zombie1	30	10	9
+T014	39	48	Zombie4	50	20	8
+T014	39	48	Zombie3	50	30	8
+
+T014	77	87	Zombie10	30	1	18
+T014	77	87	Zombie40	50	1	16
+T014	77	87	Zombie30	50	2	16
+
+;EvacuationRoute
+T022	50	57	Zombie5	50	20	8
+T022	50	57	Zombie3	50	30	8
+T022	50	57	Zombie2	50	30	8
+
+T022	50	57	Zombie50	50	1	16
+T022	50	57	Zombie30	50	2	16
+T022	50	57	Zombie20	50	2	16
+
+;RefugeShelter
+T020	42	51	Zombie4	50	10	9
+T020	42	51	Zombie2	50	20	8
+T020	42	51	Zombie3	50	30	8
+
+T020	42	51	Zombie40	50	1	18
+T020	42	51	Zombie20	50	1	16
+T020	42	51	Zombie30	50	2	16
+
+;OreField
+T016	77	76	Zombie1	55	30	9
+T016	77	76	Zombie5	75	80	8
+T016	77	76	Zombie3	75	60	8
+T016	77	76	Skeleton	75	10	10
+T016	77	76	CorpseKing2	75	1	60
+
+T016	77	76	Zombie10	55	1	18
+T016	77	76	Zombie50	75	3	16
+T016	77	76	Zombie30	75	2	16
+T016	77	76	Skeleton0	75	1	20
+
+;EastMine
+T019	74	73	Zombie1	55	10	9
+T019	74	73	Zombie4	75	80	8
+T019	74	73	Zombie3	75	80	8
+T019	74	73	Skeleton	75	10	10
+T019	74	73	CorpseKing2	75	1	60
+
+T019	74	73	Zombie10	55	1	18
+T019	74	73	Zombie40	75	3	16
+T019	74	73	Zombie30	75	3	16
+T019	74	73	Skeleton0	75	1	20
+
+;NorthernFault
+T021	42	51	Zombie1	30	10	7
+T021	42	51	Zombie4	50	20	8
+T021	42	51	Zombie5	50	20	9
+T021	42	51	Skeleton	50	10	9
+
+T021	42	51	Zombie10	30	1	14
+T021	42	51	Zombie40	50	1	16
+T021	42	51	Zombie50	50	1	18
+T021	42	51	Skeleton0	50	1	18
+
+;CentralMine
+T015	108	107	Zombie1	70	70	9
+T015	108	107	Zombie4	100	100	8
+T015	108	107	Zombie5	100	100	8
+T015	108	107	Skeleton	100	30	10
+T015	108	107	CorpseKing2	100	2	30
+
+T015	108	107	Zombie10	70	2	18
+T015	108	107	Zombie40	100	3	16
+T015	108	107	Zombie50	100	3	16
+T015	108	107	Skeleton0	100	1	20
+T015	108	107	CorpseKing	100	1	60
+
+;尸神殿
+L004	95	66	Zombie1	35	50	5
+L004	95	66	Zombie10	35	1	8
+L004	95	66	Zombie2	35	50	5
+L004	95	66	Zombie20	35	1	8
+L004	95	66	Skeleton	35	50	5
+L004	95	66	Skeleton0	35	1	8
+
+L004	53	87	Zombie1	25	20	6
+L004	53	87	Zombie10	25	1	20
+L004	53	87	Zombie2	25	20	6
+L004	53	87	Zombie20	25	1	20
+L004	53	87	Skeleton	25	20	6
+L004	53	87	Skeleton0	25	1	20
+L004	53	87	CorpseKing1	15	30	40
+L004	53	87	CorpseKing	15	5	60
+
+;GeneralCave
+H071	256	266	Scorpion		250	50	7
+H071	256	266	GoldMonster1	10	1	60
+H071	256	266	DeadCorpse10		250	300	10
+H071	256	266	BraveWarrior10	250	250	10
+H071	256	266	CaveBat	250	100	7
+H071	256	266	HoleMaggot		250	50	7
+
+H071	256	266	DeadCorpse0		250	15	12
+H071	256	266	BraveWarrior0	250	12	12
+H071	256	266	CaveBat0	250	5	10
+
+;GeneralCave2
+H072	200	200	Scorpion		200	50	6
+H072	200	200	GoldMonster2	10	1	60
+H072	200	200	CaveBat	200	30	6
+H072	200	200	HoleMaggot		200	20	6
+H072	200	200	DeadCorpse10		200	180	9
+H072	200	200	BraveWarrior10	200	150	9
+H072	200	200	CorpsGeneral10	200	130	10
+H072	200	200	Spearman10	200	180	10
+
+H072	200	200	DeadCorpse0		200	9	12
+H072	200	200	BraveWarrior0	200	7	12
+H072	200	200	CorpseGeneral0	200	6	12
+H072	200	200	Spearman0	200	9	12
+H072	200	200	CaveBat0	200	2	6
+
+;GeneralCave3
+H073	200	200	DeadCorpse10		200	180	9
+H073	200	200	BraveWarrior10	200	150	9
+H073	200	200	CorpsGeneral10	200	150	9
+H073	200	200	Spearman10	200	180	9
+
+H073	200	200	DeadCorpse0		200	6	9
+H073	200	200	BraveWarrior0	200	5	9
+H073	200	200	CorpseGeneral0	200	5	9
+H073	200	200	Spearman0	200	6	9
+
+;GeneralPalace
+H074	43	39	BraveWarrior10	10	20	6
+H074	50	44	Spearman10	10	20	6
+H074	81	71	DeadCorpse10		90	100	8
+H074	81	71	BraveWarrior10	90	100	8
+H074	81	71	CorpsGeneral10	90	100	9
+H074	81	71	Spearman10	90	70	9
+H074	81	71	Spearman10	20	60	9
+H074	112	110	Spearman10	10	20	9
+H074	106	100	BraveWarrior10	10	10	8
+H074	106	100	CorpsGeneral10	10	10	9
+
+H074	83	71	DeadCorpse0		90	5	10
+H074	83	71	BraveWarrior0	90	6	12
+H074	83	71	CorpseGeneral0	90	5	12
+H074	83	71	Spearman0	90	8	12
+H074	83	71	CorpseGeneral0	40	1	60
+
+H074	112	110	CorpseTyrant		4	1	240
+
+;GeneralCaveEast
+H081	203	205	Scorpion		200	100	7
+H081	203	205	GoldMonster1	10	1	60
+H081	203	205	DeadCorpse		200	120	8
+H081	203	205	BraveWarrior	200	100	8
+H081	203	205	CaveBat	200	130	7
+H081	203	205	HoleMaggot		200	100	7
+
+H081	203	205	DeadCorpse100   	190	5	12
+H081	203	205	尸卫勇士100	190	4	14
+H081	203	205	CaveBat0	190	5	12
+
+;GeneralCaveEast2
+H082	164	146	Scorpion		160	50	6
+H082	164	146	CaveBat	160	30	6
+H082	164	146	HoleMaggot		160	20	6
+H082	164	146	DeadCorpse		160	100	7
+H082	164	146	BraveWarrior	160	90	8
+H082	164	146	CorpseGeneral	160	80	7
+H082	164	146	Spearman	140	100	7
+
+H082	164	146	DeadCorpse100		160	5	7
+H082	164	146	尸卫勇士100	160	4	8
+H082	164	146	尸卫战将100	160	3	7
+H082	164	146	Spearman100	140	5	7
+H082	164	146	CaveBat0	160	2	6
+
+;东三左悲鸣
+H083	163	169	DeadCorpse		160	150	6
+H083	163	169	BraveWarrior	160	120	6
+H083	163	169	CorpseGeneral	160	120	6
+H083	163	169	Spearman	140	150	6
+
+H083	163	169	DeadCorpse100		160	5	6
+H083	163	169	尸卫勇士100	160	4	6
+H083	163	169	尸卫战将100	160	4	6
+H083	163	169	Spearman100	140	5	6
+
+;东三右叹息
+H084	155	154	DeadCorpse		160	120	6
+H084	155	154	BraveWarrior	160	100	6
+H084	155	154	CorpseGeneral	160	100	6
+H084	155	154	Spearman	140	120	6
+
+H084	155	154	DeadCorpse100		160	4	6
+H084	155	154	尸卫勇士100	160	3	6
+H084	155	154	尸卫战将100	160	3	6
+H084	155	154	Spearman100	140	4	6
+
+;GeneralCaveEast4
+H085	190	194	DeadCorpse		160	80	5
+H085	190	194	BraveWarrior	160	120	5
+H085	190	194	CorpseGeneral	160	120	5
+H085	190	194	Spearman	130	100	5
+
+H085	190	194	DeadCorpse100		160	3	5
+H085	190	194	尸卫勇士100	160	3	5
+H085	190	194	尸卫战将100	160	3	5
+H085	190	194	Spearman100	130	3	5
+
+;GeneralCaveEast5
+H086	175	210	DeadCorpse		200	100	5
+H086	175	210	BraveWarrior	200	180	5
+H086	175	210	CorpseGeneral	200	180	5
+H086	175	210	Spearman	150	140	5
+
+H086	175	210	DeadCorpse100   	200	3	5
+H086	175	210	尸卫勇士100	200	5	5
+H086	175	210	尸卫战将100	200	5	5
+H086	175	210	Spearman100	150	4	5
+
+;Wilderness
+;城内
+2	160	460	LittleRascal	20	20	60
+2	160	460	Rascal011	20	1	60
+2	160	460	Rascal012	20	1	60
+2	160	460	Rascal013	20	5	60
+2	160	460	Rascal014	20	5	60
+
+2	130	430	Cow	50	50	4
+
+2	188	537	Cow	25	20	4
+
+2	282	445	Cow	25	20	4
+
+2	270	590	Cow	80	150	4
+2	270	590	SandSculpture	80	20	6
+
+2	230	800	Python	100	80	5
+2	230	800	Piranha	100	40	5
+2	230	800	GreatApe	100	50	5
+2	230	800	OtsuchiSnake	200	300	7
+2	230	800	Coyote	170	200	5
+2	230	800	Python0	100	4	5
+2	230	800	OtsuchiSnake0	200	10	14
+2	230	800	树	100	50	15
+
+2	130	300	Cactus	70	70	6
+2	130	300	SandScorpion	70	60	5
+2	130	300	SandGuai	70	50	5
+2	130	300	SandSculpture	70	30	5
+2	130	300	SandScorpion0	70	3	5
+2	130	300	SandGuai0	70	2	5
+2	130	300	SandSculpture0	70	2	5
+
+2	370	440	Cactus	70	70	6
+2	370	440	SandScorpion	70	60	5
+2	370	440	SandGuai	70	50	5
+2	370	440	SandSculpture	70	30	5
+2	370	440	SandScorpion0	70	2	5
+2	370	440	SandGuai0	70	2	5
+2	370	440	SandSculpture0	70	2	5
+
+2	350	220	Cactus	150	100	5
+2	350	220	SandScorpion	150	100	5
+2	350	220	SandGuai	150	80	5
+2	350	220	SandSculpture	150	80	5
+2	350	220	SandScorpion0	150	4	5
+2	350	220	SandGuai0	150	2	5
+2	350	220	SandSculpture0	150	2	5
+
+2	70	520	SandScorpion	50	30	6
+2	70	520	SandGuai	50	30	6
+2	70	520	SandScorpion0	50	1	6
+2	70	520	SandGuai0	50	1	6
+
+2	166	326	沙鱼	50	50	6
+2	166	326	沙鱼0	50	2	6
+2	166	326	SharkKing	50	1	30
+
+2	280	315	沙鱼	40	40	6
+2	280	315	沙鱼0	40	1	6
+2	280	315	沙鱼	40	1	30
+
+2	428	225	沙鱼	30	30	6
+2	428	225	沙鱼0	30	1	6
+
+2	380	291	沙鱼	30	30	6
+2	380	291	沙鱼0	30	1	6
+
+2	386	422	沙鱼	30	30	6
+2	386	422	沙鱼0	30	1	6
+
+2	340	383	沙鱼	20	20	6
+2	340	383	沙鱼0	20	1	6
+
+2	340	351	沙鱼	20	20	6
+2	340	351	沙鱼0	20	1	6
+
+2	415	539	沙鱼	30	30	6
+2	415	539	沙鱼0	30	1	6
+
+;;MechCity
+
+;M001机关洞通道
+M001	148	144	CopperPerson	140	150	8
+M001	148	144	CopperPerson0	140	3	10
+M001	148	144	BronzeBeast	140	150	8
+M001	148	144	BronzeBeast0	140	3	10
+
+;M002机关洞通道
+M002	201	197	CopperPerson	180	200	8
+M002	201	197	CopperPerson0	180	4	10
+M002	201	197	BronzeBeast	180	200	8
+M002	201	197	BronzeBeast0	180	4	10
+M002	201	197	SwordWielder	180	50	8
+M002	201	197	SwordWielder0	180	1	10
+
+;M003机关洞通道
+M003	187	165	CopperPerson	180	120	8
+M003	187	165	CopperPerson0	180	2	10
+M003	187	165	BronzeBeast	180	120	8
+M003	187	165	BronzeBeast0	180	2	10
+M003	187	165	SwordWielder	180	30	8
+M003	187	165	SwordWielder0	180	1	10
+
+;M004机关洞通道
+M004	75	75	CopperPerson	70	30	8
+M004	75	75	CopperPerson0	70	1	12
+M004	75	75	BronzeBeast	70	30	8
+M004	75	75	BronzeBeast0	70	1	12
+M004	75	75	SwordWielder	70	20	8
+M004	75	75	SwordWielder0	70	1	12
+
+;M005机关洞通道
+M005	112	76	CopperPerson	80	25	8
+M005	112	76	CopperPerson0	80	1	16
+M005	112	76	BronzeBeast	80	25	8
+M005	112	76	BronzeBeast0	80	1	16
+M005	37	75	CopperPerson	80	25	8
+M005	37	75	CopperPerson0	80	1	16
+M005	37	75	BronzeBeast	80	25	8
+M005	37	75	BronzeBeast0	80	1	16
+
+;M006机关洞通道
+M006	103	110	CopperPerson		100	80	7
+M006	103	110	CopperPerson0		100	1	10
+M006	103	110	BronzeBeast		100	80	7
+M006	103	110	BronzeBeast0		100	2	10
+M006	103	110	SwordWielder		100	100	7
+M006	103	110	SwordWielder0		100	2	10
+M006	103	110	Shiren		100	40	8
+M006	103	110	Shiren0		100	1	10
+M006	103	110	Leadman		100	40	10
+M006	103	110	Leadman0		100	1	12
+M006	103	110	金刚人1		100	1	20
+M006	103	110	Jingang		100	1	40
+
+;M007机关洞工厂1
+M007	121	121	CopperPerson		120	150	8
+M007	121	121	CopperPerson0		120	3	10
+M007	121	121	BronzeBeast		120	150	8
+M007	121	121	BronzeBeast0		120	3	10
+M007	121	121	SwordWielder		120	50	8
+M007	121	121	SwordWielder0		120	2	10
+
+;M008机关洞工厂
+M008	81	74	CopperPerson		70	70	7
+M008	81	74	CopperPerson0		70	1	12
+M008	81	74	BronzeBeast		70	70	7
+M008	81	74	BronzeBeast0		70	2	12
+M008	81	74	SwordWielder		70	80	7
+M008	81	74	SwordWielder0		70	2	12
+M008	81	74	Shiren		70	20	8
+M008	81	74	Shiren0		70	1	15
+M008	81	74	Leadman		70	20	10
+M008	81	74	Leadman0		70	1	18
+M008	81	74	Jingang		70	1	40
+
+;M009机关洞工厂
+M009	128	116	CopperPerson		110	90	7
+M009	128	116	CopperPerson0		110	1	9
+M009	128	116	BronzeBeast		110	90	7
+M009	128	116	BronzeBeast0		110	2	9
+M009	128	116	SwordWielder		110	120	7
+M009	128	116	SwordWielder0		110	3	9
+M009	128	116	Shiren		110	60	8
+M009	128	116	Shiren0		110	2	14
+M009	128	116	Leadman		110	60	10
+M009	128	116	Leadman0		110	2	16
+M009	128	116	Jingang		110	1	40
+M009	128	116	金刚人1		110	1	20
+
+;M010机关洞住处
+M010	125	125	CopperPerson	120	150	8
+M010	125	125	CopperPerson0	120	2	10
+M010	125	125	BronzeBeast	120	150	8
+M010	125	125	BronzeBeast0	120	3	10
+M010	125	125	SwordWielder	120	100	8
+M010	125	125	SwordWielder0	120	2	10
+
+;M011机关洞住处
+M011	75	75	CopperPerson	70	60	8
+M011	75	75	CopperPerson0	70	1	17
+M011	75	75	BronzeBeast	70	60	8
+M011	75	75	BronzeBeast0	70	2	17
+M011	75	75	SwordWielder	70	40	8
+M011	75	75	SwordWielder0	70	1	17
+
+;M012机关洞住处
+M012	127	127	CopperPerson	120	110	8
+M012	127	127	CopperPerson0	120	2	10
+M012	127	127	铜人2	120	40	8
+M012	127	127	铜人20	120	1	10
+M012	127	127	BronzeBeast	120	150	8
+M012	127	127	BronzeBeast0	120	3	10
+M012	127	127	SwordWielder	120	100	8
+M012	127	127	SwordWielder0	120	2	10
+
+;M013机关洞住处
+M013	74	74	CopperPerson	70	100	8
+M013	74	74	CopperPerson0	70	1	10
+M013	74	74	BronzeBeast	70	100	8
+M013	74	74	BronzeBeast0	70	2	10
+
+;M014机关洞仓库
+M014	74	77	CopperPerson		60	70	7
+M014	74	77	CopperPerson0		60	1	10
+M014	74	77	BronzeBeast		60	70	7
+M014	74	77	BronzeBeast0		60	2	10
+M014	74	77	SwordWielder		60	80	7
+M014	74	77	SwordWielder0		60	2	10
+M014	74	77	Shiren		60	20	8
+M014	74	77	Shiren0		60	1	17
+M014	74	77	Leadman		60	20	10
+M014	74	77	Leadman0		60	1	19
+M014	74	77	Jingang		60	1	40
+
+;M015机关洞仓库
+M015	94	116	CopperPerson		80	60	7
+M015	94	116	铜锤手812	80	1	60
+M015	94	116	CopperPerson0		80	1	10
+M015	94	116	BronzeBeast		80	60	7
+M015	94	116	BronzeBeast0		80	2	10
+M015	94	116	SwordWielder		80	70	7
+M015	94	116	SwordWielder0		80	2	12
+M015	94	116	Shiren		80	40	7
+M015	94	116	Shiren0		80	1	12
+M015	94	116	Leadman		80	40	9
+M015	94	116	Leadman0		80	1	14
+M015	94	116	金刚人1		80	1	20
+M015	94	116	Jingang		80	1	40
+
+;M016机关洞景点
+;M017机关洞景点
+;M018机关殿中枢
+M018	125	125	CopperPerson		120	120	7
+M018	125	125	CopperPerson0		120	2	10
+M018	125	125	BronzeBeast		120	120	7
+M018	125	125	BronzeBeast0		120	4	10
+M018	125	125	SwordWielder		120	150	7
+M018	125	125	SwordWielder0		120	4	10
+M018	125	125	Shiren		120	100	7
+M018	125	125	Shiren0		120	3	12
+M018	125	125	Leadman		120	80	10
+M018	125	125	Leadman0		120	2	16
+M018	125	125	金刚人1		120	3	20
+M018	125	125	Jingang		120	3	40
+M018	125	125	BigGame	100	1	60
+
+;M020
+M020	76	70	CopperPerson		75	70	8
+M020	76	70	CopperPerson0		75	1	12
+M020	76	70	BronzeBeast		75	70	8
+M020	76	70	BronzeBeast0		75	2	12
+M020	76	70	SwordWielder		75	70	8
+M020	76	70	SwordWielder0		75	2	12
+
+;M021
+M021	125	115	CopperPerson		120	120	8
+M021	125	115	CopperPerson0		120	2	10
+M021	125	115	BronzeBeast		120	120	8
+M021	125	115	BronzeBeast0		120	3	10
+M021	125	115	SwordWielder		120	120	8
+M021	125	115	SwordWielder0		120	3	10
+M021	125	115	Shiren		120	100	8
+M021	125	115	Shiren0		120	2	10
+
+;M022
+M022	50	50	CopperPerson		40	40	7
+M022	50	50	CopperPerson0		40	1	13
+M022	50	50	BronzeBeast		40	40	7
+M022	50	50	BronzeBeast0		40	1	13
+M022	50	50	SwordWielder		40	40	7
+M022	50	50	SwordWielder0		40	1	13
+M022	50	50	Shiren		40	40	7
+M022	50	50	Shiren0		40	1	13
+
+;M023
+M023	120	127	CopperPerson		120	90	7
+M023	120	127	CopperPerson0		120	2	10
+M023	120	127	铜人2		120	30	7
+M023	120	127	铜人20		120	1	10
+M023	120	127	BronzeBeast		120	120	7
+M023	120	127	BronzeBeast0		120	3	10
+M023	120	127	SwordWielder		120	120	7
+M023	120	127	SwordWielder0		120	3	10
+M023	120	127	Shiren		120	100	7
+M023	120	127	Shiren0		120	3	10
+M023	120	127	Leadman		120	50	10
+M023	120	127	Leadman0		120	1	14
+M023	120	127	金刚人1		120	1	20
+
+;M024
+M024	155	150	CopperPerson		140	120	7
+M024	155	150	CopperPerson0		140	2	10
+M024	155	150	BronzeBeast		140	120	7
+M024	155	150	BronzeBeast0		140	3	10
+M024	155	150	SwordWielder		140	120	7
+M024	155	150	铜锤手812	140	1	60
+M024	155	150	SwordWielder0		140	3	10
+M024	155	150	Shiren		140	100	7
+M024	155	150	Shiren0		140	2	9
+M024	155	150	Leadman		140	50	10
+M024	155	150	Leadman0		140	1	14
+M024	155	150	金刚人1		140	1	20
+M024	155	150	Jingang		140	1	40
+
+;M025
+M025	125	125	CopperPerson		110	150	7
+M025	125	125	CopperPerson0		110	2	10
+M025	125	125	BronzeBeast		110	150	7
+M025	125	125	BronzeBeast0		110	3	10
+M025	125	125	SwordWielder		110	150	7
+M025	125	125	SwordWielder0		110	3	10
+M025	125	125	铜锤手812	110	1	60
+M025	125	125	Shiren		110	120	7
+M025	125	125	Shiren0		110	3	12
+M025	125	125	Leadman		110	70	9
+M025	125	125	Leadman0		110	2	12
+M025	125	125	金刚人1		110	2	20
+M025	125	125	Jingang		110	2	40
+M025	125	125	BigGame	110	1	60
+
+;M026
+M026	150	150	CopperPerson		150	70	7
+M026	150	150	CopperPerson0		150	1	10
+M026	150	150	BronzeBeast		150	70	7
+M026	150	150	BronzeBeast0		150	2	10
+M026	150	150	SwordWielder		150	70	7
+M026	150	150	SwordWielder0		150	2	10
+M026	150	150	Shiren		150	50	7
+M026	150	150	Shiren0		150	1	13
+M026	150	150	Leadman		150	20	10
+M026	150	150	Leadman0		150	1	16
+M026	150	150	金刚人1		150	1	20
+M026	150	150	Jingang		150	1	40
+
+;M027
+M027	70	94	CopperPerson		70	45	7
+M027	70	94	CopperPerson0		70	1	10
+M027	70	94	BronzeBeast		70	45	7
+M027	70	94	BronzeBeast0		70	1	10
+M027	70	94	SwordWielder		70	45	7
+M027	70	94	SwordWielder0		70	1	10
+M027	70	94	Shiren		70	45	7
+M027	70	94	Shiren0		70	1	10
+M027	70	94	Leadman		70	10	10
+M027	70	94	Leadman0		70	1	30
+
+;M028
+M028	130	120	CopperPerson		120	100	8
+M028	130	120	CopperPerson0		120	1	9
+M028	130	120	BronzeBeast		120	100	8
+M028	130	120	BronzeBeast0		120	2	9
+M028	130	120	SwordWielder		120	100	8
+M028	130	120	SwordWielder0		120	2	9
+M028	130	120	Shiren		120	80	8
+M028	130	120	Shiren0		120	2	9
+
+;M029
+M029	54	49	CopperPerson		50	50	8
+M029	54	49	CopperPerson0		50	1	9
+M029	54	49	BronzeBeast		50	50	8
+M029	54	49	BronzeBeast0		50	1	9
+M029	54	49	SwordWielder		50	40	8
+M029	54	49	SwordWielder0		50	1	9
+
+;M030
+M030	92	111	CopperPerson		80	80	7
+M030	92	111	CopperPerson0		80	1	9
+M030	92	111	BronzeBeast		80	80	7
+M030	92	111	BronzeBeast0		80	2	9
+M030	92	111	SwordWielder		80	80	7
+M030	92	111	SwordWielder0		80	2	9
+M030	92	111	Shiren		80	50	7
+M030	92	111	Shiren0		80	2	12
+M030	92	111	Leadman		80	20	9
+M030	92	111	Leadman0		80	1	21
+
+;M031
+M031	100	100	CopperPerson		80	80	7
+M031	100	100	CopperPerson0		80	1	9
+M031	100	100	BronzeBeast		80	80	7
+M031	100	100	BronzeBeast0		80	2	9
+M031	100	100	SwordWielder		80	80	7
+M031	100	100	SwordWielder0		80	2	9
+M031	100	100	Shiren		80	50	7
+M031	100	100	Shiren0		80	2	13
+M031	100	100	Leadman		80	20	9
+M031	100	100	Leadman0		80	1	17
+
+;M032
+M032	101	88	CopperPerson		80	80	7
+M032	101	88	CopperPerson0		80	1	9
+M032	101	88	BronzeBeast		80	80	7
+M032	101	88	BronzeBeast0		80	2	9
+M032	101	88	SwordWielder		80	80	7
+M032	101	88	SwordWielder0		80	2	9
+M032	101	88	Shiren		80	50	7
+M032	101	88	Shiren0		80	2	13
+M032	101	88	Leadman		80	20	9
+M032	101	88	Leadman0		80	1	16
+M032	101	88	金刚人1		80	1	20
+M032	101	88	Jingang		80	1	40
+
+
+;SerpentValley
+10	75	41	OtsuchiSnake		30	30	5
+10	25	44	Python		20	20	4
+10	75	41	OtsuchiSnake0		30	1	5
+10	25	44	Python0		20	1	6
+
+;CryptEntrance
+N001	210	236	Scarab		210	120	8
+N001	210	236	Scarab0		210	4	10
+N001	210	236	GoldMonster3	10	1	60
+N001	210	236	Beetle		210	120	8
+N001	210	236	RedSnake		210	60	10
+N001	210	236	RedSnake0		210	2	14
+
+;Circuit
+N002	210	190	Scarab		210	120	8
+N002	210	190	GoldMonster3	5	1	60
+N002	210	190	Scarab0		210	4	10
+N002	210	190	Beetle		210	120	8
+N002	210	190	RedSnake		210	60	10
+N002	210	190	RedSnake0		210	2	15
+N002	210	190	BlackSnake		210	60	10
+N002	210	190	BlackSnake0		210	2	15
+
+;InsectHoles
+N003	200	190	Scarab		210	120	8
+N003	200	190	Scarab0		210	4	10
+N003	200	190	Beetle		210	120	8
+N003	200	190	RedSnake		210	80	10
+N003	200	190	RedSnake0		210	2	15
+N003	200	190	BlackSnake		210	60	10
+N003	200	190	BlackSnake0		210	2	17
+N003	200	190	AntNest		210	10	8
+
+;SnakeRoad
+N004	250	250	Scarab		250	80	8
+N004	250	250	Scarab0		250	2	10
+N004	250	250	Beetle		250	80	8
+N004	250	250	RedSnake		250	180	10
+N004	250	250	RedSnake0		250	5	15
+N004	250	250	RedSnake3		250	5	15
+N004	250	250	BlackSnake		250	180	10
+N004	250	250	BlackSnake0		250	5	15
+N004	250	250	BlackSnake3		250	5	15
+N004	250	250	ThreeSnakes		250	80	10
+N004	250	250	ThreeSnakes0		250	2	15
+N004	250	250	AntNest		250	15	8
+
+;SnakesNest
+N005	210	190	Scarab		200	50	8
+N005	210	190	Scarab0		200	1	9
+N005	210	190	Beetle		200	50	8
+N005	210	190	RedSnake		200	180	10
+N005	210	190	RedSnake0		200	5	15
+N005	210	190	RedSnake3		200	15	15
+N005	210	190	BlackSnake		200	180	10
+N005	210	190	BlackSnake0		200	5	15
+N005	210	190	BlackSnake3		200	15	15
+N005	210	190	ThreeSnakes		200	100	10
+N005	210	190	ThreeSnakes0		200	2	17
+N005	210	190	ThreeSnakes3		200	8	17
+N005	210	190	Sheyao		200	1	60
+N005	210	190	AntNest		200	15	8
+
+;BonesofSnakes
+N006	220	210	Scarab		220	30	8
+N006	220	210	Scarab0		220	1	10
+N006	220	210	Beetle		220	30	8
+N006	220	210	RedSnake		220	180	9
+N006	220	210	RedSnake0		220	5	15
+N006	220	210	RedSnake3		220	20	15
+N006	220	210	BlackSnake		220	180	9
+N006	220	210	BlackSnake0		220	5	15
+N006	220	210	BlackSnake3		220	20	15
+N006	220	210	ThreeSnakes		220	120	10
+N006	220	210	ThreeSnakes0		220	3	15
+N006	220	210	ThreeSnakes3		220	16	15
+N006	220	210	Sheyao0		220	20	30
+N006	220	210	Sheyao		220	1	60
+N006	220	210	AntNest		220	20	9
+
+;SnakeLink
+N007	216	179	Scarab		210	30	7
+N007	216	179	Beetle		210	30	7
+N007	216	179	RedSnake		210	120	9
+N007	216	179	RedSnake0		210	3	15
+N007	216	179	RedSnake3		210	36	15
+N007	216	179	BlackSnake		210	150	9
+N007	216	179	BlackSnake0		210	6	15
+N007	216	179	BlackSnake3		210	44	15
+N007	216	179	Sheyao		210	2	60
+N007	216	179	Sheyao0		210	20	30
+N007	216	179	ThreeSnakes		210	100	9
+N007	216	179	ThreeSnakes0		210	3	15
+N007	216	179	ThreeSnakes3		210	26	15
+N007	216	179	AntNest		210	30	9
+
+;SnakePalaces
+N008	250	250	SnakeKing	40	2	120
+N008	250	250	ThreeSnakes		40	2	12
+N008	250	250	Sheyao0		40	1	60
+N008	250	250	RedSnake3		40	2	12
+N008	250	250	BlackSnake3		40	2	12
+N008	250	250	AntNest		40	2	10
+
+N008	250	250	Scarab		250	100	7
+N008	250	250	Beetle		250	100	7
+N008	250	250	RedSnake		250	180	9
+N008	250	250	RedSnake0		250	3	15
+N008	250	250	RedSnake3		250	37	15
+N008	250	250	BlackSnake		250	180	9
+N008	250	250	BlackSnake0		250	3	15
+N008	250	250	BlackSnake3		250	47	15
+N008	250	250	Sheyao		250	10	60
+N008	250	250	Sheyao0		250	50	30
+N008	250	250	ThreeSnakes		250	100	9
+N008	250	250	ThreeSnakes0		250	2	15
+N008	250	250	ThreeSnakes3		250	38	15
+N008	250	250	AntNest		250	40	9
+
+;HorsePlain
+SHACHENG	45	800	Coyote	100	60	5
+SHACHENG	45	800	OtsuchiSnake	100	40	5
+SHACHENG	45	800	Piranha	100	20	5
+SHACHENG	45	800	GreatApe	100	20	5
+SHACHENG	45	800	OtsuchiSnake0	100	2	5
+SHACHENG	45	800	GreatApe0	100	1	20
+
+SHACHENG	390	750	Coyote	150	70	5
+SHACHENG	390	750	OtsuchiSnake	150	50	6
+SHACHENG	390	750	OtsuchiSnake0	150	2	6
+
+SHACHENG	444	487	Coyote	100	50	5
+SHACHENG	444	487	Spider	100	30	5
+
+
+SHACHENG	453	309	SandSculpture	60	30	5
+SHACHENG	453	309	SandScorpion	60	20	5
+SHACHENG	453	309	Spider	60	20	5
+SHACHENG	453	309	SandSculpture0	60	1	5
+SHACHENG	453	309	SandScorpion0	60	1	5
+SHACHENG	453	309	毒蜘蛛0	60	1	5
+
+SHACHENG	434	196	Coyote	40	20	6
+SHACHENG	434	196	OtsuchiSnake	35	20	6
+SHACHENG	434	196	Spider	40	10	6
+SHACHENG	434	196	Python	30	10	6
+SHACHENG	434	196	OtsuchiSnake0	35	1	6
+SHACHENG	434	196	Python0	30	1	6
+
+SHACHENG	200	100	Cactus	180	60	7
+SHACHENG	200	100	SandSculpture	180	50	7
+SHACHENG	200	100	SandScorpion	180	50	7
+SHACHENG	200	100	SandGuai	180	20	7
+SHACHENG	200	100	沙鱼	180	20	7
+SHACHENG	200	100	SandSculpture0	180	2	7
+SHACHENG	200	100	SandScorpion0	180	2	7
+SHACHENG	200	100	SandGuai0	180	1	7
+SHACHENG	200	100	沙鱼0	180	1	7
+SHACHENG	200	100	SharkKing	180	1	30
+
+SHACHENG	300	320	Cactus	50	30	7
+SHACHENG	300	320	SandSculpture	50	30	7
+SHACHENG	300	320	SandScorpion	50	20	7
+SHACHENG	300	320	SandSculpture0	50	2	7
+SHACHENG	300	320	SandScorpion0	50	1	7
+
+SHACHENG	170	555	Cactus	100	60	7
+SHACHENG	170	555	SandSculpture	100	50	7
+SHACHENG	170	555	SandScorpion	100	40	7
+SHACHENG	170	555	SandGuai	100	20	7
+SHACHENG	170	555	SandSculpture0	100	3	7
+SHACHENG	170	555	SandScorpion0	100	2	7
+SHACHENG	170	555	SandGuai0	100	1	7
+
+SHACHENG	210	780	Cactus	40	10	7
+SHACHENG	210	780	SandSculpture	40	20	7
+SHACHENG	210	780	SandScorpion	40	10	7
+SHACHENG	210	780	SandSculpture0	40	1	7
+SHACHENG	210	780	SandScorpion0	40	1	14
+
+SHACHENG	170	555	入侵的傀儡	200	20	7
+SHACHENG	170	555	迷路的护卫队	200	20	7
+SHACHENG	170	555	入侵的勇者	200	20	7
+SHACHENG	170	555	入侵的水鬼	200	20	7
+SHACHENG	170	555	迷路的黑色龙虾	200	10	7
+SHACHENG	170	555	海龟	        200	30	7
+SHACHENG	170	555	螃蟹	        200	30	7
+
+SHACHENG	210	780	入侵的傀儡	200	20	7
+SHACHENG	210	780	迷路的护卫队	200	20	7
+SHACHENG	210	780	入侵的勇者	200	20	7
+SHACHENG	210	780	入侵的水鬼	200	20	7
+SHACHENG	210	780	迷路的黑色龙虾	200	10	7
+SHACHENG	210	780	海龟	        200	30	7
+SHACHENG	210	780	螃蟹	        200	30	7
+
+;;攻城密道
+;E004密道
+E004	200	200	Zombie1	150	50	6
+E004	200	200	Zombie10	150	1	6
+E004	200	200	Zombie2	150	50	6
+E004	200	200	Zombie20	150	1	6
+E004	200	200	Zombie3	150	50	6
+E004	200	200	Zombie30	150	1	6
+E004	200	200	Zombie4	150	50	6
+E004	200	200	Zombie40	150	1	6
+E004	200	200	Zombie5	150	50	6
+E004	200	200	Zombie50	150	1	6
+
+;E002地下通道一
+E002	200	200	Zombie1	150	40	6
+E002	200	200	Zombie10	150	1	6
+E002	200	200	Zombie2	150	40	6
+E002	200	200	Zombie20	150	1	6
+E002	200	200	Zombie3	150	40	6
+E002	200	200	Zombie30	150	1	6
+E002	200	200	Zombie4	150	40	6
+E002	200	200	Zombie40	150	1	6
+E002	200	200	Zombie5	150	40	6
+E002	200	200	Zombie50	150	1	6
+E002	200	200	CopperPerson	150	40	7
+E002	200	200	CopperPerson0	150	1	7
+E002	200	200	BronzeBeast	150	40	7
+E002	200	200	BronzeBeast0	150	1	7
+
+;E001地下通道二
+E001	200	207	Zombie1	190	30	6
+E001	200	207	Zombie10	190	1	10
+E001	200	207	Zombie2	190	30	6
+E001	200	207	Zombie20	190	1	10
+E001	200	207	Zombie3	190	30	6
+E001	200	207	Zombie30	190	1	10
+E001	200	207	Zombie4	190	30	6
+E001	200	207	Zombie40	190	1	10
+E001	200	207	Zombie5	190	30	6
+E001	200	207	Zombie50	190	1	10
+E001	200	207	CopperPerson	150	60	7
+E001	200	207	CopperPerson0	150	2	10
+E001	200	207	BronzeBeast	150	60	7
+E001	200	207	BronzeBeast0	150	2	10
+E001	200	207	SwordWielder	150	60	7
+E001	200	207	SwordWielder0	150	2	10
+
+;E003地下通道三
+E003	200	184	Zombie1	200	10	6
+E003	200	184	Zombie2	200	10	6
+E003	200	184	Zombie3	200	10	6
+E003	200	184	Zombie4	200	10	6
+E003	200	184	Zombie5	200	10	6
+E003	200	184	CopperPerson	200	70	7
+E003	200	184	CopperPerson0	200	2	10
+E003	200	184	BronzeBeast	200	70	7
+E003	200	184	BronzeBeast0	200	2	10
+E003	200	184	SwordWielder	200	70	7
+E003	200	184	SwordWielder0	200	2	10
+E003	200	184	Shiren	200	70	8
+E003	200	184	Shiren0	200	2	10
+E003	200	184	Leadman	200	70	10
+E003	200	184	Leadman0	200	2	12
+
+;;AncientTemple
+;逆魔一层
+S011	242	240	LittleRascal	200	300	10
+S011	242	240	GoldMonster3	10	1	60
+S011	242	240	LittleRascal0	200	7	20
+
+;ScriptureHall
+S012	49	43	LittleRascal	25	15	10
+S012	49	43	SpiritGuard	25	5	10
+S012	49	43	LittleRascal0	25	1	20
+
+;逆魔二层
+S013	249	250	LittleRascal	250	300	10
+S013	249	250	SpiritGuard	250	200	12
+S013	249	250	LittleRascal0	250	7	20
+S013	249	250	SpiritGuard0	250	5	24
+S013	250	250	SpiritGuard00	12	2	60
+S013	249	250	GoldMonster3	10	1	60
+;DragonHall
+S014	49	43	LittleRascal	25	20	10
+S014	49	43	SpiritGuard	25	5	10
+S014	49	43	EvilStatue	25	5	10
+
+S014	49	43	LittleRascal0	25	1	20
+
+;TigersTemple
+S015	49	43	LittleRascal	25	20	10
+S015	49	43	SpiritGuard	25	5	10
+S015	49	43	EvilStatue	25	5	10
+
+S015	49	43	LittleRascal0	25	1	20
+
+;逆魔三层
+S016	249	250	LittleRascal	250	300	10
+S016	249	250	EvilStatue	250	160	12
+S016	249	250	SpiritGuard	250	160	12
+
+S016	249	250	LittleRascal0	250	7	20
+S016	249	250	EvilStatue0	250	4	24
+S016	249	250	SpiritGuard0	250	4	24
+
+;VirtuePalace
+S017	49	43	LittleRascal	25	20	10
+S017	49	43	SpiritGuard	25	10	10
+S017	49	43	EvilStatue	25	10	10
+
+S017	49	43	LittleRascal0	25	1	20
+
+;逆魔四层
+S018	208	185	EvilGuard	200	160	10
+S018	208	185	EvilStatue	200	160	10
+S018	208	185	SpiritGuard	200	160	10
+S018	208	185	EvilArcher	180	160	10
+
+S018	208	185	EvilGuard0	200	5	10
+S018	208	185	EvilStatue0	200	5	20
+S018	208	185	SpiritGuard0	200	4	20
+S018	208	185	SpiritGuard00	200	1	20
+S018	208	185	EvilArcher0	180	5	20
+
+;太极阵1
+S019	98	101	EvilGuard	55	40	9
+S019	98	101	EvilStatue	55	40	9
+S019	98	101	SpiritGuard	55	40	9
+S019	98	101	EvilArcher	55	40	9
+S019	98	101	EvilStatue0	55	1	18
+
+S019	117	119	EvilArcher	10	4	9
+S019	117	119	EvilGuard	10	4	9
+S019	117	119	SpiritGuard	10	2	9
+
+;太极阵2
+S020	97	99	EvilArcher	55	40	9
+S020	97	99	EvilStatue	55	40	9
+S020	97	99	SpiritGuard	55	40	9
+S020	97	99	EvilGuard	55	40	9
+S020	97	99	SpiritGuard0	55	1	18
+
+S020	121	82	EvilArcher	10	4	9
+S020	121	82	EvilStatue	10	4	9
+S020	121	82	EvilGuard	10	2	9
+
+;太极阵3
+S021	101	104	EvilArcher	55	40	9
+S021	101	104	EvilStatue	55	40	9
+S021	101	104	SpiritGuard	55	40	9
+S021	101	104	EvilGuard	55	40	9
+S021	101	104	EvilGuard0	55	1	18
+
+S021	85	82	EvilArcher	10	4	9
+S021	85	82	EvilStatue	10	4	9
+S021	85	82	SpiritGuard	10	2	9
+
+;太极阵4
+S022	96	96	EvilArcher	55	40	9
+S022	96	96	EvilStatue	55	40	9
+S022	96	96	SpiritGuard	55	40	9
+S022	96	96	EvilGuard	55	40	9
+S022	96	96	EvilArcher0	55	1	18
+
+S022	82	117	EvilArcher	10	2	9
+S022	82	117	SpiritGuard	10	4	9
+S022	82	117	EvilGuard	10	4	9
+
+;逆魔六层1
+S023	48	50	逆魔雕像00	50	1	60
+S023	48	50	EvilArcher	40	20	8
+S023	48	50	EvilStatue	50	20	8
+S023	48	50	EvilGuard	50	20	8
+S023	48	50	SpiritGuard	50	20	8
+S023	48	50	EvilGuard3	50	6	24
+S023	48	50	EvilArcher3	40	6	24
+S023	48	50	EvilStatue3	50	7	24
+S023	48	50	逆魔卫士3	50	7	24
+
+S023	48	50	EvilGuard0	50	1	24
+S023	48	50	EvilArcher0	40	1	24
+S023	48	50	EvilStatue0	50	1	24
+S023	48	50	SpiritGuard0	50	1	24
+S023	48	50	SpiritGuard00	50	1	40
+
+;逆魔六层2
+S024	48	50	EvilArcher	40	25	8
+S024	48	50	逆魔雕像5	50	1	60
+S024	48	50	EvilStatue	50	25	8
+S024	48	50	EvilGuard	50	25	8
+S024	48	50	SpiritGuard	50	25	8
+S024	48	50	EvilGuard3	50	8	24
+S024	48	50	EvilArcher3	40	8	24
+S024	48	50	EvilStatue3	50	8	24
+S024	48	50	逆魔卫士3	50	8	24
+
+S024	48	50	EvilArcher0	40	1	24
+S024	48	50	EvilGuard0	50	1	24
+S024	48	50	EvilStatue0	50	1	24
+S024	48	50	SpiritGuard0	50	1	24
+S024	48	50	SpiritGuard00	50	1	32
+
+;CounterSpiritHall
+S026	72	76	CounterSpirit		1	1	240
+S026	72	76	EvilGuard	20	10	8
+S026	72	76	SpiritGuard	20	10	8
+S026	72	76	EvilStatue	20	10	8
+S026	46	50	逆魔雕像5	80	2	60
+S026	72	76	EvilArcher	10	10	8
+S026	72	76	EvilGuard3	20	7	16
+S026	72	76	逆魔卫士3	20	7	16
+S026	72	76	EvilStatue3	20	7	16
+S026	72	76	EvilArcher3	10	7	16
+
+S026	46	50	EvilGuard	50	20	8
+S026	46	50	SpiritGuard	50	20	8
+S026	46	50	EvilStatue	50	20	8
+S026	46	50	EvilArcher	40	20	8
+S026	46	50	EvilGuard3	50	12	16
+S026	46	50	逆魔卫士3	50	12	16
+S026	46	50	EvilStatue3	50	12	16
+S026	46	50	EvilArcher3	40	12	16
+
+S026	22	22	EvilGuard	5	1	8
+S026	22	22	SpiritGuard	5	1	8
+S026	22	22	EvilStatue	5	1	8
+S026	22	22	EvilArcher	3	1	8
+
+S026	27	27	EvilGuard3	5	1	14
+S026	27	27	逆魔卫士3	5	1	14
+S026	27	27	EvilStatue3	5	1	14
+S026	27	27	EvilArcher3	3	1	14
+
+S026	46	50	EvilGuard0	80	1	16
+S026	46	50	SpiritGuard00	80	1	16
+S026	46	50	SpiritGuard0	80	1	16
+S026	46	50	EvilStatue0	80	1	16
+S026	46	50	EvilArcher0	60	1	16
+
+;Forbidden
+4	295	460	Deer		200	200	5
+4	295	460	Python		200	150	6
+4	295	460	Python0		200	5	6
+4	295	460	OtsuchiSnake		200	100	8
+4	295	460	OtsuchiSnake0		200	3	10
+4	295	460	Coyote		200	100	8
+4	295	460	GreatApe		200	100	8
+4	295	460	GreatApe0		200	5	15
+4	295	460	树		200	100	20
+
+4	100	180	Coyote		180	80	6
+4	100	180	GreatApe		180	150	6
+4	100	180	GreatApe0		180	5	10
+4	100	180	Spider		180	100	6
+4	100	180	Piranha		180	80	6
+4	100	180	OtsuchiSnake		180	150	6
+4	100	180	OtsuchiSnake0		180	7	10
+4	100	180	VenomDemon		80	20	12
+4	100	180	VenomDemon0		80	1	20
+4	100	180	CaneMonster		80	10	12
+4	100	180	CaneMonster0		80	1	60
+4	100	180	树		180	100	20
+
+4	366	23	树		80	100	20
+4	366	23	OtsuchiSnake		80	100	8
+4	366	23	OtsuchiSnake0		80	3	12
+4	366	23	Piranha		80	40	10
+
+4	480	185	树		60	30	20
+4	480	185	Deer		60	30	5
+4	480	185	GreatApe		60	10	10
+4	480	185	OtsuchiSnake		60	30	8
+4	480	185	OtsuchiSnake0		60	1	10
+
+4	337	117	LittleRascal	20	20	60
+4	337	117	Rascal011	20	1	60
+4	337	117	Rascal012	20	1	60
+4	337	117	Rascal013	20	5	60
+4	337	117	Rascal014	20	5	60
+4	337	117	LittleRascal1	20	1	360
+
+SH037	10	16	Gorefiend		7	8	240
+SH037	10	16	LittleRascal	7	2	240
+SH037	10	16	LittleRascal1	7	1	240
+
+;ForbiddenGate
+J001	160	154    Gargoyle		150  36   10
+J001	160	154   Gargoyle0		150   4   15
+J001	160	154      VenomDemon		150 206    8
+J001	160	154     VenomDemon0		150   2   15
+J001	160	154      Gorefiend		150  53    8
+J001	160	154     Gorefiend0		150   2   15
+J001	160	154      CaneMonster		150  30   12
+J001	160	154     CaneMonster0		150   2   15
+J001	160	154    地狱奴		150 195    8
+
+;MoonPool
+J002	150	150    Gargoyle		150 121    8
+J002	150	150   Gargoyle0		150   3   15
+J002	150	150      VenomDemon		150 120    8
+J002	150	150     VenomDemon0    	150   3   15
+J002	150	150      Gorefiend		150  35   12
+J002	150	150     Gorefiend0		150   3   15
+J002	150	150      CaneMonster		150  30   10
+J002	150	150     CaneMonster0		150   4   20
+J002	150	150      BarbedDevil0		150   1   50
+J002	150	150    地狱奴		150 150    8
+
+;IceCorridor
+J003	120	130    Gargoyle		120 130    8
+J003	120	130   Gargoyle0		120   2   10
+J003	120	130      VenomDemon		120 130    8
+J003	120	130     VenomDemon0		120   3   10
+J003	120	130      Gorefiend		120  40    8
+J003	120	130     Gorefiend0		120   2   10
+J003	120	130      CaneMonster		120  80    8
+J003	120	130     CaneMonster0		120   2   10
+J003	120	130      BarbedDevil0		120   2   40
+J003	120	130    地狱奴		120  40    8
+
+;StoneIcePlace
+J004	198	200      Gargoyle		200  85   12
+J004	198	200      GoldMonster4	10  2   60
+J004	198	200     Gargoyle0		200   3    6
+J004	198	200        VenomDemon		200  85   12
+J004	198	200       VenomDemon0		200   2   15
+J004	198	200        BloodDemon		200  34   12
+J004	198	200       BloodDemon0		200   1   15
+J004	198	200        Gorefiend		200  34   12
+J004	198	200       Gorefiend0		200   1   15
+J004	198	200        CaneMonster		200  28   12
+J004	198	200       CaneMonster0		200   1   10
+J004	198	200        BarbedDevil		200  17   12
+J004	198	200       BarbedDevil0		200   2    5
+J004	198	200      地狱奴		200  28   12
+
+;SapphirePalace
+J005	200	200      Gargoyle		200  84   12
+J005	200	200     Gargoyle0		200   2    9
+J005	200	200        VenomDemon		200  84   12
+J005	200	200       VenomDemon0		200   2   15
+J005	200	200        BloodDemon		200  34   12
+J005	200	200       BloodDemon0		200   1   15
+J005	200	200        Gorefiend		200  34   12
+J005	200	200       Gorefiend0		200   1   15
+J005	200	200        CaneMonster		200  28   12
+J005	200	200       CaneMonster0		200   1   10
+J005	200	200        BarbedDevil		200  17   12
+J005	200	200       BarbedDevil0		200   2    8
+J005	200	200    InsectQueen		200   6   30
+J005	200	200      地狱奴		200   6   12
+
+;DeathGate
+J006	93	93      Gargoyle		100  48   10
+J006	93	93     Gargoyle0		100   2   13
+J006	93	93        VenomDemon		100  48   10
+J006	93	93       VenomDemon0		100   1   15
+J006	93	93        BloodDemon		100  24   10
+J006	93	93       BloodDemon0		100   1   15
+J006	93	93        Gorefiend		100  24   10
+J006	93	93       Gorefiend0		100   1   15
+J006	93	93        CaneMonster		100  24   10
+J006	93	93       CaneMonster0		100   1   13
+J006	93	93        BarbedDevil		100  14   10
+J006	93	93       BarbedDevil0		100   2   14
+J006	93	93      DemonLux		100  10   15
+J006	93	93     DemonLux0		100   2   44
+J006	93	93    InsectQueen		100   5   20
+
+;NoReturn
+J007	125	133	Gargoyle		125	100	10
+J007	125	133	Gargoyle0		125	2	15
+J007	125	133	VenomDemon		125	100	10
+J007	125	133	VenomDemon0		125	2	15
+J007	125	133	BloodDemon		125	60	10
+J007	125	133	BloodDemon0		125	1	15
+J007	125	133	Gorefiend		125	60	10
+J007	125	133	Gorefiend0		125	1	15
+J007	125	133	CaneMonster		125	60	10
+J007	125	133	CaneMonster0		125	1	15
+J007	125	133	BarbedDevil		125	40	10
+J007	125	133	BarbedDevil0		125	1	20
+J007	125	133	DemonLux		125	20	10
+J007	125	133	DemonLux0		125	1	30
+J007	125	133	InsectQueen	125	10	20
+
+;DarkSamsara
+J008	50	50	Gargoyle		50	30	8
+J008	50	50	Gargoyle0		50	1	15
+J008	50	50	VenomDemon		50	30	8
+J008	50	50	VenomDemon0		50	1	10
+J008	50	50	BloodDemon		50	30	8
+J008	50	50	BloodDemon0		50	1	15
+J008	50	50	Gorefiend		50	30	8
+J008	50	50	Gorefiend0		50	1	15
+J008	50	50	CaneMonster		50	30	8
+J008	50	50	CaneMonster0		50	1	15
+J008	50	50	BarbedDevil		50	20	8
+J008	50	50	BarbedDevil0		50	1	15
+J008	50	50	DemonLux		50	20	10
+J008	50	50	DemonLux0		50	1	60
+J008	50	50	InsectQueen	50	10	15
+J008	50	50	SharpClaws		50	1	360
+
+;DeadUpstream
+J009	130	127	Gargoyle		125	80	10
+J009	130	127	Gargoyle0		125	2	15
+J009	130	127	VenomDemon		125	60	10
+J009	130	127	VenomDemon0		125	2	15
+J009	130	127	BloodDemon		125	60	10
+J009	130	127	BloodDemon0		125	2	15
+J009	130	127	Gorefiend		125	60	10
+J009	130	127	Gorefiend0		125	2	15
+J009	130	127	CaneMonster		125	60	10
+J009	130	127	CaneMonster0		125	2	15
+J009	130	127	BarbedDevil		125	40	10
+J009	130	127	BarbedDevil0		125	1	10
+J009	130	127	DemonLux		125	20	10
+J009	130	127	DemonLux0		125	1	20
+J009	130	127	InsectQueen	125	4	10
+
+;EvilHole
+J010	50	50	BloodDemon		50	30	8
+J010	50	50	BloodDemon0		50	1	10
+J010	50	50	Gorefiend		50	30	8
+J010	50	50	Gorefiend0		50	1	15
+J010	50	50	CaneMonster		50	30	8
+J010	50	50	CaneMonster0		50	1	15
+J010	50	50	BarbedDevil		50	20	8
+J010	50	50	BarbedDevil0		50	1	15
+J010	50	50	DemonLux		50	10	10
+J010	50	50	DemonLux0		50	1	30
+J010	50	50	InsectQueen	50	5	15
+
+;Enchantment
+J011	150	150	Gargoyle		150	120	12
+J011	150	150	Gargoyle0		150	3	15
+J011	150	150	VenomDemon		150	120	12
+J011	150	150	VenomDemon0		150	3	15
+J011	150	150	BloodDemon		150	50	12
+J011	150	150	BloodDemon0		150	1	12
+J011	150	150	Gorefiend		150	50	12
+J011	150	150	Gorefiend0		150	1	12
+J011	150	150	CaneMonster		150	30	12
+J011	150	150	CaneMonster0		150	1	15
+J011	150	150	BarbedDevil		150	20	12
+J011	150	150	BarbedDevil0		150	1	30
+J011	150	150	InsectQueen	150	10	30
+
+;SealPlace
+J012	200	180	Gargoyle		200	120	12
+J012	200	180	Gargoyle0		200	3	15
+J012	200	180	VenomDemon		200	120	12
+J012	200	180	VenomDemon0		200	3	15
+J012	200	180	BloodDemon		200	60	12
+J012	200	180	BloodDemon0		200	1	12
+J012	200	180	Gorefiend		200	60	12
+J012	200	180	Gorefiend0		200	1	15
+J012	200	180	CaneMonster		200	50	12
+J012	200	180	CaneMonster0		200	1	15
+J012	200	180	BarbedDevil		200	30	12
+J012	200	180	BarbedDevil0		200	1	20
+J012	200	180	地狱奴		200	30	12
+
+;WesternRegion
+5	611	434	FishPerson		50	30	4
+5	611	434	FishPerson0		50	2	4
+5	611	434	Toad		60	40	5
+
+5	599	127	GreatApe		50	20	5
+5	599	127	GreatApe0		50	1	15
+
+5	445	165	Coyote		180	150	3
+
+5	400	410	Python		200	200	5
+5	400	410	Python0		200	10	6
+5	400	410	SandScorpion		200	150	5
+5	400	410	SandScorpion0		200	10	6
+5	400	410	SandSculpture		200	100	5
+5	400	410	SandSculpture0		200	8	6
+
+5	213	385	OtsuchiSnake		150	100	5
+5	213	385	OtsuchiSnake0		150	5	6
+5	213	385	Python		150	60	5
+5	213	385	Python0		150	3	6
+5	213	385	SandSculpture		150	30	5
+5	213	385	地狱奴		150	10	15
+5	213	385	枣红马1		150	10	15
+5	213	385	乌骓1		150	1	30
+5	213	385	Flamingo		150	5	15
+
+5	170	180	Spider		150	120	5
+5	170	180	Python		150	60	5
+5	170	180	Python0		150	3	6
+5	170	180	OtsuchiSnake		150	40	5
+5	170	180	OtsuchiSnake0		150	2	6
+5	170	180	Piranha		150	60	5
+5	170	180	地狱奴		150	20	15
+5	170	180	Flamingo		150	10	15
+
+;Hoodwink
+TT001	225	237	Flamingo		250	200	10
+TT001	225	237	GoldMonster3	10	1	60
+TT001	225	237	Flamingo0		250	4	12
+
+;二道廊线
+TT002	200	200	Flamingo		200	260	10
+TT002	200	200	GoldMonster4	10	1	60
+TT002	200	200	Flamingo0		200	6	12
+
+;Hoodwink3
+TT003	198	200	Flamingo		200	220	10
+TT003	198	200	Flamingo0		200	6	12
+TT003	198	200	CavalryBeast		200	20	10
+TT003	198	200	CavalryBeast0		200	2	12
+
+;SquareArena
+TT004	200	200	Flamingo		200	200	10
+TT004	200	200	Flamingo0		200	6	12
+TT004	200	200	CavalryBeast		200	50	10
+TT004	200	200	CavalryBeast0		200	4	12
+TT004	200	200	BeastRider	200	10	12
+
+;Hoodwink5
+TT005	200	200	Flamingo		200	80	10
+TT005	200	200	Flamingo0		200	2	12
+TT005	200	200	CavalryBeast		200	240	10
+TT005	200	200	CavalryBeast0		200	6	12
+TT005	200	200	BeastRider	200	40	12
+TT005	200	200	BeastRider0	200	1	14
+
+;Hoodwink6
+TT006	180	200	CavalryBeast		200	280	10
+TT006	180	200	CavalryBeast0		200	7	12
+TT006	180	200	BeastRider	200	100	12
+TT006	180	200	BeastRider0	200	3	14
+
+;Hoodwink7
+TT007	200	200	CavalryBeast		200	280	10
+TT007	200	200	CavalryBeast0		200	7	12
+TT007	200	200	BeastRider	200	100	12
+TT007	200	200	BeastRider0	200	3	14
+TT007	200	200	SoulBringer		200	20	14
+
+;Hoodwink8
+TT008	196	177	CavalryBeast		200	200	10
+TT008	196	177	CavalryBeast0		200	5	12
+TT008	196	177	BeastRider	200	100	12
+TT008	196	177	BeastRider0	200	3	14
+TT008	196	177	SoulBringer		200	80	14
+TT008	196	177	SoulBringer0		200	2	16
+TT008	196	177	RoaringFlame		200	10	15
+
+;Yunsiao
+TT009	205	195	BeastRider	100	120	10
+TT009	205	195	BeastRider0	100	4	12
+TT009	205	195	SoulBringer		100	100	10
+TT009	205	195	SoulBringer0		100	4	12
+TT009	205	195	RoaringFlame		100	10	15
+TT009	205	195	RoaringFlame0		100	1	20
+TT009	155	232	RoaringFlame		10	4	20
+TT009	155	232	SoulBringer		10	6	20
+TT009	155	232	BeastRider	10	8	15
+
+; StagnantWaters
+7	370	70	Spider		40	10	10
+7	320	158	Spider		70	30	10
+7	224	106	HuozuGhost	150	150	20
+7	224	106	HuozuGhost0	150	3	60
+7	354	205	HuozuGhost	100	80	20
+7	241	225	HuozuGhost	80	30	20
+7	245	278	HuozuGhost	30	20	18
+7	131	40	HuozuGhost	20	25	18
+7	167	41	HuozuGhost	20	25	18
+7	320	70	HuozuGhost	50	30	20
+7	366	153	HuozuGhost	60	40	20
+7	315	192	Wolf		50	10	18
+7	217	190	Executioner	150	80	25
+7	245	278	Executioner	40	20	25
+7	131	40	Executioner	20	10	25
+7	255	280	Executioner	30	15	25
+7	255	280	Executioner0	100	2	60
+7	167	41	Mengqizu	20	10	25
+7	255	280	Mengqizu	30	15	25
+7	382	54	Chieftain	10	10	20
+7	370	70	ThreeSnakes		40	20	15
+7	313	60	CaneMonster		100	5	15
+7	255	280	Balrog		15	5	25
+7	105	218	Ghost		150	150	20
+7	241	225	Ghost		80	50	20
+7	256	40	Ghost		40	30	18
+7	131	40	Ghost		20	15	18
+7	167	41	Ghost		20	15	18
+7	226	66	Ghost		30	20	18
+7	172	51	Ghost		50	40	18
+7	122	286	Ghost		50	30	18
+7	122	286	Ghost0		150	3	60
+7	327	277	Ghost		50	30	18
+
+;Underground
+MC001	139	140	HuozuGhost	100	120	15
+MC001	139	140	BeastlyArcher	150	20	25
+MC001	104	176	Executioner	20	30	15
+MC001	92	90	Executioner	20	20	10
+MC001	139	140	Executioner	100	50	10
+MC001	184	117	Mengqizu	100	120	10
+MC001	169	205	Mengqizu0	150	1	60
+MC001	243	168	Commander	100	10	15
+MC001	243	168	Chieftain	100	5	25
+MC001	243	168	Chieftain	100	5	25
+MC001	50	128	Chieftain	50	10	25
+MC001	34	76	Chieftain	50	10	15
+MC001	50	128	Chieftain0	150	1	45
+MC001	243	168	Ghost		50	5	10
+MC001	34	75	Ghost		30	5	10
+
+;Underground2
+MC002	263	152	BeastlyArcher	100	50	15
+MC002	145	40	FireBeast0	150	1	60
+MC002	172	164	HuozuGhost	150	120	12
+MC002	172	164	Executioner	155	60	15
+MC002	145	40	Executioner	30	30	15
+MC002	172	164	Mengqizu	150	140	15
+MC002	216	78	Mengqizu	30	50	15
+MC002	129	208	Mengqizu	15	5	15
+MC002	162	144	Commander	15	5	15
+MC002	188	208	Commander	15	3	20
+MC002	145	40	Commander	15	2	20
+MC002	263	152	Chieftain	60	60	18
+MC002	162	144	Chieftain	30	20	18
+MC002	105	174	Chieftain	40	40	18
+MC002	172	164	Chieftain0	150	2	60
+MC002	172	164	Ghost		150	40	12
+
+;Underground3
+MC003	214	202	BeastlyArcher	190	140	15
+MC003	207	192	BeastlyArcher	150	60	15
+MC003	214	202	FireBeast	190	50	25
+MC003	214	202	FireBeast0	180	1	60
+MC003	332	178	FireBeast	60	30	25
+MC003	212	79	SpearBeast	50	40	25
+MC003	214	202	Flamingo		180	10	25
+MC003	192	332	Executioner	50	30	15
+MC003	150	150	Mengqizu	190	130	12
+MC003	207	192	Mengqizu	50	40	12
+MC003	307	92	Mengqizu	50	60	12
+MC003	207	192	Mengqizu0	150	2	60
+MC003	214	202	Commander	100	50	15
+MC003	108	294	Commander	50	50	15
+MC003	308	301	Commander	60	60	15
+MC003	212	79	Commander	50	30	15
+MC003	95	88	Chieftain	30	20	15
+MC003	95	88	Chieftain0	150	2	60
+MC003	214	202	Ghost		150	30	12
+
+;Underground4
+MC004	127	122	BeastlyArcher	100	100	15
+MC004	141	207	BeastlyArcher	30	40	15
+MC004	163	144	BeastlyArcher	20	15	15
+MC004	127	122	BeastlyArcher0	100	2	60
+MC004	127	122	FireBeast	100	40	15
+MC004	62	144	FireBeast	40	20	15
+MC004	74	66	FireBeast	100	60	15
+MC004	127	122	SpearBeast	100	50	12
+MC004	115	105	SpearBeast	30	20	15
+MC004	127	122	HuozuGhost	100	20	10
+MC004	115	105	Flamingo		60	15	10
+MC004	78	71	Commander	80	90	15
+MC004	184	34	Commander	30	30	15
+MC004	158	60	Commander	25	20	15
+MC004	78	208	Commander	25	20	18
+MC004	115	105	Balrog		60	30	18
+MC004	110	195	Balrog		10	10	18
+MC004	110	22	Balrog		15	10	18
+MC004	115	105	Balrog0		100	2	60
+
+;Underground5
+MC005	185	78	BeastlyArcher	50	60	15
+MC005	140	144	FireBeast	130	150	10
+MC005	185	78	FireBeast	50	60	18
+MC005	125	141	FireBeast	60	80	15
+MC005	137	50	FireBeast	30	40	15
+MC005	222	26	FireBeast0	150	2	60
+MC005	140	144	SpearBeast	140	30	10
+MC005	125	141	SpearBeast	60	40	10
+MC005	140	144	Flamingo		100	10	10
+MC005	222	26	Commander	15	20	15
+MC005	50	205	Commander	30	60	15
+MC005	140	144	Balrog		100	100	18
+MC005	38	153	Balrog		30	40	18
+MC005	109	219	Balrog		40	50	18
+MC005	218	130	Balrog		30	30	18
+MC005	218	130	Balrog0		120	2	60
+MC005	140	144	Ghost		100	20	10
+
+;Underground6
+MC006	258	235	BeastlyArcher	40	60	15
+MC006	258	235	BeastlyArcher0	150	2	60
+MC006	207	189	FireBeast	200	140	25
+MC006	186	200	FireBeast	50	60	25
+MC006	240	346	FireBeast	45	20	25
+MC006	306	215	FireBeast	30	10	25
+MC006	298	113	FireBeast	20	10	25
+MC006	307	70	FireBeast	40	20	25
+MC006	160	111	FireBeast	60	20	25
+MC006	72	184	FireBeast	30	10	25
+MC006	36	126	FireBeast	15	10	25
+MC006	94	88	FireBeast	15	10	25
+MC006	94	88	FireBeast0	100	5	60
+MC006	207	189	SpearBeast	150	150	10
+MC006	307	70	SpearBeast	40	40	10
+MC006	207	189	HuozuGhost	200	30	10
+MC006	207	189	Flamingo		200	30	10
+MC006	207	189	Balrog		200	120	15
+MC006	106	242	Balrog		30	30	15
+MC006	146	287	Balrog		30	45	15
+MC006	240	346	Balrog		45	60	15
+MC006	347	182	Balrog		15	10	15
+MC006	160	111	Balrog		150	200	15
+MC006	72	184	Balrog		60	50	15
+MC006	238	72	Balrog0		150	2	60
+
+;Underground7
+MC007	146	146	BeastlyArcher	100	160	15
+MC007	146	146	FireBeast	100	30	18
+MC007	162	100	FireBeast	40	20	18
+MC007	180	190	FireBeast	40	10	18
+MC007	146	146	FireBeast0	100	3	60
+MC007	146	146	SpearBeast	100	60	15
+MC007	146	146	Flamingo		100	40	15
+MC007	146	146	Balrog		100	150	16
+MC007	220	44	Balrog		40	5	16
+MC007	126	149	Balrog		40	20	16
+MC007	83	90	Balrog		30	20	16
+MC007	144	32	Balrog		20	15	16
+MC007	180	190	Balrog		20	20	16
+MC007	238	121	Balrog		20	20	16
+MC007	144	32	Balrog0		100	2	60
+MC007	126	149	ShadeWarrior	10	1	15
+MC007	83	90	ShadeWarrior	10	1	15
+MC007	92	217	ShadeWarrior	10	1	15
+
+;Underground8
+MC008	141	129	Balrog00		100	1	60
+MC008	141	129	BeastlyArcher	100	70	15
+MC008	136	212	BeastlyArcher	45	15	15
+MC008	141	129	FireBeast	100	30	15
+MC008	52	47	FireBeast	30	15	15
+MC008	152	114	FireBeast	30	15	15
+MC008	188	154	FireBeast	30	5	15
+MC008	136	212	FireBeast	30	5	15
+MC008	188	154	FireBeast0	100	4	45
+MC008	141	129	SpearBeast	100	20	15
+MC008	152	114	SpearBeast	30	8	15
+MC008	136	212	SpearBeast	30	8	15
+MC008	196	58	Flamingo		40	20	10
+MC008	141	129	Commander	100	30	12
+MC008	176	84	Commander	15	5	12
+MC008	181	161	ShadeWarrior	45	15	30
+MC008	181	161	BeastlyArcher	45	15	15
+MC008	141	129	Balrog		120	30	12
+MC008	110	70	Balrog		20	8	12
+MC008	137	38	Balrog		20	8	12
+MC008	196	58	Balrog		20	10	12
+MC008	152	114	Balrog		40	15	12
+MC008	188	154	Balrog		30	8	12
+MC008	136	212	Balrog		60	20	12
+MC008	83	143	Balrog		20	5	12
+MC008	83	143	Balrog0		100	3	60
+MC008	135	41	ShadeWarrior	10	2	15
+MC008	139	30	ShadeWarrior	10	2	15
+MC008	147	52	ShadeWarrior	10	2	15
+MC008	197	64	ShadeWarrior	10	2	15
+MC008	201	169	ShadeWarrior	10	2	15
+MC008	195	179	ShadeWarrior	10	2	15
+MC008	210	178	ShadeWarrior	10	2	15
+
+;UndergroundPalace
+MC009	15	68	Sheyao009	40	1	120
+MC009	86	52	BeastlyArcher	60	45	16
+MC009	70	80	FireBeast	30	20	20
+MC009	87	57	FireBeast	40	20	20
+MC009	79	66	FireBeast	80	20	20
+MC009	87	57	SpearBeast	40	45	15
+MC009	87	34	Fiend009	30	1	360
+MC009	86	41	利爪魔5		15	1	90
+MC009	112	68	RoaringFlame		20	5	90
+MC009	108	74	RoaringFlame		20	3	90
+MC009	43	121	Commander	18	10	15
+MC009	78	68	Commander	80	20	18
+MC009	81	58	Counter009		30	1	240
+MC009	75	42	闪电魔5		15	1	90
+MC009	97	83	Tyrant009		40	1	120
+MC009	82	136	IronBlood009	20	1	480
+MC009	126	85	Founder009	20	1	360
+MC009	68	124	Balrog		60	35	360
+MC009	106	66	Ghost		50	30	15
+MC009	77	139	ShadeWarrior	60	20	360
+
+;DemonHeart
+MC011	105	95	BeastlyArcher	90	50	10
+MC011	105	95	Balrog00		90	1	60
+MC011	105	95	BeastlyArcher0	100	1	60
+MC011	105	95	FireBeast	90	50	15
+MC011	105	95	FireBeast0	90	1	60
+MC011	105	95	Executioner	100	40	16
+MC011	105	95	Executioner0	100	1	60
+MC011	105	95	Balrog		50	10	30
+MC011	105	95	Balrog0		100	1	60
+MC011	105	95	ShadeWarrior	50	20	45
+
+;沉默走廊
+ MG002  133  136        Commander  120   30   10
+ MG002  133  136      FireBeast   30   20   15
+ MG002  133  136          Gladiator   30    5   15
+ MG002  173  184            Balrog   20   10   15
+ MG002  212   51            Balrog   10    5   10
+ MG002  212   51        Commander   20   10   18
+ MG002   89   91      FireBeast   30   10   15
+ MG002   89   91          Gladiator   40    3   15
+ MG002  146  150          Gladiator   30    3   10
+
+;JaggedEnchanted
+ MG001  159  147      FireBeast  150   30   15
+ MG001  159  147    BeastlyArcher  150   10   15
+ MG001  159  147          Gladiator  150   20   15
+ MG001  159  147            EvilEye  150    8   10
+ MG001  159  147           EvilEye0  150    1  240
+ MG001  159  147            Balrog  150   20   15
+ MG001  163  186        Commander   25   15    8
+ MG001  198  148        Mengqizu   25   10   10
+ MG001  163  186      Executioner   25   15   10
+ MG001  247  172      FireBeast   30   12   10
+ MG001  169  242      FireBeast   25   10   10
+ MG001  116  232        Chieftain   40   10   10
+ MG001  116  232            Balrog   30    3   10
+ MG001  239  101        Commander   40   10   10
+ MG001  239  101            Balrog   30    3   10
+ MG001   34  160            Balrog   30   10   10
+ MG001   40  139       ShadeWarrior   30    3   20
+ MG001  153   39            Balrog   30   15   10
+ MG001  159   70          Gladiator   30    5   10
+ MG001  127  170          Gladiator   40   15    5
+ MG001  144  112            EvilEye   30    5   10
+ MG001  120  117          Gladiator   30   15    5
+ MG001  120  117          Balrog00   30   10    5
+ MG001  111  131    BeastlyArcher   30    5    5
+ MG001  148  117    SpearBeast   30    5    5
+ MG001  113  104          Gladiator   10    8    5
+ MG001   90   80          Gladiator   35   15    8
+ MG001   90   80          Balrog00   35   10    8
+ MG001   90   80       ShadeWarrior   35    4    8
+ MG001   74  100            EvilEye   20    4    8
+ MG001  109   64            EvilEye   20    4    8
+ MG001   64   66            EvilEye    2    1   20
+ MG001   73   83            EvilEye    2    1   20
+ MG001   80   90            EvilEye    2    1   20
+ MG001   67   84            EvilEye    2    1   20
+ MG001   85   58            EvilEye    2    1   20
+ MG001   92   70            EvilEye    2    1   20
+ MG001  102   46            EvilEye    2    1   20
+ MG001  119  232      FireBeast   30   15   10
+ MG001  166  250      Executioner   30   10   10
+ MG001  109  142            Balrog   30   10   10
+ MG001  109  142          Gladiator   30    3   10
+ MG001  241  102        Commander   30   15   10
+ MG001   34  160	Balrog00	20	2	240
+
+;修罗天界
+;AshuraTemple
+AS001   85  70  ShadowAshura    80  80  8
+AS001   85  70  DevilAshura   80  80  8
+AS001   85  70  BlackAshura   80  20   10
+AS001	129 24	暗影雷电    5	 20  1  
+
+;AshuraTemple2
+AS002   83  62  ShadowAshura    70  80  8
+AS002   83  62  DevilAshura    70  80  8
+AS002   83  62  BlackAshura    70  20  8
+AS002	121 30	暗影雷电    5	 20  1
+
+;AshuraTemple3
+AS003   117 92  ShadowAshura    100 80  8
+AS003   117 92  DevilAshura    100 80  8
+AS003   117 92  BlackAshura    100 15  8
+AS003	114 133	暗影雷电    5   40 1
+
+;AshuraTemple4
+AS004  124   75       暗影雷电    0    1    1
+AS004  171  129       暗影雷电   10    2    1
+AS004  171  129       暗影雷电   10    2    1
+AS004  171  129       BlackAshura  200   30    1
+AS004  171  129    EldeAshura  200   60   15
+AS004  171  129        ShadowAshura0  200   80    1
+AS004  171  129        DevilAshura0  200   80   10
+AS004   64  178        ShadowAshura0   40   30   10
+AS004   64  178        DevilAshura0  40   20   10
+AS004   64  178        BlackAshura0  40    3   10
+AS004  124  173        ShadowAshura0   20   20   10
+AS004  124  173        DevilAshura0  20   10   10
+AS004  124  173        BlackAshura0   20   10   10
+AS004  204  176        ShadowAshura0   20   10   10
+AS004  204  176        DevilAshura0   20   10   10
+AS004  204  176        BlackAshura0  20   10   10
+AS004  121   96        ShadowAshura0   20   20    8
+AS004  121   96        DevilAshura0   20   10    5
+AS004  121   96        BlackAshura0   20   10   10
+AS004  103   21        ShadowAshura0   20   10    8
+AS004  103   21        DevilAshura0   20   10    5
+AS004  103   21        BlackAshura0   20   10   10
+AS004  209   90        ShadowAshura0   20   10    8
+AS004  209   90        DevilAshura0   20   10    5
+AS004  209   90        BlackAshura0   20   10   10
+AS004  192   74       ShadowAshura    1    2    1
+AS004  193   75       ShadowAshura    1    2    1
+AS004  194   76       ShadowAshura    1    2    1
+AS004  195   78       ShadowAshura    1    2    1
+AS004  196   78       ShadowAshura    1    2    1
+AS004  197   79       ShadowAshura    1    2    1
+AS004  210   86       ShadowAshura    1    2    1
+AS004  211   87       ShadowAshura    1    2    1
+AS004  211   88       ShadowAshura    1    2    1
+AS004  212   89       ShadowAshura    1    2    1
+AS004  213   90       ShadowAshura    1    2    1
+AS004  214   91       ShadowAshura    1    2    1
+AS004  221  101       ShadowAshura    1    2    1
+AS004  221  102       ShadowAshura    1    2    1
+AS004  222  102       ShadowAshura    1    2    1
+AS004  222  103       ShadowAshura    1    2    1
+AS004  223  104       ShadowAshura    1    2    1
+AS004  223  105       ShadowAshura    1    2    1
+AS004  225  106       ShadowAshura    1    2    1
+AS004  225  110       ShadowAshura    1    2    1
+AS004  225  111       ShadowAshura    1    2    1
+AS004  274  232        ShadowAshura0   20   20   10
+AS004  274  232        DevilAshura0   20   20   10
+AS004  274  232        BlackAshura0   20   10   10
+AS004  233   63        ShadowAshura0   15   20   10
+AS004  233   63        DevilAshura0   15   20   10
+AS004  233   63    EldeAshura   20   40   25
+AS004  238   57        AshuraGod   10    1  360
+AS004  129   24       暗影雷电    5   40    1
+AS004   23  181       暗影雷电    5   40    1
+AS004  145   28       暗影雷电    5   40    1
+AS004  223  195       ShadowAshura0   20   20    3
+AS004  218   76    EldeAshura   20   20   25
+AS004  106   78       ShadowAshura0   20   20    3
+AS004  109  191       ShadowAshura0   20   20    3
+
+;海岛
+MH001	85	85	Pig		75	10	2
+MH001	85	85	Rabbit		75	10	2
+MH001	85	85	Deer		75	10	2
+MH001	85	85	Cow		75	20	2
+MH001	85	85	Toad		75	20	2
+MH001	85	85	FishPerson		75	20	4
+MH001	85	85	FishPerson0		75	1	4
+
+;战士炼狱二层
+MH002	70	70	HoleMaggot		70	40	5
+MH002	70	70	Scorpion		70	40	5
+MH002	70	70	CaveBat	70	30	5
+MH002	70	70	CaveBat0	70	1	5
+MH002	70	70	DeadCorpse		70	30	5
+MH002	70	70	DeadCorpse0   	70	1	5
+MH002	70	70	BraveWarrior	70	20	5
+MH002	70	70	BraveWarrior0	70	1	5
+MH002	70	70	Gladiator1	70	30	60
+
+;法师炼狱二层
+MH003	85	85	HoleMaggot		70	40	5
+MH003	85	85	Scorpion		70	40	5
+MH003	85	85	CaveBat	70	30	5
+MH003	85	85	CaveBat0	70	1	5
+MH003	85	85	DeadCorpse		70	30	5
+MH003	85	85	DeadCorpse0   	70	1	5
+MH003	85	85	BraveWarrior	70	20	5
+MH003	85	85	BraveWarrior0	70	1	5
+MH003	85	85	Gladiator1	70	30	60
+
+;道士炼狱二层
+MH004	85	85	HoleMaggot		70	40	5
+MH004	85	85	Scorpion		70	40	5
+MH004	85	85	CaveBat	70	30	5
+MH004	85	85	CaveBat0	70	1	5
+MH004	85	85	DeadCorpse		70	30	5
+MH004	85	85	DeadCorpse0   	70	1	5
+MH004	85	85	BraveWarrior	70	20	5
+MH004	85	85	BraveWarrior0	70	1	5
+MH004	85	85	Gladiator1	70	30	60
+
+;战士炼狱三层
+MH005	112	119	HoleMaggot		100	50	5
+MH005	112	119	DeadCorpse		100	50	5
+MH005	112	119	DeadCorpse0		100	2	5
+MH005	112	119	BraveWarrior	100	50	5
+MH005	112	119	BraveWarrior0	100	2	5
+MH005	112	119	CorpseGeneral	100	50	5
+MH005	112	119	CorpseGeneral0	100	2	5
+MH005	112	119	Spearman	100	50	5
+MH005	112	119	Spearman0	100	2	5
+MH005	112	119	Gladiator1	100	30	60
+
+;法师炼狱三层
+MH006	165	165	HoleMaggot		125	50	5
+MH006	165	165	DeadCorpse		125	50	5
+MH006	165	165	DeadCorpse0   	125	2	5
+MH006	165	165	BraveWarrior	125	50	5
+MH006	165	165	BraveWarrior0	125	2	5
+MH006	165	165	CorpseGeneral	125	50	5
+MH006	165	165	CorpseGeneral0	125	2	5
+MH006	165	165	Spearman	125	50	5
+MH006	165	165	Spearman0	125	2	5
+MH006	165	165	Gladiator1	125	30	60
+
+;道士炼狱三层
+MH007	112	95	HoleMaggot		100	50	5
+MH007	112	95	DeadCorpse		100	50	5
+MH007	112	95	DeadCorpse0	        100	2	5
+MH007	112	95	BraveWarrior	100	50	5
+MH007	112	95	BraveWarrior0	100	2	5
+MH007	112	95	CorpseGeneral	100	50	5
+MH007	112	95	CorpseGeneral0	100	2	5
+MH007	112	95	Spearman	100	50	5
+MH007	112	95	Spearman0	100	2	5
+MH007	112	95	Gladiator1	100	30	60
+
+;海滨平原
+MH008	95	80	稻草人		65	20	3
+MH008	95	80	Scarecrow0		65	1	3
+MH008	95	80	FishPerson		65	20	3
+MH008	95	80	FishPerson0		65	1	3
+MH008	95	80	KnifeDog		65	20	3
+MH008	95	80	KnifeDog0		65	1	3
+MH008	95	80	StickDog		65	20	3
+MH008	95	80	StickDog0		65	1	3
+MH008	95	80	Piranha		35	20	3
+	
+;战士炼狱五层
+MH009	119	126	Zombie1		100	40	5
+MH009	119	126	Zombie10		100	2	5
+MH009	119	126	Zombie2		100	40	5
+MH009	119	126	Zombie20		100	2	5
+MH009	119	126	Zombie3		100	40	5
+MH009	119	126	Zombie30		100	2	5
+MH009	119	126	Zombie4		100	40	5
+MH009	119	126	Zombie40		100	2	5
+MH009	119	126	Zombie5		100	40	5
+MH009	119	126	Zombie50		100	2	5
+MH009	119	126	Skeleton		100	40	5
+MH009	119	126	Skeleton0		100	2	5
+MH009	119	126	CorpseKing2		100	10	15
+MH009	119	126	CorpseKing		100	2	20
+MH009	119	126	Gladiator1	100	30	60
+
+;法师炼狱五层
+MH010	120	125	Zombie1		100	40	5
+MH010	120	125	Zombie10		100	2	5
+MH010	120	125	Zombie2		100	40	5
+MH010	120	125	Zombie20		100	2	5
+MH010	120	125	Zombie3		100	40	5
+MH010	120	125	Zombie30		100	2	5
+MH010	120	125	Zombie4		100	40	5
+MH010	120	125	Zombie40		100	2	5
+MH010	120	125	Zombie5		100	40	5
+MH010	120	125	Zombie50		100	2	5
+MH010	120	125	Skeleton		100	40	5
+MH010	120	125	Skeleton0		100	2	5
+MH010	120	125	CorpseKing2		100	10	15
+MH010	120	125	CorpseKing		100	2	20
+MH010	120	125	Gladiator1	100	30	60
+
+;道士炼狱五层
+MH011	122	130	Zombie1		100	40	5
+MH011	122	130	Zombie10		100	2	5
+MH011	122	130	Zombie2		100	40	5
+MH011	122	130	Zombie20		100	2	5
+MH011	122	130	Zombie3		100	40	5
+MH011	122	130	Zombie30		100	2	5
+MH011	122	130	Zombie4		100	40	5
+MH011	122	130	Zombie40		100	2	5
+MH011	122	130	Zombie5		100	40	5
+MH011	122	130	Zombie50		100	2	5
+MH011	122	130	Skeleton		100	40	5
+MH011	122	130	Skeleton0		100	2	5
+MH011	122	130	CorpseKing2		100	10	15
+MH011	122	130	CorpseKing		100	2	20
+MH011	122	130	Gladiator1	100	30	60
+
+;密林
+MH012	110	100	KnifeDog		75	30	3
+MH012	110	100	KnifeDog0		75	2	5
+MH012	110	100	StickDog		75	30	3
+MH012	110	100	StickDog0		75	2	5
+MH012	110	100	Spider		75	30	3
+MH012	110	100	Python		75	30	3
+MH012	110	100	Python0		75	2	5
+MH012	110	100	Piranha		75	30	3
+MH012	110	100	Coyote		75	30	3
+
+;战士炼狱七层
+MH013	70	70	CopperPerson		60	30	6
+MH013	70	70	Leadman0		60	1	6
+MH013	70	70	CopperPerson0		60	1	6
+MH013	70	70	BronzeBeast		60	30	6
+MH013	70	70	BronzeBeast0 	60	1	6
+MH013	70	70	SwordWielder		60	30	6
+MH013	70	70	SwordWielder0 	60	1	6
+MH013	70	70	Shiren		60	30	6
+MH013	70	70	Shiren0		60	1	6
+MH013	70	70	Protector		60	14	3
+MH013	70	70	Protector0		60	1	30
+MH013	70	70	Gladiator2	60	30	60
+
+;法师炼狱七层
+MH014	87	93	CopperPerson		60	30	6
+MH014	87	93	Leadman0		60	1	6
+MH014	87	93	CopperPerson0		60	1	6
+MH014	87	93	BronzeBeast		60	30	6
+MH014	87	93	BronzeBeast0 	60	1	6
+MH014	87	93	SwordWielder		60	30	6
+MH014	87	93	SwordWielder0 	60	1	6
+MH014	87	93	Shiren		60	30	6
+MH014	87	93	Shiren0		60	1	6
+MH014	87	93	Protector		60	14	3
+MH014	87	93	Protector0		60	1	30
+MH014	87	93	Gladiator2	60	30	60
+
+;道士炼狱七层
+MH015	87	80	CopperPerson		60	30	6
+MH015	87	80	Leadman0		60	1	6
+MH015	87	80	CopperPerson0		60	1	6
+MH015	87	80	BronzeBeast		60	30	6
+MH015	87	80	BronzeBeast0 	60	1	6
+MH015	87	80	SwordWielder		60	30	6
+MH015	87	80	SwordWielder0 	60	1	6
+MH015	87	80	Shiren		60	30	6
+MH015	87	80	Shiren0		60	1	6
+MH015	87	80	Protector		60	14	3
+MH015	87	80	Protector0		60	1	30
+MH015	87	80	Gladiator2	60	30	60
+
+;战士炼狱八层
+MH016	140	140	CopperPerson		110	30	6
+MH016	140	140	CopperPerson0		110	1	6
+MH016	140	140	BronzeBeast		110	30	6
+MH016	140	140	BronzeBeast0	 	110	1	6
+MH016	140	140	SwordWielder		110	60	6
+MH016	140	140	SwordWielder0	 	110	3	6
+MH016	140	140	Shiren		110	60	6
+MH016	140	140	Shiren0		110	3	6
+MH016	140	140	Leadman		110	60	8
+MH016	140	140	Leadman0  	110	3	8
+MH016	140	140	Jingang		110	30	10
+MH016	140	140	Jingang0 	110	6	20
+MH016	140	140	BigGame	110	1	30
+MH016	140	140	Gladiator2	110	30	60
+
+;法师炼狱八层
+MH017	140	140	CopperPerson		110	30	6
+MH017	140	140	CopperPerson0		110	1	6
+MH017	140	140	BronzeBeast		110	30	6
+MH017	140	140	BronzeBeast0	 	110	1	6
+MH017	140	140	SwordWielder		110	60	6
+MH017	140	140	SwordWielder0	 	110	3	6
+MH017	140	140	Shiren		110	60	6
+MH017	140	140	Shiren0		110	3	6
+MH017	140	140	Leadman		110	60	8
+MH017	140	140	Leadman0  	110	3	8
+MH017	140	140	Jingang		110	30	10
+MH017	140	140	Jingang0 	110	6	20
+MH017	140	140	BigGame	110	1	30
+MH017	140	140	Gladiator2	110	30	60
+
+;道士炼狱八层
+MH018	140	140	CopperPerson		110	30	6
+MH018	140	140	CopperPerson0		110	1	6
+MH018	140	140	BronzeBeast		110	30	6
+MH018	140	140	BronzeBeast0	 	110	1	6
+MH018	140	140	SwordWielder		110	60	6
+MH018	140	140	SwordWielder0	 	110	3	6
+MH018	140	140	Shiren		110	60	6
+MH018	140	140	Shiren0		110	3	6
+MH018	140	140	Leadman		110	60	8
+MH018	140	140	Leadman0  	110	3	8
+MH018	140	140	Jingang		110	30	10
+MH018	140	140	Jingang0 	110	6	20
+MH018	140	140	BigGame	110	1	30
+MH018	140	140	Gladiator2	110	30	60
+
+;幽静空间
+MH019	93	88	Spider		70	30	3
+MH019	93	88	Piranha		70	30	3
+MH019	93	88	Coyote		70	30	3
+MH019	93	88	Python		70	30	3
+MH019	93	88	Python0		70	2	5
+MH019	93	88	SandScorpion		70	30	3
+MH019	93	88	SandScorpion0		70	2	5
+MH019	93	88	OtsuchiSnake		70	30	3
+MH019	93	88	OtsuchiSnake0		70	2	5
+
+;战士炼狱十层
+MH020	140	140	DeadCorpse		110	80	7
+MH020	140	140	DeadCorpse0		110	3	7
+MH020	140	140	BraveWarrior	110	80	7
+MH020	140	140	BraveWarrior0	110	3	7
+MH020	140	140	CorpseGeneral	110	80	7
+MH020	140	140	CorpseGeneral0	110	3	7
+MH020	140	140	Protector		110	10	2
+MH020	140	140	Protector0		110	1	15
+MH020	140	140	Gladiator2	110	30	60
+
+;法师炼狱十层
+MH021	140	140	DeadCorpse		110	80	7
+MH021	140	140	DeadCorpse0		110	3	7
+MH021	140	140	BraveWarrior	110	80	7
+MH021	140	140	BraveWarrior0	110	3	7
+MH021	140	140	CorpseGeneral	110	80	7
+MH021	140	140	CorpseGeneral0	110	3	7
+MH021	140	140	Protector		110	10	2
+MH021	140	140	Protector0		110	1	15
+MH021	140	140	Gladiator2	110	30	60
+
+;道士炼狱十层
+MH022	140	140	DeadCorpse		110	80	7
+MH022	140	140	DeadCorpse0		110	3	7
+MH022	140	140	BraveWarrior	110	80	7
+MH022	140	140	BraveWarrior0	110	3	7
+MH022	140	140	CorpseGeneral	110	80	7
+MH022	140	140	CorpseGeneral0	110	3	7
+MH022	140	140	Protector		110	10	2
+MH022	140	140	Protector0		110	1	15
+MH022	140	140	Gladiator2	110	30	60
+
+;战士炼狱十一层
+MH023	158	160	DeadCorpse		130	80	7
+MH023	158	160	DeadCorpse0		130	3	7
+MH023	158	160	BraveWarrior	130	80	7
+MH023	158	160	BraveWarrior0	130	3	7
+MH023	158	160	CorpseGeneral	130	80	7
+MH023	158	160	CorpseGeneral0	130	3	7
+MH023	158	160	Spearman	130	80	7
+MH023	158	160	Spearman0	130	3	7
+MH023	158	160	CorpseGeneral0	130	3	30
+MH023	158	160	CorpseTyrant		130	1	120
+MH023	158	160	Gladiator2	130	30	60
+
+;法师炼狱十一层
+MH024	158	160	DeadCorpse		130	80	7
+MH024	158	160	DeadCorpse0		130	3	7
+MH024	158	160	BraveWarrior	130	80	7
+MH024	158	160	BraveWarrior0	130	3	7
+MH024	158	160	CorpseGeneral	130	80	7
+MH024	158	160	CorpseGeneral0	130	3	7
+MH024	158	160	Spearman	130	80	7
+MH024	158	160	Spearman0	130	3	7
+MH024	158	160	CorpseGeneral0	130	3	30
+MH024	158	160	CorpseTyrant		130	1	120
+MH024	158	160	Gladiator2	130	30	60
+
+;道士炼狱十一层
+MH025	158	160	DeadCorpse		130	80	7
+MH025	158	160	DeadCorpse0		130	3	7
+MH025	158	160	BraveWarrior	130	80	7
+MH025	158	160	BraveWarrior0	130	3	7
+MH025	158	160	CorpseGeneral	130	80	7
+MH025	158	160	CorpseGeneral0	130	3	7
+MH025	158	160	Spearman	130	80	7
+MH025	158	160	Spearman0	130	3	7
+MH025	158	160	CorpseGeneral0	130	3	30
+MH025	158	160	CorpseTyrant		130	1	120
+MH025	158	160	Gladiator2	130	30	60
+
+;投石谷
+MH026	100	100	Spider		70	10	3
+MH026	100	100	SandSculpture		70	20	3
+MH026	100	100	SandSculpture0		70	1	3
+MH026	100	100	Coyote		70	20	3
+MH026	100	100	Python		70	80	3
+MH026	100	100	Python0		70	3	3
+MH026	100	100	OtsuchiSnake		70	80	3
+MH026	100	100	OtsuchiSnake0		70	3	3
+MH026	100	100	地狱奴		70	20	15
+
+;战士炼狱十三层
+MH027	170	180	Scarab		140	120	7
+MH027	170	180	Scarab0  	140	5	7
+MH027	170	180	Beetle		140	120	7
+MH027	170	180	RedSnake		140	60	7
+MH027	170	180	RedSnake3		140	1	7
+MH027	170	180	RedSnake0  	140	3	7
+MH027	170	180	AntNest		140	10	7
+MH027	170	180	Gladiator3	140	30	60
+
+;法师炼狱十三层
+MH028	170	180	Scarab		140	120	7
+MH028	170	180	Scarab0  	140	5	7
+MH028	170	180	Beetle		140	120	7
+MH028	170	180	RedSnake		140	60	7
+MH028	170	180	RedSnake3		140	1	7
+MH028	170	180	RedSnake0  	140	3	7
+MH028	170	180	AntNest		140	10	7
+MH028	170	180	Gladiator3	140	30	60
+
+;道士炼狱十三层
+MH029	170	180	Scarab		140	120	7
+MH029	170	180	Scarab0  	140	5	7
+MH029	170	180	Beetle		140	120	7
+MH029	170	180	RedSnake		140	60	7
+MH029	170	180	RedSnake3		140	1	7
+MH029	170	180	RedSnake0  	140	3	7
+MH029	170	180	AntNest		140	10	7
+MH029	170	180	Gladiator3	140	30	60
+
+;战士炼狱十四层
+MH030	96	96	Scarab		85	60	7
+MH030	96	96	Scarab0	        85	3	7
+MH030	96	96	Beetle		85	60	7
+MH030	96	96	RedSnake		85	40	7
+MH030	96	96	RedSnake3		85	1	7
+MH030	96	96	RedSnake0	        85	3	7
+MH030	96	96	BlackSnake		85	30	7
+MH030	96	96	BlackSnake3	        85	2	7
+MH030	96	96	ThreeSnakes		85	20	7
+MH030	96	96	ThreeSnakes0	        85	1	7
+MH030	96	96	AntNest		85	10	7
+MH030	96	96	Protector		85	6	5
+MH030	96	96	Protector0		85	2	10
+MH030	96	96	Gladiator3	85	30	60
+
+;法师炼狱十四层
+MH031	96	96	Scarab		85	60	7
+MH031	96	96	Scarab0	        85	3	7
+MH031	96	96	Beetle		85	60	7
+MH031	96	96	RedSnake		85	40	7
+MH031	96	96	RedSnake3		85	1	7
+MH031	96	96	RedSnake0	        85	3	7
+MH031	96	96	BlackSnake		85	30	7
+MH031	96	96	BlackSnake3	        85	2	7
+MH031	96	96	ThreeSnakes		85	20	7
+MH031	96	96	ThreeSnakes0	        85	1	7
+MH031	96	96	AntNest		85	10	7
+MH031	96	96	Protector		85	6	5
+MH031	96	96	Protector0		85	2	10
+MH031	96	96	Gladiator3	85	30	60
+
+;道士炼狱十四层
+MH032	96	96	Scarab		85	60	7
+MH032	96	96	Scarab0	        85	3	7
+MH032	96	96	Beetle		85	60	7
+MH032	96	96	RedSnake		85	40	7
+MH032	96	96	RedSnake3		85	1	7
+MH032	96	96	RedSnake0	        85	3	7
+MH032	96	96	BlackSnake		85	30	7
+MH032	96	96	BlackSnake3	        85	2	7
+MH032	96	96	ThreeSnakes		85	20	7
+MH032	96	96	ThreeSnakes0	        85	1	7
+MH032	96	96	AntNest		85	10	7
+MH032	96	96	Protector		85	6	5
+MH032	96	96	Protector0		85	2	10
+MH032	96	96	Gladiator3	85	30	60
+
+;战士炼狱十五层
+MH033	100	100	RedSnake   	95	50	7
+MH033	100	100	RedSnake3		95	5	7
+MH033	100	100	BlackSnake		95	50	7
+MH033	100	100	BlackSnake3  	95	5	6
+MH033	100	100	ThreeSnakes	 	95	50	6
+MH033	100	100	ThreeSnakes0 	95	5	7
+MH033	100	100	Sheyao0	 	95	30	15
+MH033	100	100	Sheyao		95	10	30
+MH033	100	100	SnakeKing	95	4	60
+MH033	100	100	AntNest		95	20	7
+MH033	100	100	Gladiator3	95	30	60
+
+;法师炼狱十五层
+MH034	100	100	RedSnake   	95	50	7
+MH034	100	100	RedSnake3		95	5	7
+MH034	100	100	BlackSnake		95	50	7
+MH034	100	100	BlackSnake3  	95	5	6
+MH034	100	100	ThreeSnakes	 	95	50	6
+MH034	100	100	ThreeSnakes0 	95	5	7
+MH034	100	100	Sheyao0	 	95	30	15
+MH034	100	100	Sheyao		95	10	30
+MH034	100	100	SnakeKing	95	4	60
+MH034	100	100	AntNest		95	20	7
+MH034	100	100	Gladiator3	95	30	60
+
+;道士炼狱十五层
+MH035	120	130	RedSnake   	95	50	7
+MH035	120	130	RedSnake3		95	5	7
+MH035	120	130	BlackSnake		95	50	7
+MH035	120	130	BlackSnake3  	95	5	6
+MH035	120	130	ThreeSnakes	 	95	50	6
+MH035	120	130	ThreeSnakes0 	95	5	7
+MH035	120	130	Sheyao0	 	95	30	15
+MH035	120	130	Sheyao		95	10	30
+MH035	120	130	SnakeKing	95	4	60
+MH035	120	130	AntNest		95	20	7
+MH035	120	130	Gladiator3	95	30	60
+
+;红池
+MH036	117	90	Spider		100	20	3
+MH036	117	90	SandScorpion		100	30	3
+MH036	117	90	SandScorpion0		100	1	3
+MH036	117	90	SandSculpture		100	60	3
+MH036	117	90	SandSculpture0		100	2	3
+MH036	117	90	OtsuchiSnake		100	60	3
+MH036	117	90	OtsuchiSnake0		100	2	3
+MH036	117	90	GreatApe		100	90	3
+MH036	117	90	GreatApe0		100	3	3
+MH036	117	90	地狱奴		100	40	10
+
+;战士炼狱十七层
+MH037	136	136	LittleRascal	120	100	8
+MH037	136	136	LittleRascal0	120	4	8
+MH037	136	136	EvilStatue	120	70	8
+MH037	136	136	EvilStatue0	120	3	8
+MH037	136	136	EvilGuard	120	70	8
+MH037	136	136	EvilGuard0	120	3	8
+MH037	136	136	EvilArcher	120	70	8
+MH037	136	136	EvilArcher0	120	3	8
+MH037	136	136	Protector  	120	1	5
+MH037	136	136	Protector0		120	3	5
+MH037	136	136	Gladiator4	120	30	60
+
+;法师炼狱十七层
+MH038	120	120	LittleRascal	120	100	8
+MH038	120	120	LittleRascal0	120	4	8
+MH038	120	120	EvilStatue	120	70	8
+MH038	120	120	EvilStatue0	120	3	8
+MH038	120	120	EvilGuard	120	70	8
+MH038	120	120	EvilGuard0	120	3	8
+MH038	120	120	EvilArcher	120	70	8
+MH038	120	120	EvilArcher0	120	3	8
+MH038	120	120	Protector		120	1	5
+MH038	120	120	Protector0		120	3	5
+MH038	120	120	Gladiator4	120	30	60
+
+;道士炼狱十七层
+MH039	150	140	LittleRascal	120	100	8
+MH039	150	140	LittleRascal0	120	4	8
+MH039	150	140	EvilStatue	120	70	8
+MH039	150	140	EvilStatue0	120	3	8
+MH039	150	140	EvilGuard	120	70	8
+MH039	150	140	EvilGuard0	120	3	8
+MH039	150	140	EvilArcher	120	70	8
+MH039	150	140	EvilArcher3	120	3	8
+MH039	150	140	Protector		120	1	5
+MH039	150	140	Protector0		120	3	5
+MH039	150	140	Gladiator4	120	30	60
+
+;战士炼狱十八层
+MH040	200	200	EvilStatue	150	65	8
+MH040	200	200	EvilStatue0	150	15	8
+MH040	200	200	EvilStatue3	150	1	60
+MH040	200	200	EvilStatue3	150	3	8
+MH040	200	200	SpiritGuard	150	65	8
+MH040	200	200	SpiritGuard0	150	15	8
+MH040	200	200	SpiritGuard00	150	3	8
+MH040	200	200	EvilGuard	150	65	8
+MH040	200	200	EvilGuard0	150	15	8
+MH040	200	200	EvilGuard3	150	3	8
+MH040	200	200	EvilArcher	150	65	8
+MH040	200	200	EvilArcher0	150	15	8
+MH040	200	200	EvilArcher3	150	3	8
+MH040	200	200	CounterSpirit		150	1	120
+MH040	200	200	Gladiator4	150	30	60
+
+;法师炼狱十八层
+MH041	200	200	EvilStatue	150	65	8
+MH041	200	200	EvilStatue0	150	15	8
+MH041	200	200	EvilStatue3	150	1	60
+MH041	200	200	EvilStatue3	150	3	8
+MH041	200	200	SpiritGuard	150	65	8
+MH041	200	200	SpiritGuard0	150	15	8
+MH041	200	200	SpiritGuard00	150	3	8
+MH041	200	200	EvilGuard	150	65	8
+MH041	200	200	EvilGuard0	150	15	8
+MH041	200	200	EvilGuard3	150	3	8
+MH041	200	200	EvilArcher	150	65	8
+MH041	200	200	EvilArcher0	150	15	8
+MH041	200	200	EvilArcher3	150	3	8
+MH041	200	200	CounterSpirit		150	1	120
+MH041	200	200	Gladiator4	150	30	60
+
+;道士炼狱十八层
+MH042	200	200	EvilStatue	150	65	8
+MH042	200	200	EvilStatue0	150	15	8
+MH042	200	200	EvilStatue3	150	1	60
+MH042	200	200	EvilStatue3	150	3	8
+MH042	200	200	SpiritGuard	150	65	8
+MH042	200	200	SpiritGuard0	150	15	8
+MH042	200	200	SpiritGuard00	150	3	8
+MH042	200	200	EvilGuard	150	65	8
+MH042	200	200	EvilGuard0	150	15	8
+MH042	200	200	EvilGuard3	150	3	8
+MH042	200	200	EvilArcher	150	65	8
+MH042	200	200	EvilArcher0	150	15	8
+MH042	200	200	EvilArcher3	150	3	8
+MH042	200	200	CounterSpirit		150	1	120
+MH042	200	200	Gladiator4	150	30	60
+
+;战士炼狱沼泽
+MH055	370	70	Spider		40	10	10
+MH055	320	158	Spider		70	30	10
+MH055	224	106	HuozuGhost	150	150	20
+MH055	224	106	HuozuGhost0	150	3	60
+MH055	354	205	HuozuGhost	100	80	20
+MH055	241	225	HuozuGhost	80	30	20
+MH055	245	278	HuozuGhost	30	20	18
+MH055	131	40	HuozuGhost	20	25	18
+MH055	167	41	HuozuGhost	20	25	18
+MH055	320	70	HuozuGhost	50	30	20
+MH055	366	153	HuozuGhost	60	40	20
+MH055	315	192	狼妖1		50	10	18
+MH055	217	190	Executioner	150	80	25
+MH055	245	278	Executioner	40	20	25
+MH055	131	40	Executioner	20	10	25
+MH055	255	280	Executioner	30	15	25
+MH055	255	280	Executioner0	100	2	60
+MH055	167	41	Mengqizu	20	10	25
+MH055	255	280	Mengqizu	30	15	25
+MH055	382	54	Chieftain	10	10	20
+MH055	370	70	ThreeSnakes		40	20	15
+MH055	313	60	CaneMonster		100	5	15
+MH055	105	218	Ghost		150	150	20
+MH055	241	225	Ghost		80	50	20
+MH055	256	40	Ghost		40	30	18
+MH055	131	40	Ghost		20	15	18
+MH055	167	41	Ghost		20	15	18
+MH055	226	66	Ghost		30	20	18
+MH055	172	51	Ghost		50	40	18
+MH055	122	286	Ghost		50	30	18
+MH055	122	286	Ghost0		150	3	60
+MH055	327	277	Ghost		50	30	18
+MH055	224	106	Gladiator4	150	30	60
+
+;法师炼狱沼泽
+MH056	370	70	Spider		40	10	10
+MH056	320	158	Spider		70	30	10
+MH056	224	106	HuozuGhost	150	150	20
+MH056	224	106	HuozuGhost0	150	3	60
+MH056	354	205	HuozuGhost	100	80	20
+MH056	241	225	HuozuGhost	80	30	20
+MH056	245	278	HuozuGhost	30	20	18
+MH056	131	40	HuozuGhost	20	25	18
+MH056	167	41	HuozuGhost	20	25	18
+MH056	320	70	HuozuGhost	50	30	20
+MH056	366	153	HuozuGhost	60	40	20
+MH056	315	192	狼妖1		50	10	18
+MH056	217	190	Executioner	150	80	25
+MH056	245	278	Executioner	40	20	25
+MH056	131	40	Executioner	20	10	25
+MH056	255	280	Executioner	30	15	25
+MH056	255	280	Executioner0	100	2	60
+MH056	167	41	Mengqizu	20	10	25
+MH056	255	280	Mengqizu	30	15	25
+MH056	382	54	Chieftain	10	10	20
+MH056	370	70	ThreeSnakes		40	20	15
+MH056	313	60	CaneMonster		100	5	15
+MH056	255	280	Balrog		15	5	25
+MH056	105	218	Ghost		150	150	20
+MH056	241	225	Ghost		80	50	20
+MH056	256	40	Ghost		40	30	18
+MH056	131	40	Ghost		20	15	18
+MH056	167	41	Ghost		20	15	18
+MH056	226	66	Ghost		30	20	18
+MH056	172	51	Ghost		50	40	18
+MH056	122	286	Ghost		50	30	18
+MH056	122	286	Ghost0		150	3	60
+MH056	327	277	Ghost		50	30	18
+MH056	224	106	ShadeWarrior	150	2	40
+MH056	224	106	Gladiator4	150	30	60
+
+;道士炼狱沼泽
+MH057	370	70	Spider		40	10	10
+MH057	320	158	Spider		70	30	10
+MH057	224	106	HuozuGhost	150	150	20
+MH057	224	106	HuozuGhost0	150	3	60
+MH057	354	205	HuozuGhost	100	80	20
+MH057	241	225	HuozuGhost	80	30	20
+MH057	245	278	HuozuGhost	30	20	18
+MH057	131	40	HuozuGhost	20	25	18
+MH057	167	41	HuozuGhost	20	25	18
+MH057	320	70	HuozuGhost	50	30	20
+MH057	366	153	HuozuGhost	60	40	20
+MH057	315	192	狼妖1		50	10	18
+MH057	217	190	Executioner	150	80	25
+MH057	245	278	Executioner	40	20	25
+MH057	131	40	Executioner	20	10	25
+MH057	255	280	Executioner	30	15	25
+MH057	255	280	Executioner0	100	2	60
+MH057	167	41	Mengqizu	20	10	25
+MH057	255	280	Mengqizu	30	15	25
+MH057	382	54	Chieftain	10	10	20
+MH057	370	70	ThreeSnakes		40	20	15
+MH057	313	60	CaneMonster		100	5	15
+MH057	255	280	Balrog		15	5	25
+MH057	105	218	Ghost		150	150	20
+MH057	241	225	Ghost		80	50	20
+MH057	256	40	Ghost		40	30	18
+MH057	131	40	Ghost		20	15	18
+MH057	167	41	Ghost		20	15	18
+MH057	226	66	Ghost		30	20	18
+MH057	172	51	Ghost		50	40	18
+MH057	122	286	Ghost		50	30	18
+MH057	122	286	Ghost0		150	3	60
+MH057	327	277	Ghost		50	30	18
+MH057	224	106	ShadeWarrior	150	2	40
+MH057	224	106	Gladiator4	150	30	60
+
+;MH054	桃园
+MH054	125	125	Zombie1		105	60	6
+MH054	125	125	BlackSnake3		105	3	60
+MH054	125	125	Zombie10		105	1	6
+MH054	125	125	RoaringFlame		105	6	15
+MH054	125	125	Zombie2		105	60	6
+MH054	125	125	Zombie20		105	1	6
+MH054	125	125	Skeleton		105	60	6
+MH054	125	125	Skeleton0		105	1	6
+MH054	125	125	CorpseKing2		105	30	10
+MH054	125	125	CorpseKing		105	10	20
+MH054	125	125	尸王3		105	3	120
+MH054	125	125	Sheyao0		105	25	15
+MH054	125	125	Sheyao		105	5	30
+MH054	125	125	Jingang		105	22	15
+MH054	125	125	Jingang0		105	2	30
+MH054	125	125	BigGame	105	1	60
+MH054	125	125	ThreeSnakes3		105	20	10
+MH054	125	125	ThreeSnakes0		105	1	10
+MH054	125	125	SnakeKing	105	2	60
+MH054	125	125	Spearman10	105	62	6
+MH054	125	125	Spearman0	105	1	6
+MH054	125	125	尸卫战将100	105	2	10
+MH054	125	125	CorpseTyrant		105	1	120
+MH054	125	125	EvilArcher	105	40	8
+MH054	125	125	EvilArcher3	105	22	8
+MH054	125	125	EvilArcher0	105	2	8
+MH054	125	125	EvilGuard	105	40	8
+MH054	125	125	EvilGuard3	105	22	8
+MH054	125	125	EvilGuard0	105	2	8
+MH054	125	125	CounterSpirit		105	1	120
+MH054	125	125	Gorefiend		105	40	8
+MH054	125	125	Gorefiend0		105	1	8
+MH054	125	125	DemonLux		105	20	10
+MH054	125	125	DemonLux0		105	1	20
+MH054	125	125	Fiendish	105	1	120
+MH054	125	125	AntNest		105	20	8
+MH054	125	125	InsectQueen	105	10	8
+MH054	125	125	地狱奴		105	100	6
+MH054	125	125	Gladiator5       170     30     6
+
+;炼狱魔境一层
+ NL001  175  210            DeadCorpse  200  120    5
+ NL001  175  210        BraveWarrior  200  220    5
+ NL001  175  210        CorpseGeneral  200  220    5
+ NL001  175  210        Spearman  150  160    5
+ NL001  175  210         DeadCorpse0  200    6    5
+ NL001  175  210     BraveWarrior0  200    6    5
+ NL001  175  210     CorpseGeneral0  200    6    5
+ NL001  175  210     Spearman0  150    6    5
+ NL001  175  210     Gladiator2  200	30    60
+
+;炼狱魔境二层
+ NL002  200  200          DeadCorpse10  200  220    9
+ NL002  200  200      BraveWarrior10  200  220    9
+ NL002  200  200      CorpsGeneral10  200  200   10
+ NL002  200  200      Spearman10  200  180   10
+ NL002  200  200           DeadCorpse0  200   10   12
+ NL002  200  200       BraveWarrior0  200    8   12
+ NL002  200  200       CorpseGeneral0 200    8   12
+ NL002  200  200       Spearman0  200   10   12
+ NL002  200  200       Gladiator2  200 	30    60
+
+;炼狱魔境三层
+ NL003  125  125            CopperPerson  120  150    7
+ NL003  125  125           CopperPerson0  120    4   10
+ NL003  125  125          BronzeBeast  120  140    7
+ NL003  125  125         BronzeBeast0  120    4   10
+ NL003  125  125          SwordWielder  120  180    7
+ NL003  125  125         SwordWielder0  120    4   10
+ NL003  125  125            Shiren  120  120    7
+ NL003  125  125           Shiren0  120    3   12
+ NL003  125  125          Leadman  120  100   10
+ NL003  125  125         Leadman0  120    3   16
+ NL003  125  125         Jingang  120    3   20
+ NL003  125  125          Jingang0  120    5   40
+ NL003  125  125       Gladiator2  120	30    60
+
+;炼狱魔境四层
+ NL004  220  210          Beetle  220   30    8
+ NL004  220  210          RedSnake  220  220    9
+ NL004  220  210         RedSnake0  220    6   15
+ NL004  220  210         RedSnake3  220   20   15
+ NL004  220  210          BlackSnake  220  200    9
+ NL004  220  210         BlackSnake0  220    6   15
+ NL004  220  210         BlackSnake3  220   20   15
+ NL004  220  210          ThreeSnakes  220  150   10
+ NL004  220  210         ThreeSnakes0  220    4   15
+ NL004  220  210         ThreeSnakes3  220   20   15
+ NL004  220  210         Sheyao0  220   20   30
+ NL004  220  210            AntNest  220   25    9
+ NL004  220  210            Gladiator3  220	30    60
+
+;炼狱魔境五层
+ NL005  370   70        HuozuGhost   40   10   10
+ Nl005   327  277    HuozuGhost0     150        2      6
+ NL005  320  158        HuozuGhost   70   20   10
+ NL005  224  106        HuozuGhost  150  110   20
+ NL005  224  106        HuozuGhost  150  40   20
+ NL005  354  205        HuozuGhost  100   80   20
+ NL005  241  225        HuozuGhost   80   30   20
+ NL005  241  225        HuozuGhost0   80   1   5
+ NL005  245  278        HuozuGhost   30   20   18
+ NL005  131   40        HuozuGhost   20   25   18
+ NL005  167   41        HuozuGhost0   20   5   10
+ NL005  320   70        HuozuGhost   50   30   20
+ NL005  366  153        HuozuGhost   60   40   20
+ NL005  315  192        HuozuGhost   50   10   18
+ NL005  217  190        HuozuGhost  150   80   25
+ NL005  245  278        HuozuGhost   40   20   25
+ NL005  131   40        HuozuGhost   20   10   25
+ NL005  370   70        HuozuGhost   40   20   15
+ NL005  167   41        HuozuGhost   20   20   25
+ NL005  255  280            Ghost   30   20   25
+ NL005  382   54            Ghost   10   20   20
+ NL005  255  280            Ghost   30   20   25
+ NL005  313   60            Ghost  100   20   15
+ NL005  105  218            Ghost  150  110   20
+ NL005  105  218            Ghost0  150  30   20
+ NL005  241  225            Ghost   80   50   20
+ NL005  256   40            Ghost   40   30   18
+ NL005  131   40            Ghost   20   20   18
+ NL005  167   41            Ghost   20   20   20
+ NL005  226   66            Ghost   30   20   18
+ NL005  172   51            Ghost   50   40   18
+ NL005  122  286            Ghost   50   30   18
+ NL005  122  286            Ghost  150   20   60
+ NL005  327  277            Ghost   50   30   18
+ NL005  232  194          幽影武士0  150   1  30
+ NL005  327  277      HuozuGhost  150   1  720
+NL005  327  277      Gladiator4  150 	30    60
+
+;炼狱魔境六层
+ NL006   27   29      TreasureGuard    0    1   5
+ NL006   44   44     EvilFounder001   15    1   75
+ NL006   44   44     EvilFiend001   15    1   60
+ NL006   44   44         EvilCounter007   15    1   45
+ NL006   44   44         EvilTyrant001   15    1   30
+ NL006   44   44         招财猪   15    6   30
+
+;炼狱魔境七层
+NL007 44 44 EvilStatue0  50 2 60
+NL007 44 44 EvilGuard0 30 8 5
+NL007 44 44 SpiritGuard0 30 8 4
+NL007 44 44 EvilStatue0 30 8 5
+NL007 44 44 EvilArcher0 30 8 5
+NL007 44 44 EvilGuard 30 7 8
+NL007 44 44 SpiritGuard 30 7 8
+NL007 44 44 EvilStatue 30 7 8
+NL007 44 44 EvilArcher 30 7 10
+NL007 46 50 EvilGuard 50 32 10
+NL007 46 50 SpiritGuard 50 32 8
+NL007 46 50 EvilStatue 50 32 10
+NL007 46 50 EvilArcher 40 32 12
+NL007 46 50 EvilGuard 50 10 5
+NL007 46 50 SpiritGuard 50 10 8
+NL007 46 50 EvilStatue 50 10 8
+NL007 46 50 EvilArcher 40 20 20
+NL007 22 22 EvilGuard0 5 1 5
+NL007 22 22 SpiritGuard0 5 1 4
+NL007 22 22 EvilStatue0 5 1 5
+NL007 22 22 EvilArcher0 3 1 5
+NL007 27 27 EvilGuard3 5 1 14
+NL007 27 27 逆魔卫士3 5 1 14
+NL007 27 27 EvilStatue3 5 1 14
+NL007 27 27 EvilArcher0 3 1 8
+NL007 46 50 EvilGuard0 80 1 16
+NL007 46 50 SpiritGuard00 80 1 16
+NL007 46 50 SpiritGuard0 80 1 16
+NL007 46 50 EvilStatue0 80 1 16
+NL007 46 50 EvilArcher0 60 1 8
+NL007 44 44 LittleRascal1 30 1 240
+NL007 44 44 LittleRascal0 30 2 240
+NL007 44 44 LittleRascal0 30 2 240
+NL007 44 44 LittleRascal0 30 2 240
+NL007 44 44 LuckySnowman0 30 1 120
+NL007 44 44 LuckySnowman 30 1 60
+NL007 44 44 LuckySnowman 30 1 60
+NL007 44 44 LuckySnowman 30 1 60
+NL007 46 50 Gladiator4  80 	30    30
+NL007 26 47 Mischievous  5 	5    60
+NL007 48 28 Mischievous  5 	5    60
+NL007 68 48 Mischievous  5 	5    60
+
+;炼狱魔境八层
+NL008 125 125 Gargoyle 110 150 10
+NL008 119 119 BarbedDevil0   110 2  60
+NL008 125 125 Gargoyle0 110 2 10
+NL008 125 125 CaneMonster 110 130 10
+NL008 125 125 CaneMonster0 110 1 9
+NL008 125 125 BarbedDevil 110 130 10
+NL008 125 125 BarbedDevil0 110 1 9
+NL008 125 125 Gorefiend 110 52 10
+NL008 125 125 DemonLux 110 44 10
+NL008 125 125 LuckySnowman0 110 1 120
+NL008 125 125 LuckySnowman 110 1 60
+NL008 125 125 LuckySnowman 110 1 60
+NL008 125 125 LuckySnowman 110 1 60
+;NL008 125 125 GoldMonster4 110 1 60
+NL008 125 125 Gladiator4 110  30    30
+NL008 103 157 Mischievous 5 4 60
+NL008 52 85 Mischievous 5 4 60
+NL008 70 166 Mischievous 5 4 60
+NL008 118 40 Mischievous 5 4 60
+NL008 130 110 BlackAshura0 5 1 60
+NL008 130 110 BlackAshura0 5 1 60
+NL008 130 110 BlackAshura0 5 1 60
+NL008 130 110 BlackAshura0 5 1 60
+NL008 165 165 EldeAshura 5 1 60
+NL008 165 165 BlackAshura0 5 1 60
+NL008 165 165 BlackAshura0 5 1 60
+NL008 165 165 BlackAshura0 5 1 60
+NL008 165 165 BlackAshura0 5 1 60
+NL008 82 157 EldeAshura 5 1 60
+NL008 82 157 BlackAshura0 5 1 60
+NL008 82 157 BlackAshura0 5 1 60
+NL008 82 157 BlackAshura0 5 1 60
+NL008 82 157 BlackAshura0 5 1 60
+NL008 167 76 EldeAshura 5 1 60
+NL008 167 76 BlackAshura0 5 1 60
+NL008 167 76 BlackAshura0 5 1 60
+NL008 167 76 BlackAshura0 5 1 60
+NL008 167 76 BlackAshura0 5 1 60
+NL008 125 125 EvilSpirit 110 1 240
+
+;炼狱魔境九层
+NL009  205  195        BeastRider  100  66   10
+NL009   211     186    BeastRider0        80        2      60 
+NL009  205  195      BeastRider0  100    3   12
+NL009  205  195          SoulBringer  100  60   10
+NL009  205  195        SoulBringer0  100    4   12
+NL009  205  195          RoaringFlame  100   8   15
+NL009  205  195        RoaringFlame  100    1   20
+NL009  155  232          RoaringFlame   10    4   20
+NL009  155  232          SoulBringer   10    6   20
+NL009  155  232        BeastRider   10    8   15
+NL009  205  195        LuckySnowman0  100    1  120
+NL009  205  195       LuckySnowman  100    1   60
+NL009  205  195       LuckySnowman   100    1   60
+NL009  205  195       LuckySnowman  100    1   60
+NL009  155  232       RoaringFlame0    100    1  26
+NL009  155  232       BeastRider0    100    1  15
+NL009  155  232       Gladiator5 110 30 60
+
+;炼狱魔境十层
+ NL010  258  235    BeastlyArcher   40   32   15
+ Nl010   207     198    Commander0     180        2      60
+ NL010  258  235  BeastlyArcher0  150    2   60
+ NL010  207  189      FireBeast  200  76   25
+ NL010  186  200      FireBeast   50   32  25
+ NL010  240  346      FireBeast   45   16   25
+ NL010  306  215      FireBeast   30   7   25
+ NL010  298  113      FireBeast   20   7   25
+ NL010  307   70      FireBeast   40   16   25
+ NL010  160  111      FireBeast   60   16   25
+ NL010   72  184      FireBeast   30   7   25
+ NL010   36  126      FireBeast   15   7   25
+  NL010   36  126      HuozuGhost0   15   1   600
+ NL010   94   88      FireBeast   15   7   25
+ NL010   94   88    FireBeast0  100    5   60
+ NL010  207  189    SpearBeast  150  80  10
+ NL010  307   70    ShadeWarrior   40   24   10
+ NL010  307   70  SpearBeast0  100    5   60
+ NL010  207  189            Balrog  200  100   15
+ NL010  106  242            Balrog   30   30   15
+ NL010  146  287            Balrog   30   45   15
+ NL010  240  346            Balrog   45   50   15
+ NL010  347  182            Balrog   15   10   15
+ NL010  160  111            Balrog  150  140   15
+ NL010   72  184            Balrog   60   40   15
+ NL010  238   72          Balrog0  150    2   60
+ NL010  197  154        Commander  170  90   25
+ NL010  197  154      Commander0  170    5   60
+ NL010  197  154      幽影武士0  170    2   60
+ NL010  197  154        LuckySnowman0  170    1  120
+ NL010  197  154       LuckySnowman  170    1   60
+ NL010  197  154       LuckySnowman  170    1   60
+ NL010  197  154       LuckySnowman  170    1   60
+ NL010  106  242            EvilEye0   100   4   60
+ NL010  197  154       Gladiator5 170 30 60
+
+;NL011  炼狱魔城一层（战士）
+NL011   50  129 FireBeast  130 5   10
+NL011   50  129   Commander0  130   1   60
+NL011   50  129 Commander   130 200  8
+NL011   50  129 Messenger   130 1  720
+NL011   50  129 Ghost   130 200  8
+NL011   50  129 HuozuGhost   130 120  10
+NL011   50  129 Gladiator3       130     30     60
+
+;NL012  炼狱魔城一层（法师）
+NL012   50  129 FireBeast  130 5   10
+NL012   50  129   Commander0  130   1   60
+NL012   50  129 Commander   130 250  15
+NL012   50  129 Messenger   130 1  720
+NL012   50  129 Ghost   130 250  13
+NL012   50  129 HuozuGhost   130 120  13
+NL012   50  129 Gladiator3   130 30  60
+
+;炼狱魔城一层（道士）
+NL013   50  129 FireBeast  130 5   13
+NL013   50  129   Commander0  130   1   60
+NL013   50  129 Commander  130 200  15
+NL013   50  129 Messenger   130 1  720
+NL013   50  129 Ghost   130 200  14
+NL013   50  129 鬼方火卒4   130 120  13
+NL013   50  129 Gladiator3   130 30  60
+
+;炼狱魔城二层（战士）
+NL014   149 155 FireBeast 150 5   10
+NL014   149 155   Commander0  150   1   60
+NL014   149 155 Commander 150 200   10
+NL014   149 155 Messenger 150 1   480
+NL014   149 155 Ghost 150 200   10
+NL014   149 155 鬼方火卒6 150 200   10
+NL014   149 155 Gladiator3 150 30   60
+
+;炼狱魔城二层（法师）
+NL015   149 155 FireBeast 150 5   13
+NL015   149 155   Commander0  150   1   60
+NL015   149 155 Commander 150 250   12
+NL015   149 155 Messenger 150 1   480
+NL015   149 155 Ghost 150 200   12
+NL015   149 155 HuozuGhost 150 200   12
+NL015   149 155 Gladiator3 150 30   60
+
+;炼狱魔城二层（道士）
+NL016   149 155 地火兽骑将150 5   13
+NL016   149 155   Commander0  150   1   60
+NL016   149 155 Commander 150 200   13
+NL016   149 155 Messenger 150 1   480
+NL016   149 155 Ghost 150 200   14
+NL016   149 155 鬼方火卒6 150 200   13
+NL016   149 155 Gladiator3 150 30   60
+
+;炼狱魔城三层（战士）
+NL017   212 195 FireBeast 200 10  5
+NL017   212 195   Commander0  200   1   60
+NL017   212 195 Commander 200 300  8
+NL017   212 195 Messenger 200 1  360
+NL017   212 195 Ghost 200 300  8
+NL017   212 195 鬼方火卒8 200 220  5
+NL017   212 195 Gladiator3 200 30   60
+
+;炼狱魔城三层（法师）
+NL018   212 195 FireBeast 200 10  10
+NL018   212 195   Commander0  200   1   60
+NL018   212 195 Messenger 200 1  360
+NL018   212 195 猛魔统领8 200 300  12
+NL018   212 195 Ghost 200 300  10
+NL018   212 195 HuozuGhost 200 220  8
+NL018   212 195 Gladiator3 200 30   60
+
+;炼狱魔城三层（道士）
+NL019   212 195 FireBeast 200 10  5
+NL019   212 195   Commander0  200   1   60
+NL019   212 195 Commander 200 300  8
+NL019   212 195 Messenger 200 1  360
+NL019   212 195 Ghost 200 300  8
+NL019   212 195 鬼方火卒8 200 220  8
+NL019   212 195 Gladiator3 200 30 60
+
+;UnknownPalace
+L003	150	150	Deer1		120     3        60
+L003	150	150	Deer		120     1        90
+L003	150	150	Scarecrow1		120     6        60
+L003	150	150	稻草人		120     1        90
+L003	150	150	SharkKing1		120     12       60
+L003	150	150	SharkKing		120     1        180
+L003	150	150	Ape1		120     12       60
+L003	150	150	GreatApe0		120     1        90
+L003	150	150	CorpseKing1		120     25       60
+L003	150	150	CorpseKing		120     1        90
+L003	150	150	CorpseGeneral1	120     50       60
+L003	150	150	尸卫战将11	120     1        120
+L003	150	150	金刚人1		120     50       60
+L003	150	150	Jingang		120     1        120
+L003	150	150	Sheyao1		120     100      60
+L003	150	150	Sheyao		120     1        180
+L003	150	150	SnakeKing1	120     150      60
+L003	150	150	SnakeKing	120     1        180
+L003	150	150	CorpseTyrant1		120     200      60
+L003	150	150	CorpseTyrant		120     1        240
+
+;魔隐村
+6	160	160	LittleRascal	150	100	45
+6	70	70	LittleRascal	150	100	30
+6	200	200	LittleRascal	150	100	60
+6	260	280	LittleRascal	150	100	60
+
+;爱的长廊
+L001	77	66	LittleRascal	65	40	5
+L001	77	66	Spearman10	65	40	5
+L001	77	66	SwordWielder		65	40	5
+L001	77	66	Shiren		65	40	5
+L001	77	66	BronzeBeast		65	40	5
+L001	77	66	LittleRascal	65	40	10
+L001	77	66	Spearman10	65	40	10
+L001	77	66	SwordWielder		65	40	10
+L001	77	66	Shiren		65	40	10
+L001	77	66	BronzeBeast		65	40	10
+L001	77	66	尸霸9		65	1	60
+
+;玄冰古道东
+ BT001   87   70        EvilGuard   70   30    8
+ BT001   87   70        GoldMonster1   15   1    60
+ BT001   87   70        SpiritGuard   70   30    8
+ BT001   87   70       逆魔卫士3   70    1   20
+ BT001   87   70      EvilArcher   70   30    8
+ BT001   87   70        EvilStatue   70   30    8
+ BT001   87   70       EvilGuard0   70    3   15
+ BT001   87   70       SpiritGuard0   70    3   20
+ BT001   87   70     EvilArcher0   70    5   15
+ BT001   87   70       EvilStatue0   70    3   15
+
+;环冰道东区
+ BT002  103   89        EvilGuard  100  100    8
+ BT002  103   89        EvilStatue  100   60   15
+  BT002  103   89        GoldMonster3  10   1   60
+ BT002  103   89       逆魔卫士3  100    1   10
+ BT002  103   89        SpiritGuard  100  100    8
+ BT002  103   89      EvilArcher  100   70    8
+ BT002  103   89       EvilGuard0  100    5   15
+ BT002  103   89       EvilStatue0  100    6   20
+ BT002  103   89       SpiritGuard0  100    5    8
+ BT002  133   34        EvilGuard   15    8    8
+ BT002   78   83          Beetle   10    3   10
+ BT002   78   83          RedSnake   15    5   10
+ BT002   73  138         DeadCorpse100   15    5   10
+ BT002  151  121            IceCone   20   20    5
+ BT002  123  140           IceCone   40   30   3
+ BT002  123  140           IceCone   40   30   3
+
+;玄冰古道南
+ BT003   63   73          DeadCorpse10   60   50   10
+ BT003   63   73      Spearman10   60   10   10
+  BT003   63   73      GoldMonster2   5   1   60
+ BT003   63   73      BraveWarrior10   60   40   10
+ BT003   63   73       尸卫战将2   60    1   20
+ BT003   63   73      尸卫战将4   60   20   10
+ BT003   63   73           DeadCorpse0   60    5   12
+ BT003   63   73       Spearman0   60    5   12
+ BT003   63   73       BraveWarrior0   60    4   10
+ BT003   63   73       CorpseGeneral0   60    5   15
+
+;环冰道南区
+ BT004   94   90      BraveWarrior10  100  100    8
+ BT004   94   90      尸卫战将4  100  100    8
+  BT004   94   90      GoldMonster3  10  1    60
+ BT004   94   90       尸卫战将2  100    1   10
+ BT004   94   90          DeadCorpse10  100   50    8
+ BT004   94   90      Spearman10  100   80    8
+ BT004   94   90       BraveWarrior0  100    1   10
+ BT004   94   90       CorpseGeneral0  100    5   10
+ BT004   94   90           DeadCorpse0  100    5    8
+ BT004   94   90       Spearman0  100    8   10
+ BT004   83   49        EvilGuard   10    8   10
+ BT004   64   71          Scarab   10    3   10
+ BT004   64   71          RedSnake   20    4   10
+ BT004   86  115            IceCone   20   20    5
+ BT004   86  115           IceCone   40   30   3
+ BT004   86  115           IceCone   40   30   3
+
+;玄冰古道西
+ BT005   69   83          Scarab   80   30   10
+ BT005   69   83          Beetle   80   40   10
+  BT005   69   83          GoldMonster3   10   1   60
+ BT005   69   83         Beetle   80    1   20
+ BT005   69   83         Scarab0   80    3   10
+ BT005   69   83          RedSnake   80   40   15
+ BT005   69   83          BlackSnake   80   35    8
+ BT005   69   83         BlackSnake0   80    3   15
+ BT005   61   43          Beetle   10    5   10
+ BT005   88  108          BlackSnake   10    5   10
+
+;环冰道西区
+ BT006  105  100          Scarab  100   80   10
+ BT006  105  100          Beetle  100   60   15
+ BT006  105  100          GoldMonster4  5   1   60
+ BT006  105  100         Beetle  100    1    8
+ BT006  105  100         Scarab0  100    8   10
+ BT006  105  100          RedSnake  100   80   10
+ BT006  105  100          BlackSnake  100   80   10
+ BT006  105  100         BlackSnake0  100    5   20
+ BT006  105  100         Sheyao0  100   13   30
+ BT006  105  100          Sheyao  100    1   60
+ BT006  168   80        EvilStatue   30    8   10
+ BT006  168   80        EvilGuard   15    6   10
+ BT006  143  147         DeadCorpse100   15    8   10
+ BT006  143  147     Spearman100   15    5   10
+ BT006   35  115            IceCone   15   30    5
+ BT006   56  120           IceCone   20   20    5
+  BT006   56  120           IceCone   20   30    5
+
+;CounterSpiritHall
+ NB001   68   48        KingCounter   20    1  480
+ NB001   50   	46      EvilStatue3 50   	1 60
+ NB001   68   48        EvilGuard   50   10    5
+ NB001   50   46        SpiritGuard   50   30    5
+ NB001   50   46        EvilStatue   50   30    5
+ NB001   68   48      EvilArcher   50   10    5
+
+;真将军殿
+ NB002   38   34          CrazyTyrant   20    1  360
+ NB002   38   	34      CorpseGeneral0 40   	2   	60
+ NB002   38   34        CorpseGeneral   40   20    5
+ NB002   38   34        Spearman   40   20    5
+ NB002   38   34        BraveWarrior   40   20    5
+
+;玄冰殿
+ NB003   48   41          KingSnake   20    1  360
+ NB003   48   	41      黑蛇妖5   	40  	1    	60
+ NB003   48   41          Sheyao   20    5  120
+ NB003   48   41          RedSnake   40   30    5
+ NB003   48   41          BlackSnake   40   30    5
+ NB003   48   41        SnakeKing   20    2  240
+
+;焰火屠魔
+HD001	90	77	CorpsGeneral51	70	90	15
+HD001	90	77	BraveWarrior51	70	90	15
+HD001	90	77	SpiritGuard51	70	45	15
+HD001	90	77	SpiritGuard52	70	6	45
+HD001	90	77	EvilArcher51	70	45	15
+HD001	90	77	EvilArcher52	70	6	45
+HD001	90	77	Flamingo51  	70	30	30
+HD001	90	77	Leadman51  	70	30	30
+HD001	90	77	CaneMonster51    	70	45	30
+HD003	90	77	Gargoyle51	70	45	30
+HD003	90	77	Gargoyle52	70	6	45
+
+;万魔大殿
+HD003	50	50	Sheyao51	50	3	30
+HD003	50	50	Jingang51	50	5	30
+HD003	50	50	CorpseKing51		50	5	30
+HD003	50	50	BigGame51	50	2	30
+HD003	50	50	CorpsGeneral51	50	30	15
+HD003	50	50	BraveWarrior51	50	30	15
+HD003	50	50	SpiritGuard51	50	15	15
+HD003	50	50	SpiritGuard52	50	2	45
+HD003	50	50	EvilArcher51	50	15	15
+HD003	50	50	EvilArcher52	50	2	45
+
+HD003	50	50	Flamingo51  	50	10	30
+HD003	50	50	BeastRider51	50	10	30
+HD003	50	50	BeastRider52	50	1	30
+HD003	50	50	RoaringFlame51  	50	2	30
+HD003	50	50	CaneMonster51    	50	15	30
+HD003	50	50	Gorefiend51    	50	15	30
+HD003	50	50	Gargoyle51	50	15	30
+HD003	50	50	Gargoyle52	50	2	45
+
+HD003	50	50	CorpseTyrant51		40	1	60
+HD003	50	50	Counter51    	40	1	120
+HD003	50	50	HighFounder51	40	1	120
+HD003	50	50	Fiendish51	40	1	120
+
+;七星珠
+0	580	335	StickDog7		10	2	60
+2	290	550	Coyote7		10	2	60
+H071	250	265	BraveWarrior7	12	2	60
+H072	210	185	CorpseGeneral7	12	2	60
+S011	190	190	EvilStatue7	12	2	60
+S013	250	250	SpiritGuard7	12	2	60
+M007	150	130	Leadman7		12	2	60
+M009	95	155	Jingang7		12	2	60
+N001	205	240	RedSnake7		12	2	60
+N002	250	215	BlackSnake7		12	2	60
+TT001	320	300	Flamingo7		12	2	60
+TT002	55	155	Flamingo7		12	2	60
+7	130	40	Ghost7		12	2	60
+MC001	100	180	Commander7	12	2	60
+
+;神威狱试炼场
+SWYSL	100	100	固本心魔11	70	3	10
+SWYSL	100	100	固本心魔22	70	3	10
+SWYSL	100	100	固本心魔33	70	3	10
+SWYSL	100	100	固本心魔44	70	3	10
+SWYSL	100	100	固本心魔55	70	3	10
+SWYSL	100	100	固本心魔66	70	3	10
+
+SWYSL	100	100	培元心魔11	70	3	10
+SWYSL	100	100	培元心魔22	70	3	10
+SWYSL	100	100	培元心魔33	70	3	10
+SWYSL	100	100	培元心魔44	70	3	10
+SWYSL	100	100	培元心魔55	70	3	10
+SWYSL	100	100	培元心魔66	70	3	10
+
+SWYSL	100	100	明心心魔11	70	3	10
+SWYSL	100	100	明心心魔22	70	3	10
+SWYSL	100	100	明心心魔33	70	3	10
+SWYSL	100	100	明心心魔44	70	3	10
+SWYSL	100	100	明心心魔55	70	3	10
+SWYSL	100	100	明心心魔66	70	3	10
+
+SWYSL	100	100	大悟心魔11	70	3	10
+SWYSL	100	100	大悟心魔22	70	3	10
+SWYSL	100	100	大悟心魔33	70	3	10
+SWYSL	100	100	大悟心魔44	70	3	10
+SWYSL	100	100	大悟心魔55	70	3	10
+SWYSL	100	100	大悟心魔66	70	3	10
+
+;灵犀仙岛
+LXXD	75	85	丛林豹		80	40	10
+LXXD	75	85	天狮兽		80	15	10
+LXXD	75	85	麒麟兽		80	5	10
+lxxd 	75	85	赤翎凤		200	3	180
+
+LXXD	75	85	丛林豹		80	8	20	0	1	丛林豹	1
+LXXD	75	85	天狮兽		80	3	20	0	1	天狮兽	1
+LXXD	75	85	麒麟兽		80	1	20	0	1	麒麟兽	1
+LXXD	75	85	赤翎凤		250	1	600	0	1	赤翎凤	1
+
+LXXD	121	141	踏云豹1		10	1	60
+LXXD	121	141	震天狮1		10	1	60
+LXXD	121	141	圣麒麟1		10	1	60
+
+;神威狱一层
+4个明心
+12个固本
+12个培元
+
+;天魔宝藏
+SWYBAOZANG 45 125 夺宝心魔 0 1 10
+SWYBAOZANG 49 129 夺宝心魔 0 1 10
+
+SWYBAOZANG 155 144 夺宝心魔 0 1 10
+SWYBAOZANG 159 140 夺宝心魔 0 1 10
+
+SWYBAOZANG 133 132 夺宝心魔 0 1 10
+SWYBAOZANG 137 128 夺宝心魔 0 1 10
+
+SWYBAOZANG 101 143 夺宝心魔 0 1 10
+SWYBAOZANG 105 147 夺宝心魔 0 1 10
+
+SWYBAOZANG 110 112 夺宝心魔 6 10 10
+
+SWYBAOZANG 110 112 夺宝心魔 50 10 10
+
+SWYBAOZANG 60 170 固本心魔 3 3 10
+
+SWYBAOZANG 70 155 培元心魔 3 3 10
+
+SWYBAOZANG 110 112 明心心魔 50 6 10
+
+SWYBAOZANG 110 112 大悟心魔 50 3 10
+
+;固本心魔
+J001	160	154	固本心魔0 	150 	5   	30
+J002	150	150	固本心魔0 	150 	5   	30
+J003	120	130	固本心魔0 	120 	5   	30
+J004	198	200	固本心魔0 	200  	5  	30
+J005	200	200	固本心魔0 	200  	5  	30
+J006	93	93	固本心魔0 	100     3       30
+
+TT001	225	237	固本心魔0	200	5	30
+TT002	200	200	固本心魔0	200	5	30
+TT003	198	200	固本心魔0	200	5	30
+
+MC001	139	140	固本心魔0	150	5	30
+MC002	172	164	固本心魔0	150	5	30
+MC003	214	202	固本心魔0	190	5	30
+
+NL001	175	210	固本心魔0	200	4	30
+NL002	200	200	固本心魔0	200	4	30
+NL003	125	125	固本心魔0	120	4	30
+NL004	220	210	固本心魔0	220	4	30
+NL005	224	106	固本心魔0	150	4	30
+NL007	44	44	固本心魔0	50	4	30
+NL008	125	125	固本心魔0	110	4	30
+NL009	205	195	固本心魔0	100	4	30
+NL010	207	189	固本心魔0	200	4	30
+
+M001	148	144	固本心魔0	140	5	30
+M002	201	197	固本心魔0	180	5	30
+M003	187	165	固本心魔0	180	5	30
+M004	75	75	固本心魔0	70	5	30
+M005	112	76	固本心魔0	80	5	30
+M006	103	110	固本心魔0	100	5	30
+M007	121	121	固本心魔0	120	5	30
+M008	81	74	固本心魔0	70	5	30
+M009	128	116	固本心魔0	110	5	30
+M010	125	125	固本心魔0	120	5	30
+MH054	130	130	固本心魔0	130	5	30
+
+0	400	400	固本心魔0	400	5	30
+1	250	250	固本心魔0	250	5	30
+2	250	500	固本心魔0	500	5	30
+3	300	500	固本心魔0	500	5	30
+4	250	250	固本心魔0	250	5	30
+5	350	350	固本心魔0	350	5	30
+7	200	200	固本心魔0	200	1	30
+
+;培元心魔
+J006	93	93	培元心魔0	100     3       30
+J007	125	133	培元心魔0	125	3	30
+J008	50	50	培元心魔0	50	3	30
+J009	130	127	培元心魔0	125	3	30
+J011	150	150	培元心魔0	150	5	30
+J012	200	180	培元心魔0	200	5	30
+
+TT004	200	200	培元心魔0	200	5	30
+TT005	200	200	培元心魔0	200	5	30
+TT006	180	200	培元心魔0	200	5	30
+TT007	200	200	培元心魔0	200	5	30
+TT008	196	177	培元心魔0	200	5	30
+
+MC004	127	122	培元心魔0	100	4	30
+MC005	222	26	培元心魔0	150	4	30
+MC006	258	235	培元心魔0	40	4	30
+
+NL001	175	210	培元心魔0	200	3	30
+NL002	200	200	培元心魔0	200	3	30
+NL003	125	125	培元心魔0	120	3	30
+NL004	220	210	培元心魔0	220	3	30
+NL005	224	106	培元心魔0	150	3	30
+NL007	44	44	培元心魔0	50	3	30
+NL008	125	125	培元心魔0	110	3	30
+NL009	205	195	培元心魔0	100	3	30
+NL010	207	189	培元心魔0	200	3	30
+
+M011	75	75	培元心魔0	70	5	30
+M012	127	127	培元心魔0	120	5	30
+M013	74	74	培元心魔0	70	5	30
+M014	74	77	培元心魔0	60	5	30
+M015	94	116	培元心魔0	80	5	30
+M018	125	125	培元心魔0	120	5	30
+M020	76	70	培元心魔0	75	5	30
+M021	125	115	培元心魔0	120	5	30
+M022	50	50	培元心魔0	40	5	30
+M023	120	127	培元心魔0	120	5	30
+MH054	130	130	培元心魔0	130	4	30
+
+S023	48	50	培元心魔0	50	4	30
+S024	48	50	培元心魔0	40	4	30
+S026	72	76	培元心魔0	20	4	30
+
+0	400	400	培元心魔0	400	3	30
+1	250	250	培元心魔0	250	3	30
+2	250	500	培元心魔0	500	3	30
+3	300	500	培元心魔0	500	3	30
+4	250	250	培元心魔0	250	3	30
+5	350	350	培元心魔0	350	3	30
+7	200	200	培元心魔0	200	1	30
+
+;明心心魔
+J007	125	133	明心心魔0	125	3	30
+J008	50	50	明心心魔0	50	3	30
+J009	130	127	明心心魔0	125	3	30
+TT009	205	195	明心心魔0	100	5	30
+MC007	146	146	明心心魔0	100	4	30
+MC008	141	129	明心心魔0	100	4	30
+MG001	159	147	明心心魔0	150	4	30
+
+NL001	175	210	明心心魔0	200	2	30
+NL002	200	200	明心心魔0	200	2	30
+NL003	125	125	明心心魔0	120	2	30
+NL004	220	210	明心心魔0	220	2	30
+NL005	224	106	明心心魔0	150	2	30
+NL007	44	44	明心心魔0	50	2	30
+NL008	125	125	明心心魔0	110	2	30
+NL009	205	195	明心心魔0	100	2	30
+NL010	207	189	明心心魔0	200	2	30
+
+M024	155	150	明心心魔0	140	5	30
+M025	125	125	明心心魔0	110	5	30
+M026	150	150	明心心魔0	150	5	30
+M027	70	94	明心心魔0	70	5	30
+M028	130	120	明心心魔0	120	5	30
+M029	54	49	明心心魔0	50	5	30
+M030	92	111	明心心魔0	80	5	30
+M031	100	100	明心心魔0	80	5	30
+M032	101	88	明心心魔0	80	5	30
+MH054	130	130	明心心魔0	130	3	30
+
+S023	48	50	明心心魔0	50	1	30
+S024	48	50	明心心魔0	40	1	30
+S026	72	76	明心心魔0	20	1	30
+
+AS001	85	70	明心心魔0	80	5	30
+AS002	83	62	明心心魔0	70	5	30
+AS003	117	92	明心心魔0	100	5	30
+AS004	171	129	明心心魔0	200	5	30
+
+0	400	400	明心心魔0	400	2	30
+1	250	250	明心心魔0	250	2	30
+2	250	500	明心心魔0	500	2	30
+3	300	500	明心心魔0	500	2	30
+4	250	250	明心心魔0	250	2	30
+5	350	350	明心心魔0	350	2	30
+7	200	200	明心心魔0	200	1	30
+
+;大悟心魔
+MG001	159	147	大悟心魔0	150	1	30
+
+NL001	175	210	大悟心魔0	200	1	30
+NL002	200	200	大悟心魔0	200	1	30
+NL003	125	125	大悟心魔0	120	1	30
+NL004	220	210	大悟心魔0	220	1	30
+NL005	224	106	大悟心魔0	150	1	30
+NL007	44	44	大悟心魔0	50	1	30
+NL008	125	125	大悟心魔0	110	1	30
+NL009	205	195	大悟心魔0	100	1	30
+NL010	207	189	大悟心魔0	200	1	30
+MH054	130	130	大悟心魔0	130	1	30
+
+M024	155	150	大悟心魔0	140	1	30
+M025	125	125	大悟心魔0	110	1	30
+M026	150	150	大悟心魔0	150	1	30
+M027	70	94	大悟心魔0	70	1	30
+M028	130	120	大悟心魔0	120	1	30
+M029	54	49	大悟心魔0	50	1	30
+M030	92	111	大悟心魔0	80	1	30
+M031	100	100	大悟心魔0	80	1	30
+M032	101	88	大悟心魔0	80	1	30
+
+AS001	85	70	大悟心魔0	              80	2	30
+AS002	83	62	大悟心魔0	 	70	2	30
+AS003	117	92	大悟心魔0  	100	2	30
+AS004	171	129	大悟心魔0 	200	2	30
+
+0	400	400	大悟心魔0	400	1	30
+1	250	250	大悟心魔0 	250	1	30
+2	250	500	大悟心魔0	500	1	30
+3	300	500	大悟心魔0 	500	1	30
+4	250	250	大悟心魔0 	250	1	30
+5	350	350	大悟心魔0 	350	1	30
+7	200	200	大悟心魔0 	200	1	30
+
+HAIDI 	200	200	遗忘傀儡		200 	30 	4
+HAIDI 	200	200	龙虾守卫		200 	30 	5
+HAIDI 	200	200	螃蟹            	200 	30 	5
+HAIDI 	200	200	遗忘水鬼		200 	30 	5
+HAIDI 	200	200	遗忘勇者		200 	30 	5
+HAIDI 	200	200	水母        	        200 	30 	5
+HAIDI 	200	200	海龟		        200 	30 	5
+HAIDI 	200	200	龙虾警卫		10	2	240
+
+HAIDIN1 	200	200	龙虾守卫	200 	30 	5
+HAIDIN1	        200	200	螃蟹护卫队      200 	30 	5
+HAIDIN1 	200	200	皇族护卫队	200 	30 	5
+HAIDIN1	        200	200	水母        	200 	30 	5
+HAIDIN1 	200	200	贪财的螃蟹王	10	1       240
+HAIDIN1 	200	200	吃我         	10	1       240
+HAIDIN1 	200	200	蛇妖皇     	10	1       240
+HAIDIN1 	55	33	贪吃的霸王鱼    0	1       5
+
+HAIDIN2	        200	200	遗忘傀儡	200 	30 	4
+HAIDIN2 	200	200	龙虾守卫	200 	30 	5
+HAIDIN2 	200	200	螃蟹        	200 	30 	5
+HAIDIN2 	200	200	遗忘水鬼	200 	30 	5
+HAIDIN2 	200	200	遗忘勇者	200 	30 	5
+HAIDIN2 	200	200	水母        	200 	30 	5
+HAIDIN2	        200	200	海龟		200 	30 	5
+HAIDIN2 	200	200	贪财的螃蟹王	10	1       240
+HAIDIN2 	200	200	吃我         	10	1       240
+HAIDIN2 	200	200	WildBeast     	10	1       240
+HAIDIN2 	56	67	贪吃的霸王鱼    0	1       5
+
+HAIDIN3	        200	200	螃蟹护卫队      200 	30 	5
+HAIDIN3 	200	200	皇族护卫队	200 	30 	5
+HAIDIN3	        200	200	遗忘傀儡	200 	30 	4
+HAIDIN3 	200	200	龙虾守卫	200 	30 	5
+HAIDIN3 	200	200	螃蟹        	200 	30 	5
+HAIDIN3 	200	200	遗忘水鬼	200 	30 	5
+HAIDIN3 	200	200	遗忘勇者	200 	30 	5
+HAIDIN3 	200	200	水母        	200 	30 	5
+HAIDIN3	        200	200	海龟		200 	30 	5
+HAIDIN3 	200	200	龙虾警卫	10	5	240
+HAIDIN3 	200	200	贪财的螃蟹王	10	1       240
+HAIDIN3 	200	200	吃我         	10	1       240
+HAIDIN3 	200	200	巫妖王     	10	1       240
+
+HaidiYJ 	200	200	水母        	        200 	30 	5
+HaidiYJ 	200	200	龙虾守卫         	200 	30 	5
+HaidiYJ	        200	200	海龟		        200 	30 	5
+HaidiYJ 	200	200	海妖法师        	200 	30 	5
+HaidiYJ 	200	200	海妖战士        	200 	30 	5
+HaidiYJ 	200	200	海妖狂战士        	200 	30 	5
+HaidiYJ 	200	200	龙虾禁卫军        	200 	30 	5
+HaidiYJ 	123	129	魔鲨左将军     	        10	1       240	0	1
+HaidiYJ 	115	133	魔鲨右将军     	        10	1       240	0	1
+HaidiYJ 	162	131	九幽蟠龙之子     	10	1       240	0	1
+HaidiYJ 	200	200	龙卷风       	        200 	30 	5
+
+HaidiDG 	200	200	龙虾禁卫军        	200 	30 	5
+HaidiDG 	200	200	幽灵海妖        	200 	30 	5
+HaidiDG 	200	200	龙虾禁卫军统领        	200 	5 	5
+HaidiDG 	200	200	螃蟹        	        200 	30 	5
+HaidiDG 	200	200	水母        	        200 	30 	5
+
+HaidiZYD 	200	200	螃蟹        	        200 	30 	5
+HaidiZYD 	200	200	水母        	        200 	30 	5
+HaidiZYD 	200	200	龙虾禁卫军        	200 	30 	5
+HaidiZYD 	200	200	幽灵海妖        	200 	30 	5
+HaidiZYD 	200	200	海妖狂战士        	200 	30 	5
+HaidiZYD 	89	64	章鱼大王     	        10	1       240	 0	1
+HaidiZYD 	96	59	章鱼触手     	        10	1       240	 0	1
+HaidiZYD 	81	72	章鱼触手        	10	1       240	 0	1
+HaidiZYD 	95	75	章鱼触手        	10	1       240	 0	1
+HaidiZYD 	86	51	章鱼触手        	10	1       240	 0	1

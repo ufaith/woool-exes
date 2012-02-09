@@ -1,0 +1,2 @@
+[@main]
+#CALL [\Heroes\MagicRitual.txt] @MagicRitual

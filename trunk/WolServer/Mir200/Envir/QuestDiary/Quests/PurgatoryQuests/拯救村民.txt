@@ -1,0 +1,91 @@
+[@PenIsland]
+{
+#IF
+HasTask 1
+#SAY
+可以完成的任务：\
+<Quests--拯救村民/@_RW_fulfilTaskDesp_999_fulfil>\
+\
+<离开/@exit>
+#ELSESAY
+可以接的任务：\
+<Quests--拯救村民/@_RW_taskDesp_999>\
+\
+<离开/@exit>
+
+[@_RW_taskDesp_999]
+中毒的村民实在太多了，唉，我实在忙不过来啊…\
+年轻人，希望你可以帮助我多收集一些兔肉，我好炼制药物。\
+<事不宜迟，我这就去/@_RW_accept_999>                <先等等吧/@exit>
+
+[@_RW_accept_999]
+#ACT
+AddTask 1
+#SAY
+中毒的村民实在太多了，唉，我实在忙不过来啊…\
+这样吧，你帮我收集5个兔肉，我就给你一些奖励，怎么样？\
+村子附近（200，300）有很多兔出没，<color=green 你杀死兔后，对着兔>\
+<color=green 的尸体按ALT+鼠标左键，就可以获得兔肉了。凑齐了5个兔>\
+肉记得回来找我。\
+<离开/@exit>
+
+[@_RW_fulfilTaskDesp_999_fulfil]
+#IF
+checkitem Rabbit 5
+#ACT
+EndTask 1
+take Rabbit 5
+CHANGEEXP + 1000
+#SAY
+太感谢你了！有了这些兔肉，我又可以救助一些村民了。\
+<离开/@exit>
+#ELSESAY
+你还没有完成任务！\
+<离开/@exit>
+}
+
+[@海角村]
+{
+#IF
+HasTask 36
+#SAY
+可以完成的任务：\
+<Quests--拯救村民/@_RW_fulfilTaskDesp_999_fulfil>\
+\
+<离开/@exit>
+#ELSESAY
+可以接的任务：\
+<Quests--拯救村民/@_RW_taskDesp_999>\
+\
+<离开/@exit>
+
+[@_RW_taskDesp_999]
+中毒的村民实在太多了，唉，我实在忙不过来啊…\
+年轻人，希望你可以帮助我多收集一些蟾酥，我好炼制药物。\
+<事不宜迟，我这就去/@_RW_accept_999>                <先等等吧/@exit>
+
+[@_RW_accept_999]
+#ACT
+AddTask 36
+#SAY
+中毒的村民实在太多了，唉，我实在忙不过来啊…\
+这样吧，你帮我收集5个蟾酥，我就给你一些奖励，怎么样？\
+村子附近（460，600）有很多癞蛤蟆出没，<color=green 你杀癞蛤蟆后，>\
+<color=green 对着癞蛤蟆的尸体按ALT+鼠标左键，就可以获得蟾酥了。>\
+凑齐了5个蟾酥记得回来找我。\
+<离开/@exit>
+
+[@_RW_fulfilTaskDesp_999_fulfil]
+#IF
+checkitem DriedToad 5
+#ACT
+EndTask 36
+take DriedToad 5
+CHANGEEXP + 1000
+#SAY
+太感谢你了！有了这些蟾酥，我又可以救助一些村民了。\
+<离开/@exit>
+#ELSESAY
+你还没有完成任务！\
+<离开/@exit>
+}

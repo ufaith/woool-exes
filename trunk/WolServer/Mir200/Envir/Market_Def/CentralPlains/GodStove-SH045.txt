@@ -1,0 +1,2 @@
+[@main]
+#CALL [\Features\GodStove.txt] @×Ï½ğÉñÂ¯

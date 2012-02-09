@@ -1,0 +1,907 @@
+[@凝结符石]
+{
+\\
+　　武器打造之最高境界，即以天地乾坤为熔炉，采自然灵\
+气为辅料，铸造至高无上的顶级武器。而这种铸造方式的第\
+一步就是要将存在于天地之间的灵气凝结在一起形成一个神\
+秘符石，这样就可以在铸造武器时将这个符石作为原料投入\
+熔炉，从而铸成利兵。当然凝结神秘符石也不是没有代价的，\
+如果你肯给我些元宝我就帮你凝结神秘符石！\
+<给你几个元宝来凝结神秘符石/@duanzaofushi>		\
+<领取神秘符石/@woyaolingqufushi>		<我想花费10000金币拆分符石/@chaifenfushi>\
+<我要赠送神秘符石给别人/@zengsong>    <返回/@main>\
+
+[@chaifenfushi]
+#ACT
+ShowSpotDlg 255 1 @拆分符石
+
+[@拆分符石]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+UPGRADEUSERITEM $PARAM(0) 71 - $PARAM(2)
+give 神秘符石 1
+UPGRADEUSERITEM $PARAM(10) 71 + $PARAM(2)
+SENDMSG 5 成功拆分神秘符石！
+#ELSEACT
+SENDMSG 5 金币不足10000，无法拆分！
+
+[@duanzaofushi]
+\\
+　　把元宝交给我，我会帮你凝结出神秘符石。\
+　　每<Color=green 两>个小时我可以凝结出一块符石，每个元宝可以凝结\
+出<Color=green 两>块符石。\
+　　上交的元宝无法取回，你每过<Color=green 两>个小时就可以到我这里\
+领一次符石和大量的经验，当然也可以存在我这里。\
+　　<Color=green 离线时也可以凝结神秘符石。>\
+\
+<给你元宝凝结符石/@jiaoyuanbao>		<返回/@lingqufushi>\
+
+[@jiaoyuanbao]
+#ACT
+QUERYVAL 0 1 4 @申请凝结 你想上交多少个元宝？
+
+[@申请凝结]
+#IF
+CHECKGAMEGOLD < $STR(M0)
+#ACT
+break
+#SAY
+\\
+　　你没有这么多元宝啊！\
+\
+　　<谢谢你的提醒。/@exit>\
+
+#IF
+CHECKGAMEGOLD \ $STR(M0)
+#ACT
+GAMEGOLD - $STR(M0)
+mov P0 2
+MULT P0 $STR(M0)
+Calcvar HUMAN 凝结中符石 + $STR(P0)
+#SAY
+\\
+您成功上交了<$STR(M0)>个元宝。现在可领取的符石数目是:{Color=green <$HUMAN(可领取符石)>}块,\
+还有{Color=green <$HUMAN(凝结中符石)>}块在锻造中,
+
+#IF
+CHECKVAR HUMAN 凝结剩余时 < 1
+CHECKVAR HUMAN 凝结剩余分 < 1
+#SAY
+下一块符石产出时间:<Color=green 2>小时<Color=green 0>分。\
+\
+<我知道了/@exit>
+#ELSESAY
+\\
+下一块符石产出时间:{Color=green <$HUMAN(凝结剩余时)>}小时{Color=green <$HUMAN(凝结剩余分)>}分。\
+\
+<我知道了/@exit>
+
+[@woyaolingqufushi]
+#IF
+CHECKVAR HUMAN 凝结中符石 < 1
+CHECKVAR HUMAN 可领取符石 < 1
+#SAY
+\\
+你好象没有凝结过符石啊？\
+\
+<是的/@lingqufushi>\
+#ELSESAY
+\\
+　　你现在已经凝结出了<$HUMAN(可领取符石)>个神秘符石，你还有<$HUMAN(凝结中符石)>\
+个符石在凝结中。\
+<我要领取神秘符石/@queren>  <返回/@lingqufushi>\
+
+[@queren]
+\\
+　　你现在已经凝结出了<$HUMAN(可领取符石)>个神秘符石，你确定领取吗？\
+\
+\
+<确定/@woyao>  <返回/@woyaolingqufushi>\
+
+[@woyao]
+#IF
+CHECKVAR HUMAN 可领取符石 > 0
+#ACT
+give 神秘符石 1
+UPGRADEUSERITEM $PARAM(10) 71 + $HUMAN(可领取符石)
+MOV P0 300000
+MULT P0 $HUMAN(可领取符石)
+CHANGEEXP + $STR(P0)
+SENDMSG 5 恭喜您领到了<$HUMAN(可领取符石)>块神秘符石！
+SENDMSG 5 神秘符石的神力使您获得了<$STR(P0)>经验!
+mov D1 $HUMAN(可领取符石)
+Calcvar HUMAN 可领取符石 = 0
+goto @符石公告
+#SAY
+\\
+　　恭喜你，你已经成功领出了<$STR(D1)>块符石！\
+\
+　　<知道了/@exit>
+#ELSESAY
+\\
+　　现在凝结的时间还没到啊，你等会再来吧！\
+\
+　　<谢谢你的提醒。/@exit>\
+
+[@符石公告]
+#IF
+large P0 6000000
+#ACT
+SendMsg 10 恭喜%s玩家在中州铁匠处锻造神秘符石获得了<$STR(P0)>经验！
+
+[@zengsong]
+\\
+    你可以将你凝结出的神秘符石赠送给别人，受赠人必须\
+和你有如下之一关系：<Color=green 好友，师徒，夫妻>。我会将你包裹中\
+所有的神秘符石先存到我这里，你可以通知受赠人到我这里\
+领取符石。如果别人赠送了符石给你，你也可以在我这里领\
+取。\
+\
+<我要赠送神秘符石/@woyaozengsong>		\
+<我要领取别人赠送的神秘符石/@lingqu>		\
+<返回/@lingqufushi>\
+
+[@woyaozengsong]
+#ACT
+QUERYVAL 0 0 14 @赠送符石 请正确输入所要赠送的角色名
+
+[@赠送符石]
+\\
+　　您要把神秘符石赠送给{Color=yellow <$STR(S0)>}\
+\
+　　<确认/@sendConfirmF>\
+　　<取消/@exit>\
+
+[@sendConfirmF]
+#IF
+equal $MASTERNAME $STR(S0)
+#ACT
+goto @可以赠送
+break
+
+#IF
+checkisfriend $STR(S0)
+#ACT
+goto @可以赠送
+break
+
+#IF
+equal $DEARNAME $STR(S0)
+#ACT
+goto @可以赠送
+break
+#ELSESAY
+\\
+此人跟你没有关系！受赠人必须和你有如下之一关系：<Color=green 好友>，\
+<Color=green 师徒，夫妻>。\
+\
+\
+　　<知道了/@exit>\
+
+[@可以赠送]
+#IF
+checkitem 神秘符石 1
+#ACT
+mov P0
+goto @拿走神秘符石
+mov S1 你这次赠与了
+inc S1 $STR(S0)
+inc S1  
+inc S1 $STR(P0)
+inc S1 块神秘符石，快通知对方领取吧！
+SENDMSG 5 $STR(S1)
+LoadExVar P1 $STR(S0) 领取神秘符石 ..\QuestDiary\GameData\个人变量\领取神秘符石.txt
+inc P1 $STR(P0)
+SaveExVar $STR(P1) $STR(S0) 领取神秘符石 ..\QuestDiary\GameData\个人变量\领取神秘符石.txt
+$STR(S0).LOADVAR HUMAN 领取神秘符石 ..\QuestDiary\GameData\个人变量\领取神秘符石.txt
+#SAY
+\\
+　　赠送成功！赶快通知他领取神秘符石吧！\
+\
+\
+　　<知道了/@exit>
+#ELSEACT
+SENDMSG 5 你的包裹内没有神秘符石！  
+#ELSESAY
+\\
+　　我现在忙着呢，你一会再来吧！\
+\
+\
+　　<知道了/@exit>
+
+[@lingqu]
+#IF
+CHECKVAR HUMAN 领取神秘符石 > 0
+CHECKBAGSIZE 1
+#ACT
+give 神秘符石 1
+UPGRADEUSERITEM $PARAM(10) 71 + $HUMAN(领取神秘符石)
+CALCVAR HUMAN 领取神秘符石 = 0
+SAVEVAR HUMAN 领取神秘符石 ..\QuestDiary\GameData\个人变量\领取神秘符石.txt
+SENDMSG 5 你已领取[神秘符石]
+close
+break
+
+#IF
+CHECKVAR HUMAN 领取神秘符石 > 0
+#ACT
+SENDMSG 5 你的包裹空间不足，请至少保留一个空位后再来领取。
+close
+#ELSEACT
+SENDMSG 5 你没有东西可领取。
+close
+
+[@拿走神秘符石]
+#IF
+checkitem 神秘符石 1
+#ACT
+inc P0 $ITEMINFO[$ITEMMAKEINDEX(神秘符石)].OVERLAP
+take 神秘符石 1
+goto @拿走神秘符石
+
+}
+
+[@凝结记时]
+{
+#IF
+CHECKVAR HUMAN 凝结剩余时 = 0
+CHECKVAR HUMAN 凝结剩余分 = 0
+CHECKVAR HUMAN 凝结中符石 > 0
+#ACT
+CALCVAR HUMAN 凝结剩余时 = 2
+CALCVAR HUMAN 凝结剩余分 = 0
+
+#IF
+CHECKVAR HUMAN 凝结剩余时 > 0
+CHECKVAR HUMAN 凝结剩余分 < 1
+#ACT
+CALCVAR HUMAN 凝结剩余时 - 1
+CALCVAR HUMAN 凝结剩余分 = 60
+
+#IF
+CHECKVAR HUMAN 凝结剩余分 > 0
+#ACT
+CALCVAR HUMAN 凝结剩余分 - 1
+
+#IF
+CHECKVAR HUMAN 凝结剩余时 = 0
+CHECKVAR HUMAN 凝结剩余分 = 0
+#ACT
+CALCVAR HUMAN 凝结中符石 - 1
+CALCVAR HUMAN 可领取符石 + 1
+}
+
+[@两种合成]
+{
+\\
+　　合成武器必须有黑铁矿石做为基础材料，金矿、银矿、\
+铁矿、宝石做为辅助材料。宝石将有可能提高你武器的属性\
+而用纯度越高的矿石将会合成出高耐久武器。\
+　　<我想马上合成武器/@@weaponcompound>    <返回/@main>\
+　　<Color=green 人们发现，如果付出强大的毅力，通过长期不懈的努力，>\
+<Color=green 可以凝结出神奇的神秘符石。将这些神秘的符石与各种材料>\
+<Color=green 按照一定的秘方进行组合，可以锻造出无比强大的顶级武器！>\
+你想现在合成一把武器吗？\
+　　<我想用神秘符石合成顶级武器/@chakanpeifang>   <返回/@main>\
+
+[@chakanpeifang]
+\\
+　　只要按照固定的配方放入符石和装备，就可以凝结出稀\
+世的极品武器。\
+\
+<我要合成战士类极品武器/@zhanshi>\
+<我要合成法师类极品武器/@fashi>\
+<我要合成道士类极品武器/@daoshi>\
+<返回/@hechengwuqi>\
+
+[@zhanshi]
+\\
+战士类极品武器：\
+\
+<裁决/@caijue>\
+<雷裂刀/@leiliedao>\
+<雷霆怒斩/@leitingnuzhan>\
+<屠龙刀/@tulongdao>\
+<返回/@chakanpeifang>\
+
+[@caijue]
+\\
+裁决合成配方：\
+\
+<Color=green 裁决=神秘符石*88+幸运符+纯度大于等于50的矿石*5>\
+\
+<我要合成裁决/@@FUSHI&3>    <返回/@zhanshi>\
+
+[@leiliedao]
+\\
+雷裂刀合成配方：\
+\
+<Color=green 雷裂刀＝神秘符石*888+幸运符+火晶石(小)*2+纯度大于等>\
+<Color=green 于50的矿石*3>\
+\
+<我要合成雷裂刀/@@FUSHI&6>    <返回/@zhanshi>\
+
+[@leitingnuzhan]
+\\
+雷霆怒斩合成配方：\
+\
+<Color=green 雷霆怒斩＝神秘符石*8888+幸运符+火晶石(中)*2+纯度大>\
+<Color=green 于等于50的矿石*3>\
+\
+<我要合成雷霆怒斩/@@FUSHI&9>    <返回/@zhanshi>\
+
+[@tulongdao]
+\\
+屠龙刀合成配方：\
+\
+<Color=green 屠龙刀＝神秘符石*88888+幸运符+火晶石(大)*2+纯度大于>\
+<Color=green 等于50的矿石*2+屠龙精铁>\
+\
+<我要合成屠龙刀/@@FUSHI&12>    <返回/@zhanshi>\
+
+[@fashi]
+\\
+法师类极品武器：\
+\
+<骨玉/@guyu>\
+<霹雳法杖/@pilifazhang>\
+<龙牙利刃/@longyaliren>\
+<嗜魂/@shihun>\
+<返回/@chakanpeifang>\
+
+[@guyu]
+\\
+骨玉合成配方：\
+\
+<Color=green 骨玉=神秘符石*88+幸运符+纯度大于等于50的矿石*5>\
+\
+<我要合成骨玉/@@FUSHI&2>    <返回/@fashi>\
+
+[@pilifazhang]
+\\
+霹雳法杖合成配方：\
+\
+<Color=green 霹雳法杖＝神秘符石*888+幸运符+冰月石(小)*2+纯度大于>\
+<Color=green 等于50的矿石*3>\
+\
+<我要合成霹雳法杖/@@FUSHI&5>    <返回/@fashi>\
+
+[@longyaliren]
+\\
+龙牙利刃合成配方：\
+\
+<Color=green 龙牙利刃＝神秘符石*8888+幸运符+冰月石(中)*2+纯度大于>\
+<Color=green 等于50的矿石*3>\
+\
+<我要合成龙牙利刃/@@FUSHI&8>    <返回/@fashi>\
+
+[@shihun]
+\\
+嗜魂合成配方：\
+\
+<Color=green 嗜魂＝神秘符石*88888+幸运符+冰月石(大)*2+纯度大于等>\
+<Color=green 于50的矿石*2+嗜魂精铁>\
+\
+<我要合成嗜魂/@@FUSHI&11>    <返回/@fashi>\
+
+[@daoshi]
+\\
+道士类极品武器：\
+\
+<龙纹/@longwen>\
+<道玄剑/@daoxuanjian>\
+<逍遥无极扇/@xiaoyaowujishan>\
+<倚天剑/@yitianjian>\
+<返回/@chakanpeifang>\
+
+[@longwen]
+\\
+龙纹合成配方：\
+\
+<Color=green 龙纹=神秘符石*88+幸运符+纯度大于等于50的矿石*5>\
+\
+<我要合成龙纹/@@FUSHI&1>    <返回/@daoshi>\
+
+[@daoxuanjian]
+\\
+道玄剑合成配方：\
+\
+<Color=green 道玄剑＝神秘符石*888+幸运符+水云石(小)*2+纯度大于等>\
+<Color=green 于50的矿石*3>\
+\
+<我要合成道玄剑/@@FUSHI&4>    <返回/@daoshi>\
+
+[@xiaoyaowujishan]
+\\
+逍遥无极扇合成配方：\
+\
+<Color=green 逍遥无极扇＝神秘符石*8888+幸运符+水云石(中)*2+纯度大>\
+<Color=green 于等于50的矿石*3>\
+\
+<我要合成逍遥无极扇/@@FUSHI&7>    <返回/@daoshi>\
+
+[@yitianjian]
+\\
+倚天剑合成配方：\
+\
+<Color=green 倚天剑＝神秘符石*88888+幸运符+水云石(大)*2+纯度大于>\
+<Color=green 等于50的矿石*2+倚天精铁>\
+\
+<我要合成倚天剑/@@FUSHI&10>    <返回/@daoshi>\
+
+;P0 所需要的神秘符石数
+;P1 需要高于50纯度的矿石数量
+;P2 检测已放入高于50纯度的矿石数量
+;P3 检测是否放入指定数量的神秘符石 1为已放入指定数量的神秘符石
+;P4 检测是否放入指定数量的宝石
+;P5 检测是否放入精铁
+;S0 合成出的武器名
+;S1 需要2个什么样的宝石
+[@@FUSHI] 
+#IF
+random 1
+#ACT
+mov P2 0
+mov P3 0
+mov P4 0
+mov P5 0
+mov S1 1
+
+#IF
+equal $SCRIPTPARAM(0) 1
+#ACT
+mov P0 88
+mov P1 5
+mov S0 龙纹
+
+#IF
+equal $SCRIPTPARAM(0) 2
+#ACT
+mov P0 88
+mov P1 5
+mov S0 骨玉
+
+#IF
+equal $SCRIPTPARAM(0) 3
+#ACT
+mov P0 88
+mov P1 5
+mov S0 裁决
+
+#IF
+equal $SCRIPTPARAM(0) 4
+#ACT
+mov P0 888
+mov P1 3
+mov S0 道玄剑
+mov S1 水云石(小)
+
+#IF
+equal $SCRIPTPARAM(0) 5
+#ACT
+mov P0 888
+mov P1 3
+mov S0 霹雳法杖
+mov S1 冰月石(小)
+
+#IF
+equal $SCRIPTPARAM(0) 6
+#ACT
+mov P0 888
+mov P1 3
+mov S0 雷裂刀
+mov S1 火晶石(小)
+
+#IF
+equal $SCRIPTPARAM(0) 7
+#ACT
+mov P0 8888
+mov P1 3
+mov S0 逍遥无极扇
+mov S1 水云石(中)
+
+#IF
+equal $SCRIPTPARAM(0) 8
+#ACT
+mov P0 8888
+mov P1 3
+mov S0 龙牙利刃
+mov S1 冰月石(中)
+
+#IF
+equal $SCRIPTPARAM(0) 9
+#ACT
+mov P0 8888
+mov P1 3
+mov S0 雷霆怒斩
+mov S1 火晶石(中)
+
+#IF
+equal $SCRIPTPARAM(0) 10
+#ACT
+mov P0 88888
+mov P1 2
+mov S0 倚天剑
+mov S1 水云石(大)
+mov S2 倚天精铁
+
+#IF
+equal $SCRIPTPARAM(0) 11
+#ACT
+mov P0 88888
+mov P1 2
+mov S0 嗜魂
+mov S1 冰月石(大)
+mov S2 嗜魂精铁
+
+#IF
+equal $SCRIPTPARAM(0) 12
+#ACT
+mov P0 88888
+mov P1 2
+mov S0 屠龙刀
+mov S1 火晶石(大)
+mov S2 屠龙精铁
+
+#IF
+random 1
+#ACT
+dec P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(1)].NAME 铁矿
+large $ITEMINFO[$PARAM(1)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(1)].NAME 银矿
+large $ITEMINFO[$PARAM(1)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(1)].NAME 金矿
+large $ITEMINFO[$PARAM(1)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(1)].NAME 黑铁矿石
+large $ITEMINFO[$PARAM(1)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(1)].NAME 神秘符石
+large $ITEMINFO[$PARAM(1)].OVERLAP $STR(P0)
+#ACT
+mov P3 1
+
+#IF
+equal $ITEMINFO[$PARAM(1)].NAME $STR(S1)
+#ACT
+inc P4 1
+
+#IF
+equal $ITEMINFO[$PARAM(1)].NAME $STR(S2)
+#ACT
+inc P5 1
+
+#IF
+equal $ITEMINFO[$PARAM(2)].NAME 铁矿
+large $ITEMINFO[$PARAM(2)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(2)].NAME 银矿
+large $ITEMINFO[$PARAM(2)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(2)].NAME 金矿
+large $ITEMINFO[$PARAM(2)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(2)].NAME 黑铁矿石
+large $ITEMINFO[$PARAM(2)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(2)].NAME 神秘符石
+large $ITEMINFO[$PARAM(2)].OVERLAP $STR(P0)
+#ACT
+mov P3 1
+
+#IF
+equal $ITEMINFO[$PARAM(2)].NAME $STR(S1)
+#ACT
+inc P4 1
+
+#IF
+equal $ITEMINFO[$PARAM(2)].NAME $STR(S2)
+#ACT
+inc P5 1
+
+#IF
+equal $ITEMINFO[$PARAM(3)].NAME 铁矿
+large $ITEMINFO[$PARAM(3)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(3)].NAME 银矿
+large $ITEMINFO[$PARAM(3)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(3)].NAME 金矿
+large $ITEMINFO[$PARAM(3)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(3)].NAME 黑铁矿石
+large $ITEMINFO[$PARAM(3)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(3)].NAME 神秘符石
+large $ITEMINFO[$PARAM(3)].OVERLAP $STR(P0)
+#ACT
+mov P3 1
+
+#IF
+equal $ITEMINFO[$PARAM(3)].NAME $STR(S1)
+#ACT
+inc P4 1
+
+#IF
+equal $ITEMINFO[$PARAM(3)].NAME $STR(S2)
+#ACT
+inc P5 1
+
+#IF
+equal $ITEMINFO[$PARAM(4)].NAME 铁矿
+large $ITEMINFO[$PARAM(4)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(4)].NAME 银矿
+large $ITEMINFO[$PARAM(4)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(4)].NAME 金矿
+large $ITEMINFO[$PARAM(4)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(4)].NAME 黑铁矿石
+large $ITEMINFO[$PARAM(4)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(4)].NAME 神秘符石
+large $ITEMINFO[$PARAM(4)].OVERLAP $STR(P0)
+#ACT
+mov P3 1
+
+#IF
+equal $ITEMINFO[$PARAM(4)].NAME $STR(S1)
+#ACT
+inc P4 1
+
+#IF
+equal $ITEMINFO[$PARAM(4)].NAME $STR(S2)
+#ACT
+inc P5 1
+
+#IF
+equal $ITEMINFO[$PARAM(5)].NAME 铁矿
+large $ITEMINFO[$PARAM(5)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(5)].NAME 银矿
+large $ITEMINFO[$PARAM(5)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(5)].NAME 金矿
+large $ITEMINFO[$PARAM(5)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(5)].NAME 黑铁矿石
+large $ITEMINFO[$PARAM(5)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(5)].NAME 神秘符石
+large $ITEMINFO[$PARAM(5)].OVERLAP $STR(P0)
+#ACT
+mov P3 1
+
+#IF
+equal $ITEMINFO[$PARAM(5)].NAME $STR(S1)
+#ACT
+inc P4 1
+
+#IF
+equal $ITEMINFO[$PARAM(5)].NAME $STR(S2)
+#ACT
+inc P5 1
+
+#IF
+equal $ITEMINFO[$PARAM(6)].NAME 铁矿
+large $ITEMINFO[$PARAM(6)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(6)].NAME 银矿
+large $ITEMINFO[$PARAM(6)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(6)].NAME 金矿
+large $ITEMINFO[$PARAM(6)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(6)].NAME 黑铁矿石
+large $ITEMINFO[$PARAM(6)].DURA 9000
+#ACT
+inc P2 1
+
+#IF
+equal $ITEMINFO[$PARAM(6)].NAME 神秘符石
+large $ITEMINFO[$PARAM(6)].OVERLAP $STR(P0)
+#ACT
+mov P3 1
+
+#IF
+equal $ITEMINFO[$PARAM(6)].NAME $STR(S1)
+#ACT
+inc P4 1
+
+#IF
+equal $ITEMINFO[$PARAM(6)].NAME $STR(S2)
+#ACT
+inc P5 1
+
+#IF
+POS $ITEMINFO[$PARAM(10)].NAME 幸运符
+#ACT
+inc P2 1
+
+#IF
+large $SCRIPTPARAM(0) 9
+equal P2 3
+equal P3 1
+equal P4 2
+equal P5 1
+#ACT
+inc P0 1
+SMELTBOXRESULT 1 8 1
+break
+
+#IF
+large $SCRIPTPARAM(0) 3
+small $SCRIPTPARAM(0) 10
+equal P2 4
+equal P3 1
+equal P4 2
+#ACT
+inc P0 1
+SMELTBOXRESULT 1 8 1
+break
+
+#IF
+large $SCRIPTPARAM(0) 0
+small $SCRIPTPARAM(0) 4
+equal P2 6
+equal P3 1
+#ACT
+inc P0 1
+SMELTBOXRESULT 1 8 1
+#ELSEACT
+SMELTBOXRESULT 0 8 1
+MessageBox 缺少材料，无法进行合成！
+
+[@@FUSHIOK]
+#IF
+equal $ITEMINFO[$PARAM(10)].NAME 幸运符(捆)
+large $ITEMINFO[$PARAM(10)].DURA 0
+#ACT
+UPGRADEUSERITEM $PARAM(10) 20 - 1
+#ELSEACT
+takem $PARAM(10)
+
+#IF
+equal $ITEMINFO[$PARAM(1)].NAME 神秘符石
+#ACT
+UPGRADEUSERITEM $PARAM(1) 71 - $STR(P0)
+takem $PARAM(2)
+takem $PARAM(3)
+takem $PARAM(4)
+takem $PARAM(5)
+takem $PARAM(6)
+
+#IF
+equal $ITEMINFO[$PARAM(2)].NAME 神秘符石
+#ACT
+UPGRADEUSERITEM $PARAM(2) 71 - $STR(P0)
+takem $PARAM(1)
+takem $PARAM(3)
+takem $PARAM(4)
+takem $PARAM(5)
+takem $PARAM(6)
+
+#IF
+equal $ITEMINFO[$PARAM(3)].NAME 神秘符石
+#ACT
+UPGRADEUSERITEM $PARAM(3) 71 - $STR(P0)
+takem $PARAM(1)
+takem $PARAM(2)
+takem $PARAM(4)
+takem $PARAM(5)
+takem $PARAM(6)
+
+#IF
+equal $ITEMINFO[$PARAM(4)].NAME 神秘符石
+#ACT
+UPGRADEUSERITEM $PARAM(4) 71 - $STR(P0)
+takem $PARAM(1)
+takem $PARAM(2)
+takem $PARAM(3)
+takem $PARAM(5)
+takem $PARAM(6)
+
+#IF
+equal $ITEMINFO[$PARAM(5].NAME 神秘符石
+#ACT
+UPGRADEUSERITEM $PARAM(5) 71 - $STR(P0)
+takem $PARAM(1)
+takem $PARAM(2)
+takem $PARAM(3)
+takem $PARAM(4)
+takem $PARAM(6)
+
+#IF
+equal $ITEMINFO[$PARAM(6)].NAME 神秘符石
+#ACT
+UPGRADEUSERITEM $PARAM(6) 71 - $STR(P0)
+takem $PARAM(1)
+takem $PARAM(2)
+takem $PARAM(3)
+takem $PARAM(4)
+takem $PARAM(5)
+
+#IF
+random 1
+#ACT
+SMELTBOXRESULT 1 8 0
+give $STR(S0) 1
+MessageBox <$STR(S0)>凝炼成功！
+}

@@ -1,0 +1,15 @@
+09/02/2012 03:10:55 Has Read 1Guild Information...
+09/02/2012 03:10:55 Has Read 1Castle Information...
+09/02/2012 03:10:55 脚本错误1: !PosInList $ITEMINFO[$PARAM(2)].NAME ..\QuestDiary\GameRead\魂珠物品.txt 第:88 行: .\Envir\Market_Def\CentralPlains\GodStove-SH045.txt
+09/02/2012 03:10:55 脚本错误1: !PosInList $ITEMINFO[$PARAM(3)].NAME ..\QuestDiary\GameRead\魂珠物品.txt 第:95 行: .\Envir\Market_Def\CentralPlains\GodStove-SH045.txt
+09/02/2012 03:10:55 脚本错误1: !PosInList $ITEMINFO[$PARAM(4)].NAME ..\QuestDiary\GameRead\魂珠物品.txt 第:102 行: .\Envir\Market_Def\CentralPlains\GodStove-SH045.txt
+09/02/2012 03:10:55 脚本错误1: !PosInList $ITEMINFO[$PARAM(5)].NAME ..\QuestDiary\GameRead\魂珠物品.txt 第:109 行: .\Envir\Market_Def\CentralPlains\GodStove-SH045.txt
+09/02/2012 03:10:55 脚本错误1: !PosInList $ITEMINFO[$PARAM(6)].NAME ..\QuestDiary\GameRead\魂珠物品.txt 第:116 行: .\Envir\Market_Def\CentralPlains\GodStove-SH045.txt
+09/02/2012 03:10:55 脚本错误1: !PosInList $ITEMINFO[$PARAM(7)].NAME ..\QuestDiary\GameRead\魂珠物品.txt 第:123 行: .\Envir\Market_Def\CentralPlains\GodStove-SH045.txt
+09/02/2012 03:10:55 脚本错误1: PosInList $ITEMINFO[$PARAM(2)].NAME ..\QuestDiary\GameRead\魂珠物品.txt S0 第:157 行: .\Envir\Market_Def\CentralPlains\GodStove-SH045.txt
+09/02/2012 03:10:55 脚本错误1: PosInList $ITEMINFO[$PARAM(3)].NAME ..\QuestDiary\GameRead\魂珠物品.txt S0 第:163 行: .\Envir\Market_Def\CentralPlains\GodStove-SH045.txt
+09/02/2012 03:10:55 脚本错误1: PosInList $ITEMINFO[$PARAM(4)].NAME ..\QuestDiary\GameRead\魂珠物品.txt S0 第:169 行: .\Envir\Market_Def\CentralPlains\GodStove-SH045.txt
+09/02/2012 03:10:55 脚本错误1: PosInList $ITEMINFO[$PARAM(5)].NAME ..\QuestDiary\GameRead\魂珠物品.txt S0 第:175 行: .\Envir\Market_Def\CentralPlains\GodStove-SH045.txt
+09/02/2012 03:10:55 脚本错误1: PosInList $ITEMINFO[$PARAM(6)].NAME ..\QuestDiary\GameRead\魂珠物品.txt S0 第:181 行: .\Envir\Market_Def\CentralPlains\GodStove-SH045.txt
+09/02/2012 03:10:55 脚本错误1: PosInList $ITEMINFO[$PARAM(7)].NAME ..\QuestDiary\GameRead\魂珠物品.txt S0 第:187 行: .\Envir\Market_Def\CentralPlains\GodStove-SH045.txt
+09/02/2012 03:10:55 脚本错误1: PosInList $STR(S1) ..\QuestDiary\GameRead\<$STR(S0)>.txt S2 第:392 行: .\Envir\Market_Def\CentralPlains\GodStove-SH045.txt

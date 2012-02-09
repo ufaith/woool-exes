@@ -1,0 +1,49 @@
+[@PenIsland]
+{
+可以完成的任务：\
+<NoviceQuests--打听结婚/@_RW_fulfilTaskDesp_343_fulfil>\
+\
+<离开/@exit>
+
+[@_RW_fulfilTaskDesp_343_fulfil]
+年轻人，是书店老板让你来的吧，他刚才还在我面前夸你能\
+干呢！你找我有什么事情吗？\
+<打听结婚/@_RW_fulfilTask_343>                <没事/@exit>
+
+[@_RW_fulfilTask_343]
+#ACT
+CHANGEEXP + 1400
+give 金币 800
+EndTask 10
+AddTask 11
+#SAY
+想结婚的话，要经历重重考验才行。\
+到机关洞中找到红娘，她会帮助你完成结婚任务的。\
+你现在去炼药师那里看看，他会教你如何交易的。\
+<离开/@exit>
+}
+
+[@海角村]
+{
+可以完成的任务：\
+<NoviceQuests--打听结婚/@_RW_fulfilTaskDesp_343_fulfil>\
+\
+<离开/@exit>
+
+[@_RW_fulfilTaskDesp_343_fulfil]
+年轻人，是书店老板让你来的吧，他刚才还在我面前夸你能\
+干呢！你找我有什么事情吗？\
+<打听结婚/@_RW_fulfilTask_343>                <没事/@exit>
+
+[@_RW_fulfilTask_343]
+#ACT
+CHANGEEXP + 1400
+give 金币 800
+EndTask 27
+AddTask 28
+#SAY
+想结婚的话，要经历重重考验才行。\
+到机关洞中找到红娘，她会帮助你完成结婚任务的。\
+你现在去炼药师那里看看，他会教你如何交易的。\
+<离开/@exit>
+}

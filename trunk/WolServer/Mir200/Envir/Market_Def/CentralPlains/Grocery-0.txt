@@ -1,0 +1,43 @@
+(@fastbuy @buy @sell)
+%100
++3
++25
+[@main]
+#SAY
+\\
+Welcome, how may i help you?\
+\
+<Quick Buy/@fastbuy>\
+<Buy/@buy>\
+<Sell/@sell>\
+<Exit/@exit>
+
+[@fastbuy]
+\\
+Please select the items you wish to purchase.\
+\
+<Product List/@buy>\
+<Back/@main>
+
+[@buy]
+\\
+Please select the items you wish to purchase.\
+\
+\
+<Product List/@buy>\
+<Back/@main>
+
+[@sell]
+\\
+Please select the items you wish to sell.\
+\
+<Back/@main>
+
+[goods]
+DungeonEscape	40	10
+RandomTeleport	40	10
+RepairOil		40	10
+Amulet		40	10
+Amulet(M)	40	10
+DungeonEsc(B)	40	10
+RandomTele(B)	40	10

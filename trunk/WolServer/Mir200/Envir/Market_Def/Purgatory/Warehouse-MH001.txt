@@ -1,0 +1,78 @@
+(@Storage @getback @FastStorge)
+%100
+[@main]
+Welcome, how may i help you?\
+<Quick Storage/@FastStorge>\
+<Storage/@storage>   <Gem Storage/@goldsave>\
+<Remove Item/@getback>\
+<Bundle Items/@mbind>\
+#IF
+CHECKMAPNAME MH001
+#SAY
+<Daily Quest/@DailyTask>\
+<Exit/@exit>\
+
+[@FastStorge]
+Please select the items you wish to store.\
+\
+<Back/@main>
+
+[@storage]
+Please select the items you wish to store.\
+\
+\
+<Back/@main>
+
+[@getback]
+Please select the items you wish to remove.\
+\
+<Back/@main>
+
+[@goldsave]
+#CALL [\Features\Warehouse.txt] @宝石仓库
+
+[@mbind]
+#CALL [\Features\Warehouse.txt] @捆扎物品
+
+[@DailyTask]
+#IF
+dayofweek mon
+#ACT
+break
+#CALL [\Quests\PurgatoryQuests\周一炼狱屠魔.txt] @周一炼狱屠魔
+
+#IF
+dayofweek tue
+#ACT
+break
+#CALL [\Quests\PurgatoryQuests\周二炼狱屠魔.txt] @周二炼狱屠魔
+
+#IF
+dayofweek wed
+#ACT
+break
+#CALL [\Quests\PurgatoryQuests\周三炼狱屠魔.txt] @周三炼狱屠魔
+
+#IF
+dayofweek thu
+#ACT
+break
+#CALL [\Quests\PurgatoryQuests\周四炼狱屠魔.txt] @周四炼狱屠魔
+
+#IF
+dayofweek fri
+#ACT
+break
+#CALL [\Quests\PurgatoryQuests\周五炼狱屠魔.txt] @周五炼狱屠魔
+
+#IF
+dayofweek sat
+#ACT
+break
+#CALL [\Quests\PurgatoryQuests\周六炼狱屠魔.txt] @周六炼狱屠魔
+
+#IF
+dayofweek sun
+#ACT
+break
+#CALL [\Quests\PurgatoryQuests\周日炼狱屠魔.txt] @周日炼狱屠魔

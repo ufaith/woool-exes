@@ -1,0 +1,2 @@
+gamelord|1|10000|{Color=yellow gamelord          }1         10000       {¹ºÂò/@YuanBaoBuy2&gamelord}
+gamelord|4|30000|{Color=yellow gamelord          }4         30000       {¹ºÂò/@YuanBaoBuy2&gamelord}

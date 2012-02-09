@@ -1,0 +1,14 @@
+;Engine custom command configuration file
+;命令名称	对应编号
+开启上线通知	1
+关闭上线通知	2
+Admin	3
+师徒合一	4
+夫妻合一	5
+手足合一	6
+允许天外飞仙	7
+chuan		8
+允许私聊	9
+拒绝好友	12
+拒绝天地合一	13
+Ptime		21

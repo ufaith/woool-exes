@@ -1,0 +1,195 @@
+[@机器人-百宝箱]
+{
+#ACT
+ReadRandomStr ..\QuestDiary\GameRead\百宝箱形象.txt P0
+setnpcappr 20 $STR(P0)
+setnpcappr 21 $STR(P0)
+setnpcappr 22 $STR(P0)
+setnpcappr 23 $STR(P0)
+setnpcappr 24 $STR(P0)
+setnpcappr 25 $STR(P0)
+setnpcappr 26 $STR(P0)
+setnpcappr 27 $STR(P0)
+setnpcappr 28 $STR(P0)
+setnpcappr 29 $STR(P0)
+setnpcappr 30 $STR(P0)
+FORMATSTR S3 <Color=Green#32%30s>\<Color=Green#32%-10s%-18s%-16s%s>\ 昨日宝箱排行榜|名次|角色名|开启数量|奖励|
+mov S4 $STR(S3)
+CLEARNAMELIST ..\QuestDiary\GameData\百宝箱\第一名.txt
+CLEARNAMELIST ..\QuestDiary\GameData\百宝箱\幸运奖.txt
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\各种排行\百宝箱.txt S0 0
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S1 S2
+FORMATSTR S0 %-10s%-18s%s\ 第#321名|<$STR(S1)>|<$STR(S2)>
+inc S3 $STR(S0)
+ADDVARLIST $STR(S1) ..\QuestDiary\GameData\百宝箱\第一名.txt
+ADDVARLIST $STR(S1) ..\QuestDiary\GameData\百宝箱\幸运奖.txt
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\各种排行\百宝箱.txt S0 1
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S1 S2
+FORMATSTR S0 %-10s%-18s%s\ 第#322名|<$STR(S1)>|<$STR(S2)>
+inc S3 $STR(S0)
+ADDVARLIST $STR(S1) ..\QuestDiary\GameData\百宝箱\幸运奖.txt
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\各种排行\百宝箱.txt S0 2
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S1 S2
+FORMATSTR S0 %-10s%-18s%s\ 第#323名|<$STR(S1)>|<$STR(S2)>
+inc S3 $STR(S0)
+ADDVARLIST $STR(S1) ..\QuestDiary\GameData\百宝箱\幸运奖.txt
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\各种排行\百宝箱.txt S0 3
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S1 S2
+FORMATSTR S0 %-10s%-18s%s\ 第#324名|<$STR(S1)>|<$STR(S2)>
+inc S3 $STR(S0)
+ADDVARLIST $STR(S1) ..\QuestDiary\GameData\百宝箱\幸运奖.txt
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\各种排行\百宝箱.txt S0 4
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S1 S2
+FORMATSTR S0 %-10s%-18s%s\ 第#325名|<$STR(S1)>|<$STR(S2)>
+inc S3 $STR(S0)
+ADDVARLIST $STR(S1) ..\QuestDiary\GameData\百宝箱\幸运奖.txt
+
+#IF
+random 1
+#ACT
+inc S3 <关闭/@exit>
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\各种排行\百宝箱.txt S0 5
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S1 S2
+FORMATSTR S0 %-10s%-18s%s\ 第#326名|<$STR(S1)>|<$STR(S2)>
+inc S4 $STR(S0)
+ADDVARLIST $STR(S1) ..\QuestDiary\GameData\百宝箱\幸运奖.txt
+ReplaceText S3 <关闭/@exit>
+inc S3 <下一页/@nextPage1>　　<关闭/@exit>
+ADDVARLIST $STR(S0) ..\QuestDiary\GameData\百宝箱\幸运奖.txt
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\各种排行\百宝箱.txt S0 6
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S1 S2
+FORMATSTR S0 %-10s%-18s%s\ 第#327名|<$STR(S1)>|<$STR(S2)>
+inc S4 $STR(S0)
+ADDVARLIST $STR(S1) ..\QuestDiary\GameData\百宝箱\幸运奖.txt
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\各种排行\百宝箱.txt S0 7
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S1 S2
+FORMATSTR S0 %-10s%-18s%s\ 第#328名|<$STR(S1)>|<$STR(S2)>
+inc S4 $STR(S0)
+ADDVARLIST $STR(S1) ..\QuestDiary\GameData\百宝箱\幸运奖.txt
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\各种排行\百宝箱.txt S0 8
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S1 S2
+FORMATSTR S0 %-10s%-18s%s\ 第#329名|<$STR(S1)>|<$STR(S2)>
+inc S4 $STR(S0)
+ADDVARLIST $STR(S1) ..\QuestDiary\GameData\百宝箱\幸运奖.txt
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\各种排行\百宝箱.txt S0 9
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S1 S2
+FORMATSTR S0 %-10s%-18s%s\ 第10名|<$STR(S1)>|<$STR(S2)>
+inc S4 $STR(S0)
+ADDVARLIST $STR(S1) ..\QuestDiary\GameData\百宝箱\幸运奖.tx
+
+#IF
+random 1
+#ACT
+inc S4 <关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL 今日百宝箱次数 > 499
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\百宝箱\幸运奖.txt S0
+CLEARNAMELIST ..\QuestDiary\GameData\百宝箱\幸运奖.txt
+ADDVARLIST $STR(S0) ..\QuestDiary\GameData\百宝箱\幸运奖.txt
+FORMATSTR S1 %28s<Color=Green#32%s>\ 昨天的幸运奖获得者：|<$STR(S0)>
+inc S1 $STR(S3)
+#ELSEACT
+mov S1 　　昨天还没有产生幸运奖获得者\
+inc S1 $STR(S3)
+
+#IF
+random 1
+#ACT
+mov P0
+goto @机器人-百宝箱-昨日开箱玩家
+Calcvar GLOBAL 百宝箱排行一页 = $STR(S1)
+Calcvar GLOBAL 百宝箱排行二页 = $STR(S4) 
+Calcvar GLOBAL 昨日百宝箱次数 = $GLOBAL(今日百宝箱次数)
+Calcvar GLOBAL 今日百宝箱次数 = 0
+SAVEVAR GLOBAL 今日百宝箱次数 ..\QuestDiary\GameData\百宝箱\百宝箱.txt
+SAVEVAR GLOBAL 昨日百宝箱次数 ..\QuestDiary\GameData\百宝箱\百宝箱.txt
+SAVEVAR GLOBAL 百宝箱排行一页 ..\QuestDiary\GameData\百宝箱\百宝箱.txt
+SAVEVAR GLOBAL 百宝箱排行二页 ..\QuestDiary\GameData\百宝箱\百宝箱.txt
+CLEARNAMELIST ..\QuestDiary\GameData\各种排行\百宝箱.txt
+
+[@机器人-百宝箱-昨日开箱玩家]
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\各种排行\百宝箱.txt S0 $STR(P0)
+
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S2 S0
+ADDVARLIST $STR(S2) ..\QuestDiary\GameData\百宝箱\昨日开箱玩家.txt
+inc P0 1
+goto @机器人-百宝箱-昨日开箱玩家
+}

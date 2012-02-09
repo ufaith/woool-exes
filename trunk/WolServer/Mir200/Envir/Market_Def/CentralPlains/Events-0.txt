@@ -1,0 +1,50 @@
+[@main]
+\
+Purgatory is a double experience.\
+--- Are you sure you want to enter it?\
+<Enter Purgatory/@_LB_newenter>   <Exit/@exit>
+
+[@_LB_newenter]
+
+#IF
+!Checknamelist ..\QuestDiary\GameData\Purgatoryenter.txt
+HOUR 12 14
+#ACT
+CALCVAR HUMAN PurgatorySeconds = 0
+CALCVAR HUMAN PurgatoryTime = 0
+Addnamelist ..\QuestDiary\GameData\Purgatoryenter.txt
+goto @continue
+break
+#ELSEACT
+SendMsg 5 "Purgatory is not open yet or have entered today"
+
+
+[@continue]
+#IF
+CHECKVAR HUMAN PurgatoryTime < 1
+CHECKVAR HUMAN PurgatorySeconds < 1
+#ACT
+CALCVAR HUMAN PurgatoryTime + 1
+MAP MH001
+goto @Showtime
+
+
+[@Showtime]
+#IF
+CHECKVAR HUMAN PurgatoryTime > 0
+#ACT
+FormatStr S15 %s Remaining#32game#32time#32in#32Purgatory:#32<$HUMAN(PurgatoryTime)>hour#32<$HUMAN(PurgatorySeconds)>seconds
+SENDMSG 17 <$STR(S15)> 0 149
+break
+
+#IF
+CHECKVAR HUMAN PurgatorySeconds = 0
+#ACT
+SENDMSG 17 "Your remaining game time in purgatory is now <$HUMAN(PurgatorySeconds)> Seconds" 0 149
+break
+
+#IF
+CHECKVAR HUMAN PurgatorySeconds > 0
+#ACT
+SENDMSG 17 "Your remaining game time in purgatory is now <$HUMAN(PurgatorySeconds)> Seconds" 0 149
+break

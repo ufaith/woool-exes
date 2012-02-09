@@ -1,0 +1,245 @@
+[@main]
+#IF
+CheckUserGap > 5
+#ACT
+break
+#SAY
+<太远了，过不去..../@exit>
+
+#IF
+checkjob warrior
+#ACT
+goto @战士传送
+break
+
+#IF
+checkjob wizard
+#ACT
+goto @法师传送
+break
+
+#IF
+checkjob taoist
+#ACT
+goto @道士传送
+break
+
+[@战士传送]
+#IF
+CHECKMAPNAME MH002
+#ACT
+mapmove MH005 218 196
+break
+
+#IF
+CHECKMAPNAME MH005
+#ACT
+mapmove MH008 34 113
+break
+
+#IF
+CHECKMAPNAME MH009
+#ACT
+mapmove MH012 36 96
+break
+
+#IF
+CHECKMAPNAME MH013
+#ACT
+mapmove MH016 296 166
+break
+
+#IF
+CHECKMAPNAME MH016
+#ACT
+mapmove MH019 140 131
+break
+
+#IF
+CHECKMAPNAME MH020
+#ACT
+mapmove MH023 93 136
+break
+
+#IF
+CHECKMAPNAME MH023
+#ACT
+mapmove MH026 166 90
+break
+
+#IF
+CHECKMAPNAME MH027
+#ACT
+mapmove MH030 73 121
+break
+
+#IF
+CHECKMAPNAME MH030
+#ACT
+mapmove MH033 98 40
+break
+
+#IF
+CHECKMAPNAME MH033
+#ACT
+mapmove MH036 65 50
+break
+
+#IF
+CHECKMAPNAME MH037
+#ACT
+mapmove MH040 170 100
+break
+
+#IF
+CHECKMAPNAME MH040
+#ACT
+mapmove MH055 12 14
+break
+
+
+[@法师传送]
+#IF
+CHECKMAPNAME MH003
+#ACT
+mapmove MH006 218 196
+break
+
+#IF
+CHECKMAPNAME MH006
+#ACT
+mapmove MH008 34 113
+break
+
+#IF
+CHECKMAPNAME MH010
+#ACT
+mapmove MH012 36 96
+break
+
+#IF
+CHECKMAPNAME MH014
+#ACT
+mapmove MH017 110 20
+break
+
+#IF
+CHECKMAPNAME MH017
+#ACT
+mapmove MH019 140 131
+break
+
+#IF
+CHECKMAPNAME MH021
+#ACT
+mapmove MH024 83 155
+break
+
+#IF
+CHECKMAPNAME MH024
+#ACT
+mapmove MH026 166 90
+break
+
+#IF
+CHECKMAPNAME MH028
+#ACT
+mapmove MH031 44 41
+break
+
+#IF
+CHECKMAPNAME MH031
+#ACT
+mapmove MH034 130 75
+break
+
+#IF
+CHECKMAPNAME MH034
+#ACT
+mapmove MH036 65 50
+break
+
+#IF
+CHECKMAPNAME MH038
+#ACT
+mapmove MH041 240 241
+break
+
+#IF
+CHECKMAPNAME MH041
+#ACT
+mapmove MH056 12 14
+break
+
+[@道士传送]
+#IF
+CHECKMAPNAME MH004
+#ACT
+mapmove MH007 96 122
+break
+
+#IF
+CHECKMAPNAME MH007
+#ACT
+mapmove MH008 34 113
+break
+
+#IF
+CHECKMAPNAME MH011
+#ACT
+mapmove MH012 36 96
+break
+
+#IF
+CHECKMAPNAME MH015
+#ACT
+mapmove MH018 155 130
+break
+
+#IF
+CHECKMAPNAME MH018
+#ACT
+mapmove MH019 140 131
+break
+
+#IF
+CHECKMAPNAME MH022
+#ACT
+mapmove MH025 225 156
+break
+
+#IF
+CHECKMAPNAME MH025
+#ACT
+mapmove MH026 166 90
+break
+
+#IF
+CHECKMAPNAME MH029
+#ACT
+mapmove MH032 91 126
+break
+
+#IF
+CHECKMAPNAME MH032
+#ACT
+mapmove MH035 193 164
+break
+
+#IF
+CHECKMAPNAME MH035
+#ACT
+mapmove MH036 65 50
+break
+
+#IF
+CHECKMAPNAME MH039
+#ACT
+mapmove MH042 158 158
+break
+
+#IF
+CHECKMAPNAME MH042
+#ACT
+mapmove MH057 12 14
+break

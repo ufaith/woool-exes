@@ -1,0 +1,18 @@
+[@新手关怀大使1]
+{
+可以完成的任务：\
+<NoviceQuests--新手的奖励/@_RW_fulfilTaskDesp_350_fulfil>\
+\
+<离开/@exit>
+
+[@_RW_fulfilTaskDesp_350_fulfil]
+#ACT
+EndTask 42
+AddTask 47
+CHANGEEXP + 100000
+#SAY
+看来你已经有足够的能力踏上修真之路了。\
+说到修真那真是玄之又玄，中州的老兵无所不晓，到了26级\
+时你可以去请教他。\
+<离开/@exit>
+}

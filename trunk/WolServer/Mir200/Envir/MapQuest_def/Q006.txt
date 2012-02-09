@@ -1,0 +1,8 @@
+﻿[@main]
+#IF
+CheckMapMonNameCount 0 373 599 10 Pig -10
+#ACT
+PARAM1 0
+PARAM2 373
+PARAM3 599
+MonGen Pig 10 10

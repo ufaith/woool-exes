@@ -1,0 +1,23 @@
+[@main]
+<我要进入炼狱魔城三层/@mocheng2>\
+\
+<再等等/@exit>
+
+[@mocheng2]
+#IF
+checkjob warrior
+#ACT
+mapmove NL017 198 285
+break
+
+#IF
+checkjob wizard
+#ACT
+mapmove NL018 198 285
+break
+
+#IF
+checkjob taoist
+#ACT
+mapmove NL019 198 285
+break

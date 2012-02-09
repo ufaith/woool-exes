@@ -1,0 +1,720 @@
+;此脚为功能脚本，用于实现各种与脚本有关的功能
+(@callboard2)
+
+[@import]
+#CALL [\Features\HeroesChallenge\生存挑战.txt] @幸运宝盒
+#CALL [\Features\SpiritGem.txt] @圣灵宝石10
+#CALL [\Features\SpiritGem.txt] @圣灵宝石11
+#CALL [\Features\SpiritGem.txt] @圣灵宝石12
+#CALL [\Features\SpiritGem.txt] @圣灵宝石13
+#CALL [\Features\SpiritGem.txt] @圣灵宝石14
+#CALL [\Features\SpiritGem.txt] @圣灵宝石15
+#CALL [\Features\SpiritGem.txt] @圣灵宝石16
+#CALL [\Features\SpiritGem.txt] @圣灵宝石17
+#CALL [\Features\SpiritGem.txt] @战士类技能
+#CALL [\Features\SpiritGem.txt] @法师类技能
+#CALL [\Features\SpiritGem.txt] @道士类技能
+#CALL [\Features\SpiritGem.txt] @战士技能类
+#CALL [\Features\SpiritGem.txt] @法师技能类
+#CALL [\Features\SpiritGem.txt] @道士技能类
+#CALL [\Features\SpiritGem.txt] @圣灵宝石生效
+#CALL [\Features\MeltingChest\熔炼宝箱.txt] @@commoncodense
+#CALL [\Features\Blacksmith\Weapons.txt] @@weaponcompound
+
+;----------------------Elite Medals---------------------------------
+;Scripting for Elite Medal upgrade.
+
+[@EliteMedal]
+#ACT
+UPGRADEUSERITEM $PARAM(0) 0 = $ITEMINFO[$PARAM(1)].AC1
+UPGRADEUSERITEM $PARAM(0) 1 = $ITEMINFO[$PARAM(1)].AC2
+UPGRADEUSERITEM $PARAM(0) 2 = $ITEMINFO[$PARAM(1)].MAC1
+UPGRADEUSERITEM $PARAM(0) 3 = $ITEMINFO[$PARAM(1)].MAC2
+UPGRADEUSERITEM $PARAM(0) 4 = $ITEMINFO[$PARAM(1)].DC1
+UPGRADEUSERITEM $PARAM(0) 5 = $ITEMINFO[$PARAM(1)].DC2
+UPGRADEUSERITEM $PARAM(0) 6 = $ITEMINFO[$PARAM(1)].MC1
+UPGRADEUSERITEM $PARAM(0) 7 = $ITEMINFO[$PARAM(1)].MC2
+UPGRADEUSERITEM $PARAM(0) 8 = $ITEMINFO[$PARAM(1)].SC1
+UPGRADEUSERITEM $PARAM(0) 9 = $ITEMINFO[$PARAM(1)].SC2
+takem $PARAM(1)
+break
+
+[@DropItem115]
+#IF
+!ISCASTLEMASTER
+#ACT
+SENDMSG 5 该物品只有沙城城主才能够使用
+break
+#IF
+EQUAL $M 3
+#ACT
+MOV P0 $X
+INC P0 3
+MOV P1 $Y
+INC P1 5
+MOV P2 $X
+INC P2 3
+MOV P3 $Y
+DEC P3 5
+MOV S0
+MOV S1
+MOV S2
+MOV S3
+MOV S4
+FORMATSTR S0 %s(%s,%s) <$M>|<$STR(P0)>|<$STR(P1)>
+FORMATSTR S1 %s的通灵卫士 <$GUILD.NAME>
+FORMATSTR S2 #32#32#32#32此塔为#32%s#32的通灵塔\#32#32#32#32此塔于%s年%s月%s日建造\ <$GUILD.NAME>|<$DATE.YEAR>|<$DATE.MONTH>|<$DATE.DAY>
+FORMATSTR S3 %s|跃马\通灵卫士|54|%s|3600 <$STR(S1)>|<$STR(S0)>
+FORMATSTR S4 %s|%s|%s <$M>|<$X>|<$Y>
+CLEARNAMELIST ..\QuestDiary\GameData\PsychicRecord.txt
+;INSERTVARLIST 0 $STR(S2) ..\QuestDiary\通灵塔\通灵记录.txt
+;INSERTVARLIST 1 $STR(S3) ..\QuestDiary\通灵塔\通灵记录.txt
+;INSERTVARLIST 2 $STR(S4) ..\QuestDiary\通灵塔\通灵记录.txt
+;BuildGuildTower $M $STR(P2) $STR(P3) 1 $GUILDNAME
+;MobNpc $STR(S1) 跃马\通灵卫士 54 $STR(S0) 9999999
+;DELLASTDROPITEM
+;SENDMSG 5 你已经顺利把通灵塔建造在跃马平原地表上
+;break
+;#ELSEACT
+;SENDMSG 5 该物品只能在跃马平原地表上使用
+;break
+
+;Removes effect.
+
+[@TakeOff12]
+#IF
+Check [52] 1
+#ACT
+SET [52] 0
+SENDMSG 5 "The blessings of the gods disappeared..."
+break
+
+
+;----------------------Mount System---------------------------------
+;Scripting for mount upgrade.
+
+[@MountTransform]
+#CALL [\Features\Cleverness\MountTransform.txt] @幻化开始
+
+
+[@CaptureMounts]
+#IF
+equal $PARAM(0) 丛林豹
+#ACT
+give 豹魔石 1
+
+#IF
+equal $PARAM(0) 天狮兽
+#ACT
+give 狮魔石 1
+
+#IF
+equal $PARAM(0) 麒麟兽
+#ACT
+give 麒麟石 1
+
+#IF
+equal $PARAM(0) 赤翎凤
+#ACT
+give 凤凰石 1
+
+#IF
+equal $PARAM(0) 踏云豹1
+#ACT
+give 豹魔石 1
+UPGRADEUSERITEM $PARAM(10) 8 = 1
+UPGRADEUSERITEM $PARAM(10) 9 = 1
+
+#IF
+equal $PARAM(0) 震天狮1
+#ACT
+give 狮魔石 1
+UPGRADEUSERITEM $PARAM(10) 8 = 1
+UPGRADEUSERITEM $PARAM(10) 9 = 1
+
+#IF
+equal $PARAM(0) 圣麒麟1
+#ACT
+give 麒麟石 1
+UPGRADEUSERITEM $PARAM(10) 8 = 1
+UPGRADEUSERITEM $PARAM(10) 9 = 1
+
+#IF
+random 1
+#ACT
+UPGRADEUSERITEM $PARAM(10) 4 = $PARAM(2)
+MOV M0 $PARAM(10)
+#CALL [\Features\Cleverness\RecognizeHost.txt] @灵兽加属性
+
+;----------------------PKer Script---------------------------------
+;PK Script will check your PK Value, if you are red you will be sent to PK town, along with a PK title.
+
+[@杀人触发]
+#CALL [\Features\GeneralFeatures.txt] @狂魔
+
+
+;----------------------HeroesChallenge---------------------------------
+;Heroes PVP Challenge Scripts + Checks ResurrectionStone.
+[@死亡触发]
+#IF
+random 1
+#CALL [\Features\HeroesChallenge\下线死亡.txt] @单人下线死亡
+#CALL [\Features\HeroesChallenge\下线死亡.txt] @混乱下线死亡
+#CALL [\Features\HeroesChallenge\下线死亡.txt] @生存下线死亡
+
+#IF
+checkitem 还魂石 1
+#CALL [\Features\ResurrectionStone.txt] @还魂时间
+
+
+;----------------------HERO---------------------------------------------
+;Shows Effect when creating a Hero. Checks to see if name exists. After created will move you to map
+;QUEYSH00.
+[@元神创建成功]
+#ACT
+ShowHumEffect 43
+ShowHumEffect 19
+ShowHumEffect 36
+ShowHumEffect 25
+delaycall 10 @进放灵台仙境
+break
+
+[@元神创建失败]
+#ACT
+messagebox "Soul creation failed! Characters the same name."
+break
+
+[@进放灵台仙境]
+#ACT
+SENDMSG 5 恭喜您修炼分身成功！ 
+SENDMSG 0 三魂化形得精神、七魄炼体凝肉身，历经磨难，魂魄合一之后，勇士%s修炼元神分身成功，光芒照亮了传世大陆！
+SENDMSG 9 三魂化形得精神、七魄炼体凝肉身，历经磨难，魂魄合一之后，勇士%s修炼元神分身成功，光芒照亮了传世大陆！
+SENDMSG 10 三魂化形得精神、七魄炼体凝肉身，历经磨难，魂魄合一之后，勇士%s修炼元神分身成功，光芒照亮了传世大陆！
+MAPMOVE QUEYSH00 20 17
+break
+
+;----------------------Mounts---------------------------------------------
+;Mounts Scripting + Upgrade
+
+[@捕捉灵兽]
+#IF
+equal $PARAM(0) 丛林豹
+#ACT
+give 豹魔石 1
+
+#IF
+equal $PARAM(0) 天狮兽
+#ACT
+give 狮魔石 1
+
+#IF
+equal $PARAM(0) 麒麟兽
+#ACT
+give 麒麟石 1
+
+#IF
+equal $PARAM(0) 赤翎凤
+#ACT
+give 凤凰石 1
+
+#IF
+equal $PARAM(0) 踏云豹1
+#ACT
+give 豹魔石 1
+UPGRADEUSERITEM $PARAM(10) 8 = 1
+UPGRADEUSERITEM $PARAM(10) 9 = 1
+
+#IF
+equal $PARAM(0) 震天狮1
+#ACT
+give 狮魔石 1
+UPGRADEUSERITEM $PARAM(10) 8 = 1
+UPGRADEUSERITEM $PARAM(10) 9 = 1
+
+#IF
+equal $PARAM(0) 圣麒麟1
+#ACT
+give 麒麟石 1
+UPGRADEUSERITEM $PARAM(10) 8 = 1
+UPGRADEUSERITEM $PARAM(10) 9 = 1
+
+#IF
+random 1
+#ACT
+UPGRADEUSERITEM $PARAM(10) 4 = $PARAM(2)
+MOV M0 $PARAM(10)
+#CALL [\Features\Cleverness\RecognizeHost.txt] @灵兽加属性
+
+
+
+;----------------------Items + Effects---------------------------------------------
+;Teleport Stone
+[@使用回城石]
+#ACT
+SHOWHUMEFFECT 29
+
+
+;----------------------CUSTOM COMMANDS---------------------------------------------
+;Custom command: Manage
+;GM Control Panel.
+[@UserCMD3]
+;#CALL [\Features\Admin.txt] @后台管理
+
+
+;Custom command: Mentoring1
+;Check to see if mentor is online.
+[@UserCMD4]
+#IF
+!CheckOnline $PARAM(21)
+#ACT
+SENDMSG 5 "The other can not find"
+break
+
+;Custom command: Couples1
+[@UserCMD5]
+#IF
+!checkitemW 爱情魔戒 1
+equal P0 0
+#ACT
+break
+
+#IF
+CHECKVARLIST $HUMANINFO[$PARAM(21)].$M ..\QuestDiary\GameRead\禁止传送地图.txt
+#ACT
+SENDMSG 5 "Other maps can not use the unity of husband and wife"
+break
+
+#IF
+checkmarry
+!CheckOnline $DEARNAME
+#ACT
+SENDMSG 5 "Your partner cannot be found"
+break
+
+#IF
+checkmarry
+#ACT
+goto @夫妻减持
+Gmexecute 传 $DEARNAME
+SHOWHUMEFFECT 32
+$DEARNAME.SHOWHUMEFFECT 32
+#ELSEACT
+SENDMSG 5 "Your partner cannot be found"
+
+[@夫妻减持]
+#IF
+equal $RING_R 爱情魔戒
+equal P0 0
+#ACT
+UPGRADEUSERITEM 8 20 - 1000
+break
+
+#IF
+equal $RING_L 爱情魔戒
+equal P0 0
+#ACT
+UPGRADEUSERITEM 7 20 - 1000
+break
+
+#IF
+checkitem 飞来神石
+equal P0 1
+#ACT
+UPGRADEUSERITEM $ITEMMAKEINDEX[$PARAM(1)] 20 - 1
+break
+
+
+;Custom command: Friendship
+[@UserCMD6]
+#IF
+checkisfriend $PARAM(21)
+!CheckOnline $PARAM(21)
+#ACT
+SENDMSG 5 对方无法查找
+break
+
+#IF
+!checkisfriend $PARAM(21)
+#ACT
+SENDMSG 5 "You have not the establishment friend relationship with each other"
+break
+
+#IF
+CHECKVARLIST $HUMANINFO[$PARAM(21)].$M ..\QuestDiary\GameRead\禁止传送地图.txt
+#ACT
+SENDMSG 5 "he other maps can not use the hand-foot-one"
+break
+
+#IF
+equal P0 0
+checkitemW 结义圣链
+large $ITEMINFO[$USEITEMMAKEINDEX(3)].DURA 0
+#ACT
+UPGRADEUSERITEM 3 20 - 1000
+goto @手足合一
+break
+
+#IF
+equal P0 0
+checkitem 结义圣链
+large $ITEMINFO[$ITEMMAKEINDEX(结义圣链)].DURA 0
+#ACT
+UPGRADEUSERITEM $ITEMMAKEINDEX(结义圣链) 20 - 1000
+goto @手足合一
+break
+
+#IF
+equal P0 1
+checkitem 飞来神石
+large $ITEMINFO[$ITEMMAKEINDEX(飞来神石)].DURA 0
+#ACT
+UPGRADEUSERITEM $ITEMMAKEINDEX(飞来神石) 20 - 1
+goto @手足合一
+break
+#ELSEACT
+SENDMSG 5 "Need the sworn Saint chain or flying jinseki can use this feature!"
+
+[@手足合一]
+#IF
+random 1
+#ACT
+Gmexecute 传 $PARAM(21)
+SHOWHUMEFFECT 57
+
+
+;----------------------Equipment gem location of items trigger---------------------------------------------
+
+
+;ShoutHorn - Able to global Shout with this item.
+[@StdModeFunc2]
+#ACT
+ChangeEatItemDura + 1
+QUERYVAL 11 0 60 @传音号角 请写下你要传音的内容：
+
+[@传音号角]
+#IF
+random 1
+#ACT
+ChangeEatItemDura - 1
+SHOWHUMEFFECT 28
+SENDMSG 16 %S玩家说:<$STR(S11)> 255 69
+SENDMSG 21 <$STR(S11)> 69 7
+
+[@StdModeFunc19]
+
+;Fireworks
+[@DropItem20]
+#ACT
+SHOWHUMEFFECT 39 300
+
+;ResurrectionStone
+[@StdModeFunc49]
+#CALL [\Features\ResurrectionStone.txt] @使用还魂石
+
+;Item cloaks - Allows you to transform into a monster.
+[@StdModeFunc3]
+#IF
+large P0 0
+#ACT
+mov P0 0
+ChangeEatItemDura + 1
+CHANGEAPPR 0 0
+break
+
+#IF
+equal P0 0
+#ACT
+movr P0 15
+inc P0 1
+
+#IF
+equal P0 1
+#ACT
+CHANGEAPPR 20 211
+break
+
+#IF
+equal P0 2
+#ACT
+CHANGEAPPR 49 235
+break
+
+#IF
+equal P0 3
+#ACT
+CHANGEAPPR 12 115
+break
+
+#IF
+equal P0 4
+#ACT
+CHANGEAPPR 15 180
+break
+
+#IF
+equal P0 5
+#ACT
+CHANGEAPPR 11 181
+break
+
+#IF
+equal P0 6
+#ACT
+CHANGEAPPR 11 161
+break
+
+#IF
+equal P0 7
+#ACT
+CHANGEAPPR 55 111
+break
+
+#IF
+equal P0 8
+#ACT
+CHANGEAPPR 19 30
+break
+
+#IF
+equal P0 9
+#ACT
+CHANGEAPPR 49 226
+break
+
+#IF
+equal P0 10
+#ACT
+CHANGEAPPR 19 142
+break
+
+#IF
+equal P0 11
+#ACT
+CHANGEAPPR 45 197
+break
+
+#IF
+equal P0 12
+#ACT
+CHANGEAPPR 47 219
+break
+
+#IF
+equal P0 13
+#ACT
+CHANGEAPPR 21 69
+break
+
+#IF
+equal P0 14
+#ACT
+CHANGEAPPR 45 234
+break
+
+#IF
+equal P0 15
+#ACT
+CHANGEAPPR 19 198
+break
+
+
+;-------------------------------------------------------------------
+;Teleport check group.
+[@天书传送]
+#IF
+CheckOnline $GROUPMEMBER(1)
+$GROUPMEMBER(1).check [22] 1
+#ACT
+$GROUPMEMBER(1).Gmexecute 传 $GROUPMASTER
+
+#IF
+CheckOnline $GROUPMEMBER(2)
+$GROUPMEMBER(2).check [22] 1
+#ACT
+$GROUPMEMBER(2).Gmexecute 传 $GROUPMASTER
+
+#IF
+CheckOnline $GROUPMEMBER(3)
+$GROUPMEMBER(3).check [22] 1
+#ACT
+$GROUPMEMBER(3).Gmexecute 传 $GROUPMASTER
+
+#IF
+CheckOnline $GROUPMEMBER(4)
+$GROUPMEMBER(4).check [22] 1
+#ACT
+$GROUPMEMBER(4).Gmexecute 传 $GROUPMASTER
+
+#IF
+CheckOnline $GROUPMEMBER(5)
+$GROUPMEMBER(5).check [22] 1
+#ACT
+$GROUPMEMBER(5).Gmexecute 传 $GROUPMASTER
+
+#IF
+CheckOnline $GROUPMEMBER(6)
+$GROUPMEMBER(6).check [22] 1
+#ACT
+$GROUPMEMBER(6).Gmexecute 传 $GROUPMASTER
+
+#IF
+CheckOnline $GROUPMEMBER(7)
+$GROUPMEMBER(7).check [22] 1
+#ACT
+$GROUPMEMBER(7).Gmexecute 传 $GROUPMASTER
+
+#IF
+CheckOnline $GROUPMEMBER(8)
+$GROUPMEMBER(8).check [22] 1
+#ACT
+$GROUPMEMBER(8).Gmexecute 传 $GROUPMASTER
+
+#IF
+CheckOnline $GROUPMEMBER(9)
+$GROUPMEMBER(9).check [22] 1
+#ACT
+$GROUPMEMBER(9).Gmexecute 传 $GROUPMASTER
+
+#IF
+CheckOnline $GROUPMEMBER(10)
+$GROUPMEMBER(10).check [22] 1
+#ACT
+$GROUPMEMBER(10).Gmexecute 传 $GROUPMASTER
+
+[@StdModeFunc11]
+#IF
+random 1
+#ACT
+SENDMSG 5 你获得了20000金币
+SENDMSG 8 %s打开喜糖，惊奇的发现了20000金币
+give 金币 20000
+break
+
+;========================================================================
+[@StdModeFunc12]
+#ACT
+SENDMSG 0 %s已经将%m的天气改变成,福满天下！大家可以打开客户端天气效果观赏
+WEATHER 11
+break
+
+[@StdModeFunc13]
+#ACT
+SENDMSG 0 %s已经将%m的天气改变成恭喜发财！大家可以打开客户端天气效果观赏
+WEATHER 10
+break
+
+[@StdModeFunc14]
+#ACT
+SENDMSG 0 %s已经将%m的天气改变成紫樱缤纷！大家可以打开客户端天气效果观赏
+WEATHER 5
+break
+
+[@StdModeFunc15]
+#ACT
+SENDMSG 0 %s已经将%m的天气改变成玫瑰花雨！大家可以打开客户端天气效果观赏
+WEATHER 4
+break
+
+[@StdModeFunc16]
+#ACT
+SENDMSG 0 %s已经将%m的天气改变成碧血黄沙！大家可以打开客户端天气效果观赏
+WEATHER 3
+break
+
+[@StdModeFunc17]
+#ACT
+SENDMSG 0 %s已经将%m的天气改变成烟雨朦胧！大家可以打开客户端天气效果观赏
+WEATHER 2
+break
+
+[@StdModeFunc18]
+#ACT
+SENDMSG 0 %s已经将%m的天气改变成飞雪连天！大家可以打开客户端天气效果观赏
+WEATHER 6
+break
+
+[@StdModeFunc19]
+#ACT
+SENDMSG 0 %s已经将%m的天气改变成心语心愿！大家可以打开客户端天气效果观赏
+WEATHER 7
+break
+
+[@StdModeFunc20]
+#ACT
+SENDMSG 0 %s已经将%m的天气改变成绿叶仙踪！大家可以打开客户端天气效果观赏
+WEATHER 8
+break
+
+[@StdModeFunc21]
+#ACT
+SENDMSG 0 %s已经将%m的天气改变成流星幻雨！大家可以打开客户端天气效果观赏
+WEATHER 9
+break
+
+[@StdModeFunc22]
+#ACT
+SENDMSG 0 %s已经将%m的天气改变成细雨缠绵！大家可以打开客户端天气效果观赏
+WEATHER 1
+break
+
+[@StdModeFunc23]
+#ACT
+SENDMSG 0 %s已经将%m的天气改变成碧海青天！大家可以打开客户端天气效果观赏
+WEATHER 13
+break
+
+;====================================================================================
+
+[@CheckPlayerEquipment]
+#IF
+$PARAM(0).ISSHADOW
+#ACT
+MOV S10 $HUMANINFO.$PARAM(0).$YSNAME
+$STR(S10).GOTO @分身境界
+SENDMSG 7 <$HUMANINFO.$PARAM(0).$YSNAME>分身<$PARAM(0)>　等级<$HUMANINFO.$PARAM(0).$LEVEL>　性别：<$HUMANINFO.$PARAM(0).$GENDER>　职业：<$HUMANINFO.$PARAM(0).$JOB>　以下是他分身详细情况:
+SENDMSG 20 [基本属性]　生命值：<$HUMANINFO.$PARAM(0).$HP>　魔法值：<$HUMANINFO.$PARAM(0).$MP>　防御力：<$HUMANINFO.$PARAM(0).$AC>-<$HUMANINFO.$PARAM(0).$MAXAC>　魔防力：<$HUMANINFO.$PARAM(0).$MAC>-<$HUMANINFO.$PARAM(0).$MAXMAC> 255 5
+SENDMSG 20 [攻击属性]　物理攻击：<$HUMANINFO.$PARAM(0).$DC>-<$HUMANINFO.$PARAM(0).$MAXDC>　魔法攻击：<$HUMANINFO.$PARAM(0).$MC>-<$HUMANINFO.$PARAM(0).$MAXMC>　道术攻击：<$HUMANINFO.$PARAM(0).$SC>-<$HUMANINFO.$PARAM(0).$MAXSC> 255 5
+SENDMSG 20 [其他属性]　境界：<$STR(A50)>　体魄：<$STR(A51)> 255 5
+break
+#ELSEACT
+SENDMSG 7 <$PARAM(0)>　等级<$HUMANINFO.$PARAM(0).$LEVEL>　以下是他详细情况:
+SENDMSG 20 [基本属性]　生命值：<$HUMANINFO.$PARAM(0).$HP>　魔法值：<$HUMANINFO.$PARAM(0).$MP>　防御力：<$HUMANINFO.$PARAM(0).$AC>-<$HUMANINFO.$PARAM(0).$MAXAC>　魔防力：<$HUMANINFO.$PARAM(0).$MAC>-<$HUMANINFO.$PARAM(0).$MAXMAC> 255 5
+SENDMSG 20 [攻击属性]　物理攻击：<$HUMANINFO.$PARAM(0).$DC>-<$HUMANINFO.$PARAM(0).$MAXDC>　魔法攻击：<$HUMANINFO.$PARAM(0).$MC>-<$HUMANINFO.$PARAM(0).$MAXMC>　道术攻击：<$HUMANINFO.$PARAM(0).$SC>-<$HUMANINFO.$PARAM(0).$MAXSC> 255 5
+
+;=====================================================================================
+
+;Holy Spirit
+[@StdModeFunc32]
+#IF
+equal $PARAM(2) 圣灵精华
+equal $PARAM(3) 圣灵精华
+#ACT
+UPGRADEUSERITEM $PARAM(1) 20 + $ITEMINFO[$PARAM(0)].DURA
+takem $PARAM(0)
+break
+
+#IF
+equal $PARAM(2) 圣灵精华
+CHECKVARLIST $ITEMINFO[$PARAM(1)].NAME ..\QuestDiary\GameRead\其它宝石.txt
+#ACT
+break
+#CALL [\Features\SpiritGem.txt] @圣灵宝石
+
+#IF
+large $ITEMINFO[$PARAM(0)].DURA 9
+#ACT
+GOTO @HolySpiritProperty
+break
+#ELSEACT
+ChangeEatItemDura + 1
+MessageBox 你的圣灵精华数量不足10，无法附加你的武器或盾牌技能!
+break
+
+[@HolySpiritProperty]
+#IF
+POS $PARAM(3) 通灵
+POS $PARAM(3) 盾
+#ACT
+#CALL [\Features\SpiritShield.txt] @圣灵盾牌
+break
+break

@@ -1,0 +1,182 @@
+[@熔炼宝石]
+{
+　　熔炼宝石至今，发现幸运符加上大量高品质高纯度的矿\
+石可以使熔炼宝石的成功率大幅度提高。<color=green 快速熔炼宝石会取>\
+<color=green 走包裹中所有相同数量的宝石箱子和幸运符>，但是成功的几\
+率更高，甚至还出现过中宝石！\
+\
+　　<熔炼宝石/@changgem5>            <帮我打开宝石箱子/@openrequest>\
+　　<快速熔炼宝石/@_Queyss_LuckFuGems>        <学习熔炼宝石的知识/@knowledge3>\
+　　<关于《熔炼神术》/@aboutbook>    <学习有关宝石的知识/@knowledge>\
+　　<宝石仓库/@goldsave>            <离开/@exit>\
+
+[@goldsave]
+#CALL [\GameFeatures\Warehouse.txt] @宝石仓库
+
+[@changgem5]
+　　熔炼宝石系统已经开启，最初级的宝石（红宝石、蓝宝\
+石、绿宝石）是没有属性的，需要将三种宝石放在一起熔炼\
+才可以获得强大的力量。\
+　　宝石熔炼至少需要三色无属性的宝石共10颗以上才有几\
+率熔炼成功。放上幸运符的同时再放入所有你在挖矿时得到\
+的高品质矿石，熔炼的成功率会提高不少。当然，如果有更\
+高品质的矿石那就更棒了！\
+　　<准备好了，请帮我熔炼宝石吧/@@gemsmelt>\
+　　<稍等，让我再考虑考虑/@exit>
+
+[@openrequest]
+哈哈，你算找对人了。这些上古的宝藏上的符咒除了我还真\
+没有几个人能解开，来看看你运气怎么样，有时候这些宝石\
+箱子里面有你想象不到的财富哦。不过记得包裹留出空位。\
+\
+<打开宝石箱子/@openbox>\
+<返回/@main>
+
+[@openbox]
+#IF
+checkitem 宝石箱子 1
+random 3
+#ACT
+take 宝石箱子 1
+give 红宝石 3
+give 绿宝石 3
+give 蓝宝石 3
+break
+#SAY
+恭喜你了，得到了这种珍稀的宝石炼制材料。
+\
+\
+\
+<离开/@exit>
+
+#IF
+checkitem 宝石箱子 1
+random 1
+#ACT
+take 宝石箱子 1
+give 红宝石 5
+give 绿宝石 5
+give 蓝宝石 5
+break
+#SAY
+恭喜你了，得到了这种珍稀的宝石炼制材料。
+\
+\
+\
+<离开/@exit>
+#ELSESAY
+你身上没有什么宝石箱子，想必你是听了别人的传说来我这\
+打听的吧？这些宝藏是的确存在的，就看你有没有勇气去拿\
+到它们了。\
+<离开/@exit>
+
+[@_Queyss_LuckFuGems]
+没有幸运符，无法熔炼\
+<离开/@exit>
+
+[@@gemsmelt]
+#IF
+random 1
+#ACT
+mov P0 $PARAM(0)
+take 红宝石 $PARAM(0)
+dec P0 $PARAM(12)
+GemCount 0 - $STR(P0)
+mov P0 $PARAM(1)
+take 蓝宝石 $PARAM(1)
+dec P0 $PARAM(12)
+GemCount 1 - $STR(P0)
+mov P0 $PARAM(2)
+take 绿宝石 $PARAM(2)
+dec P0 $PARAM(12)
+GemCount 2 - $STR(P0)
+mov P0 0
+mov P1 0
+inc P0 $PARAM(0)
+inc P0 $PARAM(1)
+inc P0 $PARAM(2)
+inc P1 $ITEMINFO[$PARAM(5)].DURA
+inc P1 $ITEMINFO[$PARAM(6)].DURA
+inc P1 $ITEMINFO[$PARAM(7)].DURA
+inc P1 $ITEMINFO[$PARAM(8)].DURA
+inc P1 $ITEMINFO[$PARAM(9)].DURA
+inc P1 $ITEMINFO[$PARAM(10)].DURA
+inc P1 $ITEMINFO[$PARAM(11)].DURA
+inc P1 $ITEMINFO[$PARAM(12)].DURA
+inc P1 $ITEMINFO[$PARAM(13)].DURA
+inc P1 $ITEMINFO[$PARAM(14)].DURA
+inc P1 $ITEMINFO[$PARAM(15)].DURA
+inc P1 $ITEMINFO[$PARAM(16)].DURA
+inc P1 $ITEMINFO[$PARAM(17)].DURA
+inc P1 $ITEMINFO[$PARAM(18)].DURA
+DIV P1 10000
+inc P0 $STR(P1)
+
+#IF
+!equal $PARAM(4) 0
+#ACT
+inc P0 30
+
+#IF
+random 1
+#ACT
+movr P1 100
+
+#IF
+large P0 $STR(P1)
+#ACT
+goto @熔炼成功
+#ELSEACT
+MessageBox 很遗憾，这次的宝石熔炼失败了！
+
+[@熔炼成功]
+#ACT
+movr P0 7
+#SAY
+恭喜你，这次的宝石熔炼成功了！\
+\
+\
+<离开/@exit>
+
+#IF
+equal P0 0
+#ACT
+give 火晶石(小) 1
+break
+
+#IF
+equal P0 1
+#ACT
+give 冰月石(小) 1
+break
+
+#IF
+equal P0 2
+#ACT
+give 水云石(小) 1
+break
+
+#IF
+equal P0 3
+#ACT
+give 金刚石(小) 1
+break
+
+#IF
+equal P0 4
+#ACT
+give 圣魔石(小) 1
+break
+
+#IF
+equal P0 5
+#ACT
+give 青木石(小) 1
+break
+
+#IF
+equal P0 6
+#ACT
+give 紫心石(小) 1
+break
+}

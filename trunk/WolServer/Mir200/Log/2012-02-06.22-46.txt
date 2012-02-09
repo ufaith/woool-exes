@@ -1,0 +1,52 @@
+06/02/2012 22:46:36 Has Read 0Guild Information...
+06/02/2012 22:46:36 Has Read 1Castle Information...
+06/02/2012 22:46:42 登录服务器(127.0.0.1:5600)连接成功...
+06/02/2012 22:46:42 游戏网关[0](127.0.0.1:1145)已打开...
+06/02/2012 22:46:42 Database Server(127.0.0.1:6000)Connection Is Successful...
+06/02/2012 22:49:04 [制造物品] gamelord RaythonRobe(M)(1073741840)
+06/02/2012 22:49:20 [制造物品] gamelord GhostRobe(M)(1073741841)
+06/02/2012 22:50:44 Division by zero
+06/02/2012 22:51:14 Division by zero
+06/02/2012 22:51:45 Division by zero
+06/02/2012 22:52:16 Division by zero
+06/02/2012 22:52:37 Item Database Reload Complete...
+06/02/2012 22:52:43 [制造物品] gamelord SunburnRing(1073741842)
+06/02/2012 22:52:46 Division by zero
+06/02/2012 22:53:16 Division by zero
+06/02/2012 22:53:47 Division by zero
+06/02/2012 22:54:18 Division by zero
+06/02/2012 22:54:43 Item Database Reload Complete...
+06/02/2012 22:54:48 Division by zero
+06/02/2012 22:54:49 [制造物品] gamelord DragonSaint(1073741843)
+06/02/2012 22:54:56 [等级调整] gamelord (55 -> 65)
+06/02/2012 22:55:19 Division by zero
+06/02/2012 22:55:49 Division by zero
+06/02/2012 22:56:20 Division by zero
+06/02/2012 22:56:36 在线数: 1
+06/02/2012 22:56:51 Division by zero
+06/02/2012 22:57:22 Division by zero
+06/02/2012 22:57:33 Item Database Reload Complete...
+06/02/2012 22:57:42 [制造物品] gamelord KingHelmet(1073741844)
+06/02/2012 22:57:53 Division by zero
+06/02/2012 22:58:04 Item Database Reload Complete...
+06/02/2012 22:58:09 [制造物品] gamelord LordHelmet(1073741845)
+06/02/2012 22:58:23 Division by zero
+06/02/2012 22:58:54 Division by zero
+06/02/2012 22:59:24 Division by zero
+06/02/2012 22:59:54 Division by zero
+06/02/2012 23:00:24 Item Database Reload Complete...
+06/02/2012 23:00:24 Division by zero
+06/02/2012 23:00:31 [制造物品] gamelord EarthShatter(1073741846)
+06/02/2012 23:00:54 Division by zero
+06/02/2012 23:01:25 Division by zero
+06/02/2012 23:01:56 Division by zero
+06/02/2012 23:02:27 Division by zero
+06/02/2012 23:02:57 Division by zero
+06/02/2012 23:03:28 Division by zero
+06/02/2012 23:03:58 Division by zero
+06/02/2012 23:04:28 Division by zero
+06/02/2012 23:04:59 Division by zero
+06/02/2012 23:05:10 [制造物品] gamelord 灵兽项圈(1073741847)
+06/02/2012 23:05:29 Division by zero
+06/02/2012 23:06:00 Division by zero
+06/02/2012 23:06:04 游戏网关[0](127.0.0.1:1145)已关闭...

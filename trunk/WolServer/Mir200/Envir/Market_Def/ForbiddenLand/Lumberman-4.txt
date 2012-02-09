@@ -1,0 +1,13 @@
+(@sell)
+%100
++48
+[@main]
+Welcome, do you have any wood for me?\
+\
+<Sell Wood/@sell>\
+<Exit/@exit>
+
+[@sell]
+Please select the items you wish to sell.\
+\
+<Back/@main>\

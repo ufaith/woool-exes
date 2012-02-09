@@ -1,0 +1,28 @@
+(@sell)
+%100
++40
+[@main]
+Welcome, do you have any meat for me today?\
+\
+#IF
+large $Task[21] 2
+small $Task[21] 5
+#SAY
+<Quest/@_RW_entry>\
+
+#IF
+equal $Task[21] 1
+#SAY
+<Quest/@_RW_entry>\
+#IF
+#SAY
+<Sell Meats/@sell>\
+<Exit/@exit>
+
+[@_RW_entry]
+#CALL [\Quests\NoviceQuests\ButchersKnife.txt] @∫£Ω«¥Â-Õ¿∑Ú
+
+[@sell]
+Please select the Meats you wish to sell.\
+\
+<Back/@main>

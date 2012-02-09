@@ -1,0 +1,9 @@
+06/02/2012 13:19:49 Has Read 0Guild Information...
+06/02/2012 13:19:49 Has Read 1Castle Information...
+06/02/2012 13:19:49 script error, load fail: \TitleSystem\WarriorTitles.txt@Titles
+06/02/2012 13:19:49 脚本错误2: DelayGift 900 @礼物二计 您将获得第2份礼物，请等待%s 第:108 行: .\Envir\MapQuest_def\QManage.txt
+06/02/2012 13:19:49 脚本错误2: DelayGift 1800 @礼物三计 您将获得第3份礼物，请等待%s 第:129 行: .\Envir\MapQuest_def\QManage.txt
+06/02/2012 13:23:51 Division by zero
+06/02/2012 13:24:22 Division by zero
+06/02/2012 13:24:53 Division by zero
+06/02/2012 13:25:23 Division by zero

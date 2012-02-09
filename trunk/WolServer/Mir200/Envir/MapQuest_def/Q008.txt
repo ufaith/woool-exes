@@ -1,0 +1,7 @@
+[@main]
+#IF
+equal $Task(37) 2
+#ACT
+give 传世史记 1
+UpdateTask 37 3
+SENDMSG 5 你获得了传世史记！

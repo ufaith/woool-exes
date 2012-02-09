@@ -1,0 +1,278 @@
+[@擂台使者]
+{
+请选择比赛模式：\
+\
+<单人擂台/@contest>      <团体擂台/@contest2>      <混乱对抗赛/@contest3>      <生存挑战赛/@contest4>\
+<领取奖金/@bonus>\
+<取消摆擂/@cancelarena>\
+<离开场地/@leave>      <积分规则/@rules2>      <英雄榜/@top20>\
+\
+　　　　　　　　　　　　　　　　　　　　　　　　　<关闭/@exit>
+
+[@import]
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @contest
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @contest2
+#CALL [\Features\HeroesChallenge\混乱对抗.txt] @contest3
+#CALL [\Features\HeroesChallenge\生存挑战.txt] @contest4
+
+[@leave]
+#ACT
+map SH003
+
+[@rules2]
+一、参加单人比赛获胜一场积1分；参加团体比赛获胜一场积3\
+　　分；参加群体对抗赛获胜一场积5分。\
+二、比赛平局以及取消比赛均不计分。比赛取消不计入比赛场\
+　　次，比赛平局计入比赛场次。\
+三、积分相同的情况下，比赛场次少者排名位置靠前，比赛场\
+　　次相同情况下，比赛奖金多者排名位置靠前。\
+四、参加团队比赛奖金累积额度只针对队长。比赛奖金的计算\
+　　不包括自己的比赛金在内。\
+　　　　　　　　　　　　　　　　　　<下一页/@next>　　　　<返回/@main>
+
+[@next]
+五、  参加生存挑战赛不计入英雄榜成绩。\
+\
+\
+\
+\
+\
+\
+　　　　　　　　　　　　　　　　　　<上一页/@rules2>　　　　<关闭/@exit>
+
+[@cancelarena]
+#IF
+CHECKVAR HUMAN ArenaCondition = 摆
+#ACT
+Calcvar HUMAN ArenaCondition =
+goto @取消摆擂
+#SAY
+你已经成功取消守擂，现在是否要取回本场比赛金？\
+\
+<现在领取/@bonus>\
+<退出/@exit>
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @人物状态
+#ELSESAY
+你并没有摆擂或你申请的擂台已经有人攻打，无法取消。\
+\
+<离开/@exit>
+
+[@bonus]
+#IF
+random 1
+#ACT
+mov P0 $GOLDCOUNT
+inc P0 $HUMAN(ArenaCompetition)
+
+#IF
+large P0 10000000
+#ACT
+break
+#SAY
+你无法携带这么多金币
+
+#IF
+CHECKVAR HUMAN ArenaCondition =
+CHECKVAR HUMAN ArenaCompetition > 0
+#ACT
+give 金币 $HUMAN(ArenaCompetition)
+Calcvar HUMAN ArenaCompetition = 0
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#SAY
+此场比赛已经被取消，请重新申请。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 攻
+CHECKVAR HUMAN ArenaCompetition > 0
+#ACT
+give 金币 $HUMAN(ArenaCompetition)
+Calcvar HUMAN ArenaCompetition = 0
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @人物状态
+#SAY
+恭喜你打擂成功，你将获得比赛奖金。收取场地费5万。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 守
+CHECKVAR HUMAN ArenaCompetition > 0
+#ACT
+give 金币 $HUMAN(ArenaCompetition)
+Calcvar HUMAN ArenaCompetition = 0
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @人物状态
+#SAY
+恭喜你守擂成功，你将获得比赛奖金。收取场地费5万。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 平
+CHECKVAR HUMAN ArenaCompetition > 0
+#ACT
+give 金币 $HUMAN(ArenaCompetition)
+Calcvar HUMAN ArenaCompetition = 0
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @人物状态
+#SAY
+各位英雄在此场打擂不相上下，战成平局。返还你的比赛金\
+并且各收取场地费5万。\
+\
+<关闭/@exit>
+#ELSESAY
+你没有获得任何奖金。\
+\
+<返回/@main>
+
+[@取消摆擂]
+#IF
+CHECKVAR GLOBAL 单人擂主名称1 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金1)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @清理单人1
+
+#IF
+CHECKVAR GLOBAL 单人擂主名称2 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金2)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @清理单人2
+
+#IF
+CHECKVAR GLOBAL 单人擂主名称3 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金3)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @清理单人3
+
+#IF
+CHECKVAR GLOBAL 单人擂主名称4 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金4)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @清理单人4
+
+#IF
+CHECKVAR GLOBAL 单人擂主名称5 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金5)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @清理单人5
+
+#IF
+CHECKVAR GLOBAL 单人擂主名称6 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金6)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @清理单人6
+
+#IF
+CHECKVAR GLOBAL 单人擂主名称7 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金7)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @清理单人7
+
+#IF
+CHECKVAR GLOBAL 单人擂主名称8 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金8)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @清理单人8
+
+#IF
+CHECKVAR GLOBAL 单人擂主名称9 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金9)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @清理单人9
+
+#IF
+CHECKVAR GLOBAL 团擂A队人名11 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金1)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体1
+
+#IF
+CHECKVAR GLOBAL 团擂A队人名21 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金2)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体2
+
+#IF
+CHECKVAR GLOBAL 团擂A队人名31 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金3)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体3
+
+#IF
+CHECKVAR GLOBAL 团擂A队人名41 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金4)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体4
+
+#IF
+CHECKVAR GLOBAL 团擂A队人名51 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金5)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体5
+
+#IF
+CHECKVAR GLOBAL 团擂A队人名61 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金6)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体6
+
+#IF
+CHECKVAR GLOBAL 团擂A队人名71 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金7)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体7
+
+#IF
+CHECKVAR GLOBAL 团擂A队人名81 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金8)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体8
+
+#IF
+CHECKVAR GLOBAL 团擂A队人名91 = $USERNAME
+#ACT
+Calcvar HUMAN ArenaCompetition = $GLOBAL(单团擂台赛金9)
+SAVEVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体9
+}

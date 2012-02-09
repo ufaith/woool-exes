@@ -1,0 +1,40 @@
+07/02/2012 21:14:35 Has Read 0Guild Information...
+07/02/2012 21:14:35 Has Read 1Castle Information...
+07/02/2012 21:14:36 脚本错误2: ADDITEMEVIL 第:128 行: .\Envir\Market_Def\QFunction-0.txt
+07/02/2012 21:14:37 登录服务器(127.0.0.1:5600)连接成功...
+07/02/2012 21:14:39 Database Server(127.0.0.1:6000)Connection Is Successful...
+07/02/2012 21:14:40 游戏网关[0](127.0.0.1:3551)已打开...
+07/02/2012 21:16:12 [制造物品] gamelord 踏云玄铠(1073741916)
+07/02/2012 21:18:21 [制造物品] gamelord 兽神水(1073741917)
+07/02/2012 21:18:38 Division by zero
+07/02/2012 21:19:09 Division by zero
+07/02/2012 21:19:20 [制造物品] gamelord 兽神水(1073741918)
+07/02/2012 21:19:22 [制造物品] gamelord 兽神水(1073741919)
+07/02/2012 21:19:39 Division by zero
+07/02/2012 21:19:45 [制造物品] gamelord 灵兽铠(1073741920)
+07/02/2012 21:19:45 [制造物品] gamelord 灵兽铠(1073741921)
+07/02/2012 21:20:09 Division by zero
+07/02/2012 21:20:40 Division by zero
+07/02/2012 21:21:10 Division by zero
+07/02/2012 21:21:40 Division by zero
+07/02/2012 21:22:02 [制造物品] gamelord 狮魔石(1073741922)
+07/02/2012 21:22:10 Division by zero
+07/02/2012 21:22:41 Division by zero
+07/02/2012 21:23:11 Division by zero
+07/02/2012 21:23:41 Division by zero
+07/02/2012 21:24:11 Division by zero
+07/02/2012 21:24:35 在线数: 1
+07/02/2012 21:24:41 Division by zero
+07/02/2012 21:25:12 Division by zero
+07/02/2012 21:25:42 Division by zero
+07/02/2012 21:26:13 Division by zero
+07/02/2012 21:26:43 Division by zero
+07/02/2012 21:27:04 [制造物品] gamelord BattleHorn(1073741923)
+07/02/2012 21:27:13 Division by zero
+07/02/2012 21:27:44 Division by zero
+07/02/2012 21:28:05 file not found => .\Envir\Npc_def\..\GuildBase\Guildlist.txt
+07/02/2012 21:28:14 Division by zero
+07/02/2012 21:28:45 Division by zero
+07/02/2012 21:29:15 Division by zero
+07/02/2012 21:29:45 Division by zero
+07/02/2012 21:29:51 游戏网关[0](127.0.0.1:3551)已关闭...

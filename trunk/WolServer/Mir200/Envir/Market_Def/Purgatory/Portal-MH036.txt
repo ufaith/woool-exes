@@ -1,0 +1,36 @@
+[@main]
+#IF
+CheckUserGap < 5
+#SAY
+你要进入炼狱的更深层吗？\
+按照你职业的不同，所走的道路也不相同，\
+不过最终的终点是相同。你准备好了吗？\
+\
+<我准备好了，前进/@go>\
+<先返回投石谷/@投石谷>
+<还没准备好，等等/@exit>
+#ELSESAY
+<太远了，过不去..../@exit>
+
+[@go]
+#IF
+checkjob warrior
+#ACT
+mapmove MH037 143 37
+break
+
+#IF
+checkjob wizard
+#ACT
+mapmove MH038 218 151
+break
+
+#IF
+checkjob taoist
+#ACT
+mapmove MH039 41 125
+break
+
+[@投石谷]
+#ACT
+mapmove MH026 166 90

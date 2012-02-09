@@ -1,0 +1,2 @@
+        1/10    HPPotion(S)         1
+        1/15    MPPotion(S)         1

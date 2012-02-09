@@ -1,0 +1,435 @@
+[@滴血认主]
+{
+　　每个灵兽都有一个先天属性，名为<Color=green “资质”>，每个野生\
+的灵兽在被捕获时就可以发现它的资质，而非野生的灵兽则\
+需要主人进行“滴血认主”才可被发现。<Color=green 同时你也无法以任>\
+<Color=green 何方式将此灵兽转给别人！>\
+　　<Color=green 只要是开启过资质的灵兽，就会获得一个五行属性。在>\
+<Color=green 骑战状态下，可获得五行属性的攻击力加成，并且，提升二>\
+<Color=green 转灵兽的顿悟次数才可提升五行攻击力。>\
+　　还有，灵兽资质越高，其二转的时机来得越早。\
+　　<好的，请帮我“滴血认主”并发现资质/@_animal_OpenZiZhiAAA>    <资质的作用/@_animal_ZIZHI>\
+
+[@_animal_ZIZHI]
+　　一个灵兽的资质直接决定了它二转后能升到的最高等\
+级，而<Color=green 灵兽的等级越高其主人使用骑战技能的威力也越大、>\
+<Color=green 其作为副灵兽幻化时的成功概率也越高，同时能通过幻化转>\
+<Color=green 移的属性也越多。>\
+　　<Color=green 资质越高灵兽二转所需要的经验也越少。>\
+　　<Color=green 同时告诉你个秘密资质也可通过幻化来进行提升的哦。>\
+　　<返回/@_animal_OpenZiZhi>
+
+[@_animal_OpenZiZhiAAA]
+#ACT
+ShowSpotDlg 6 请放入灵兽石 @开始认主
+#SAY
+    <Color=green 请放入你需要“滴血认主”开启资质的灵兽。>\
+    <Color=green 对了，同时这还将花费10万金币。>\
+
+[@开始认主]
+#IF
+!checkgold 100000
+#ACT
+break
+#SAY
+　　抱歉你的金币不足10万，不能进行开启资质的操作。\
+　　<我知道了/@exit>
+
+#IF
+!equal $ITEMINFO[$PARAM(1)].stdmode 49
+!equal $ITEMINFO[$PARAM(1)].shape 51
+#ACT
+break
+#SAY
+该物品不是灵兽石
+
+#IF
+large $ITEMINFO[$PARAM(1)].PET.APTITUDE 0
+#ACT
+break
+#SAY
+　　你的灵兽已经“滴血认主”，并发现了资质，无法再才一\
+发现。\
+　　<多谢/@exit>
+
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+mov M0 $PARAM(1)
+#CALL [\Features\Cleverness\RecognizeHost.txt] @灵兽加属性
+#SAY
+　　你的灵兽成功进行了“滴血认主”，并被发现了资质，\
+获得了五行属性。当灵兽二转后，<Color=green 每次顿悟灵兽就能增>\
+<Color=green 加五行属性的攻击力。>\
+<Color=green 该灵兽在7级
+
+#IF
+small $ITEMINFO[$PARAM(1)].PET.APTITUDE 20
+#SAY
+2000
+
+#IF
+large $ITEMINFO[$PARAM(1)].PET.APTITUDE 9
+small $ITEMINFO[$PARAM(1)].PET.APTITUDE 20
+#SAY
+1800
+
+#IF
+large $ITEMINFO[$PARAM(1)].PET.APTITUDE 19
+small $ITEMINFO[$PARAM(1)].PET.APTITUDE 30
+#SAY
+1600
+
+#IF
+large $ITEMINFO[$PARAM(1)].PET.APTITUDE 29
+small $ITEMINFO[$PARAM(1)].PET.APTITUDE 40
+#SAY
+1400
+
+#IF
+large $ITEMINFO[$PARAM(1)].PET.APTITUDE 39
+small $ITEMINFO[$PARAM(1)].PET.APTITUDE 50
+#SAY
+1200
+
+#IF
+large $ITEMINFO[$PARAM(1)].PET.APTITUDE 49
+small $ITEMINFO[$PARAM(1)].PET.APTITUDE 60
+#SAY
+1000
+
+#IF
+large $ITEMINFO[$PARAM(1)].PET.APTITUDE 59
+small $ITEMINFO[$PARAM(1)].PET.APTITUDE 70
+#SAY
+800
+
+#IF
+#SAY
+经验时可以进行二转。>\
+　　记住：<Color=green 灵兽的等级越高其主人使用骑战技能的威力也越>\
+<Color=green 大、其作为副灵兽幻化时的成功概率也越高，同时能通过幻>\
+<Color=green 化转移的属性也越多。>\
+　　<谢谢/@exit>
+}
+
+[@灵兽加属性]
+{
+#ACT
+goto @五行
+goto @属性
+UPGRADEUSERITEM $STR(M0) 59 = 1
+
+[@五行]
+#IF
+random 1
+#ACT
+mov P0 1
+
+#IF
+random 10
+#ACT
+mov P0 2
+
+#IF
+random 30
+#ACT
+mov P0 3
+
+#IF
+random 8
+#ACT
+SETPETATTRIBUTE $STR(M0) 15 0 = $STR(P0)
+break
+
+#IF
+random 7
+#ACT
+SETPETATTRIBUTE $STR(M0) 15 1 = $STR(P0)
+break
+
+#IF
+random 6
+#ACT
+SETPETATTRIBUTE $STR(M0) 15 2 = $STR(P0)
+break
+
+#IF
+random 5
+#ACT
+SETPETATTRIBUTE $STR(M0) 15 3 = $STR(P0)
+break
+
+#IF
+random 4
+#ACT
+SETPETATTRIBUTE $STR(M0) 16 0 = $STR(P0)
+break
+
+#IF
+random 3
+#ACT
+SETPETATTRIBUTE $STR(M0) 16 1 = $STR(P0)
+break
+
+#IF
+random 2
+#ACT
+SETPETATTRIBUTE $STR(M0) 16 2 = $STR(P0)
+break
+
+#IF
+random 1
+#ACT
+SETPETATTRIBUTE $STR(M0) 16 3 = $STR(P0)
+break
+
+[@属性]
+;资质0-50 1 资质20-70 10
+;生命值0-20
+;魔法值0-20
+;防御下限 1 30
+;防御上限 1 30
+;魔御下限 1 30
+;魔御上限 1 30
+;攻击下限 1 30
+;攻击上限 1 30
+;魔法下限 1 30
+;魔法上限 1 30
+;道术下限 1 30
+;道术上限 1 30
+;躲避 1 30
+;中毒躲避 1 30
+;魔法躲避 1 30
+;命中 1 30
+;中毒命中 1 30
+;魔法命中 1 30
+;幸运 1 100
+
+#IF
+random 1
+#ACT
+;资质10-50
+movr P0 50
+inc P0 10
+SETPETATTRIBUTE $STR(M0) 2 = $STR(P0)
+
+#IF
+random 10
+#ACT
+;资质30-70
+movr P0 40
+inc P0 30
+SETPETATTRIBUTE $STR(M0) 2 = $STR(P0)
+
+#IF
+random 1
+#ACT
+;生命值0-20
+movr P0 20
+inc P0 1
+SETPETATTRIBUTE $STR(M0) 3 = $STR(P0)
+;魔法值0-20
+movr P0 20
+inc P0 1
+SETPETATTRIBUTE $STR(M0) 4 = $STR(P0)
+
+#IF
+random 30
+#ACT
+;防御下限
+SETPETATTRIBUTE $STR(M0) 10 = 1
+
+#IF
+random 60
+#ACT
+;防御下限
+SETPETATTRIBUTE $STR(M0) 10 = 1
+
+#IF
+random 30
+#ACT
+;防御上限
+SETPETATTRIBUTE $STR(M0) 11 = 1
+
+#IF
+random 60
+#ACT
+;防御上限
+SETPETATTRIBUTE $STR(M0) 11 = 2
+
+#IF
+random 30
+#ACT
+;魔御下限
+SETPETATTRIBUTE $STR(M0) 6 = 1
+
+#IF
+random 60
+#ACT
+;魔御下限
+SETPETATTRIBUTE $STR(M0) 6 = 2
+
+#IF
+random 30
+#ACT
+;魔御上限
+SETPETATTRIBUTE $STR(M0) 7 = 1
+
+#IF
+random 60
+#ACT
+;魔御上限
+SETPETATTRIBUTE $STR(M0) 7 = 2
+
+#IF
+random 30
+#ACT
+;攻击下限
+SETPETATTRIBUTE $STR(M0) 23 = 1
+
+#IF
+random 60
+#ACT
+;攻击下限
+SETPETATTRIBUTE $STR(M0) 23 = 2
+
+#IF
+random 30
+#ACT
+;攻击上限
+SETPETATTRIBUTE $STR(M0) 24 = 1
+
+#IF
+random 60
+#ACT
+;攻击上限
+SETPETATTRIBUTE $STR(M0) 24 = 2
+
+#IF
+random 30
+#ACT
+;魔法下限
+SETPETATTRIBUTE $STR(M0) 19 = 1
+
+#IF
+random 60
+#ACT
+;魔法下限
+SETPETATTRIBUTE $STR(M0) 19 = 2
+
+#IF
+random 30
+#ACT
+;魔法上限
+SETPETATTRIBUTE $STR(M0) 20 = 1
+
+#IF
+random 60
+#ACT
+;魔法上限
+SETPETATTRIBUTE $STR(M0) 20 = 2
+
+#IF
+random 30
+#ACT
+;道术下限
+SETPETATTRIBUTE $STR(M0) 21 = 1
+
+#IF
+random 60
+#ACT
+;道术下限
+SETPETATTRIBUTE $STR(M0) 21 = 2
+
+#IF
+random 30
+#ACT
+;道术上限
+SETPETATTRIBUTE $STR(M0) 22 = 1
+
+#IF
+random 60
+#ACT
+;道术上限
+SETPETATTRIBUTE $STR(M0) 22 = 2
+
+#IF
+random 30
+#ACT
+;躲避
+SETPETATTRIBUTE $STR(M0) 9 = 1
+
+#IF
+random 60
+#ACT
+;躲避
+SETPETATTRIBUTE $STR(M0) 9 = 2
+
+#IF
+random 30
+#ACT
+;中毒躲避
+SETPETATTRIBUTE $STR(M0) 5 = 1
+
+#IF
+random 60
+#ACT
+;中毒躲避
+SETPETATTRIBUTE $STR(M0) 5 = 2
+
+#IF
+random 30
+#ACT
+;魔法躲避
+SETPETATTRIBUTE $STR(M0) 12 = 1
+
+#IF
+random 60
+#ACT
+;魔法躲避
+SETPETATTRIBUTE $STR(M0) 12 = 2
+
+#IF
+random 30
+#ACT
+;命中
+SETPETATTRIBUTE $STR(M0) 25 = 1
+
+#IF
+random 60
+#ACT
+;命中
+SETPETATTRIBUTE $STR(M0) 25 = 2
+
+#IF
+random 30
+#ACT
+;魔法命中
+SETPETATTRIBUTE $STR(M0) 8 = 1
+
+#IF
+random 60
+#ACT
+;魔法命中
+SETPETATTRIBUTE $STR(M0) 8 = 2
+
+#IF
+random 30
+#ACT
+;中毒命中
+SETPETATTRIBUTE $STR(M0) 13 = 1
+
+#IF
+random 60
+#ACT
+;中毒命中
+SETPETATTRIBUTE $STR(M0) 13 = 2
+
+#IF
+random 100
+#ACT
+;幸运 1 100
+SETPETATTRIBUTE $STR(M0) 26 = 1
+}

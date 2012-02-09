@@ -1,0 +1,14 @@
+[@main]
+#IF
+CheckUserGap < 5
+#SAY
+这里通往炼狱魔境十层。\
+要挑战炼狱魔境的更深层吗？\
+<我准备好了，前进/@go>\
+<还是算了/@exit>
+#ELSESAY
+<太远了，过不去..../@exit>
+
+[@go]
+#ACT
+mapmove NL010 98 242

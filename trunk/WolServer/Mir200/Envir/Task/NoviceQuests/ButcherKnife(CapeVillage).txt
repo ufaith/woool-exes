@@ -1,0 +1,8 @@
+[setup]
+stepcount = 4
+title = NoviceQuests--屠夫的刀子
+ID = 21
+stepDESC1 = 　　　　　<color=green Novice Quest>\\<color=graygolden Assignment:> Go to <Butcher/@@goto 0 Butcher 395,615> to help him\<color=graygolden Quest:>\</@@!PIC 磨损的刀子>  </@@!PIC2 10,951>Experience:100  </@@!PIC2 10,229>Gold: 150\<color=graygolden Description:>\The town Butcher needs your help, go visit him.\ He is located at (395:615).
+stepDESC2 = <color=graygolden Assignment:>Go  to <Blacksmith/@@goto 0 Blacksmith 417,596>\<color=graygolden Quest:>\</@@!PIC 锋利的刀子>\<color=graygolden Description:>\I am too busy to go myself so you will go for me\I need the Blacksmith to polish my Knife for me\You can find him near the north gate(417:595).
+stepDESC3 = <color=graygolden Assignment:>Return the knife to the <Butcher/@@goto 0 Butcher 395,615>\<color=graygolden Quest:>   </@@!PIC2 10,951>Experience:200  </@@!PIC2 10,229>Gold: 150\<color=graygolden Task Description:>\The Knfe is polished and ready to be returned.\The Butcher needs his knife, please go give it to him!.
+stepDESC4 = <color=graygolden Assignment:>Go to <West Entrance/@@goplace 0 380,600>Butcher needs meats<Butcher/@@goto 0 Butcher 395,615>\<color=graygolden Quest:>\</@@!PIC 幻彩戒指>×2  </@@!PIC2 10,951>Experience: 300	</@@!PIC2 10,229>Gold: 150\<color=graygolden Description:>\Am in short supply of Pork, i need you to go find me some.\You will find plenty of Pigs roaming the village<color=green Kill Pig>\<color=green After killing a Pig, hold down ALT + Left click on the corpse.>\<color=green Pork>. Tip: Need 5 or more quality pork 3.

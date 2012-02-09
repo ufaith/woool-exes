@@ -1,0 +1,8 @@
+[Task]
+MaxTaskCount=10
+[Task1]
+ID=4
+TaskStep=1
+[BagItemPos]
+count=3
+Pos=jrXkvvfugrXkvufujrXovtfu

@@ -1,0 +1,694 @@
+[@mainright]
+{
+#IF
+CheckLevelEx > 22
+#SAY
+　　从现在开始，每一位勇士都可以通过传世宝典进行答题\
+。每天有一次免费答题的机会，除此之外还可使用赤金钥\
+匙，打开智慧大门，运用智慧之力获得高额的经验奖励。我\
+要免费答题我要使用赤金钥匙答题。\
+\
+　　<我要免费答题/@mainrightfree>\
+　　<是的，我想答一轮/@mainrightKeyDati>\
+　　<关闭/@exit>\
+#ELSESAY
+　　{Color=green <$USERNAME>}，欢迎你进入传奇世界！\
+　　在传世大陆上，你目前还只是一个新手。你可以通过双\
+击“HandedCollection”来了解传世大陆的各个信息，还可以找<Color=green 新手>\
+<Color=green 向导>接取新手任务。\
+　　“HandedCollection”中的<Color=green 新手锦囊>记载了很多你需要了解的知\
+识。当你每掌握一个知识，就能获得一些对你当前级别来说\
+迫切需要的装备。<Color=green 现在你需要打开锦囊吗？>\
+　　<Color=green 连续使用赤金钥匙答对问题就能不断的获得海量经验。>\
+　　<请帮我打开锦囊吧/@mainrightdakaiNew>\
+　　<我要使用赤金钥匙答题/@mainrightKeyDati>\
+　　<关闭/@exit>\
+
+[@mainrightfree]
+#ACT
+mov D4 0
+mov D5 0
+
+#IF
+checknamelist ..\QuestDiary\GameData\HandedCollection.txt
+#SAY
+　　你已经通过传世宝典进行过免费答题。不过，在每天的\
+19：00到20：00的时候，落霞的王城官员那还有另外的知识\
+问答，如果连续答对3道题目，同样可获得额外的奖励。你\
+可以通过使用回城神石迅速回到落霞岛。除此之外还可使用\
+赤金钥匙打开智慧大门，运用智慧之力获得<Color=green 海量的经验奖励>。\
+\
+　　<我要使用赤金钥匙答题/@mainrightKeyDati>\
+　　<离开/@exit>\
+#ELSESAY
+　　你必须连续答对三道题目，你才能获得相应的经验值奖\
+励。如果中间有任何一题答错，必须重新回答才能领奖。\
+\
+\
+　　<开始吧，我准备好了/@mainrightstartanswer>\
+
+[@mainrightKeyDati]
+#IF
+CHECKVAR HUMAN PureGoldBox > 9
+#ACT
+break
+#SAY
+　　每天只能使用赤金钥匙进行10次答题，请明天再使用。\
+　　<关闭/@exit>
+
+#IF
+checkitem GoldenKey 1
+#ACT
+take GoldenKey 1
+Calcvar HUMAN PureGoldBox + 1
+goto @mainrightstartanswer
+break
+
+#IF
+large $ITEMINFO[$ITEMMAKEINDEX(GoldenKey(B))].DURAMAX 0
+#ACT
+UPGRADEUSERITEM $ITEMMAKEINDEX(GoldenKey(B)) 20 - 1
+goto @mainrightstartanswer
+#ELSESAY
+　　您没有赤金钥匙，无法开启答题。\
+　　<关闭/@exit>
+
+[@mainrightstartanswer]
+#ACT
+movr P0 4
+movr P1 4
+movr P2 4
+#SAY
+<$QUESTION(44/394)>
+
+#IF
+equal P0 0
+#SAY
+　　{<$ANSWERTEXT(1)>/@ans&1}\
+#IF
+equal P1 0
+#SAY
+　　{<$ANSWERTEXT(2)>/@ans&2}\
+#IF
+equal P2 0
+#SAY
+　　{<$ANSWERTEXT(3)>/@ans&3}\
+#IF
+equal P0 1
+#SAY
+　　{<$ANSWERTEXT(1)>/@ans&1}\
+#IF
+equal P1 1
+#SAY
+　　{<$ANSWERTEXT(2)>/@ans&2}\
+#IF
+equal P2 1
+#SAY
+　　{<$ANSWERTEXT(3)>/@ans&3}\
+#IF
+equal P0 2
+#SAY
+　　{<$ANSWERTEXT(1)>/@ans&1}\
+#IF
+equal P1 2
+#SAY
+　　{<$ANSWERTEXT(2)>/@ans&2}\
+#IF
+equal P2 2
+#SAY
+　　{<$ANSWERTEXT(3)>/@ans&3}\
+#IF
+equal P0 3
+#SAY
+　　{<$ANSWERTEXT(1)>/@ans&1}\
+#IF
+equal P1 3
+#SAY
+　　{<$ANSWERTEXT(2)>/@ans&2}\
+#IF
+equal P2 3
+#SAY
+　　{<$ANSWERTEXT(3)>/@ans&3}\
+#IF
+equal P0 4
+#SAY
+　　{<$ANSWERTEXT(1)>/@ans&1}\
+#IF
+equal P1 4
+#SAY
+　　{<$ANSWERTEXT(2)>/@ans&2}\
+#IF
+equal P2 4
+#SAY
+　　{<$ANSWERTEXT(3)>/@ans&3}\
+
+[@mainrightdakaiNew]
+#IF
+CHECKVAR HUMAN NoviceAnswer \ $LEVEL
+#ACT
+break
+#SAY
+　　恭喜你，勇士！你在新手锦囊中已经掌握了这个等级\
+的知识，作为奖励，这些东西我就送给你了。但你要知\
+道，未来的修行之路还很漫长，你还需要承受更多的磨\
+练才行，加油吧！！\
+\
+　　<我要使用赤金钥匙答题/@mainrightKeyDati>\
+　　<返回/@mainright>　　　　<关闭/@exit>\
+
+#IF
+random 1
+#ACT
+MOV P0 2
+MULT P0 $LEVEL
+dec P0 1
+MOV P1 1
+
+#IF
+random 1
+#SAY
+<$QUESTION($STR(P0)/$STR(P0))>
+　　{<$ANSWERTEXT(1)>/@ans&1}\
+　　{<$ANSWERTEXT(2)>/@ans&2}\
+　　{<$ANSWERTEXT(3)>/@ans&3}\
+　　{<$ANSWERTEXT(4)>/@ans&4}\
+
+[@ans] TRUE
+#IF
+EQUAL $ANSWER $SCRIPTPARAM(1)
+#ACT
+goto @mainright正确
+#ELSEACT
+goto @mainright错误
+
+[@mainright错误]
+#IF
+CheckLevelEx > 22
+#ACT
+mov D4 0
+#SAY
+　　很遗憾，你没有连续答对3道题。不要气馁哦，从头再\
+试试吧！\
+\
+\
+　　<呵呵,我要再试一次/@mainrightstartanswer>\
+　　<离开/@exit>
+#ELSESAY
+　　太遗憾了！看来你还需要再磨练一下。去补充一下知\
+识吧，希望下次能够看到你能力有所提高！ \
+\
+　　<我要使用赤金钥匙答题/@mainrightKeyDati>\
+　　<返回/@mainright>　　　<关闭/@exit>
+
+[@mainright正确]
+#IF
+equal D5 1
+#ACT
+goto @赤金奖励
+#SAY
+
+#IF
+CheckLevelEx > 22
+large D4 1
+#ACT
+addnamelist ..\QuestDiary\GameData\HandedCollection.txt
+goto @给予经验
+break
+#SAY
+　　你的智慧超出了我的想象!恭喜你顺利通过这次考验!你\
+已经获得经验。\
+\
+\
+　　<谢谢/@exit>
+
+#IF
+CheckLevelEx > 22
+#ACT
+inc D4 1
+break
+#SAY
+　　不错,这题答得很正确！那么继续答下一题吧。\
+\
+\
+　　<好,请告诉我下一题/@mainrightstartanswer>\
+　　<离开/@exit>
+
+#IF
+large P1 1
+#ACT
+goto @mainright领取奖励
+break
+
+#IF
+random 1
+#ACT
+INC P0 1
+INC P1 1
+#SAY
+　　 你回答的非常正确，请再接再厉！\
+<$QUESTION($STR(P0)/$STR(P0)>
+　　{<$ANSWERTEXT(1)>/@ans&1}\
+　　{<$ANSWERTEXT(2)>/@ans&2}\
+　　{<$ANSWERTEXT(3)>/@ans&3}\
+　　{<$ANSWERTEXT(4)>/@ans&4}\
+
+[@mainright领取奖励]
+#IF
+random 1
+#ACT
+CALCVAR HUMAN NoviceAnswer = $LEVEL
+#SAY
+　　恭喜你，勇士！你在新手锦囊中已经掌握了这个等级 \
+的知识，作为奖励，这些东西我就送给你了。但你要知\
+道，未来的修行之路还很漫长，你还需要承受更多的磨\
+练才行，加油吧！！\
+\
+　　<返回/@mainright>　　　<关闭/@exit>
+
+#IF
+CheckLevelEx = 1
+#ACT
+CHANGEEXP + 50
+break
+
+#IF
+CheckLevelEx = 2
+#ACT
+CHANGEEXP + 100
+give 金创药（小）包 1
+SENDMSG 5 恭喜您获得了金创药（小）包.
+break
+
+#IF
+CheckLevelEx = 3
+#ACT
+CHANGEEXP + 100
+give 金创药（中）包 1
+SENDMSG 5 恭喜您获得了金创药（中）包.
+break
+
+#IF
+CheckLevelEx = 4
+#ACT
+CHANGEEXP + 100
+give UkrainianSword 1
+SENDMSG 5 恭喜您获得了一把乌木剑.
+break
+
+#IF
+CheckLevelEx = 5
+#ACT
+CHANGEEXP + 100
+give 金创药（中）包 1
+SENDMSG 5 恭喜您获得了金创药（中）包.
+break
+
+#IF
+CheckLevelEx = 6
+#ACT
+CHANGEEXP + 100
+give 纯银项链 1
+SENDMSG 5 恭喜您获得了纯银项链.
+break
+
+#IF
+CheckLevelEx = 7
+checkjob warrior
+#ACT
+give BoneFlute 1
+SENDMSG 5 恭喜您获得了铜戒指.
+break
+
+#IF
+CheckLevelEx = 7
+checkjob wizard
+#ACT
+give OctagonalRing 1
+SENDMSG 5 恭喜您获得了八角戒指.
+break
+
+#IF
+CheckLevelEx = 7
+checkjob taoist
+#ACT
+give CrystaRing 1
+SENDMSG 5 恭喜您获得了水晶戒指.
+break
+
+#IF
+CheckLevelEx = 8
+#ACT
+give 金币 2000
+give SteelBangle 1
+SENDMSG 5 恭喜您获得了精钢手镯.
+break
+
+#IF
+CheckLevelEx = 9
+checkjob taoist
+#ACT
+give SpiritSword 1
+SENDMSG 5 您获得了精神战法.
+break
+
+#IF
+CheckLevelEx = 9
+#ACT
+give LargeBangle 1
+SENDMSG 5 恭喜您获得了大护腕.
+break
+
+#IF
+CheckLevelEx = 10
+#ACT
+give 金币 2500
+give 金创药（中）包 1
+SENDMSG 5 恭喜您获得了金创药（中）包.
+break
+
+#IF
+CheckLevelEx = 11
+gender man
+#ACT
+give LightArmor(M) 1
+SENDMSG 5 您获得了轻盔(男).
+break
+
+#IF
+CheckLevelEx = 11
+#ACT
+give LightArmor(F) 1
+SENDMSG 5 您获得了轻盔(女).
+break
+
+#IF
+CheckLevelEx = 12
+checkjob wizard
+#ACT
+give Repulsion 1
+SENDMSG 5 您获得了抗拒火环.
+break
+
+#IF
+CheckLevelEx = 12
+#ACT
+give 金币 3000
+give 敏捷手链 1
+SENDMSG 5 您获得了敏捷手链.
+break
+
+#IF
+CheckLevelEx = 13
+checkjob warrior
+#ACT
+give CrystalNeck 1
+SENDMSG 5 您获得了黑水晶项链.
+break
+
+#IF
+CheckLevelEx = 13
+checkjob wizard
+#ACT
+give SandalNecklace 1
+SENDMSG 5 您获得了黑檀木项链.
+break
+
+#IF
+CheckLevelEx = 13
+checkjob taoist
+#ACT
+give TopazNecklace 1
+SENDMSG 5 您获得了黄水晶项链.
+break
+
+#IF
+CheckLevelEx = 14
+#ACT
+give 金币 3500
+
+#IF
+CheckLevelEx = 14
+checkjob warrior
+#ACT
+give MagicHelmet 1
+SENDMSG 5 您获得了魔力头盔.
+break
+
+#IF
+CheckLevelEx = 14
+checkjob wizard
+#ACT
+give PlatinumNeck 1
+SENDMSG 5 您获得了白金项链.
+break
+
+#IF
+CheckLevelEx = 14
+checkjob taoist
+#ACT
+give Poison 1
+SENDMSG 5 您获得了施毒术.
+break
+
+#IF
+CheckLevelEx = 15
+checkjob warrior
+#ACT
+give GloriousKnife 1
+SENDMSG 5 您获得了八荒刀.
+break
+
+#IF
+CheckLevelEx = 15
+checkjob wizard
+#ACT
+give Trident 1
+SENDMSG 5 您获得了海魂叉.
+break
+
+#IF
+CheckLevelEx = 15
+checkjob taoist
+#ACT
+give HalfMoonKnife 1
+SENDMSG 5 您获得了半月刀.
+break
+
+#IF
+CheckLevelEx = 16
+gender man
+#ACT
+give 金币 4000
+give MediumArmor(M) 1
+SENDMSG 5 您获得了中盔(男).
+SENDMSG 5 带上一个月光宝盒再出门吧，它能吸收更多额外的经验，让你练级事半功倍！
+break
+
+#IF
+CheckLevelEx = 16
+#ACT
+give 金币 4000
+give MediumArmor(F) 1
+SENDMSG 5 您获得了中盔(女).
+SENDMSG 5 带上一个月光宝盒再出门吧，它能吸收更多额外的经验，让你练级事半功倍！
+break
+
+#IF
+CheckLevelEx = 17
+checkjob warrior
+#ACT
+give DevilNecklace 1
+SENDMSG 5 您获得了恶魔项链.
+break
+
+#IF
+CheckLevelEx = 17
+checkjob wizard
+#ACT
+give ThunderBolt 1
+SENDMSG 5 您获得了雷电术.
+break
+
+#IF
+CheckLevelEx = 17
+checkjob taoist
+#ACT
+give PhoenixNeck 1
+SENDMSG 5 您获得了凤凰项链.
+break
+
+#IF
+CheckLevelEx = 18
+checkjob taoist
+#ACT
+give 金币 5000
+give SoulFireBall 1
+SENDMSG 5 您获得了灵魂道符.
+break
+
+#IF
+CheckLevelEx = 18
+#ACT
+give 金币 5000
+give FirmGlove 1
+SENDMSG 5 您获得了坚固手套.
+break
+
+#IF
+CheckLevelEx = 19
+checkjob warrior
+#ACT
+give Infuriating 1
+SENDMSG 5 您获得了护身真气.
+break
+
+#IF
+CheckLevelEx = 19
+checkjob wizard
+#ACT
+give Teleport 1
+SENDMSG 5 您获得了瞬间移动.
+break
+
+#IF
+CheckLevelEx = 19
+checkjob taoist
+#ACT
+give SummonSkele 1
+SENDMSG 5 您获得了骷髅召唤术.
+break
+
+#IF
+CheckLevelEx = 20
+#ACT
+give 金币 8000
+
+#IF
+CheckLevelEx = 20
+checkjob warrior
+#ACT
+give HorseBlade 1
+SENDMSG 5 您获得了斩马.
+break
+
+#IF
+CheckLevelEx = 20
+checkjob wizard
+#ACT
+give CrescentSword 1
+SENDMSG 5 您获得了偃月刀.
+break
+
+#IF
+CheckLevelEx = 20
+checkjob taoist
+#ACT
+give DemonSword 1
+SENDMSG 5 您获得了降魔剑.
+break
+
+#IF
+CheckLevelEx = 21
+checkjob warrior
+#ACT
+give DeathRing 1
+SENDMSG 5 您获得了死神戒指.
+break
+
+#IF
+CheckLevelEx = 21
+checkjob wizard
+#ACT
+give CharmBangle 1
+SENDMSG 5 您获得了魔眼戒指.
+break
+
+#IF
+CheckLevelEx = 21
+checkjob taoist
+#ACT
+give MassHide 1
+SENDMSG 5 您获得了集体隐身术.
+break
+
+#IF
+CheckLevelEx = 22
+#ACT
+give 金币 10000
+
+#IF
+CheckLevelEx = 22
+checkjob warrior
+gender man
+#ACT
+give HeavyArmor(M) 1
+SENDMSG 5 您获得了重盔(男).
+break
+
+#IF
+CheckLevelEx = 22
+checkjob warrior
+#ACT
+give HeavyArmor(F) 1
+SENDMSG 5 您获得了重盔(女).
+break
+
+#IF
+CheckLevelEx = 22
+checkjob wizard
+gender man
+#ACT
+give MagicRobe(M) 1
+SENDMSG 5 您获得了魔袍(男).
+break
+
+#IF
+CheckLevelEx = 22
+checkjob wizard
+#ACT
+give MagicRobe(F) 1
+SENDMSG 5 您获得了魔袍(女).
+break
+
+#IF
+CheckLevelEx = 22
+checkjob taoist
+gender man
+#ACT
+give SoulRobe(M) 1
+SENDMSG 5 您获得了灵魂战甲(男).
+break
+
+#IF
+CheckLevelEx = 22
+checkjob taoist
+#ACT
+give SoulRobe(F) 1
+SENDMSG 5 您获得了灵魂战甲(女).
+break
+
+[@给予经验]
+#IF
+random 8
+#ACT
+CHANGEEXP + 500000
+break
+
+#IF
+random 4
+#ACT
+CHANGEEXP + 300000
+break
+
+#IF
+random 2
+#ACT
+CHANGEEXP + 200000
+break
+
+#IF
+random 1
+#ACT
+CHANGEEXP + 100000
+break
+}

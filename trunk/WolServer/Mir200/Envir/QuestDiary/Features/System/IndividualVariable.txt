@@ -1,0 +1,148 @@
+[@声明个人变量]
+{
+#IF
+random 1
+#ACT
+VAR Integer HUMAN 新手答题
+VAR Integer HUMAN 炼制玄铁
+VAR Integer HUMAN 炼制雪银
+VAR Integer HUMAN 炼制赤金
+VAR Integer HUMAN 炼制神饰
+VAR Integer HUMAN 王城诏令次数
+VAR Integer HUMAN 灭魔次数
+VAR Integer HUMAN 黑暗之戒获得数
+VAR Integer HUMAN 炼狱时间时
+VAR Integer HUMAN 炼狱时间秒
+VAR Integer HUMAN 王城捐献金币
+VAR String HUMAN 结婚时间
+VAR Integer HUMAN 点香记时
+VAR Integer HUMAN Runestone
+VAR Integer HUMAN ReceiveRunestone
+VAR Integer HUMAN CondensationRemaining
+VAR Integer HUMAN CondensationRemainingSub
+VAR Integer HUMAN WindingTime
+VAR Integer HUMAN 救公主次数
+VAR Integer HUMAN 赤金开箱
+VAR Integer HUMAN 还魂记时
+VAR Integer HUMAN ListDevilHall
+VAR Integer HUMAN CompetitionBooty
+VAR Integer HUMAN 白金领奖
+VAR Integer HUMAN 钻石领奖
+VAR Integer HUMAN 功勋
+VAR String HUMAN ArenaCondition
+VAR Integer HUMAN ArenaCompetition
+VAR Integer HUMAN 军机令今日次数
+VAR Integer HUMAN 军机令昨日次数
+VAR Integer HUMAN 领取神秘符石
+VAR Integer HUMAN ConsignmentReceiveGold
+VAR Integer HUMAN ConsignmentOperation
+VAR String HUMAN ConsignmentRemind
+VAR Integer HUMAN 传承珠任务号
+VAR Integer HUMAN 师父声望奖励
+VAR Integer HUMAN 师父经验奖励
+VAR Integer HUMAN 师父灵符奖励
+VAR String HUMAN 师父名字
+VAR Integer HUMAN 月光宝盒领经验
+VAR Integer HUMAN 宝盒记时
+VAR Integer HUMAN 开百宝箱次数
+VAR Integer HUMAN 今日消费元宝
+VAR Integer HUMAN 经验卡序列号
+VAR Integer HUMAN 试用镇魔符
+VAR Integer HUMAN 试用镇魔神符
+VAR Integer HUMAN 试用还魂神符
+VAR Integer HUMAN 换神威狱金币
+VAR Integer HUMAN 神威狱次数
+VAR Integer HUMAN 绑定元宝
+
+;任务相关
+VAR Integer HUMAN RENWU001
+VAR Integer HUMAN RENWU002
+VAR Integer HUMAN RENWU003
+VAR Integer HUMAN RENWU004
+VAR Integer HUMAN RENWU005
+VAR Integer HUMAN RENWU006
+VAR String HUMAN RENWU007
+VAR Integer HUMAN RENWU008
+VAR String HUMAN RENWU009
+VAR Integer HUMAN RENWU010
+VAR Integer HUMAN RENWU011
+VAR String HUMAN RENWU012
+VAR Integer HUMAN RENWU013
+VAR Integer HUMAN RENWU014
+VAR Integer HUMAN RENWU015
+VAR String HUMAN RENWU016
+VAR String HUMAN RENWU017
+}
+[@读取个人变量]
+{
+#IF
+random 1
+#ACT
+LOADVAR HUMAN 绑定元宝 ..\QuestDiary\GameData\IndividualVariables\绑定元宝.txt
+LOADVAR HUMAN 新手答题 ..\QuestDiary\GameData\IndividualVariables\新手答题.txt
+LOADVAR HUMAN 炼制玄铁 ..\QuestDiary\GameData\IndividualVariables\炼制玄铁.txt
+LOADVAR HUMAN 炼制雪银 ..\QuestDiary\GameData\IndividualVariables\炼制雪银.txt
+LOADVAR HUMAN 炼制赤金 ..\QuestDiary\GameData\IndividualVariables\炼制赤金.txt
+LOADVAR HUMAN 炼制神饰 ..\QuestDiary\GameData\IndividualVariables\炼制神饰.txt
+LOADVAR HUMAN 王城诏令次数 ..\QuestDiary\GameData\IndividualVariables\王城诏令次数.txt
+LOADVAR HUMAN 灭魔次数 ..\QuestDiary\GameData\IndividualVariables\灭魔次数.txt
+LOADVAR HUMAN 黑暗之戒获得数 ..\QuestDiary\GameData\IndividualVariables\黑暗之戒获得数.txt
+LOADVAR HUMAN 炼狱时间时 ..\QuestDiary\GameData\IndividualVariables\炼狱时间时.txt
+LOADVAR HUMAN 炼狱时间秒 ..\QuestDiary\GameData\IndividualVariables\炼狱时间秒.txt
+LOADVAR HUMAN 王城捐献金币 ..\QuestDiary\GameData\IndividualVariables\王城捐献金币.txt
+LOADVAR HUMAN 结婚时间 ..\QuestDiary\GameData\IndividualVariables\结婚时间.txt
+LOADVAR HUMAN Runestone ..\QuestDiary\GameData\IndividualVariables\CondensationRunestone\Runestone.txt
+LOADVAR HUMAN ReceiveRunestone ..\QuestDiary\GameData\IndividualVariables\CondensationRunestone\ReceiveRunestone.txt
+LOADVAR HUMAN CondensationRemaining ..\QuestDiary\GameData\IndividualVariables\CondensationRunestone\CondensationRemaining.txt
+LOADVAR HUMAN CondensationRemainingSub ..\QuestDiary\GameData\IndividualVariables\CondensationRunestone\CondensationRemainingSub.txt
+LOADVAR HUMAN WindingTime ..\QuestDiary\GameData\IndividualVariables\CondensationRunestone\WindingTime.txt
+LOADVAR HUMAN 救公主次数 ..\QuestDiary\GameData\IndividualVariables\救公主次数.txt
+LOADVAR HUMAN 赤金开箱 ..\QuestDiary\GameData\IndividualVariables\赤金开箱.txt
+LOADVAR HUMAN 还魂记时 ..\QuestDiary\GameData\IndividualVariables\还魂记时.txt
+LOADVAR HUMAN ListDevilHall ..\QuestDiary\GameData\ListDevilHall.txt
+LOADVAR HUMAN CompetitionBooty ..\QuestDiary\GameData\CompetitionBooty.txt
+LOADVAR HUMAN 白金领奖 ..\QuestDiary\GameData\IndividualVariables\白金领奖.txt
+LOADVAR HUMAN 钻石领奖 ..\QuestDiary\GameData\IndividualVariables\钻石领奖.txt
+LOADVAR HUMAN 功勋 ..\QuestDiary\GameData\IndividualVariables\功勋.txt
+LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+LOADVAR HUMAN 军机令今日次数 ..\QuestDiary\GameData\IndividualVariables\军机令今日次数.txt
+LOADVAR HUMAN 军机令昨日次数 ..\QuestDiary\GameData\IndividualVariables\军机令昨日次数.txt
+LOADVAR HUMAN 领取神秘符石 ..\QuestDiary\GameData\IndividualVariables\领取神秘符石.txt
+LOADVAR HUMAN ConsignmentReceiveGold ..\QuestDiary\GameData\IndividualVariables\ConsignmentIngot\ConsignmentReceiveGold.txt
+LOADVAR HUMAN ConsignmentOperation ..\QuestDiary\GameData\IndividualVariables\ConsignmentIngot\ConsignmentOperation.txt
+LOADVAR HUMAN ConsignmentRemind ..\QuestDiary\GameData\IndividualVariables\ConsignmentIngot\ConsignmentRemind.txt
+LOADVAR HUMAN 传承珠任务号 ..\QuestDiary\GameData\IndividualVariables\传承珠任务号.txt
+LOADVAR HUMAN 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+LOADVAR HUMAN 师父经验奖励 ..\QuestDiary\GameData\IndividualVariables\师父经验奖励.txt
+LOADVAR HUMAN 师父灵符奖励 ..\QuestDiary\GameData\IndividualVariables\师父灵符奖励.txt
+LOADVAR HUMAN 师父名字 ..\QuestDiary\GameData\IndividualVariables\师父名字.txt
+LOADVAR HUMAN 月光宝盒领经验 ..\QuestDiary\GameData\IndividualVariables\月光宝盒领经验.txt
+LOADVAR HUMAN 宝盒记时 ..\QuestDiary\GameData\IndividualVariables\宝盒记时.txt
+LOADVAR HUMAN 开百宝箱次数 ..\QuestDiary\GameData\IndividualVariables\开百宝箱次数.txt
+LOADVAR HUMAN 今日消费元宝 ..\QuestDiary\GameData\IndividualVariables\今日消费元宝.txt
+LOADVAR HUMAN 经验卡序列号 ..\QuestDiary\GameData\IndividualVariables\经验卡序列号.txt
+LOADVAR HUMAN 试用镇魔符 ..\QuestDiary\GameData\IndividualVariables\试用镇魔符.txt
+LOADVAR HUMAN 试用镇魔神符 ..\QuestDiary\GameData\IndividualVariables\试用镇魔神符.txt
+LOADVAR HUMAN 试用还魂神符 ..\QuestDiary\GameData\IndividualVariables\试用还魂神符.txt
+LOADVAR HUMAN 换神威狱金币 ..\QuestDiary\GameData\IndividualVariables\换神威狱金币.txt
+LOADVAR HUMAN 神威狱次数 ..\QuestDiary\GameData\IndividualVariables\神威狱次数.txt
+
+LOADVAR HUMAN RENWU001 ..\QuestDiary\GameData\IndividualVariables\任务相关\RENWU001.txt
+LOADVAR HUMAN RENWU002 ..\QuestDiary\GameData\IndividualVariables\任务相关\RENWU002.txt
+LOADVAR HUMAN RENWU003 ..\QuestDiary\GameData\IndividualVariables\任务相关\RENWU003.txt
+LOADVAR HUMAN RENWU004 ..\QuestDiary\GameData\IndividualVariables\任务相关\RENWU004.txt
+LOADVAR HUMAN RENWU005 ..\QuestDiary\GameData\IndividualVariables\任务相关\RENWU005.txt
+LOADVAR HUMAN RENWU006 ..\QuestDiary\GameData\IndividualVariables\任务相关\RENWU006.txt
+LOADVAR HUMAN RENWU007 ..\QuestDiary\GameData\IndividualVariables\任务相关\RENWU007.txt
+LOADVAR HUMAN RENWU008 ..\QuestDiary\GameData\IndividualVariables\任务相关\RENWU008.txt
+LOADVAR HUMAN RENWU009 ..\QuestDiary\GameData\IndividualVariables\任务相关\RENWU009.txt
+LOADVAR HUMAN RENWU010 ..\QuestDiary\GameData\IndividualVariables\任务相关\RENWU010.txt
+LOADVAR HUMAN RENWU011 ..\QuestDiary\GameData\IndividualVariables\任务相关\RENWU011.txt
+LOADVAR HUMAN RENWU012 ..\QuestDiary\GameData\IndividualVariables\任务相关\RENWU012.txt
+LOADVAR HUMAN RENWU013 ..\QuestDiary\GameData\IndividualVariables\任务相关\RENWU013.txt
+LOADVAR HUMAN RENWU014 ..\QuestDiary\GameData\IndividualVariables\任务相关\RENWU014.txt
+LOADVAR HUMAN RENWU015 ..\QuestDiary\GameData\IndividualVariables\任务相关\RENWU015.txt
+LOADVAR HUMAN RENWU016 ..\QuestDiary\GameData\IndividualVariables\任务相关\RENWU016.txt
+LOADVAR HUMAN RENWU017 ..\QuestDiary\GameData\IndividualVariables\任务相关\RENWU017.txt
+}

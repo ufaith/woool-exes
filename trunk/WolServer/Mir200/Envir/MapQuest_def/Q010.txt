@@ -1,0 +1,7 @@
+[@main]
+#IF
+equal $Task(39) 2
+#ACT
+give 神秘宝箱1 1
+UpdateTask 39 3
+SENDMSG 5 你获得了神秘宝箱

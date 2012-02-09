@@ -1,0 +1,113 @@
+[@MagicRitual]
+{
+#SAY
+Do you wish to obtain a Hero? You will need to be\
+level 22 to obtain one. They are great companions\
+to have with your.\
+\
+<Create Hero/@CreateHero>\
+<Hero Functions/@fetemain>\
+
+<Exit/@exit>
+
+[@CreateHero]
+#IF
+CHECKLEVELEX < 22
+#ACT
+break
+#SAY
+Sorry you you must be level 22 to create a Hero.
+
+#IF
+!HASPNEUMA
+#ACT
+goto @Hero1
+#ELSESAY
+You have a Hero already.\
+
+[@Hero1]
+#SAY
+\
+</@@!PIC2 3,17980> </@@!PIC2 3,17983> </@@!PIC2 3,17981> </@@!PIC2 3,17984> </@@!PIC2 3,17982> </@@!PIC2 3,17985>\
+\
+©À[<Male Warrior Hero/@herosummon&0&0>]©Ð[<Female Warrior Hero/@herosummon&0&1>]©È\
+©À[<Male Wizard Hero/@herosummon&2&0>]©Ð[<Female Wizard Hero/@herosummon&1&1>]©È\
+©À[<Male Taoist Hero/@herosummon&2&0>]©Ð[<Feale Taoist Hero/@herosummon&2&1>]©È\
+<Exit/@exit>
+
+
+[@herosummon] TRUE
+#ACT
+mov S0 $SCRIPTPARAM(1)
+mov S1 $SCRIPTPARAM(2)
+QUERYVAL 2 0 14 @ConfirmCreation "Please enter the name you want to take the soul"
+break
+
+[@ConfirmCreation]
+#ACT
+CreatePneuma $STR(S2) $STR(S0) $STR(S1)
+delaygoto 12000 @gotomap
+
+[@gotomap]
+#act
+MAPMOVE QUEYSH00 8 19 
+
+
+
+
+[@fetemain]
+Do you wish to upgrade your hero today?.\
+\
+<JadeStones/@Dragon&JadeStone>\
+<Pearl/@Dragon&ÁúÖé>\
+<Enhance SpiritualPower/@shadowlingli>\
+<BlackMagic Iquery/@magicpower>\
+<Back/@main>    <Exit/@exit>\
+
+[@Dragon] TRUE
+#IF
+random 1
+#ACT
+mov S2 $SCRIPTPARAM(1)
+mov P0 0
+mov P1 0
+mov S1
+#CALL [\Heroes\BlackMagic.txt] @Blackmagic
+
+[@magicpower]
+Your current BlackMagic is Level <$STR(G6)>.\
+<Exit/@exit>
+
+[@shadowlingli]
+#CALL [\Heroes\SpiritualPower.txt] @SpiritualPower
+
+[@tongtian]
+Ashura is a dangerous place, i suggest finding a few\
+friends to help you in here.\
+You will need to be level 45 to enter.\
+<Enter AshuraTemple/@xiuluo>\
+\
+<Exit/@exit>
+
+[@xiuluo]
+#IF
+checknamelist ..\QuestDiary\GameData\AshuraTemple.txt
+#ACT
+break
+#SAY
+Sorry you have entered AshuraTemple today.\
+You may enter Ashura once per day.\
+\
+<Exit/@exit>
+
+#IF
+CheckLevelEx > 45
+#ACT
+addnamelist ..\QuestDiary\GameData\AshuraTemple.txt
+map AS004
+#ELSESAY
+Sorry you must be level 45 or above to enter.\
+\
+<Exit/@exit>
+
+}

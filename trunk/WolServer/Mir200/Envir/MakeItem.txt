@@ -1,0 +1,71 @@
+[GreenPoison(S)]
+Leaf    3
+DriedToad	1
+Tooth    2
+Fruit    1
+
+[GreenPoison(M)]
+Leaf    6
+DriedToad	2
+Tooth    4
+Fruit    2
+
+[GreenPoison(L)]
+Leaf    9
+DriedToad	3
+Tooth    6
+Fruit    3
+
+[RedPoison(S)]
+Leaf    4
+ScorpionTail    1
+MaggotEggs    1
+DriedToad	1
+
+[RedPoison(M)]
+Leaf    8
+ScorpionTail    2
+MaggotEggs    2
+DriedToad	2
+
+[RedPoison(L)]
+Leaf    12
+ScorpionTail    3
+MaggotEggs    3
+DriedToad	3
+
+[MaleCrow(S)]
+直可	3
+DriedToad	2
+ScorpionTail	1
+Leaf	1
+
+[MaleCrow(M)]
+直可	6
+DriedToad	4
+ScorpionTail	2
+Leaf	2
+
+[MaleCrow(L)]
+直可	9
+DriedToad	6
+ScorpionTail	3
+Leaf	3
+
+[FemaleCrow(S)]
+直可	2
+DriedToad	2
+MaggotEggs	2
+Tooth	1
+
+[FemaleCrow(M)]
+直可	4
+DriedToad	4
+MaggotEggs	4
+Tooth	2
+
+[FemaleCrow(L)]
+直可	6
+DriedToad	6
+MaggotEggs	6
+Tooth	3

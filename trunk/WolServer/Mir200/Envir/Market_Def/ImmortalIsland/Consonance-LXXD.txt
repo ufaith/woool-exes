@@ -1,0 +1,2 @@
+[@main]
+#CALL [\Features\Cleverness\Cleverness.txt] @Cleverness

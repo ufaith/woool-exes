@@ -1,0 +1,383 @@
+[@圣灵武器]
+#IF
+CHECKUSEITEM 1
+#ACT
+#ELSEACT
+MESSAGEBOX 你没有装备武器,无法使用圣灵精华给武器附加技能！
+break
+
+#IF
+SMALL $ITEMINFO[$PARAM(0)].DURA 10
+#ACT
+ChangeEatItemDura + 1
+MessageBox 你的圣灵精华数量不足10个，无法附加你的武器技能！
+break
+
+#IF
+PosInList  $WEAPON ..\QuestDiary\GameRead\终级武器.txt
+#ACT
+goto @终极武器
+break
+#IF
+EQUAL $WEAPON 传世之刃
+#ACT
+goto @骑战技能
+break
+
+#IF
+random 1
+#ACT
+ChangeEatItemDura + 1
+ChangeEatItemDura - 10
+goto @技能
+UPGRADEUSERITEM 1 59 = 2
+UPGRADEUSERITEM 1 69 = $STR(P0)
+UPGRADEUSERITEM 1 70 = 1
+SENDMSG 5 恭喜您，您消耗了10个圣灵精华为您手中的武器激活了<$STR(S0)>技能的威力。
+
+[@骑战技能]
+#IF
+small $ITEMINFO[$PARAM(0)].DURA 10
+#ACT
+ChangeEatItemDura + 1
+SENDMSG 5 激活失败，想要激活武器技能威力至少需要10个以上圣灵精华。
+break
+#IF
+random 10
+#ACT
+ChangeEatItemDura + 1
+ChangeEatItemDura - 10
+goto @技能骑战
+UPGRADEUSERITEM 1 59 = 2
+UPGRADEUSERITEM 1 69 = $STR(P0)
+UPGRADEUSERITEM 1 70 = 1
+SENDMSG 5 恭喜您，您消耗了10个圣灵精华为您手中的武器激活了<$STR(S0)>技能的威力。
+break
+
+#IF
+random 5
+#ACT
+ChangeEatItemDura + 1
+ChangeEatItemDura - 10
+goto @组合技能
+UPGRADEUSERITEM 1 59 = 2
+UPGRADEUSERITEM 1 69 = $STR(P0)
+UPGRADEUSERITEM 1 70 = 1
+SENDMSG 5 恭喜您，您消耗了10个圣灵精华为您手中的武器激活了<$STR(S0)>技能的威力。
+break
+
+#IF
+random 1
+#ACT
+ChangeEatItemDura + 1
+ChangeEatItemDura - 10
+goto @技能
+UPGRADEUSERITEM 1 59 = 2
+UPGRADEUSERITEM 1 69 = $STR(P0)
+UPGRADEUSERITEM 1 70 = 1
+SENDMSG 5 恭喜您，您消耗了10个圣灵精华为您手中的武器激活了<$STR(S0)>技能的威力。
+break
+
+
+[@终极武器]
+#IF
+small $ITEMINFO[$PARAM(0)].DURA 10
+#ACT
+ChangeEatItemDura + 1
+SENDMSG 5 激活失败，想要激活武器技能威力至少需要10个以上圣灵精华。
+break
+
+#IF
+random 5
+#ACT
+ChangeEatItemDura + 1
+ChangeEatItemDura - 10
+goto @组合技能
+UPGRADEUSERITEM 1 59 = 2
+UPGRADEUSERITEM 1 69 = $STR(P0)
+UPGRADEUSERITEM 1 70 = 1
+SENDMSG 5 恭喜您，您消耗了10个圣灵精华为您手中的武器激活了<$STR(S0)>技能的威力。
+break
+
+#IF
+random 1
+#ACT
+ChangeEatItemDura + 1
+ChangeEatItemDura - 10
+goto @技能
+UPGRADEUSERITEM 1 59 = 2
+UPGRADEUSERITEM 1 69 = $STR(P0)
+UPGRADEUSERITEM 1 70 = 1
+SENDMSG 5 恭喜您，您消耗了10个圣灵精华为您手中的武器激活了<$STR(S0)>技能的威力。
+break
+
+[@技能]
+#IF
+random 1
+#ACT
+movr P0 27
+
+#IF
+equal P0 0
+#ACT
+mov P0 1
+mov S0 小火球
+break
+
+#IF
+equal P0 1
+#ACT
+mov P0 5
+mov S0 火炎刀
+break
+
+#IF
+equal P0 2
+#ACT
+mov P0 6
+mov S0 施毒术
+break
+
+#IF
+equal P0 3
+#ACT
+mov P0 7
+mov S0 攻杀剑法
+break
+
+#IF
+equal P0 4
+#ACT
+mov P0 9
+mov S0 地狱火焰
+break
+
+#IF
+equal P0 5
+#ACT
+mov P0 10
+mov S0 疾光电影
+break
+
+#IF
+equal P0 6
+#ACT
+mov P0 11
+mov S0 雷电术
+break
+
+#IF
+equal P0 7
+#ACT
+mov P0 12
+mov S0 刺杀剑术
+break
+
+#IF
+equal P0 8
+#ACT
+mov P0 13
+mov S0 灵魂道符
+break
+
+#IF
+equal P0 9
+#ACT
+mov P0 22
+mov S0 火墙
+break
+
+#IF
+equal P0 10
+#ACT
+mov P0 23
+mov S0 爆裂火焰
+break
+
+#IF
+equal P0 11
+#ACT
+mov P0 24
+mov S0 地狱雷光
+break
+
+#IF
+equal P0 12
+#ACT
+mov P0 25
+mov S0 半月弯刀
+break
+
+#IF
+equal P0 13
+#ACT
+mov P0 26
+mov S0 烈火剑法
+break
+
+#IF
+equal P0 14
+#ACT
+mov P0 33
+mov S0 冰咆哮
+break
+
+#IF
+equal P0 15
+#ACT
+mov P0 40
+mov S0 残影刀法
+break
+
+#IF
+equal P0 16
+#ACT
+mov P0 41
+mov S0 血影刀法
+break
+
+#IF
+equal P0 17
+#ACT
+mov P0 43
+mov S0 抱月刀
+break
+
+#IF
+equal P0 18
+#ACT
+mov P0 49
+mov S0 冰箭术
+break
+
+#IF
+equal P0 19
+#ACT
+mov P0 50
+mov S0 风火轮
+break
+
+#IF
+equal P0 20
+#ACT
+mov P0 51
+mov S0 冰龙破
+break
+
+#IF
+equal P0 21
+#ACT
+mov P0 52
+mov S0 玄冰刃
+break
+
+#IF
+equal P0 22
+#ACT
+mov P0 53
+mov S0 五雷轰
+break
+
+#IF
+equal P0 23
+#ACT
+mov P0 54
+mov S0 冰旋风
+break
+
+#IF
+equal P0 24
+#ACT
+mov P0 67
+mov S0 幽冥火咒
+break
+
+#IF
+equal P0 25
+#ACT
+mov P0 71
+mov S0 狂龙紫电
+break
+
+#IF
+equal P0 26
+#ACT
+mov P0 73
+mov S0 流星火雨
+break
+
+[@组合技能]
+#IF
+random 1
+#ACT
+movr P0 6
+
+#IF
+equal P0 0
+#ACT
+mov P0 78
+mov S0 怒斩天下
+break
+
+#IF
+equal P0 1
+#ACT
+mov P0 85
+mov S0 神之召唤
+break
+
+#IF
+equal P0 2
+#ACT
+mov P0 79
+mov S0 天怒惊雷
+break
+
+#IF
+equal P0 3
+#ACT
+mov P0 80
+mov S0 天女散花咒
+break
+
+#IF
+equal P0 4
+#ACT
+mov P0 81
+mov S0 迷光烈焰
+break
+
+#IF
+equal P0 5
+#ACT
+mov P0 83
+mov S0 火毒攻心剑
+break
+
+[@技能骑战]
+#IF
+random 1
+#ACT
+movr P0 3
+
+#IF
+equal P0 0
+#ACT
+mov P0 92
+mov S0 翱风斩
+break
+
+#IF
+equal P0 1
+#ACT
+mov P0 93
+mov S0 纵雷诀
+break
+
+#IF
+equal P0 2
+#ACT
+mov P0 94
+mov S0 毒凌波
+break
+}

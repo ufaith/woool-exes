@@ -1,0 +1,23 @@
+[@main]
+You want to go to PenIsland?\
+\
+<Yes/@move>\
+<Exit/@exit>\
+
+[@move]
+It will cost you 1,000 gold.\
+Are you sure you want to go?\
+\
+<Pay/@pay> \
+<No Thanks/@main>
+
+[@pay]
+#IF
+checkgold 1000
+#ACT
+take ½ð±Ò 1000
+mapmove 1 65 133
+#ELSESAY
+You do not have enough Gold.\
+\
+<Exit/@exit>

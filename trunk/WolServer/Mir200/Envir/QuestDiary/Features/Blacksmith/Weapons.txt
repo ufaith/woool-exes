@@ -1,0 +1,414 @@
+;P0 Material is correct
+;P1 Ore purity\Successful value
+;P2 Ore purity\Lasting increase
+;P3 Probability of success
+;P4 Gem type\Location of the property to increase
+;P5 Gem grade\Increased risk of property
+;Ore lasting\5=Increase the success rate
+;Lucky charm to increase the success rate of 10%
+
+[@@weaponcompound]
+{
+#IF
+random 1
+#ACT
+mov P0 0
+
+#IF
+equal $ITEMINFO[$PARAM(1)].STDMODE 59
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(1)].NAME Ìú¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(1)].NAME Òø¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(1)].NAME ½ð¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(1)].NAME ºÚÌú¿óÊ¯
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(2)].STDMODE 59
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(2)].NAME Ìú¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(2)].NAME Òø¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(2)].NAME ½ð¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(2)].NAME ºÚÌú¿óÊ¯
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(3)].STDMODE 59
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(3)].NAME Ìú¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(3].NAME Òø¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(3)].NAME ½ð¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(3)].NAME ºÚÌú¿óÊ¯
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(4)].STDMODE 59
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(4].NAME Ìú¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(4)].NAME Òø¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(4)].NAME ½ð¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(4)].NAME ºÚÌú¿óÊ¯
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(5)].STDMODE 59
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(5)].NAME Ìú¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(5)].NAME Òø¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(5)].NAME ½ð¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(5)].NAME ºÚÌú¿óÊ¯
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(6)].STDMODE 59
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(6)].NAME Ìú¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(6)].NAME Òø¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(6)].NAME ½ð¿ó
+#ACT
+inc P0 1
+
+#IF
+equal $ITEMINFO[$PARAM(6)].NAME ºÚÌú¿óÊ¯
+#ACT
+inc P0 1
+
+#IF
+!equal P0 6
+#ACT
+SMELTBOXRESULT 0 2 1
+SENDMSG 5 "Stones or Materials is not correct, can not synthesize"
+break
+
+#IF
+equal $ITEMINFO[$PARAM(1)].STDMODE 43
+small $ITEMINFO[$PARAM(1)].DURAMAX 30000
+#ACT
+SMELTBOXRESULT 0 2 1
+SENDMSG 5 "Ore purity less than 30, can not synthesize"
+break
+
+#IF
+equal $ITEMINFO[$PARAM(2)].STDMODE 43
+small $ITEMINFO[$PARAM(2)].DURAMAX 30000
+#ACT
+SMELTBOXRESULT 0 2 1
+SENDMSG 5 "Ore purity less than 30, can not synthesize"
+break
+
+#IF
+equal $ITEMINFO[$PARAM(3)].STDMODE 43
+small $ITEMINFO[$PARAM(3)].DURAMAX 30000
+#ACT
+SMELTBOXRESULT 0 2 1
+SENDMSG 5 "Ore purity less than 30, can not synthesize"
+break
+
+#IF
+equal $ITEMINFO[$PARAM(4)].STDMODE 43
+small $ITEMINFO[$PARAM(4)].DURAMAX 30000
+#ACT
+SMELTBOXRESULT 0 2 1
+SENDMSG 5 "Ore purity less than 30, can not synthesize"
+break
+
+#IF
+equal $ITEMINFO[$PARAM(5)].STDMODE 43
+small $ITEMINFO[$PARAM(5)].DURAMAX 30000
+#ACT
+SMELTBOXRESULT 0 2 1
+SENDMSG 5 "Ore purity less than 30, can not synthesize"
+break
+
+#IF
+equal $ITEMINFO[$PARAM(6)].STDMODE 43
+small $ITEMINFO[$PARAM(6)].DURAMAX 30000
+#ACT
+SMELTBOXRESULT 0 2 1
+SENDMSG 5 "Ore purity less than 30, can not synthesize"
+break
+
+#IF
+random 1
+#ACT
+mov P0 0
+
+#IF
+equal $ITEMINFO[$PARAM(1)].NAME ºÚÌú¿óÊ¯
+#ACT
+mov P0 1
+mov P2 $ITEMINFO[$PARAM(1)].DURA
+
+#IF
+equal $ITEMINFO[$PARAM(2)].NAME ºÚÌú¿óÊ¯
+#ACT
+mov P0 1
+mov P2 $ITEMINFO[$PARAM(2)].DURA
+
+#IF
+equal $ITEMINFO[$PARAM(3)].NAME ºÚÌú¿óÊ¯
+#ACT
+mov P0 1
+mov P2 $ITEMINFO[$PARAM(3)].DURA
+
+#IF
+equal $ITEMINFO[$PARAM(4)].NAME ºÚÌú¿óÊ¯
+#ACT
+mov P0 1
+mov P2 $ITEMINFO[$PARAM(4)].DURA
+
+#IF
+equal $ITEMINFO[$PARAM(5)].NAME ºÚÌú¿óÊ¯
+#ACT
+mov P0 1
+mov P2 $ITEMINFO[$PARAM(5)].DURA
+
+#IF
+equal $ITEMINFO[$PARAM(6)].NAME ºÚÌú¿óÊ¯
+#ACT
+mov P0 1
+mov P2 $ITEMINFO[$PARAM(6)].DURA
+
+#IF
+equal P0 0
+#ACT
+SMELTBOXRESULT 0 2 1
+SENDMSG 5 "Must be placed in the black iron-based materials can be synthesized"
+#ELSEACT
+SMELTBOXRESULT 1 2 1
+
+[@@weaponcompoundok]
+#IF
+equal $ITEMINFO[$PARAM(1)].STDMODE 59
+#ACT
+mov P4 $ITEMINFO[$PARAM(1)].SHAPE
+mov P5 $ITEMINFO[$PARAM(1)].WEIGHT
+
+#IF
+equal $ITEMINFO[$PARAM(2)].STDMODE 59
+#ACT
+mov P4 $ITEMINFO[$PARAM(2)].SHAPE
+mov P5 $ITEMINFO[$PARAM(2)].WEIGHT
+
+#IF
+equal $ITEMINFO[$PARAM(3)].STDMODE 59
+#ACT
+mov P4 $ITEMINFO[$PARAM(3)].SHAPE
+mov P5 $ITEMINFO[$PARAM(3)].WEIGHT
+
+#IF
+equal $ITEMINFO[$PARAM(4)].STDMODE 59
+#ACT
+mov P4 $ITEMINFO[$PARAM(4)].SHAPE
+mov P5 $ITEMINFO[$PARAM(4)].WEIGHT
+
+#IF
+equal $ITEMINFO[$PARAM(5)].STDMODE 59
+#ACT
+mov P4 $ITEMINFO[$PARAM(5)].SHAPE
+mov P5 $ITEMINFO[$PARAM(5)].WEIGHT
+
+#IF
+equal $ITEMINFO[$PARAM(6)].STDMODE 59
+#ACT
+mov P4 $ITEMINFO[$PARAM(6)].SHAPE
+mov P5 $ITEMINFO[$PARAM(6)].WEIGHT
+
+#IF
+random 1
+#ACT
+mov P1 0
+inc P1 $ITEMINFO[$PARAM(1)].DURA
+inc P1 $ITEMINFO[$PARAM(2)].DURA
+inc P1 $ITEMINFO[$PARAM(3)].DURA
+inc P1 $ITEMINFO[$PARAM(4)].DURA
+inc P1 $ITEMINFO[$PARAM(5)].DURA
+inc P1 $ITEMINFO[$PARAM(6)].DURA
+DIV P1 5000
+movr P3 100
+goto @RandomWeapons
+goto @GemProperties
+takem $PARAM(1) 1
+takem $PARAM(2) 1
+takem $PARAM(3) 1
+takem $PARAM(4) 1
+takem $PARAM(5) 1
+takem $PARAM(6) 1
+
+#IF
+POS $ITEMINFO[$PARAM(7)].NAME ÐÒÔË·û
+#ACT
+UPGRADEUSERITEM $PARAM(7) 20 - 1
+inc P1 10
+
+#IF
+!large P1 $STR(P3)
+#ACT
+SENDMSG 5 "Weapon synthesis failed."
+SMELTBOXRESULT 0 2 0
+
+#IF
+large P1 $STR(P3)
+#ACT
+ReplaceText S0 1
+give $STR(S0) 1
+DIV P2 10
+UPGRADEUSERITEM $PARAM(10) 20 + $STR(P2)
+UPGRADEUSERITEM $PARAM(10) 21 + $STR(P2)
+SENDMSG 5 "Congratulations <$PARAM(11)> Synthesized successfully."
+SENDMSG 10 "Congratulations %s Ore used to produce high-purity masterpiece <$PARAM(11)>"
+SMELTBOXRESULT 1 2 0
+
+#IF
+random 5
+large P1 $STR(P3)
+#ACT
+UPGRADEUSERITEM $PARAM(10) $STR(P4) + $STR(P5)
+
+[@RandomWeapons]
+#IF
+random 120
+#ACT
+ReadRandomStr ..\QueStDiary\Features\Blacksmith\Awards\120.txt S0
+break
+
+#IF
+random 60
+#ACT
+ReadRandomStr ..\QueStDiary\Features\Blacksmith\Awards\60.txt S0
+break
+
+#IF
+random 30
+#ACT
+ReadRandomStr ..\QueStDiary\Features\Blacksmith\Awards\30.txt S0
+break
+
+#IF
+random 20
+#ACT
+ReadRandomStr ..\QueStDiary\Features\Blacksmith\Awards\20.txt S0
+break
+
+#IF
+random 12
+#ACT
+ReadRandomStr ..\QueStDiary\Features\Blacksmith\Awards\12.txt S0
+break
+
+#IF
+random 10
+#ACT
+ReadRandomStr ..\QueStDiary\Features\Blacksmith\Awards\10.txt S0
+break
+
+#IF
+random 4
+#ACT
+ReadRandomStr ..\QueStDiary\Features\Blacksmith\Awards\4.txt S0
+break
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QueStDiary\Features\Blacksmith\Awards\1.txt S0
+break
+
+[@GemProperties]
+#IF
+large P4 3
+#ACT
+movr P4 3
+break
+}

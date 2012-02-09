@@ -1,0 +1,22 @@
+09/02/2012 20:39:48 Has Read 1Guild Information...
+09/02/2012 20:39:48 Has Read 1Castle Information...
+09/02/2012 20:39:49 登录服务器(127.0.0.1:5600)连接成功...
+09/02/2012 20:39:52 Database Server(127.0.0.1:6000)Connection Is Successful...
+09/02/2012 20:39:53 游戏网关[0](127.0.0.1:1462)已打开...
+09/02/2012 20:43:51 Division by zero
+09/02/2012 20:44:21 Division by zero
+09/02/2012 20:44:51 Division by zero
+09/02/2012 20:45:21 Division by zero
+09/02/2012 20:45:51 Division by zero
+09/02/2012 20:46:22 Division by zero
+09/02/2012 20:46:52 Division by zero
+09/02/2012 20:47:22 Division by zero
+09/02/2012 20:47:52 Division by zero
+09/02/2012 20:48:23 Division by zero
+09/02/2012 20:48:53 Division by zero
+09/02/2012 20:49:24 Division by zero
+09/02/2012 20:49:48 在线数: 0
+09/02/2012 20:49:54 Division by zero
+09/02/2012 20:50:24 Division by zero
+09/02/2012 20:50:55 Division by zero
+09/02/2012 20:51:17 游戏网关[0](127.0.0.1:1462)已关闭...

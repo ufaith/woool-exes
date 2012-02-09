@@ -1,0 +1,154 @@
+[@赏金猎人]
+{
+Welcome, do you have a Token to hand in?\
+I will reward you very nicely if you bring\
+me one!.\
+\
+<Return Token/@givepai>\
+<Inquire about Tokens/@knowpai>\
+<Exit/@exit>
+
+[@givepai]
+#IF
+checkitem 赏金令牌 1
+#ACT
+take 赏金令牌 1
+goto @领取奖励
+#SAY
+Congratulations, you get <$STR(S0)> Reward.\
+\
+<Back/@main>\
+<Exit/@exit>
+#ELSESAY
+Sorry, you do not have a Token.\
+\
+<Exit/@exit>
+
+[@knowpai]
+Tokens can be obtained from any type of monster\
+in wooool, but it's been found alot inside\
+Purgatory.\
+\
+<Back/@main>
+
+[@领取奖励]
+#IF
+random 2
+#ACT
+goto @经验
+break
+
+#IF
+random 1
+#ACT
+goto @Gold
+break
+
+[@经验]
+#IF
+random 130
+#ACT
+CHANGEEXP + 1300000
+mov S0 130万经验
+break
+
+#IF
+random 120
+#ACT
+CHANGEEXP + 1200000
+mov S0 120万经验
+break
+
+#IF
+random 10
+#ACT
+CHANGEEXP + 1000000
+mov S0 100万经验
+break
+
+#IF
+random 5
+#ACT
+CHANGEEXP + 500000
+mov S0 500000经验
+break
+
+#IF
+random 2
+#ACT
+CHANGEEXP + 200000
+mov S0 200000经验
+break
+
+#IF
+random 1
+#ACT
+CHANGEEXP + 100000
+mov S0 100000经验
+break
+
+#IF
+random 1
+#ACT
+CHANGEEXP + 80000
+mov S0 80000经验
+break
+
+#IF
+random 1
+#ACT
+CHANGEEXP + 20000
+mov S0 20000经验
+break
+
+[@Gold]
+#IF
+random 100
+#ACT
+give Gold 1000000
+mov S0 100万金币
+break
+
+
+#IF
+random 50
+#ACT
+give Gold 500000
+mov S0 500000Gold
+break
+
+#IF
+random 20
+#ACT
+give Gold 200000
+mov S0 200000Gold
+break
+
+#IF
+random 10
+#ACT
+give Gold 100000
+mov S0 100000Gold
+break
+
+#IF
+random 5
+#ACT
+give Gold 50000
+mov S0 50000Gold
+break
+
+#IF
+random 2
+#ACT
+give Gold 20000
+mov S0 20000Gold
+break
+
+#IF
+random 1
+#ACT
+give Gold 10000
+mov S0 10000Gold
+break
+}

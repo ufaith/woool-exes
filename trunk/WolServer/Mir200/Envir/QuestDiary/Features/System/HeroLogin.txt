@@ -1,0 +1,164 @@
+[@HeroLogin] PNEUMA
+{
+#IF
+;ISPNEUMA
+check [1] 0
+#ACT
+set [1] 1
+goto @元神新手
+
+#IF
+random 1
+#ACT
+goto @元神登陆1
+#CALL [\Features\UpdateTrigger\元神排行.txt] @元神排行
+
+[@元神登陆1] PNEUMA
+#IF
+LARGE $AMBITKIND 6
+#ACT
+FORMATSTR S0 上仙%s重 $NUMTOCHR($AMBITLEVEL)
+FENGHAO 13 $STR(S0)
+break
+#IF
+LARGE $AMBITKIND 4
+SMALL $AMBITKIND 7
+#ACT
+FORMATSTR S0 天仙%s重 $NUMTOCHR($AMBITLEVEL)
+FENGHAO 13 $STR(S0)
+break
+#IF
+LARGE $AMBITKIND 2
+SMALL $AMBITKIND 5
+#ACT
+FORMATSTR S0 天人%s重 $NUMTOCHR($AMBITLEVEL)
+FENGHAO 10 $STR(S0)
+break
+#IF
+checknamelist ..\QuestDiary\GameData\Hero-Related\DawuState.txt
+CheckLevelEx > 65
+#ACT
+FENGHAO 9 大悟后期
+break
+
+#IF
+checknamelist ..\QuestDiary\GameData\Hero-Related\DawuState.txt
+CheckLevelEx > 59
+#ACT
+FENGHAO 8 大悟中期
+break
+
+#IF
+checknamelist ..\QuestDiary\GameData\Hero-Related\DawuState.txt
+CheckLevelEx > 52
+#ACT
+FENGHAO 7 大悟初期
+break
+
+#IF
+checknamelist ..\QuestDiary\GameData\Hero-Related\HeartState.txt
+CheckLevelEx > 49
+#ACT
+FENGHAO 6 HeroTitle
+break
+
+#IF
+checknamelist ..\QuestDiary\GameData\Hero-Related\HeartState.txt
+CheckLevelEx > 47
+#ACT
+FENGHAO 5 HeroTitle
+break
+
+#IF
+checknamelist ..\QuestDiary\GameData\Hero-Related\HeartState.txt
+CheckLevelEx > 45
+#ACT
+FENGHAO 4 HeroTitle
+break
+
+#IF
+checknamelist ..\QuestDiary\GameData\Hero-Related\YuanRealm.txt
+CheckLevelEx > 41
+#ACT
+FENGHAO 3 HeroTitle
+break
+
+#IF
+checknamelist ..\QuestDiary\GameData\Hero-Related\YuanRealm.txt
+CheckLevelEx > 36
+#ACT
+FENGHAO 2 HeroTitle
+break
+
+#IF
+checknamelist ..\QuestDiary\GameData\Hero-Related\YuanRealm.txt
+CheckLevelEx < 31
+#ACT
+FENGHAO 1 HeroTitle
+#ELSEACT
+addnamelist ..\QuestDiary\GameData\Hero-Related\ConsolidateState.txt
+
+[@元神新手] PNEUMA
+#IF
+CHECKVAR GLOBAL 游戏模式 = 测试
+#act
+goto @元神测试模式
+#ELSEACT
+goto @元神开区模式
+
+[@元神测试模式] PNEUMA
+#IF
+checkjob warrior
+#ACT
+ADDSKILL 元神突斩 3
+CHANGELEVEL = 65
+goto @PNEUMAJJ
+break
+#IF
+checkjob wizard
+#ACT
+ADDSKILL 元神突斩 3
+CHANGELEVEL = 65
+goto @PNEUMAJJ
+break
+#IF
+checkjob taoist
+#ACT
+ADDSKILL 元神突斩 3
+give 道尊神符 1
+give 道尊灵毒(绿) 1
+give 道尊灵毒(红) 1
+CHANGELEVEL = 65
+goto @PNEUMAJJ
+break
+
+[@元神开区模式] PNEUMA
+#IF
+checkjob warrior
+#ACT
+CHANGELEVEL = 1
+goto @PNEUMAJJ
+break
+#IF
+checkjob wizard
+#ACT
+CHANGELEVEL = 1
+goto @PNEUMAJJ
+break
+#IF
+checkjob taoist
+#ACT
+CHANGELEVEL = 1
+goto @PNEUMAJJ
+break
+
+[@PNEUMAJJ] PNEUMA
+#IF
+random 1
+#ACT
+give HardSword 1
+TAKEON 1 HardSword
+give 超级天山雪莲2 1
+addnamelist ..\QuestDiary\GameData\Hero-Related\ConsolidateState.txt
+addnamelist ..\QuestDiary\GameData\Hero-Related\GeneralBody.txt
+}

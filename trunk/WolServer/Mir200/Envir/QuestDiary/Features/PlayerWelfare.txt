@@ -1,0 +1,1053 @@
+[@新手关怀大使]
+{
+#IF
+!equal $Task(42) 1
+#CALL [\Features\PlayerWelfare.txt] @新手关怀大使2
+#ELSESAY
+<可接任务/@_RW_entry>
+
+[@_RW_entry]
+#CALL [\GameTask\MainTask\NoviceTasks\NoviceAward.txt] @新手关怀大使1
+}
+
+[@新手关怀大使2]
+{
+#IF
+CHECKJOB WARR
+#SAY
+　　<color=orange 随着你等级的提升可以领取到以下物品。>\
+<color=green 5级>：</@@!PIC BordHorse>　      <color=green 10级>：</@@!PIC GreenNecklace>\
+<color=green 15级>：</@@!PIC WarriorBangle>×2　<color=green 20级>：</@@!PIC PowerRing>×2\
+<color=green 25级>：</@@!PIC BlackIronHelm>     <color=green 30级>：</@@!PIC Ruling>\
+
+#IF
+CHECKJOB WIZARD
+#SAY
+　　<color=orange 随着你等级的提升可以领取到以下物品。>\
+<color=green 5级>：</@@!PIC BordHorse>　      <color=green 10级>：</@@!PIC DemonBells>\
+<color=green 15级>：</@@!PIC DragonBangle>×2　<color=green 20级>：</@@!PIC SpiralRing>×2\
+<color=green 25级>：</@@!PIC MemoryHelmet>     <color=green 30级>：</@@!PIC BoneStaff>\
+
+#IF
+CHECKJOB TAOS
+#SAY
+　　<color=orange 随着你等级的提升可以领取到以下物品。>\
+<color=green 5级>：</@@!PIC BordHorse>　      <color=green 10级>：</@@!PIC SoulNecklace>\
+<color=green 15级>：</@@!PIC ThreeBangle>×2　<color=green 20级>：</@@!PIC TanzaniaRing>×2\
+<color=green 25级>：</@@!PIC MemoryHelmet>     <color=green 30级>：</@@!PIC LongWenSabre>\
+
+#IF
+gender man
+#SAY
+<color=green 35级>：</@@!PIC JinpenArmor(M)>
+
+#IF
+!gender man
+#SAY
+<color=green 35级>：</@@!PIC JinpenArmor(F)>
+
+#IF
+CHECKJOB WARR
+#ACT
+break
+#SAY
+　　　　<ReceivePrize/@新手福利&GreenNecklace&WarriorBangle&PowerRing&BlackIronHelm&Ruling>
+
+#IF
+CHECKJOB WIZARD
+#ACT
+break
+#SAY
+　　　　<ReceivePrize/@新手福利&DemonBells&DragonBangle&SpiralRing&MemoryHelmet&BoneStaff>
+
+#IF
+CHECKJOB TAOS
+#ACT
+break
+#SAY
+　　　　<ReceivePrize/@新手福利&SoulNecklace&三眼手镯&TanzaniaRing&MemoryHelmet&LongWenSabre>
+
+[@新手福利] TRUE
+#IF
+CheckLevelEx < 5
+#ACT
+MessageBox 请5级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 5
+!CHECKBAGSIZE 1
+#ACT
+MessageBox 请先将包裹空出1个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 5
+#ACT
+Calcvar HUMAN PlayerWelfare = 5
+give BordHorse 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+
+#IF
+CheckLevelEx < 10
+#ACT
+MessageBox 请10级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 10
+!CHECKBAGSIZE 1
+#ACT
+MessageBox 请先将包裹空出1个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 10
+#ACT
+Calcvar HUMAN PlayerWelfare = 10
+give $SCRIPTPARAM(1) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+
+#IF
+CheckLevelEx < 15
+#ACT
+MessageBox 请15级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 15
+!CHECKBAGSIZE 2
+#ACT
+MessageBox 请先将包裹空出2个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 15
+#ACT
+Calcvar HUMAN PlayerWelfare = 15
+give $SCRIPTPARAM(2) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+give $SCRIPTPARAM(2) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+
+#IF
+CheckLevelEx < 20
+#ACT
+MessageBox 请20级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 20
+!CHECKBAGSIZE 2
+#ACT
+MessageBox 请先将包裹空出2个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 20
+#ACT
+Calcvar HUMAN PlayerWelfare = 20
+give $SCRIPTPARAM(3) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+give $SCRIPTPARAM(3) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+
+#IF
+CheckLevelEx < 25
+#ACT
+MessageBox 请25级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 25
+!CHECKBAGSIZE 1
+#ACT
+MessageBox 请先将包裹空出1个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 25
+#ACT
+Calcvar HUMAN PlayerWelfare = 25
+give $SCRIPTPARAM(4) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+
+#IF
+CheckLevelEx < 30
+#ACT
+MessageBox 请在等级到达30级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 30
+!CHECKBAGSIZE 1
+#ACT
+MessageBox 请先将包裹空出1个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 30
+#ACT
+Calcvar HUMAN PlayerWelfare = 30
+give $SCRIPTPARAM(5) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+
+#IF
+CheckLevelEx < 35
+#ACT
+MessageBox 请35级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 35
+!CHECKBAGSIZE 1
+#ACT
+MessageBox 请先将包裹空出1个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 35
+gender man
+#ACT
+Calcvar HUMAN PlayerWelfare = 35
+give JinpenArmor(M) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 35
+!gender man
+#ACT
+Calcvar HUMAN PlayerWelfare = 35
+give JinpenArmor(F) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+
+#IF
+#SAY
+你已经领取过所有东西了，听说<color=green CenterState>的<color=green 钱员外(462,222)>正在\
+向勇士们发放各种物资，你可以去那里看看能领取到什么东西。\
+\
+<谢谢/@exit>
+}
+
+[@钱员外]
+{
+　　<color=orange 随着你等级的提升可以领取到以下物品。>\
+\
+<color=green 40级>：</@@!PIC 双倍经验周卡></@@!PIC PandoraBox(小)>\
+　　　</@@!PIC SuperHPRegen></@@!PIC SuperMPRegen>\
+<color=green 42级>：</@@!PIC KingHelmet>　　<color=green 44级>：</@@!PIC CrazyBangle>×2\
+　　　　<下一页/@钱员外1>　<领取奖励/@PlayerWelfare>
+
+[@钱员外1]
+#IF
+CHECKJOB WARR
+#SAY
+<color=green 46级随机领取>：</@@!PIC MightHelmet></@@!PIC MightNecklace></@@!PIC MightBangle>\
+　　　　　　　</@@!PIC MightRing></@@!PIC MightBelt></@@!PIC MightBoots>\
+
+#IF
+CHECKJOB WIZARD
+#SAY
+<color=green 46级随机领取>：</@@!PIC GenmaHelmet></@@!PIC GenmaNecklace></@@!PIC GenmaBangle>\
+　　　　　　　</@@!PIC GenmaRing></@@!PIC GenmaBelt></@@!PIC GenmaBoots>\
+
+#IF
+CHECKJOB TAOS
+#SAY
+<color=green 46级随机领取>：</@@!PIC HardDayHelmet></@@!PIC HardDayNeck></@@!PIC HardDayBangle>\
+　　　　　　　</@@!PIC HardDayRing></@@!PIC HardDayBelt></@@!PIC HardDayBoots>\
+
+#IF
+CHECKJOB WARR
+gender man
+#SAY
+<color=green 48级>：</@@!PIC HolyWarArm(M)>\
+
+#IF
+CHECKJOB WARR
+!gender man
+#SAY
+<color=green 48级>：</@@!PIC HolyWarArm(F)>\
+
+#IF
+CHECKJOB WIZARD
+gender man
+#SAY
+<color=green 48级>：</@@!PIC LawGodArm(M)>\
+
+#IF
+CHECKJOB WIZARD
+!gender man
+#SAY
+<color=green 48级>：</@@!PIC LawGodArm(F)>\
+
+#IF
+CHECKJOB TAOS
+gender man
+#SAY
+<color=green 48级>：</@@!PIC DaoistRobe(M)>\
+
+#IF
+CHECKJOB TAOS
+!gender man
+#SAY
+<color=green 48级>：</@@!PIC DaoistRobe(F)>\
+
+#IF
+#SAY
+<color=green 50级>：</@@!PIC SilverKey></@@!PIC GoldenKey></@@!PIC MysteryKeys>\
+<上一页/@钱员外>　<下一页/@钱员外2>　<领取奖励/@PlayerWelfare>
+
+[@钱员外2]
+#IF
+CHECKJOB WARR
+#SAY
+<color=green 52级随机领取>：</@@!PIC WarHelmet></@@!PIC WarBelt></@@!PIC WarBoots>\
+
+#IF
+CHECKJOB WIZARD
+#SAY
+<color=green 52级随机领取>：</@@!PIC DevilHelmet></@@!PIC DevilBelt></@@!PIC DevilBoots>\
+
+#IF
+CHECKJOB TAOS
+#SAY
+<color=green 52级随机领取>：</@@!PIC RoadHelmet></@@!PIC RoadBelt></@@!PIC RoadBoots>\
+
+#IF
+CHECKJOB WARR
+#SAY
+<color=green 54级随机领取>：</@@!PIC WarNecklace></@@!PIC WarBangle></@@!PIC WarRing>\
+
+#IF
+CHECKJOB WIZARD
+#SAY
+<color=green 54级随机领取>：</@@!PIC DevilNecklace></@@!PIC DevilBangle></@@!PIC DevilRing>\
+
+#IF
+CHECKJOB TAOS
+#SAY
+<color=green 54级随机领取>：</@@!PIC RoadNecklace></@@!PIC RoadBangle></@@!PIC RoadRing>\
+
+#IF
+CHECKJOB WARR
+#SAY
+<color=green 56级>：</@@!PIC Liedao>
+
+#IF
+CHECKJOB WIZARD
+#SAY
+<color=green 56级>：</@@!PIC LawStaff>
+
+#IF
+CHECKJOB TAOS
+#SAY
+<color=green 56级>：</@@!PIC DogenSword>
+
+#IF
+#SAY
+　　　　<color=green 58级>：</@@!PIC GhostEssence>×50\
+<color=green 60级>：</@@!PIC MagicAmulet(B)>×3　 <color=green 62级>：</@@!PIC 50元宝>\
+<上一页/@钱员外1>　<下一页/@钱员外3>　<领取奖励/@PlayerWelfare>
+
+[@钱员外3]
+#IF
+CHECKJOB WARR
+#SAY
+<color=green 64级随机领取>：</@@!PIC GhostHelmet></@@!PIC GhostBelt></@@!PIC GhostBoots>\
+
+#IF
+CHECKJOB WIZARD
+#SAY
+<color=green 64级随机领取>：</@@!PIC MorelHelmet></@@!PIC MorelBelt></@@!PIC MorelBoots>\
+
+#IF
+CHECKJOB TAOS
+#SAY
+<color=green 64级随机领取>：</@@!PIC SpringHelmet></@@!PIC SpringBelt></@@!PIC SpringBoots>\
+
+#IF
+#SAY
+<color=green 66级>：</@@!PIC MysteriousRune>×500\
+
+#IF
+CHECKJOB WARR
+#SAY
+<color=green 68级随机领取>：</@@!PIC GhostNecklace></@@!PIC GhostBangle></@@!PIC GhostRing>\
+
+#IF
+CHECKJOB WIZARD
+#SAY
+<color=green 68级随机领取>：</@@!PIC MorelNecklace></@@!PIC MorelBangle></@@!PIC MorelRing>\
+
+#IF
+CHECKJOB TAOS
+#SAY
+<color=green 68级随机领取>：</@@!PIC SpringNecklace></@@!PIC SpringBangle></@@!PIC SpringRing>\
+
+#IF
+#SAY
+<color=green 70级>：</@@!PIC 100元宝>\
+<上一页/@钱员外2>　　　　　<领取奖励/@PlayerWelfare>
+
+[@PlayerWelfare]
+#IF
+CHECKVAR HUMAN PlayerWelfare < 35
+#ACT
+break
+#SAY
+　　<新手关怀大使/@@goto 0 新手关怀大使 468,245>那里的奖品你还没有领取。请在领取了\
+以后再来找我吧。\
+\
+　　<去找新手关怀大使/@@goto 0 新手关怀大使 468,245>
+
+#IF
+CheckLevelEx < 40
+#ACT
+MessageBox 请40级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 40
+!CHECKBAGSIZE 4
+#ACT
+MessageBox 请先将包裹空出4个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 40
+#ACT
+Calcvar HUMAN PlayerWelfare = 40
+give 双倍经验周卡 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+give PandoraBox(小) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+give SuperHPRegen 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+give SuperMPRegen 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+
+#IF
+CheckLevelEx < 42
+#ACT
+MessageBox 请42级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 42
+!CHECKBAGSIZE 1
+#ACT
+MessageBox 请先将包裹空出1个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 42
+#ACT
+Calcvar HUMAN PlayerWelfare = 42
+give KingHelmet 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+
+#IF
+CheckLevelEx < 44
+#ACT
+MessageBox 请44级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 44
+!CHECKBAGSIZE 2
+#ACT
+MessageBox 请先将包裹空出2个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 44
+#ACT
+Calcvar HUMAN PlayerWelfare = 44
+give CrazyBangle 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+give CrazyBangle 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+
+#IF
+CheckLevelEx < 46
+#ACT
+MessageBox 请46级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 46
+!CHECKBAGSIZE 1
+#ACT
+MessageBox 请先将包裹空出1个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 46
+#ACT
+Calcvar HUMAN PlayerWelfare = 46
+goto @神武系列
+
+#IF
+CheckLevelEx < 48
+#ACT
+MessageBox 请48级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 48
+!CHECKBAGSIZE 1
+#ACT
+MessageBox 请先将包裹空出1个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 48
+#ACT
+Calcvar HUMAN PlayerWelfare = 48
+goto @40级衣服
+
+#IF
+CheckLevelEx < 50
+#ACT
+MessageBox 请50级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 50
+!CHECKBAGSIZE 3
+#ACT
+MessageBox 请先将包裹空出3个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 50
+#ACT
+Calcvar HUMAN PlayerWelfare = 50
+give SilverKey 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+give GoldenKey 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+give MysteryKeys 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+
+#IF
+CheckLevelEx < 52
+#ACT
+MessageBox 请52级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 52
+!CHECKBAGSIZE 1
+#ACT
+MessageBox 请先将包裹空出1个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 52
+#ACT
+Calcvar HUMAN PlayerWelfare = 52
+goto @神饰防具
+
+#IF
+CheckLevelEx < 54
+#ACT
+MessageBox 请54级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 54
+!CHECKBAGSIZE 1
+#ACT
+MessageBox 请先将包裹空出1个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 54
+#ACT
+Calcvar HUMAN PlayerWelfare = 54
+goto @神饰首饰
+
+#IF
+CheckLevelEx < 56
+#ACT
+MessageBox 请56级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 56
+!CHECKBAGSIZE 1
+#ACT
+MessageBox 请先将包裹空出1个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 56
+#ACT
+Calcvar HUMAN PlayerWelfare = 56
+goto @雷裂武器
+
+#IF
+CheckLevelEx < 58
+#ACT
+MessageBox 请58级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 58
+!CHECKBAGSIZE 1
+#ACT
+MessageBox 请先将包裹空出1个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 58
+#ACT
+Calcvar HUMAN PlayerWelfare = 58
+give GhostEssence 1
+UPGRADEUSERITEM $PARAM(10) 20 = 50
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+
+#IF
+CheckLevelEx < 60
+#ACT
+MessageBox 请60级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 60
+!CHECKBAGSIZE 3
+#ACT
+MessageBox 请先将包裹空出3个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 60
+#ACT
+Calcvar HUMAN PlayerWelfare = 60
+give MagicAmulet(B) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+give MagicAmulet(B) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+give MagicAmulet(B) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+
+#IF
+CheckLevelEx < 62
+#ACT
+MessageBox 请62级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 62
+!CHECKBAGSIZE 1
+#ACT
+MessageBox 请先将包裹空出1个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 62
+#ACT
+Calcvar HUMAN PlayerWelfare = 62
+give 50元宝 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+
+#IF
+CheckLevelEx < 64
+#ACT
+MessageBox 请64级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 64
+!CHECKBAGSIZE 1
+#ACT
+MessageBox 请先将包裹空出1个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 64
+#ACT
+Calcvar HUMAN PlayerWelfare = 64
+goto @魔饰防具
+
+#IF
+CheckLevelEx < 66
+#ACT
+MessageBox 请66级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 66
+!CHECKBAGSIZE 1
+#ACT
+MessageBox 请先将包裹空出1个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 66
+#ACT
+Calcvar HUMAN PlayerWelfare = 66
+give MysteriousRune 1
+UPGRADEUSERITEM $PARAM(10) 71 = 500
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+
+#IF
+CheckLevelEx < 68
+#ACT
+MessageBox 请68级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 68
+!CHECKBAGSIZE 1
+#ACT
+MessageBox 请先将包裹空出1个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 68
+#ACT
+Calcvar HUMAN PlayerWelfare = 68
+goto @魔饰首饰
+
+#IF
+CheckLevelEx < 70
+#ACT
+MessageBox 请70级以后再来领取下一份奖品！
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 70
+!CHECKBAGSIZE 1
+#ACT
+MessageBox 请先将包裹空出1个位置
+break
+
+#IF
+CHECKVAR HUMAN PlayerWelfare < 70
+#ACT
+Calcvar HUMAN PlayerWelfare = 70
+give 100元宝 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+#ELSESAY
+我已经没有什么可给你的东西了。\
+\
+<离开/@exit>
+
+[@40级衣服]
+#IF
+CHECKJOB WARR
+gender man
+#ACT
+give HolyWarArm(M) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB WARR
+!gender man
+#ACT
+give HolyWarArm(F) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB WIZARD
+gender man
+#ACT
+give LawGodArm(M) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB WIZARD
+!gender man
+#ACT
+give LawGodArm(F) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB TAOS
+gender man
+#ACT
+give DaoistRobe(M) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB TAOS
+!gender man
+#ACT
+give DaoistRobe(F) 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+[@神武系列]
+#IF
+CHECKJOB WARR
+#ACT
+ReadRandomStr ..\QueStDiary\GameRead\MightEquipment.txt S0
+give $STR(S0) 1
+break
+
+#IF
+CHECKJOB WIZARD
+#ACT
+ReadRandomStr ..\QueStDiary\GameRead\GenmaEquipment.txt S0
+give $STR(S0) 1
+break
+
+#IF
+CHECKJOB TAOS
+#ACT
+ReadRandomStr ..\QueStDiary\GameRead\HardDayEquipment.txt S0
+give $STR(S0) 1
+break
+
+[@神饰防具]
+#IF
+CHECKJOB WARR
+#ACT
+mov S0 战神
+goto @防具
+
+#IF
+CHECKJOB WIZARD
+#ACT
+mov S0 魔神
+goto @防具
+
+#IF
+CHECKJOB TAOS
+#ACT
+mov S0 道神
+goto @防具
+
+#IF
+random 1
+#ACT
+give $STR(S0) 1
+
+[@防具]
+#IF
+random 3
+#ACT
+inc S0 头盔
+break
+
+#IF
+random 2
+#ACT
+inc S0 腰带
+#ELSEACT
+inc S0 靴子
+
+[@神饰首饰]
+#IF
+CHECKJOB WARR
+#ACT
+mov S0 战神
+goto @首饰
+
+#IF
+CHECKJOB WIZARD
+#ACT
+mov S0 魔神
+goto @首饰
+
+#IF
+CHECKJOB TAOS
+#ACT
+mov S0 道神
+goto @首饰
+
+#IF
+random 1
+#ACT
+give $STR(S0) 1
+
+[@首饰]
+#IF
+random 3
+#ACT
+inc S0 项链
+break
+
+#IF
+random 2
+#ACT
+inc S0 手镯
+#ELSEACT
+inc S0 戒指
+
+[@雷裂武器]
+#IF
+CHECKJOB WARR
+#ACT
+give Liedao 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB WIZARD
+#ACT
+give LawStaff 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB TAOS
+#ACT
+give DogenSword 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+[@魔饰防具]
+#IF
+CHECKJOB WARR
+random 3
+#ACT
+give GhostHelmet 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB WARR
+random 2
+#ACT
+give GhostBelt 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB WARR
+random 1
+#ACT
+give GhostBoots 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB WIZARD
+random 3
+#ACT
+give MorelHelmet 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB WIZARD
+random 2
+#ACT
+give MorelBelt 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB WIZARD
+random 1
+#ACT
+give MorelBoots 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB TAOS
+random 3
+#ACT
+give SpringHelmet 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB TAOS
+random 2
+#ACT
+give SpringBelt 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB TAOS
+random 1
+#ACT
+give SpringBoots 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+[@魔饰首饰]
+#IF
+CHECKJOB WARR
+random 3
+#ACT
+give GhostNecklace 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB WARR
+random 2
+#ACT
+give GhostBangle 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB WARR
+random 1
+#ACT
+give GhostRing 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB WIZARD
+random 3
+#ACT
+give MorelNecklace 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB WIZARD
+random 2
+#ACT
+give MorelBangle 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB WIZARD
+random 1
+#ACT
+give MorelRing 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB TAOS
+random 3
+#ACT
+give SpringNecklace 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB TAOS
+random 2
+#ACT
+give SpringBangle 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+
+#IF
+CHECKJOB TAOS
+random 1
+#ACT
+give SpringRing 1
+UPGRADEUSERITEM $PARAM(10) 59 = 1
+break
+}

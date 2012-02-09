@@ -1,0 +1,34 @@
+08/02/2012 16:29:33 Has Read 1Guild Information...
+08/02/2012 16:29:33 Has Read 1Castle Information...
+08/02/2012 16:29:34 登录服务器(127.0.0.1:5600)连接成功...
+08/02/2012 16:29:36 Database Server(127.0.0.1:6000)Connection Is Successful...
+08/02/2012 16:29:37 游戏网关[0](127.0.0.1:1862)已打开...
+08/02/2012 16:33:29 脚本错误2: GiveGAMEGOLD 50 第:12 行: .\Envir\Market_Def\CentralPlains\Veteran-0.txt
+08/02/2012 16:33:34 Division by zero
+08/02/2012 16:34:04 Division by zero
+08/02/2012 16:34:35 Division by zero
+08/02/2012 16:35:06 Division by zero
+08/02/2012 16:35:36 Division by zero
+08/02/2012 16:36:06 Division by zero
+08/02/2012 16:36:37 Division by zero
+08/02/2012 16:37:08 Division by zero
+08/02/2012 16:37:38 Division by zero
+08/02/2012 16:38:08 Division by zero
+08/02/2012 16:38:39 Division by zero
+08/02/2012 16:39:10 Division by zero
+08/02/2012 16:39:32 在线数: 1
+08/02/2012 16:39:41 Division by zero
+08/02/2012 16:40:12 Division by zero
+08/02/2012 16:40:42 Division by zero
+08/02/2012 16:41:13 Division by zero
+08/02/2012 16:41:43 Division by zero
+08/02/2012 16:42:13 Division by zero
+08/02/2012 16:42:43 Division by zero
+08/02/2012 16:43:14 Division by zero
+08/02/2012 16:43:45 Division by zero
+08/02/2012 16:44:16 Division by zero
+08/02/2012 16:44:47 Division by zero
+08/02/2012 16:45:17 Division by zero
+08/02/2012 16:45:47 Division by zero
+08/02/2012 16:46:18 Division by zero
+08/02/2012 16:46:30 游戏网关[0](127.0.0.1:1862)已关闭...

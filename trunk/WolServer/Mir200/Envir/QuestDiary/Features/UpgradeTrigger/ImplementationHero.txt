@@ -1,0 +1,201 @@
+[@元神执行] PNEUMA
+{
+#IF
+!ISPNEUMA
+#ACT
+BREAK
+
+#IF
+#ACT
+mov S0 $EXTRALEVELNAME
+#CALL [\游戏功能\登陆触发\元神登陆.txt] @元神登陆1
+
+#IF
+!equal $STR(S0) $EXTRALEVELNAME
+#ACT
+goto @清除体魄
+
+
+[@清除体魄] PNEUMA
+#IF
+checknamelist ..\QuestDiary\GameData\Hero-Related\GradePhysical.txt
+#ACT
+USEBONUSPOINT HP - 20
+
+#IF
+checknamelist ..\QuestDiary\GameData\Hero-Related\QualityGoods.txt
+#ACT
+USEBONUSPOINT HP - 70
+
+#IF
+#ACT
+delnamelist ..\QuestDiary\GameData\Hero-Related\GradePhysical.txt
+delnamelist ..\QuestDiary\GameData\Hero-Related\QualityGoods.txt
+addnamelist ..\QuestDiary\GameData\Hero-Related\GeneralBody.txt
+}
+
+
+[@元神天下第一] PNEUMA
+{
+#IF
+!ISPNEUMA
+#ACT
+BREAK
+
+#IF
+CHECKLEVELEX < 46
+#ACT
+BREAK
+#IF
+CHECKLEVELEX < 72
+SMALL $AMBITKIND 3
+#ACT
+MOV S1 $LEVEL
+INC S1 级
+MOV P2 $LEVEL
+#IF
+LARGE $AMBITKIND 6
+#ACT
+MOV S1 上仙期
+INC S1 $NUMTOCHR($AMBITLEVEL)
+INC S1 重
+MOV P2 $AMBITLEVEL
+INC P2 300
+#IF
+LARGE $AMBITKIND 4
+SMALL $AMBITKIND 7
+#ACT
+MOV S1 飞仙期
+INC S1 $NUMTOCHR($AMBITLEVEL)
+INC S1 重
+MOV P2 $AMBITLEVEL
+INC P2 200
+#IF
+LARGE $AMBITKIND 2
+SMALL $AMBITKIND 5
+#ACT
+MOV S1 飞升期
+INC S1 $NUMTOCHR($AMBITLEVEL)
+INC S1 重
+MOV P2 $AMBITLEVEL
+INC P2 100
+
+#IF
+random 1
+#ACT
+goto @元神排列
+
+#IF
+gender man
+CHECKJOB WARR
+LARGE P2 $STR(G10)
+#ACT
+MOV G10 $STR(P2)
+FORMATSTR S0 第一元神男战士\%s $USERNAME
+SETNPCNAME 7 $STR(S0)
+FORMATSTR A6 天下第一元神男战士：#32{Color=green#32%s}\他是#32{Color=green#32%s}的元神，目前等级为：#32{Color=green#32%s}。\纷扰乱世群雄追鹿。{Color=green#32%s}的元神#32{Color=green#32%s}\资质甚高，领悟非凡，奋勇抵抗修罗魔族的侵略，在战火\四起的传世大陆中成为了天下第一，至今没人可以超越。\今天的天下第一元神是{Color=green#32%s}，明天将会是谁呢？\申请天下第一名号，请速到中州魔法阵祭祀处申请。\<离开/@exit> <$USERNAME>|<$PNEUMANAME>|<$STR(S1)>|<$PNEUMANAME>|<$USERNAME>|<$USERNAME>
+break
+
+#IF
+!gender man
+CHECKJOB WARR
+LARGE P2 $STR(G11)
+#ACT
+MOV G11 $STR(P2)
+FORMATSTR S0 第一元神女战士\%s $USERNAME
+SETNPCNAME 8 $STR(S0)
+FORMATSTR A7 天下第一元神女战士：#32{Color=green#32%s}\她是#32{Color=green#32%s}的元神，目前等级为：#32{Color=green#32%s}。\纷扰乱世群雄追鹿。{Color=green#32%s}的元神#32{Color=green#32%s}\资质甚高，领悟非凡，勇闯铁血魔宫，奋战修罗魔族，在\战火四起的传世大陆中成为了天下第一，至今没人可以超\越\今天的天下第一元神是{Color=green#32%s}，明天将会是谁呢？\申请天下第一名号，请速到中州魔法阵祭祀处申请。\<离开/@exit> <$USERNAME>|<$PNEUMANAME>|<$STR(S1)>|<$PNEUMANAME>|<$USERNAME>|<$USERNAME>
+break
+
+#IF
+gender man
+CHECKJOB WIZARD
+LARGE P2 $STR(G12)
+#ACT
+MOV G12 $STR(P2)
+FORMATSTR S0 第一元神男法师\%s $USERNAME
+SETNPCNAME 9 $STR(S0)
+FORMATSTR A8 天下第一元神男法师：#32{Color=green#32%s}\他是#32{Color=green#32%s}的元神，目前等级为：#32{Color=green#32%s}。\纷扰乱世群雄追鹿。{Color=green#32%s}的元神#32{Color=green#32%s}\释放强大的组合神技，抗击修罗天和铁血魔王，在战火四\起的传世大陆中成为了天下第一，至今没人可以超越。\今天的天下第一元神是{Color=green#32%s}，明天将会是谁呢？\申请天下第一名号，请速到中州魔法阵祭祀处申请。\<离开/@exit> <$USERNAME>|<$PNEUMANAME>|<$STR(S1)>|<$PNEUMANAME>|<$USERNAME>|<$USERNAME>
+break
+
+#IF
+!gender man
+CHECKJOB WIZARD
+LARGE P2 $STR(G13)
+#ACT
+MOV G13 $STR(P2)
+FORMATSTR S0 第一元神女法师\%s $USERNAME
+SETNPCNAME 10 $STR(S0)
+FORMATSTR A9 天下第一元神女法师：#32{Color=green#32%s}\她是#32{Color=green#32%s}的元神，目前等级为：#32{Color=green#32%s}。\纷扰乱世群雄追鹿。{Color=green#32%s}的元神#32{Color=green#32%s}\资质甚高，领悟非凡，熟练地驾御着电与火的力量，在战\火四起的传世大陆中成为了天下第一，至今没人可以超越\今天的天下第一元神是{Color=green#32%s}，明天将会是谁呢？\申请天下第一名号，请速到中州魔法阵祭祀处申请。\<离开/@exit> <$USERNAME>|<$PNEUMANAME>|<$STR(S1)>|<$PNEUMANAME>|<$USERNAME>|<$USERNAME>
+break
+
+#IF
+gender man
+CHECKJOB TAOS
+LARGE P2 $STR(G14)
+#ACT
+MOV G14 $STR(P2)
+FORMATSTR S0 第一元神男道士\%s $USERNAME
+SETNPCNAME 11 $STR(S0)
+FORMATSTR A10 天下第一元神男道士：#32{Color=green#32%s}\他是#32{Color=green#32%s}的元神，目前等级为：#32{Color=green#32%s}。\纷扰乱世群雄追鹿。{Color=green#32%s}的元神{Color=green#32%s}\领悟非凡，秉承了道尊的元神神力，施展修为精深的道术\力斩妖魔，在战火四起的传世大陆中成为了天下第一至今\没人可以超越。\今天的天下第一元神是{Color=green#32%s}，明天将会是谁呢？\申请天下第一名号，请速到中州魔法阵祭祀处申请。\<离开/@exit> <$USERNAME>|<$PNEUMANAME>|<$STR(S1)>|<$PNEUMANAME>|<$USERNAME>|<$USERNAME>
+break
+
+#IF
+!gender man
+CHECKJOB TAOS
+LARGE P2 $STR(G15)
+#ACT
+MOV G15 $STR(P2)
+FORMATSTR S0 第一元神女道士\%s $USERNAME
+SETNPCNAME 12 $STR(S0)
+FORMATSTR A11 天下第一元神女道士：#32{Color=green#32%s}\她是#32{Color=green#32%s}的元神，目前等级为：#32{Color=green#32%s}。\纷扰乱世群雄追鹿。{Color=green#32%s}的元神#32{Color=green#32%s}\具有极高的悟性和韧力，释放威力十足的组合神技力斩妖\除魔，在战火四起的传世大陆中成为了天下第一，至今没\人可以超越。\今天的天下第一元神是{Color=green#32%s}，明天将会是谁呢？\申请天下第一名号，请速到中州魔法阵祭祀处申请。\<离开/@exit> <$USERNAME>|<$PNEUMANAME>|<$STR(S1)>|<$PNEUMANAME>|<$USERNAME>|<$USERNAME>
+break
+
+[@元神排列] PNEUMA
+#IF
+SMALL $STR(P2) 46
+#ACT
+break
+
+#IF
+equal P0 0
+#ACT
+MOV S3 $GENDER
+INC S3 $JOB
+mov S4 $USERNAME
+inc S4 |
+
+#IF
+equal P0 0
+PosInList $STR(S4) ..\QuestDiary\GameData\VariousRanking\元神排行\<$STR(S3)>.txt S5
+#ACT
+DELVARLIST $STR(S5) ..\QuestDiary\GameData\VariousRanking\元神排行\<$STR(S3)>.txt
+
+#IF
+large P0 8
+#ACT
+break
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanking\元神排行\<$STR(S3)>.txt S6 $STR(P0)
+
+#IF
+!equal S6
+#ACT
+SPLIT $STR(S6) | S10
+#ELSEACT
+FORMATSTR S7 %s|%s|%s|%25s%s <$USERNAME>|<$STR(P2)>|<$STR(S1)>|<$PNEUMANAME>的元神：|<$USERNAME>
+INSERTVARLIST $STR(P0) $STR(S7) ..\QuestDiary\GameData\VariousRanking\元神排行\<$STR(S3)>.txt
+
+#IF
+LARGE $STR(P2) $STR(S11)
+#ACT
+FORMATSTR S7 %s|%s|%s|%25s%s <$USERNAME>|<$STR(P2)>|<$STR(S1)>|<$PNEUMANAME>的元神：|<$USERNAME>
+INSERTVARLIST $STR(P0) $STR(S7) ..\QuestDiary\GameData\VariousRanking\元神排行\<$STR(S3)>.txt
+#ELSEACT
+inc P0 1
+goto @元神排列
+break
+}

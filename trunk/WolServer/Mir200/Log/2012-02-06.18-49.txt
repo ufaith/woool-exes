@@ -1,0 +1,26 @@
+06/02/2012 18:49:47 Has Read 0Guild Information...
+06/02/2012 18:49:47 Has Read 1Castle Information...
+06/02/2012 18:49:48 登录服务器(127.0.0.1:5600)连接成功...
+06/02/2012 18:49:51 Database Server(127.0.0.1:6000)Connection Is Successful...
+06/02/2012 18:49:51 游戏网关[0](127.0.0.1:3288)已打开...
+06/02/2012 18:50:18 [制造物品] gamelord RoughHelmet(1073741838)
+06/02/2012 18:53:49 Division by zero
+06/02/2012 18:54:20 Division by zero
+06/02/2012 18:54:51 Division by zero
+06/02/2012 18:55:22 Division by zero
+06/02/2012 18:55:52 Division by zero
+06/02/2012 18:56:22 Division by zero
+06/02/2012 18:56:52 Division by zero
+06/02/2012 18:57:11 Item Database Reload Complete...
+06/02/2012 18:57:20 [制造物品] gamelord ShengArmor(1073741839)
+06/02/2012 18:57:23 Division by zero
+06/02/2012 18:57:26 [等级调整] gamelord (50 -> 55)
+06/02/2012 18:57:53 Division by zero
+06/02/2012 18:58:23 Division by zero
+06/02/2012 18:58:54 Division by zero
+06/02/2012 18:59:24 Division by zero
+06/02/2012 18:59:46 在线数: 1
+06/02/2012 18:59:54 Division by zero
+06/02/2012 19:00:25 Division by zero
+06/02/2012 19:00:55 Division by zero
+06/02/2012 19:00:59 游戏网关[0](127.0.0.1:3288)已关闭...

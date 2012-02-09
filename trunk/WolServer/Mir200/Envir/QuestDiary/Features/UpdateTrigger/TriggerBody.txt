@@ -1,0 +1,82 @@
+[@本体升级]
+{
+#IF
+ISPNEUMA
+#ACT
+BREAK
+
+#IF
+CHECKSLAVENAME 天玉公主
+#ACT
+goto @公主升级
+#ELSEACT
+GOTO @普通升级
+break
+
+
+[@普通升级]
+#IF
+LARGE $AMBITKIND 2
+#ACT
+goto @天人等级限制
+#ELSEACT
+goto @凡人等级限制
+
+[@凡人人等级限制]
+#IF
+random 1
+#ACT
+#CALL [\Features\System\ClassTitle.txt] @ClassTitle
+SENDMSG 6 "Congratulations to upgrade to <$ LEVEL> class!"
+break
+
+[@天人等级限制]
+#IF
+random 1
+#ACT
+#CALL [\Features\System\ClassTitle.txt] @ClassTitle
+SENDMSG 6 恭喜你的境界提升到<$EXTRALEVELNAME>！
+
+[@公主升级]
+#IF
+LARGE $AMBITKIND 2
+#ACT
+goto @天人等级限制1
+#ELSEACT
+goto @凡人等级限制1
+
+[@凡人等级限制1]
+#IF
+random 1
+#ACT
+#CALL [\Features\System\ClassTitle.txt] @ClassTitle
+SENDMSG 6 恭喜你升级到<$LEVEL>级！
+SENDMSG 10 恭喜<$USERNAME>在拯救公主任务中获得大量的经验，升级到<$LEVEL>级了！要想快速提高等级，赶快到皇宫参加救公主活动！
+
+
+[@天人等级限制1]
+#IF
+random 1
+#ACT
+#CALL [\Features\System\ClassTitle.txt] @ClassTitle
+SENDMSG 6 恭喜你的境界提升到<$EXTRALEVELNAME>！
+SENDMSG 10 恭喜<$USERNAME>在拯救公主任务中获得大量的经验，他的境界提升到<$EXTRALEVELNAME>！要想快速提高等级，赶快到皇宫参加救公主活动！
+
+[@宗族升级]
+#IF
+LARGE $AMBITKIND 4
+#ACT
+goto @宗族人员
+break
+#IF
+small $AMBITKIND 5
+LARGE $AMBITKIND 2
+#ACT
+goto @宗族人员1
+break
+#IF
+small $AMBITKIND 3
+#ACT
+goto @宗族人员2
+break
+}

@@ -1,0 +1,8 @@
+[@main]
+Hero Information. \\
+\
+<Go back to CentralPlains/@Goout1>\
+
+[@Goout1]
+#ACT
+map 0

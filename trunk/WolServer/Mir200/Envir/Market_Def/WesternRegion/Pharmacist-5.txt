@@ -1,0 +1,90 @@
+(@makedrug)
+[@main]
+Welcome, would you like to craft something today?\
+If you need help don't be afraid to ask.\
+<Production/@makedrug>\
+<Production Help/@helpmakedrug>\
+<Instructions/@askmakedrug>\
+<Exit/@exit>
+
+[@makedrug]
+Please select the items you want to create.\
+You must have the required materials.\
+\
+<Back/@Drug>
+
+[@Drug]
+You must have all materials needed for the item you wish\
+to make, they will automatically be removed from bag and the\
+item given to you.\
+\
+<Production/@makedrug>\
+<<Production Help/@helpmakedrug>\
+<Instructions/@askmakedrug>\
+<Exit/@exit>
+
+[@helpmakedrug]
+Select which you would like to learn about.\
+\
+<GreenPoison/@helpdrug1> Function\
+<RedPoison/@helpdrug2> Function\
+<GreenPoison/@helpmakedrug1> Material\
+<RedPoison/@helpmakedrug2> Material\
+<Back/@Drug>
+
+[@helpdrug1]
+Taoists use GreenPoison to stop stamina of the enemy.\
+\
+<Back/@helpmakedrug>
+
+[@helpdrug2]
+Taoists use RedPoison to reduce the enemy defense..\
+\
+<Back/@helpmakedrug>
+
+[@helpmakedrug1]
+Required materials for GreenPoison(S): <Fruit/@helpitem_1> x1,\
+Tooth x2,<DriedToad/@helpitem_3> x1,Leaf x3.\
+Required materials for GreenPoison(M):<Fruit/@helpitem_1> x2,\
+Tooth x4,<DriedToad/@helpitem_3> x2,Leaf x6.\
+Required materials for GreenPoison(L): <Fruit/@helpitem_1> x3£¬\
+Tooth x6,<DriedToad/@helpitem_3> x3,Leaf x9.\
+<Back/@helpmakedrug>
+
+[@helpmakedrug2]
+Required materials for RedPoison(S): <MaggotEggs/@helpitem_2> x1,\
+ScorpionTail x1,<DriedToad/@helpitem_3> x1,Leaf x4.\
+Required materials for RedPoison(M): <MaggotEggs/@helpitem_2> x2,\
+ScorpionTail x2,<DriedToad/@helpitem_3> x2,Leaf x8.\
+Required materials for RedPoison(L): <MaggotEggs/@helpitem_2> x3,\
+ScorpionTail x3,<DriedToad/@helpitem_3> x3,Leaf x12.\
+<Back/@helpmakedrug>
+
+[@helpitem_1]
+Can be taken from Plants outside the city.\
+\
+<Back/@helpmakedrug1>
+
+[@helpitem_2]
+Can be harvest from Maggots inside Mines.\
+\
+<Back/@helpmakedrug2>
+
+[@helpitem_3]
+Can be harvest from Toads outside the City.\
+\
+<Back/@helpmakedrug>
+
+[goods]
+RedPoison(S)	40	10
+GreenPoison(S)	40	10
+RedPoison(M)	40	10
+GreenPoison(M)	40	10
+GreenPoison(L)	40	10
+RedPoison(L)	40	10
+MaleCrow(S)	40	10
+FemaleCrow(S)	40	10
+MaleCrow(M)	40	10
+FemaleCrow(M)	40	10
+MaleCrow(L)	40	10
+FemaleCrow(L)	40	10

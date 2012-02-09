@@ -1,0 +1,12 @@
+[@main]
+#IF
+equal $Task(38) 1
+random 2
+#ACT
+MOVR P0 6
+INC P0 1
+MULT P0 1000
+give 地魂灵石 1
+UPGRADEUSERITEM $PARAM(10) 20 = $STR(P0)
+UpdateTask 38 2
+SENDMSG 5 你获得了地魂灵石

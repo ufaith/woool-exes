@@ -1,0 +1,39 @@
+05/02/2012 22:11:26 Has Read 0Guild Information...
+05/02/2012 22:11:26 Has Read 1Castle Information...
+05/02/2012 22:11:26 脚本错误2: AmbitLevel + 1 第:1862 行: .\Envir\Market_Def\QFunction-0.txt
+05/02/2012 22:11:26 脚本错误2: AmbitLevel + 1 第:1873 行: .\Envir\Market_Def\QFunction-0.txt
+05/02/2012 22:11:26 脚本错误2: AmbitLevel = 99 第:1910 行: .\Envir\Market_Def\QFunction-0.txt
+05/02/2012 22:11:26 脚本错误2: AmbitLevel = 99 第:1917 行: .\Envir\Market_Def\QFunction-0.txt
+05/02/2012 22:11:26 脚本错误2: ElementForceMax + 15 第:1924 行: .\Envir\Market_Def\QFunction-0.txt
+05/02/2012 22:11:26 脚本错误2: ElementForce = $ELEMENTFORCEMAX 第:1925 行: .\Envir\Market_Def\QFunction-0.txt
+05/02/2012 22:11:26 脚本错误2: ElementForceMax + 8 第:1930 行: .\Envir\Market_Def\QFunction-0.txt
+05/02/2012 22:11:26 脚本错误2: ElementForce = $ELEMENTFORCEMAX 第:1931 行: .\Envir\Market_Def\QFunction-0.txt
+05/02/2012 22:11:26 脚本错误2: ElementForceMax + 12 第:1936 行: .\Envir\Market_Def\QFunction-0.txt
+05/02/2012 22:11:26 脚本错误2: ElementForce = $ELEMENTFORCEMAX 第:1937 行: .\Envir\Market_Def\QFunction-0.txt
+05/02/2012 22:11:26 脚本错误2: AmbitLevel + 1 第:2116 行: .\Envir\Market_Def\QFunction-0.txt
+05/02/2012 22:11:26 脚本错误2: AmbitLevel + 1 第:2125 行: .\Envir\Market_Def\QFunction-0.txt
+05/02/2012 22:11:26 脚本错误2: AmbitLevel = 99 第:2137 行: .\Envir\Market_Def\QFunction-0.txt
+05/02/2012 22:11:26 脚本错误2: AmbitLevel = 99 第:2144 行: .\Envir\Market_Def\QFunction-0.txt
+05/02/2012 22:11:27 登录服务器(127.0.0.1:5600)连接成功...
+05/02/2012 22:11:30 Database Server(127.0.0.1:6000)Connection Is Successful...
+05/02/2012 22:11:30 游戏网关[0](127.0.0.1:3382)已打开...
+05/02/2012 22:21:25 在线数: 1
+05/02/2012 22:31:25 在线数: 1
+05/02/2012 22:41:25 在线数: 1
+05/02/2012 22:51:25 在线数: 1
+05/02/2012 23:01:25 在线数: 1
+05/02/2012 23:11:25 在线数: 1
+05/02/2012 23:21:26 在线数: 1
+05/02/2012 23:31:26 在线数: 1
+05/02/2012 23:41:26 在线数: 1
+05/02/2012 23:51:26 在线数: 1
+06/02/2012 saving fail.... => .\Envir\Robot_def\..\QuestDiary\GameData\百宝箱\第一名.txt
+06/02/2012 saving fail.... => .\Envir\Robot_def\..\QuestDiary\GameData\百宝箱\幸运奖.txt
+06/02/2012 saving fail.... => .\Envir\Robot_def\..\QuestDiary\GameData\各种排行\百宝箱.txt
+06/02/2012 saving fail.... => .\Envir\Robot_def\..\QuestDiary\GameData\个人变量\军机令今日次数.txt
+06/02/2012 saving fail.... => .\Envir\Robot_def\..\QuestDiary\GameData\各种排行\军机令.txt
+06/02/2012 saving fail.... => .\Envir\Robot_def\..\QuestDiary\GameData\各种排行\营救公主.txt
+06/02/2012 saving fail.... => .\Envir\Robot_def\..\QuestDiary\GameData\公共变量\每日清除.txt
+06/02/2012 00:01:26 在线数: 1
+06/02/2012 00:11:26 在线数: 1
+06/02/2012 00:16:26 游戏网关[0](127.0.0.1:3382)已关闭...

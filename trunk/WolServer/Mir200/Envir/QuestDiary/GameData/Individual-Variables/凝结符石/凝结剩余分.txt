@@ -1,0 +1,14 @@
+[zerberoz]
+CondensationRemainingSub=0
+[dazz]
+CondensationRemainingSub=0
+[qqqq]
+CondensationRemainingSub=0
+[qwer]
+CondensationRemainingSub=0
+[dfsdfsfd]
+CondensationRemainingSub=0
+[xvxcvxv]
+CondensationRemainingSub=0
+[sanity]
+CondensationRemainingSub=0

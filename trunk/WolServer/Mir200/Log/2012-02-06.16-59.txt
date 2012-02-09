@@ -1,0 +1,27 @@
+06/02/2012 16:59:42 Has Read 0Guild Information...
+06/02/2012 16:59:42 Has Read 1Castle Information...
+06/02/2012 16:59:42 脚本错误2: queryvalue 请输入行会会旗编号 2 15 12 第:19 行: .\Envir\Npc_def\King-SH000.txt
+06/02/2012 16:59:43 登录服务器(127.0.0.1:5600)连接成功...
+06/02/2012 16:59:44 游戏网关[0](127.0.0.1:2512)已打开...
+06/02/2012 16:59:46 Database Server(127.0.0.1:6000)Connection Is Successful...
+06/02/2012 17:00:21 脚本错误2: queryvalue 请输入行会会旗编号 2 15 12 第:19 行: .\Envir\Npc_def\King-SH000.txt
+06/02/2012 17:03:44 Division by zero
+06/02/2012 17:03:53 file not found => .\Envir\Npc_def\..\GuildBase\Guildlist.txt
+06/02/2012 17:04:14 Division by zero
+06/02/2012 17:04:44 Division by zero
+06/02/2012 17:05:14 Division by zero
+06/02/2012 17:05:44 Division by zero
+06/02/2012 17:06:14 Division by zero
+06/02/2012 17:06:23 [制造物品] gamelord BattleHorn(1073741833)
+06/02/2012 17:06:23 [制造物品] gamelord BattleHorn(1073741834)
+06/02/2012 17:06:23 [制造物品] gamelord BattleHorn(1073741835)
+06/02/2012 17:06:23 [制造物品] gamelord BattleHorn(1073741836)
+06/02/2012 17:06:23 [制造物品] gamelord BattleHorn(1073741837)
+06/02/2012 17:06:28 file not found => .\Envir\Npc_def\..\GuildBase\Guildlist.txt
+06/02/2012 17:06:45 Division by zero
+06/02/2012 17:07:15 Division by zero
+06/02/2012 17:07:45 Division by zero
+06/02/2012 17:08:16 Division by zero
+06/02/2012 17:08:47 Division by zero
+06/02/2012 17:09:17 Division by zero
+06/02/2012 17:09:20 游戏网关[0](127.0.0.1:2512)已关闭...

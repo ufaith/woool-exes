@@ -1,0 +1,19 @@
+07/02/2012 13:21:43 Has Read 1Guild Information...
+07/02/2012 13:21:43 Has Read 1Castle Information...
+07/02/2012 13:21:43 脚本错误1: CheckClan 第:52 行: .\Envir\Npc_def\King-SH000.txt
+07/02/2012 13:21:44 登录服务器(127.0.0.1:5600)连接成功...
+07/02/2012 13:21:47 Database Server(127.0.0.1:6000)Connection Is Successful...
+07/02/2012 13:21:47 游戏网关[0](127.0.0.1:1446)已打开...
+07/02/2012 13:25:46 Division by zero
+07/02/2012 13:26:16 Division by zero
+07/02/2012 13:26:46 Division by zero
+07/02/2012 13:27:16 Division by zero
+07/02/2012 13:27:47 Division by zero
+07/02/2012 13:28:17 Division by zero
+07/02/2012 13:28:48 Division by zero
+07/02/2012 13:29:19 Division by zero
+07/02/2012 13:29:50 Division by zero
+07/02/2012 13:30:06 file not found => .\Envir\Npc_def\..\GuildBase\Clanlist.txt
+07/02/2012 13:30:20 Division by zero
+07/02/2012 13:30:51 Division by zero
+07/02/2012 13:31:16 游戏网关[0](127.0.0.1:1446)已关闭...

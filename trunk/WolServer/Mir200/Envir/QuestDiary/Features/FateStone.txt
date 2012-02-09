@@ -1,0 +1,65 @@
+[@命运石]
+#IF
+random 1
+#ACT
+movr P0 4
+inc P0 2
+SETHONORSHAPE $STR(P0) $PARAM(1)
+
+#IF
+CHECKITEMID $PARAM(1)
+POS $PARAM(3) 荣誉勋章
+#ACT
+takem $PARAM(0)
+SENDMSG 5 您的勋章被命运石改造成功，拥有了特别的造型。
+mov P0 0
+inc P0 $ITEMINFO[$PARAM(1)].AC1
+inc P0 $ITEMINFO[$PARAM(1)].AC2
+inc P0 $ITEMINFO[$PARAM(1)].MAC1
+inc P0 $ITEMINFO[$PARAM(1)].MAC2
+inc P0 $ITEMINFO[$PARAM(1)].DC1
+inc P0 $ITEMINFO[$PARAM(1)].DC2
+inc P0 $ITEMINFO[$PARAM(1)].MC1
+inc P0 $ITEMINFO[$PARAM(1)].MC2
+inc P0 $ITEMINFO[$PARAM(1)].SC1
+inc P0 $ITEMINFO[$PARAM(1)].SC2
+MULT P0 5
+#ELSEACT
+give 命运石 1
+break
+
+#IF
+!random $STR(P0)
+#ACT
+break
+
+#IF
+random 5
+#ACT
+UPGRADEUSERITEM $PARAM(1) 0 + 1
+break
+
+#IF
+random 4
+#ACT
+UPGRADEUSERITEM $PARAM(1) 2 + 1
+break
+
+#IF
+random 3
+#ACT
+UPGRADEUSERITEM $PARAM(1) 4 + 1
+break
+
+#IF
+random 2
+#ACT
+UPGRADEUSERITEM $PARAM(1) 6 + 1
+break
+
+#IF
+random 1
+#ACT
+UPGRADEUSERITEM $PARAM(1) 8 + 1
+break
+}

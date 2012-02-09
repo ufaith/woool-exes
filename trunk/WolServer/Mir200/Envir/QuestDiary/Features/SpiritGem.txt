@@ -1,0 +1,676 @@
+[@圣灵宝石]
+{
+#IF
+CHECKVARLIST $ITEMINFO[$PARAM(1)].NAME ..\QuestDiary\GameRead\圣灵宝石.txt
+#ELSEACT
+SENDMSG 5 完美宝石和至尊宝石无法使用圣灵精华合成圣灵宝石。
+break
+
+#IF
+small $ITEMINFO[$PARAM(0)].DURA 10
+#ACT
+ChangeEatItemDura + 1
+MessageBox 您的圣灵精华数量不足10个，更多的圣灵精华才能激活宝石隐藏属性。挖掘夺宝心魔尸体可获得圣灵精华。
+break
+
+#IF
+random 1
+#ACT
+mov S0 $ITEMINFO[$PARAM(1)].NAME
+mov M0 $ITEMINFO[$PARAM(1)].AC1
+mov M1 $ITEMINFO[$PARAM(1)].AC2
+mov M2 $ITEMINFO[$PARAM(1)].MAC1
+mov M3 $ITEMINFO[$PARAM(1)].MAC2
+mov M4 $ITEMINFO[$PARAM(1)].DC1
+mov M5 $ITEMINFO[$PARAM(1)].DC2
+mov M6 $ITEMINFO[$PARAM(1)].MC1
+mov M7 $ITEMINFO[$PARAM(1)].MC2
+mov M8 $ITEMINFO[$PARAM(1)].SC1
+mov M9 $ITEMINFO[$PARAM(1)].SC2
+takem $PARAM(1)
+UPGRADEUSERITEM $PARAM(0) 20 - 10
+mov S1 圣灵
+inc S1 $STR(S0)
+give $STR(S1) 1
+UPGRADEUSERITEM $PARAM(10) 0 = $STR(M0)
+UPGRADEUSERITEM $PARAM(10) 1 = $STR(M1)
+UPGRADEUSERITEM $PARAM(10) 2 = $STR(M2)
+UPGRADEUSERITEM $PARAM(10) 3 = $STR(M3)
+UPGRADEUSERITEM $PARAM(10) 4 = $STR(M4)
+UPGRADEUSERITEM $PARAM(10) 5 = $STR(M5)
+UPGRADEUSERITEM $PARAM(10) 6 = $STR(M6)
+UPGRADEUSERITEM $PARAM(10) 7 = $STR(M7)
+UPGRADEUSERITEM $PARAM(10) 8 = $STR(M8)
+UPGRADEUSERITEM $PARAM(10) 9 = $STR(M9)
+SENDMSG 5 恭喜您，您消耗了10个圣灵精华合成出了<$PARAM(11)>。它可以帮您提升武器或盾牌上的技能属性。
+break
+}
+
+[@圣灵宝石10]
+{
+#ACT
+mov S0 战士
+goto @圣灵宝石生效
+}
+
+[@圣灵宝石11]
+{
+#ACT
+mov S0 法师
+goto @圣灵宝石生效
+}
+
+[@圣灵宝石12]
+{
+#ACT
+mov S0 道士
+goto @圣灵宝石生效
+}
+
+[@圣灵宝石13]
+{
+#ACT
+mov S0 战士
+goto @圣灵宝石生效
+}
+
+[@圣灵宝石14]
+{
+#ACT
+mov S0 道士
+goto @圣灵宝石生效
+}
+
+[@圣灵宝石15]
+{
+#ACT
+mov S0 战士
+goto @圣灵宝石生效
+}
+
+[@圣灵宝石16]
+{
+#ACT
+mov S0 法师
+goto @圣灵宝石生效
+}
+
+[@圣灵宝石17]
+{
+#ACT
+mov S0 不限
+goto @圣灵宝石生效
+}
+
+[@圣灵宝石生效]
+{
+#IF
+POS $PARAM(3) 通灵
+POS $PARAM(3) 盾
+#ACT
+#CALL [\Features\SpiritGem.txt] @圣灵宝石盾牌
+break
+#ELSEACT
+#ECALL [\Features\SpiritGem.txt] @圣灵宝石武器
+break
+}
+
+[@圣灵宝石盾牌]
+{
+#IF
+!CHECKUSEITEM 13
+#ACT
+MESSAGEBOX 你没有装备盾牌,无法使用圣灵宝石增强盾牌上的附加技能的威力!
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 0
+#ACT
+SENDMSG 5 对不起，您的盾牌还没附加反射技能，使用圣灵精华可以给盾牌附加技能！
+break
+
+#IF
+random 1
+#ACT
+mov P0 0
+mov P1 $ITEMINFO[$PARAM(0)].WEIGHT
+mov S1 @
+inc S1 $STR(S0)
+inc S1 技能类
+goto $STR(S1)
+
+#IF
+equal P0 0
+!equal S0 不限
+#ACT
+SENDMSG 5 <$ITEMINFO[$PARAM(0)].NAME>只能升级盾牌上的<$STR(S0)>类技能威力
+break
+
+#IF
+random 10
+#ACT
+;一定几率提升的属性百分比增加一倍
+MULT P1 2
+
+#IF
+random 1
+#ACT
+mov P0 $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(70)
+
+#IF
+;成功几率等于圣灵属性/3
+random $STR(P0)
+#ACT
+takem $PARAM(0)
+UPGRADEUSERITEM 13 70 + $STR(P1)
+MULT P1 3
+SENDMSG 5 恭喜您，本次升级成功，增加技能效果<$STR(P1)>%，您可以使用圣灵系列宝石再次尝试!
+#ELSEACT
+takem $PARAM(0)
+SENDMSG 5 本次升级无效，您可以使用圣灵系列宝石再次尝试!
+}
+
+[@圣灵宝石武器]
+{
+#IF
+!CHECKUSEITEM 1
+#ACT
+MessageBox 你没有装备武器,无法使用圣灵宝石增强武器上附加技能的威力！
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 0
+#ACT
+SENDMSG 5 对不起，您的武器还没附加武器技能，使用圣灵精华可以给武器附加技能！
+break
+
+#IF
+random 1
+#ACT
+mov P0 0
+mov P1 $ITEMINFO[$PARAM(0)].WEIGHT
+mov S1 @
+inc S1 $STR(S0)
+inc S1 类技能
+goto $STR(S1)
+
+#IF
+equal P0 0
+!equal S0 不限
+#ACT
+SENDMSG 5 <$ITEMINFO[$PARAM(0)].NAME>只能升级武器上的<$STR(S0)>类技能威力
+break
+
+#IF
+random 10
+#ACT
+;一定几率提升的属性百分比增加一倍
+MULT P1 2
+
+#IF
+random 1
+#ACT
+mov P0 $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(70)
+
+#IF
+;成功几率等于圣灵属性/3
+random $STR(P0)
+#ACT
+takem $PARAM(0)
+UPGRADEUSERITEM 1 70 + $STR(P1)
+MULT P1 3
+SENDMSG 5 恭喜您，本次升级成功，增加技能效果<$STR(P1)>%，您可以使用圣灵系列宝石再次尝试!
+#ELSEACT
+takem $PARAM(0)
+SENDMSG 5 本次升级无效，您可以使用圣灵系列宝石再次尝试!
+}
+
+[@战士类技能]
+{
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 7
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 12
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 25
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 26
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 40
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 41
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 43
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 78
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 81
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 83
+#ACT
+mov P0 1
+break
+}
+
+[@法师类技能]
+{
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 1
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 5
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 9
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 10
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 11
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 22
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 23
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 24
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 33
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 49
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 50
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 51
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 52
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 53
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 54
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 71
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 73
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 79
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 81
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 85
+#ACT
+mov P0 1
+break
+}
+
+[@道士类技能]
+{
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 6
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 13
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 67
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 80
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 85
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(1)].ITEMEXT(69) 83
+#ACT
+mov P0 1
+break
+}
+
+[@战士技能类]
+{
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 7
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 12
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 25
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 26
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 40
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 41
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 43
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 78
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 81
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 83
+#ACT
+mov P0 1
+break
+}
+
+[@法师技能类]
+{
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 1
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 5
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 9
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 10
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 11
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 22
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 23
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 24
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 33
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 49
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 50
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 51
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 52
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 53
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 54
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 71
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 73
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 79
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 81
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 85
+#ACT
+mov P0 1
+break
+}
+
+[@道士技能类]
+{
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 6
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 13
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 67
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 80
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 85
+#ACT
+mov P0 1
+break
+
+#IF
+equal $ITEMINFO[$USEITEMMAKEINDEX(13)].ITEMEXT(69) 83
+#ACT
+mov P0 1
+break
+}

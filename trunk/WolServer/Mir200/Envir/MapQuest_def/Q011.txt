@@ -1,0 +1,4 @@
+[@main]
+#ACT
+inc D1 1
+SENDMSG 5 成功消灭了<$STR(D1)>个血域禁地魔王！

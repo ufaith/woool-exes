@@ -1,0 +1,25 @@
+09/02/2012 17:14:02 Has Read 1Guild Information...
+09/02/2012 17:14:02 Has Read 1Castle Information...
+09/02/2012 17:14:03 登录服务器(127.0.0.1:5600)连接成功...
+09/02/2012 17:14:06 Database Server(127.0.0.1:6000)Connection Is Successful...
+09/02/2012 17:14:07 游戏网关[0](127.0.0.1:3076)已打开...
+09/02/2012 17:14:55 全服所有交易NPC重新加载完成！！！
+09/02/2012 17:14:55 全服所有管理NPC重新加载完成！！！
+09/02/2012 17:15:18 全服所有交易NPC重新加载完成！！！
+09/02/2012 17:15:18 全服所有管理NPC重新加载完成！！！
+09/02/2012 17:15:45 脚本错误1: $TASKCOUNT 4 2 第:7 行: .\Envir\Market_Def\PenIsland\Butcher-1.txt
+09/02/2012 17:15:45 脚本错误1: $TASKCOUNT 4 5 第:8 行: .\Envir\Market_Def\PenIsland\Butcher-1.txt
+09/02/2012 17:15:45 脚本错误1: $TASKCOUNT 4 1 第:13 行: .\Envir\Market_Def\PenIsland\Butcher-1.txt
+09/02/2012 17:15:45 全服所有交易NPC重新加载完成！！！
+09/02/2012 17:15:45 全服所有管理NPC重新加载完成！！！
+09/02/2012 17:16:12 脚本错误1: TASKCOUNT 4 2 第:7 行: .\Envir\Market_Def\PenIsland\Butcher-1.txt
+09/02/2012 17:16:12 脚本错误1: TASKCOUNT 4 5 第:8 行: .\Envir\Market_Def\PenIsland\Butcher-1.txt
+09/02/2012 17:16:12 脚本错误1: TASKCOUNT 4 1 第:13 行: .\Envir\Market_Def\PenIsland\Butcher-1.txt
+09/02/2012 17:16:12 全服所有交易NPC重新加载完成！！！
+09/02/2012 17:16:12 全服所有管理NPC重新加载完成！！！
+09/02/2012 17:16:38 脚本错误1: TASKCOUNT (4) 2 第:7 行: .\Envir\Market_Def\PenIsland\Butcher-1.txt
+09/02/2012 17:16:38 脚本错误1: TASKCOUNT (4) 5 第:8 行: .\Envir\Market_Def\PenIsland\Butcher-1.txt
+09/02/2012 17:16:38 脚本错误1: TASKCOUNT (4) 1 第:13 行: .\Envir\Market_Def\PenIsland\Butcher-1.txt
+09/02/2012 17:16:38 全服所有交易NPC重新加载完成！！！
+09/02/2012 17:16:38 全服所有管理NPC重新加载完成！！！
+09/02/2012 17:16:56 游戏网关[0](127.0.0.1:3076)已关闭...

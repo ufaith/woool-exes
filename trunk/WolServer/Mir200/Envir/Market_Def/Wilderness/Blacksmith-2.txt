@@ -1,0 +1,59 @@
+(@fastbuy @buy @sell @repair @s_repair)
+%100
++5
++6
++43
+[@import]
+#CALL [\Merchant\Blacksmith.txt] @merchandise
+
+[@main]
+Welcome, Is there anything i can help you with?\
+<Quick Buy/@fastbuy>\
+<Buy/@buy>\
+<Sell/@sell>\
+<Repair/@repair>\
+<Special Repair/@s_repair>\
+<打听/@_TJ_ask>和心魔有关的最新消息\
+<Exit/@exit>
+
+[@fastbuy]
+Please select the items you wish to purchase.\
+\
+<Product List/@buy>\
+<Back/@main>
+
+[@buy]
+Please select the items you wish to purchase.\
+\
+<Product List/@buy>\
+<Back/@main>
+
+[@sell]
+Please select the items you wish to sell.\
+\
+\
+<Back/@main>
+
+[@sell]
+要修理武器吗？\
+圣灵装备上拥有的技能威力增强效果，当装备耐久度低于\
+50%时，就无法发挥作用进入封印状态，需要消耗<Color=green 1到2个>\
+圣灵精华来激活它，使它重新发挥作用；在这里修理武器\
+的同时，我就可以帮你重新激活已经被封印的圣灵武器。\
+\
+<Back/@main>
+
+[@s_repair]
+要修理武器吗？\
+圣灵装备上拥有的技能威力增强效果，当装备耐久度低于\
+50%时，就无法发挥作用进入封印状态，需要消耗<Color=green 1到2个>\
+圣灵精华来激活它，使它重新发挥作用；在这里修理武器\
+的同时，我就可以帮你重新激活已经被封印的圣灵武器。\
+\
+<Back/@main>
+
+[@_TJ_ask]
+　　年轻人，人类只有战胜自己心魔，将其禁锢，才能在修\
+炼元神分身神技的道路上获得大成。\
+\
+　　<Back/@main>

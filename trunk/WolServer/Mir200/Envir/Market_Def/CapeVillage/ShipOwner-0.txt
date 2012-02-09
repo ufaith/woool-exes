@@ -1,0 +1,23 @@
+[@main]
+Welcome, Is there anything i can help you with?\
+\
+<Teleport To CentralPlains/@move>\
+<Exit/@exit>\
+
+[@move]
+It will cost 1000 Gold to Teleport.\
+would you like to use my services?
+\
+<Yes/@pay> \
+<No/@main>
+
+[@pay]
+#IF
+checkgold 1000
+#ACT
+take Gold 1000
+mapmove 0 68 529
+#ELSESAY
+Sorry you do not have enough Gold.\
+\
+<Exit/@exit>

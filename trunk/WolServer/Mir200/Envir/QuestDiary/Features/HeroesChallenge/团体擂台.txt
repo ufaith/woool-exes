@@ -1,0 +1,4789 @@
+;团体擂台状态 0未使用 4有人申请摆擂 5有人申请攻擂 6比赛进行中/可观看
+[@contest2]
+{
+#IF
+!checkhum ARENA001 1
+CHECKVAR GLOBAL 单团擂台状态1 = 6
+#ACT
+Calcvar GLOBAL 单团擂台状态1 =
+#IF
+!checkhum ARENA002 1
+CHECKVAR GLOBAL 单团擂台状态2 = 6
+#ACT
+Calcvar GLOBAL 单团擂台状态2 =
+#IF
+!checkhum ARENA003 1
+CHECKVAR GLOBAL 单团擂台状态3 = 6
+#ACT
+Calcvar GLOBAL 单团擂台状态3 =
+#IF
+!checkhum ARENA004 1
+CHECKVAR GLOBAL 单团擂台状态4 = 6
+#ACT
+Calcvar GLOBAL 单团擂台状态4 =
+#IF
+!checkhum ARENA005 1
+CHECKVAR GLOBAL 单团擂台状态5 = 6
+#ACT
+Calcvar GLOBAL 单团擂台状态5 =
+#IF
+!checkhum ARENA006 1
+CHECKVAR GLOBAL 单团擂台状态6 = 6
+#ACT
+Calcvar GLOBAL 单团擂台状态6 =
+#IF
+!checkhum ARENA007 1
+CHECKVAR GLOBAL 单团擂台状态7 = 6
+#ACT
+Calcvar GLOBAL 单团擂台状态7 =
+#IF
+!checkhum ARENA008 1
+CHECKVAR GLOBAL 单团擂台状态8 = 6
+#ACT
+Calcvar GLOBAL 单团擂台状态8 =
+#IF
+!checkhum ARENA009 1
+CHECKVAR GLOBAL 单团擂台状态9 = 6
+#ACT
+Calcvar GLOBAL 单团擂台状态9 =
+
+#IF
+CHECKVAR HUMAN ArenaCompetition > 0
+#ACT
+break
+#SAY
+请先领取上一场比赛的奖金再来吧。\
+\
+<现在领取/@bonus>\
+<退出/@exit>
+
+#IF
+#SAY
+欢迎各位英雄前来摆擂攻擂、观摩比赛，比赛选手进入场地\
+的准备时间为2分钟。每场比赛将会收取5万金币作为场地\
+使用费。比赛之前，请认真阅读本擂台相关比赛规则。\
+\
+<我要摆擂/@request1>        <我要攻擂/@challenge1>        <我要加入/@jointeam1>        <我要观看/@audience1>\
+<打擂规则/@rules1>        <返回/@main>
+
+[@rules1]
+在打擂比赛之前，请先仔细阅读比赛规则：\
+一、比赛双方分为A队和B队，每支队伍人数上限为5人，每场比\
+　　赛时间为20分钟。\
+二、加入其中一方队伍，需经过队长同意（与其组队）。\
+三、比赛准备时间为2分钟，准备时间到，不论对方到场几人，\
+　　比赛将自动开始。\
+四、比赛结束按照击倒对方人数多者取胜，如击倒对方数量相同，\
+　　　　　　　　　　　　　　　　　　　　　　　　<下一页/@nextpage1>
+
+[@nextpage1]
+则按照人数较少的方队取胜的原则进行判定。如以上判定条件皆\
+相同，则此场比赛为平局，返还比赛金，仅收取5万场地费。\
+\
+\
+\
+\
+\
+　　　　　　　　　　　　　　　　　　<上一页/@rules1>　　　　<返回/@main>
+
+
+[@audience1]
+请选择擂台：\
+（黄色擂台为可使用擂台，白色为不可使用擂台）\
+\
+#IF
+!CHECKVAR GLOBAL 单团擂台状态1 = 6
+#SAY
+<擂台1/@choosearena1&单团擂台状态1&ARENA001>　
+#IF
+CHECKVAR GLOBAL 单团擂台状态1 = 6
+#SAY
+擂台1　
+#IF
+!CHECKVAR GLOBAL 单团擂台状态2 = 6
+#SAY
+<擂台2/@choosearena1&单团擂台状态2&ARENA002>　
+#IF
+CHECKVAR GLOBAL 单团擂台状态2 = 6
+#SAY
+擂台2　
+#IF
+!CHECKVAR GLOBAL 单团擂台状态3 = 6
+#SAY
+<擂台3/@choosearena1&单团擂台状态3&ARENA003>\
+#IF
+CHECKVAR GLOBAL 单团擂台状态3 = 6
+#SAY
+擂台3\
+#IF
+!CHECKVAR GLOBAL 单团擂台状态4 = 6
+#SAY
+<擂台4/@choosearena1&单团擂台状态4&ARENA004>　
+#IF
+CHECKVAR GLOBAL 单团擂台状态4 = 6
+#SAY
+擂台4　
+#IF
+!CHECKVAR GLOBAL 单团擂台状态5 = 6
+#SAY
+<擂台5/@choosearena1&单团擂台状态5&ARENA005>　
+#IF
+CHECKVAR GLOBAL 单团擂台状态5 = 6
+#SAY
+擂台5　
+#IF
+!CHECKVAR GLOBAL 单团擂台状态6 = 6
+#SAY
+<擂台6/@choosearena1&单团擂台状态6&ARENA006>\
+#IF
+CHECKVAR GLOBAL 单团擂台状态6 = 6
+#SAY
+擂台6\
+#IF
+CHECKVAR GLOBAL 单团擂台状态7 = 6
+#SAY
+<擂台7/@choosearena1&单团擂台状态7&ARENA007>　
+#IF
+CHECKVAR GLOBAL 单团擂台状态7 = 6
+#SAY
+擂台7　
+#IF
+!CHECKVAR GLOBAL 单团擂台状态8 = 6
+#SAY
+<擂台8/@choosearena1&单团擂台状态8&ARENA008>　
+#IF
+CHECKVAR GLOBAL 单团擂台状态8 = 6
+#SAY
+擂台8　
+#IF
+!CHECKVAR GLOBAL 单团擂台状态9 = 6
+#SAY
+<擂台9/@choosearena1&单团擂台状态9&ARENA009>\
+#IF
+CHECKVAR GLOBAL 单团擂台状态9 = 6
+#SAY
+擂台9\
+\
+<返回/@main>
+
+[@choosearena1] 
+#IF
+CHECKVAR GLOBAL $SCRIPTPARAM(1) = 6
+#ACT
+mov S0 %s
+inc S0  
+inc S0 观众模式
+inc S0  
+inc S0 20min
+SENDMSG 6 <$STR(S0)>
+CALCVAR HUMAN ArenaCondition = 观
+Gmexecute changemode 4
+mapmove $SCRIPTPARAM(2) 23 29
+#ELSESAY
+你申请的比赛场地已被占用，请选择其他比赛场地。\
+\
+<返回/@audience>
+
+[@request1]
+请选择摆擂比赛金额：\
+\
+<10万金币/@jeton1&100000> <20万金币/@jeton1&200000> <30万金币/@jeton1&300000> <40万金币/@jeton1&400000> <50万金币/@jeton1&500000>\
+<60万金币/@jeton1&600000> <70万金币/@jeton1&700000> <80万金币/@jeton1&800000> <90万金币/@jeton1&900000> <100万金币/@jeton1&1000000>\
+\
+<返回/@main>
+
+[@jeton1] 
+#IF
+checkgold $SCRIPTPARAM(1)
+#ACT
+mov S0 $SCRIPTPARAM(1)
+#ELSEACT
+break
+#ELSESAY
+你身上没有这么多钱。\
+\
+<返回/@request1>
+
+#IF
+random 1
+#SAY
+请选择擂台：\
+（黄色擂台为可使用擂台，白色为不可使用擂台）\
+\
+#IF
+CHECKVAR GLOBAL 单团擂台状态1 = 0
+#SAY
+<擂台1/@choosearena2&单团擂台状态1&团擂A队人名11&团擂A队信息11&单团擂台赛金1&ARENA001&一&团擂A队信息12&团擂A队信息13&团擂A队信息14&团擂A队信息15&团擂B队信息11&团擂B队信息12&团擂B队信息13&团擂B队信息14&团擂B队信息15&团擂A队人名12&团擂A队人名13&团擂A队人名14&团擂A队人名15&团擂B队人名11&团擂B队人名12&团擂B队人名13&团擂B队人名14&团擂B队人名15&{$GLOBAL(单团擂台赛金1)}　
+#ELSESAY
+擂台1　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态2 = 0
+#SAY
+<擂台2/@choosearena2&单团擂台状态2&团擂A队人名21&团擂A队信息21&单团擂台赛金2&ARENA002&二&团擂A队信息22&团擂A队信息23&团擂A队信息24&团擂A队信息25&团擂B队信息21&团擂B队信息22&团擂B队信息23&团擂B队信息24&团擂B队信息25&团擂A队人名22&团擂A队人名23&团擂A队人名24&团擂A队人名25&团擂B队人名21&团擂B队人名22&团擂B队人名23&团擂B队人名24&团擂B队人名25&{$GLOBAL(单团擂台赛金2)}　
+#ELSESAY
+擂台2　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态3 = 0
+#SAY
+<擂台3/@choosearena2&单团擂台状态3&团擂A队人名31&团擂A队信息31&单团擂台赛金3&ARENA003&三&团擂A队信息32&团擂A队信息33&团擂A队信息34&团擂A队信息35&团擂B队信息31&团擂B队信息32&团擂B队信息33&团擂B队信息34&团擂B队信息35&团擂A队人名32&团擂A队人名33&团擂A队人名34&团擂A队人名35&团擂B队人名31&团擂B队人名32&团擂B队人名33&团擂B队人名34&团擂B队人名35&{$GLOBAL(单团擂台赛金3)}\
+#ELSESAY
+擂台3\
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态4 = 0
+#SAY
+<擂台4/@choosearena2&单团擂台状态4&团擂A队人名41&团擂A队信息41&单团擂台赛金4&ARENA004&四&团擂A队信息42&团擂A队信息43&团擂A队信息44&团擂A队信息45&团擂B队信息41&团擂B队信息42&团擂B队信息43&团擂B队信息44&团擂B队信息45&团擂A队人名42&团擂A队人名43&团擂A队人名44&团擂A队人名45&团擂B队人名41&团擂B队人名42&团擂B队人名43&团擂B队人名44&团擂B队人名45&{$GLOBAL(单团擂台赛金4)}　
+#ELSESAY
+擂台4　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态5 = 0
+#SAY
+<擂台5/@choosearena2&单团擂台状态5&团擂A队人名51&团擂A队信息51&单团擂台赛金5&ARENA005&五&团擂A队信息52&团擂A队信息53&团擂A队信息54&团擂A队信息55&团擂B队信息51&团擂B队信息52&团擂B队信息53&团擂B队信息54&团擂B队信息55&团擂A队人名52&团擂A队人名53&团擂A队人名54&团擂A队人名55&团擂B队人名51&团擂B队人名52&团擂B队人名53&团擂B队人名54&团擂B队人名55&{$GLOBAL(单团擂台赛金5)}　
+#ELSESAY
+擂台5　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态6 = 0
+#SAY
+<擂台6/@choosearena2&单团擂台状态6&团擂A队人名61&团擂A队信息61&单团擂台赛金6&ARENA006&六&团擂A队信息62&团擂A队信息63&团擂A队信息64&团擂A队信息65&团擂B队信息61&团擂B队信息62&团擂B队信息63&团擂B队信息64&团擂B队信息65&团擂A队人名62&团擂A队人名63&团擂A队人名64&团擂A队人名65&团擂B队人名61&团擂B队人名62&团擂B队人名63&团擂B队人名64&团擂B队人名65&{$GLOBAL(单团擂台赛金6)}\
+#ELSESAY
+擂台6\
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态7 = 0
+#SAY
+<擂台7/@choosearena2&单团擂台状态7&团擂A队人名71&团擂A队信息71&单团擂台赛金7&ARENA007&七&团擂A队信息72&团擂A队信息73&团擂A队信息74&团擂A队信息75&团擂B队信息71&团擂B队信息72&团擂B队信息73&团擂B队信息74&团擂B队信息75&团擂A队人名72&团擂A队人名73&团擂A队人名74&团擂A队人名75&团擂B队人名71&团擂B队人名72&团擂B队人名73&团擂B队人名74&团擂B队人名75&{$GLOBAL(单团擂台赛金7)}　
+#ELSESAY
+擂台7　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态8 = 0
+#SAY
+<擂台8/@choosearena2&单团擂台状态8&团擂A队人名81&团擂A队信息81&单团擂台赛金8&ARENA008&八&团擂A队信息82&团擂A队信息83&团擂A队信息84&团擂A队信息85&团擂B队信息81&团擂B队信息82&团擂B队信息83&团擂B队信息84&团擂B队信息85&团擂A队人名82&团擂A队人名83&团擂A队人名84&团擂A队人名85&团擂B队人名81&团擂B队人名82&团擂B队人名83&团擂B队人名84&团擂B队人名85&{$GLOBAL(单团擂台赛金8)}　
+#ELSESAY
+擂台8　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态9 = 0
+#SAY
+<擂台9/@choosearena2&单团擂台状态9&团擂A队人名91&团擂A队信息91&单团擂台赛金9&ARENA009&九&团擂A队信息92&团擂A队信息93&团擂A队信息94&团擂A队信息95&团擂B队信息91&团擂B队信息92&团擂B队信息93&团擂B队信息94&团擂B队信息95&团擂A队人名92&团擂A队人名93&团擂A队人名94&团擂A队人名95&团擂B队人名91&团擂B队人名92&团擂B队人名93&团擂B队人名94&团擂B队人名95&{$GLOBAL(单团擂台赛金9)}\
+#ELSESAY
+擂台9\
+
+#IF
+#SAY
+\
+<返回/@main>
+
+[@choosearena2] 
+#IF
+CHECKVAR HUMAN ArenaCondition = 摆
+CHECKVAR HUMAN ArenaCompetition = 0
+#ACT
+break
+#SAY
+你已经申请守擂，不能申请攻擂。\
+\
+<离开/@exit>
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 攻
+CHECKVAR HUMAN ArenaCompetition = 0
+#ACT
+break
+#SAY
+你已经申请攻擂，不能再次申请。\
+\
+<离开/@exit>
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 守
+CHECKVAR HUMAN ArenaCompetition = 0
+#ACT
+break
+#SAY
+你已经申请守擂，不能再次申请。\
+\
+<离开/@exit>
+
+#IF
+!CHECKVAR GLOBAL $SCRIPTPARAM(1) = 0
+#ACT
+break
+#SAY
+你申请的比赛场地已被占用，请选择其他比赛场地。\
+\
+<返回/@jeton>
+
+#IF
+checkgold $SCRIPTPARAM(25)
+#ACT
+take 金币 $SCRIPTPARAM(25)
+mov S1 $USERNAME
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+Insert S1 17 $JOB
+Insert S1 23 $LEVEL
+dec S1 28 999
+mov S2 ------
+inc S2 #9
+inc S2 #9	
+inc S2 #9
+inc S2 #9	
+inc S2 #9
+inc S2 #9
+inc S2 #9
+inc S2 #9
+inc S2 #9
+inc S2 #9
+inc S2 ----
+inc S2 #9
+inc S2 #9
+inc S2 --
+inc S2 #9
+inc S2 #9
+inc S2 #9
+Calcvar GLOBAL $SCRIPTPARAM(1) = 4
+Calcvar GLOBAL $SCRIPTPARAM(2) = $USERNAME
+Calcvar GLOBAL $SCRIPTPARAM(3) = $STR(S1)
+Calcvar GLOBAL $SCRIPTPARAM(4) = $STR(S0)
+Calcvar GLOBAL $SCRIPTPARAM(7) = $STR(S2)
+Calcvar GLOBAL $SCRIPTPARAM(8) = $STR(S2)
+Calcvar GLOBAL $SCRIPTPARAM(9) = $STR(S2)
+Calcvar GLOBAL $SCRIPTPARAM(10) = $STR(S2)
+Calcvar GLOBAL $SCRIPTPARAM(11) = $STR(S2)
+Calcvar GLOBAL $SCRIPTPARAM(12) = $STR(S2)
+Calcvar GLOBAL $SCRIPTPARAM(13) = $STR(S2)
+Calcvar GLOBAL $SCRIPTPARAM(14) = $STR(S2)
+Calcvar GLOBAL $SCRIPTPARAM(15) = $STR(S2)
+Calcvar GLOBAL $SCRIPTPARAM(16) = 
+Calcvar GLOBAL $SCRIPTPARAM(17) = 
+Calcvar GLOBAL $SCRIPTPARAM(18) = 
+Calcvar GLOBAL $SCRIPTPARAM(19) = 
+Calcvar GLOBAL $SCRIPTPARAM(20) = 
+Calcvar GLOBAL $SCRIPTPARAM(21) = 
+Calcvar GLOBAL $SCRIPTPARAM(22) = 
+Calcvar GLOBAL $SCRIPTPARAM(23) = 
+Calcvar GLOBAL $SCRIPTPARAM(24) = 
+CALCVAR HUMAN ArenaCondition = 摆
+SENDMSG 0 <$LEVEL>级<$JOB><$USERNAME>在英雄擂台<$SCRIPTPARAM(6)>号摆下团体擂台，欢迎众位英雄前来挑战
+mov S0 $SCRIPTPARAM(1)
+goto @团体清理数据
+mov S0 @
+inc S0 $SCRIPTPARAM(5)
+inc S0 团体摆擂
+SetRobotTimer 0 系统控制 $STR(S0)
+SetRobotTimer 1200 系统控制 $STR(S0)
+break
+#SAY
+你已经成功的摆下了擂台，如果在20分钟之内无人应战，此\
+次比赛将会被取消，而且如果在此等待期间内你离线将可能\
+被判输掉此场比赛。比赛取消将不收取任何费用。\
+\
+<关闭/@exit>
+#ELSESAY
+你身上没有这么多钱。\
+\
+<返回/@request1>
+
+[@challenge1]
+请选择擂台：\
+（黄色擂台为可使用擂台，白色为不可使用擂台）\
+\
+#IF
+CHECKVAR GLOBAL 单团擂台状态1 = 4
+#SAY
+<擂台1/@团体攻擂&单团擂台状态1>　
+#ELSESAY
+擂台1　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态2 = 4
+#SAY
+<擂台2/@团体攻擂&单团擂台状态2>　
+#ELSESAY
+擂台2　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态3 = 4
+#SAY
+<擂台3/@团体攻擂&单团擂台状态3>\
+#ELSESAY
+擂台3\
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态4 = 4
+#SAY
+<擂台4/@团体攻擂&单团擂台状态4>　
+#ELSESAY
+擂台4　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态5 = 4
+#SAY
+<擂台5/@团体攻擂&单团擂台状态5>　
+#ELSESAY
+擂台5　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态6 = 4
+#SAY
+<擂台6/@团体攻擂&单团擂台状态6>\
+#ELSESAY
+擂台6\
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态7 = 4
+#SAY
+<擂台7/@团体攻擂&单团擂台状态7>　
+#ELSESAY
+擂台7　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态8 = 4
+#SAY
+<擂台8/@团体攻擂&单团擂台状态8>　
+#ELSESAY
+擂台8　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态9 = 4
+#SAY
+<擂台9/@团体攻擂&单团擂台状态9>\
+#ELSESAY
+擂台9\
+
+#IF
+#SAY
+\
+<返回/@main>
+
+[@团体攻擂] 
+#IF
+!CHECKVAR GLOBAL $SCRIPTPARAM(1) = 4
+#ACT
+break
+#SAY
+你申请的比赛场地已被占用，请选择其他比赛场地。\
+\
+<返回/@challenge1>
+
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态1
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名      职业  等级\
+<$GLOBAL(团擂A队信息11)>\
+<$GLOBAL(团擂A队信息12)>\
+<$GLOBAL(团擂A队信息13)>\
+<$GLOBAL(团擂A队信息14)>\
+<$GLOBAL(团擂A队信息15)>\
+比赛金：<$GLOBAL(单团擂台赛金1)>金币\
+你有胆量挑战吗？		{挑战/@challengearena1&<$GLOBAL(单团擂台赛金1)>&单团擂台状态1&团擂B队人名11&团擂B队信息11&ARENA001&一&<$GLOBAL(团擂A队人名11)>&<$GLOBAL(团擂A队人名12)>&<$GLOBAL(团擂A队人名13)>&<$GLOBAL(团擂A队人名14)>&<$GLOBAL(团擂A队人名15)>}		<返回/@main>
+
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态2
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名      职业  等级\
+<$GLOBAL(团擂A队信息21)>\
+<$GLOBAL(团擂A队信息22)>\
+<$GLOBAL(团擂A队信息23)>\
+<$GLOBAL(团擂A队信息24)>\
+<$GLOBAL(团擂A队信息25)>\
+比赛金：<$GLOBAL(单团擂台赛金2)>金币\
+你有胆量挑战吗？		{挑战/@challengearena1&<$GLOBAL(单团擂台赛金2)>&单团擂台状态2&团擂B队人名21&团擂B队信息21&ARENA002&二&<$GLOBAL(团擂A队人名21)>&<$GLOBAL(团擂A队人名22)>&<$GLOBAL(团擂A队人名23)>&<$GLOBAL(团擂A队人名24)>&<$GLOBAL(团擂A队人名25)>}		<返回/@main>
+
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态3
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名      职业  等级\
+<$GLOBAL(团擂A队信息31)>\
+<$GLOBAL(团擂A队信息32)>\
+<$GLOBAL(团擂A队信息33)>\
+<$GLOBAL(团擂A队信息34)>\
+<$GLOBAL(团擂A队信息35)>\
+比赛金：<$GLOBAL(单团擂台赛金3)>金币\
+你有胆量挑战吗？		{挑战/@challengearena1&<$GLOBAL(单团擂台赛金3)>&单团擂台状态3&团擂B队人名31&团擂B队信息31&ARENA003&三&<$GLOBAL(团擂A队人名31)>&<$GLOBAL(团擂A队人名32)>&<$GLOBAL(团擂A队人名33)>&<$GLOBAL(团擂A队人名34)>&<$GLOBAL(团擂A队人名35)>}		<返回/@main>
+
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态4
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名      职业  等级\
+<$GLOBAL(团擂A队信息41)>\
+<$GLOBAL(团擂A队信息42)>\
+<$GLOBAL(团擂A队信息43)>\
+<$GLOBAL(团擂A队信息44)>\
+<$GLOBAL(团擂A队信息45)>\
+比赛金：<$GLOBAL(单团擂台赛金4)>金币\
+你有胆量挑战吗？		{挑战/@challengearena1&<$GLOBAL(单团擂台赛金4)>&单团擂台状态4&团擂B队人名41&团擂B队信息41&ARENA004&四&<$GLOBAL(团擂A队人名41)>&<$GLOBAL(团擂A队人名42)>&<$GLOBAL(团擂A队人名43)>&<$GLOBAL(团擂A队人名44)>&<$GLOBAL(团擂A队人名45)>}		<返回/@main>
+
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态5
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名      职业  等级\
+<$GLOBAL(团擂A队信息51)>\
+<$GLOBAL(团擂A队信息52)>\
+<$GLOBAL(团擂A队信息53)>\
+<$GLOBAL(团擂A队信息54)>\
+<$GLOBAL(团擂A队信息55)>\
+比赛金：<$GLOBAL(单团擂台赛金5)>金币\
+你有胆量挑战吗？		{挑战/@challengearena1&<$GLOBAL(单团擂台赛金5)>&单团擂台状态5&团擂B队人名51&团擂B队信息51&ARENA005&五&<$GLOBAL(团擂A队人名51)>&<$GLOBAL(团擂A队人名52)>&<$GLOBAL(团擂A队人名53)>&<$GLOBAL(团擂A队人名54)>&<$GLOBAL(团擂A队人名55)>}		<返回/@main>
+
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态6
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名      职业  等级\
+<$GLOBAL(团擂A队信息61)>\
+<$GLOBAL(团擂A队信息62)>\
+<$GLOBAL(团擂A队信息63)>\
+<$GLOBAL(团擂A队信息64)>\
+<$GLOBAL(团擂A队信息65)>\
+比赛金：<$GLOBAL(单团擂台赛金6)>金币\
+你有胆量挑战吗？		{挑战/@challengearena1&<$GLOBAL(单团擂台赛金6)>&单团擂台状态6&团擂B队人名61&团擂B队信息61&ARENA006&六&<$GLOBAL(团擂A队人名61)>&<$GLOBAL(团擂A队人名62)>&<$GLOBAL(团擂A队人名63)>&<$GLOBAL(团擂A队人名64)>&<$GLOBAL(团擂A队人名65)>}		<返回/@main>
+
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态7
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名      职业  等级\
+<$GLOBAL(团擂A队信息71)>\
+<$GLOBAL(团擂A队信息72)>\
+<$GLOBAL(团擂A队信息73)>\
+<$GLOBAL(团擂A队信息74)>\
+<$GLOBAL(团擂A队信息75)>\
+比赛金：<$GLOBAL(单团擂台赛金7)>金币\
+你有胆量挑战吗？		{挑战/@challengearena1&<$GLOBAL(单团擂台赛金7)>&单团擂台状态7&团擂B队人名71&团擂B队信息71&ARENA007&七&<$GLOBAL(团擂A队人名71)>&<$GLOBAL(团擂A队人名72)>&<$GLOBAL(团擂A队人名73)>&<$GLOBAL(团擂A队人名74)>&<$GLOBAL(团擂A队人名75)>}		<返回/@main>
+
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态8
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名      职业  等级\
+<$GLOBAL(团擂A队信息84)>\
+<$GLOBAL(团擂A队信息82)>\
+<$GLOBAL(团擂A队信息83)>\
+<$GLOBAL(团擂A队信息84)>\
+<$GLOBAL(团擂A队信息85)>\
+比赛金：<$GLOBAL(单团擂台赛金8)>金币\
+你有胆量挑战吗？		{挑战/@challengearena1&<$GLOBAL(单团擂台赛金8)>&单团擂台状态8&团擂B队人名81&团擂B队信息81&ARENA008&八&<$GLOBAL(团擂A队人名81)>&<$GLOBAL(团擂A队人名82)>&<$GLOBAL(团擂A队人名83)>&<$GLOBAL(团擂A队人名84)>&<$GLOBAL(团擂A队人名85)>}		<返回/@main>
+
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态9
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名      职业  等级\
+<$GLOBAL(团擂A队信息91)>\
+<$GLOBAL(团擂A队信息92)>\
+<$GLOBAL(团擂A队信息93)>\
+<$GLOBAL(团擂A队信息94)>\
+<$GLOBAL(团擂A队信息95)>\
+比赛金：<$GLOBAL(单团擂台赛金9)>金币\
+你有胆量挑战吗？		{挑战/@challengearena1&<$GLOBAL(单团擂台赛金9)>&单团擂台状态9&团擂B队人名91&团擂B队信息91&ARENA009&九&<$GLOBAL(团擂A队人名91)>&<$GLOBAL(团擂A队人名92)>&<$GLOBAL(团擂A队人名93)>&<$GLOBAL(团擂A队人名94)>&<$GLOBAL(团擂A队人名95)>}		<返回/@main>
+
+[@challengearena1] 
+#IF
+CHECKVAR HUMAN ArenaCondition = 摆
+CHECKVAR HUMAN ArenaCompetition = 0
+#ACT
+break
+#SAY
+你已经申请守擂，不能申请攻擂。\
+\
+<离开/@exit>
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 攻
+CHECKVAR HUMAN ArenaCompetition = 0
+#ACT
+break
+#SAY
+你已经申请攻擂，不能再次申请。\
+\
+<离开/@exit>
+
+#IF
+!CHECKVAR GLOBAL $SCRIPTPARAM(2) = 4
+#ACT
+break
+#SAY
+你申请的比赛场地已被占用，请选择其他比赛场地。\
+\
+<返回/@challenge1>
+
+#IF
+!checkgold $SCRIPTPARAM(1)
+#ACT
+break
+#SAY
+你没有足够的比赛金。\
+\
+<关闭/@exit>
+
+#IF
+checkgold $SCRIPTPARAM(1)
+#ACT
+take 金币 $SCRIPTPARAM(1)
+mov S1 $USERNAME
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+Insert S1 17 $JOB
+Insert S1 23 $LEVEL
+dec S1 28 999
+Calcvar GLOBAL $SCRIPTPARAM(4) = $STR(S1)
+CALCVAR HUMAN ArenaCondition = 攻
+Calcvar GLOBAL $SCRIPTPARAM(2) = 5
+Calcvar GLOBAL $SCRIPTPARAM(3) = $USERNAME
+SENDMSG 0 %s在英雄擂台<$SCRIPTPARAM(6)>号向<$SCRIPTPARAM(7)>发出团体比赛挑战，欢迎众位英雄前来参赛
+SENDMSG 5 准备时间为2分钟，2分钟后由系统将比赛选手送到比赛场地
+mov A16 $LEVEL
+inc A16 级
+inc A16 $JOB
+inc A16 $USERNAME
+mov S0 @
+inc S0 $SCRIPTPARAM(5)
+inc S0 团体准备
+SetRobotTimer 0 系统控制 $STR(S0)
+SetRobotTimer 120 系统控制 $STR(S0)
+$SCRIPTPARAM(7).goto @团体攻擂提示
+$SCRIPTPARAM(8).goto @团体攻擂提示
+$SCRIPTPARAM(9).goto @团体攻擂提示
+$SCRIPTPARAM(10).goto @团体攻擂提示
+$SCRIPTPARAM(11).goto @团体攻擂提示
+#SAY
+攻擂申请成功，请在2分钟内做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+!CheckOnline $SCRIPTPARAM(7)
+!CheckOnline $SCRIPTPARAM(8)
+!CheckOnline $SCRIPTPARAM(9)
+!CheckOnline $SCRIPTPARAM(10)
+!CheckOnline $SCRIPTPARAM(11)
+#ACT
+goto @团体攻擂成功
+
+[@团体攻擂提示]
+#ACT
+SENDMSG 5 <$STR(A16)>向您发出挑战
+SENDMSG 5 准备时间为2分钟，2分钟后由系统将比赛选手送到比赛场地
+CALCVAR HUMAN ArenaCondition = 守
+
+[@jointeam1]
+请选择擂台：\
+（黄色擂台为可使用擂台，白色为不可使用擂台）\
+\
+#IF
+CHECKVAR GLOBAL 单团擂台状态1 > 3
+CHECKVAR GLOBAL 单团擂台状态1 < 6
+#SAY
+<擂台1/@团体加入&单团擂台状态1>　
+#ELSESAY
+擂台1　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态2 > 3
+CHECKVAR GLOBAL 单团擂台状态2 < 6
+#SAY
+<擂台2/@团体加入&单团擂台状态2>　
+#ELSESAY
+擂台2　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态3 > 3
+CHECKVAR GLOBAL 单团擂台状态3 < 6
+#SAY
+<擂台3/@团体加入&单团擂台状态3>\
+#ELSESAY
+擂台3\
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态4 > 3
+CHECKVAR GLOBAL 单团擂台状态4 < 6
+#SAY
+<擂台4/@团体加入&单团擂台状态4>　
+#ELSESAY
+擂台4　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态5 > 3
+CHECKVAR GLOBAL 单团擂台状态5 < 6
+#SAY
+<擂台5/@团体加入&单团擂台状态5>　
+#ELSESAY
+擂台5　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态6 > 3
+CHECKVAR GLOBAL 单团擂台状态6 < 6
+#SAY
+<擂台6/@团体加入&单团擂台状态6>\
+#ELSESAY
+擂台6\
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态7 > 3
+CHECKVAR GLOBAL 单团擂台状态7 < 6
+#SAY
+<擂台7/@团体加入&单团擂台状态7>　
+#ELSESAY
+擂台7　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态8 > 3
+CHECKVAR GLOBAL 单团擂台状态8 < 6
+#SAY
+<擂台8/@团体加入&单团擂台状态8>　
+#ELSESAY
+擂台8　
+
+#IF
+CHECKVAR GLOBAL 单团擂台状态9 > 3
+CHECKVAR GLOBAL 单团擂台状态9 < 6
+#SAY
+<擂台9/@团体加入&单团擂台状态9>\
+#ELSESAY
+擂台9\
+
+#IF
+#SAY
+\
+<返回/@main>
+
+[@团体加入] 
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态1
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名						职业		等级	|	攻擂者姓名						职业		等级\
+<$GLOBAL(团擂A队信息11)>|	<$GLOBAL(团擂B队信息11)>\
+<$GLOBAL(团擂A队信息12)>|	<$GLOBAL(团擂B队信息12)>\
+<$GLOBAL(团擂A队信息13)>|	<$GLOBAL(团擂B队信息13)>\
+<$GLOBAL(团擂A队信息14)>|	<$GLOBAL(团擂B队信息14)>\
+<$GLOBAL(团擂A队信息15)>|	<$GLOBAL(团擂B队信息15)>\
+比赛金：<$GLOBAL(单团擂台赛金1)>金币\
+你要加入吗？		{守擂/@addplayer&单团擂台状态1&团擂A队人名11&团擂A队人名12&团擂A队人名13&团擂A队人名14&团擂A队人名15&团擂A队信息12&团擂A队信息13&团擂A队信息14&团擂A队信息15&攻&<$GLOBAL(团擂A队人名11)>}		{攻擂/@addplayer&单团擂台状态1&团擂B队人名11&团擂B队人名12&团擂B队人名13&团擂B队人名14&团擂B队人名15&团擂B队信息12&团擂B队信息13&团擂B队信息14&团擂B队信息15&守&<$GLOBAL(团擂B队人名11)>}		<返回/@main>
+
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态2
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名						职业		等级	|	攻擂者姓名						职业		等级\
+<$GLOBAL(团擂A队信息21)>|	<$GLOBAL(团擂B队信息21)>\
+<$GLOBAL(团擂A队信息22)>|	<$GLOBAL(团擂B队信息22)>\
+<$GLOBAL(团擂A队信息23)>|	<$GLOBAL(团擂B队信息23)>\
+<$GLOBAL(团擂A队信息24)>|	<$GLOBAL(团擂B队信息24)>\
+<$GLOBAL(团擂A队信息25)>|	<$GLOBAL(团擂B队信息25)>\
+比赛金：<$GLOBAL(单团擂台赛金2)>金币\
+你要加入吗？		{守擂/@addplayer&单团擂台状态2&团擂A队人名21&团擂A队人名22&团擂A队人名23&团擂A队人名24&团擂A队人名25&团擂A队信息22&团擂A队信息23&团擂A队信息24&团擂A队信息25&攻&<$GLOBAL(团擂A队人名21)>}		{攻擂/@addplayer&单团擂台状态2&团擂B队人名21&团擂B队人名22&团擂B队人名23&团擂B队人名24&团擂B队人名25&团擂B队信息22&团擂B队信息23&团擂B队信息24&团擂B队信息25&守&<$GLOBAL(团擂B队人名21)>}		<返回/@main>
+
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态3
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名						职业		等级	|	攻擂者姓名						职业		等级\
+<$GLOBAL(团擂A队信息31)>|	<$GLOBAL(团擂B队信息31)>\
+<$GLOBAL(团擂A队信息32)>|	<$GLOBAL(团擂B队信息32)>\
+<$GLOBAL(团擂A队信息33)>|	<$GLOBAL(团擂B队信息33)>\
+<$GLOBAL(团擂A队信息34)>|	<$GLOBAL(团擂B队信息34)>\
+<$GLOBAL(团擂A队信息35)>|	<$GLOBAL(团擂B队信息35)>\
+比赛金：<$GLOBAL(单团擂台赛金3)>金币\
+你要加入吗？		{守擂/@addplayer&单团擂台状态3&团擂A队人名31&团擂A队人名32&团擂A队人名33&团擂A队人名34&团擂A队人名35&团擂A队信息32&团擂A队信息33&团擂A队信息34&团擂A队信息35&攻&<$GLOBAL(团擂A队人名31)>}		{攻擂/@addplayer&单团擂台状态3&团擂B队人名31&团擂B队人名32&团擂B队人名33&团擂B队人名34&团擂B队人名35&团擂B队信息32&团擂B队信息33&团擂B队信息34&团擂B队信息35&守&<$GLOBAL(团擂B队人名31)>}		<返回/@main>
+
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态4
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名						职业		等级	|	攻擂者姓名						职业		等级\
+<$GLOBAL(团擂A队信息41)>|	<$GLOBAL(团擂B队信息41)>\
+<$GLOBAL(团擂A队信息42)>|	<$GLOBAL(团擂B队信息42)>\
+<$GLOBAL(团擂A队信息43)>|	<$GLOBAL(团擂B队信息43)>\
+<$GLOBAL(团擂A队信息44)>|	<$GLOBAL(团擂B队信息44)>\
+<$GLOBAL(团擂A队信息45)>|	<$GLOBAL(团擂B队信息45)>\
+比赛金：<$GLOBAL(单团擂台赛金4)>金币\
+你要加入吗？		{守擂/@addplayer&单团擂台状态4&团擂A队人名41&团擂A队人名42&团擂A队人名43&团擂A队人名44&团擂A队人名45&团擂A队信息42&团擂A队信息43&团擂A队信息44&团擂A队信息45&攻&<$GLOBAL(团擂A队人名41)>}		{攻擂/@addplayer&单团擂台状态4&团擂B队人名41&团擂B队人名42&团擂B队人名43&团擂B队人名44&团擂B队人名45&团擂B队信息42&团擂B队信息43&团擂B队信息44&团擂B队信息45&守&<$GLOBAL(团擂B队人名41)>}		<返回/@main>
+
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态5
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名						职业		等级	|	攻擂者姓名						职业		等级\
+<$GLOBAL(团擂A队信息51)>|	<$GLOBAL(团擂B队信息51)>\
+<$GLOBAL(团擂A队信息52)>|	<$GLOBAL(团擂B队信息52)>\
+<$GLOBAL(团擂A队信息53)>|	<$GLOBAL(团擂B队信息53)>\
+<$GLOBAL(团擂A队信息54)>|	<$GLOBAL(团擂B队信息54)>\
+<$GLOBAL(团擂A队信息55)>|	<$GLOBAL(团擂B队信息55)>\
+比赛金：<$GLOBAL(单团擂台赛金5)>金币\
+你要加入吗？		{守擂/@addplayer&单团擂台状态5&团擂A队人名51&团擂A队人名52&团擂A队人名53&团擂A队人名54&团擂A队人名55&团擂A队信息52&团擂A队信息53&团擂A队信息54&团擂A队信息55&攻&<$GLOBAL(团擂A队人名51)>}		{攻擂/@addplayer&单团擂台状态5&团擂B队人名51&团擂B队人名52&团擂B队人名53&团擂B队人名54&团擂B队人名55&团擂B队信息52&团擂B队信息53&团擂B队信息54&团擂B队信息55&守&<$GLOBAL(团擂B队人名51)>}		<返回/@main>
+
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态6
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名						职业		等级	|	攻擂者姓名						职业		等级\
+<$GLOBAL(团擂A队信息61)>|	<$GLOBAL(团擂B队信息61)>\
+<$GLOBAL(团擂A队信息62)>|	<$GLOBAL(团擂B队信息62)>\
+<$GLOBAL(团擂A队信息63)>|	<$GLOBAL(团擂B队信息63)>\
+<$GLOBAL(团擂A队信息64)>|	<$GLOBAL(团擂B队信息64)>\
+<$GLOBAL(团擂A队信息65)>|	<$GLOBAL(团擂B队信息65)>\
+比赛金：<$GLOBAL(单团擂台赛金6)>金币\
+你要加入吗？		{守擂/@addplayer&单团擂台状态6&团擂A队人名61&团擂A队人名62&团擂A队人名63&团擂A队人名64&团擂A队人名65&团擂A队信息62&团擂A队信息63&团擂A队信息64&团擂A队信息65&攻&<$GLOBAL(团擂A队人名61)>}		{攻擂/@addplayer&单团擂台状态6&团擂B队人名61&团擂B队人名62&团擂B队人名63&团擂B队人名64&团擂B队人名65&团擂B队信息62&团擂B队信息63&团擂B队信息64&团擂B队信息65&守&<$GLOBAL(团擂B队人名61)>}		<返回/@main>
+
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态7
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名						职业		等级	|	攻擂者姓名						职业		等级\
+<$GLOBAL(团擂A队信息71)>|	<$GLOBAL(团擂B队信息71)>\
+<$GLOBAL(团擂A队信息72)>|	<$GLOBAL(团擂B队信息72)>\
+<$GLOBAL(团擂A队信息73)>|	<$GLOBAL(团擂B队信息73)>\
+<$GLOBAL(团擂A队信息74)>|	<$GLOBAL(团擂B队信息74)>\
+<$GLOBAL(团擂A队信息75)>|	<$GLOBAL(团擂B队信息75)>\
+比赛金：<$GLOBAL(单团擂台赛金7)>金币\
+你要加入吗？		{守擂/@addplayer&单团擂台状态7&团擂A队人名71&团擂A队人名72&团擂A队人名73&团擂A队人名74&团擂A队人名75&团擂A队信息72&团擂A队信息73&团擂A队信息74&团擂A队信息75&攻&<$GLOBAL(团擂A队人名71)>}		{攻擂/@addplayer&单团擂台状态7&团擂B队人名71&团擂B队人名72&团擂B队人名73&团擂B队人名74&团擂B队人名75&团擂B队信息72&团擂B队信息73&团擂B队信息74&团擂B队信息75&守&<$GLOBAL(团擂B队人名71)>}		<返回/@main>
+
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态8
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名						职业		等级	|	攻擂者姓名						职业		等级\
+<$GLOBAL(团擂A队信息81)>|	<$GLOBAL(团擂B队信息81)>\
+<$GLOBAL(团擂A队信息82)>|	<$GLOBAL(团擂B队信息82)>\
+<$GLOBAL(团擂A队信息83)>|	<$GLOBAL(团擂B队信息83)>\
+<$GLOBAL(团擂A队信息84)>|	<$GLOBAL(团擂B队信息84)>\
+<$GLOBAL(团擂A队信息85)>|	<$GLOBAL(团擂B队信息85)>\
+比赛金：<$GLOBAL(单团擂台赛金8)>金币\
+你要加入吗？		{守擂/@addplayer&单团擂台状态8&团擂A队人名81&团擂A队人名82&团擂A队人名83&团擂A队人名84&团擂A队人名85&团擂A队信息82&团擂A队信息83&团擂A队信息84&团擂A队信息85&攻&<$GLOBAL(团擂A队人名81)>}		{攻擂/@addplayer&单团擂台状态8&团擂B队人名81&团擂B队人名82&团擂B队人名83&团擂B队人名84&团擂B队人名85&团擂B队信息82&团擂B队信息83&团擂B队信息84&团擂B队信息85&守&<$GLOBAL(团擂B队人名81)>}		<返回/@main>
+
+#IF
+equal $SCRIPTPARAM(1) 单团擂台状态9
+#ACT
+break
+#SAY
+目前正在此擂台的英雄资料：\
+守擂者姓名						职业		等级	|	攻擂者姓名						职业		等级\
+<$GLOBAL(团擂A队信息91)>|	<$GLOBAL(团擂B队信息91)>\
+<$GLOBAL(团擂A队信息92)>|	<$GLOBAL(团擂B队信息92)>\
+<$GLOBAL(团擂A队信息93)>|	<$GLOBAL(团擂B队信息93)>\
+<$GLOBAL(团擂A队信息94)>|	<$GLOBAL(团擂B队信息94)>\
+<$GLOBAL(团擂A队信息95)>|	<$GLOBAL(团擂B队信息95)>\
+比赛金：<$GLOBAL(单团擂台赛金9)>金币\
+你要加入吗？		{守擂/@addplayer&单团擂台状态9&团擂A队人名91&团擂A队人名92&团擂A队人名93&团擂A队人名94&团擂A队人名95&团擂A队信息92&团擂A队信息93&团擂A队信息94&团擂A队信息95&攻&<$GLOBAL(团擂A队人名91)>}		{攻擂/@addplayer&单团擂台状态9&团擂B队人名91&团擂B队人名92&团擂B队人名93&团擂B队人名94&团擂B队人名95&团擂B队信息92&团擂B队信息93&团擂B队信息94&团擂B队信息95&守&<$GLOBAL(团擂B队人名91)>}		<返回/@main>
+
+[@addplayer] 
+#IF
+CHECKVAR HUMAN ArenaCondition = 摆
+CHECKVAR HUMAN ArenaCompetition = 0
+#ACT
+break
+#SAY
+你已经申请守擂，不能申请攻擂。\
+\
+<离开/@exit>
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 攻
+CHECKVAR HUMAN ArenaCompetition = 0
+#ACT
+break
+#SAY
+你已经申请攻擂，不能再次申请。\
+\
+<离开/@exit>
+
+#IF
+CHECKVAR HUMAN ArenaCondition = 守
+CHECKVAR HUMAN ArenaCompetition = 0
+#ACT
+break
+#SAY
+你已经申请守擂，不能再次申请。\
+\
+<离开/@exit>
+
+#IF
+!CHECKVAR GLOBAL $SCRIPTPARAM(1) > 3
+!CHECKVAR GLOBAL $SCRIPTPARAM(1) < 6
+#ACT
+break
+#SAY
+你申请的比赛场地已被占用，请选择其他比赛场地。\
+\
+<返回/@challenge1>
+
+#IF
+CHECKVAR GLOBAL $SCRIPTPARAM(2) =
+#ACT
+break
+#SAY
+该擂台尚无人攻擂，请选择其他比赛场地。\
+\
+<离开/@exit>
+ 
+#IF
+!equal $GROUPMASTER $SCRIPTPARAM(12)
+#ACT
+break
+#SAY
+你不是守擂方（攻擂方）的组队成员，请先假如队伍\
+再重新选择加入守擂/攻擂方。\
+\
+<离开/@exit>
+
+#IF
+#ACT
+mov S1 $USERNAME
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+inc S1 #9
+Insert S1 17 $JOB
+Insert S1 23 $LEVEL
+dec S1 28 999
+CALCVAR HUMAN ArenaCondition = $SCRIPTPARAM(11)
+
+#IF
+CHECKVAR GLOBAL $SCRIPTPARAM(3) =
+#ACT
+Calcvar GLOBAL $SCRIPTPARAM(3) = $USERNAME
+Calcvar GLOBAL $SCRIPTPARAM(7) = $STR(S1)
+break
+#SAY
+申请加入成功，请在2分钟内做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL $SCRIPTPARAM(4) =
+#ACT
+Calcvar GLOBAL $SCRIPTPARAM(4) = $USERNAME
+Calcvar GLOBAL $SCRIPTPARAM(8) = $STR(S1)
+break
+#SAY
+申请加入成功，请在2分钟内做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL $SCRIPTPARAM(5) =
+#ACT
+Calcvar GLOBAL $SCRIPTPARAM(5) = $USERNAME
+Calcvar GLOBAL $SCRIPTPARAM(9) = $STR(S1)
+break
+#SAY
+申请加入成功，请在2分钟内做好战斗准备。\
+\
+<关闭/@exit>
+
+#IF
+CHECKVAR GLOBAL $SCRIPTPARAM(6) =
+#ACT
+Calcvar GLOBAL $SCRIPTPARAM(6) = $USERNAME
+Calcvar GLOBAL $SCRIPTPARAM(10) = $STR(S1)
+break
+#SAY
+申请加入成功，请在2分钟内做好战斗准备。\
+\
+<关闭/@exit>
+#ELSESAY
+该队人数已达上限，请重新选择。\
+\
+<返回/@challenge1>
+
+[@ARENA001团体摆擂]
+#IF
+CHECKVAR GLOBAL 单团擂台状态1 < 5
+#ACT
+SaveExVar $GLOBAL(单团擂台赛金1) $GLOBAL(团擂A队人名11) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov A13 
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名11) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名11).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名11).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体1
+
+[@ARENA001团体准备]
+#IF
+random 1
+#ACT
+Calcvar GLOBAL 单团擂台状态1 = 6
+Gmexecute 全服触发 @比武擂台1传出
+SetRobotTimer 0 系统控制 @ARENA001团体限时
+SetRobotTimer 1200 系统控制 @ARENA001团体限时
+SetRobotTimer 0 系统控制 @团体检测离场1
+SetRobotTimer 1 系统控制 @团体检测离场1 1200
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名11)
+#ACT
+$GLOBAL(团擂A队人名11).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名11).mapmove ARENA001 26 38 2
+Calcvar GLOBAL 团擂A队入场1 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名12)
+#ACT
+$GLOBAL(团擂A队人名12).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名12).mapmove ARENA001 26 38 2
+Calcvar GLOBAL 团擂A队入场1 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名13)
+#ACT
+$GLOBAL(团擂A队人名13).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名13).mapmove ARENA001 26 38 2
+Calcvar GLOBAL 团擂A队入场1 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名14)
+#ACT
+$GLOBAL(团擂A队人名14).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名14).mapmove ARENA001 26 38 2
+Calcvar GLOBAL 团擂A队入场1 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名15)
+#ACT
+$GLOBAL(团擂A队人名15).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名15).mapmove ARENA001 26 38 2
+Calcvar GLOBAL 团擂A队入场1 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名11)
+#ACT
+$GLOBAL(团擂B队人名11).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名11).mapmove ARENA001 37 38 2
+Calcvar GLOBAL 团擂B队入场1 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名12)
+#ACT
+$GLOBAL(团擂B队人名12).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名12).mapmove ARENA001 37 38 2
+Calcvar GLOBAL 团擂B队入场1 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名13)
+#ACT
+$GLOBAL(团擂B队人名13).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名13).mapmove ARENA001 37 38 2
+Calcvar GLOBAL 团擂B队入场1 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名14)
+#ACT
+$GLOBAL(团擂B队人名14).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名14).mapmove ARENA001 37 38 2
+Calcvar GLOBAL 团擂B队入场1 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名15)
+#ACT
+$GLOBAL(团擂B队人名15).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名15).mapmove ARENA001 37 38 2
+Calcvar GLOBAL 团擂B队入场1 + 1
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场1 = 0
+CHECKVAR GLOBAL 团擂B队入场1 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手1
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场1 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功1
+
+#IF
+CHECKVAR GLOBAL 团擂B队入场1 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功1
+
+[@ARENA001团体限时]
+#IF
+!CHECKVAR GLOBAL 单团擂台状态1 = 6
+#ACT
+break
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀1 > $GLOBAL(团擂B队击杀1)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功1
+
+#IF
+CHECKVAR GLOBAL 团擂B队击杀1 > $GLOBAL(团擂A队击杀1)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功1
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀1 = $GLOBAL(团擂B队击杀1)
+CHECKVAR GLOBAL 团擂A队入场1 = $GLOBAL(团擂B队入场1)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手1
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场1 > $GLOBAL(团擂B队入场1)
+#ACT
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功1
+#ELSEACT
+#ECALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功1
+
+[@团体检测离场1]
+#IF
+checkhum ARENA001 1
+CHECKVAR GLOBAL 单团擂台状态1 = 6
+#ACT
+goto @ARENA001检测
+#ELSEACT
+Calcvar GLOBAL 单团擂台状态1 =
+SetRobotTimer 0 系统控制 @团体检测离场1
+
+[@ARENA002团体摆擂]
+#IF
+CHECKVAR GLOBAL 单团擂台状态2 < 5
+#ACT
+SaveExVar $GLOBAL(单团擂台赛金2) $GLOBAL(团擂A队人名21) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov A13 
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名21) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名21).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名21).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体2
+
+[@ARENA002团体准备]
+#IF
+random 1
+#ACT
+Calcvar GLOBAL 单团擂台状态2 = 6
+Gmexecute 全服触发 @比武擂台2传出
+SetRobotTimer 0 系统控制 @ARENA002团体限时
+SetRobotTimer 60 系统控制 @ARENA002团体限时
+;SetRobotTimer 0 系统控制 @团体检测离场2
+;SetRobotTimer 1 系统控制 @团体检测离场2 1200
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名21)
+#ACT
+$GLOBAL(团擂A队人名21).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名21).mapmove ARENA002 26 38 2
+Calcvar GLOBAL 团擂A队入场2 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名22)
+#ACT
+$GLOBAL(团擂A队人名22).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名22).mapmove ARENA002 26 38 2
+Calcvar GLOBAL 团擂A队入场2 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名23)
+#ACT
+$GLOBAL(团擂A队人名23).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名23).mapmove ARENA002 26 38 2
+Calcvar GLOBAL 团擂A队入场2 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名24)
+#ACT
+$GLOBAL(团擂A队人名24).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名24).mapmove ARENA002 26 38 2
+Calcvar GLOBAL 团擂A队入场2 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名25)
+#ACT
+$GLOBAL(团擂A队人名25).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名25).mapmove ARENA002 26 38 2
+Calcvar GLOBAL 团擂A队入场2 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名21)
+#ACT
+$GLOBAL(团擂B队人名21).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名21).mapmove ARENA002 37 38 2
+Calcvar GLOBAL 团擂B队入场2 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名22)
+#ACT
+$GLOBAL(团擂B队人名22).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名22).mapmove ARENA002 37 38 2
+Calcvar GLOBAL 团擂B队入场2 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名23)
+#ACT
+$GLOBAL(团擂B队人名23).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名23).mapmove ARENA002 37 38 2
+Calcvar GLOBAL 团擂B队入场2 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名24)
+#ACT
+$GLOBAL(团擂B队人名24).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名24).mapmove ARENA002 37 38 2
+Calcvar GLOBAL 团擂B队入场2 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名25)
+#ACT
+$GLOBAL(团擂B队人名25).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名25).mapmove ARENA002 37 38 2
+Calcvar GLOBAL 团擂B队入场2 + 1
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场2 = 0
+CHECKVAR GLOBAL 团擂B队入场2 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手2
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场2 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功2
+
+#IF
+CHECKVAR GLOBAL 团擂B队入场2 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功2
+
+[@ARENA002团体限时]
+#IF
+!CHECKVAR GLOBAL 单团擂台状态2 = 6
+#ACT
+break
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀2 > $GLOBAL(团擂B队击杀2)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功2
+
+#IF
+CHECKVAR GLOBAL 团擂B队击杀2 > $GLOBAL(团擂A队击杀2)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功2
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀2 = $GLOBAL(团擂B队击杀2)
+CHECKVAR GLOBAL 团擂A队入场2 = $GLOBAL(团擂B队入场2)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手2
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场2 > $GLOBAL(团擂B队入场2)
+#ACT
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功2
+#ELSEACT
+#ECALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功2
+
+[@ARENA003团体摆擂]
+#IF
+CHECKVAR GLOBAL 单团擂台状态3 < 5
+#ACT
+SaveExVar $GLOBAL(单团擂台赛金3) $GLOBAL(团擂A队人名31) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov A13 
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名31) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名31).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名31).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体3
+
+[@ARENA003团体准备]
+#IF
+random 1
+#ACT
+Calcvar GLOBAL 单团擂台状态3 = 6
+Gmexecute 全服触发 @比武擂台3传出
+SetRobotTimer 0 系统控制 @ARENA003团体限时
+SetRobotTimer 60 系统控制 @ARENA003团体限时
+SetRobotTimer 0 系统控制 @团体检测离场3
+SetRobotTimer 1 系统控制 @团体检测离场3 1200
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名31)
+#ACT
+$GLOBAL(团擂A队人名31).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名31).mapmove ARENA003 26 38 2
+Calcvar GLOBAL 团擂A队入场3 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名32)
+#ACT
+$GLOBAL(团擂A队人名32).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名32).mapmove ARENA003 26 38 2
+Calcvar GLOBAL 团擂A队入场3 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名33)
+#ACT
+$GLOBAL(团擂A队人名33).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名33).mapmove ARENA003 26 38 2
+Calcvar GLOBAL 团擂A队入场3 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名34)
+#ACT
+$GLOBAL(团擂A队人名34).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名34).mapmove ARENA003 26 38 2
+Calcvar GLOBAL 团擂A队入场3 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名35)
+#ACT
+$GLOBAL(团擂A队人名35).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名35).mapmove ARENA003 26 38 2
+Calcvar GLOBAL 团擂A队入场3 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名31)
+#ACT
+$GLOBAL(团擂B队人名31).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名31).mapmove ARENA003 37 38 2
+Calcvar GLOBAL 团擂B队入场3 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名32)
+#ACT
+$GLOBAL(团擂B队人名32).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名32).mapmove ARENA003 37 38 2
+Calcvar GLOBAL 团擂B队入场3 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名33)
+#ACT
+$GLOBAL(团擂B队人名33).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名33).mapmove ARENA003 37 38 2
+Calcvar GLOBAL 团擂B队入场3 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名34)
+#ACT
+$GLOBAL(团擂B队人名34).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名34).mapmove ARENA003 37 38 2
+Calcvar GLOBAL 团擂B队入场3 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名35)
+#ACT
+$GLOBAL(团擂B队人名35).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名35).mapmove ARENA003 37 38 2
+Calcvar GLOBAL 团擂B队入场3 + 1
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场3 = 0
+CHECKVAR GLOBAL 团擂B队入场3 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手3
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场3 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功3
+
+#IF
+CHECKVAR GLOBAL 团擂B队入场3 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功3
+
+[@ARENA003团体限时]
+#IF
+!CHECKVAR GLOBAL 单团擂台状态3 = 6
+#ACT
+break
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀3 > $GLOBAL(团擂B队击杀3)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功3
+
+#IF
+CHECKVAR GLOBAL 团擂B队击杀3 > $GLOBAL(团擂A队击杀3)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功3
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀3 = $GLOBAL(团擂B队击杀3)
+CHECKVAR GLOBAL 团擂A队入场3 = $GLOBAL(团擂B队入场3)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手3
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场3 > $GLOBAL(团擂B队入场3)
+#ACT
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功3
+#ELSEACT
+#ECALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功3
+
+[@ARENA004团体摆擂]
+#IF
+CHECKVAR GLOBAL 单团擂台状态4 < 5
+#ACT
+SaveExVar $GLOBAL(单团擂台赛金4) $GLOBAL(团擂A队人名41) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov A13 
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名41) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名41).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名41).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体4
+
+[@ARENA004团体准备]
+#IF
+random 1
+#ACT
+Calcvar GLOBAL 单团擂台状态4 = 6
+Gmexecute 全服触发 @比武擂台4传出
+SetRobotTimer 0 系统控制 @ARENA004团体限时
+SetRobotTimer 60 系统控制 @ARENA004团体限时
+SetRobotTimer 0 系统控制 @团体检测离场4
+SetRobotTimer 1 系统控制 @团体检测离场4 1200
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名41)
+#ACT
+$GLOBAL(团擂A队人名41).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名41).mapmove ARENA004 26 38 2
+Calcvar GLOBAL 团擂A队入场4 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名42)
+#ACT
+$GLOBAL(团擂A队人名42).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名42).mapmove ARENA004 26 38 2
+Calcvar GLOBAL 团擂A队入场4 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名43)
+#ACT
+$GLOBAL(团擂A队人名43).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名43).mapmove ARENA004 26 38 2
+Calcvar GLOBAL 团擂A队入场4 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名44)
+#ACT
+$GLOBAL(团擂A队人名44).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名44).mapmove ARENA004 26 38 2
+Calcvar GLOBAL 团擂A队入场4 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名45)
+#ACT
+$GLOBAL(团擂A队人名45).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名45).mapmove ARENA004 26 38 2
+Calcvar GLOBAL 团擂A队入场4 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名41)
+#ACT
+$GLOBAL(团擂B队人名41).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名41).mapmove ARENA004 37 38 2
+Calcvar GLOBAL 团擂B队入场4 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名42)
+#ACT
+$GLOBAL(团擂B队人名42).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名42).mapmove ARENA004 37 38 2
+Calcvar GLOBAL 团擂B队入场4 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名43)
+#ACT
+$GLOBAL(团擂B队人名43).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名43).mapmove ARENA004 37 38 2
+Calcvar GLOBAL 团擂B队入场4 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名44)
+#ACT
+$GLOBAL(团擂B队人名44).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名44).mapmove ARENA004 37 38 2
+Calcvar GLOBAL 团擂B队入场4 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名45)
+#ACT
+$GLOBAL(团擂B队人名45).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名45).mapmove ARENA004 37 38 2
+Calcvar GLOBAL 团擂B队入场4 + 1
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场4 = 0
+CHECKVAR GLOBAL 团擂B队入场4 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手4
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场4 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功4
+
+#IF
+CHECKVAR GLOBAL 团擂B队入场4 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功4
+
+[@ARENA004团体限时]
+#IF
+!CHECKVAR GLOBAL 单团擂台状态4 = 6
+#ACT
+break
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀4 > $GLOBAL(团擂B队击杀4)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功4
+
+#IF
+CHECKVAR GLOBAL 团擂B队击杀4 > $GLOBAL(团擂A队击杀4)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功4
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀4 = $GLOBAL(团擂B队击杀4)
+CHECKVAR GLOBAL 团擂A队入场4 = $GLOBAL(团擂B队入场4)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手4
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场4 > $GLOBAL(团擂B队入场4)
+#ACT
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功4
+#ELSEACT
+#ECALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功4
+
+[@ARENA005团体摆擂]
+#IF
+CHECKVAR GLOBAL 单团擂台状态5 < 5
+#ACT
+SaveExVar $GLOBAL(单团擂台赛金5) $GLOBAL(团擂A队人名51) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov A13 
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名51) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名51).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名51).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体5
+
+[@ARENA005团体准备]
+#IF
+random 1
+#ACT
+Calcvar GLOBAL 单团擂台状态5 = 6
+Gmexecute 全服触发 @比武擂台5传出
+SetRobotTimer 0 系统控制 @ARENA005团体限时
+SetRobotTimer 60 系统控制 @ARENA005团体限时
+SetRobotTimer 0 系统控制 @团体检测离场5
+SetRobotTimer 1 系统控制 @团体检测离场5 1200
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名51)
+#ACT
+$GLOBAL(团擂A队人名51).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名51).mapmove ARENA005 26 38 2
+Calcvar GLOBAL 团擂A队入场5 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名52)
+#ACT
+$GLOBAL(团擂A队人名52).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名52).mapmove ARENA005 26 38 2
+Calcvar GLOBAL 团擂A队入场5 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名53)
+#ACT
+$GLOBAL(团擂A队人名53).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名53).mapmove ARENA005 26 38 2
+Calcvar GLOBAL 团擂A队入场5 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名54)
+#ACT
+$GLOBAL(团擂A队人名54).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名54).mapmove ARENA005 26 38 2
+Calcvar GLOBAL 团擂A队入场5 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名55)
+#ACT
+$GLOBAL(团擂A队人名55).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名55).mapmove ARENA005 26 38 2
+Calcvar GLOBAL 团擂A队入场5 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名51)
+#ACT
+$GLOBAL(团擂B队人名51).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名51).mapmove ARENA005 37 38 2
+Calcvar GLOBAL 团擂B队入场5 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名52)
+#ACT
+$GLOBAL(团擂B队人名52).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名52).mapmove ARENA005 37 38 2
+Calcvar GLOBAL 团擂B队入场5 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名53)
+#ACT
+$GLOBAL(团擂B队人名53).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名53).mapmove ARENA005 37 38 2
+Calcvar GLOBAL 团擂B队入场5 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名54)
+#ACT
+$GLOBAL(团擂B队人名54).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名54).mapmove ARENA005 37 38 2
+Calcvar GLOBAL 团擂B队入场5 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名55)
+#ACT
+$GLOBAL(团擂B队人名55).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名55).mapmove ARENA005 37 38 2
+Calcvar GLOBAL 团擂B队入场5 + 1
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场5 = 0
+CHECKVAR GLOBAL 团擂B队入场5 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手5
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场5 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功5
+
+#IF
+CHECKVAR GLOBAL 团擂B队入场5 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功5
+
+[@ARENA005团体限时]
+#IF
+!CHECKVAR GLOBAL 单团擂台状态5 = 6
+#ACT
+break
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀5 > $GLOBAL(团擂B队击杀5)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功5
+
+#IF
+CHECKVAR GLOBAL 团擂B队击杀5 > $GLOBAL(团擂A队击杀5)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功5
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀5 = $GLOBAL(团擂B队击杀5)
+CHECKVAR GLOBAL 团擂A队入场5 = $GLOBAL(团擂B队入场5)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手5
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场5 > $GLOBAL(团擂B队入场5)
+#ACT
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功5
+#ELSEACT
+#ECALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功5
+
+[@ARENA006团体摆擂]
+#IF
+CHECKVAR GLOBAL 单团擂台状态6 < 5
+#ACT
+SaveExVar $GLOBAL(单团擂台赛金6) $GLOBAL(团擂A队人名61) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov A13 
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名61) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名61).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名61).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体6
+
+[@ARENA006团体准备]
+#IF
+random 1
+#ACT
+Calcvar GLOBAL 单团擂台状态6 = 6
+Gmexecute 全服触发 @比武擂台6传出
+SetRobotTimer 0 系统控制 @ARENA006团体限时
+SetRobotTimer 60 系统控制 @ARENA006团体限时
+SetRobotTimer 0 系统控制 @团体检测离场6
+SetRobotTimer 1 系统控制 @团体检测离场6 1200
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名61)
+#ACT
+$GLOBAL(团擂A队人名61).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名61).mapmove ARENA006 26 38 2
+Calcvar GLOBAL 团擂A队入场6 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名62)
+#ACT
+$GLOBAL(团擂A队人名62).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名62).mapmove ARENA006 26 38 2
+Calcvar GLOBAL 团擂A队入场6 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名63)
+#ACT
+$GLOBAL(团擂A队人名63).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名63).mapmove ARENA006 26 38 2
+Calcvar GLOBAL 团擂A队入场6 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名64)
+#ACT
+$GLOBAL(团擂A队人名64).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名64).mapmove ARENA006 26 38 2
+Calcvar GLOBAL 团擂A队入场6 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名65)
+#ACT
+$GLOBAL(团擂A队人名65).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名65).mapmove ARENA006 26 38 2
+Calcvar GLOBAL 团擂A队入场6 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名61)
+#ACT
+$GLOBAL(团擂B队人名61).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名61).mapmove ARENA006 37 38 2
+Calcvar GLOBAL 团擂B队入场6 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名62)
+#ACT
+$GLOBAL(团擂B队人名62).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名62).mapmove ARENA006 37 38 2
+Calcvar GLOBAL 团擂B队入场6 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名63)
+#ACT
+$GLOBAL(团擂B队人名63).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名63).mapmove ARENA006 37 38 2
+Calcvar GLOBAL 团擂B队入场6 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名64)
+#ACT
+$GLOBAL(团擂B队人名64).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名64).mapmove ARENA006 37 38 2
+Calcvar GLOBAL 团擂B队入场6 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名65)
+#ACT
+$GLOBAL(团擂B队人名65).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名65).mapmove ARENA006 37 38 2
+Calcvar GLOBAL 团擂B队入场6 + 1
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场6 = 0
+CHECKVAR GLOBAL 团擂B队入场6 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手6
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场6 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功6
+
+#IF
+CHECKVAR GLOBAL 团擂B队入场6 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功6
+
+[@ARENA006团体限时]
+#IF
+!CHECKVAR GLOBAL 单团擂台状态6 = 6
+#ACT
+break
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀6 > $GLOBAL(团擂B队击杀6)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功6
+
+#IF
+CHECKVAR GLOBAL 团擂B队击杀6 > $GLOBAL(团擂A队击杀6)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功6
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀6 = $GLOBAL(团擂B队击杀6)
+CHECKVAR GLOBAL 团擂A队入场6 = $GLOBAL(团擂B队入场6)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手6
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场6 > $GLOBAL(团擂B队入场6)
+#ACT
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功6
+#ELSEACT
+#ECALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功6
+
+[@ARENA007团体摆擂]
+#IF
+CHECKVAR GLOBAL 单团擂台状态7 < 5
+#ACT
+SaveExVar $GLOBAL(单团擂台赛金7) $GLOBAL(团擂A队人名71) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov A13 
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名71) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名71).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名71).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体7
+
+[@ARENA007团体准备]
+#IF
+random 1
+#ACT
+Calcvar GLOBAL 单团擂台状态7 = 6
+Gmexecute 全服触发 @比武擂台7传出
+SetRobotTimer 0 系统控制 @ARENA007团体限时
+SetRobotTimer 60 系统控制 @ARENA007团体限时
+SetRobotTimer 0 系统控制 @团体检测离场7
+SetRobotTimer 1 系统控制 @团体检测离场7 1200
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名71)
+#ACT
+$GLOBAL(团擂A队人名71).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名71).mapmove ARENA007 26 38 2
+Calcvar GLOBAL 团擂A队入场7 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名72)
+#ACT
+$GLOBAL(团擂A队人名72).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名72).mapmove ARENA007 26 38 2
+Calcvar GLOBAL 团擂A队入场7 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名73)
+#ACT
+$GLOBAL(团擂A队人名73).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名73).mapmove ARENA007 26 38 2
+Calcvar GLOBAL 团擂A队入场7 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名74)
+#ACT
+$GLOBAL(团擂A队人名74).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名74).mapmove ARENA007 26 38 2
+Calcvar GLOBAL 团擂A队入场7 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名75)
+#ACT
+$GLOBAL(团擂A队人名75).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名75).mapmove ARENA007 26 38 2
+Calcvar GLOBAL 团擂A队入场7 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名71)
+#ACT
+$GLOBAL(团擂B队人名71).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名71).mapmove ARENA007 37 38 2
+Calcvar GLOBAL 团擂B队入场7 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名72)
+#ACT
+$GLOBAL(团擂B队人名72).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名72).mapmove ARENA007 37 38 2
+Calcvar GLOBAL 团擂B队入场7 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名73)
+#ACT
+$GLOBAL(团擂B队人名73).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名73).mapmove ARENA007 37 38 2
+Calcvar GLOBAL 团擂B队入场7 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名74)
+#ACT
+$GLOBAL(团擂B队人名74).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名74).mapmove ARENA007 37 38 2
+Calcvar GLOBAL 团擂B队入场7 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名75)
+#ACT
+$GLOBAL(团擂B队人名75).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名75).mapmove ARENA007 37 38 2
+Calcvar GLOBAL 团擂B队入场7 + 1
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场7 = 0
+CHECKVAR GLOBAL 团擂B队入场7 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手7
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场7 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功7
+
+#IF
+CHECKVAR GLOBAL 团擂B队入场7 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功7
+
+[@ARENA007团体限时]
+#IF
+!CHECKVAR GLOBAL 单团擂台状态7 = 6
+#ACT
+break
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀7 > $GLOBAL(团擂B队击杀7)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功7
+
+#IF
+CHECKVAR GLOBAL 团擂B队击杀7 > $GLOBAL(团擂A队击杀7)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功7
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀7 = $GLOBAL(团擂B队击杀7)
+CHECKVAR GLOBAL 团擂A队入场7 = $GLOBAL(团擂B队入场7)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手7
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场7 > $GLOBAL(团擂B队入场7)
+#ACT
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功7
+#ELSEACT
+#ECALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功7
+
+[@ARENA008团体摆擂]
+#IF
+CHECKVAR GLOBAL 单团擂台状态8 < 5
+#ACT
+SaveExVar $GLOBAL(单团擂台赛金8) $GLOBAL(团擂A队人名81) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov A13 
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名81) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名81).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名81).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体8
+
+[@ARENA008团体准备]
+#IF
+random 1
+#ACT
+Calcvar GLOBAL 单团擂台状态8 = 6
+Gmexecute 全服触发 @比武擂台8传出
+SetRobotTimer 0 系统控制 @ARENA008团体限时
+SetRobotTimer 60 系统控制 @ARENA008团体限时
+SetRobotTimer 0 系统控制 @团体检测离场8
+SetRobotTimer 1 系统控制 @团体检测离场8 1200
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名81)
+#ACT
+$GLOBAL(团擂A队人名81).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名81).mapmove ARENA008 26 38 2
+Calcvar GLOBAL 团擂A队入场8 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名82)
+#ACT
+$GLOBAL(团擂A队人名82).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名82).mapmove ARENA008 26 38 2
+Calcvar GLOBAL 团擂A队入场8 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名83)
+#ACT
+$GLOBAL(团擂A队人名83).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名83).mapmove ARENA008 26 38 2
+Calcvar GLOBAL 团擂A队入场8 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名84)
+#ACT
+$GLOBAL(团擂A队人名84).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名84).mapmove ARENA008 26 38 2
+Calcvar GLOBAL 团擂A队入场8 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名85)
+#ACT
+$GLOBAL(团擂A队人名85).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名85).mapmove ARENA008 26 38 2
+Calcvar GLOBAL 团擂A队入场8 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名81)
+#ACT
+$GLOBAL(团擂B队人名81).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名81).mapmove ARENA008 37 38 2
+Calcvar GLOBAL 团擂B队入场8 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名82)
+#ACT
+$GLOBAL(团擂B队人名82).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名82).mapmove ARENA008 37 38 2
+Calcvar GLOBAL 团擂B队入场8 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名83)
+#ACT
+$GLOBAL(团擂B队人名83).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名83).mapmove ARENA008 37 38 2
+Calcvar GLOBAL 团擂B队入场8 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名84)
+#ACT
+$GLOBAL(团擂B队人名84).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名84).mapmove ARENA008 37 38 2
+Calcvar GLOBAL 团擂B队入场8 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名85)
+#ACT
+$GLOBAL(团擂B队人名85).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名85).mapmove ARENA008 37 38 2
+Calcvar GLOBAL 团擂B队入场8 + 1
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场8 = 0
+CHECKVAR GLOBAL 团擂B队入场8 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手8
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场8 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功8
+
+#IF
+CHECKVAR GLOBAL 团擂B队入场8 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功8
+
+[@ARENA008团体限时]
+#IF
+!CHECKVAR GLOBAL 单团擂台状态8 = 6
+#ACT
+break
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀8 > $GLOBAL(团擂B队击杀8)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功8
+
+#IF
+CHECKVAR GLOBAL 团擂B队击杀8 > $GLOBAL(团擂A队击杀8)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功8
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀8 = $GLOBAL(团擂B队击杀8)
+CHECKVAR GLOBAL 团擂A队入场8 = $GLOBAL(团擂B队入场8)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手8
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场8 > $GLOBAL(团擂B队入场8)
+#ACT
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功8
+#ELSEACT
+#ECALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功8
+
+[@ARENA009团体摆擂]
+#IF
+CHECKVAR GLOBAL 单团擂台状态9 < 5
+#ACT
+SaveExVar $GLOBAL(单团擂台赛金9) $GLOBAL(团擂A队人名91) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov A13 
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名91) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名91).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名91).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体9
+
+[@ARENA009团体准备]
+#IF
+random 1
+#ACT
+Calcvar GLOBAL 单团擂台状态9 = 6
+Gmexecute 全服触发 @比武擂台9传出
+SetRobotTimer 0 系统控制 @ARENA009团体限时
+SetRobotTimer 60 系统控制 @ARENA009团体限时
+SetRobotTimer 0 系统控制 @团体检测离场9
+SetRobotTimer 1 系统控制 @团体检测离场9 1200
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名91)
+#ACT
+$GLOBAL(团擂A队人名91).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名91).mapmove ARENA009 26 38 2
+Calcvar GLOBAL 团擂A队入场9 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名92)
+#ACT
+$GLOBAL(团擂A队人名92).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名92).mapmove ARENA009 26 38 2
+Calcvar GLOBAL 团擂A队入场9 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名93)
+#ACT
+$GLOBAL(团擂A队人名93).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名93).mapmove ARENA009 26 38 2
+Calcvar GLOBAL 团擂A队入场9 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名94)
+#ACT
+$GLOBAL(团擂A队人名94).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名94).mapmove ARENA009 26 38 2
+Calcvar GLOBAL 团擂A队入场9 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名95)
+#ACT
+$GLOBAL(团擂A队人名95).CHANGENAMECOLOR 252
+$GLOBAL(团擂A队人名95).mapmove ARENA009 26 38 2
+Calcvar GLOBAL 团擂A队入场9 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名91)
+#ACT
+$GLOBAL(团擂B队人名91).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名91).mapmove ARENA009 37 38 2
+Calcvar GLOBAL 团擂B队入场9 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名92)
+#ACT
+$GLOBAL(团擂B队人名92).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名92).mapmove ARENA009 37 38 2
+Calcvar GLOBAL 团擂B队入场9 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名93)
+#ACT
+$GLOBAL(团擂B队人名93).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名93).mapmove ARENA009 37 38 2
+Calcvar GLOBAL 团擂B队入场9 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名94)
+#ACT
+$GLOBAL(团擂B队人名94).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名94).mapmove ARENA009 37 38 2
+Calcvar GLOBAL 团擂B队入场9 + 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名95)
+#ACT
+$GLOBAL(团擂B队人名95).CHANGENAMECOLOR 69
+$GLOBAL(团擂B队人名95).mapmove ARENA009 37 38 2
+Calcvar GLOBAL 团擂B队入场9 + 1
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场9 = 0
+CHECKVAR GLOBAL 团擂B队入场9 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手9
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场9 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功9
+
+#IF
+CHECKVAR GLOBAL 团擂B队入场9 = 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功9
+
+[@ARENA009团体限时]
+#IF
+!CHECKVAR GLOBAL 单团擂台状态9 = 6
+#ACT
+break
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀9 > $GLOBAL(团擂B队击杀9)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功9
+
+#IF
+CHECKVAR GLOBAL 团擂B队击杀9 > $GLOBAL(团擂A队击杀9)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功9
+
+#IF
+CHECKVAR GLOBAL 团擂A队击杀9 = $GLOBAL(团擂B队击杀9)
+CHECKVAR GLOBAL 团擂A队入场9 = $GLOBAL(团擂B队入场9)
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体双方平手9
+
+#IF
+CHECKVAR GLOBAL 团擂A队入场9 > $GLOBAL(团擂B队入场9)
+#ACT
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功9
+#ELSEACT
+#ECALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功9
+
+[@import]
+#CALL [\Features\HeroesChallenge\单人擂台.txt] @人物状态
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA001检测
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA002检测
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA003检测
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA004检测
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA005检测
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA006检测
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA007检测
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA008检测
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @ARENA009检测
+}
+
+[@ARENA001检测]
+{
+#IF
+random 1
+#ACT
+mov I41 0
+mov I42 0
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名11)
+$GLOBAL(团擂A队人名11).CHECKMAPNAME ARENA001
+large $HUMANINFO($GLOBAL(团擂A队人名11)).$HP 0
+#ACT
+inc I41 1
+#ELSEACT
+$GLOBAL(团擂A队人名11).CHANGENAMECOLOR 255
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名12)
+$GLOBAL(团擂A队人名12).CHECKMAPNAME ARENA001
+large $HUMANINFO($GLOBAL(团擂A队人名12)).$HP 0
+#ACT
+inc I41 1
+#ELSEACT
+$GLOBAL(团擂A队人名12).CHANGENAMECOLOR 255
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名13)
+$GLOBAL(团擂A队人名13).CHECKMAPNAME ARENA001
+large $HUMANINFO($GLOBAL(团擂A队人名13)).$HP 0
+#ACT
+inc I41 1
+#ELSEACT
+$GLOBAL(团擂A队人名13).CHANGENAMECOLOR 255
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名14)
+$GLOBAL(团擂A队人名14).CHECKMAPNAME ARENA001
+large $HUMANINFO($GLOBAL(团擂A队人名14)).$HP 0
+#ACT
+inc I41 1
+#ELSEACT
+$GLOBAL(团擂A队人名14).CHANGENAMECOLOR 255
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名15)
+$GLOBAL(团擂A队人名15).CHECKMAPNAME ARENA001
+large $HUMANINFO($GLOBAL(团擂A队人名15)).$HP 0
+#ACT
+inc I41 1
+#ELSEACT
+$GLOBAL(团擂A队人名15).CHANGENAMECOLOR 255
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名11)
+$GLOBAL(团擂B队人名11).CHECKMAPNAME ARENA001
+large $HUMANINFO($GLOBAL(团擂B队人名11)).$HP 0
+#ACT
+inc I42 1
+#ELSEACT
+$GLOBAL(团擂B队人名11).CHANGENAMECOLOR 255
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名12)
+$GLOBAL(团擂B队人名12).CHECKMAPNAME ARENA001
+large $HUMANINFO($GLOBAL(团擂B队人名12)).$HP 0
+#ACT
+inc I42 1
+#ELSEACT
+$GLOBAL(团擂B队人名12).CHANGENAMECOLOR 255
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名13)
+$GLOBAL(团擂B队人名13).CHECKMAPNAME ARENA001
+large $HUMANINFO($GLOBAL(团擂B队人名13)).$HP 0
+#ACT
+inc I42 1
+#ELSEACT
+$GLOBAL(团擂B队人名13).CHANGENAMECOLOR 255
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名14)
+$GLOBAL(团擂B队人名14).CHECKMAPNAME ARENA001
+large $HUMANINFO($GLOBAL(团擂B队人名14)).$HP 0
+#ACT
+inc I42 1
+#ELSEACT
+$GLOBAL(团擂B队人名14).CHANGENAMECOLOR 255
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名15)
+$GLOBAL(团擂B队人名15).CHECKMAPNAME ARENA001
+large $HUMANINFO($GLOBAL(团擂B队人名15)).$HP 0
+#ACT
+inc I42 1
+#ELSEACT
+$GLOBAL(团擂B队人名15).CHANGENAMECOLOR 255
+
+#IF
+equal I41 0
+equal I42 0
+#ACT
+break
+
+#IF
+equal I41 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功1
+
+#IF
+equal I42 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功1
+}
+
+[@ARENA002检测]
+{
+#IF
+random 1
+#ACT
+mov I41 0
+mov I42 0
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名21)
+$GLOBAL(团擂A队人名21).CHECKMAPNAME ARENA002
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名22)
+$GLOBAL(团擂A队人名22).CHECKMAPNAME ARENA002
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名23)
+$GLOBAL(团擂A队人名23).CHECKMAPNAME ARENA002
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名24)
+$GLOBAL(团擂A队人名24).CHECKMAPNAME ARENA002
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名25)
+$GLOBAL(团擂A队人名25).CHECKMAPNAME ARENA002
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名21)
+$GLOBAL(团擂B队人名21).CHECKMAPNAME ARENA002
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名22)
+$GLOBAL(团擂B队人名22).CHECKMAPNAME ARENA002
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名23)
+$GLOBAL(团擂B队人名23).CHECKMAPNAME ARENA002
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名24)
+$GLOBAL(团擂B队人名24).CHECKMAPNAME ARENA002
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名25)
+$GLOBAL(团擂B队人名25).CHECKMAPNAME ARENA002
+#ACT
+inc I42 1
+
+#IF
+equal I41 0
+equal I42 0
+#ACT
+break
+
+#IF
+equal I41 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功2
+
+#IF
+equal I42 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功2
+}
+
+
+[@ARENA003检测]
+{
+#IF
+random 1
+#ACT
+mov I41 0
+mov I42 0
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名31)
+$GLOBAL(团擂A队人名31).CHECKMAPNAME ARENA003
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名32)
+$GLOBAL(团擂A队人名32).CHECKMAPNAME ARENA003
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名33)
+$GLOBAL(团擂A队人名33).CHECKMAPNAME ARENA003
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名34)
+$GLOBAL(团擂A队人名34).CHECKMAPNAME ARENA003
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名35)
+$GLOBAL(团擂A队人名35).CHECKMAPNAME ARENA003
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名31)
+$GLOBAL(团擂B队人名31).CHECKMAPNAME ARENA003
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名32)
+$GLOBAL(团擂B队人名32).CHECKMAPNAME ARENA003
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名33)
+$GLOBAL(团擂B队人名33).CHECKMAPNAME ARENA003
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名34)
+$GLOBAL(团擂B队人名34).CHECKMAPNAME ARENA003
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名35)
+$GLOBAL(团擂B队人名35).CHECKMAPNAME ARENA003
+#ACT
+inc I42 1
+
+#IF
+equal I41 0
+equal I42 0
+#ACT
+break
+
+#IF
+equal I41 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功3
+
+#IF
+equal I42 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功3
+}
+
+[@ARENA004检测]
+{
+#IF
+random 1
+#ACT
+mov I41 0
+mov I42 0
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名41)
+$GLOBAL(团擂A队人名41).CHECKMAPNAME ARENA004
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名42)
+$GLOBAL(团擂A队人名42).CHECKMAPNAME ARENA004
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名43)
+$GLOBAL(团擂A队人名43).CHECKMAPNAME ARENA004
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名44)
+$GLOBAL(团擂A队人名44).CHECKMAPNAME ARENA004
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名45)
+$GLOBAL(团擂A队人名45).CHECKMAPNAME ARENA004
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名41)
+$GLOBAL(团擂B队人名41).CHECKMAPNAME ARENA004
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名42)
+$GLOBAL(团擂B队人名42).CHECKMAPNAME ARENA004
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名43)
+$GLOBAL(团擂B队人名43).CHECKMAPNAME ARENA004
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名44)
+$GLOBAL(团擂B队人名44).CHECKMAPNAME ARENA004
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名45)
+$GLOBAL(团擂B队人名45).CHECKMAPNAME ARENA004
+#ACT
+inc I42 1
+
+#IF
+equal I41 0
+equal I42 0
+#ACT
+break
+
+#IF
+equal I41 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功4
+
+#IF
+equal I42 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功4
+}
+
+[@ARENA005检测]
+{
+#IF
+random 1
+#ACT
+mov I41 0
+mov I42 0
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名51)
+$GLOBAL(团擂A队人名51).CHECKMAPNAME ARENA005
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名52)
+$GLOBAL(团擂A队人名52).CHECKMAPNAME ARENA005
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名53)
+$GLOBAL(团擂A队人名53).CHECKMAPNAME ARENA005
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名54)
+$GLOBAL(团擂A队人名54).CHECKMAPNAME ARENA005
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名55)
+$GLOBAL(团擂A队人名55).CHECKMAPNAME ARENA005
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名51)
+$GLOBAL(团擂B队人名51).CHECKMAPNAME ARENA005
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名52)
+$GLOBAL(团擂B队人名52).CHECKMAPNAME ARENA005
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名53)
+$GLOBAL(团擂B队人名53).CHECKMAPNAME ARENA005
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名54)
+$GLOBAL(团擂B队人名54).CHECKMAPNAME ARENA005
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名55)
+$GLOBAL(团擂B队人名55).CHECKMAPNAME ARENA005
+#ACT
+inc I42 1
+
+#IF
+equal I41 0
+equal I42 0
+#ACT
+break
+
+#IF
+equal I41 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功5
+
+#IF
+equal I42 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功5
+}
+
+[@ARENA006检测]
+{
+#IF
+random 1
+#ACT
+mov I41 0
+mov I42 0
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名61)
+$GLOBAL(团擂A队人名61).CHECKMAPNAME ARENA006
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名62)
+$GLOBAL(团擂A队人名62).CHECKMAPNAME ARENA006
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名63)
+$GLOBAL(团擂A队人名63).CHECKMAPNAME ARENA006
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名64)
+$GLOBAL(团擂A队人名64).CHECKMAPNAME ARENA006
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名65)
+$GLOBAL(团擂A队人名65).CHECKMAPNAME ARENA006
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名61)
+$GLOBAL(团擂B队人名61).CHECKMAPNAME ARENA006
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名62)
+$GLOBAL(团擂B队人名62).CHECKMAPNAME ARENA006
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名63)
+$GLOBAL(团擂B队人名63).CHECKMAPNAME ARENA006
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名64)
+$GLOBAL(团擂B队人名64).CHECKMAPNAME ARENA006
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名65)
+$GLOBAL(团擂B队人名65).CHECKMAPNAME ARENA006
+#ACT
+inc I42 1
+
+#IF
+equal I41 0
+equal I42 0
+#ACT
+break
+
+#IF
+equal I41 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功6
+
+#IF
+equal I42 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功6
+}
+
+[@ARENA007检测]
+{
+#IF
+random 1
+#ACT
+mov I41 0
+mov I42 0
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名71)
+$GLOBAL(团擂A队人名71).CHECKMAPNAME ARENA007
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名72)
+$GLOBAL(团擂A队人名72).CHECKMAPNAME ARENA007
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名73)
+$GLOBAL(团擂A队人名73).CHECKMAPNAME ARENA007
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名74)
+$GLOBAL(团擂A队人名74).CHECKMAPNAME ARENA007
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名75)
+$GLOBAL(团擂A队人名75).CHECKMAPNAME ARENA007
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名71)
+$GLOBAL(团擂B队人名71).CHECKMAPNAME ARENA007
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名72)
+$GLOBAL(团擂B队人名72).CHECKMAPNAME ARENA007
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名73)
+$GLOBAL(团擂B队人名73).CHECKMAPNAME ARENA007
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名74)
+$GLOBAL(团擂B队人名74).CHECKMAPNAME ARENA007
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名75)
+$GLOBAL(团擂B队人名75).CHECKMAPNAME ARENA007
+#ACT
+inc I42 1
+
+#IF
+equal I41 0
+equal I42 0
+#ACT
+break
+
+#IF
+equal I41 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功7
+
+#IF
+equal I42 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功7
+}
+
+[@ARENA008检测]
+{
+#IF
+random 1
+#ACT
+mov I41 0
+mov I42 0
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名81)
+$GLOBAL(团擂A队人名81).CHECKMAPNAME ARENA008
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名82)
+$GLOBAL(团擂A队人名82).CHECKMAPNAME ARENA008
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名83)
+$GLOBAL(团擂A队人名83).CHECKMAPNAME ARENA008
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名84)
+$GLOBAL(团擂A队人名84).CHECKMAPNAME ARENA008
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名85)
+$GLOBAL(团擂A队人名85).CHECKMAPNAME ARENA008
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名81)
+$GLOBAL(团擂B队人名81).CHECKMAPNAME ARENA008
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名82)
+$GLOBAL(团擂B队人名82).CHECKMAPNAME ARENA008
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名83)
+$GLOBAL(团擂B队人名83).CHECKMAPNAME ARENA008
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名84)
+$GLOBAL(团擂B队人名84).CHECKMAPNAME ARENA008
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名85)
+$GLOBAL(团擂B队人名85).CHECKMAPNAME ARENA008
+#ACT
+inc I42 1
+
+#IF
+equal I41 0
+equal I42 0
+#ACT
+break
+
+#IF
+equal I41 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功8
+
+#IF
+equal I42 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功8
+}
+
+[@ARENA009检测]
+{
+#IF
+random 1
+#ACT
+mov I41 0
+mov I42 0
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名91)
+$GLOBAL(团擂A队人名91).CHECKMAPNAME ARENA009
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名92)
+$GLOBAL(团擂A队人名92).CHECKMAPNAME ARENA009
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名93)
+$GLOBAL(团擂A队人名93).CHECKMAPNAME ARENA009
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名94)
+$GLOBAL(团擂A队人名94).CHECKMAPNAME ARENA009
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名95)
+$GLOBAL(团擂A队人名95).CHECKMAPNAME ARENA009
+#ACT
+inc I41 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名91)
+$GLOBAL(团擂B队人名91).CHECKMAPNAME ARENA009
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名92)
+$GLOBAL(团擂B队人名92).CHECKMAPNAME ARENA009
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名93)
+$GLOBAL(团擂B队人名93).CHECKMAPNAME ARENA009
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名94)
+$GLOBAL(团擂B队人名94).CHECKMAPNAME ARENA009
+#ACT
+inc I42 1
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名95)
+$GLOBAL(团擂B队人名95).CHECKMAPNAME ARENA009
+#ACT
+inc I42 1
+
+#IF
+equal I41 0
+equal I42 0
+#ACT
+break
+
+#IF
+equal I41 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体攻擂成功9
+
+#IF
+equal I42 0
+#ACT
+break
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @团体守擂成功9
+}
+
+[@团体攻擂成功1]
+{
+#ACT
+;B队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂B队人名11)>队伍在英雄擂台一号攻擂成功，赢取了<$GLOBAL(单团擂台赛金1)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金1)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名11) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名11).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂A队人名11).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂A队人名11) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名11).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体1
+}
+
+[@团体攻擂成功2]
+{
+#ACT
+;B队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂B队人名21)>队伍在英雄擂台一号攻擂成功，赢取了<$GLOBAL(单团擂台赛金2)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金2)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名21) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名21).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂A队人名21).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂A队人名21) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名21).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体2
+}
+
+[@团体攻擂成功3]
+{
+#ACT
+;B队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂B队人名31)>队伍在英雄擂台一号攻擂成功，赢取了<$GLOBAL(单团擂台赛金3)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金3)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名31) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名31).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂A队人名31).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂A队人名31) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名31).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体3
+}
+
+[@团体攻擂成功4]
+{
+#ACT
+;B队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂B队人名41)>队伍在英雄擂台一号攻擂成功，赢取了<$GLOBAL(单团擂台赛金4)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金4)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名41) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名41).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂A队人名41).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂A队人名41) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名41).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体4
+}
+
+[@团体攻擂成功5]
+{
+#ACT
+;B队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂B队人名51)>队伍在英雄擂台一号攻擂成功，赢取了<$GLOBAL(单团擂台赛金5)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金5)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名51) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名51).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂A队人名51).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂A队人名51) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名51).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体5
+}
+
+[@团体攻擂成功6]
+{
+#ACT
+;B队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂B队人名61)>队伍在英雄擂台一号攻擂成功，赢取了<$GLOBAL(单团擂台赛金6)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金6)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名61) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名61).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂A队人名61).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂A队人名61) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名61).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体6
+}
+
+[@团体攻擂成功7]
+{
+#ACT
+;B队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂B队人名71)>队伍在英雄擂台一号攻擂成功，赢取了<$GLOBAL(单团擂台赛金7)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金7)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名71) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名71).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂A队人名71).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂A队人名71) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名71).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体7
+}
+
+[@团体攻擂成功8]
+{
+#ACT
+;B队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂B队人名81)>队伍在英雄擂台一号攻擂成功，赢取了<$GLOBAL(单团擂台赛金8)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金8)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名81) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名81).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂A队人名81).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂A队人名81) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名81).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体8
+}
+
+[@团体攻擂成功9]
+{
+#ACT
+;B队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂B队人名91)>队伍在英雄擂台一号攻擂成功，赢取了<$GLOBAL(单团擂台赛金9)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金9)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名91) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名91).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂A队人名91).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂A队人名91) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂A队人名91).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体9
+}
+
+[@团体守擂成功1]
+{
+#IF
+random 1
+#ACT
+;A队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂A队人名11)>队伍在英雄擂台一号守擂成功，赢取了<$GLOBAL(单团擂台赛金1)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金1)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名11) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名11).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂B队人名11).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂B队人名11) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂B队人名11).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体1
+}
+
+[@团体守擂成功2]
+{
+#ACT
+;A队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂A队人名21)>队伍在英雄擂台一号守擂成功，赢取了<$GLOBAL(单团擂台赛金2)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金2)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名21) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名21).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂B队人名21).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂B队人名21) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂B队人名21).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体2
+}
+
+[@团体守擂成功3]
+{
+#ACT
+;A队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂A队人名31)>队伍在英雄擂台一号守擂成功，赢取了<$GLOBAL(单团擂台赛金3)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金3)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名31) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名31).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂B队人名31).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂B队人名31) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂B队人名31).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体3
+}
+
+[@团体守擂成功4]
+{
+#ACT
+;A队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂A队人名41)>队伍在英雄擂台一号守擂成功，赢取了<$GLOBAL(单团擂台赛金4)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金4)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名41) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名41).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂B队人名41).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂B队人名41) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂B队人名41).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体4
+}
+
+[@团体守擂成功5]
+{
+#ACT
+;A队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂A队人名51)>队伍在英雄擂台一号守擂成功，赢取了<$GLOBAL(单团擂台赛金5)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金5)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名51) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名51).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂B队人名51).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂B队人名51) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂B队人名51).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体5
+}
+
+[@团体守擂成功6]
+{
+#ACT
+;A队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂A队人名61)>队伍在英雄擂台一号守擂成功，赢取了<$GLOBAL(单团擂台赛金6)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金6)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名61) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名61).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂B队人名61).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂B队人名61) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂B队人名61).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体6
+}
+
+[@团体守擂成功7]
+{
+#ACT
+;A队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂A队人名71)>队伍在英雄擂台一号守擂成功，赢取了<$GLOBAL(单团擂台赛金7)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金7)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名71) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名71).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂B队人名71).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂B队人名71) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂B队人名71).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体7
+}
+
+[@团体守擂成功8]
+{
+#ACT
+;A队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂A队人名81)>队伍在英雄擂台一号守擂成功，赢取了<$GLOBAL(单团擂台赛金8)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金8)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名81) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名81).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂B队人名81).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂B队人名81) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂B队人名81).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体8
+}
+
+[@团体守擂成功9]
+{
+#ACT
+;A队在比赛场中的成员每人获得3点比武积分
+SENDMSG 0 <$GLOBAL(团擂A队人名91)>队伍在英雄擂台一号守擂成功，赢取了<$GLOBAL(单团擂台赛金9)>金币的奖励，欢迎众位英雄前来挑战
+mov I41 $GLOBAL(单团擂台赛金9)
+dec I41 50000
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名91) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名91).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+mov S0
+$GLOBAL(团擂B队人名91).Calcvar HUMAN ArenaCondition = $STR(S0)
+SaveExVar $STR(S0) $GLOBAL(团擂B队人名91) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+$GLOBAL(团擂B队人名91).LOADVAR HUMAN ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体9
+}
+
+[@团体双方平手1]
+{
+#ACT
+SENDMSG 0 <$GLOBAL(团擂A队人名11)>与<$GLOBAL(团擂B队人名11)>两只队伍实力不相上下，此场比赛为平局
+mov I41 $GLOBAL(单团擂台赛金1)
+dec I41 50000
+$GLOBAL(团擂A队人名11).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂A队人名11) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名11) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名11).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名11).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂B队人名11) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名11) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名11).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体1
+}
+
+[@团体双方平手2]
+{
+#ACT
+SENDMSG 0 <$GLOBAL(团擂A队人名21)>与<$GLOBAL(团擂B队人名21)>两只队伍实力不相上下，此场比赛为平局
+mov I41 $GLOBAL(单团擂台赛金2)
+dec I41 50000
+$GLOBAL(团擂A队人名21).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂A队人名21) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名21) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名21).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名21).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂B队人名21) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名21) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名21).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体2
+}
+
+[@团体双方平手3]
+{
+#ACT
+SENDMSG 0 <$GLOBAL(团擂A队人名31)>与<$GLOBAL(团擂B队人名31)>两只队伍实力不相上下，此场比赛为平局
+mov I41 $GLOBAL(单团擂台赛金3)
+dec I41 50000
+$GLOBAL(团擂A队人名31).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂A队人名31) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名31) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名31).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名31).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂B队人名31) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名31) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名31).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体3
+}
+
+[@团体双方平手4]
+{
+#ACT
+SENDMSG 0 <$GLOBAL(团擂A队人名41)>与<$GLOBAL(团擂B队人名41)>两只队伍实力不相上下，此场比赛为平局
+mov I41 $GLOBAL(单团擂台赛金4)
+dec I41 50000
+$GLOBAL(团擂A队人名41).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂A队人名41) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名41) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名41).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名41).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂B队人名41) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名41) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名41).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体4
+}
+
+[@团体双方平手5]
+{
+#ACT
+SENDMSG 0 <$GLOBAL(团擂A队人名51)>与<$GLOBAL(团擂B队人名51)>两只队伍实力不相上下，此场比赛为平局
+mov I41 $GLOBAL(单团擂台赛金5)
+dec I41 50000
+$GLOBAL(团擂A队人名51).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂A队人名51) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名51) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名51).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名51).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂B队人名51) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名51) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名51).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体5
+}
+
+[@团体双方平手6]
+{
+#ACT
+SENDMSG 0 <$GLOBAL(团擂A队人名61)>与<$GLOBAL(团擂B队人名61)>两只队伍实力不相上下，此场比赛为平局
+mov I41 $GLOBAL(单团擂台赛金6)
+dec I41 50000
+$GLOBAL(团擂A队人名61).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂A队人名61) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名61) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名61).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名61).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂B队人名61) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名61) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名61).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体6
+}
+
+[@团体双方平手7]
+{
+#ACT
+SENDMSG 0 <$GLOBAL(团擂A队人名71)>与<$GLOBAL(团擂B队人名71)>两只队伍实力不相上下，此场比赛为平局
+mov I41 $GLOBAL(单团擂台赛金7)
+dec I41 50000
+$GLOBAL(团擂A队人名71).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂A队人名71) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名71) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名71).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名71).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂B队人名71) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名71) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名71).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体7
+}
+
+[@团体双方平手8]
+{
+#ACT
+SENDMSG 0 <$GLOBAL(团擂A队人名81)>与<$GLOBAL(团擂B队人名81)>两只队伍实力不相上下，此场比赛为平局
+mov I41 $GLOBAL(单团擂台赛金8)
+dec I41 50000
+$GLOBAL(团擂A队人名81).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂A队人名81) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名81) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名81).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名81).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂B队人名81) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名81) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名81).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体8
+}
+
+[@团体双方平手9]
+{
+#ACT
+SENDMSG 0 <$GLOBAL(团擂A队人名91)>与<$GLOBAL(团擂B队人名91)>两只队伍实力不相上下，此场比赛为平局
+mov I41 $GLOBAL(单团擂台赛金9)
+dec I41 50000
+$GLOBAL(团擂A队人名91).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂A队人名91) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂A队人名91) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂A队人名91).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名91).Calcvar HUMAN ArenaCondition = 平
+SaveExVar 平 $GLOBAL(团擂B队人名91) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SaveExVar $STR(I41) $GLOBAL(团擂B队人名91) ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+$GLOBAL(团擂B队人名91).LOADVAR HUMAN ArenaCompetition ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+#CALL [\Features\HeroesChallenge\团体擂台.txt] @清理团体9
+}
+
+[@清理团体1]
+{
+#IF
+random 1
+#ACT
+mov A13
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名12)
+#ACT
+$GLOBAL(团擂A队人名12).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名12 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名12) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名13)
+#ACT
+$GLOBAL(团擂A队人名13.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名13 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名13) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名14)
+#ACT
+$GLOBAL(团擂A队人名14).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名14 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名14) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名15)
+#ACT
+$GLOBAL(团擂A队人名15).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名15 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名15) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名12)
+#ACT
+$GLOBAL(团擂B队人名12).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名12 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名12) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名13)
+#ACT
+$GLOBAL(团擂B队人名13.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名13 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名13) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名14)
+#ACT
+$GLOBAL(团擂B队人名14).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名14 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名14) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名15)
+#ACT
+$GLOBAL(团擂B队人名15).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名15 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名15) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+#ACT
+$GLOBAL(团擂A队人名11).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名12).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名13).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名14).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名15).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名11).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名12).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名13).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名14).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名15).CHANGENAMECOLOR 255
+Calcvar GLOBAL 单团擂台状态1 =
+Calcvar GLOBAL 单团擂台赛金1 =
+Calcvar GLOBAL 团擂A队人名11 =
+Calcvar GLOBAL 团擂A队人名12 =
+Calcvar GLOBAL 团擂A队人名13 =
+Calcvar GLOBAL 团擂A队人名14 =
+Calcvar GLOBAL 团擂A队人名15 =
+Calcvar GLOBAL 团擂B队人名11 =
+Calcvar GLOBAL 团擂B队人名12 =
+Calcvar GLOBAL 团擂B队人名13 =
+Calcvar GLOBAL 团擂B队人名14 =
+Calcvar GLOBAL 团擂B队人名15 =
+Calcvar GLOBAL 团擂A队信息11 =
+Calcvar GLOBAL 团擂A队信息12 =
+Calcvar GLOBAL 团擂A队信息13 =
+Calcvar GLOBAL 团擂A队信息14 =
+Calcvar GLOBAL 团擂A队信息15 =
+Calcvar GLOBAL 团擂B队信息11 =
+Calcvar GLOBAL 团擂B队信息12 =
+Calcvar GLOBAL 团擂B队信息13 =
+Calcvar GLOBAL 团擂B队信息14 =
+Calcvar GLOBAL 团擂B队信息15 =
+Calcvar GLOBAL 团擂A队入场1 =
+Calcvar GLOBAL 团擂B队入场1 =
+Calcvar GLOBAL 团擂A队击杀1 =
+Calcvar GLOBAL 团擂B队击杀1 =
+}
+
+[@清理团体2]
+{
+#IF
+random 1
+#ACT
+mov A13
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名22)
+#ACT
+$GLOBAL(团擂A队人名22).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名22 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名22) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名23)
+#ACT
+$GLOBAL(团擂A队人名23.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名23 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名23) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名24)
+#ACT
+$GLOBAL(团擂A队人名24).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名24 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名24) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名25)
+#ACT
+$GLOBAL(团擂A队人名25).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名25 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名25) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名22)
+#ACT
+$GLOBAL(团擂B队人名22).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名22 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名22) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名23)
+#ACT
+$GLOBAL(团擂B队人名23.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名23 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名23) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名24)
+#ACT
+$GLOBAL(团擂B队人名24).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名24 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名24) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名25)
+#ACT
+$GLOBAL(团擂B队人名25).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名25 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名25) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+#ACT
+$GLOBAL(团擂A队人名21).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名22).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名23).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名24).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名25).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名21).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名22).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名23).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名24).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名25).CHANGENAMECOLOR 255
+Calcvar GLOBAL 单团擂台状态2 =
+Calcvar GLOBAL 单团擂台赛金2 =
+Calcvar GLOBAL 团擂A队人名21 =
+Calcvar GLOBAL 团擂A队人名22 =
+Calcvar GLOBAL 团擂A队人名23 =
+Calcvar GLOBAL 团擂A队人名24 =
+Calcvar GLOBAL 团擂A队人名25 =
+Calcvar GLOBAL 团擂B队人名21 =
+Calcvar GLOBAL 团擂B队人名22 =
+Calcvar GLOBAL 团擂B队人名23 =
+Calcvar GLOBAL 团擂B队人名24 =
+Calcvar GLOBAL 团擂B队人名25 =
+Calcvar GLOBAL 团擂A队信息21 =
+Calcvar GLOBAL 团擂A队信息22 =
+Calcvar GLOBAL 团擂A队信息23 =
+Calcvar GLOBAL 团擂A队信息24 =
+Calcvar GLOBAL 团擂A队信息25 =
+Calcvar GLOBAL 团擂B队信息21 =
+Calcvar GLOBAL 团擂B队信息22 =
+Calcvar GLOBAL 团擂B队信息23 =
+Calcvar GLOBAL 团擂B队信息24 =
+Calcvar GLOBAL 团擂B队信息25 =
+Calcvar GLOBAL 团擂A队入场2 =
+Calcvar GLOBAL 团擂B队入场2 =
+Calcvar GLOBAL 团擂A队击杀2 =
+Calcvar GLOBAL 团擂B队击杀2 =
+}
+
+[@清理团体3]
+{
+#IF
+random 1
+#ACT
+mov A13
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名32)
+#ACT
+$GLOBAL(团擂A队人名32).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名32 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名32) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名33)
+#ACT
+$GLOBAL(团擂A队人名33.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名33 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名33) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名34)
+#ACT
+$GLOBAL(团擂A队人名34).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名34 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名34) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名35)
+#ACT
+$GLOBAL(团擂A队人名35).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名35 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名35) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名32)
+#ACT
+$GLOBAL(团擂B队人名32).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名32 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名32) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名33)
+#ACT
+$GLOBAL(团擂B队人名33.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名33 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名33) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名34)
+#ACT
+$GLOBAL(团擂B队人名34).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名34 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名34) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名35)
+#ACT
+$GLOBAL(团擂B队人名35).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名35 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名35) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+#ACT
+$GLOBAL(团擂A队人名31).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名32).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名33).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名34).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名35).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名31).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名32).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名33).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名34).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名35).CHANGENAMECOLOR 255
+Calcvar GLOBAL 单团擂台状态3 =
+Calcvar GLOBAL 单团擂台赛金3 =
+Calcvar GLOBAL 团擂A队人名31 =
+Calcvar GLOBAL 团擂A队人名32 =
+Calcvar GLOBAL 团擂A队人名33 =
+Calcvar GLOBAL 团擂A队人名34 =
+Calcvar GLOBAL 团擂A队人名35 =
+Calcvar GLOBAL 团擂B队人名31 =
+Calcvar GLOBAL 团擂B队人名32 =
+Calcvar GLOBAL 团擂B队人名33 =
+Calcvar GLOBAL 团擂B队人名34 =
+Calcvar GLOBAL 团擂B队人名35 =
+Calcvar GLOBAL 团擂A队信息31 =
+Calcvar GLOBAL 团擂A队信息32 =
+Calcvar GLOBAL 团擂A队信息33 =
+Calcvar GLOBAL 团擂A队信息34 =
+Calcvar GLOBAL 团擂A队信息35 =
+Calcvar GLOBAL 团擂B队信息31 =
+Calcvar GLOBAL 团擂B队信息32 =
+Calcvar GLOBAL 团擂B队信息33 =
+Calcvar GLOBAL 团擂B队信息34 =
+Calcvar GLOBAL 团擂B队信息35 =
+Calcvar GLOBAL 团擂A队入场3 =
+Calcvar GLOBAL 团擂B队入场3 =
+Calcvar GLOBAL 团擂A队击杀3 =
+Calcvar GLOBAL 团擂B队击杀3 =
+}
+
+[@清理团体4]
+{
+#IF
+random 1
+#ACT
+mov A13
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名42)
+#ACT
+$GLOBAL(团擂A队人名42).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名42 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名42) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名43)
+#ACT
+$GLOBAL(团擂A队人名43.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名43 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名43) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名44)
+#ACT
+$GLOBAL(团擂A队人名44).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名44 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名44) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名45)
+#ACT
+$GLOBAL(团擂A队人名45).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名45 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名45) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名42)
+#ACT
+$GLOBAL(团擂B队人名42).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名42 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名42) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名43)
+#ACT
+$GLOBAL(团擂B队人名43.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名43 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名43) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名44)
+#ACT
+$GLOBAL(团擂B队人名44).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名44 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名44) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名45)
+#ACT
+$GLOBAL(团擂B队人名45).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名45 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名45) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+#ACT
+$GLOBAL(团擂A队人名41).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名42).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名43).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名44).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名45).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名41).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名42).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名43).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名44).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名45).CHANGENAMECOLOR 255
+Calcvar GLOBAL 单团擂台状态4 =
+Calcvar GLOBAL 单团擂台赛金4 =
+Calcvar GLOBAL 团擂A队人名41 =
+Calcvar GLOBAL 团擂A队人名42 =
+Calcvar GLOBAL 团擂A队人名43 =
+Calcvar GLOBAL 团擂A队人名44 =
+Calcvar GLOBAL 团擂A队人名45 =
+Calcvar GLOBAL 团擂B队人名41 =
+Calcvar GLOBAL 团擂B队人名42 =
+Calcvar GLOBAL 团擂B队人名43 =
+Calcvar GLOBAL 团擂B队人名44 =
+Calcvar GLOBAL 团擂B队人名45 =
+Calcvar GLOBAL 团擂A队信息41 =
+Calcvar GLOBAL 团擂A队信息42 =
+Calcvar GLOBAL 团擂A队信息43 =
+Calcvar GLOBAL 团擂A队信息44 =
+Calcvar GLOBAL 团擂A队信息45 =
+Calcvar GLOBAL 团擂B队信息41 =
+Calcvar GLOBAL 团擂B队信息42 =
+Calcvar GLOBAL 团擂B队信息43 =
+Calcvar GLOBAL 团擂B队信息44 =
+Calcvar GLOBAL 团擂B队信息45 =
+Calcvar GLOBAL 团擂A队入场4 =
+Calcvar GLOBAL 团擂B队入场4 =
+Calcvar GLOBAL 团擂A队击杀4 =
+Calcvar GLOBAL 团擂B队击杀4 =
+}
+
+[@清理团体5]
+{
+#IF
+random 1
+#ACT
+mov A13
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名52)
+#ACT
+$GLOBAL(团擂A队人名52).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名52 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名52) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名53)
+#ACT
+$GLOBAL(团擂A队人名53.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名53 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名53) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名54)
+#ACT
+$GLOBAL(团擂A队人名54).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名54 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名54) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名55)
+#ACT
+$GLOBAL(团擂A队人名55).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名55 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名55) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名52)
+#ACT
+$GLOBAL(团擂B队人名52).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名52 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名52) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名53)
+#ACT
+$GLOBAL(团擂B队人名53.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名53 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名53) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名54)
+#ACT
+$GLOBAL(团擂B队人名54).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名54 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名54) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名55)
+#ACT
+$GLOBAL(团擂B队人名55).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名55 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名55) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+#ACT
+$GLOBAL(团擂A队人名51).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名52).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名53).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名54).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名55).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名51).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名52).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名53).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名54).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名55).CHANGENAMECOLOR 255
+Calcvar GLOBAL 单团擂台状态5 =
+Calcvar GLOBAL 单团擂台赛金5 =
+Calcvar GLOBAL 团擂A队人名51 =
+Calcvar GLOBAL 团擂A队人名52 =
+Calcvar GLOBAL 团擂A队人名53 =
+Calcvar GLOBAL 团擂A队人名54 =
+Calcvar GLOBAL 团擂A队人名55 =
+Calcvar GLOBAL 团擂B队人名51 =
+Calcvar GLOBAL 团擂B队人名52 =
+Calcvar GLOBAL 团擂B队人名53 =
+Calcvar GLOBAL 团擂B队人名54 =
+Calcvar GLOBAL 团擂B队人名55 =
+Calcvar GLOBAL 团擂A队信息51 =
+Calcvar GLOBAL 团擂A队信息52 =
+Calcvar GLOBAL 团擂A队信息53 =
+Calcvar GLOBAL 团擂A队信息54 =
+Calcvar GLOBAL 团擂A队信息55 =
+Calcvar GLOBAL 团擂B队信息51 =
+Calcvar GLOBAL 团擂B队信息52 =
+Calcvar GLOBAL 团擂B队信息53 =
+Calcvar GLOBAL 团擂B队信息54 =
+Calcvar GLOBAL 团擂B队信息55 =
+Calcvar GLOBAL 团擂A队入场5 =
+Calcvar GLOBAL 团擂B队入场5 =
+Calcvar GLOBAL 团擂A队击杀5 =
+Calcvar GLOBAL 团擂B队击杀5 =
+}
+
+[@清理团体6]
+{
+#IF
+random 1
+#ACT
+mov A13
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名62)
+#ACT
+$GLOBAL(团擂A队人名62).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名62 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名62) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名63)
+#ACT
+$GLOBAL(团擂A队人名63.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名63 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名63) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名64)
+#ACT
+$GLOBAL(团擂A队人名64).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名64 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名64) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名65)
+#ACT
+$GLOBAL(团擂A队人名65).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名65 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名65) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名62)
+#ACT
+$GLOBAL(团擂B队人名62).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名62 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名62) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名63)
+#ACT
+$GLOBAL(团擂B队人名63.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名63 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名63) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名64)
+#ACT
+$GLOBAL(团擂B队人名64).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名64 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名64) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名65)
+#ACT
+$GLOBAL(团擂B队人名65).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名65 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名65) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+#ACT
+$GLOBAL(团擂A队人名61).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名62).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名63).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名64).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名65).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名61).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名62).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名63).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名64).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名65).CHANGENAMECOLOR 255
+Calcvar GLOBAL 单团擂台状态6 =
+Calcvar GLOBAL 单团擂台赛金6 =
+Calcvar GLOBAL 团擂A队人名61 =
+Calcvar GLOBAL 团擂A队人名62 =
+Calcvar GLOBAL 团擂A队人名63 =
+Calcvar GLOBAL 团擂A队人名64 =
+Calcvar GLOBAL 团擂A队人名65 =
+Calcvar GLOBAL 团擂B队人名61 =
+Calcvar GLOBAL 团擂B队人名62 =
+Calcvar GLOBAL 团擂B队人名63 =
+Calcvar GLOBAL 团擂B队人名64 =
+Calcvar GLOBAL 团擂B队人名65 =
+Calcvar GLOBAL 团擂A队信息61 =
+Calcvar GLOBAL 团擂A队信息62 =
+Calcvar GLOBAL 团擂A队信息63 =
+Calcvar GLOBAL 团擂A队信息64 =
+Calcvar GLOBAL 团擂A队信息65 =
+Calcvar GLOBAL 团擂B队信息61 =
+Calcvar GLOBAL 团擂B队信息62 =
+Calcvar GLOBAL 团擂B队信息63 =
+Calcvar GLOBAL 团擂B队信息64 =
+Calcvar GLOBAL 团擂B队信息65 =
+Calcvar GLOBAL 团擂A队入场6 =
+Calcvar GLOBAL 团擂B队入场6 =
+Calcvar GLOBAL 团擂A队击杀6 =
+Calcvar GLOBAL 团擂B队击杀6 =
+}
+
+[@清理团体7]
+{
+#IF
+random 1
+#ACT
+mov A13
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名72)
+#ACT
+$GLOBAL(团擂A队人名72).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名72 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名72) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名73)
+#ACT
+$GLOBAL(团擂A队人名73.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名73 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名73) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名74)
+#ACT
+$GLOBAL(团擂A队人名74).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名74 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名74) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名75)
+#ACT
+$GLOBAL(团擂A队人名75).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名75 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名75) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名72)
+#ACT
+$GLOBAL(团擂B队人名72).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名72 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名72) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名73)
+#ACT
+$GLOBAL(团擂B队人名73.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名73 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名73) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名74)
+#ACT
+$GLOBAL(团擂B队人名74).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名74 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名74) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名75)
+#ACT
+$GLOBAL(团擂B队人名75).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名75 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名75) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+#ACT
+$GLOBAL(团擂A队人名71).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名72).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名73).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名74).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名75).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名71).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名72).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名73).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名74).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名75).CHANGENAMECOLOR 255
+Calcvar GLOBAL 单团擂台状态7 =
+Calcvar GLOBAL 单团擂台赛金7 =
+Calcvar GLOBAL 团擂A队人名71 =
+Calcvar GLOBAL 团擂A队人名72 =
+Calcvar GLOBAL 团擂A队人名73 =
+Calcvar GLOBAL 团擂A队人名74 =
+Calcvar GLOBAL 团擂A队人名75 =
+Calcvar GLOBAL 团擂B队人名71 =
+Calcvar GLOBAL 团擂B队人名72 =
+Calcvar GLOBAL 团擂B队人名73 =
+Calcvar GLOBAL 团擂B队人名74 =
+Calcvar GLOBAL 团擂B队人名75 =
+Calcvar GLOBAL 团擂A队信息71 =
+Calcvar GLOBAL 团擂A队信息72 =
+Calcvar GLOBAL 团擂A队信息73 =
+Calcvar GLOBAL 团擂A队信息74 =
+Calcvar GLOBAL 团擂A队信息75 =
+Calcvar GLOBAL 团擂B队信息71 =
+Calcvar GLOBAL 团擂B队信息72 =
+Calcvar GLOBAL 团擂B队信息73 =
+Calcvar GLOBAL 团擂B队信息74 =
+Calcvar GLOBAL 团擂B队信息75 =
+Calcvar GLOBAL 团擂A队入场7 =
+Calcvar GLOBAL 团擂B队入场7 =
+Calcvar GLOBAL 团擂A队击杀7 =
+Calcvar GLOBAL 团擂B队击杀7 =
+}
+
+[@清理团体8]
+{
+#IF
+random 1
+#ACT
+mov A13
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名82)
+#ACT
+$GLOBAL(团擂A队人名82).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名82 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名82) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名83)
+#ACT
+$GLOBAL(团擂A队人名83.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名83 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名83) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名84)
+#ACT
+$GLOBAL(团擂A队人名84).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名84 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名84) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名85)
+#ACT
+$GLOBAL(团擂A队人名85).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名85 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名85) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名82)
+#ACT
+$GLOBAL(团擂B队人名82).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名82 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名82) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名83)
+#ACT
+$GLOBAL(团擂B队人名83.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名83 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名83) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名84)
+#ACT
+$GLOBAL(团擂B队人名84).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名84 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名84) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名85)
+#ACT
+$GLOBAL(团擂B队人名85).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名85 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名85) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+#ACT
+$GLOBAL(团擂A队人名81).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名82).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名83).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名84).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名85).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名81).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名82).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名83).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名84).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名85).CHANGENAMECOLOR 255
+Calcvar GLOBAL 单团擂台状态8 =
+Calcvar GLOBAL 单团擂台赛金8 =
+Calcvar GLOBAL 团擂A队人名81 =
+Calcvar GLOBAL 团擂A队人名82 =
+Calcvar GLOBAL 团擂A队人名83 =
+Calcvar GLOBAL 团擂A队人名84 =
+Calcvar GLOBAL 团擂A队人名85 =
+Calcvar GLOBAL 团擂B队人名81 =
+Calcvar GLOBAL 团擂B队人名82 =
+Calcvar GLOBAL 团擂B队人名83 =
+Calcvar GLOBAL 团擂B队人名84 =
+Calcvar GLOBAL 团擂B队人名85 =
+Calcvar GLOBAL 团擂A队信息81 =
+Calcvar GLOBAL 团擂A队信息82 =
+Calcvar GLOBAL 团擂A队信息83 =
+Calcvar GLOBAL 团擂A队信息84 =
+Calcvar GLOBAL 团擂A队信息85 =
+Calcvar GLOBAL 团擂B队信息81 =
+Calcvar GLOBAL 团擂B队信息82 =
+Calcvar GLOBAL 团擂B队信息83 =
+Calcvar GLOBAL 团擂B队信息84 =
+Calcvar GLOBAL 团擂B队信息85 =
+Calcvar GLOBAL 团擂A队入场8 =
+Calcvar GLOBAL 团擂B队入场8 =
+Calcvar GLOBAL 团擂A队击杀8 =
+Calcvar GLOBAL 团擂B队击杀8 =
+}
+
+[@清理团体9]
+{
+#IF
+random 1
+#ACT
+mov A13
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名92)
+#ACT
+$GLOBAL(团擂A队人名92).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名92 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名92) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名93)
+#ACT
+$GLOBAL(团擂A队人名93.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名93 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名93) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名94)
+#ACT
+$GLOBAL(团擂A队人名94).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名94 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名94) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂A队人名95)
+#ACT
+$GLOBAL(团擂A队人名95).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂A队人名95 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂A队人名95) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名92)
+#ACT
+$GLOBAL(团擂B队人名92).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名92 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名92) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名93)
+#ACT
+$GLOBAL(团擂B队人名93.Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名93 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名93) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名94)
+#ACT
+$GLOBAL(团擂B队人名94).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名94 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名94) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+CheckOnline $GLOBAL(团擂B队人名95)
+#ACT
+$GLOBAL(团擂B队人名95).Calcvar HUMAN ArenaCondition =
+
+#IF
+!CHECKVAR GLOBAL 团擂B队人名95 = 
+#ACT
+SaveExVar $STR(A13) $GLOBAL(团擂B队人名95) ArenaCondition ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+
+#IF
+#ACT
+$GLOBAL(团擂A队人名91).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名92).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名93).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名94).CHANGENAMECOLOR 255
+$GLOBAL(团擂A队人名95).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名91).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名92).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名93).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名94).CHANGENAMECOLOR 255
+$GLOBAL(团擂B队人名95).CHANGENAMECOLOR 255
+Calcvar GLOBAL 单团擂台状态9 =
+Calcvar GLOBAL 单团擂台赛金9 =
+Calcvar GLOBAL 团擂A队人名91 =
+Calcvar GLOBAL 团擂A队人名92 =
+Calcvar GLOBAL 团擂A队人名93 =
+Calcvar GLOBAL 团擂A队人名94 =
+Calcvar GLOBAL 团擂A队人名95 =
+Calcvar GLOBAL 团擂B队人名91 =
+Calcvar GLOBAL 团擂B队人名92 =
+Calcvar GLOBAL 团擂B队人名93 =
+Calcvar GLOBAL 团擂B队人名94 =
+Calcvar GLOBAL 团擂B队人名95 =
+Calcvar GLOBAL 团擂A队信息91 =
+Calcvar GLOBAL 团擂A队信息92 =
+Calcvar GLOBAL 团擂A队信息93 =
+Calcvar GLOBAL 团擂A队信息94 =
+Calcvar GLOBAL 团擂A队信息95 =
+Calcvar GLOBAL 团擂B队信息91 =
+Calcvar GLOBAL 团擂B队信息92 =
+Calcvar GLOBAL 团擂B队信息93 =
+Calcvar GLOBAL 团擂B队信息94 =
+Calcvar GLOBAL 团擂B队信息95 =
+Calcvar GLOBAL 团擂A队入场9 =
+Calcvar GLOBAL 团擂B队入场9 =
+Calcvar GLOBAL 团擂A队击杀9 =
+Calcvar GLOBAL 团擂B队击杀9 =
+}

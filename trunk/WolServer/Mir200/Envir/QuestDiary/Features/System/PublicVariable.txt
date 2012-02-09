@@ -1,0 +1,429 @@
+[@声明公共变量]
+{
+#IF
+random 1
+#ACT
+;英雄擂台
+VAR Integer GLOBAL 单团擂台状态1
+VAR Integer GLOBAL 单团擂台状态2
+VAR Integer GLOBAL 单团擂台状态3
+VAR Integer GLOBAL 单团擂台状态4
+VAR Integer GLOBAL 单团擂台状态5
+VAR Integer GLOBAL 单团擂台状态6
+VAR Integer GLOBAL 单团擂台状态7
+VAR Integer GLOBAL 单团擂台状态8
+VAR Integer GLOBAL 单团擂台状态9
+
+VAR Integer GLOBAL 单团擂台赛金1
+VAR Integer GLOBAL 单团擂台赛金2
+VAR Integer GLOBAL 单团擂台赛金3
+VAR Integer GLOBAL 单团擂台赛金4
+VAR Integer GLOBAL 单团擂台赛金5
+VAR Integer GLOBAL 单团擂台赛金6
+VAR Integer GLOBAL 单团擂台赛金7
+VAR Integer GLOBAL 单团擂台赛金8
+VAR Integer GLOBAL 单团擂台赛金9
+
+VAR String GLOBAL 单人擂主名称1
+VAR String GLOBAL 单人擂主名称2
+VAR String GLOBAL 单人擂主名称3
+VAR String GLOBAL 单人擂主名称4
+VAR String GLOBAL 单人擂主名称5
+VAR String GLOBAL 单人擂主名称6
+VAR String GLOBAL 单人擂主名称7
+VAR String GLOBAL 单人擂主名称8
+VAR String GLOBAL 单人擂主名称9
+
+VAR String GLOBAL 单人攻擂人名1
+VAR String GLOBAL 单人攻擂人名2
+VAR String GLOBAL 单人攻擂人名3
+VAR String GLOBAL 单人攻擂人名4
+VAR String GLOBAL 单人攻擂人名5
+VAR String GLOBAL 单人攻擂人名6
+VAR String GLOBAL 单人攻擂人名7
+VAR String GLOBAL 单人攻擂人名8
+VAR String GLOBAL 单人攻擂人名9
+
+VAR String GLOBAL 单人擂主信息1
+VAR String GLOBAL 单人擂主信息2
+VAR String GLOBAL 单人擂主信息3
+VAR String GLOBAL 单人擂主信息4
+VAR String GLOBAL 单人擂主信息5
+VAR String GLOBAL 单人擂主信息6
+VAR String GLOBAL 单人擂主信息7
+VAR String GLOBAL 单人擂主信息8
+VAR String GLOBAL 单人擂主信息9
+
+VAR String GLOBAL 团擂A队人名11
+VAR String GLOBAL 团擂A队人名12
+VAR String GLOBAL 团擂A队人名13
+VAR String GLOBAL 团擂A队人名14
+VAR String GLOBAL 团擂A队人名15
+
+VAR String GLOBAL 团擂A队人名21
+VAR String GLOBAL 团擂A队人名22
+VAR String GLOBAL 团擂A队人名23
+VAR String GLOBAL 团擂A队人名24
+VAR String GLOBAL 团擂A队人名25
+
+VAR String GLOBAL 团擂A队人名31
+VAR String GLOBAL 团擂A队人名32
+VAR String GLOBAL 团擂A队人名33
+VAR String GLOBAL 团擂A队人名34
+VAR String GLOBAL 团擂A队人名35
+
+VAR String GLOBAL 团擂A队人名41
+VAR String GLOBAL 团擂A队人名42
+VAR String GLOBAL 团擂A队人名43
+VAR String GLOBAL 团擂A队人名44
+VAR String GLOBAL 团擂A队人名45
+
+VAR String GLOBAL 团擂A队人名51
+VAR String GLOBAL 团擂A队人名52
+VAR String GLOBAL 团擂A队人名53
+VAR String GLOBAL 团擂A队人名54
+VAR String GLOBAL 团擂A队人名55
+
+VAR String GLOBAL 团擂A队人名61
+VAR String GLOBAL 团擂A队人名62
+VAR String GLOBAL 团擂A队人名63
+VAR String GLOBAL 团擂A队人名64
+VAR String GLOBAL 团擂A队人名65
+
+VAR String GLOBAL 团擂A队人名71
+VAR String GLOBAL 团擂A队人名72
+VAR String GLOBAL 团擂A队人名73
+VAR String GLOBAL 团擂A队人名74
+VAR String GLOBAL 团擂A队人名75
+
+VAR String GLOBAL 团擂A队人名81
+VAR String GLOBAL 团擂A队人名82
+VAR String GLOBAL 团擂A队人名83
+VAR String GLOBAL 团擂A队人名84
+VAR String GLOBAL 团擂A队人名85
+
+VAR String GLOBAL 团擂A队人名91
+VAR String GLOBAL 团擂A队人名92
+VAR String GLOBAL 团擂A队人名93
+VAR String GLOBAL 团擂A队人名94
+VAR String GLOBAL 团擂A队人名95
+
+VAR String GLOBAL 团擂B队人名11
+VAR String GLOBAL 团擂B队人名12
+VAR String GLOBAL 团擂B队人名13
+VAR String GLOBAL 团擂B队人名14
+VAR String GLOBAL 团擂B队人名15
+
+VAR String GLOBAL 团擂B队人名21
+VAR String GLOBAL 团擂B队人名22
+VAR String GLOBAL 团擂B队人名23
+VAR String GLOBAL 团擂B队人名24
+VAR String GLOBAL 团擂B队人名25
+
+VAR String GLOBAL 团擂B队人名31
+VAR String GLOBAL 团擂B队人名32
+VAR String GLOBAL 团擂B队人名33
+VAR String GLOBAL 团擂B队人名34
+VAR String GLOBAL 团擂B队人名35
+
+VAR String GLOBAL 团擂B队人名41
+VAR String GLOBAL 团擂B队人名42
+VAR String GLOBAL 团擂B队人名43
+VAR String GLOBAL 团擂B队人名44
+VAR String GLOBAL 团擂B队人名45
+
+VAR String GLOBAL 团擂B队人名51
+VAR String GLOBAL 团擂B队人名52
+VAR String GLOBAL 团擂B队人名53
+VAR String GLOBAL 团擂B队人名54
+VAR String GLOBAL 团擂B队人名55
+
+VAR String GLOBAL 团擂B队人名61
+VAR String GLOBAL 团擂B队人名62
+VAR String GLOBAL 团擂B队人名63
+VAR String GLOBAL 团擂B队人名64
+VAR String GLOBAL 团擂B队人名65
+
+VAR String GLOBAL 团擂B队人名71
+VAR String GLOBAL 团擂B队人名72
+VAR String GLOBAL 团擂B队人名73
+VAR String GLOBAL 团擂B队人名74
+VAR String GLOBAL 团擂B队人名75
+
+VAR String GLOBAL 团擂B队人名81
+VAR String GLOBAL 团擂B队人名82
+VAR String GLOBAL 团擂B队人名83
+VAR String GLOBAL 团擂B队人名84
+VAR String GLOBAL 团擂B队人名85
+
+VAR String GLOBAL 团擂B队人名91
+VAR String GLOBAL 团擂B队人名92
+VAR String GLOBAL 团擂B队人名93
+VAR String GLOBAL 团擂B队人名94
+VAR String GLOBAL 团擂B队人名95
+
+VAR String GLOBAL 团擂A队信息11
+VAR String GLOBAL 团擂A队信息12
+VAR String GLOBAL 团擂A队信息13
+VAR String GLOBAL 团擂A队信息14
+VAR String GLOBAL 团擂A队信息15
+
+VAR String GLOBAL 团擂A队信息21
+VAR String GLOBAL 团擂A队信息22
+VAR String GLOBAL 团擂A队信息23
+VAR String GLOBAL 团擂A队信息24
+VAR String GLOBAL 团擂A队信息25
+
+VAR String GLOBAL 团擂A队信息31
+VAR String GLOBAL 团擂A队信息32
+VAR String GLOBAL 团擂A队信息33
+VAR String GLOBAL 团擂A队信息34
+VAR String GLOBAL 团擂A队信息35
+
+VAR String GLOBAL 团擂A队信息41
+VAR String GLOBAL 团擂A队信息42
+VAR String GLOBAL 团擂A队信息43
+VAR String GLOBAL 团擂A队信息44
+VAR String GLOBAL 团擂A队信息45
+
+VAR String GLOBAL 团擂A队信息51
+VAR String GLOBAL 团擂A队信息52
+VAR String GLOBAL 团擂A队信息53
+VAR String GLOBAL 团擂A队信息54
+VAR String GLOBAL 团擂A队信息55
+
+VAR String GLOBAL 团擂A队信息61
+VAR String GLOBAL 团擂A队信息62
+VAR String GLOBAL 团擂A队信息63
+VAR String GLOBAL 团擂A队信息64
+VAR String GLOBAL 团擂A队信息65
+
+VAR String GLOBAL 团擂A队信息71
+VAR String GLOBAL 团擂A队信息72
+VAR String GLOBAL 团擂A队信息73
+VAR String GLOBAL 团擂A队信息74
+VAR String GLOBAL 团擂A队信息75
+
+VAR String GLOBAL 团擂A队信息81
+VAR String GLOBAL 团擂A队信息82
+VAR String GLOBAL 团擂A队信息83
+VAR String GLOBAL 团擂A队信息84
+VAR String GLOBAL 团擂A队信息85
+
+VAR String GLOBAL 团擂A队信息91
+VAR String GLOBAL 团擂A队信息92
+VAR String GLOBAL 团擂A队信息93
+VAR String GLOBAL 团擂A队信息94
+VAR String GLOBAL 团擂A队信息95
+
+VAR String GLOBAL 团擂B队信息11
+VAR String GLOBAL 团擂B队信息12
+VAR String GLOBAL 团擂B队信息13
+VAR String GLOBAL 团擂B队信息14
+VAR String GLOBAL 团擂B队信息15
+
+VAR String GLOBAL 团擂B队信息21
+VAR String GLOBAL 团擂B队信息22
+VAR String GLOBAL 团擂B队信息23
+VAR String GLOBAL 团擂B队信息24
+VAR String GLOBAL 团擂B队信息25
+
+VAR String GLOBAL 团擂B队信息31
+VAR String GLOBAL 团擂B队信息32
+VAR String GLOBAL 团擂B队信息33
+VAR String GLOBAL 团擂B队信息34
+VAR String GLOBAL 团擂B队信息35
+
+VAR String GLOBAL 团擂B队信息41
+VAR String GLOBAL 团擂B队信息42
+VAR String GLOBAL 团擂B队信息43
+VAR String GLOBAL 团擂B队信息44
+VAR String GLOBAL 团擂B队信息45
+
+VAR String GLOBAL 团擂B队信息51
+VAR String GLOBAL 团擂B队信息52
+VAR String GLOBAL 团擂B队信息53
+VAR String GLOBAL 团擂B队信息54
+VAR String GLOBAL 团擂B队信息55
+
+VAR String GLOBAL 团擂B队信息61
+VAR String GLOBAL 团擂B队信息62
+VAR String GLOBAL 团擂B队信息63
+VAR String GLOBAL 团擂B队信息64
+VAR String GLOBAL 团擂B队信息65
+
+VAR String GLOBAL 团擂B队信息71
+VAR String GLOBAL 团擂B队信息72
+VAR String GLOBAL 团擂B队信息73
+VAR String GLOBAL 团擂B队信息74
+VAR String GLOBAL 团擂B队信息75
+
+VAR String GLOBAL 团擂B队信息81
+VAR String GLOBAL 团擂B队信息82
+VAR String GLOBAL 团擂B队信息83
+VAR String GLOBAL 团擂B队信息84
+VAR String GLOBAL 团擂B队信息85
+
+VAR String GLOBAL 团擂B队信息91
+VAR String GLOBAL 团擂B队信息92
+VAR String GLOBAL 团擂B队信息93
+VAR String GLOBAL 团擂B队信息94
+VAR String GLOBAL 团擂B队信息95
+
+VAR Integer GLOBAL 团擂A队入场1
+VAR Integer GLOBAL 团擂A队入场2
+VAR Integer GLOBAL 团擂A队入场3
+VAR Integer GLOBAL 团擂A队入场4
+VAR Integer GLOBAL 团擂A队入场5
+VAR Integer GLOBAL 团擂A队入场6
+VAR Integer GLOBAL 团擂A队入场7
+VAR Integer GLOBAL 团擂A队入场8
+VAR Integer GLOBAL 团擂A队入场9
+
+VAR Integer GLOBAL 团擂B队入场1
+VAR Integer GLOBAL 团擂B队入场2
+VAR Integer GLOBAL 团擂B队入场3
+VAR Integer GLOBAL 团擂B队入场4
+VAR Integer GLOBAL 团擂B队入场5
+VAR Integer GLOBAL 团擂B队入场6
+VAR Integer GLOBAL 团擂B队入场7
+VAR Integer GLOBAL 团擂B队入场8
+VAR Integer GLOBAL 团擂B队入场9
+
+VAR Integer GLOBAL 团擂A队击杀1
+VAR Integer GLOBAL 团擂A队击杀2
+VAR Integer GLOBAL 团擂A队击杀3
+VAR Integer GLOBAL 团擂A队击杀4
+VAR Integer GLOBAL 团擂A队击杀5
+VAR Integer GLOBAL 团擂A队击杀6
+VAR Integer GLOBAL 团擂A队击杀7
+VAR Integer GLOBAL 团擂A队击杀8
+VAR Integer GLOBAL 团擂A队击杀9
+
+VAR Integer GLOBAL 团擂B队击杀1
+VAR Integer GLOBAL 团擂B队击杀2
+VAR Integer GLOBAL 团擂B队击杀3
+VAR Integer GLOBAL 团擂B队击杀4
+VAR Integer GLOBAL 团擂B队击杀5
+VAR Integer GLOBAL 团擂B队击杀6
+VAR Integer GLOBAL 团擂B队击杀7
+VAR Integer GLOBAL 团擂B队击杀8
+VAR Integer GLOBAL 团擂B队击杀9
+
+VAR Integer GLOBAL 混乱对抗状态
+VAR Integer GLOBAL 混乱对抗赛金
+
+VAR String GLOBAL 混乱对抗人名1
+VAR String GLOBAL 混乱对抗人名2
+VAR String GLOBAL 混乱对抗人名3
+VAR String GLOBAL 混乱对抗人名4
+VAR String GLOBAL 混乱对抗人名5
+VAR String GLOBAL 混乱对抗人名6
+VAR String GLOBAL 混乱对抗人名7
+VAR String GLOBAL 混乱对抗人名8
+
+VAR String GLOBAL 混乱对抗信息1
+VAR String GLOBAL 混乱对抗信息2
+VAR String GLOBAL 混乱对抗信息3
+VAR String GLOBAL 混乱对抗信息4
+VAR String GLOBAL 混乱对抗信息5
+VAR String GLOBAL 混乱对抗信息6
+VAR String GLOBAL 混乱对抗信息7
+VAR String GLOBAL 混乱对抗信息8
+
+VAR Integer GLOBAL 生存挑战状态
+VAR Integer GLOBAL 生存挑战赛金
+
+VAR String GLOBAL 生存挑战人名1
+VAR String GLOBAL 生存挑战人名2
+VAR String GLOBAL 生存挑战人名3
+VAR String GLOBAL 生存挑战人名4
+VAR String GLOBAL 生存挑战人名5
+VAR String GLOBAL 生存挑战人名6
+VAR String GLOBAL 生存挑战人名7
+VAR String GLOBAL 生存挑战人名8
+VAR String GLOBAL 生存挑战人名9
+VAR String GLOBAL 生存挑战人名10
+
+VAR String GLOBAL 生存挑战信息1
+VAR String GLOBAL 生存挑战信息2
+VAR String GLOBAL 生存挑战信息3
+VAR String GLOBAL 生存挑战信息4
+VAR String GLOBAL 生存挑战信息5
+VAR String GLOBAL 生存挑战信息6
+VAR String GLOBAL 生存挑战信息7
+VAR String GLOBAL 生存挑战信息8
+VAR String GLOBAL 生存挑战信息9
+VAR String GLOBAL 生存挑战信息10
+
+;TreasureBox
+VAR Integer GLOBAL 今日百宝箱次数
+VAR Integer GLOBAL 昨日百宝箱次数
+VAR String GLOBAL 百宝箱排行一页
+VAR String GLOBAL 百宝箱排行二页
+
+;封魔阵
+VAR Integer GLOBAL WXXG001
+VAR Integer GLOBAL WXXG002
+VAR Integer GLOBAL WXXG003
+VAR Integer GLOBAL WXXG004
+VAR Integer GLOBAL WXXG005
+VAR Integer GLOBAL WXXG006
+VAR Integer GLOBAL WXXG007
+VAR Integer GLOBAL WXXG008
+VAR Integer GLOBAL WXXG009
+VAR Integer GLOBAL WXXG010
+
+
+;BOOS刷新
+VAR Integer GLOBAL BOSS001
+VAR Integer GLOBAL BOSS002
+VAR Integer GLOBAL BOSS003
+VAR Integer GLOBAL BOSS004
+VAR Integer GLOBAL BOSS005
+VAR Integer GLOBAL BOSS006
+VAR Integer GLOBAL BOSS007
+VAR Integer GLOBAL BOSS008
+VAR Integer GLOBAL BOSS009
+VAR Integer GLOBAL BOSS010
+VAR Integer GLOBAL BOSS011
+VAR Integer GLOBAL BOSS012
+VAR Integer GLOBAL BOSS013
+VAR Integer GLOBAL BOSS014
+VAR Integer GLOBAL BOSS015
+VAR Integer GLOBAL BOSS016
+VAR Integer GLOBAL BOSS017
+VAR Integer GLOBAL BOSS018
+VAR Integer GLOBAL BOSS019
+VAR Integer GLOBAL BOSS020
+VAR Integer GLOBAL BOSS021
+VAR Integer GLOBAL BOSS022
+VAR Integer GLOBAL BOSS023
+VAR Integer GLOBAL BOSS024
+VAR Integer GLOBAL BOSS025
+VAR Integer GLOBAL BOSS026
+VAR Integer GLOBAL BOSS027
+VAR Integer GLOBAL BOSS028
+VAR Integer GLOBAL BOSS029
+VAR Integer GLOBAL BOSS030
+VAR Integer GLOBAL BOSS031
+VAR Integer GLOBAL BOSS032
+VAR Integer GLOBAL BOSS033
+VAR Integer GLOBAL BOSS034
+VAR Integer GLOBAL BOSS035
+VAR Integer GLOBAL BOSS036
+VAR Integer GLOBAL BOSS037
+VAR Integer GLOBAL BOSS038
+VAR Integer GLOBAL BOSS039
+VAR Integer GLOBAL BOSS040
+VAR Integer GLOBAL BOSS041
+}
+
+[@读取公共变量]
+{
+#ACT
+LOADVAR GLOBAL 今日百宝箱次数 ..\QuestDiary\GameData\TreasureBox\TreasureBox.txt
+LOADVAR GLOBAL 昨日百宝箱次数 ..\QuestDiary\GameData\TreasureBox\TreasureBox.txt
+LOADVAR GLOBAL 百宝箱排行一页 ..\QuestDiary\GameData\TreasureBox\TreasureBox.txt
+LOADVAR GLOBAL 百宝箱排行二页 ..\QuestDiary\GameData\TreasureBox\TreasureBox.txt
+}

@@ -1,0 +1,483 @@
+;P0 矿石纯度\5=几率
+;P1 宝石等级*5=几率
+;P2 武器的黑暗属性 属性越大成功率越低
+;黑暗属性升级，1-3点需要200黑暗属性，4点以后需要500点
+;幸运符增加10%成功率
+[@黑暗武器]
+{
+\\
+　　魔道修行注重炼器，将心魔附魔在武器上，只能临时提\
+升武器的威力，非长久之计。用残留在武器上的黑暗魔力来\
+修炼武器，可以<color=green 永久提升武器威力>，这是魔道修行的高级炼\
+器方法。\
+　　用黑暗魔力修炼武器，要看造化，但你可以放心的是就\
+算<color=green 失败了，武器也不会破碎>。你想试试看么？\
+　　<我要修炼武器/@@equiplevel>\
+　　<我想多了解一点再决定/@_SpeEvil_info>\
+　　<让我再考虑一下 /@exit>\
+
+[@@equiplevel]
+#IF
+random 1
+#ACT
+mov P0 $ITEMINFO[$PARAM(1)].HIGLOOM(6)
+inc P0 $ITEMINFO[$PARAM(1)].HIGLOOM(7)
+inc P0 $ITEMINFO[$PARAM(1)].HIGLOOM(8)
+
+#IF
+large P0 6
+#ACT
+SMELTBOXRESULT 0 7 1
+SENDMSG 5 您的武器黑暗属性已经达到极限，无法再进行
+break
+
+#IF
+small P0 4
+small $ITEMINFO[$PARAM(1)].GLOOMPOINT 200
+#ACT
+SMELTBOXRESULT 0 7 1
+SENDMSG 5 黑暗魔力不足200点,不可升级
+break
+
+#IF
+large P0 3
+small $ITEMINFO[$PARAM(1)].GLOOMPOINT 500
+#ACT
+SMELTBOXRESULT 0 7 1
+SENDMSG 5 黑暗魔力不足500点,不可升级
+break
+
+#IF
+small P0 4
+#ACT
+UPGRADEUSERITEM $PARAM(1) 22 - 200
+SMELTBOXRESULT 1 7 1
+break
+
+#IF
+large P0 3
+#ACT
+UPGRADEUSERITEM $PARAM(1) 22 - 500
+SMELTBOXRESULT 1 7 1
+break
+
+[@@equiplevelok]
+#IF
+random 1
+#ACT
+mov P0 0
+mov P1 0
+mov P2 0
+inc P0 $ITEMINFO[$PARAM(2)].DURA
+inc P0 $ITEMINFO[$PARAM(3)].DURA
+inc P0 $ITEMINFO[$PARAM(4)].DURA
+inc P0 $ITEMINFO[$PARAM(5)].DURA
+inc P0 $ITEMINFO[$PARAM(6)].DURA
+inc P0 $ITEMINFO[$PARAM(7)].DURA
+
+#IF
+equal $ITEMINFO[$PARAM(2)].STDMODE 59
+#ACT
+mov P2 $ITEMINFO[$PARAM(2)].WEIGHT
+MULT P2 5
+inc P1 $STR(P2)
+
+#IF
+equal $ITEMINFO[$PARAM(3)].STDMODE 59
+#ACT
+mov P2 $ITEMINFO[$PARAM(3)].WEIGHT
+MULT P2 5
+inc P1 $STR(P2)
+
+#IF
+equal $ITEMINFO[$PARAM(4)].STDMODE 59
+#ACT
+mov P2 $ITEMINFO[$PARAM(4)].WEIGHT
+MULT P2 5
+inc P1 $STR(P2)
+
+#IF
+equal $ITEMINFO[$PARAM(5)].STDMODE 59
+#ACT
+mov P2 $ITEMINFO[$PARAM(5)].WEIGHT
+MULT P2 5
+inc P1 $STR(P2)
+
+#IF
+equal $ITEMINFO[$PARAM(6)].STDMODE 59
+#ACT
+mov P2 $ITEMINFO[$PARAM(6)].WEIGHT
+MULT P2 5
+inc P1 $STR(P2)
+
+#IF
+equal $ITEMINFO[$PARAM(7)].STDMODE 59
+#ACT
+mov P2 $ITEMINFO[$PARAM(7)].WEIGHT
+MULT P2 5
+inc P1 $STR(P2)
+
+#IF
+POS $ITEMINFO[$PARAM(2)].NAME 幸运符
+#ACT
+UPGRADEUSERITEM $PARAM(2) 20 - 1
+inc P1 10
+#ELSEACT
+takem $PARAM(2)
+
+#IF
+POS $ITEMINFO[$PARAM(3)].NAME 幸运符
+#ACT
+UPGRADEUSERITEM $PARAM(3) 20 - 1
+inc P1 10
+#ELSEACT
+takem $PARAM(3)
+
+#IF
+POS $ITEMINFO[$PARAM(4)].NAME 幸运符
+#ACT
+UPGRADEUSERITEM $PARAM(4) 20 - 1
+inc P1 10
+#ELSEACT
+takem $PARAM(4)
+
+#IF
+POS $ITEMINFO[$PARAM(5)].NAME 幸运符
+#ACT
+UPGRADEUSERITEM $PARAM(5) 20 - 1
+inc P1 10
+#ELSEACT
+takem $PARAM(5)
+
+#IF
+POS $ITEMINFO[$PARAM(6)].NAME 幸运符
+#ACT
+UPGRADEUSERITEM $PARAM(6) 20 - 1
+inc P1 10
+#ELSEACT
+takem $PARAM(6)
+
+#IF
+POS $ITEMINFO[$PARAM(7)].NAME 幸运符
+#ACT
+UPGRADEUSERITEM $PARAM(7) 20 - 1
+#ELSEACT
+takem $PARAM(7)
+
+#IF
+random 1
+#ACT
+DIV P0 5000
+MULT P1 5
+inc P0 $STR(P1)
+movr P1 100
+mov P2 0
+inc P2 $ITEMINFO[$PARAM(1)].HIGLOOM(6)
+inc P2 $ITEMINFO[$PARAM(1)].HIGLOOM(7)
+inc P2 $ITEMINFO[$PARAM(1)].HIGLOOM(8)
+
+#IF
+small P0 $STR(P1)
+#ACT
+SENDMSG 5 黑暗魔力炼化失败，您的武器威力没发生任何变化
+SMELTBOXRESULT 0 7 0
+break
+
+#IF
+!random $STR(P2)
+#ACT
+SENDMSG 5 黑暗魔力炼化失败，您的武器威力没发生任何变化
+SMELTBOXRESULT 0 7 0
+break
+
+#IF
+random 1
+#ACT
+SMELTBOXRESULT 1 7 0
+UPGRADEUSERITEM $PARAM(1) 66 + 3
+SENDMSG 10 恭喜玩家%s用黑暗魔力升级武器成功，让武器增加了1点黑暗威力。
+
+#IF
+large $ITEMINFO[$PARAM(1)].DC2 5
+#ACT
+UPGRADEUSERITEM $PARAM(1) 45 + 1
+break
+
+#IF
+large $ITEMINFO[$PARAM(1)].MC2 5
+#ACT
+UPGRADEUSERITEM $PARAM(1) 46 + 1
+break
+
+#IF
+large $ITEMINFO[$PARAM(1].SC2 5
+#ACT
+UPGRADEUSERITEM $PARAM(1) 47 + 1
+break
+
+[@_SpeEvil_info]
+\\
+　　每次升级，不管成功失败，都要消耗掉武器上的黑暗魔\
+力。武器现有黑暗属性的越高，升级一次消耗的黑暗魔力也\
+越多。注意，武器蕴涵的灵力有限，最多只能增加7点威力。\
+\
+　　<升级成功有什么好处？/@_SpeEvil_WhatGood>\
+　　<升级失败有什么损失？/@_SpeEvil_whatBad>\
+　　<我能用黑暗魔力升级其它装备吗？/@_SpeEvil_Countmax>\
+　　<返回/@_SpeEvil_zhenngwen>　　<知道了/@exit>\
+
+[@_SpeEvil_WhatGood]
+\\
+　　若升级成功，则武器上会增加0－1的黑暗属性，战士武\
+器得到黑暗攻击属性，法师武器得到黑暗魔法属性，道士武\
+器得到黑暗道术属性。\
+　　呵呵，黑暗属性是永久的，不是临时的！\
+\
+　　<返回/@_SpeEvil_info>\
+
+[@_SpeEvil_whatBad]
+\\
+　　若升级失败，则武器上已有的黑暗属性可能会减少，但\
+你大可放心的是，黑暗魔力不能冲破武器蕴涵的灵力，所以\
+你的武器再怎么升也不会破碎。\
+\
+　　<返回/@_SpeEvil_info>\
+
+[@_SpeEvil_Countmax]
+\\
+　　用黑暗魔力升级武器，这个俺在行，但是护甲、头盔和\
+首饰这些精细的玩意，俺可不懂。你去问问服装店和首饰店\
+的人吧，也许他们也掌握了黑暗魔力升级装备的诀窍呢！\
+\
+　　<返回/@_SpeEvil_info>\
+}
+
+[@黑暗衣服]
+{
+\\
+　　魔道修行注重炼器，将心魔附魔在衣服上，只能临时提\
+升衣服的属性，非长久之计。用残留在衣服上的黑暗魔力来\
+炼制衣服，可以<color=green 永久提升衣服属性>，而且失败衣服也不会损\
+毁，这是魔道修行的高级炼器之法。\
+　　我可以帮你用黑暗魔力提升衣服任何属性，但至于提升\
+了哪一种就要看你的造化了，嘻嘻……\
+\
+　　<太好了，请帮我升级衣服！/@@hayifu>\
+　　<别骗人了，我才不上当呢！/@exit>\
+
+
+[@@hayifu]
+#IF
+random 1
+#ACT
+mov P0 $ITEMINFO[$PARAM(1)].HIGLOOM(6)
+inc P0 $ITEMINFO[$PARAM(1)].HIGLOOM(7)
+inc P0 $ITEMINFO[$PARAM(1)].HIGLOOM(8)
+inc P0 $ITEMINFO[$PARAM(1)].HIGLOOM(9)
+inc P0 $ITEMINFO[$PARAM(1)].HIGLOOM(10)
+
+#IF
+large P0 6
+#ACT
+SMELTBOXRESULT 0 9 1
+SENDMSG 5 您的衣服黑暗属性已经达到极限，无法再进行
+break
+
+#IF
+small P0 4
+small $ITEMINFO[$PARAM(1)].GLOOMPOINT 200
+#ACT
+SMELTBOXRESULT 0 9 1
+SENDMSG 5 黑暗魔力不足200点,不可升级
+break
+
+#IF
+large P0 3
+small $ITEMINFO[$PARAM(1)].GLOOMPOINT 500
+#ACT
+SMELTBOXRESULT 0 9 1
+SENDMSG 5 黑暗魔力不足500点,不可升级
+break
+
+#IF
+small P0 4
+#ACT
+UPGRADEUSERITEM $PARAM(1) 22 - 200
+SMELTBOXRESULT 1 9 1
+break
+
+#IF
+large P0 3
+#ACT
+UPGRADEUSERITEM $PARAM(1) 22 - 500
+SMELTBOXRESULT 1 9 1
+break
+
+[@@hayifuok]
+#IF
+random 1
+#ACT
+mov P0 0
+mov P1 0
+mov P2 0
+inc P0 $ITEMINFO[$PARAM(2)].DURA
+inc P0 $ITEMINFO[$PARAM(3)].DURA
+inc P0 $ITEMINFO[$PARAM(4)].DURA
+inc P0 $ITEMINFO[$PARAM(5)].DURA
+inc P0 $ITEMINFO[$PARAM(6)].DURA
+inc P0 $ITEMINFO[$PARAM(7)].DURA
+
+#IF
+equal $ITEMINFO[$PARAM(2)].STDMODE 59
+#ACT
+mov P2 $ITEMINFO[$PARAM(2)].WEIGHT
+MULT P2 5
+inc P1 $STR(P2)
+
+#IF
+equal $ITEMINFO[$PARAM(3)].STDMODE 59
+#ACT
+mov P2 $ITEMINFO[$PARAM(3)].WEIGHT
+MULT P2 5
+inc P1 $STR(P2)
+
+#IF
+equal $ITEMINFO[$PARAM(4)].STDMODE 59
+#ACT
+mov P2 $ITEMINFO[$PARAM(4)].WEIGHT
+MULT P2 5
+inc P1 $STR(P2)
+
+#IF
+equal $ITEMINFO[$PARAM(5)].STDMODE 59
+#ACT
+mov P2 $ITEMINFO[$PARAM(5)].WEIGHT
+MULT P2 5
+inc P1 $STR(P2)
+
+#IF
+equal $ITEMINFO[$PARAM(6)].STDMODE 59
+#ACT
+mov P2 $ITEMINFO[$PARAM(6)].WEIGHT
+MULT P2 5
+inc P1 $STR(P2)
+
+#IF
+equal $ITEMINFO[$PARAM(7)].STDMODE 59
+#ACT
+mov P2 $ITEMINFO[$PARAM(7)].WEIGHT
+MULT P2 5
+inc P1 $STR(P2)
+
+#IF
+POS $ITEMINFO[$PARAM(2)].NAME 幸运符
+#ACT
+UPGRADEUSERITEM $PARAM(2) 20 - 1
+inc P1 10
+#ELSEACT
+takem $PARAM(2)
+
+#IF
+POS $ITEMINFO[$PARAM(3)].NAME 幸运符
+#ACT
+UPGRADEUSERITEM $PARAM(3) 20 - 1
+inc P1 10
+#ELSEACT
+takem $PARAM(3)
+
+#IF
+POS $ITEMINFO[$PARAM(4)].NAME 幸运符
+#ACT
+UPGRADEUSERITEM $PARAM(4) 20 - 1
+inc P1 10
+#ELSEACT
+takem $PARAM(4)
+
+#IF
+POS $ITEMINFO[$PARAM(5)].NAME 幸运符
+#ACT
+UPGRADEUSERITEM $PARAM(5) 20 - 1
+inc P1 10
+#ELSEACT
+takem $PARAM(5)
+
+#IF
+POS $ITEMINFO[$PARAM(6)].NAME 幸运符
+#ACT
+UPGRADEUSERITEM $PARAM(6) 20 - 1
+inc P1 10
+#ELSEACT
+takem $PARAM(6)
+
+#IF
+POS $ITEMINFO[$PARAM(7)].NAME 幸运符
+#ACT
+UPGRADEUSERITEM $PARAM(7) 20 - 1
+#ELSEACT
+takem $PARAM(7)
+
+#IF
+random 1
+#ACT
+DIV P0 5000
+MULT P1 5
+inc P0 $STR(P1)
+movr P1 100
+mov P2 0
+inc P2 $ITEMINFO[$PARAM(1)].HIGLOOM(6)
+inc P2 $ITEMINFO[$PARAM(1)].HIGLOOM(7)
+inc P2 $ITEMINFO[$PARAM(1)].HIGLOOM(8)
+inc P2 $ITEMINFO[$PARAM(1)].HIGLOOM(9)
+inc P2 $ITEMINFO[$PARAM(1)].HIGLOOM(10)
+
+#IF
+small P0 $STR(P1)
+#ACT
+SENDMSG 5 黑暗魔力炼化失败，您的衣服属性没发生任何变化
+SMELTBOXRESULT 0 9 0
+break
+
+#IF
+!random $STR(P2)
+#ACT
+SENDMSG 5 黑暗魔力炼化失败，您的衣服属性没发生任何变化
+SMELTBOXRESULT 0 9 0
+break
+
+#IF
+random 1
+#ACT
+SMELTBOXRESULT 1 9 0
+UPGRADEUSERITEM $PARAM(1) 66 + 3
+SENDMSG 10 恭喜玩家%s用黑暗魔力升级衣服成功，让衣服增加了1点黑暗属性。
+
+#IF
+large $ITEMINFO[$PARAM(1)].DC2 0
+#ACT
+UPGRADEUSERITEM $PARAM(1) 45 + 1
+break
+
+#IF
+large $ITEMINFO[$PARAM(1)].MC2 0
+#ACT
+UPGRADEUSERITEM $PARAM(1) 46 + 1
+break
+
+#IF
+large $ITEMINFO[$PARAM(1].SC2 0
+#ACT
+UPGRADEUSERITEM $PARAM(1) 47 + 1
+break
+
+#IF
+random 2
+#ACT
+UPGRADEUSERITEM $PARAM(1) 48 + 1
+break
+
+#IF
+random 1
+#ACT
+UPGRADEUSERITEM $PARAM(1) 49 + 1
+break
+}

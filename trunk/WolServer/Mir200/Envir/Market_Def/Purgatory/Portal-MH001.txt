@@ -1,0 +1,14 @@
+[@main]
+#IF
+CheckUserGap < 5
+#SAY
+你准备离开这个地方吗？\
+\
+<是的/@out>\
+<不/@exit>
+#ELSESAY
+<太远了，过不去..../@exit>
+
+[@out]
+#ACT
+MAP 2
