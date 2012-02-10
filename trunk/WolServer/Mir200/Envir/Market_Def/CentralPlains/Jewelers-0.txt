@@ -1,4 +1,4 @@
-(@fastbuy @buy @sell @repair @s_repair)
+(@buy @sell @repair @s_repair)
 %100
 +19
 +20
@@ -11,24 +11,14 @@
 #CALL [\Merchant\Jewelers.txt] @merchandise
 
 [@main]
-\\
-Welcome, how may i help you?\
-\
-<Quick Buy/@fastbuy>\
-<Buy/@buy>    <Sell/@sell>\
+Welcome, Is there anything i can help you with?\
+<Buy/@buy>\
+<Sell/@sell>\
 <Repair/@repair>\
 <Special Repair/@s_repair>\
 <Exit/@exit>
 
-[@fastbuy]
-\\
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
-<Back/@main>
-
 [@buy]
-\\
 Please select the items you wish to purchase.\
 \
 \
@@ -36,25 +26,22 @@ Please select the items you wish to purchase.\
 <Back/@main>
 
 [@sell]
-\\
-Please select the items you wish to sell.\
+Please select the items you wish to Sell.\
 \
 \
-<Back/@main>\
+<Back/@main>
 
 [@repair]
-\\
-Please select the items you wish to repair.\
+Please select the weapons you wish to Repair.\
 \
 \
-<Back/@main>\
+<Back/@main>
 
 [@s_repair]
-\\
-Please select the items you wish to special repair.\
+Please select the weapons you wish to Special Repair.\
 \
 \
-<Back/@main>\
+<Back/@main>
 
 [goods]
 IronBracelet	20	10

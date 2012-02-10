@@ -4,14 +4,7 @@ Welcome, how may i help you?\
 <Town Teleport/@teleport>\
 <Record Homestone/@_LB_homePos>\
 <Purgatory/@_LB_newlianyu>\
-<Game gold/@gamegold>\
-
 <Exit/@exit>
-
-[@gamegold]
-#ACT
-GAMEGOLD + 1
-break
 
 [@_LB_homePos]
 #CALL [\Features\Veteran\Veteran.txt] @¼ÇÂ¼»Ø³Ç

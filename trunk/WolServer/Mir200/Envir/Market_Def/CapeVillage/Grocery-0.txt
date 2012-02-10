@@ -1,19 +1,12 @@
-(@fastbuy @buy @sell)
+(@buy @sell)
 %100
 +3
 +25
 [@main]
 Welcome, Is there anything i can help you with?\
-<Quick Buy/@fastbuy>\
 <Buy/@buy>\
 <Sell/@sell>\
 <Exit/@exit>
-
-[@fastbuy]
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
-<Back/@main>
 
 [@buy]
 Please select the items you wish to purchase.\

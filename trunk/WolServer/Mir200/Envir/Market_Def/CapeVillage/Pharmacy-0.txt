@@ -4,17 +4,9 @@
 +42
 [@main]
 Welcome, Is there anything i can help you with?\
-\
-<Quick Buy/@fastbuy>\
 <Buy Drugs/@buy>\
 <Sell Drugs/@sell>\
 <Exit/@exit>
-
-[@fastbuy]
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
-<Back/@main>
 
 [@buy]
 Please select the items you wish to purchase.\

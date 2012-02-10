@@ -1,1 +1,268 @@
-;此脚为功能脚本，用于实现各种与商城有关的功能
+;此脚为商城脚本，用于实现各种与商城有关的功能
+
+;商城——白银钥匙
+[@BuyShopItem665]
+#IF
+random 1
+#ACT
+mov P0 $PARAM(6)
+MULT P0 $PARAM(1)
+
+#IF
+CHECKGAMEGOLD \ $STR(P0)
+#ACT
+GAMEGOLD - $STR(P0)
+mov P0 2
+MULT P0 $PARAM(6)
+give 白银钥匙 $STR(P0)
+CollectPoint + $STR(P0)
+MessageBox ""Congratulations on your purchase success!""
+break
+
+;商城——祝福油罐
+[@BuyShopItem633]
+#IF
+random 1
+#ACT
+mov P0 $PARAM(6)
+MULT P0 $PARAM(1)
+
+#IF
+CHECKGAMEGOLD \ $STR(P0)
+#ACT
+GAMEGOLD - $STR(P0)
+DelayCall 1 @祝福油罐 $PARAM(6) ms
+CollectPoint + $STR(P0)
+MessageBox "Congratulations on your purchase success!"
+break
+
+[@祝福油罐]
+#ACT
+give 祝福油罐 1
+UPGRADEUSERITEM $PARAM(10) 20 = 0
+
+;商城——迎亲宝马
+[@BuyShopItem794]
+#IF
+random 1
+#ACT
+mov P0 $PARAM(6)
+MULT P0 $PARAM(1)
+
+#IF
+CHECKGAMEGOLD \ $STR(P0)
+#ACT
+GAMEGOLD - $STR(P0)
+DelayCall 1 @迎亲宝马 $PARAM(6) ms
+CollectPoint + $STR(P0)
+MessageBox "Congratulations on your purchase success!"
+break
+
+[@迎亲宝马]
+#ACT
+give 迎亲宝马 1
+SETHORSENAME $PARAM(10) 迎亲宝马
+
+;商城——高头大马
+[@BuyShopItem795]
+#IF
+random 1
+#ACT
+mov P0 $PARAM(6)
+MULT P0 $PARAM(1)
+
+#IF
+CHECKGAMEGOLD \ $STR(P0)
+#ACT
+GAMEGOLD - $STR(P0)
+DelayCall 1 @高头大马 $PARAM(6) ms
+CollectPoint + $STR(P0)
+MessageBox "Congratulations on your purchase success!"
+break
+
+[@高头大马]
+#ACT
+give 高头大马 1
+SETHORSENAME $PARAM(10) 高头大马
+
+;商城——黄金宝马
+[@BuyShopItem519]
+#IF
+random 1
+#ACT
+mov P0 $PARAM(6)
+MULT P0 $PARAM(1)
+
+#IF
+CHECKGAMEGOLD \ $STR(P0)
+#ACT
+GAMEGOLD - $STR(P0)
+DelayCall 1 @黄金宝马 $PARAM(6) ms
+MessageBox "Congratulations on your purchase success!"
+break
+
+[@黄金宝马]
+#ACT
+give 黄金宝马 1
+SETHORSENAME $PARAM(10) 黄金宝马
+CollectPoint + $STR(P0)
+
+;商城——天若有情
+[@BuyShopItem606]
+#IF
+random 1
+#ACT
+mov P0 $PARAM(6)
+MULT P0 $PARAM(1)
+
+#IF
+CHECKGAMEGOLD \ $STR(P0)
+#ACT
+GAMEGOLD - $STR(P0)
+mov P0 2
+MULT P0 $PARAM(6)
+give 天若有情 $STR(P0)
+CollectPoint + $STR(P0)
+MessageBox "Congratulations on your purchase success!"
+break
+
+;商城——姹紫嫣红
+[@BuyShopItem607]
+#IF
+random 1
+#ACT
+mov P0 $PARAM(6)
+MULT P0 $PARAM(1)
+
+#IF
+CHECKGAMEGOLD \ $STR(P0)
+#ACT
+GAMEGOLD - $STR(P0)
+mov P0 2
+MULT P0 $PARAM(6)
+give 姹紫嫣红 $STR(P0)
+CollectPoint + $STR(P0)
+MessageBox "Congratulations on your purchase success!"
+break
+
+;商城——5捆鞭炮
+[@BuyShopItem1268]
+#IF
+random 1
+#ACT
+mov P0 $PARAM(6)
+MULT P0 $PARAM(1)
+
+#IF
+CHECKGAMEGOLD \ $STR(P0)
+#ACT
+GAMEGOLD - $STR(P0)
+mov P0 5
+MULT P0 $PARAM(6)
+give 鞭炮（大捆） $STR(P0)
+CollectPoint + $STR(P0)
+MessageBox "Congratulations on your purchase success!"
+break
+
+;商城——10个鞭炮
+[@BuyShopItem812]
+#IF
+random 1
+#ACT
+mov P0 $PARAM(6)
+MULT P0 $PARAM(1)
+
+#IF
+CHECKGAMEGOLD \ $STR(P0)
+#ACT
+GAMEGOLD - $STR(P0)
+mov P0 10
+MULT P0 $PARAM(6)
+give 鞭炮 $STR(P0)
+CollectPoint + $STR(P0)
+MessageBox "Congratulations on your purchase success!"
+break
+
+;商城——龙凤喜糖
+[@BuyShopItem761]
+#ACT
+mov P0 $PARAM(6)
+MULT P0 $PARAM(1)
+
+#IF
+CHECKGAMEGOLD \ $STR(P0)
+#ACT
+GAMEGOLD - $STR(P0)
+mov P0 10
+MULT P0 $PARAM(6)
+give 龙凤喜糖 $STR(P0)
+CollectPoint + $STR(P0)
+MessageBox "Congratulations on your purchase success!"
+break
+
+;商城——龙凤花烛
+[@BuyShopItem760]
+#IF
+random 1
+#ACT
+mov P0 $PARAM(6)
+MULT P0 $PARAM(1)
+
+#IF
+CHECKGAMEGOLD \ $STR(P0)
+#ACT
+GAMEGOLD - $STR(P0)
+mov P0 2
+MULT P0 $PARAM(6)
+give 龙凤花烛 $STR(P0)
+CollectPoint + $STR(P0)
+MessageBox "Congratulations on your purchase success!"
+break
+
+[@BuyShopItem1555]
+#IF
+random 1
+#ACT
+mov P0 $PARAM(6)
+MULT P0 $PARAM(1)
+
+#IF
+CHECKGAMEGOLD \ $STR(P0)
+#ACT
+GAMEGOLD - $STR(P0)
+give 猛虎神佑1 $PARAM(6) 
+CollectPoint + $STR(P0)
+MessageBox "Congratulations on your purchase success!"
+break
+
+[@BuyShopItem1556]
+#IF
+random 1
+#ACT
+mov P0 $PARAM(6)
+MULT P0 $PARAM(1)
+
+#IF
+CHECKGAMEGOLD \ $STR(P0)
+#ACT
+GAMEGOLD - $STR(P0)
+give 猛虎神佑2 $PARAM(6) 
+CollectPoint + $STR(P0)
+MessageBox "Congratulations on your purchase success!"
+break
+
+[@BuyShopItem1557]
+#IF
+random 1
+#ACT
+mov P0 $PARAM(6)
+MULT P0 $PARAM(1)
+
+#IF
+CHECKGAMEGOLD \ $STR(P0)
+#ACT
+GAMEGOLD - $STR(P0)
+give 猛虎神佑3 $PARAM(6) 
+CollectPoint + $STR(P0)
+MessageBox "Congratulations on your purchase success!"
+break

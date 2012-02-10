@@ -1,9 +1,8 @@
-(@fastbuy @buy @sell)
+(@buy @sell)
 %100
 +4
 [@main]
 Welcome, how may i help you?\
-<Quick Buy/@fastbuy>\
 <Buy Books/@buy>\
 <Sell Books/@sell>\
 <Skill Guide/@_SD_helpbooks>\
@@ -11,13 +10,6 @@ Welcome, how may i help you?\
 
 [@_SD_helpbooks]
 #CALL [\Features\Bookstore.txt] @help
-
-
-[@fastbuy]
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
-<Exit/@exit>
 
 [@buy]
 Please select the skills you wish to purchase.\

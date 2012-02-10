@@ -1,4 +1,4 @@
-(@fastbuy @buy @sell @repair @s_repair)
+(@buy @sell @repair @s_repair)
 %100
 +10
 +11
@@ -26,18 +26,11 @@
 
 [@main]
 Welcome, Is there anything i can help you with?\
-<Quick Buy/@fastbuy>\
 <Buy/@buy>\
 <Sell/@sell>\
 <Repair/@repair>\
 <Special Repair/@s_repair>\
 <Exit/@exit>
-
-[@fastbuy]
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
-<Back/@main>
 
 [@buy]
 Please select the items you wish to purchase.\
