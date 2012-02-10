@@ -123,10 +123,10 @@ Dogz7=
 Dogz8=
 Dogz9=
 [Setup]
-ItemNumber=3856775
+ItemNumber=3907376
 ClbADDTrains=10
 ClbLevelUpTrains=100
-ItemNumberEx=1073741960
+ItemNumberEx=1073741969
 ClientFile1=mir.1
 ClientFile2=mir.2
 ClientFile3=mir.3

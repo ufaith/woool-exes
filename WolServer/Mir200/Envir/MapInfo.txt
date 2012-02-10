@@ -267,6 +267,72 @@
 
 [LXXD ÁéÏ¬ÏÉµº] NORECONNECT(MH001) NORECALL FORBIDITEMS(´©ÔÆ¼ý|½­ºþ¸æ¼±Áî) CANUSESUPERITEM[ÁéÊÞÏîÈ¦/ÁéÊÞÏîÈ¦(À¦)] DelayGoto(1/@PurgatoryTime)
 
+[SWYZB ÉñÍþÓü´óÌü] SAFE
+[SWYSL ÉñÍþÓüÊÔÁ¶³¡] NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û(ÊÔÓÃ)/ÕòÄ§Éñ·û(ÊÔÓÃ)] CANRECALLEVIL 
+[SWY101 ÉñÍþÓüÒ»²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY101|SWY102 ÉñÍþÓüÒ»²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY101|SWY103 ÉñÍþÓüÒ»²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY101|SWY104 ÉñÍþÓüÒ»²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY101|SWY105 ÉñÍþÓüÒ»²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY101|SWY106 ÉñÍþÓüÒ»²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY101|SWY107 ÉñÍþÓüÒ»²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY101|SWY108 ÉñÍþÓüÒ»²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY101|SWY109 ÉñÍþÓüÒ»²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY201 ÉñÍþÓü¶þ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY201|SWY202 ÉñÍþÓü¶þ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY201|SWY203 ÉñÍþÓü¶þ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY201|SWY204 ÉñÍþÓü¶þ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY201|SWY205 ÉñÍþÓü¶þ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY201|SWY206 ÉñÍþÓü¶þ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY201|SWY207 ÉñÍþÓü¶þ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY201|SWY208 ÉñÍþÓü¶þ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY201|SWY209 ÉñÍþÓü¶þ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY301 ÉñÍþÓüÈý²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY301|SWY302 ÉñÍþÓüÈý²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY301|SWY303 ÉñÍþÓüÈý²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY301|SWY304 ÉñÍþÓüÈý²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY301|SWY305 ÉñÍþÓüÈý²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY301|SWY306 ÉñÍþÓüÈý²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY301|SWY307 ÉñÍþÓüÈý²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY301|SWY308 ÉñÍþÓüÈý²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY301|SWY309 ÉñÍþÓüÈý²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY401 ÉñÍþÓüËÄ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY401|SWY402 ÉñÍþÓüËÄ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY401|SWY403 ÉñÍþÓüËÄ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY401|SWY404 ÉñÍþÓüËÄ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY401|SWY405 ÉñÍþÓüËÄ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY401|SWY406 ÉñÍþÓüËÄ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY401|SWY407 ÉñÍþÓüËÄ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY401|SWY408 ÉñÍþÓüËÄ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY401|SWY409 ÉñÍþÓüËÄ²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY501 ÉñÍþÓüÎå²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY501|SWY502 ÉñÍþÓüÎå²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY501|SWY503 ÉñÍþÓüÎå²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY501|SWY504 ÉñÍþÓüÎå²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY501|SWY505 ÉñÍþÓüÎå²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY501|SWY506 ÉñÍþÓüÎå²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY501|SWY507 ÉñÍþÓüÎå²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY501|SWY508 ÉñÍþÓüÎå²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWY501|SWY509 ÉñÍþÓüÎå²ã] NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] CANRECALLEVIL
+[SWYLTS ] 
+[SWYTONGDAO ÌìÄ§±¦²ØÍ¨µÀ] FIGHT DECHP(3/70) DelayGoto(5/@ÌìÄ§¼Ó¾­Ñé) NORECALL NORECONNECT(SWYZB) CANUSESUPERITEM[Áé·û/Áé·û(À¦)/ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] 
+SWYTONGDAO 74 26 -> SWYBAOZANG 41 186
+[SWYBOSS ÌìÄ§³²Ñ¨] NORECALL NORECONNECT(SWYZB) CANRECALLEVIL
+[SWYBAOZANG ÌìÄ§±¦²Ø] FIGHT DECHP(3/120) DelayGoto(5/@ÌìÄ§¼Ó¾­Ñé) NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[Áé·û/Áé·û(À¦)/ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/]
+SWYBAOZANG 48 124 -> SWYBAOZANG 120 176
+SWYBAOZANG 155 138 -> SWYBAOZANG 152 112
+SWYBAOZANG 133 126 -> SWYBAOZANG 90 133
+SWYBAOZANG 104 142 -> SWYBAOZANG 110 120
+
+
+
+
+
+
+
+
+
+
 ;Connection point configuration
 ;--------------------------------------------------
 0	725,35	->	2	438,971
