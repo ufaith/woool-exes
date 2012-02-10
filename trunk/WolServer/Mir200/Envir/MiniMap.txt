@@ -1542,17 +1542,3 @@ DC_TJMJ021 838 ;天界秘境-土
 DC_TJMJ031 839 ;天界秘境-水
 DC_TJMJ041 840 ;天界秘境-火
 COMMONMAP1 842 ;天界密境
-
-HAIDI  860 ;幽暗海域
-SHACHENG 861 ;HorsePlain
-HAIDIN1 862 ;失落沉船一层
-HAIDIN2 863 ;失落沉船二层
-HAIDIN3 864 ;失落沉船三层
-haididg   865 ;海底地宫
-haidiyj   866 ;海底遗迹
-haidizyd 867 ;章鱼洞穴
-HaidiZYDHJ 867 ;章鱼洞穴幻境
-shachenghm 869 ;沙城毁灭
-haidi-dg 865
-haidi-zyd 867
-haidi-yj 866
