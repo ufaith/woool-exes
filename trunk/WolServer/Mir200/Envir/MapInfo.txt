@@ -1,6 +1,6 @@
 ;killbyhum(@±»ÈËÉ±ËÀ) killbymon(@±»¹ÖÉ±ËÀ) @ShaguaiTrigger LevelUp(@UpgradeTrigger)
 
-[0	Cen] CANRIDE
+[0	Cen] CANRIDE WEATHER(1)
 [SH000	Palace] FIGHT
 [SH045	CentralPlains-Inn] FIGHT
 [SH001	Warehouse] FIGHT
@@ -16,10 +16,7 @@
 [SH011	Pharmacy] FIGHT
 [SH012	SideHall] FIGHT
 [SH013	SideHall] FIGHT
-
-[HAIDIN1       Ê§Âä³Á´¬Ò»²ã] CHECKQUEST(Q012) EXPRATE(200) NORECALL FORBIDITEMS(´©ÔÆ¼ý|½­ºþ¸æ¼±Áî) NORECONNECT(1) DelayGoto(1/@PurgatoryTime)
-[HAIDIN2       Ê§Âä³Á´¬¶þ²ã] CHECKQUEST(Q012) EXPRATE(200) NORECALL FORBIDITEMS(´©ÔÆ¼ý|½­ºþ¸æ¼±Áî) NORECONNECT(1) DelayGoto(1/@PurgatoryTime)
-[HAIDIN3       Ê§Âä³Á´¬Èý²ã] CHECKQUEST(Q012) EXPRATE(200) NORECALL FORBIDITEMS(´©ÔÆ¼ý|½­ºþ¸æ¼±Áî) NORECONNECT(1) DelayGoto(1/@PurgatoryTime)
+[F005	PK-ARENA] FIGHT3
 
 [H071	GeneralCave] 
 [H072	GeneralCave2] 
@@ -32,7 +29,7 @@
 [H085	GeneralCaveEast4] 
 [H086	GeneralCaveEast5] 
 
-[1	PenIsland] CHECKQUEST(Q012) CANRIDE
+[1	PenIsland] CHECKQUEST(Q012) CANRIDE weather(2)
 [T011	MiningEntrance] MINE
 [T012	SouthernMine] MINE
 [T013	NorthernMine] MINE
@@ -47,7 +44,7 @@
 [T022	EvacuationRoute] MINE
 [L004	CorpseDian] NORECONNECT(T015) NORECALL FORBIDITEMS(´©ÔÆ¼ý|½­ºþ¸æ¼±Áî) NOPOSITIONMOVE
 
-[2 Wilderness] CHECKQUEST(Q012) CANRIDE
+[2 Wilderness] CHECKQUEST(Q012) CANRIDE weather(3)
 [SH022	Warehouse] FIGHT
 [SH023	Warehouse2nd] FIGHT
 [SH024	ClothingStore] FIGHT
@@ -100,7 +97,7 @@
 
 [QueYsh00 ÁéÌ¨ÏÉ¾³] FIGHT
 
-[3	HorsePlain] CANRIDE
+[3	HorsePlain] CANRIDE weather(3)
 [SH015	Pharmacy] FIGHT
 [SH016	ClothingStore] FIGHT
 [SH017	Blacksmith] FIGHT
@@ -128,7 +125,7 @@
 [J011	Enchantment] CHECKQUEST(Q012)
 [J012	SealPlace] CHECKQUEST(Q012)
 
-[4	Forbidden] CHECKQUEST(Q012) CANRIDE
+[4	Forbidden] CHECKQUEST(Q012) CANRIDE weather(1)
 [SH031	ClothingStore] FIGHT
 [SH032	Butcher] FIGHT
 [SH033	Jewelers] FIGHT
@@ -137,7 +134,7 @@
 [SH036	Pharmacy] FIGHT
 [SH037	TaoistHall] FIGHT
 
-[5	WesternRegion] CHECKQUEST(Q012) CANRIDE
+[5	WesternRegion] CHECKQUEST(Q012) CANRIDE weather(1)
 [SH040	Blacksmith] FIGHT
 [SH043	Jewelers] FIGHT
 [SH044	ClothingStore] FIGHT

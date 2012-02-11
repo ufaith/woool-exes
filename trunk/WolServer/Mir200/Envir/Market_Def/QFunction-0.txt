@@ -119,6 +119,18 @@ equal $PARAM(0) 赤翎凤
 give 凤凰石 1
 
 #IF
+EQUAL $PARAM(0) 撼天灵虎
+#ACT
+give 虎魔石 1
+
+#IF
+EQUAL $PARAM(0) 撼天灵虎
+#ACT
+give 虎魔石 1
+UPGRADEUSERITEM $PARAM(10) 8 = 1
+UPGRADEUSERITEM $PARAM(10) 9 = 1
+
+#IF
 equal $PARAM(0) 踏云豹1
 #ACT
 give 豹魔石 1
@@ -591,76 +603,77 @@ give 金币 20000
 break
 
 ;========================================================================
-[@StdModeFunc12]
+[@StdModeFunc3054]
 #ACT
-SENDMSG 0 %s已经将%m的天气改变成,福满天下！大家可以打开客户端天气效果观赏
-WEATHER 11
+ReadRandomStr ..\QuestDiary\Features\Weather.txt S4
+SENDMSG 5 魔幻变身披风发挥了神奇的功能，你的人物外观产生了变化!
+CHANGEWEATHER $STR(S4)
 break
 
-[@StdModeFunc13]
+[@StdModeFunc3055]
 #ACT
-SENDMSG 0 %s已经将%m的天气改变成恭喜发财！大家可以打开客户端天气效果观赏
-WEATHER 10
+SENDMSG 15 %s已经将%m的天气改变成恭喜发财！大家可以打开客户端天气效果观赏
+CHANGEWEATHER 10
 break
 
-[@StdModeFunc14]
+[@StdModeFunc3056]
 #ACT
-SENDMSG 0 %s已经将%m的天气改变成紫樱缤纷！大家可以打开客户端天气效果观赏
-WEATHER 5
+SENDMSG 15 %s已经将%m的天气改变成紫樱缤纷！大家可以打开客户端天气效果观赏
+CHANGEWEATHER 5
 break
 
-[@StdModeFunc15]
+[@StdModeFunc3057]
 #ACT
-SENDMSG 0 %s已经将%m的天气改变成玫瑰花雨！大家可以打开客户端天气效果观赏
-WEATHER 4
+SENDMSG 15 %s已经将%m的天气改变成玫瑰花雨！大家可以打开客户端天气效果观赏
+CHANGEWEATHER 4
 break
 
-[@StdModeFunc16]
+[@StdModeFunc3058]
 #ACT
-SENDMSG 0 %s已经将%m的天气改变成碧血黄沙！大家可以打开客户端天气效果观赏
-WEATHER 3
+SENDMSG 15 %s已经将%m的天气改变成碧血黄沙！大家可以打开客户端天气效果观赏
+CHANGEWEATHER 3
 break
 
-[@StdModeFunc17]
+[@StdModeFunc3059]
 #ACT
-SENDMSG 0 %s已经将%m的天气改变成烟雨朦胧！大家可以打开客户端天气效果观赏
-WEATHER 2
+SENDMSG 15 %s已经将%m的天气改变成烟雨朦胧！大家可以打开客户端天气效果观赏
+CHANGEWEATHER 2
 break
 
-[@StdModeFunc18]
+[@StdModeFunc3060]
 #ACT
-SENDMSG 0 %s已经将%m的天气改变成飞雪连天！大家可以打开客户端天气效果观赏
-WEATHER 6
+SENDMSG 15 %s已经将%m的天气改变成飞雪连天！大家可以打开客户端天气效果观赏
+CHANGEWEATHER 6
 break
 
-[@StdModeFunc19]
+[@StdModeFunc3061]
 #ACT
-SENDMSG 0 %s已经将%m的天气改变成心语心愿！大家可以打开客户端天气效果观赏
-WEATHER 7
+SENDMSG 15 %s已经将%m的天气改变成心语心愿！大家可以打开客户端天气效果观赏
+CHANGEWEATHER 7
 break
 
-[@StdModeFunc20]
+[@StdModeFunc3062]
 #ACT
-SENDMSG 0 %s已经将%m的天气改变成绿叶仙踪！大家可以打开客户端天气效果观赏
-WEATHER 8
+SENDMSG 15 %s已经将%m的天气改变成绿叶仙踪！大家可以打开客户端天气效果观赏
+CHANGEWEATHER 8
 break
 
-[@StdModeFunc21]
+[@StdModeFunc3063]
 #ACT
-SENDMSG 0 %s已经将%m的天气改变成流星幻雨！大家可以打开客户端天气效果观赏
-WEATHER 9
+SENDMSG 15 %s已经将%m的天气改变成流星幻雨！大家可以打开客户端天气效果观赏
+CHANGEWEATHER 9
 break
 
-[@StdModeFunc22]
+[@StdModeFunc3064]
 #ACT
-SENDMSG 0 %s已经将%m的天气改变成细雨缠绵！大家可以打开客户端天气效果观赏
-WEATHER 1
+SENDMSG 15 %s已经将%m的天气改变成细雨缠绵！大家可以打开客户端天气效果观赏
+CHANGEWEATHER 1
 break
 
-[@StdModeFunc23]
+[@StdModeFunc3065]
 #ACT
-SENDMSG 0 %s已经将%m的天气改变成碧海青天！大家可以打开客户端天气效果观赏
-WEATHER 13
+SENDMSG 15 %s已经将%m的天气改变成碧海青天！大家可以打开客户端天气效果观赏
+CHANGEWEATHER 13
 break
 
 ;====================================================================================
