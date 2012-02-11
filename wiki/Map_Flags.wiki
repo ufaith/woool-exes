@@ -1,8 +1,8 @@
-#summary One-sentence summary of this page.
+#summary Map Parameter Flags for MapInfo.txt
 
 = Map Parameter Flag =
 
-A list of flags for MapInfo.txt.
+A list of flt.
 ||SAFE||
 ||CHECKQUEST||
 ||NEEDSET_ON||
