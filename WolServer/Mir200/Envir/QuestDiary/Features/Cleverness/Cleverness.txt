@@ -101,9 +101,9 @@ You have succesfully upgrade mount to level 1!\
 
 #IF
 equal $PET.RELIVE 0
-CHECKITEM Ѕй ёош 1
+CHECKITEM RevealArmor 1
 #ACT
-take Ѕй ёош 1
+take RevealArmor 1
 UPGRADEMON
 break
 #SAY

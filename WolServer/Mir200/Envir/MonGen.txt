@@ -106,7 +106,7 @@ SH006	11	18	Practice		0	1	1
 
 0	704	228	KnifeDog		80	40	4
 0	704	228	StickDog		80	40	4
-0	704	228	稻草人		80	40	4
+0	704	228	Scarecrow		80	40	4
 0	704	228	KnifeDog0		80	2	4
 0	704	228	StickDog0		80	2	4
 0	704	228	Scarecrow0		80	2	4
@@ -114,7 +114,7 @@ SH006	11	18	Practice		0	1	1
 0	435	476	KnifeDog		110	90	4
 0	435	476	StickDog		110	90	4
 0	435	476	FishPerson		110	90	5
-0	435	476	稻草人		110	70	4
+0	435	476	Scarecrow		110	70	4
 0	435	476	KnifeDog0		110	4	4
 0	435	476	StickDog0		110	4	4
 0	435	476	FishPerson0		110	4	5
@@ -122,56 +122,47 @@ SH006	11	18	Practice		0	1	1
 
 0	618	317	KnifeDog		50	40	4
 0	618	317	StickDog		50	40	4
-0	618	317	稻草人		50	60	4
+0	618	317	Scarecrow		50	60	4
 0	618	317	KnifeDog0		50	2	4
 0	618	317	StickDog0		50	2	4
 0	618	317	Scarecrow0		50	3	4
 
 0	351	330	KnifeDog		30	20	4
 0	351	330	StickDog		30	20	4
-0	351	330	稻草人		30	20	4
+0	351	330	Scarecrow		30	20	4
 0	351	330	KnifeDog0		30	1	4
 0	351	330	StickDog0		30	1	4
 0	351	330	Scarecrow0		30	1	4
 
 0	325	110	Toad		65	50	4
-0	325	110	稻草人		65	20	4
+0	325	110	Scarecrow		65	20	4
 0	325	110	Scarecrow0		65	1	4
 
-;王城东北
+;Northeast
 0	718	91	Piranha		50	60	6
 0	718	91	Python		50	50	6
 0	718	91	Spider		50	30	6
 0	718	91	Python0		50	2	6
-0	718	91	枣红马1		50	3	15
-0	718	91	雪龙1		50	1	180
 
-;将军坟东
+;GeneralCave East
 0	716	336	Piranha		50	50	6
 0	716	336	Python		50	70	6
 0	716	336	Python0		50	3	6
-0	716	336	枣红马1		50	4	15
 
 0	655	465	Piranha		100	100	6
 0	655	465	Python		100	90	6
 0	655	465	Spider		100	80	6
 0	655	465	Python0		100	4	6
-0	655	465	GreatApe0		100	1	20
-0	655	465	枣红马1		100	9	15
-0	655	465	乌骓1		100	1	30
 
 0	635	615	Piranha		120	120	6
 0	635	615	Python		120	100	6
 0	635	615	Spider		120	70	6
 0	635	615	Python0		120	5	6
-0	635	615	GreatApe0		120	2	20
-0	635	615	枣红马1		120	11	15
-0	635	615	乌骓1		120	2	30
 
 0	662	728	FishPerson		50	30	5
 0	662	728	FishPerson0		50	1	5
 
-;将军坟南
+;GeneralCave Southern
 0	201	627	FishPerson		50	80	6
 0	201	627	Python		50	30	6
 0	201	627	FishPerson0		50	4	6
@@ -250,13 +241,13 @@ SH006	11	18	Practice		0	1	1
 
 1	133	381	FishPerson		50	50	5
 1	133	381	Python		50	50	5
-1	133	381	稻草人		50	50	4
+1	133	381	Scarecrow		50	50	4
 1	133	381	FishPerson0		50	3	6
 1	133	381	Python0		50	3	5
 1	133	381	Scarecrow0		50	3	5
 
 1	259	403	FishPerson		50	50	4
-1	259	403	稻草人		50	50	4
+1	259	403	Scarecrow		50	50	4
 1	259	403	KnifeDog		50	50	4
 1	259	403	StickDog		50	50	4
 1	259	403	FishPerson0		50	3	5
@@ -265,7 +256,7 @@ SH006	11	18	Practice		0	1	1
 1	259	403	StickDog0		50	3	4
 
 1	333	69	Python		60	40	5
-1	333	69	稻草人		60	40	4
+1	333	69	Scarecrow		60	40	4
 1	333	69	Spider		30	30	6
 1	333	69	Python0		60	2	5
 1	333	69	Scarecrow0		60	2	4
@@ -479,7 +470,6 @@ H081	203	205	CaveBat	200	130	7
 H081	203	205	HoleMaggot		200	100	7
 
 H081	203	205	DeadCorpse100   	190	5	12
-H081	203	205	尸卫勇士100	190	4	14
 H081	203	205	CaveBat0	190	5	12
 
 ;GeneralCaveEast2
@@ -492,8 +482,6 @@ H082	164	146	CorpseGeneral	160	80	7
 H082	164	146	Spearman	140	100	7
 
 H082	164	146	DeadCorpse100		160	5	7
-H082	164	146	尸卫勇士100	160	4	8
-H082	164	146	尸卫战将100	160	3	7
 H082	164	146	Spearman100	140	5	7
 H082	164	146	CaveBat0	160	2	6
 
@@ -504,8 +492,6 @@ H083	163	169	CorpseGeneral	160	120	6
 H083	163	169	Spearman	140	150	6
 
 H083	163	169	DeadCorpse100		160	5	6
-H083	163	169	尸卫勇士100	160	4	6
-H083	163	169	尸卫战将100	160	4	6
 H083	163	169	Spearman100	140	5	6
 
 ;东三右叹息
@@ -515,8 +501,6 @@ H084	155	154	CorpseGeneral	160	100	6
 H084	155	154	Spearman	140	120	6
 
 H084	155	154	DeadCorpse100		160	4	6
-H084	155	154	尸卫勇士100	160	3	6
-H084	155	154	尸卫战将100	160	3	6
 H084	155	154	Spearman100	140	4	6
 
 ;GeneralCaveEast4
@@ -526,8 +510,6 @@ H085	190	194	CorpseGeneral	160	120	5
 H085	190	194	Spearman	130	100	5
 
 H085	190	194	DeadCorpse100		160	3	5
-H085	190	194	尸卫勇士100	160	3	5
-H085	190	194	尸卫战将100	160	3	5
 H085	190	194	Spearman100	130	3	5
 
 ;GeneralCaveEast5
@@ -537,8 +519,6 @@ H086	175	210	CorpseGeneral	200	180	5
 H086	175	210	Spearman	150	140	5
 
 H086	175	210	DeadCorpse100   	200	3	5
-H086	175	210	尸卫勇士100	200	5	5
-H086	175	210	尸卫战将100	200	5	5
 H086	175	210	Spearman100	150	4	5
 
 ;Wilderness
@@ -565,7 +545,6 @@ H086	175	210	Spearman100	150	4	5
 2	230	800	Coyote	170	200	5
 2	230	800	Python0	100	4	5
 2	230	800	OtsuchiSnake0	200	10	14
-2	230	800	树	100	50	15
 
 2	130	300	Cactus	70	70	6
 2	130	300	SandScorpion	70	60	5
@@ -595,32 +574,6 @@ H086	175	210	Spearman100	150	4	5
 2	70	520	SandGuai	50	30	6
 2	70	520	SandScorpion0	50	1	6
 2	70	520	SandGuai0	50	1	6
-
-2	166	326	沙鱼	50	50	6
-2	166	326	沙鱼0	50	2	6
-2	166	326	SharkKing	50	1	30
-
-2	280	315	沙鱼	40	40	6
-2	280	315	沙鱼0	40	1	6
-2	280	315	沙鱼	40	1	30
-
-2	428	225	沙鱼	30	30	6
-2	428	225	沙鱼0	30	1	6
-
-2	380	291	沙鱼	30	30	6
-2	380	291	沙鱼0	30	1	6
-
-2	386	422	沙鱼	30	30	6
-2	386	422	沙鱼0	30	1	6
-
-2	340	383	沙鱼	20	20	6
-2	340	383	沙鱼0	20	1	6
-
-2	340	351	沙鱼	20	20	6
-2	340	351	沙鱼0	20	1	6
-
-2	415	539	沙鱼	30	30	6
-2	415	539	沙鱼0	30	1	6
 
 ;;MechCity
 
@@ -711,7 +664,6 @@ M009	128	116	Shiren0		110	2	14
 M009	128	116	Leadman		110	60	10
 M009	128	116	Leadman0		110	2	16
 M009	128	116	Jingang		110	1	40
-M009	128	116	金刚人1		110	1	20
 
 ;M010机关洞住处
 M010	125	125	CopperPerson	120	150	8
@@ -732,8 +684,6 @@ M011	75	75	SwordWielder0	70	1	17
 ;M012机关洞住处
 M012	127	127	CopperPerson	120	110	8
 M012	127	127	CopperPerson0	120	2	10
-M012	127	127	铜人2	120	40	8
-M012	127	127	铜人20	120	1	10
 M012	127	127	BronzeBeast	120	150	8
 M012	127	127	BronzeBeast0	120	3	10
 M012	127	127	SwordWielder	120	100	8
@@ -760,7 +710,6 @@ M014	74	77	Jingang		60	1	40
 
 ;M015机关洞仓库
 M015	94	116	CopperPerson		80	60	7
-M015	94	116	铜锤手812	80	1	60
 M015	94	116	CopperPerson0		80	1	10
 M015	94	116	BronzeBeast		80	60	7
 M015	94	116	BronzeBeast0		80	2	10
@@ -770,7 +719,6 @@ M015	94	116	Shiren		80	40	7
 M015	94	116	Shiren0		80	1	12
 M015	94	116	Leadman		80	40	9
 M015	94	116	Leadman0		80	1	14
-M015	94	116	金刚人1		80	1	20
 M015	94	116	Jingang		80	1	40
 
 ;M016机关洞景点
@@ -786,7 +734,6 @@ M018	125	125	Shiren		120	100	7
 M018	125	125	Shiren0		120	3	12
 M018	125	125	Leadman		120	80	10
 M018	125	125	Leadman0		120	2	16
-M018	125	125	金刚人1		120	3	20
 M018	125	125	Jingang		120	3	40
 M018	125	125	BigGame	100	1	60
 
@@ -821,8 +768,6 @@ M022	50	50	Shiren0		40	1	13
 ;M023
 M023	120	127	CopperPerson		120	90	7
 M023	120	127	CopperPerson0		120	2	10
-M023	120	127	铜人2		120	30	7
-M023	120	127	铜人20		120	1	10
 M023	120	127	BronzeBeast		120	120	7
 M023	120	127	BronzeBeast0		120	3	10
 M023	120	127	SwordWielder		120	120	7
@@ -831,7 +776,6 @@ M023	120	127	Shiren		120	100	7
 M023	120	127	Shiren0		120	3	10
 M023	120	127	Leadman		120	50	10
 M023	120	127	Leadman0		120	1	14
-M023	120	127	金刚人1		120	1	20
 
 ;M024
 M024	155	150	CopperPerson		140	120	7
@@ -839,13 +783,11 @@ M024	155	150	CopperPerson0		140	2	10
 M024	155	150	BronzeBeast		140	120	7
 M024	155	150	BronzeBeast0		140	3	10
 M024	155	150	SwordWielder		140	120	7
-M024	155	150	铜锤手812	140	1	60
 M024	155	150	SwordWielder0		140	3	10
 M024	155	150	Shiren		140	100	7
 M024	155	150	Shiren0		140	2	9
 M024	155	150	Leadman		140	50	10
 M024	155	150	Leadman0		140	1	14
-M024	155	150	金刚人1		140	1	20
 M024	155	150	Jingang		140	1	40
 
 ;M025
@@ -855,12 +797,10 @@ M025	125	125	BronzeBeast		110	150	7
 M025	125	125	BronzeBeast0		110	3	10
 M025	125	125	SwordWielder		110	150	7
 M025	125	125	SwordWielder0		110	3	10
-M025	125	125	铜锤手812	110	1	60
 M025	125	125	Shiren		110	120	7
 M025	125	125	Shiren0		110	3	12
 M025	125	125	Leadman		110	70	9
 M025	125	125	Leadman0		110	2	12
-M025	125	125	金刚人1		110	2	20
 M025	125	125	Jingang		110	2	40
 M025	125	125	BigGame	110	1	60
 
@@ -875,7 +815,6 @@ M026	150	150	Shiren		150	50	7
 M026	150	150	Shiren0		150	1	13
 M026	150	150	Leadman		150	20	10
 M026	150	150	Leadman0		150	1	16
-M026	150	150	金刚人1		150	1	20
 M026	150	150	Jingang		150	1	40
 
 ;M027
@@ -943,7 +882,6 @@ M032	101	88	Shiren		80	50	7
 M032	101	88	Shiren0		80	2	13
 M032	101	88	Leadman		80	20	9
 M032	101	88	Leadman0		80	1	16
-M032	101	88	金刚人1		80	1	20
 M032	101	88	Jingang		80	1	40
 
 
@@ -1236,7 +1174,6 @@ S022	82	117	SpiritGuard	10	4	9
 S022	82	117	EvilGuard	10	4	9
 
 ;逆魔六层1
-S023	48	50	逆魔雕像00	50	1	60
 S023	48	50	EvilArcher	40	20	8
 S023	48	50	EvilStatue	50	20	8
 S023	48	50	EvilGuard	50	20	8
@@ -1244,7 +1181,6 @@ S023	48	50	SpiritGuard	50	20	8
 S023	48	50	EvilGuard3	50	6	24
 S023	48	50	EvilArcher3	40	6	24
 S023	48	50	EvilStatue3	50	7	24
-S023	48	50	逆魔卫士3	50	7	24
 
 S023	48	50	EvilGuard0	50	1	24
 S023	48	50	EvilArcher0	40	1	24
@@ -1254,14 +1190,12 @@ S023	48	50	SpiritGuard00	50	1	40
 
 ;逆魔六层2
 S024	48	50	EvilArcher	40	25	8
-S024	48	50	逆魔雕像5	50	1	60
 S024	48	50	EvilStatue	50	25	8
 S024	48	50	EvilGuard	50	25	8
 S024	48	50	SpiritGuard	50	25	8
 S024	48	50	EvilGuard3	50	8	24
 S024	48	50	EvilArcher3	40	8	24
 S024	48	50	EvilStatue3	50	8	24
-S024	48	50	逆魔卫士3	50	8	24
 
 S024	48	50	EvilArcher0	40	1	24
 S024	48	50	EvilGuard0	50	1	24
@@ -1274,10 +1208,8 @@ S026	72	76	CounterSpirit		1	1	240
 S026	72	76	EvilGuard	20	10	8
 S026	72	76	SpiritGuard	20	10	8
 S026	72	76	EvilStatue	20	10	8
-S026	46	50	逆魔雕像5	80	2	60
 S026	72	76	EvilArcher	10	10	8
 S026	72	76	EvilGuard3	20	7	16
-S026	72	76	逆魔卫士3	20	7	16
 S026	72	76	EvilStatue3	20	7	16
 S026	72	76	EvilArcher3	10	7	16
 
@@ -1286,7 +1218,6 @@ S026	46	50	SpiritGuard	50	20	8
 S026	46	50	EvilStatue	50	20	8
 S026	46	50	EvilArcher	40	20	8
 S026	46	50	EvilGuard3	50	12	16
-S026	46	50	逆魔卫士3	50	12	16
 S026	46	50	EvilStatue3	50	12	16
 S026	46	50	EvilArcher3	40	12	16
 
@@ -1296,7 +1227,6 @@ S026	22	22	EvilStatue	5	1	8
 S026	22	22	EvilArcher	3	1	8
 
 S026	27	27	EvilGuard3	5	1	14
-S026	27	27	逆魔卫士3	5	1	14
 S026	27	27	EvilStatue3	5	1	14
 S026	27	27	EvilArcher3	3	1	14
 
@@ -1361,7 +1291,6 @@ J001	160	154      Gorefiend		150  53    8
 J001	160	154     Gorefiend0		150   2   15
 J001	160	154      CaneMonster		150  30   12
 J001	160	154     CaneMonster0		150   2   15
-J001	160	154    地狱奴		150 195    8
 
 ;MoonPool
 J002	150	150    Gargoyle		150 121    8
@@ -1373,7 +1302,6 @@ J002	150	150     Gorefiend0		150   3   15
 J002	150	150      CaneMonster		150  30   10
 J002	150	150     CaneMonster0		150   4   20
 J002	150	150      BarbedDevil0		150   1   50
-J002	150	150    地狱奴		150 150    8
 
 ;IceCorridor
 J003	120	130    Gargoyle		120 130    8
@@ -1385,7 +1313,6 @@ J003	120	130     Gorefiend0		120   2   10
 J003	120	130      CaneMonster		120  80    8
 J003	120	130     CaneMonster0		120   2   10
 J003	120	130      BarbedDevil0		120   2   40
-J003	120	130    地狱奴		120  40    8
 
 ;StoneIcePlace
 J004	198	200      Gargoyle		200  85   12
@@ -1401,7 +1328,6 @@ J004	198	200        CaneMonster		200  28   12
 J004	198	200       CaneMonster0		200   1   10
 J004	198	200        BarbedDevil		200  17   12
 J004	198	200       BarbedDevil0		200   2    5
-J004	198	200      地狱奴		200  28   12
 
 ;SapphirePalace
 J005	200	200      Gargoyle		200  84   12
@@ -1417,7 +1343,6 @@ J005	200	200       CaneMonster0		200   1   10
 J005	200	200        BarbedDevil		200  17   12
 J005	200	200       BarbedDevil0		200   2    8
 J005	200	200    InsectQueen		200   6   30
-J005	200	200      地狱奴		200   6   12
 
 ;DeathGate
 J006	93	93      Gargoyle		100  48   10
@@ -1529,7 +1454,6 @@ J012	200	180	CaneMonster		200	50	12
 J012	200	180	CaneMonster0		200	1	15
 J012	200	180	BarbedDevil		200	30	12
 J012	200	180	BarbedDevil0		200	1	20
-J012	200	180	地狱奴		200	30	12
 
 ;WesternRegion
 5	611	434	FishPerson		50	30	4
@@ -2095,7 +2019,7 @@ MH007	112	95	Spearman0	100	2	5
 MH007	112	95	Gladiator1	100	30	60
 
 ;海滨平原
-MH008	95	80	稻草人		65	20	3
+MH008	95	80	Scarecrow		65	20	3
 MH008	95	80	Scarecrow0		65	1	3
 MH008	95	80	FishPerson		65	20	3
 MH008	95	80	FishPerson0		65	1	3
@@ -3045,7 +2969,7 @@ NL019   212 195 Gladiator3 200 30 60
 L003	150	150	Deer1		120     3        60
 L003	150	150	Deer		120     1        90
 L003	150	150	Scarecrow1		120     6        60
-L003	150	150	稻草人		120     1        90
+L003	150	150	Scarecrow		120     1        90
 L003	150	150	SharkKing1		120     12       60
 L003	150	150	SharkKing		120     1        180
 L003	150	150	Ape1		120     12       60

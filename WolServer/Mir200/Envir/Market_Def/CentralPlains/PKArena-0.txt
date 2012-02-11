@@ -1,0 +1,9 @@
+[@main]
+Enter PK Arena?\
+\
+<Enter/@enter>\
+<Exit/@exit>
+
+[@enter]
+#ACT
+map F005

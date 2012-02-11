@@ -1,0 +1,258 @@
+[@main]
+Testers Features:\
+<Mount System/@Mounts>   <Add GameGold/@gamegold>\
+<cloaks/@cloaks>   <Add Points/@points>\
+<Change Font/@fonts>\
+
+[@gamegold]
+#ACT
+GAMEGOLD + 99
+#SAY
+You have recived 99 Gamegold.\
+
+[@points]
+#ACT
+CREDITPOINT + 10
+SENDMSG 0 "<$USERNAME> has recives 10 Credit Points! Testing Message."
+SENDMSG 10 "<$USERNAME> has recives 10 Credit Points! Testing Message."
+break
+
+
+[@fonts]
+Select a font then type a in game message.\
+<Font 1/@font1> <Font 2/@font2> <Font 3/@font3>\
+<Font 4/@font4> <Font 5/@font5> <Font 6/@font6>\
+<Back/@main>
+
+[@font1]
+#ACT
+CHATFONT 3
+CHATCOLOR 3
+#SAY
+You font has been changed.
+break
+
+[@font2]
+#ACT
+CHATFONT 5
+CHATCOLOR 2
+#SAY
+You font has been changed.\
+
+[@font3]
+#ACT
+CHATFONT 7
+CHATCOLOR 5
+#SAY
+You font has been changed.\
+
+[@font4]
+#ACT
+CHATFONT 8
+CHATCOLOR 6
+#SAY
+You font has been changed.\
+
+[@font5]
+#ACT
+CHATFONT 8
+CHATCOLOR 22
+#SAY
+You font has been changed.\
+
+[@font6]
+#ACT
+CHATFONT 8
+CHATCOLOR 33
+#SAY
+You font has been changed.\
+
+
+
+[@cloaks]
+cloaks are items which lets you transform\
+you into a object or monster.
+<FounderCloak/@cloak1>  <FiendishCloak/@cloak2> <AshuraCloak/@cloak3>\
+<GuardCloak/@cloak4> <PigCloak/@cloak5> <RabbitCloak/@cloak6> <HorseCloak/@cloak7>\
+<UnicornCloak/@cloak8> <ApeCloak/@cloak9> <GladiatorCloak/@cloak10> <SnakeCloak/@cloak11>\
+<FlamesCloak/@cloak12> <BalrogCloak/@cloak13> <TyrantCloak/@cloak14> <BlackAshCloak/@cloak15>\
+
+
+[@cloak1]
+#ACT
+GIVE FounderCloak
+break
+
+[@cloak2]
+#ACT
+GIVE FiendishCloak
+break
+
+[@cloak3]
+#ACT
+GIVE AshuraCloak
+break
+
+[@cloak4]
+#ACT
+GIVE GuardCloak
+break
+
+[@cloak5]
+#ACT
+GIVE PigCloak
+break
+
+[@cloak6]
+#ACT
+GIVE RabbitCloak
+break
+
+[@cloak7]
+#ACT
+GIVE HorseCloak
+break
+
+[@cloak8]
+#ACT
+GIVE UnicornCloak
+break
+
+[@cloak9]
+#ACT
+GIVE ApeCloak
+break
+
+[@cloak10]
+#ACT
+GIVE GladiatorCloak
+break
+
+[@cloak11]
+#ACT
+GIVE SnakeCloak
+break
+
+[@cloak12]
+#ACT
+GIVE FlamesCloak
+break
+
+[@cloak13]
+#ACT
+GIVE BalrogCloak
+break
+
+[@cloak14]
+#ACT
+GIVE TyrantCloak
+break
+
+[@cloak15]
+#ACT
+GIVE BlackAshCloak
+break
+
+[@Mounts]
+First "Get Mount" select the mount you want.\
+Then you will need to upgrade it.\
+\
+<Get Mount/@getmount>\
+<Upgrade Mount/@upgrade>\
+<Back/@main>
+
+
+[@getmount]
+Please select your Mount
+\
+<Leopard/@leopard>\
+<Lion/@lion>\
+<Dragon/@dragon>\
+<Phoenix/@Phoenix>\
+<Spectral Tiger/@tiger>\
+<Back/@mounts>
+
+[@leopard]
+#ACT
+GIVE ±ªÄ§Ê¯
+break
+
+[@lion]
+#ACT
+GIVE Ê¨Ä§Ê¯
+break
+
+[@dragon]
+#ACT
+GIVE ÷è÷ëÊ¯
+break
+
+[@Phoenix]
+#ACT
+GIVE ·ï»ËÊ¯
+break
+
+[@tiger]
+#ACT
+GIVE »¢Ä§Ê¯
+break
+
+[@upgrade]
+Free Upgrade.
+<1st Upgrade/@upgrade1>\
+<2nd Upgrade/@upgrade2>\
+
+[@upgrade1]
+#ACT
+UPGRADEMON
+break
+#SAY
+You have succesfully upgrade mount to level 1!\
+\
+<Exit/@exit>
+
+#IF
+equal $PET.RELIVE 0
+#ACT
+UPGRADEMON
+break
+#SAY
+You have succesfully upgrade mount to level 1!\
+\
+<Exit/@exit>
+
+#IF
+equal $PET.RELIVE 0
+#SAY
+Sorry you do not meet the requirements.\
+\
+\
+<Exit/@exit>\
+#ELSESAY
+Sorry you do not meet the requirements.\
+\
+\
+<Exit/@exit>\
+
+
+[@upgrade2]
+#IF
+!equal $PET.RELIVE 1
+#ACT
+break
+#SAY
+Your mount must be alive and released.\
+\
+<Exit/@exit>
+
+#IF
+#ACT
+UPGRADEMON
+UPGRADEUSERITEM $PETMAKEINDEX 59 = 1
+#SAY
+Your Mount is now level 2.\
+Clicking CTRL + R You can Ride your mount.\
+Clicking CTRL + R x2 will put you in battle mode.\
+
+\
+<Exit/@exit>

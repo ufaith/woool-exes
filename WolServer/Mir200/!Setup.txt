@@ -3,11 +3,11 @@ ServerIndex=0
 ServerName=dragon
 ServerNumber=0
 VentureServer=FALSE
-TestServer=TRUE
+TestServer=FALSE
 TestLevel=1
 TestGold=0
 TestServerUserLimit=2000
-ServiceMode=FALSE
+ServiceMode=TRUE
 NonPKServer=FALSE
 SafeOffLine=FALSE
 NoHumanNoMon=FALSE
@@ -123,10 +123,10 @@ Dogz7=
 Dogz8=
 Dogz9=
 [Setup]
-ItemNumber=3907376
+ItemNumber=5052752
 ClbADDTrains=10
 ClbLevelUpTrains=100
-ItemNumberEx=1073741969
+ItemNumberEx=1073742192
 ClientFile1=mir.1
 ClientFile2=mir.2
 ClientFile3=mir.3
@@ -1050,7 +1050,7 @@ GlobaStrVal32=
 GlobaStrVal33=
 GlobaStrVal34=
 GlobaStrVal35=
-GlobaStrVal36=天下第一元神女法师： {Color=green Wizardhero}\她是 {Color=green gamelord}的元神，目前等级为： {Color=green 1级}。\纷扰乱世群雄追鹿。{Color=green gamelord}的元神 {Color=green Wizardhero}\资质甚高，领悟非凡，熟练地驾御着电与火的力量，在战\火四起的传世大陆中成为了天下第一，至今没人可以超越\今天的天下第一元神是{Color=green Wizardhero}，明天将会是谁呢？\申请天下第一名号，请速到中州魔法阵祭祀处申请。\<离开/@exit>
+GlobaStrVal36=天下第一元神女法师： {Color=green Wizardhero}\她是 {Color=green gamelord}的元神，目前等级为： {Color=green 50级}。\纷扰乱世群雄追鹿。{Color=green gamelord}的元神 {Color=green Wizardhero}\资质甚高，领悟非凡，熟练地驾御着电与火的力量，在战\火四起的传世大陆中成为了天下第一，至今没人可以超越\今天的天下第一元神是{Color=green Wizardhero}，明天将会是谁呢？\申请天下第一名号，请速到中州魔法阵祭祀处申请。\<离开/@exit>
 GlobaStrVal37=
 GlobaStrVal38=
 GlobaStrVal39=

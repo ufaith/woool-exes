@@ -2,7 +2,7 @@
 CastleName=É³³Ç
 ChangeDate=01/12/2011 16:46:11
 WarDate=01/12/2011 16:46:11
-IncomeToday=10/02/2012 02:19:05
+IncomeToday=11/02/2012 00:14:10
 OwnGuild=Gamemasters
 TotalGold=0
 TodayIncome=0
