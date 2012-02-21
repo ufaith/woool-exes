@@ -1,0 +1,54 @@
+[@BuyArmor]
+{
+\\
+Please select the items you wish to purchase.\
+\
+<Product List/@buy>\
+<Back/@main>
+
+[goods]
+粗布衣(男) 10 10
+灵魂战甲(男) 10 10
+魔袍(男) 10 10
+轻盔(男) 10 10
+中盔(男) 10 10
+重盔(男) 10 10
+战神(男) 10 10
+恶魔长袍(男) 10 10
+幽灵战甲(男) 10 10
+粗布衣(女) 10 10
+灵魂战甲(女) 10 10
+幽灵战甲(女) 10 10
+魔袍(女) 10 10
+恶魔长袍(女) 10 10
+轻盔(女) 10 10
+中盔(女) 10 10
+重盔(女) 10 10
+战神(女) 10 10
+魔力头盔 10 10
+青铜头盔 10 10
+道士头盔 10 10
+死神头盔 10 10
+鹿皮腰带 10 10
+鹿皮靴子 10 10
+}
+
+[@SellArmor]
+Please select the items you wish to sell.\
+\
+<Back/@main>
+}
+
+[@RepairArmor]
+{
+\\
+Please select the weapons you wish to Repair.\
+}
+
+[@SpecialRepair]
+{
+\\
+Please select the weapons you wish to Special Repair.\
+\
+<Back/@main>
+}

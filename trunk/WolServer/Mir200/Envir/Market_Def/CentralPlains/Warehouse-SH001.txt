@@ -1,12 +1,15 @@
-(@Storage @getback @FastStorge)
-[@main]
+(@storage @getback )
+%100
+(@zzsd)
+[@main]FLASH(1)
 \\
 Welcome, how may i help you?\
-<Quick Storage/@FastStorge>\
-<Storage/@storage>   <Gem Storage/@goldsave>\
+\
+<Storage/@faststorage>\
 <Remove Item/@getback>\
-<Bundle Items/@mbind>\
+<Buddle Items/@Bundlegoods>\
 <Exit/@exit>
+
 
 [@FastStorge]
 \\
@@ -27,8 +30,8 @@ Please select the items you wish to remove.\
 \
 <Back/@main>
 
-[@goldsave]
-#CALL [\Features\Warehouse1.txt] @±¶ Ø≤÷ø‚
 
-[@mbind]
-#CALL [\Features\Warehouse1.txt] @¿¶‘˙ŒÔ∆∑
+
+
+[@Bundlegoods]
+#CALL [\Merchant\Warehouse.txt] @Bundleditems

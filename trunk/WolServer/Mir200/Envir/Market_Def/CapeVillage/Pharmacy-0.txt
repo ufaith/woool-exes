@@ -1,37 +1,15 @@
-(@fastbuy @buy @sell)
+(@buy @sell )
 %100
-+0
-+42
 [@main]
+\\
 Welcome, Is there anything i can help you with?\
 <Buy Drugs/@buy>\
 <Sell Drugs/@sell>\
-<Exit/@exit>
+<Exit/@exit>\
+
 
 [@buy]
-Please select the items you wish to purchase.\
-\
-\
-<Back/@main>
+#CALL [\Merchant\Pharmacy.txt] @BuyDrugs
 
 [@sell]
-Please select the items you wish to Sell.\
-\
-\
-<Back/@main>
-
-[goods]
-HPPotion(S)	40	10
-HPPotion(M)	40	10
-HPPotion(L)	40	10
-MPPotion(S)	40	10
-MPPotion(M)	40	10
-MPPotion(L)	40	10
-HPPotion(SB)	40	10
-HPPotion(MB)	40	10
-MPPotion(SB)	40	10
-MPPotion(MB)	40	10
-HPPotion(XL)	40	10
-MPPotion(XL)	40	10
-HPPotion(XLB)	40	10
-MPPotion(XLB)	40	10
+#CALL [\Merchant\Pharmacy.txt] @SellDrugs

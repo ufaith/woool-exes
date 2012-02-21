@@ -18,4 +18,37 @@ break
 
 [@mainright]
 #SAY
-Gem Storage Bugged.\
+Testing Features.\
+\
+<OctopusCave/@OctopusCave>\
+<Special Ring Map/@SpecialRingMap>\
+<TigerHill/@TigerHill>\
+<Exit/@exit>
+
+
+
+[@OctopusCave]
+#ACT
+MAPMOVE haidizyd
+SENDMSG 1 <%s>潜入了[章鱼洞],本地图是出[终极装备]的打宝圣地!本地图BOSS一小时刷新一次！
+break
+close
+
+[@TigerHill]
+#IF
+CHECKLEVELEX > 64
+#ACT
+MAPMOVE DC_ICE 107 178
+break
+#ELSEACT
+MessageBox "You have to be level 65 to enter"
+
+
+[@SpecialRingMap]
+#IF
+CHECKLEVELEX > 64
+#ACT
+MAPMOVE DC_FIRE 196 200
+break
+#ELSEACT
+MessageBox "You have to be level 65 to enter"

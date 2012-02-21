@@ -1,0 +1,30 @@
+[@BuyDrugs]
+{
+\\
+Need to buy any medicine?\ \
+\
+<Back/@main>
+
+[goods]
+HPPotion(S)	40	10
+HPPotion(M)	40	10
+HPPotion(L)	40	10
+MPPotion(S)	40	10
+MPPotion(M)	40	10
+MPPotion(L)	40	10
+HPPotion(SB)	40	10
+HPPotion(MB)	40	10
+MPPotion(SB)	40	10
+MPPotion(MB)	40	10
+HPPotion(XL)	40	10
+MPPotion(XL)	40	10
+HPPotion(XLB)	40	10
+MPPotion(XLB)	40	10
+}
+
+[@SellDrugs]
+{
+\\
+To sell something, I will give a good price.\\\
+<Back/@main>
+}

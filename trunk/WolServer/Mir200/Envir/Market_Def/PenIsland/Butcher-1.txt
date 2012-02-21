@@ -2,72 +2,10 @@
 %100
 +40
 [@main]
-Do you come here to butcher?\
+Welcome, do you have any meat for me today?\
 \
-#IF
-large $TASKCOUNT (4) 2
-small $TASKCOUNT (4) 5
-#SAY
-<可接任务/@_RW_entry>\
-
-#IF
-equal $TASKCOUNT (4) 1
-#SAY
-<可接任务/@_RW_entry>\
-#IF
-#SAY
 <Sell Meats/@sell>\
-<打听消息/@talk>\
-<我想用高品质牛肉制作精制豹粮/@NewBFood>\
 <Exit/@exit>
 
-[@_RW_entry]
-#CALL [\Quests\NoviceQuests\ButchersKnife.txt] @PenIsland-屠夫
-
 [@sell]
-品质好的肉我能给你个好价钱。\
-要是粘上土的或者让火烧过的，我可不会出多少钱。\
-\
-<返回/@main>
-
-[@talk]
-看到那个收购木材的了吗？\
-大老远的跑到这里来，结果这里不产什么木材，\
-看来要不了几天就破产了，真是可怜。\
-\
-<返回/@main>
-
-[@NewBFood]
-　　你想要我帮你制作豹粮吗？那就得需20块以上的纯度高\
-于25的牛肉我才能帮你试试。不过牛肉越多越好，所以你包\
-里高品质牛肉我都会拿走。不过不一定能成功，你想好了吗？\
-\
-　　<是的，我想好了，你帮帮我吧/@NewBFood1>\
-　　<离开/@main>\
-
-[@NewBFood1]
-#IF
-CHECKITEMDURE 牛肉 25000 20
-random 2
-#ACT
-TAKEDUREITEM 牛肉 25000 20
-give 精制豹粮 1
-break
-#SAY
-　　精制豹粮已经放到你的包裹里了\
-\
-    <谢谢/@exit>\
-
-#IF
-CHECKITEMDURE 牛肉 25000 20
-#ACT
-TAKEDUREITEM 牛肉 25000 20
-#SAY
-　　不好意思，精制豹粮的制作失败了。\
-\
-    <Exit/@exit>\
-#ELSESAY
-　　你带来的高品质牛肉太少了，我没办法帮你做精制豹粮。\
-\
-    <好的，我马上去找/@exit>\
-    <Exit/@exit>\
+#CALL [\Merchant\Butcher.txt] @SellMeat

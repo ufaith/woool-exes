@@ -1,44 +1,31 @@
-(@fastbuy @buy @sell @repair @s_repair)
+(@buy @sell @repair @s_repair )
 %100
 +10
 +11
 +15
 +58
 +81
-[@import]
-#CALL [\Merchant\ClothingStore.txt] @merchandise
-
-[@main]
+(@zzsd)
+[@main]FLASH(3)
 Welcome, how may i help you?\
 \
-<Quick Buy/@fastbuy>\
-<Buy/@buy>\
+<Buy/@fastbuy>\
 <Sell/@sell>\
 <Repair/@repair>\
 <Special Repair/@s_repair>\
 <Exit/@exit>
 
 [@fastbuy]
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
+\\
+Please select the items you want to buy.\\
+<Purchase Items/@buy>\
 <Back/@main>
 
 [@buy]
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
-<Back/@main>
-
+#CALL [\Merchant\ArmorShop.txt] @BuyArmor
 [@sell]
-Please select the items you wish to sell.\
-\
-<Back/@main>
-
+#CALL [\Merchant\ArmorShop.txt] @SellArmor
 [@repair]
-Please select the items you wish to repair.\
-
+#CALL [\Merchant\ArmorShop.txt] @RepairArmor
 [@s_repair]
-Please select the items you wish to special repair.\
-\
-<Back/@main>
+#CALL [\Merchant\ArmorShop.txt] @SpecialRepair

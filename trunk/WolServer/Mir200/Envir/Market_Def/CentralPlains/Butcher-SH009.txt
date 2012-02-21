@@ -8,6 +8,4 @@ Welcome, do you have any meat for me today?\
 <Exit/@exit>
 
 [@sell]
-I will pay more for high quality meats!\
-\
-<Back/@main>
+#CALL [\Merchant\Butcher.txt] @SellMeat

@@ -1,62 +1,27 @@
-(@Storage @getback @FastStorge)
+(@storage @getback)
+%100
 [@main]
+\\
 Welcome, how may i help you?\
-<Storage/@storage>   <封印仓库/@seal>\
-<Remove Item/@getback>   Gem Storage/@goldsave>\
-<Bundle Items/@mbind>\
+\
+<Storage/@storage>\
+<Remove Item/@getback>\
+<Buddle Items/@Bundlegoods>\
 <Exit/@exit>
 
-[@FastStorge]
-Please select the items you wish to store.\
-\
-<Back/@main>
 
 [@storage]
+\\
 Please select the items you wish to store.\
-\
 \
 <Back/@main>
 
 [@getback]
+\\
 Please select the items you wish to remove.\
 \
 <Back/@main>
 
-[@goldsave]
-#CALL [\Features\Warehouse.txt] @宝石仓库
 
-[@mbind]
-#CALL [\Features\Warehouse.txt] @捆扎物品
-
-[@seal]
-　　利用乾坤封印的神秘力量，我能在你的仓库内分隔出一\
-个独立的封印仓库。凡是存入封印仓库的物品，在封印的有\
-效时间内，任何人都无法取出。\
-\
-<我要用乾坤封印在仓库内分隔出一个封印仓库/@sealGetTime1>\
-<存放物品至封印仓库/@specialStore>\
-<取出物品/@getback>\
-<离开/@exit>
-
-[@sealGetTime1]
-#ACT
-;请输入你对要封印仓库增加的封印时间： 单位为小时
-GOTO @存入
-#SAY
-你想在你的仓库内分隔出一个独立的封印仓库吗？请\
-输入一个对封印仓库的有效封印时间，单位为小时，\
-输入数字必须为大于0的整数，并且封印累计时间不\
-能超过720小时。\
-
-[@specialStore]
-　　你没有封印仓库，或者你的封印仓库由于乾坤封印的有\
-效作用时间已过而消失，请用乾坤封印在你的仓库内分隔出\
-一个封印仓库后再来存放物品。\
-\
-　　<返回/@main>\
-
-[@存入]
-　　请放入有效的乾坤封印，让我利用它神奇的力量来对你\
-的仓库进行分离，分隔出一个独立的封印仓库来。\
-\
-　　<离开/@exit>\
+[@Bundlegoods]
+#CALL [\Merchant\Warehouse.txt] @Bundleditems

@@ -1,55 +1,15 @@
-(@fastbuy @buy @sell)
+(@buy @sell )
 %100
-+0
-+42
 [@main]
-Welcome, how may i help you?\
-\
-<Quick Buy/@fastbuy>\
-<Buy/@buy>\
-<Sell/@sell>\
-<Exit/@exit>
+\\
+Welcome, Is there anything i can help you with?\
+<Buy Drugs/@buy>\
+<Sell Drugs/@sell>\
+<Exit/@exit>\
 
-[@fastbuy]
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
-<Back/@main>
 
 [@buy]
-Please select the items you wish to purchase.\
-\
-\
-<Back/@main>
+#CALL [\Merchant\Pharmacy.txt] @BuyDrugs
 
 [@sell]
-Please select the items you wish to sell.\
-\
-\
-<Back/@main>
-
-[goods]
-HPPotion(S)	40	10
-HPPotion(M)	40	10
-HPPotion(L)	40	10
-MPPotion(S)	40	10
-MPPotion(M)	40	10
-MPPotion(L)	40	10
-HPPotion(SB)	40	10
-HPPotion(MB)	40	10
-MPPotion(SB)	40	10
-MPPotion(MB)	40	10
-HPPotion(LB)	40	10
-MPPotion(LB)	40	10
-GreenPoison(S)	40	10
-GreenPoison(M)	40	10
-GreenPoison(L)	40	10
-RedPoison(S)	40	10
-RedPoison(M)	40	10
-RedPoison(L)	40	10
-MaleCrow(S)	40	10
-MaleCrow(M)	40	10
-MaleCrow(L)	40	10
-FemaleCrow(S)	40	10
-FemaleCrow(M)	40	10
-FemaleCrow(L)	40	10
+#CALL [\Merchant\Pharmacy.txt] @SellDrugs

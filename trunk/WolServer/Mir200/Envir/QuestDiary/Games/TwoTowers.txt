@@ -1,0 +1,82 @@
+[@骑兵竞技场门房]
+{
+Welcome to the Cavalry Arena.\
+The object is to finish the race in the quickest\
+time, the winner of the event will be rewarded\
+once the event has finished.\
+\
+<Start Game/@run>\
+<Leave Game/@goback>\
+<Exit/@exit>
+
+[@goback]
+#ACT
+mapmove 0 468 226
+
+[@run]
+#IF
+random 1
+#ACT
+mov D0 0
+mov D1 0
+StopTimer 0 P0
+StartTimer 0
+
+#IF
+random 4
+#ACT
+mov D1 4
+mapmove F016 136 76
+break
+
+#IF
+random 3
+#ACT
+mov D1 3
+mapmove F016 133 73
+break
+
+#IF
+random 2
+#ACT
+mov D1 2
+mapmove F016 130 70
+break
+
+#IF
+random 1
+#ACT
+mov D1 1
+mapmove F016 127 67
+break
+}
+
+[@EndRace]
+{
+#IF
+random 1
+#ACT
+map 0
+StopTimer 0 D0
+DIV D0 1000
+
+#IF
+equal I0 0
+#ACT
+mov I0 $STR(D0)
+mov A45 $USERNAME
+mov I2 $STR(D1)
+SENDMSG 5 "You finished the race in <$STR(D0)> Seconds"
+SENDMSG 5 "Congratulations you have earned the quickest time <$STR(D0)> Seconds!"
+break
+
+#IF
+small D0 $STR(I0)
+#ACT
+mov I0 $STR(D0)
+mov A45 $USERNAME
+mov I2 $STR(D1)
+SENDMSG 5 "You time was <$STR(D0)>Seconds，Is currently the fastest"
+#ELSEACT
+SENDMSG 5 "You time was<$STR(D0)> Seconds，But not the fastest"
+}

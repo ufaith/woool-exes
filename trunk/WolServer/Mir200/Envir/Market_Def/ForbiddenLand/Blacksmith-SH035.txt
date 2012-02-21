@@ -1,52 +1,41 @@
-(@fastbuy @buy @sell @repair @s_repair)
+(@buy @sell @repair @s_repair )
 %100
 +5
 +6
 +43
-[@import]
-#CALL [\Merchant\Blacksmith.txt] @merchandise
-
 [@main]
-Welcome, Is there anything i can help you with?\
-<Quick Buy/@fastbuy>\
-<Buy/@buy>\
-<Sell/@sell>\
-<Repair/@repair>\
+\\
+Weclome, how may i help you?\\
+<Buy Weapons/@buy>\
+<Sell Weapons/@sell>\
+<Repair Weapons/@repair>\
 <Special Repair/@s_repair>\
+<Synthetic Weapons/@SynthesisCommon>\
+<Exit/@exit>
+
+[@SynthesisCommon]
+\\
+　　合成武器必须有黑铁矿石作为基础材料，金矿、银矿、\
+铁矿、宝石做为辅助材料。宝石将有可能提高你武器的属性\
+而用纯度越高的矿石将会合成出高耐久武器。你想现在合成\
+一把武器吗？\
+<Synthesis Weapons/@@weaponcompound>\
 <Exit/@exit>
 
 [@fastbuy]
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
-<Back/@main>
+\\
+请挑选要购买的物品。\\
+<商品清单/@buy>\
+<返　回/@main>
 
 [@buy]
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
-<Back/@main>
+#CALL [\Merchant\Blacksmith.txt] @BuyWeapon
 
 [@sell]
-Please select the items you wish to sell.\
-\
-\
-<Back/@main>
+#CALL [\Merchant\Blacksmith.txt] @SellWeapon
 
-[@sell]
-要修理武器吗？\
-圣灵装备上拥有的技能威力增强效果，当装备耐久度低于\
-50%时，就无法发挥作用进入封印状态，需要消耗<Color=green 1到2个>\
-圣灵精华来激活它，使它重新发挥作用；在这里修理武器\
-的同时，我就可以帮你重新激活已经被封印的圣灵武器。\
-\
-<Back/@main>
+[@repair]
+#CALL [\Merchant\Blacksmith.txt] @repairweapon
 
 [@s_repair]
-要修理武器吗？\
-圣灵装备上拥有的技能威力增强效果，当装备耐久度低于\
-50%时，就无法发挥作用进入封印状态，需要消耗<Color=green 1到2个>\
-圣灵精华来激活它，使它重新发挥作用；在这里修理武器\
-的同时，我就可以帮你重新激活已经被封印的圣灵武器。\
-\
-<Back/@main>
+#CALL [\Merchant\Blacksmith.txt] @SpecialReapir

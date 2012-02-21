@@ -1,2 +1,2 @@
 [@main]
-#CALL [\Features\BountyHunter.txt] @赏金猎人
+#CALL [\Merchant\BountyHunter.txt] @赏金猎人

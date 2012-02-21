@@ -1,13 +1,10 @@
-(@sell)
+(@sell )
 %100
-+48
 [@main]
-Welcome, do you have any wood for me?\
+Welcome, do you have any Wood for me?\
 \
 <Sell Wood/@sell>\
-<Exit/@exit>
+<Exitµ¥/@exit>\
 
 [@sell]
-Please select the items you wish to sell.\
-\
-<Back/@main>\
+#CALL [\Merchant\Lumberman.txt] @sellwood

@@ -3,6 +3,11 @@ Testers Features:\
 <Mount System/@Mounts>   <Add GameGold/@gamegold>\
 <cloaks/@cloaks>   <Add Points/@points>\
 <Change Font/@fonts>\
+<Games/@games>\
+<Exit/@exit>
+
+[@games]
+#CALL [\Games\TwoTowers.txt] @Æï±ø¾º¼¼³¡ÃÅ·¿
 
 [@gamegold]
 #ACT
@@ -71,7 +76,7 @@ You font has been changed.\
 
 [@cloaks]
 cloaks are items which lets you transform\
-you into a object or monster.
+you into a object or monster.\
 <FounderCloak/@cloak1>  <FiendishCloak/@cloak2> <AshuraCloak/@cloak3>\
 <GuardCloak/@cloak4> <PigCloak/@cloak5> <RabbitCloak/@cloak6> <HorseCloak/@cloak7>\
 <UnicornCloak/@cloak8> <ApeCloak/@cloak9> <GladiatorCloak/@cloak10> <SnakeCloak/@cloak11>\
@@ -80,77 +85,77 @@ you into a object or monster.
 
 [@cloak1]
 #ACT
-GIVE FounderCloak
+GIVE FounderCloak 1
 break
 
 [@cloak2]
 #ACT
-GIVE FiendishCloak
+GIVE FiendishCloak 1
 break
 
 [@cloak3]
 #ACT
-GIVE AshuraCloak
+GIVE AshuraCloak 1
 break
 
 [@cloak4]
 #ACT
-GIVE GuardCloak
+GIVE GuardCloak 1
 break
 
 [@cloak5]
 #ACT
-GIVE PigCloak
+GIVE PigCloak 1
 break
 
 [@cloak6]
 #ACT
-GIVE RabbitCloak
+GIVE RabbitCloak 1
 break
 
 [@cloak7]
 #ACT
-GIVE HorseCloak
+GIVE HorseCloak 1
 break
 
 [@cloak8]
 #ACT
-GIVE UnicornCloak
+GIVE UnicornCloak 1
 break
 
 [@cloak9]
 #ACT
-GIVE ApeCloak
+GIVE ApeCloak 1
 break
 
 [@cloak10]
 #ACT
-GIVE GladiatorCloak
+GIVE GladiatorCloak 1
 break
 
 [@cloak11]
 #ACT
-GIVE SnakeCloak
+GIVE SnakeCloak 1
 break
 
 [@cloak12]
 #ACT
-GIVE FlamesCloak
+GIVE FlamesCloak 1
 break
 
 [@cloak13]
 #ACT
-GIVE BalrogCloak
+GIVE BalrogCloak 1
 break
 
 [@cloak14]
 #ACT
-GIVE TyrantCloak
+GIVE TyrantCloak 1
 break
 
 [@cloak15]
 #ACT
-GIVE BlackAshCloak
+GIVE BlackAshCloak 1
 break
 
 [@Mounts]
@@ -159,11 +164,16 @@ Then you will need to upgrade it.\
 \
 <Get Mount/@getmount>\
 <Upgrade Mount/@upgrade>\
+<Mount Armor/@armor>\
 <Back/@main>
 
+[@armor]
+#ACT
+Give RoyalArmor(F) 1
+give RoyalDayArm(M) 1
 
 [@getmount]
-Please select your Mount
+Please select your Mount\
 \
 <Leopard/@leopard>\
 <Lion/@lion>\
@@ -174,31 +184,31 @@ Please select your Mount
 
 [@leopard]
 #ACT
-GIVE ±ªÄ§Ê¯
+give ±ªÄ§Ê¯ 1
 break
 
 [@lion]
 #ACT
-GIVE Ê¨Ä§Ê¯
+GIVE Ê¨Ä§Ê¯ 1
 break
 
 [@dragon]
 #ACT
-GIVE ÷è÷ëÊ¯
+GIVE ÷è÷ëÊ¯ 1
 break
 
 [@Phoenix]
 #ACT
-GIVE ·ï»ËÊ¯
+GIVE ·ï»ËÊ¯ 1
 break
 
 [@tiger]
 #ACT
-GIVE »¢Ä§Ê¯
+GIVE »¢Ä§Ê¯ 1
 break
 
 [@upgrade]
-Free Upgrade.
+Free Upgrade.\
 <1st Upgrade/@upgrade1>\
 <2nd Upgrade/@upgrade2>\
 
