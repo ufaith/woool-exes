@@ -1,0 +1,23 @@
+[@BuyItems]
+{
+\\
+Please select the items you want to buy.\\
+<Product List/@buy>\
+<Back/@main>
+
+[goods]
+DungeonEscape	40	10
+RandomTeleport	40	10
+RepairOil		40	10
+Amulet		40	10
+Amulet(M)	40	10
+DungeonEsc(B)	40	10
+RandomTele(B)	40	10
+}
+
+[@SellItems]
+{
+\\
+Please select the items you want to sell.\ \
+<Back/@main>
+}

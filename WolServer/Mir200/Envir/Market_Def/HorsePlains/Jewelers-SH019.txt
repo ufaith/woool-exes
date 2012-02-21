@@ -1,4 +1,4 @@
-(@fastbuy @buy @sell @repair @s_repair)
+(@buy @sell @repair @s_repair )
 %100
 +19
 +20
@@ -7,73 +7,25 @@
 +23
 +24
 +26
-[@import]
-#CALL [\Merchant\Jewelers.txt] @merchandise
-
 [@main]
-欢迎光临，有什么事情吗？\
-
-#IF
-equal $OWNERGUILD 游戏管理
-#SAY
-根据城堡主人的命令,对沙城当前行会的成员提供30%折扣\
-#ELSESAY
-根据城堡主人<$LORD>的命令,对<$OWNERGUILD>的成员提供30%折扣\
-
-#IF
-#SAY
+\\
+Welcome, how may i help you?\
 \
-<Quick Buy/@fastbuy>\
-<购入首饰/@buy>\
-<出售首饰/@sell>\
-<修理首饰/@repair>\
+<Buy Jewelry/@buy>\
+<Sell Jewelry/@sell>\
+<Repair Jewelry/@repair>\
 <Special Repair/@s_repair>\
-<打听/@_SS_ask>和心魔有关的最新消息\
-
-[@fastbuy]
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
-<Back/@main>
+<Exit/@exit>
 
 [@buy]
-要买首饰吗？\
-\
-\
-<Product List/@buy>\
-<Back/@main>
-
+#ACT
+#CALL [\Merchant\Jewelers.txt] @BuyJewelry
 [@sell]
-要卖首饰吗？\
-\
-\
-<Back/@main>\
-
+#ACT
+#CALL [\Merchant\Jewelers.txt] @SellJewelry
 [@repair]
-要修理首饰吗？\
-\
-\
-<Back/@main>\
-
+#ACT
+#CALL [\Merchant\Jewelers.txt] @RepairJewelry
 [@s_repair]
-要特殊修理首饰吗？\
-\
-\
-<Back/@main>\
-
-[@_SS_ask]
-　　听说，被心魔附身的人类能获得巨大的力量，附魔的武\
-器装备更是恐怖。不过，来找我修首饰的人更加多了。\
-\
-　　<Back/@main>
-
-[goods]
-IronBracelet	20	10
-CopperBrace	20	10
-CopperRing	20	10
-CrystalRing		20	10
-OctagonalRing	20	10
-GoldNecklace	20	10
-AccurateNeck		20	10
-PureNeck		20	10
-ThinBracelet		20	10
+#ACT
+#CALL [\Merchant\Jewelers.txt] @srepair

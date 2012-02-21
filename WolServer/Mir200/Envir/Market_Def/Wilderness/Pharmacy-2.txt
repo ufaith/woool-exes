@@ -1,73 +1,15 @@
-(@fastbuy @buy @sell)
+(@buy @sell )
 %100
-+0
-+42
 [@main]
-欢迎光临，这里有各种药品。\
-有什么事情需要我帮忙吗？ \
-\
-<Quick Buy/@fastbuy>\
-<购入药品/@buy>\
-<出售药品/@sell>\
-<打听/@_YD_ask>和心魔有关的最新消息\
-<Exit/@exit>
+\\
+Welcome, Is there anything i can help you with?\
+<Buy Drugs/@buy>\
+<Sell Drugs/@sell>\
+<Exit/@exit>\
 
-[@fastbuy]
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
-<Back/@main>
 
 [@buy]
-需要买什么药吗？\
-\
-\
-<Back/@main>
+#CALL [\Merchant\Pharmacy.txt] @BuyDrugs
 
 [@sell]
-请给要卖的东西，我会给好价钱的。\
-\
-\
-<Back/@main>
-
-[@_YD_ask]
-　　年轻人，如果你要买药去找心魔，能买多少就买多少吧\
-不要再吝惜金币了。听说心魔具有人的智慧、人的意识，他\
-们会使用人类的装备、人类的的技能，真是太恐怖了。\
-\
-　　<Back/@main>
-
-[InGotGoods]
-645 超级天山雪莲 1
-646 超级深海灵礁 1
-644 超级冰泉圣水 1
-908 治疗神水 1
-630 道尊神符 1
-631 道尊灵毒(绿) 1
-632 道尊灵毒(红) 1
-
-[goods]
-HPPotion(S)	40	10
-HPPotion(M)	40	10
-HPPotion(L)	40	10
-MPPotion(S)	40	10
-MPPotion(M)	40	10
-MPPotion(L)	40	10
-HPPotion(SB)	40	10
-HPPotion(MB)	40	10
-MPPotion(SB)	40	10
-MPPotion(MB)	40	10
-HPPotion(LB)	40	10
-MPPotion(LB)	40	10
-GreenPoison(S)	40	10
-GreenPoison(M)	40	10
-GreenPoison(L)	40	10
-RedPoison(S)	40	10
-RedPoison(M)	40	10
-RedPoison(L)	40	10
-MaleCrow(S)	40	10
-MaleCrow(M)	40	10
-MaleCrow(L)	40	10
-FemaleCrow(S)	40	10
-FemaleCrow(M)	40	10
-FemaleCrow(L)	40	10
+#CALL [\Merchant\Pharmacy.txt] @SellDrugs

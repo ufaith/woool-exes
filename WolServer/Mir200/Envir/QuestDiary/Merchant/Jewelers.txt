@@ -1,5 +1,11 @@
-[@merchandise]
+[@BuyJewelry]
 {
+\\
+Please select the items you want to buy.\ \
+<List of goods/@buy>\
+<Back/@main>
+
+[goods]
 IronBracelet	20	10
 CopperBrace	20	10
 CopperRing	20	10
@@ -9,4 +15,26 @@ GoldNecklace	20	10
 AccurateNeck		20	10
 PureNeck		20	10
 ThinBracelet		20	10
+
+}
+
+[@SellJewelry]
+{
+\\
+Please select the items you want to sell.\ \
+<Back/@main>
+}
+
+[@RepairJewelry]
+{
+\\
+Please select the items you want to repair. \ \
+<Back/@main>
+}
+
+[@srepair]
+{
+\\
+Please select the items you want to special repair.\ \
+<Back/@main>
 }

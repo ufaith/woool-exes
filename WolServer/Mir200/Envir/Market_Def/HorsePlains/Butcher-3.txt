@@ -2,19 +2,10 @@
 %100
 +40
 [@main]
-年轻人来这里卖肉啊？\
+Welcome, do you have any meat for me today?\
 \
 <Sell Meats/@sell>\
-<打听消息/@talk>\
 <Exit/@exit>
 
 [@sell]
-品质好的肉我能给你个好价钱。\
-要是粘上土的或者让火烧过的，我可不会出多少钱。\
-\
-<返回/@main>
-
-[@talk]
-俺们这里的牛肉可是个好东西。\
-\
-<返回/@main>
+#CALL [\Merchant\Butcher.txt] @SellMeat

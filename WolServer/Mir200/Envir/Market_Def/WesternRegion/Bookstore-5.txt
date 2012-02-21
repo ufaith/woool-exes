@@ -1,81 +1,16 @@
-(@fastbuy @buy @sell)
+(@buy @sell)
 %100
 +4
 [@main]
 Welcome, how may i help you?\
-<Quest/@_RW_entry>\
-<Fast Buy/@fastbuy>\
-<Buy/@buy>\
-<Sell/@sell>\
-<Skill Help/@helpbooks>\
-<Exit/@exit>
-
-[@fastbuy]
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
+<Buy Books/@buy>\
+<Sell Books/@sell>\
+<Skill Guide/@_SD_helpbooks>\
 <Exit/@exit>
 
 [@buy]
-Please select the skills you wish to purchase.\
-\
-\
-<Exit/@exit>
+#CALL [\Merchant\Bookstore.txt] @Purchasebooks
 
-[@_SD_helpbooks]
-#CALL [\Features\Bookstore.txt] @help
 
-[goods]
-雷霆剑		20	10
-烈火剑法	20	10
-战魂真悟	20	10
-破击剑法	20	10
-突斩		20	10
-破盾斩		20	10
-金刚护体	20	10
-移形换影	20	10
-擒龙手		20	10
-元神战魂真悟	20	10
-元神烈火剑法	20	10
-元神破击剑法	20	10
-元神破盾斩	20	10
-元神突斩	20	10
-元神金刚护体	20	10
-地狱雷光	20	10
-魔法盾		20	10
-圣言术		20	10
-五雷轰		20	10
-冰咆哮		20	10
-冰旋风		20	10
-法之魄		20	10
-兽灵术		20	10
-风影盾		20	10
-狂龙紫电	20	10
-化身蝙蝠	20	10
-魔魂术		20	10
-流星火雨	20	10
-元神魔法盾	20	10
-元神法之魄	20	10
-元神狂龙紫电	20	10
-群体治愈术	20	10
-召唤神兽	20	10
-道心清明	20	10
-神光术		20	10
-解毒术		20	10
-幽冥火咒	20	10
-强化骷髅术	20	10
-遁地		20	10
-心灵召唤	20	10
-元神召唤神兽	20	10
-元神道心清明	20	10
-元神解毒术	20	10
-元神神光术	20	10
-元神幽冥火咒	20	10
-元神强化骷髅术	20	10
-
-;盛大模式
-[goods1]
-小火球			20	10
-初级剑法		20	10
-精神战法		20	10
-治疗术			20	10
+[@sell]
+#CALL [\Merchant\Bookstore.txt] @Sellbooks

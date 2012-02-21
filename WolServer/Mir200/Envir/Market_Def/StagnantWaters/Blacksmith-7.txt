@@ -1,107 +1,41 @@
-(@fastbuy @buy @sell @repair @s_repair)
+(@buy @sell @repair @s_repair )
 %100
 +5
 +6
 +43
-[@import]
-#CALL [\Merchant\Blacksmith.txt] @merchandise
-
 [@main]
-Welcome, Is there anything i can help you with?\
-<Quick Buy/@fastbuy>\
-<Buy/@buy>\
-<Sell/@sell>\
-<Repair/@repair>\
+\\
+Weclome, how may i help you?\\
+<Buy Weapons/@buy>\
+<Sell Weapons/@sell>\
+<Repair Weapons/@repair>\
 <Special Repair/@s_repair>\
-<询问武器/@qweapon>　　<请帮我打造一件踏云玄铠/@NewBSaddle>\
-<打听/@_TJ_ask>和心魔有关的最新消息\
+<Synthetic Weapons/@SynthesisCommon>\
+<Exit/@exit>
+
+[@SynthesisCommon]
+\\
+　　合成武器必须有黑铁矿石作为基础材料，金矿、银矿、\
+铁矿、宝石做为辅助材料。宝石将有可能提高你武器的属性\
+而用纯度越高的矿石将会合成出高耐久武器。你想现在合成\
+一把武器吗？\
+<Synthesis Weapons/@@weaponcompound>\
 <Exit/@exit>
 
 [@fastbuy]
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
-<Back/@main>
+\\
+请挑选要购买的物品。\\
+<商品清单/@buy>\
+<返　回/@main>
 
 [@buy]
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
-<Back/@main>
+#CALL [\Merchant\Blacksmith.txt] @BuyWeapon
 
 [@sell]
-Please select the items you wish to sell.\
-\
-\
-<Back/@main>
+#CALL [\Merchant\Blacksmith.txt] @SellWeapon
 
-[@sell]
-要修理武器吗？\
-圣灵装备上拥有的技能威力增强效果，当装备耐久度低于\
-50%时，就无法发挥作用进入封印状态，需要消耗<Color=green 1到2个>\
-圣灵精华来激活它，使它重新发挥作用；在这里修理武器\
-的同时，我就可以帮你重新激活已经被封印的圣灵武器。\
-\
-<Back/@main>
+[@repair]
+#CALL [\Merchant\Blacksmith.txt] @repairweapon
 
 [@s_repair]
-要修理武器吗？\
-圣灵装备上拥有的技能威力增强效果，当装备耐久度低于\
-50%时，就无法发挥作用进入封印状态，需要消耗<Color=green 1到2个>\
-圣灵精华来激活它，使它重新发挥作用；在这里修理武器\
-的同时，我就可以帮你重新激活已经被封印的圣灵武器。\
-\
-<Back/@main>
-
-[@_TJ_ask]
-　　年轻人，人类只有战胜自己心魔，将其禁锢，才能在修\
-炼元神分身神技的道路上获得大成。\
-\
-　　<Back/@main>
-
-[@qweapon]
-妖魔身上的武器，有时具有特殊功能。\
-这种武器拿到店里来，会卖好价钱。\
-对了，武器种类不同，价格也不同，\
-但是大体上，持久力越高越昂贵。\
-\
-<Back/@main>
-
-[@NewBSaddle]
-　　你来的也真是时候，我前不久刚从西域走亲戚回来，在\
-那里碰到了高人，向他学习了怎么给丛林豹打造踏云玄铠。\
-　　你要我帮你打造一件踏云玄铠也不难，你带<Color=green 3块纯度20>\
-<Color=green 以上的黑铁>给我，我帮你搞定它，对了，把你的丛林豹带在\
-身边，这样我才好给你的豹子量身打造。\
-　　不过，丑话说在前头，我也是刚学了这门手艺，还生\
-手的很，要是没打造成功，可不要怪我。　\
-　　<这是你需要的东西，请帮我打造一副踏云玄铠/@NewBSaddle1>\
-　　<离开/@main>\
-
-[@NewBSaddle1]
-#IF
-CHECKITEMDURE 黑铁矿石 20000 3
-random 2
-#ACT
-TAKEDUREITEM 黑铁矿石 20000 3
-give 踏云玄铠 1
-#SAY
-　\
-　　这一次终于成功打造出了“<COLOR=GREEN 踏云玄铠>”\\
-　　<离开/@exit>
-
-#IF
-CHECKITEMDURE 黑铁矿石 20000 3
-random 1
-#ACT
-TAKEDUREITEM 黑铁矿石 20000 3
-#SAY
-你的运气真是不好，这次打造居然失手了，再多试几次吧！\
-\
-<离开/@exit>
-#ELSESAY
-　　打造宠物豹的踏云玄铠必须要<Color=green 3块纯度20以上的黑铁>，你\
-再去找找吧。　\
-\
-　　<好的，我马上去找/@exit>\
-　　<离开/@exit>\
+#CALL [\Merchant\Blacksmith.txt] @SpecialReapir

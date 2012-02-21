@@ -1,72 +1,16 @@
-(@fastbuy @buy @sell)
+(@buy @sell)
 %100
 +4
 [@main]
 Welcome, how may i help you?\
-<Quick Buy/@fastbuy>\
 <Buy Books/@buy>\
 <Sell Books/@sell>\
 <Skill Guide/@_SD_helpbooks>\
 <Exit/@exit>
 
-[@_SD_helpbooks]
-#CALL [\Features\Bookstore.txt] @help
-
-
-[@fastbuy]
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
-<Exit/@exit>
-
 [@buy]
-Please select the skills you wish to purchase.\
-\
-\
-<Exit/@exit>
+#CALL [\Merchant\Bookstore.txt] @Purchasebooks
+
 
 [@sell]
-Please select the skills you wish to sell.\
-\
-\
-<Exit/@exit>
-
-[goods]
-初级剑法	20	10
-血影刀法	20	10
-残影刀法	20	10
-攻杀剑法	20	10
-护身真气	20	10
-刺杀剑术	20	10
-抱月刀		20	10
-半月弯刀	20	10
-
-小火球		20	10
-抗拒火环	20	10
-诱惑之光	20	10
-地狱火焰	20	10
-雷电术		20	10
-冰箭术		20	10
-瞬间移动	20	10
-火炎刀		20	10
-风火轮		20	10
-爆裂火焰	20	10
-火墙		20	10
-冰龙破		20	10
-疾光电影	20	10
-
-治疗术		20	10
-精神战法	20	10
-施毒术		20	10
-诅咒术		20	10
-灵魂道符	20	10
-赶尸术		20	10
-骷髅召唤术	20	10
-替身法符	20	10
-隐身术		20	10
-集体隐身术	20	10
-幽灵盾		20	10
-神圣战甲术	20	10
-狮子吼		20	10
-灵魂墙		20	10
-困魔咒		20	10
+#CALL [\Merchant\Bookstore.txt] @Sellbooks

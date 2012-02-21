@@ -1,4 +1,4 @@
-(@fastbuy @buy @sell @repair @s_repair)
+(@buy @sell @repair @s_repair )
 %100
 +19
 +20
@@ -7,69 +7,25 @@
 +23
 +24
 +26
-[@import]
-#CALL [\Merchant\Jewelers.txt] @merchandise
-
 [@main]
 \\
 Welcome, how may i help you?\
 \
-<Quick Buy/@fastbuy>\
-<Buy/@buy>\
-<SellÊÎ/@sell>\
-<Repair/@repair>\
+<Buy Jewelry/@buy>\
+<Sell Jewelry/@sell>\
+<Repair Jewelry/@repair>\
 <Special Repair/@s_repair>\
 <Exit/@exit>
 
-[@fastbuy]
-\\
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
-<Back/@main>
-
 [@buy]
-\\
-Please select the items you wish to purchase.\
-\
-\
-<Product List/@buy>\
-<Back/@main>
-
+#ACT
+#CALL [\Merchant\Jewelers.txt] @BuyJewelry
 [@sell]
-\\
-Please select the items you wish to sell.\
-\
-\
-<Back/@main>\
-
+#ACT
+#CALL [\Merchant\Jewelers.txt] @SellJewelry
 [@repair]
-\\
-Please select the items you wish to repair.\
-\
-\
-<Back/@main>\
-
+#ACT
+#CALL [\Merchant\Jewelers.txt] @RepairJewelry
 [@s_repair]
-\\
-Please select the items you wish to special repair.\
-\
-\
-<Back/@main>\
-
-[~@repair]
-\\
-Items have been repaired.\
-\
-<Back/@main>\
-
-[goods]
-IronBracelet	20	10
-CopperBrace	20	10
-CopperRing	20	10
-CrystalRing		20	10
-OctagonalRing	20	10
-GoldNecklace	20	10
-AccurateNeck		20	10
-PureNeck		20	10
-ThinBracelet		20	10
+#ACT
+#CALL [\Merchant\Jewelers.txt] @srepair

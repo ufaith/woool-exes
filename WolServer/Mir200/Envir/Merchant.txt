@@ -199,3 +199,6 @@ ImmortalIsland\Phoenix LXXD 66 66 Phoenix 0 57 0
 ImmortalIsland\Shen LXXD 39 30 Shen 0 165 0
 ImmortalIsland\Consonance LXXD 116 30 Consonance 0 55 0
 ImmortalIsland\Xiaomi lxxd 	122 27 Xiaomi 0 15 0
+
+;======================Activity=====================
+Activity\Gatekeeper F016 134 124 Gatekeeper 0 12 0

@@ -1,55 +1,41 @@
-(@buy @sell @repair @s_repair)
+(@buy @sell @repair @s_repair )
 %100
-+10
-+11
-+15
-+58
-+81
-+0
-+31
 +5
 +6
-+40
-+1
-+4
-+19
-+20
-+21
-+22
-+23
-+24
-+26
-+3
-+25
-[@import]
-#CALL [\Merchant\Blacksmith.txt] @merchandise
-
++43
 [@main]
-Welcome, Is there anything i can help you with?\
-<Buy/@buy>\
-<Sell/@sell>\
-<Repair/@repair>\
+\\
+Weclome, how may i help you?\\
+<Buy Weapons/@buy>\
+<Sell Weapons/@sell>\
+<Repair Weapons/@repair>\
 <Special Repair/@s_repair>\
+<Synthetic Weapons/@SynthesisCommon>\
 <Exit/@exit>
 
+[@SynthesisCommon]
+\\
+　　合成武器必须有黑铁矿石作为基础材料，金矿、银矿、\
+铁矿、宝石做为辅助材料。宝石将有可能提高你武器的属性\
+而用纯度越高的矿石将会合成出高耐久武器。你想现在合成\
+一把武器吗？\
+<Synthesis Weapons/@@weaponcompound>\
+<Exit/@exit>
+
+[@fastbuy]
+\\
+请挑选要购买的物品。\\
+<商品清单/@buy>\
+<返　回/@main>
+
 [@buy]
-Please select the items you wish to purchase.\
-\
-<Product List/@buy>\
-<Back/@main>
+#CALL [\Merchant\Blacksmith.txt] @BuyWeapon
 
 [@sell]
-Please select the items you wish to Sell.\
-\
-\
-<Back/@main>
+#CALL [\Merchant\Blacksmith.txt] @SellWeapon
 
 [@repair]
-Please select the weapons you wish to Repair.\
-\
-<Back/@main>
+#CALL [\Merchant\Blacksmith.txt] @repairweapon
 
 [@s_repair]
-Please select the weapons you wish to Special Repair.\
-\
-<Back/@main>
+#CALL [\Merchant\Blacksmith.txt] @SpecialReapir

@@ -113,3 +113,13 @@ CLEARNAMELIST ..\QuestDiary\GameData\CityDonated.txt
 ADDVARLIST $STR(A13) ..\QuestDiary\GameData\CityDonated.txt
 SaveExVar 0 $STR(A13) 王城捐献金币 ..\QuestDiary\GameData\IndividualVariables\王城捐献金币.txt
 $STR(A13).LOADVAR HUMAN 王城捐献金币 ..\QuestDiary\GameData\IndividualVariables\王城捐献金币.txt
+
+
+[@骑兵竞技开始]
+#ACT
+mov I0 0
+inc G7 1
+SENDMSG 14 活动提醒：骑兵竞技场现已开放，“双塔骑兵”大赛已经开始！
+SENDMSG 14 国王有令，胜出的英雄可以优先入选王国铁骑军团，参加对抗邪恶双塔联盟的战役
+SENDMSG 14 每场冠军将可获得最高百万金币及星王冠等极品嘉奖，请从王城老兵处入场参赛
+SENDMSG 14 所有国民均可到王城彩票员处参与大赛博彩，最高中奖金额可达6000万金币！
