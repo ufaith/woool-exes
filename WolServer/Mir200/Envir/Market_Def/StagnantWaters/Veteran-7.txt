@@ -1,111 +1,19 @@
 [@main]
 Welcome, how may i help you?\
 \
-<Town Teleport/@teleport>\
-<Record Homestone/@_LB_homePos>\
-<Purgatory/@_LB_newlianyu>\
+<Town Teleport/@TTeleport>     <Personal Information/@PInfo>\
+<Record Homestone/@homePos>\
+<Prestige Tokens/@PTokens>\
 <Exit/@exit>
 
-[@_LB_homePos]
-#CALL [\Features\Veteran\Veteran.txt] @记录回城
+[@homePos]
+#CALL [\Merchant\Veteran\Homestone.txt] @THomestone
 
+[@TTeleport]
+#CALL [\Merchant\Veteran\Teleport.txt] @Teleport
 
-[@teleport]
-{
-Please select a Place to teleport.\
-\
-<CentralPlains/@capital>\
-<Cemetery East/@h081>\
-<General Cemetery/@h071>\
-<Mines/@kuangkeng>\
-<ShipOnwer/@matou> 
+[@PTokens]
+#CALL [\Merchant\Veteran\PrestigePoints.txt] @PrestigePoints
 
-[@capital]
-Go to Central Plains it?\
-1000金币就可以了，没有的话就自己走着去吧。\
-\
-<付钱/@capital1>\
-<没钱/@exit>
-
-[@capital1]
-#IF
-checkgold 1000
-#ACT
-take 金币 1000
-mapmove 0 470 225
-#ELSESAY
-你的钱不够，我不送你去。\
-\
-<Exit/@exit>
-
-[@h081]
-要去将军坟东吗？\
-600金币就可以了，没有的话就自己走着去吧。\
-\
-<付钱/@h081a>\
-<没钱/@exit>
-
-[@h081a]
-#IF
-checkgold 600
-#ACT
-take 金币 600
-mapmove 0 773 399
-#ELSESAY
-你的钱不够，我不送你去。\
-\
-<Exit/@exit>
-
-[@h071]
-要去将军坟吗？\
-800金币就可以了，没有的话就自己走着去吧。\
-\
-<付钱/@h071a>\
-<没钱/@exit>
-
-[@h071a]
-#IF
-checkgold 800
-#ACT
-take 金币 800
-mapmove 0 33 352
-#ELSESAY
-你的钱不够，我不送你去。\
-\
-<Exit/@exit>
-
-[@kuangkeng]
-要去矿坑？挖矿挺赚的吧？\
-不介意的话，给500金币我送您过去？\
-\
-<好/@kk> \
-<不用了/@main>
-
-[@kk]
-#IF
-checkgold 500
-#ACT
-take 金币 500
-mapmove 1 472 400
-#ELSESAY
-没带钱啊？那以后再来吧。\
-\
-<退出/@exit>
-
-[@matou]
-要去码头？是要到外面旅行啊？\
-不介意的话，给500金币我送您过去？\
-\
-<好/@mt>\
-<不用了/@main>
-
-[@mt]
-#IF
-checkgold 500
-#ACT
-take 金币 500
-mapmove 1 72 142
-#ELSESAY
-没带钱啊？那以后再来吧。\
-\
-<退出/@exit>
+[@PInfo]
+#CALL [\Merchant\Veteran\Information.txt] @PlayerInfo

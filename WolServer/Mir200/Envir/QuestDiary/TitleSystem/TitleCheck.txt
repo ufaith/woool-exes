@@ -1,0 +1,29 @@
+[@checkjob]
+{
+#IF
+checkjob warrior
+#ACT
+goto @warriortitles
+break
+
+#IF
+checkjob wizard
+#ACT
+goto @wizardtitles
+break
+
+#IF
+checkjob taoist
+#ACT
+goto @taoisttitles
+break
+
+[@warriortitles]
+#CALL [\TitleSystem\WarriorTitles.txt] @wartitles
+
+[@wizardtitles]
+#CALL [\TitleSystem\WizardTitles.txt] @wiztitles
+
+[@taoisttitles]
+#CALL [\TitleSystem\TaoistTitles.txt] @taotitles
+}

@@ -23,9 +23,6 @@ break
 #IF
 #CALL [\Features\System\MainLogin.txt] @MainLogin
 
-[@import]
-#CALL [\Features\System\BonusExperience.txt] @BonusExperience
-
 [@新手上线]
 #IF
 random 1
@@ -185,7 +182,7 @@ break
 [@每分触发]
 #IF
 CHECKVAR HUMAN 凝结中符石 > 0
-#CALL [\Features\Blacksmith\MysteriousRunes.txt] @凝结记时
+#CALL [\Merchant\Blacksmith\MysteriousRunes.txt] @凝结记时
 
 #IF
 CHECKVAR HUMAN 还魂记时 > 0

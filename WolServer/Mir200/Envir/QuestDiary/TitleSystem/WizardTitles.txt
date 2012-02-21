@@ -1,0 +1,62 @@
+[@wiztitles]
+{
+#IF
+CHECKLEVELEX > 49
+#ACT
+FENGHAO 10 幻魔法宗
+break
+
+#IF
+CHECKLEVELEX > 48
+#ACT
+FENGHAO 9 幻魔法灵
+break
+
+#IF
+CHECKLEVELEX > 47
+#ACT
+FENGHAO 8 幻魔法魄
+break
+
+#IF
+CHECKLEVELEX > 46
+#ACT
+FENGHAO 7 幻魔法魂
+break
+
+#IF
+CHECKLEVELEX > 45
+#ACT
+FENGHAO 6 法神
+break
+
+#IF
+CHECKLEVELEX > 44
+#ACT
+FENGHAO 5 法王
+break
+
+#IF
+CHECKLEVELEX > 43
+#ACT
+FENGHAO 4 法宗
+break
+
+#IF
+CHECKLEVELEX > 42
+#ACT
+FENGHAO 3 法灵
+break
+
+#IF
+CHECKLEVELEX > 41
+#ACT
+FENGHAO 2 法魄
+break
+
+#IF
+CHECKLEVELEX > 1
+#ACT
+FENGHAO 1 Wizard
+break
+}

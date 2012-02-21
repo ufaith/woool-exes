@@ -1,0 +1,62 @@
+[@wartitles]
+{
+#IF
+CHECKLEVELEX > 49
+#ACT
+FENGHAO 10 Legendary
+break
+
+#IF
+CHECKLEVELEX > 48
+#ACT
+FENGHAO 9 天武战将
+break
+
+#IF
+CHECKLEVELEX > 47
+#ACT
+FENGHAO 8 天武战士
+break
+
+#IF
+CHECKLEVELEX > 46
+#ACT
+FENGHAO 7 天武者
+break
+
+#IF
+CHECKLEVELEX > 45
+#ACT
+FENGHAO 6 战圣
+break
+
+#IF
+CHECKLEVELEX > 44
+#ACT
+FENGHAO 5 武尊
+break
+
+#IF
+CHECKLEVELEX > 43
+#ACT
+FENGHAO 4 武宗
+break
+
+#IF
+CHECKLEVELEX > 42
+#ACT
+FENGHAO 3 武狂
+break
+
+#IF
+CHECKLEVELEX = 41
+#ACT
+FENGHAO 2 WarLord
+break
+
+#IF
+CHECKLEVELEX = 1
+#ACT
+FENGHAO 1 Warrior
+break
+}

@@ -1,0 +1,4 @@
+;以下物品出现的几率为1/15
+JihadBelt
+BlueBelt
+LawGodBelt

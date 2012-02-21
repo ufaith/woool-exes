@@ -1,0 +1,4 @@
+;以下物品出现的几率为1/30
+BrilliantBoots
+TianXuanBoots
+MagicBoots
