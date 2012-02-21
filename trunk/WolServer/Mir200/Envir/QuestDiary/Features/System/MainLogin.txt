@@ -4,34 +4,20 @@
 #IF
 ISNEWHUMAN
 #ACT
-;Clean up the name of the relevant variables for this role
-goto @新手上线
-;New players record
 Calcvar GLOBAL 新进玩家 + 1
 SAVEVAR GLOBAL 新进玩家 ..\QuestDiary\GameData\PublicVariables\每日清除.txt
 
 #IF
 random 1
 #ACT
-goto @显示炼狱时间
 SENDMSG 5 "Please report all bugs to the server team."
-#CALL [\Features\System\ClassTitle.txt] @ClassTitle
-#CALL [\Features\System\OtherTitles.txt] @OtherTitles
+#CALL [\TitleSystem\TitleCheck.txt] @checkjob
+#CALL [\TitleSystem\OtherTitles.txt] @OtherTitles
 
 #IF
 CHECKNAMELIST ..\QuestDiary\GameData\ManagementList.txt
 #ACT
-SENDMSG 5 输入命令“后台管理”即可进入后台管理
-
-#IF
-CHECKNAMELIST ..\QuestDiary\GameData\SoulBeads.txt
-#ACT
-GOTO @魂珠每天维护
-
-#IF
-Check [48] 0
-#ACT
-GOTO @新手上线奖励
+SENDMSG 5 "Enter the command "Manage" to enter the Admin Panel"
 
 #IF
 check [17] 1
@@ -59,35 +45,4 @@ checkitemw SupremeSlayer 1
 #ACT
 takew SupremeSlayer 66
 SENDMSG 5 "You have lost the Extreme Dragon Slayer!"
-
-[@魂珠每天维护]
-#IF
-CHECKNAMELIST ..\QuestDiary\GameData\SoulBeads.txt
-#ACT
-break
-#IF
-CHECKUSEITEM 14
-#ACT
-MOV P0 $ITEMINFO[$PARAM(1)].VALUE(12)
-MOV P1 $ITEMINFO[$PARAM(1)].ITEMEXT(72)
-MOV S0 $ITEMINFO[$PARAM(1)].NAME
-INC S0 维护
-#IF
-random 1
-#ACT
-MOV S1 $STR(P0)
-INC S1 |
-#IF
-#ACT
-GETVALIDSTR $STR(S2) | P2 P3
-#IF
-SMALL P1 $STR(P3)
-#ACT
-UPGRADEUSERITEM 14 11 = 1
-SENDMSG 5 魂珠修炼值不足，魂珠功能进入关闭状态！
-break
-#ELSEACT
-UPGRADEUSERITEM 14 85 - $STR(P3)
-ADDNAMELIST ..\QuestDiary\GameData\SoulBeads.txt
-break
 }

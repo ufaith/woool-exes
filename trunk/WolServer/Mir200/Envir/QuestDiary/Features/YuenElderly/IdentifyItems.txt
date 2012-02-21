@@ -1,0 +1,161 @@
+[@Identify]
+{
+Do not you want to identify some items?\
+Identify a item is always random and based\
+on luck!.\
+\
+<Identify Items/@authenticate>\
+<Understanding/@knowledge2>\
+<Purchase Identification Scroll/@salereel5>\
+<Exit/@exit>\
+
+[@authenticate]
+#ACT
+Showspotdlg 6 ¼ø¶¨: @Appraisal
+#SAY
+Yuen Yuen Elderly is not blowing!\
+\
+<Exit/@exit>\
+
+[@Appraisal]
+#IF
+equal $PARAM(0) Belt(None)
+#ACT
+take Belt(None) 1
+goto @IdentificationBelt
+break
+
+#IF
+equal $PARAM(0) Boots(None)
+#ACT
+take Boots(None) 1
+goto @IdentificationBoots
+#ELSEACT
+MessageBox "You can not identify this item"
+
+[@IdentificationBelt]
+#SAY
+Your belt (not identified) have been identified.\
+<Back/@main>
+
+#IF
+random 30
+#ACT
+ReadRandomStr ..\QuestDiary\Features\YuenElderly\Belt\30.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 15
+#ACT
+ReadRandomStr ..\QuestDiary\Features\YuenElderly\Belt\15.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 8
+#ACT
+ReadRandomStr ..\QuestDiary\Features\YuenElderly\Belt\8.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 4
+#ACT
+ReadRandomStr ..\QuestDiary\Features\YuenElderly\Belt\4.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 2
+#ACT
+ReadRandomStr ..\QuestDiary\Features\YuenElderly\Belt\2.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\Features\YuenElderly\Belt\1.txt S0
+give $STR(S0) 1
+break
+
+[@IdentificationBoots]
+#ACT
+ReadRandomStr ..\QuestDiary\Features\YuenElderly\Boots\30.txt S0
+#SAY
+Your boots (not identified) have been identified.\
+<Back/@main>
+
+#IF
+random 30
+#ACT
+ReadRandomStr ..\QuestDiary\Features\YuenElderly\Boots\30.txt S0
+give $STR(S0) 1
+break
+#say
+
+#IF
+random 15
+#ACT
+ReadRandomStr ..\QuestDiary\Features\YuenElderly\Boots\15.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 8
+#ACT
+ReadRandomStr ..\QuestDiary\Features\YuenElderly\Boots\8.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 4
+#ACT
+ReadRandomStr ..\QuestDiary\Features\YuenElderly\Boots\4.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 2
+#ACT
+ReadRandomStr ..\QuestDiary\Features\YuenElderly\Boots\2.txt S0
+give $STR(S0) 1
+break
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\Features\YuenElderly\Boots\1.txt S0
+give $STR(S0) 1
+break
+
+[@knowledge2]
+When you come across a item which has no stats and\
+(None) on the name, this means it's a item that is not\
+identified. Bring it to me and i will identify it for you\
+and you will be given a random items. The better then item\
+is based on luck!.\
+
+\
+<Exit/@exit>
+
+[@salereel5]
+It will cost 20000 Gold for the scroll.\
+Do you wish to buy one?\
+
+\
+<Buy Scroll/@salereel1a>\
+<Exit/@exit>
+
+[@salereel1a]
+#IF
+checkgold 20000
+#ACT
+take Gold 20000
+give ¼ø¶¨¾íÖá 1
+#ELSESAY
+You do not have enough Gold.\
+\
+<¹Ø±Õ/@exit>
+}

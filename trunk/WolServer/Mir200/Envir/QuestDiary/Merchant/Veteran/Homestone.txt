@@ -1,0 +1,46 @@
+[@THomestone]
+{
+dfgdfgdfgdfg\
+<Record HomeStone/@_LB_loading>\
+<How To Use HomeStone/@_LB_know>\
+<Exit/@exit>
+
+[@_LB_know]
+A Homestone lets you record a town to teleport too.\
+You can change towns at any time and free of charge.\
+\
+<Leave/@exit>
+
+[@_LB_loading]
+#IF
+checkitem HomeStone 1
+#ACT
+goto @RecordLocation
+break
+
+#IF
+checkitem HomeStone(L) 1
+#ACT
+goto @RecordLocation
+#ELSESAY
+Sorry no Homestone was found in your bag.\
+\
+<Exit/@exit>
+
+
+[@RecordLocation]
+Please select your location you wish to record:\
+\
+<PenIsland/@record&1&249&246>\
+<King City/@record&0&471&218>\
+<Tucheng/@record&2&225&450>\
+<Forbidden/@record&4&350&164>\
+<WesternRegion/@record&5&464&112>\
+<StagnantWaters/@record&7&55&41>
+
+[@record] 
+#ACT
+CHOOSEPOS $SCRIPTPARAM(1) $SCRIPTPARAM(2) $SCRIPTPARAM(3)
+#SAY
+Your have successfully recorded your stone.\
+}

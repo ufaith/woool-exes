@@ -1,0 +1,99 @@
+[@Teleport]
+{
+Please select a Place to teleport.\
+<CentralPlains/@capital>\
+<Cemetery East/@h081>\
+<General Cemetery/@h071>\
+<Mines/@kuangkeng>\
+<ShipOnwer/@matou> 
+
+[@capital]
+Teleport to CentralPlains?\
+It will cost 1000 Gold.\
+\
+<Teleport/@capital1>\
+<Exit/@exit>
+
+[@capital1]
+#IF
+checkgold 1000
+#ACT
+take Gold 1000
+mapmove 0 470 225
+#ELSESAY
+Sorry you do not have enough Gold.\
+\
+<Exit/@exit>
+
+[@h081]
+Teleport to GeneralCave?\
+It will cost 600 Gold.\
+\
+<Teleport/@h081a>\
+<Exit/@exit>
+
+[@h081a]
+#IF
+checkgold 600
+#ACT
+take Gold 600
+mapmove 0 773 399
+#ELSESAY
+Sorry you do not have enough Gold.\
+\
+<Exit/@exit>
+
+[@h071]
+Teleport to GeneralCave?\
+It will cost 800 Gold.\
+\
+<Teleport/@h071a>\
+<Exit/@exit>
+
+[@h071a]
+#IF
+checkgold 800
+#ACT
+take Gold 800
+mapmove 0 33 352
+#ELSESAY
+Sorry you do not have enough Gold.\
+\
+<Exit/@exit>
+
+[@kuangkeng]
+Teleport to Mines?\
+It will cost 500 Gold.\
+\
+<Teleport/@kk> \
+<Back/@main>
+
+[@kk]
+#IF
+checkgold 500
+#ACT
+take Gold 500
+mapmove 1 472 400
+#ELSESAY
+Sorry you do not have enough Gold.\
+\
+<Exit/@exit>
+
+[@matou]
+Teleport to ShipOwner?\
+It will cost 500 Gold.\
+\
+<Teleport/@mt>\
+<Back/@main>
+
+[@mt]
+#IF
+checkgold 500
+#ACT
+take Gold 500
+mapmove 1 72 142
+#ELSESAY
+Sorry you do not have enough Gold.\
+\
+<Exit/@exit>
+}

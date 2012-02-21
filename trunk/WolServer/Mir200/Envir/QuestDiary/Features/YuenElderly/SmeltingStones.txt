@@ -1,0 +1,170 @@
+[@smelting]
+{
+If you have any stones you have come to the right place.\
+Smelt stones to obtain a Gem or have you found a GemBox?.\
+\
+<Smelting Stones/@changgem5>      <Open Gem Box/@openrequest>\
+<Melting Gems/@_Queyss_LuckFuGems>\
+<Exit/@exit>\
+
+[@changgem5]
+In order to smelt a Gem you will need 10x Rubys, 10x Emeralds\
+or 10x Sappires.\
+Once you have collect enough stones you can smelt them into\
+a Gem.\
+<Smelt Gems/@@gemsmelt>\
+<Exit/@exit>
+
+[@openrequest]
+GemBox contains Gem treasures.\
+They can be obtained by all sorts of monsters in the\
+world, once you have a box bring it too me.\
+\
+<Open Gem Box/@openbox>\
+<Back/@main>
+
+[@openbox]
+#IF
+checkitem GemBox 1
+random 3
+#ACT
+take GemBox 1
+give Ruby 3
+give Emerald 3
+give Sapphire 3
+break
+#SAY
+Congratulations, you have open a GemBox and recived some stones!
+\
+\
+\
+<Exit/@exit>
+
+#IF
+checkitem GemBox 1
+random 1
+#ACT
+take GemBox 1
+give Ruby 5
+give Emerald 5
+give Sapphire 5
+break
+#SAY
+Congratulations, you have open a GemBox and recived some stones!
+\
+\
+<Exit/@exit>
+#ELSESAY
+Sorry you do not have a GemBox.\
+<Exit/@exit>
+
+[@_Queyss_LuckFuGems]
+There is no lucky charm, can not be melted\
+<Exit/@exit>
+
+[@@gemsmelt]
+#IF
+random 1
+#ACT
+mov P0 $PARAM(0)
+take Ruby $PARAM(0)
+dec P0 $PARAM(12)
+GemCount 0 - $STR(P0)
+mov P0 $PARAM(1)
+take Sapphire $PARAM(1)
+dec P0 $PARAM(12)
+GemCount 1 - $STR(P0)
+mov P0 $PARAM(2)
+take Emerald $PARAM(2)
+dec P0 $PARAM(12)
+GemCount 2 - $STR(P0)
+mov P0 0
+mov P1 0
+inc P0 $PARAM(0)
+inc P0 $PARAM(1)
+inc P0 $PARAM(2)
+inc P1 $ITEMINFO[$PARAM(5)].DURA
+inc P1 $ITEMINFO[$PARAM(6)].DURA
+inc P1 $ITEMINFO[$PARAM(7)].DURA
+inc P1 $ITEMINFO[$PARAM(8)].DURA
+inc P1 $ITEMINFO[$PARAM(9)].DURA
+inc P1 $ITEMINFO[$PARAM(10)].DURA
+inc P1 $ITEMINFO[$PARAM(11)].DURA
+inc P1 $ITEMINFO[$PARAM(12)].DURA
+inc P1 $ITEMINFO[$PARAM(13)].DURA
+inc P1 $ITEMINFO[$PARAM(14)].DURA
+inc P1 $ITEMINFO[$PARAM(15)].DURA
+inc P1 $ITEMINFO[$PARAM(16)].DURA
+inc P1 $ITEMINFO[$PARAM(17)].DURA
+inc P1 $ITEMINFO[$PARAM(18)].DURA
+DIV P1 10000
+inc P0 $STR(P1)
+
+#IF
+!equal $PARAM(4) 0
+#ACT
+inc P0 30
+
+#IF
+random 1
+#ACT
+movr P1 100
+
+#IF
+large P0 $STR(P1)
+#ACT
+goto @SmeltingSuccess
+#ELSEACT
+MessageBox Gem Smelting failed!
+
+[@SmeltingSuccess]
+#ACT
+movr P0 7
+#SAY
+Congratulations, Gem smelting success!\
+\
+\
+<Exit/@exit>
+
+#IF
+equal P0 0
+#ACT
+give FireStone(S) 1
+break
+
+#IF
+equal P0 1
+#ACT
+give IceStone(S) 1
+break
+
+#IF
+equal P0 2
+#ACT
+give WaterStone(S) 1
+break
+
+#IF
+equal P0 3
+#ACT
+give DiamondStone(S 1
+break
+
+#IF
+equal P0 4
+#ACT
+give SaintStone(S) 1
+break
+
+#IF
+equal P0 5
+#ACT
+give AokiStone(S) 1
+break
+
+#IF
+equal P0 6
+#ACT
+give HeartStone(S) 1
+break
+}

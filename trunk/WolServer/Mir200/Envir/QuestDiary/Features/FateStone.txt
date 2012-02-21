@@ -8,7 +8,7 @@ SETHONORSHAPE $STR(P0) $PARAM(1)
 
 #IF
 CHECKITEMID $PARAM(1)
-POS $PARAM(3) 荣誉勋章
+POS $PARAM(3) MedalOfHonor
 #ACT
 takem $PARAM(0)
 SENDMSG 5 您的勋章被命运石改造成功，拥有了特别的造型。
@@ -25,7 +25,7 @@ inc P0 $ITEMINFO[$PARAM(1)].SC1
 inc P0 $ITEMINFO[$PARAM(1)].SC2
 MULT P0 5
 #ELSEACT
-give 命运石 1
+give DestinyStone 1
 break
 
 #IF

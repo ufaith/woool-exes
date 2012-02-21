@@ -5,37 +5,45 @@
 +43
 [@main]
 \\
-Weclome, how may i help you?\\
-<Buy Weapons/@buy>\
-<Sell Weapons/@sell>\
-<Repair Weapons/@repair>\
-<Special Repair/@s_repair>\
-<Synthetic Weapons/@SynthesisCommon>\
+Welcome, Is there anything i can help you with?\
+\
+<Buy/@buy>    <Sell/@sell>\
+<Repair/@repair>    <Special Repair/@s_repair> \
+\
+<Synthesize Weapon/@hechengwuqi1> <Artifact Inquiry/@sqjuexing>\
+<Synthesis Weapon/@hechengwuqi>    <Mysterious Runes/@lingqufushi>\
 <Exit/@exit>
 
-[@SynthesisCommon]
+[@hechengwuqi1]
 \\
-　　合成武器必须有黑铁矿石作为基础材料，金矿、银矿、\
-铁矿、宝石做为辅助材料。宝石将有可能提高你武器的属性\
-而用纯度越高的矿石将会合成出高耐久武器。你想现在合成\
-一把武器吗？\
-<Synthesis Weapons/@@weaponcompound>\
-<Exit/@exit>
-
-[@fastbuy]
-\\
-请挑选要购买的物品。\\
-<商品清单/@buy>\
-<返　回/@main>
+You need the basic materials to refine your weapon\
+such as BlackIronOre, GoldOre, SilverOre,IronOre and Stones.\
+Stones will improve your equipment properties of your \
+Weapon. The higher the purity of the Ore the better the\
+success rate.\\
+<Synthetic Weapons/@@weaponcompound>\
+<Back/@main>\
 
 [@buy]
-#CALL [\Merchant\Blacksmith.txt] @BuyWeapon
+#CALL [\Merchant\Blacksmith\Blacksmith.txt] @BuyWeapon
 
 [@sell]
-#CALL [\Merchant\Blacksmith.txt] @SellWeapon
+#CALL [\Merchant\Blacksmith\Blacksmith.txt] @SellWeapon
 
 [@repair]
-#CALL [\Merchant\Blacksmith.txt] @repairweapon
+#CALL [\Merchant\Blacksmith\Blacksmith.txt] @repairweapon
 
 [@s_repair]
-#CALL [\Merchant\Blacksmith.txt] @SpecialReapir
+#CALL [\Merchant\Blacksmith\Blacksmith.txt] @SpecialReapir
+
+[@sqjuexing]
+#CALL [\Merchant\Blacksmith\Artifact.txt] @唤醒神器
+
+[@hechengwuqi]
+#CALL [\Merchant\Blacksmith\MysteriousRunes.txt] @两种合成
+
+[@lingqufushi]
+#CALL [\Merchant\Blacksmith\MysteriousRunes.txt] @凝结符石
+
+[@111]
+#CALL [\Merchant\Blacksmith\Weapons.txt] @@weaponcompound

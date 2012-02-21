@@ -19,7 +19,11 @@
 #CALL [\Features\SpiritGem.txt] @道士技能类
 #CALL [\Features\SpiritGem.txt] @圣灵宝石生效
 #CALL [\Features\MeltingChest\熔炼宝箱.txt] @@commoncodense
-#CALL [\Features\Blacksmith\Weapons.txt] @@weaponcompound
+#CALL [\Merchant\Blacksmith\Weapons.txt] @@weaponcompound
+
+;----------------------Map Triggers---------------------------------
+[@ShaguaiTrigger]
+#CALL [\Features\ShaguaiTrigger.txt] @trigger
 
 ;----------------------Elite Medals---------------------------------
 ;Scripting for Elite Medal upgrade.
