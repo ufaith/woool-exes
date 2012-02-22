@@ -3,7 +3,7 @@
 现在可以投入赤金、雪银、神饰，一同炼制各种神饰了。\
 还可以将十二生肖神佑(如灵狗神佑等)以九天玄火炼化\
 凝成天材地宝。\
-<炼制神饰/@give1>\
+<RefineDecoration/@give1>\
 <取回炼制成品/@get1>\
 <炼制方法介绍/@howto>\
 <Exit/@exit>\
@@ -19,7 +19,7 @@
 
 [@give2]
 #IF
-CHECKVAR HUMAN 炼制神饰 > 0
+CHECKVAR HUMAN RefineDecoration > 0
 #ACT
 break
 #SAY
@@ -35,7 +35,7 @@ checkitem 赤金 1
 take 玄铁 66
 take 雪银 66
 take 赤金 66
-CALCVAR HUMAN 炼制神饰 + 20
+CALCVAR HUMAN RefineDecoration + 20
 goto @投入木材
 #SAY
 #ELSESAY
@@ -65,7 +65,7 @@ goto @投入木材
 
 [@get1]
 #IF
-CHECKVAR HUMAN 炼制神饰 < 1
+CHECKVAR HUMAN RefineDecoration < 1
 #ACT
 break
 #SAY
@@ -73,7 +73,7 @@ break
 <Exit/@exit>
 
 #IF
-CHECKVAR HUMAN 炼制神饰 > 15
+CHECKVAR HUMAN RefineDecoration > 15
 #ACT
 break
 #SAY
@@ -91,7 +91,7 @@ break
 #IF
 random 1
 #ACT
-CALCVAR HUMAN 炼制神饰 = 0
+CALCVAR HUMAN RefineDecoration = 0
 movr P0 300
 #SAY
 已经成功领取了物品，现在可以再次投入材料炼制。\

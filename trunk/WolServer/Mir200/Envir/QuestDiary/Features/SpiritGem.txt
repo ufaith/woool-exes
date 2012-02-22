@@ -1,7 +1,7 @@
 [@圣灵宝石]
 {
 #IF
-CHECKVARLIST $ITEMINFO[$PARAM(1)].NAME ..\QuestDiary\GameRead\圣灵宝石.txt
+CHECKVARLIST $ITEMINFO[$PARAM(1)].NAME ..\QuestDiary\GameRead\HolySpirit.txt
 #ELSEACT
 SENDMSG 5 完美宝石和至尊宝石无法使用圣灵精华合成圣灵宝石。
 break

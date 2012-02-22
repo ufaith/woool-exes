@@ -29,8 +29,8 @@
 [H085	GeneralCaveEast4] 
 [H086	GeneralCaveEast5] 
 
-[1	PenIsland] CHECKQUEST(Q012) CANRIDE weather(2)
-[T011	MiningEntrance] MINE
+[1	PenIsland] CHECKQUEST(Q001) CANRIDE weather(2)
+[T011	MiningEntrance] MINE DARK
 [T012	SouthernMine] MINE
 [T013	NorthernMine] MINE
 [T014	SouthernFault] MINE
@@ -322,7 +322,7 @@
 [SWYTONGDAO ÌìÄ§±¦²ØÍ¨µÀ] FIGHT DECHP(3/70) DelayGoto(5/@ÌìÄ§¼Ó¾­Ñé) NORECALL NORECONNECT(SWYZB) CANUSESUPERITEM[Áé·û/Áé·û(À¦)/ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/] 
 SWYTONGDAO 74 26 -> SWYBAOZANG 41 186
 [SWYBOSS ÌìÄ§³²Ñ¨] NORECALL NORECONNECT(SWYZB) CANRECALLEVIL
-[SWYBAOZANG ÌìÄ§±¦²Ø] FIGHT DECHP(3/120) DelayGoto(5/@ÌìÄ§¼Ó¾­Ñé) NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[Áé·û/Áé·û(À¦)/ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/]
+[SWYBAOZANG OmenTreasure] FIGHT DECHP(3/120) DelayGoto(5/@ÌìÄ§¼Ó¾­Ñé) NORECALL   NORECONNECT(SWYZB) CANUSESUPERITEM[Áé·û/Áé·û(À¦)/ÕòÄ§·û/ÕòÄ§Éñ·û/ÕòÄ§·û(À¦)/ÕòÄ§Éñ·û(À¦)/]
 SWYBAOZANG 48 124 -> SWYBAOZANG 120 176
 SWYBAOZANG 155 138 -> SWYBAOZANG 152 112
 SWYBAOZANG 133 126 -> SWYBAOZANG 90 133

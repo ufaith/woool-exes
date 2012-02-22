@@ -2,7 +2,7 @@
 这是具有神秘炼制能力的白虎神炉。\
 现在可以投入矿石，一同炼制雪银了。\
 \
-<炼制雪银/@give1>\
+<RefineSilver/@give1>\
 <取回炼制成品/@get1>\
 <炼制方法介绍/@howto>\
 <Exit/@exit>\
@@ -18,7 +18,7 @@
 
 [@give2]
 #IF
-CHECKVAR HUMAN 炼制雪银 > 0
+CHECKVAR HUMAN RefineSilver > 0
 #ACT
 break
 #SAY
@@ -32,7 +32,7 @@ checkitem 铜矿 3
 #ACT
 take 银矿 66
 take 铜矿 66
-CALCVAR HUMAN 炼制雪银 + 20
+CALCVAR HUMAN RefineSilver + 20
 goto @投入木材
 break
 #ELSESAY
@@ -62,7 +62,7 @@ break
 
 [@get1]
 #IF
-CHECKVAR HUMAN 炼制雪银 < 1
+CHECKVAR HUMAN RefineSilver < 1
 #ACT
 break
 #SAY
@@ -70,7 +70,7 @@ break
 <Exit/@exit>
 
 #IF
-CHECKVAR HUMAN 炼制雪银 > 10
+CHECKVAR HUMAN RefineSilver > 10
 #ACT
 break
 #SAY
@@ -78,7 +78,7 @@ break
 <Exit/@exit>
 #ELSEACT
 give 雪银 1
-CALCVAR HUMAN 炼制雪银 = 0
+CALCVAR HUMAN RefineSilver = 0
 #ELSESAY
 已经成功领取了物品，现在可以再次投入材料炼制。\
 <返回/@main>\

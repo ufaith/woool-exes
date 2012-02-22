@@ -1,5 +1,0 @@
-[setup]
-stepcount = 1
-title = NoviceQuests--武官之心
-ID = 18
-stepDESC1 = <color=graygolden 任务目的：><出门/@@goplace SH003 18,31> 去找<中州老兵/@@goto 0 老兵 468,226>打听事情\<color=graygolden 任务奖励：>  \</@@!PIC 治疗神水1>  </@@!PIC 回城神石1>\<color=graygolden 任务介绍:>\老婆真是有本事，每天都能找到不同的人给我送餐饭。不管\怎么说，还是感谢你跑这么一趟。请稍等一下，我看你是个\勇者，不如帮我做件事情，只要成功，绝对名利双收。你去\找中州广场上的老兵，他会告诉你具体内容的。

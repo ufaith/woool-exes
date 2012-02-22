@@ -11,7 +11,7 @@ goto @元神新手
 random 1
 #ACT
 goto @元神登陆1
-#CALL [\Features\UpdateTrigger\元神排行.txt] @元神排行
+#CALL [\Features\UpdateTrigger\HeroRanking.txt] @HeroRanking
 
 [@元神登陆1] PNEUMA
 #IF
@@ -100,7 +100,7 @@ addnamelist ..\QuestDiary\GameData\Hero-Related\ConsolidateState.txt
 
 [@元神新手] PNEUMA
 #IF
-CHECKVAR GLOBAL 游戏模式 = 测试
+CHECKVAR GLOBAL GameMode = 测试
 #act
 goto @元神测试模式
 #ELSEACT

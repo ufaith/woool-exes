@@ -1,0 +1,36 @@
+[@机器人-后台管理]
+{
+#IF
+random 1
+#ACT
+CLEARNAMELIST ..\QuestDiary\GameData\公共变量\DailyClear.txt
+FormatStr S0 %-4s $GLOBAL(NewPlayer)
+FormatStr S1 %-4s $GLOBAL(MaximumOnline)
+FormatStr S2 %-4s $GLOBAL(IngotConsumption)
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\各种排行\IngotConsumption.txt S8 0
+mov S3 无
+
+#IF
+!equal S8
+#ACT
+GETVALIDSTR $STR(S8) | S8 P0
+FormatStr S3 %-4s $STR(S8)
+
+#IF
+random 1
+#ACT
+FormatStr S4 %-5s $GLOBAL(Blast)
+FormatStr S5 %-5s $GLOBAL(DivinityPrison)
+FormatStr S6 %-5s $GLOBAL(CentsMatrix)
+FormatStr S7 %-5s $GLOBAL(百宝箱)
+FormatStr A13 <基本信息/@游戏信息>│<COLOR=green#32新进玩家:>%s#32#32<COLOR=green#32最高在线人数:>%s#32#32<COLOR=green#32发生在:>%s\<今日信息/@今日信息>│<COLOR=green#32元宝消费:>%s#32#32<COLOR=green#32消费最多玩家:>%s#32#32<COLOR=green#32消费数:>%s\<COLOR=red#32昨日信息>│<color=orange#32各种活动的元宝消费数>\<沙城信息/@沙城信息>│<COLOR=green#32闯天关:>%s#32#32#32<COLOR=green#32焰火屠魔:>%s\#32#32#32#32#32#32#32#32│<COLOR=green#32神威狱:>%s#32#32#32<COLOR=green#32神饰除魔:>%s\ <$STR(S0)>|<$STR(S1)>|<$GLOBAL(Occurred)>|<$STR(S2)>|<$STR(S3)>|<$GLOBAL(消费数)>|<$STR(S4)>|<$GLOBAL(Fireworks)>|<$STR(S5)>|<$GLOBAL(GodSlayer)>
+FormatStr A14 #32#32#32#32#32#32#32#32│<COLOR=green#32迷仙阵:>%s#32#32#32<COLOR=green#32天魔宝藏:>%s\#32#32#32#32#32#32#32#32│<COLOR=green#32百宝箱:>%s#32#32#32<COLOR=green#32营救公主:> <$STR(S6)>|<$GLOBAL(OmenTreasure)>|<$STR(S7)>|<$GLOBAL(RescuePrincess)>
+inc A13 $STR(A14)
+Calcvar GLOBAL YesterdayInfo = $STR(A13)
+SAVEVAR GLOBAL YesterdayInfo ..\QuestDiary\GameData\公共变量\DailyClear.txt
+#CALL [\Features\System\BackgroundVariable.txt] @ReadBackgroundVariables
+}

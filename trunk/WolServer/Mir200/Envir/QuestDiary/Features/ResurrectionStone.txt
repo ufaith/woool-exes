@@ -1,9 +1,9 @@
 [@还魂时间]
 {
 #IF
-!CHECKVARLIST $M ..\QuestDiary\GameRead\禁止传送地图.txt
+!CHECKVARLIST $M ..\QuestDiary\GameRead\ProhibitTransferMaps.txt
 #ACT
-Calcvar HUMAN 还魂记时 = 10
+Calcvar HUMAN Revival = 10
 #ELSEACT
 SENDMSG 5 此地图不允许使用还魂石
 }
@@ -14,7 +14,7 @@ SENDMSG 5 此地图不允许使用还魂石
 ChangeEatItemDura + 1
 
 #IF
-CHECKVAR HUMAN 还魂记时 > 0
+CHECKVAR HUMAN Revival > 0
 #ACT
 ChangeEatItemDura - 1
 GMEXECUTE SignMove

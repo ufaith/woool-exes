@@ -1,0 +1,30 @@
+;新人任务刷怪触发
+0	[800]	0	Pig		*	Q006
+0	[800]	0	Toad		*	Q007
+0	[800]	0	StickDog		*	Q003
+0	[800]	0	FishPerson		*	Q001
+
+1	[800]	0	FishPerson		*	Q001
+1	[800]	0	Rabbit		*	Q002
+1	[800]	0	StickDog		*	Q003
+1	[800]	0	Deer		*	Q004
+
+;NoviceQuests
+H081	[800]	0	DeadCorpse		*	Q005
+H082	[800]	0	DeadCorpse		*	Q005
+H083	[800]	0	DeadCorpse		*	Q005
+H084	[800]	0	DeadCorpse		*	Q005
+H085	[800]	0	DeadCorpse		*	Q005
+H086	[800]	0	DeadCorpse		*	Q005
+
+H071	[800]	0	DeadCorpse10		*	Q005
+H072	[800]	0	DeadCorpse10		*	Q005
+H073	[800]	0	DeadCorpse10		*	Q005
+H074	[800]	0	DeadCorpse10		*	Q005
+
+H071	[800]	0	BraveWarrior10	*	Q009
+H072	[800]	0	BraveWarrior10	*	Q009
+H073	[800]	0	BraveWarrior10	*	Q009
+H074	[800]	0	BraveWarrior10	*	Q009
+
+NL001	[800]	0	DeadCorpse		*	Q010

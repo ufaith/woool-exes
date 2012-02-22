@@ -8,7 +8,7 @@
 熔炉，从而铸成利兵。当然凝结神秘符石也不是没有代价的，\
 如果你肯给我些元宝我就帮你凝结神秘符石！\
 <给你几个元宝来凝结神秘符石/@duanzaofushi>		\
-<领取神秘符石/@woyaolingqufushi>		<我想花费10000金币拆分符石/@chaifenfushi>\
+<MysteriousRunes/@woyaolingqufushi>		<我想花费10000金币拆分符石/@chaifenfushi>\
 <我要赠送神秘符石给别人/@zengsong>    <返回/@main>\
 
 [@chaifenfushi]
@@ -192,10 +192,10 @@ inc S1
 inc S1 $STR(P0)
 inc S1 块神秘符石，快通知对方领取吧！
 SENDMSG 5 $STR(S1)
-LoadExVar P1 $STR(S0) 领取神秘符石 ..\QuestDiary\GameData\个人变量\领取神秘符石.txt
+LoadExVar P1 $STR(S0) MysteriousRunes ..\QuestDiary\GameData\个人变量\ReceiveRunes.txt
 inc P1 $STR(P0)
-SaveExVar $STR(P1) $STR(S0) 领取神秘符石 ..\QuestDiary\GameData\个人变量\领取神秘符石.txt
-$STR(S0).LOADVAR HUMAN 领取神秘符石 ..\QuestDiary\GameData\个人变量\领取神秘符石.txt
+SaveExVar $STR(P1) $STR(S0) MysteriousRunes ..\QuestDiary\GameData\个人变量\ReceiveRunes.txt
+$STR(S0).LOADVAR HUMAN MysteriousRunes ..\QuestDiary\GameData\个人变量\ReceiveRunes.txt
 #SAY
 \\
 　　赠送成功！赶快通知他领取神秘符石吧！\
@@ -213,19 +213,19 @@ SENDMSG 5 你的包裹内没有神秘符石！
 
 [@lingqu]
 #IF
-CHECKVAR HUMAN 领取神秘符石 > 0
+CHECKVAR HUMAN MysteriousRunes > 0
 CHECKBAGSIZE 1
 #ACT
 give 神秘符石 1
-UPGRADEUSERITEM $PARAM(10) 71 + $HUMAN(领取神秘符石)
-CALCVAR HUMAN 领取神秘符石 = 0
-SAVEVAR HUMAN 领取神秘符石 ..\QuestDiary\GameData\个人变量\领取神秘符石.txt
+UPGRADEUSERITEM $PARAM(10) 71 + $HUMAN(MysteriousRunes)
+CALCVAR HUMAN MysteriousRunes = 0
+SAVEVAR HUMAN MysteriousRunes ..\QuestDiary\GameData\个人变量\ReceiveRunes.txt
 SENDMSG 5 你已领取[神秘符石]
 close
 break
 
 #IF
-CHECKVAR HUMAN 领取神秘符石 > 0
+CHECKVAR HUMAN MysteriousRunes > 0
 #ACT
 SENDMSG 5 你的包裹空间不足，请至少保留一个空位后再来领取。
 close

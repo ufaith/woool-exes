@@ -95,7 +95,7 @@ break
 
 #IF
 !EQUAL $ITEMINFO[$PARAM(2)].NAME  
-!PosInList $ITEMINFO[$PARAM(2)].NAME ..\QuestDiary\GameRead\魂珠物品.txt
+!PosInList $ITEMINFO[$PARAM(2)].NAME ..\QuestDiary\GameRead\PearlItems.txt
 #ACT
 SMELTBOXRESULT 0 10 1
 SENDMSG 5 有不能用来修炼的物品。
@@ -103,7 +103,7 @@ break
 
 #IF
 !EQUAL $ITEMINFO[$PARAM(3)].NAME  
-!PosInList $ITEMINFO[$PARAM(3)].NAME ..\QuestDiary\GameRead\魂珠物品.txt
+!PosInList $ITEMINFO[$PARAM(3)].NAME ..\QuestDiary\GameRead\PearlItems.txt
 #ACT
 SMELTBOXRESULT 0 10 1
 SENDMSG 5 有不能用来修炼的物品。
@@ -111,7 +111,7 @@ break
 
 #IF
 !EQUAL $ITEMINFO[$PARAM(4)].NAME  
-!PosInList $ITEMINFO[$PARAM(4)].NAME ..\QuestDiary\GameRead\魂珠物品.txt
+!PosInList $ITEMINFO[$PARAM(4)].NAME ..\QuestDiary\GameRead\PearlItems.txt
 #ACT
 SMELTBOXRESULT 0 10 1
 SENDMSG 5 有不能用来修炼的物品。
@@ -119,7 +119,7 @@ break
 
 #IF
 !EQUAL $ITEMINFO[$PARAM(5)].NAME  
-!PosInList $ITEMINFO[$PARAM(5)].NAME ..\QuestDiary\GameRead\魂珠物品.txt
+!PosInList $ITEMINFO[$PARAM(5)].NAME ..\QuestDiary\GameRead\PearlItems.txt
 #ACT
 SMELTBOXRESULT 0 10 1
 SENDMSG 5 有不能用来修炼的物品。
@@ -127,7 +127,7 @@ break
 
 #IF
 !EQUAL $ITEMINFO[$PARAM(6)].NAME  
-!PosInList $ITEMINFO[$PARAM(6)].NAME ..\QuestDiary\GameRead\魂珠物品.txt
+!PosInList $ITEMINFO[$PARAM(6)].NAME ..\QuestDiary\GameRead\PearlItems.txt
 #ACT
 SMELTBOXRESULT 0 10 1
 SENDMSG 5 有不能用来修炼的物品。
@@ -135,7 +135,7 @@ break
 
 #IF
 !EQUAL $ITEMINFO[$PARAM(7)].NAME  
-!PosInList $ITEMINFO[$PARAM(7)].NAME ..\QuestDiary\GameRead\魂珠物品.txt
+!PosInList $ITEMINFO[$PARAM(7)].NAME ..\QuestDiary\GameRead\PearlItems.txt
 #ACT
 SMELTBOXRESULT 0 10 1
 SENDMSG 5 有不能用来修炼的物品。
@@ -173,37 +173,37 @@ MOV P5 0
 
 #IF
 !EQUAL $ITEMINFO[$PARAM(2)].NAME 
-PosInList $ITEMINFO[$PARAM(2)].NAME ..\QuestDiary\GameRead\魂珠物品.txt S0
+PosInList $ITEMINFO[$PARAM(2)].NAME ..\QuestDiary\GameRead\PearlItems.txt S0
 #ACT
 GETVALIDSTR $STR(S0) | S1 P5
 INC P3 $STR(P5)
 #IF
 !EQUAL $ITEMINFO[$PARAM(3)].NAME 
-PosInList $ITEMINFO[$PARAM(3)].NAME ..\QuestDiary\GameRead\魂珠物品.txt S0
+PosInList $ITEMINFO[$PARAM(3)].NAME ..\QuestDiary\GameRead\PearlItems.txt S0
 #ACT
 GETVALIDSTR $STR(S0) | S1 P5
 INC P3 $STR(P5)
 #IF
 !EQUAL $ITEMINFO[$PARAM(4)].NAME 
-PosInList $ITEMINFO[$PARAM(4)].NAME ..\QuestDiary\GameRead\魂珠物品.txt S0
+PosInList $ITEMINFO[$PARAM(4)].NAME ..\QuestDiary\GameRead\PearlItems.txt S0
 #ACT
 GETVALIDSTR $STR(S0) | S1 P5
 INC P3 $STR(P5)
 #IF
 !EQUAL $ITEMINFO[$PARAM(5)].NAME 
-PosInList $ITEMINFO[$PARAM(5)].NAME ..\QuestDiary\GameRead\魂珠物品.txt S0
+PosInList $ITEMINFO[$PARAM(5)].NAME ..\QuestDiary\GameRead\PearlItems.txt S0
 #ACT
 GETVALIDSTR $STR(S0) | S1 P5
 INC P3 $STR(P5)
 #IF
 !EQUAL $ITEMINFO[$PARAM(6)].NAME 
-PosInList $ITEMINFO[$PARAM(6)].NAME ..\QuestDiary\GameRead\魂珠物品.txt S0
+PosInList $ITEMINFO[$PARAM(6)].NAME ..\QuestDiary\GameRead\PearlItems.txt S0
 #ACT
 GETVALIDSTR $STR(S0) | S1 P5
 INC P3 $STR(P5)
 #IF
 !EQUAL $ITEMINFO[$PARAM(7)].NAME 
-PosInList $ITEMINFO[$PARAM(7)].NAME ..\QuestDiary\GameRead\魂珠物品.txt S0
+PosInList $ITEMINFO[$PARAM(7)].NAME ..\QuestDiary\GameRead\PearlItems.txt S0
 #ACT
 GETVALIDSTR $STR(S0) | S1 P5
 INC P3 $STR(P5)

@@ -1,5 +1,0 @@
-[setup]
-stepcount = 1
-title = NoviceQuests--DawnofDays
-ID = 41
-stepDESC1 = <color=graygolden Quest:>Go to the <Palace/@@goplace 0 484,141>中的<天关守卫/@@goto SH000 天关守卫 12,48>闯天关\<color=graygolden 任务介绍:>\    灵符乃是仙界通灵之物，拥有无上法力。它能帮你抵挡\瘴气的侵蚀。快去找皇宫中的天关守卫完成任务吧！

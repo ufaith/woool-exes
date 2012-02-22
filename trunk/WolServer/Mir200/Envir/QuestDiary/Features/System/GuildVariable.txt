@@ -1,7 +1,7 @@
-[@声明行会变量]
+[@StatementVariable]
 {
 }
 
-[@读取行会变量]
+[@ReadVariables]
 {
 }

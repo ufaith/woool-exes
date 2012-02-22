@@ -1,8 +1,8 @@
 [Setup]
 CastleName=É³³Ç
-ChangeDate=01/12/2011 16:46:11
-WarDate=01/12/2011 16:46:11
-IncomeToday=11/02/2012 00:14:10
+ChangeDate=2012-2-22 21:15:46
+WarDate=2012-2-22 21:15:46
+IncomeToday=2012-2-22 21:15:46
 OwnGuild=Gamemasters
 TotalGold=0
 TodayIncome=0

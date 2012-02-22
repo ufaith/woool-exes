@@ -23,6 +23,7 @@ CentralPlains\Historiographer 0 475 150 Historiographer 0 11 0 0 0
 CentralPlains\Stylist 0 392 179 Stylist 0 12 0
 CentralPlains\PKArena 0 497 505 PKArena 0 5 0
 CentralPlains\TestNPC 0 474 226 TestNPC 0 3 0
+CentralPlains\CastingTeacher 0 423 248 CastingTeacher 4 6 0
 
 
 CentralPlains\RosefinchStove 0 600 196 RosefinchStove 0 37 0 0 0
