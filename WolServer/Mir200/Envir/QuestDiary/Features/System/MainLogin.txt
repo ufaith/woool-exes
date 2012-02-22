@@ -4,8 +4,8 @@
 #IF
 ISNEWHUMAN
 #ACT
-Calcvar GLOBAL 新进玩家 + 1
-SAVEVAR GLOBAL 新进玩家 ..\QuestDiary\GameData\PublicVariables\每日清除.txt
+Calcvar GLOBAL NewPlayer + 1
+SAVEVAR GLOBAL NewPlayer ..\QuestDiary\GameData\PublicVariables\DailyClear.txt
 
 #IF
 random 1
@@ -25,12 +25,34 @@ check [17] 1
 BagSize 66
 
 #IF
-CHECKVAR HUMAN 师父声望奖励 > 0
+CHECKVAR HUMAN MasterAwards > 0
 #ACT
-CREDITPOINT + $HUMAN(师父声望奖励)
-SENDMSG 5 你通过师徒关系获得了<$HUMAN(师父声望奖励)>点声望
-CALCVAR HUMAN 师父声望奖励 = 0
-SAVEVAR HUMAN 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+CREDITPOINT + $HUMAN(MasterAwards)
+SENDMSG 5 你通过师徒关系获得了<$HUMAN(MasterAwards)>点声望
+CALCVAR HUMAN MasterAwards = 0
+SAVEVAR HUMAN MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
+
+#IF
+ISNEWHUMAN
+checkjob warrior
+#ACT
+SENDMSG 0 "Welcome to Dragon WoOOL new Warrior [<$USERNAME>]!"
+SENDMSG 14 "Welcome to Dragon WoOOL new Warrior [<$USERNAME>]!"
+break
+#IF
+ISNEWHUMAN
+checkjob wizard
+#ACT
+SENDMSG 0 "Welcome to Dragon WoOOL new Wizard [<$USERNAME>]!"
+SENDMSG 14 "Welcome to Dragon WoOOL new Wizard [<$USERNAME>]!"
+break
+#IF
+ISNEWHUMAN
+checkjob taoist
+#ACT
+SENDMSG 0 "Welcome to Dragon WoOOL new Taoist [<$USERNAME>]!"
+SENDMSG 14 "Welcome to Dragon WoOOL new Taoist [<$USERNAME>]!"
+break
 
 #IF
 !ISCASTLEMASTER

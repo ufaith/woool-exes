@@ -15,124 +15,124 @@ CheckLevelEx = 22
 #ACT
 CREDITPOINT + 1
 SENDMSG 5 你通过师徒关系获得了1点声望
-LoadExVar M20 $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+LoadExVar M20 $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 inc M20 1
-SaveExVar $STR(M20) $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+SaveExVar $STR(M20) $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 
 #IF
 CheckLevelEx = 23
 #ACT
-LoadExVar M20 $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+LoadExVar M20 $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 inc M20 1
-SaveExVar $STR(M20) $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+SaveExVar $STR(M20) $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 
 #IF
 CheckLevelEx = 24
 #ACT
 CREDITPOINT + 1
 SENDMSG 5 你通过师徒关系获得了1点声望
-LoadExVar M20 $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+LoadExVar M20 $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 inc M20 1
-SaveExVar $STR(M20) $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+SaveExVar $STR(M20) $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 
 #IF
 CheckLevelEx = 25
 #ACT
-LoadExVar M20 $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+LoadExVar M20 $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 inc M20 2
-SaveExVar $STR(M20) $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+SaveExVar $STR(M20) $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 
 #IF
 CheckLevelEx = 26
 #ACT
 CREDITPOINT + 2
 SENDMSG 5 你通过师徒关系获得了2点声望
-LoadExVar M20 $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+LoadExVar M20 $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 inc M20 2
-SaveExVar $STR(M20) $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+SaveExVar $STR(M20) $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 
 #IF
 CheckLevelEx = 27
 #ACT
-LoadExVar M20 $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+LoadExVar M20 $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 inc M20 2
-SaveExVar $STR(M20) $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+SaveExVar $STR(M20) $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 
 #IF
 CheckLevelEx = 28
 #ACT
 CREDITPOINT + 2
 SENDMSG 5 你通过师徒关系获得了2点声望
-LoadExVar M20 $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+LoadExVar M20 $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 inc M20 2
-SaveExVar $STR(M20) $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+SaveExVar $STR(M20) $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 
 #IF
 CheckLevelEx = 29
 #ACT
 CREDITPOINT + 1
 SENDMSG 5 你通过师徒关系获得了1点声望
-LoadExVar M20 $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+LoadExVar M20 $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 inc M20 2
-SaveExVar $STR(M20) $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+SaveExVar $STR(M20) $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 
 #IF
 CheckLevelEx = 30
 #ACT
 CREDITPOINT + 2
 SENDMSG 5 你通过师徒关系获得了2点声望
-LoadExVar M20 $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+LoadExVar M20 $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 inc M20 2
-SaveExVar $STR(M20) $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+SaveExVar $STR(M20) $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 
 #IF
 CheckLevelEx = 31
 #ACT
 CREDITPOINT + 2
 SENDMSG 5 你通过师徒关系获得了2点声望
-LoadExVar M20 $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+LoadExVar M20 $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 inc M20 2
-SaveExVar $STR(M20) $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+SaveExVar $STR(M20) $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 
 #IF
 CheckLevelEx = 32
 #ACT
 CREDITPOINT + 2
 SENDMSG 5 你通过师徒关系获得了2点声望
-LoadExVar M20 $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+LoadExVar M20 $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 inc M20 2
-SaveExVar $STR(M20) $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+SaveExVar $STR(M20) $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 
 #IF
 CheckLevelEx = 33
 #ACT
 CREDITPOINT + 2
 SENDMSG 5 你通过师徒关系获得了2点声望
-LoadExVar M20 $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+LoadExVar M20 $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 inc M20 2
-SaveExVar $STR(M20) $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+SaveExVar $STR(M20) $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 
 #IF
 CheckLevelEx = 34
 #ACT
 CREDITPOINT + 2
 SENDMSG 5 你通过师徒关系获得了2点声望
-LoadExVar M20 $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+LoadExVar M20 $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 inc M20 2
-SaveExVar $STR(M20) $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+SaveExVar $STR(M20) $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 
 #IF
 CheckLevelEx = 35
 #ACT
 CREDITPOINT + 3
 SENDMSG 5 你通过师徒关系获得了3点声望
-LoadExVar M20 $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+LoadExVar M20 $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 inc M20 3
-SaveExVar $STR(M20) $MASTERNAME 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
-LoadExVar M20 $MASTERNAME 师父灵符奖励 ..\QuestDiary\GameData\IndividualVariables\师父灵符奖励.txt
+SaveExVar $STR(M20) $MASTERNAME MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
+LoadExVar M20 $MASTERNAME MasterMagicAwards ..\QuestDiary\GameData\IndividualVariables\MasterMagicAwards.txt
 inc PO 5
-SaveExVar $STR(M20) $MASTERNAME 师父灵符奖励 ..\QuestDiary\GameData\IndividualVariables\师父灵符奖励.txt
-CALCVAR HUMAN 师父名字 = $MASTERNAME
+SaveExVar $STR(M20) $MASTERNAME MasterMagicAwards ..\QuestDiary\GameData\IndividualVariables\MasterMagicAwards.txt
+CALCVAR HUMAN MasterName = $MASTERNAME
 
 #IF
 random 1
@@ -141,49 +141,49 @@ $MASTERNAME.goto @师父执行
 
 [@师父执行]
 #ACT
-LOADVAR HUMAN 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
-CREDITPOINT + $HUMAN(师父声望奖励)
-SENDMSG 5 你通过师徒关系获得了<$HUMAN(师父声望奖励)>点声望
-CALCVAR HUMAN 师父声望奖励 = 0
-SAVEVAR HUMAN 师父声望奖励 ..\QuestDiary\GameData\IndividualVariables\师父声望奖励.txt
+LOADVAR HUMAN MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
+CREDITPOINT + $HUMAN(MasterAwards)
+SENDMSG 5 你通过师徒关系获得了<$HUMAN(MasterAwards)>点声望
+CALCVAR HUMAN MasterAwards = 0
+SAVEVAR HUMAN MasterAwards ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
 }
 
 [@经验奖励]
 {
 #IF
 CheckLevelEx < 46
-!CHECKVAR HUMAN 师父名字 =
+!CHECKVAR HUMAN MasterName =
 #ACT
-LoadExVar M20 $HUMAN(师父名字) 师父经验奖励 ..\QuestDiary\GameData\IndividualVariables\师父经验奖励.txt
+LoadExVar M20 $HUMAN(MasterName) MasterEXPAwards ..\QuestDiary\GameData\IndividualVariables\MasterEXPAwards.txt
 inc M20 $PARAM(0)
-SaveExVar $STR(M20) $HUMAN(师父名字) 师父经验奖励 ..\QuestDiary\GameData\IndividualVariables\师父经验奖励.txt
+SaveExVar $STR(M20) $HUMAN(MasterName) MasterEXPAwards ..\QuestDiary\GameData\IndividualVariables\MasterEXPAwards.txt
 break
 
 #IF
 CheckLevelEx < 35
 checkmaster
 #ACT
-LoadExVar M20 $MASTERNAME 师父经验奖励 ..\QuestDiary\GameData\IndividualVariables\师父经验奖励.txt
+LoadExVar M20 $MASTERNAME MasterEXPAwards ..\QuestDiary\GameData\IndividualVariables\MasterEXPAwards.txt
 inc M20 $PARAM(0)
-SaveExVar $STR(M20) $MASTERNAME 师父经验奖励 ..\QuestDiary\GameData\IndividualVariables\师父经验奖励.txt
+SaveExVar $STR(M20) $MASTERNAME MasterEXPAwards ..\QuestDiary\GameData\IndividualVariables\MasterEXPAwards.txt
 }
 
 [@灵符奖励]
 {
 #IF
 CheckLevelEx < 46
-!CHECKVAR HUMAN 师父名字 =
+!CHECKVAR HUMAN MasterName =
 #ACT
-LoadExVar M20 $HUMAN(师父名字) 师父灵符奖励 ..\QuestDiary\GameData\IndividualVariables\师父灵符奖励.txt
+LoadExVar M20 $HUMAN(MasterName) MasterMagicAwards ..\QuestDiary\GameData\IndividualVariables\MasterMagicAwards.txt
 inc M20 $PARAM(0)
-SaveExVar $STR(M20) $HUMAN(师父名字) 师父灵符奖励 ..\QuestDiary\GameData\IndividualVariables\师父灵符奖励.txt
+SaveExVar $STR(M20) $HUMAN(MasterName) MasterMagicAwards ..\QuestDiary\GameData\IndividualVariables\MasterMagicAwards.txt
 break
 
 #IF
 CheckLevelEx < 35
 checkmaster
 #ACT
-LoadExVar M20 $MASTERNAME 师父灵符奖励 ..\QuestDiary\GameData\IndividualVariables\师父灵符奖励.txt
+LoadExVar M20 $MASTERNAME MasterMagicAwards ..\QuestDiary\GameData\IndividualVariables\MasterMagicAwards.txt
 inc M20 1
-SaveExVar $STR(M20) $MASTERNAME 师父灵符奖励 ..\QuestDiary\GameData\IndividualVariables\师父灵符奖励.txt
+SaveExVar $STR(M20) $MASTERNAME MasterMagicAwards ..\QuestDiary\GameData\IndividualVariables\MasterMagicAwards.txt
 }

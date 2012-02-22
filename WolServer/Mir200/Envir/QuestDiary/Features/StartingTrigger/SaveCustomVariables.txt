@@ -1,0 +1,22 @@
+[@SaveCustomVariables]
+{
+#ACT
+SAVEVAR HUMAN NoviceAnswer ..\QuestDiary\GameData\IndividualVariables\NoviceAnswer.txt
+SAVEVAR HUMAN RefiningDarksteel ..\QuestDiary\GameData\IndividualVariables\RefineDarksteel.txt
+SAVEVAR HUMAN RefiningSilver ..\QuestDiary\GameData\IndividualVariables\RefineSilver.txt
+SAVEVAR HUMAN RefinedGold ..\QuestDiary\GameData\IndividualVariables\RefinePureGold.txt
+SAVEVAR HUMAN RefiningDecorated ..\QuestDiary\GameData\IndividualVariables\RefineDecoration.txt
+SAVEVAR HUMAN PurgatoryTime ..\QuestDiary\GameData\IndividualVariables\PurgatoryTime.txt
+SAVEVAR HUMAN PurgatorySeconds ..\QuestDiary\GameData\IndividualVariables\PurgatoryTimeSeconds.txt
+SAVEVAR HUMAN RescuesPrincess ..\QuestDiary\GameData\IndividualVariables\RescuePrincess.txt
+SAVEVAR HUMAN BackLifeTime ..\QuestDiary\GameData\IndividualVariables\Revival.txt
+SAVEVAR HUMAN DivinityGold ..\QuestDiary\GameData\ListDevilHall.txt
+SAVEVAR HUMAN RingCharacterState ..\QuestDiary\GameData\ChallengeContest\ArenaCondition.txt
+SAVEVAR HUMAN RingGameGold ..\QuestDiary\GameData\ChallengeContest\ArenaCompetition.txt
+SAVEVAR HUMAN ReceiveMysteriousRunes ..\QuestDiary\GameData\IndividualVariables\ReceiveRunes.txt
+SAVEVAR HUMAN PrestigiousAward ..\QuestDiary\GameData\IndividualVariables\MasterAwards.txt
+SAVEVAR HUMAN MasterExperienceRewards ..\QuestDiary\GameData\IndividualVariables\MasterEXPAwards.txt
+SAVEVAR HUMAN MasterMagicAwards ..\QuestDiary\GameData\IndividualVariables\MasterMagicAwards.txt
+SAVEVAR HUMAN MasterName ..\QuestDiary\GameData\IndividualVariables\MasterName.txt
+SAVEVAR HUMAN NumberDivinityPrison ..\QuestDiary\GameData\IndividualVariables\DivinityPrisonNumber.txt
+}

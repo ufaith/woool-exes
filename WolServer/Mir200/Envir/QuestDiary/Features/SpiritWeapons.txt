@@ -14,7 +14,7 @@ MessageBox 你的圣灵精华数量不足10个，无法附加你的武器技能！
 break
 
 #IF
-PosInList  $WEAPON ..\QuestDiary\GameRead\终级武器.txt
+PosInList  $WEAPON ..\QuestDiary\GameRead\UltimateWeapon.txt
 #ACT
 goto @终极武器
 break

@@ -1,121 +1,51 @@
 ;This pin is for the robot-specific scripts for the script used by the robot processing functions.
 
-[@魂珠维护]
-#IF
-random 1
-#ACT
-GMEXECUTE 全服触发 @魂珠每天维护
-
 ;Maximum Online
 #IF
-small $GLOBAL(最高在线人数) $USERCOUNT
+small $GLOBAL(MaximumOnline) $USERCOUNT
 #ACT
-Calcvar GLOBAL 最高在线人数 = $USERCOUNT
-SAVEVAR GLOBAL 最高在线人数 ..\QuestDiary\GameData\PublicVariables\每日清除.txt
+Calcvar GLOBAL MaximumOnline = $USERCOUNT
+SAVEVAR GLOBAL MaximumOnline ..\QuestDiary\GameData\PublicVariables\DailyClear.txt
 mov A13 $TIME.HOUR
 inc A13 :
 inc A13 $TIME.MIN
-Calcvar GLOBAL 发生在 = $STR(A13)
-SAVEVAR GLOBAL 发生在 ..\QuestDiary\GameData\PublicVariables\每日清除.txt
+Calcvar GLOBAL Occurred = $STR(A13)
+SAVEVAR GLOBAL Occurred ..\QuestDiary\GameData\PublicVariables\DailyClear.txt
 
-[@今日日期记录]
+[@TodayRecords]
 #ACT
 mov S20 $DATE.YEAR
 mov S21 $DATE.MONTH
 mov S22 $DATE.DAY
 
-[@0点系统更新]
+[@0SystemUpdate]
 #IF
 random 1
 #ACT
 RESET [42] 3
-CLEARNAMELIST ..\QuestDiary\GameData\TaskTitle.txt
-CLEARNAMELIST ..\QuestDiary\GameData\Moonlight.txt
-CLEARNAMELIST ..\QuestDiary\GameData\MasterAward.txt
-CLEARNAMELIST ..\QuestDiary\GameData\PurgatoryChest.txt
-CLEARNAMELIST ..\QuestDiary\GameData\HeritageBeads.txt
 CLEARNAMELIST ..\QuestDiary\GameData\HandedCollection.txt
 CLEARNAMELIST ..\QuestDiary\GameData\KingCityAnswer.txt
 CLEARNAMELIST ..\QuestDiary\GameData\AshuraTemple4.txt
-CLEARNAMELIST ..\QuestDiary\GameData\DivinityGold.txt
-CLEARNAMELIST ..\QuestDiary\GameData\SpiritValue.txt
 CLEARNAMELIST ..\QuestDiary\GameData\LimitedKey.txt
-CLEARNAMELIST ..\QuestDiary\GameData\IndividualVariables\赤金开箱.txt
-CLEARNAMELIST ..\QuestDiary\GameData\IndividualVariables\灭魔次数.txt
-#CALL [\Features\Robot\百宝箱.txt] @机器人-百宝箱
+#CALL [\Features\Robot\Gallery.txt] @机器人-百宝箱
 #CALL [\Features\Robot\军机令.txt] @机器人-军机令
-#CALL [\Features\Robot\营救公主.txt] @机器人-营救公主
-#CALL [\Features\Robot\后台管理.txt] @机器人-后台管理
+#CALL [\Features\Robot\RescuePrincess.txt] @机器人-RescuePrincess
+#CALL [\Features\Robot\Manage.txt] @机器人-后台管理
 #CALL [\Features\System\BackgroundVariable.txt] @ReadBackgroundVariables
 #CALL [\Features\System\PublicVariable.txt] @读取公共变量
 
 #IF
 random 1
 #ACT
-Gmexecute 全服触发 @0点清理数据
+Gmexecute 全服触发 @0CleanData
 
-[@精英发布]
-#IF
-!EQUAL $TXT(.\QuestDiary\GameData\EliteHall\EliteRelease.txt) 0
-#ACT
-Break
-#IF
-random 1
-#ACT
-MOV S0 $DATE.MONTH
-INC S0 |
-#ACT
-GETVALIDSTR $STR(S1) | P0 P1
-DEC P1 $DATE.DAY
-#IF
-LARGE P1 6
-#ACT
-MOV S1
-MOV P2 $DATE.DAY
-INC P2 7
-FORMATSTR S1 %s月%s日|7 <$DATE.$MONTH>|<$STR(P2)>
-ADDVARLIST $STR(S1) ..\QuestDiary\GameData\EliteHall\EliteRelease.txt
-break
-#IF
-SMALL P1 7
-#ACT
-MOV P2 7
-DEC P2 $STR(P1)
-#IF
-SMALL P1 7
-SMALL $DATE.MONTH 12
-#ACT
-MOV P3 $DATE.MONTH
-INC P3 1
-FORMATSTR S1 %s月%s日|7 <$STR(P3)>|<$STR(P2)>
-ADDVARLIST $STR(S1) ..\QuestDiary\GameData\EliteHall\EliteRelease.txt
-break
-#IF
-SMALL P1 7
-LARGE $DATE.MONTH 11
-#ACT
-MOV P3 1
-FORMATSTR S1 %s月%s日|7 <$STR(P3)>|<$STR(P2)>
-ADDVARLIST $STR(S1) ..\QuestDiary\GameData\EliteHall\EliteRelease.txt
-break
-
-[@清理每周数据]
+[@CleanWeeklyData]
 #ACT
 CLEARNAMELIST ..\QuestDiary\GameData\MartialArtsPay.txt
 CLEARNAMELIST ..\QuestDiary\GameData\SantoMagic.txt
 
 
-#IF
-!equal A13
-#ACT
-GETVALIDSTR $STR(A13) | A13 A14
-CLEARNAMELIST ..\QuestDiary\GameData\CityDonated.txt
-ADDVARLIST $STR(A13) ..\QuestDiary\GameData\CityDonated.txt
-SaveExVar 0 $STR(A13) 王城捐献金币 ..\QuestDiary\GameData\IndividualVariables\王城捐献金币.txt
-$STR(A13).LOADVAR HUMAN 王城捐献金币 ..\QuestDiary\GameData\IndividualVariables\王城捐献金币.txt
-
-
-[@骑兵竞技开始]
+[@CavalryCompetitive]
 #ACT
 mov I0 0
 inc G7 1

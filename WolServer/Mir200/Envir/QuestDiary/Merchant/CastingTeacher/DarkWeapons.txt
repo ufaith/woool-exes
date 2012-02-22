@@ -1,0 +1,276 @@
+[@黑暗武器排名]
+{
+\\
+　　现在修炼DarkWeapon之风大盛，各种顶级属性的DarkWeapon\
+也纷纷出炉，你想知道自己DarkWeapon的属性能排到第几位吗？\
+在这里我可以帮你登记，看看你拥有的是否是中州大陆最强\
+大的DarkWeapon。\
+\
+<Submit Dark Weapons Rank/@_GetEvil2Item_GetTopProp1>\
+<Check Current Rankings/@_GetEvil2Item_query>\
+<Exit/@exit>
+
+[@_GetEvil2Item_query]
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanking\DarkWeapon.txt S0 0
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+GETVALIDSTR $STR(S1) | S0 S10
+#ELSEACT
+mov S10
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanking\DarkWeapon.txt S0 1
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+GETVALIDSTR $STR(S1) | S0 S11
+#ELSEACT
+mov S11
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanking\DarkWeapon.txt S0 2
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+GETVALIDSTR $STR(S1) | S0 S12
+#ELSEACT
+mov S12
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanking\DarkWeapon.txt S0 3
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+GETVALIDSTR $STR(S1) | S0 S13
+#ELSEACT
+mov S13
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanking\DarkWeapon.txt S0 4
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+GETVALIDSTR $STR(S1) | S0 S14
+#ELSEACT
+mov S14
+
+#IF
+#SAY
+\\
+<Color=Green Rank  Name            Item        Dark Attribute>\
+\
+1     <$STR(S10)>\
+2     <$STR(S11)>\
+3     <$STR(S12)>\
+4     <$STR(S13)>\
+5     <$STR(S14)>\
+\
+<Next/@_GetEvil2Item_nextpage>     <Exit/@exit>\
+
+[@_GetEvil2Item_nextpage]
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanking\DarkWeapon.txt S0 5
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+GETVALIDSTR $STR(S1) | S0 S10
+#ELSEACT
+mov S10
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanking\DarkWeapon.txt S0 6
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+GETVALIDSTR $STR(S1) | S0 S11
+#ELSEACT
+mov S11
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanking\DarkWeapon.txt S0 7
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+GETVALIDSTR $STR(S1) | S0 S12
+#ELSEACT
+mov S12
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanking\DarkWeapon.txt S0 8
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+GETVALIDSTR $STR(S1) | S0 S13
+#ELSEACT
+mov S13
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanking\DarkWeapon.txt S0 9
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S0 S1
+GETVALIDSTR $STR(S1) | S0 S14
+#ELSEACT
+mov S14
+
+#IF
+#SAY
+\\
+<Color=Green Rank  Name            Item         Dark Attribute>\
+\
+6     <$STR(S10)>\
+7     <$STR(S11)>\
+8     <$STR(S12)>\
+9     <$STR(S13)>\
+10    <$STR(S14)>\
+\
+<离开/@exit>\
+
+[@_GetEvil2Item_GetTopProp1]
+#ACT
+Showspotdlg 6 获取最高黑暗属性 @DarkCheck
+#SAY
+\\
+Please enter your Dark item.\
+\
+\
+<Exit/@exit>
+
+[@DarkCheck]
+#IF
+!large $ITEMINFO[$PARAM(1)].STDMODE 4
+!small $ITEMINFO[$PARAM(1)].STDMODE 6
+#ACT
+break
+#SAY
+\\
+You did not enter a Dark Weapon!\
+<Exit/@exit>
+
+#IF
+small $ITEMINFO[$PARAM(1)].ITEMEXT(45) 1
+small $ITEMINFO[$PARAM(1)].ITEMEXT(46) 1
+small $ITEMINFO[$PARAM(1)].ITEMEXT(47) 1
+#ACT
+break
+#SAY
+\\
+You did not eneter a item with Dark Magic.\
+<Exit/@Exit>\
+
+#IF
+large $ITEMINFO[$PARAM(1)].ITEMEXT(45) 0
+#ACT
+mov S5 攻击上限+
+mov P2 $ITEMINFO[$PARAM(1)].ITEMEXT(45)
+
+#IF
+large $ITEMINFO[$PARAM(1)].ITEMEXT(46) 0
+#ACT
+mov S5 魔法上限+
+mov P2 $ITEMINFO[$PARAM(1)].ITEMEXT(46)
+
+#IF
+large $ITEMINFO[$PARAM(1)].ITEMEXT(47) 0
+#ACT
+mov S5 道术上限+
+mov P2 $ITEMINFO[$PARAM(1)].ITEMEXT(47)
+
+#IF
+#ACT
+mov P0
+mov P1
+goto @DarkWeaponRank
+
+[@DarkWeaponRank]
+#IF
+Pos $PARAM(1) ..\QuestDiary\GameData\VariousRanking\DarkWeapon.txt S0
+#ACT
+GETVALIDSTR $STR(S0) | S1 S2
+GETVALIDSTR $STR(S2) | P1 S4
+
+#IF
+!equal S0
+equal S1 $PARAM(1)
+equal P2 $STR(P1)
+#ACT
+break
+#SAY
+\\
+这把武器已经在排行榜中，记录的黑暗属性与现在一样。\
+请在黑暗属性得到新的提升以后再来申请。\
+\
+<离开/@exit>
+
+#IF
+equal S1 $PARAM(1)
+large P2 $STR(P1)
+#ACT
+DELVARLIST $STR(S0) ..\QuestDiary\GameData\VariousRanking\DarkWeapon.txt
+
+#IF
+large P0 10
+#ACT
+break
+
+#IF
+random 1
+#ACT
+ReadRandomStr ..\QuestDiary\GameData\VariousRanking\DarkWeapon.txt S0 $STR(P0)
+mov P1
+
+#IF
+!equal S0
+#ACT
+GETVALIDSTR $STR(S0) | S1 S2
+GETVALIDSTR $STR(S2) | P1 S4
+
+#IF
+large P2 $STR(P1)
+#ACT
+FORMATSTR S0 %s|%s|%-16s%-16s%s#9%s <$PARAM(1)>|<$STR(P2)>|<$USERNAME>|<$PARAM(0)>|<$STR(S5)>|<$STR(P2)>
+INSERTVARLIST $STR(P0) $STR(S0) ..\QuestDiary\GameData\VariousRanking\DarkWeapon.txt
+inc P0 1
+SENDMSG 15 %s的<$PARAM(0)>以<$STR(P2)>点的黑暗属性成为了DarkWeapon排行榜的第<$STR(P0)>名。
+#SAY
+\\
+您的{color=green <$PARAM(0)>}成为了DarkWeapon排行榜的第{color=green <$STR(P0)>}名。\
+\
+<离开/@exit>
+#ELSEACT
+inc P0 1
+goto @DarkWeapon排行
+break
+}

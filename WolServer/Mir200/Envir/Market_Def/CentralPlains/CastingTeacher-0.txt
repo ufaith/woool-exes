@@ -1,185 +1,78 @@
 (@upgradenow @getbackupgnow )
 [@main]
 \\
-　　说起这修炼、铸造武器的事情，王城没人能跟俺比！\
-　　我可以将装备拆成原石，还能将低阶原石合成高阶原石！\
-　　<我想拆卸装备/@@decompose>　　　　　　　　<原石相关/@原石相关>\
-　　<我想用黑铁矿石升级武器/@shengjiwuqi>      <碎片合成装备/@hechengzb>\
-　　<我想用黑暗魔力升级武器/@_SpeEvil_zhenngwen>      <询问有关黑暗武器排名/@heianpaiming>\
-　　<我想用黑暗魔力升级衣服/@_SpeEvil_zhenngwen1>      <每日灭魔任务/@TaskMSW>\
-　　<color=green 知道最近被探索出来的海底世界吗？知道在其中被发现>\
-　　<color=green 的最新装备吗？我研究出了用五行原石升级的方法。>\
-　　<我想用五行原石升级怒海套装/@upgradenuhai>　　<退出/@exit>
-
-[@upgradenuhai]
+Weclome, are you looking to upgrade?.\
 \\
-　　五行原石乃装备精华，可用来升级怒海套装\ 
-　　<圣王+炙炎(精)升级到怒涛(凡品)/@NUhaiSuitUp11>\
-　　<怒海(凡品)升级到怒海(上品)/@NUhaiSuitUp21>\
-　　<怒海(上品)升级到怒海(极品)/@NUhaiSuitUp31>\
-　　<怒海(极品)升级到怒海(仙品)/@NUhaiSuitUp41>\
-　　<我还需要回去再收集材料/@exit>\
+<BlackIronOre Upgrade/@shengjiwuqi>\
+<Dark Magic Weapon Upgrade/@_SpeEvil_zhenngwen>      <Dark Weapon Rankings/@heianpaiming>\
+<Dark Magic Armor Upgrade/@_SpeEvil_zhenngwen1>\
+<Exit/@exit>
 
-[@NUhaiSuitUp11]
-\\
-　　将炙炎(精)级装备放入升级栏中的正中间，对应部位的圣王\
-级装备放入正下方，其他位置放入对应属性的<color=green 三>阶原石，每次\
-升级成功后每种原石消耗1个，消耗精力值<color=green 100>点。\
-　　升级成功率<color=green 100%>\\
-　　<知道了，我要升级/@@NUhaiSuitUp1>　　<返回/@upgradenuhai>\
+[@_SpeEvil_zhenngwen]
+#CALL [\Merchant\CastingTeacher\DarkProperty.txt] @黑暗武器
 
-[@NUhaiSuitUp21]
-\\
-　　将怒海凡品部件放入升级栏中的正中间，其他位置放入\
-对应属性<color=green 四>阶原石，每次升级每种原石消耗1个，精力<color=green 100>点。\
-　合成失败时，五行原石和精力正常扣除，装备无损耗。\
-;　　使用1种属性的四阶原石时，成功率<color=green 10%>\
-;　　使用2种属性的四阶原石时，成功率<color=green 30%>\
-;　　使用3种属性的四阶原石时，成功率<color=green 50%>\
-;　　使用4种属性的四阶原石时，成功率<color=green 70%>\
-　　使用5种属性的四阶原石时，成功率<color=green 100%>\
-　　<知道了，我要升级/@@NUhaiSuitUp2>　　<返回/@upgradenuhai>\
+[@_SpeEvil_zhenngwen1]
+#CALL [\Merchant\CastingTeacher\DarkProperty.txt] @黑暗衣服
 
-[@NUhaiSuitUp31]
-\\
-　　将怒海上品部件放入升级栏中的正中间，其他位置放入\
-对应属性<color=green 四>阶原石，每次升级每种原石消耗1个，精力<color=green 100>点。\
-　合成失败时，五行原石和精力正常扣除，装备无损耗。\
-;　　使用1种属性的四阶原石时，成功率<color=green 10%>\
-;　　使用2种属性的四阶原石时，成功率<color=green 30%>\
-;　　使用3种属性的四阶原石时，成功率<color=green 50%>\
-;　　使用4种属性的四阶原石时，成功率<color=green 70%>\
-　　使用5种属性的四阶原石时，成功率<color=green 100%>\
-　　<知道了，我要升级/@@NUhaiSuitUp3>　　<返回/@upgradenuhai>\
-
-[@NUhaiSuitUp41]
-\\
-　　将怒海极品部件放入升级栏中的正中间，其他位置放入\
-对应属性<color=green 五>阶原石，每次升级每种原石消耗1个，精力<color=green 100>点。\
-　合成失败时，五行原石和精力正常扣除，装备无损耗。\
-;　　使用1种属性的五阶原石时，成功率<color=green 20%>\
-;　　使用2种属性的五阶原石时，成功率<color=green 50%>\
-;　　使用3种属性的五阶原石时，成功率<color=green 100>%\
-;　　使用4种属性的五阶原石时，成功率<color=green 100>%\
-　　使用5种属性的五阶原石时，成功率<color=green 100>%\
-　　<知道了，我要升级/@@NUhaiSuitUp4>　　<返回/@upgradenuhai>\
-
-[@原石相关]
-\\
-　　你可通过拆卸装备获得五行原石，<color=green 拆卸出的低阶层原石>\
-<color=green 可以合成为高阶层原石。>\
-　　<color=green 玄玄老人的神炉可将五行原石淬炼进宝石中，>佩戴了淬\
-炼过的原石可直接增加五行属性，获得五行攻击和防御力。\
-　　同阶层同属性的五行原石可在包裹中叠加，也可在这里\
-进行拆分。\\
-　　<我想合成原石/@@upgradeyuanshi>\
-　　<我想拆分原石/@chaifenyuanshi>\
-
-[@chaifenyuanshi]
-#ACT
-ShowSpotDlg 255 6 @拆分原石
-
-[@拆分原石]
-#IF
-checkgold 10000
-#ACT
-take 金币 10000
-UPGRADEUSERITEM $PARAM(0) 20 - $PARAM(2)
-give $PARAM(1) 1
-UPGRADEUSERITEM $PARAM(10) 20 = $PARAM(2)
-SENDMSG 5 成功拆分<$PARAM(1)>！
-#ELSEACT
-SENDMSG 5 金币不足10000，无法拆分！
-
-[@TaskMSW]
-#CALL [\Quests\DailyChase.txt] @DailyChase
-
-[@hechengzb]
-#CALL [\Features\CastingTeacher\Fragments.txt] @碎片合成
-
-;;[@updsp]
-;;#CALL [\Features\CastingTeacher\Acura.txt] @一升极品
-
-;[@up2dsp]
-;#CALL [\Features\CastingTeacher\TwoLiters.txt] @二升极品
-
-;[@_SpeEvil_zhenngwen]
-;#CALL [\Features\CastingTeacher\DarkProperty.txt] @黑暗武器
-
-;[@_SpeEvil_zhenngwen1]
-;#CALL [\Features\CastingTeacher\DarkProperty.txt] @黑暗衣服
-
-;[@heianpaiming]
-;#CALL [\Features\CastingTeacher\DarkWeapons.txt] @黑暗武器排名
+[@heianpaiming]
+#CALL [\Merchant\CastingTeacher\DarkWeapons.txt] @黑暗武器排名
 
 [@shengjiwuqi]
 \\
-　　升级武器可以提高你武器的属性。基本的原料是黑铁矿\
-石、饰品、武器，同时你需要付给我一些金币作为我的辛苦\
-费。不过升级有风险，你要想清楚了，当然，如果你有极品\
-修炼值，你将100%升级成功。\
+Upgrade weapons can improve the properties of your weapon.\
+The basic raw material is are BlackIronOre,Jewelry, Weapons\ 
+and a small Gold fee.\
+Remember the better the materials the better success chance\
+you have.\
 \
-　　<开始武器升级/@upgrade1>     <取回升级武器/@getbackupgnow>\
-　　<升级极品装备/@updsp>     <二次升级极品/@up2dsp>\
-　　<Exit/@exit>
+<Weapon Upgrade/@upgrade1>\
+<Retrieve Weapon/@getbackupgnow>\
+<Exit/@exit>
 
 [@upgrade1]
 \\
-　　既然你已经想清楚，并决定要升级你的武器\
-升级这把武器，需要费用是10000金币\
-同时升级需要原料<黑铁矿石/@biron>,<饰品/@etc>,<武器/@weapon>\
-和升级费用的<金币/@gold>。当然，加入幸运符会更好。\
-你确定开始这样升级吗？\
+Upgrade weapons in need of cost of 10,000 gold\
+You will also need the following materials:<BlackIronOre/@biron>,\
+<Accessories/@etc>,<Weapon/@weapon>\
+Do you want to start upgrade?\
 \
-<确认/@confirmupgrade>\
-<取消/@main>\
+<Start Upgrade/@confirmupgrade>\
+<Back/@main>\
 
 [@biron]
 \\
-你可以在矿山里采到黑铁矿石。\
-如果你想把武器锤炼的好一点，\
-黑铁矿石的纯度越高越好。\
-顺便请记得，在修炼期间如果没有足够数\
-量的黑色铁矿，那怕你的矿石纯度再高\
-结果也好不到哪里去。\
+BlackIronOre can be found in Mines\
+You will need a Pickaxe to obtain Ores\
+in the miens.\
 \
-<返回/@upgrade>
+<Back/@upgrade>
 
 [@etc]
 \\
-饰品，项链，手镯\
-当你的武器融入了这些东西的属性的时候，\
-就成了更高等级的好兵器。\
-如果你给我的原料比较好的话，升级会顺利一些；\
-要是你给的东西很糟糕，那可能会失败，\
-除非你有很好的运气\
+Jewelry, necklaces, bracelets. \
+The better the accessories the better\
+chance of success when upgrading.\
 \
-<返回/@upgrade>
+<Back/@upgrade>
 
 [@weapon]
 \\
-只能对武器进行升级\
-如果你想要升级武器\
-请给我你携带的武器 ...\
+The weapon you are wearing\
+will be the one that will be \
+Upgraded. You must have the weapon on\
+Before you upgrade.\
 \
-<返回/@upgrade>
-
-[@gold]
-\\
-你的钱太少了...\
-你真的认为我价值就这么点？\
-这个价格我不给你做。 ..\
-\
-<返回/@upgrade>
+<Back/@upgrade>
 
 [@confirmupgrade]
 \\
-给我看你想用来升级<$USERWEAPON>的原料\
-我会自己从你的包里取出饰品和黑铁矿石来。\
-如果你有重要的东西，请你存在仓库后再来。\
+You want to upgrade <$USERWEAPON>?\
+You must have the required materials in your\
+bag, once you begin the upgrade the Weapon and materials\
+will be removed from you bag.\
 \
-<请求修炼/@upgradenow>\
-<过会再来/@exit>\
+<Begin Upgrade/@upgradenow>\
+<Exit/@exit>\
 
 [@upgradenow]
 #act
@@ -189,47 +82,52 @@ break 1
 break 2
 [~@upgradenow_ok]
 \\
-我会把它弄得像新的一样，\
-所以请1个小时后再回来 \
-<返回/@main>\
+The upgrade will take up to 1 hour,\
+Please come back soon and pick up\
+your weapon\
+<Back/@main>\
+
 [~@upgradenow_ing]
 \\
-我们工作的规则是一个人只能进行一个项目 \
-请下次再来 ...\
+You can only upgrade 1 item at a time, \
+please wait for the current upgrade to finish.\
 \
-<返回/@main>
+<Back/@main>
+
 [~@upgradenow_fail]
 \\
-材料不够。请你下次来的时候， \
-准备好所有的矿石，武器和饰品。 \
-当然，我的工作才是最基本的...\
+Sorry you not have the required materials.\
+Upgrade Failed.\
 \
-<返回/@main>\
+<Back/@main>\
+
 [~@getbackupgnow_ok]
 \\
-就这样了,我尽我最大努力精炼了你的武器, 
-结果是否<成功/@Success>\
-只有在你使用过一次后才知道，出去试试吧。\
+I do my best to refining your weapon\ 
+Whether the results <Success/@Success>\
+Only if you used to know, go out to try it.\
 \
-<退出/@exit>\
+<Exit/@exit>\
+
 [@Success]
 \\
-通过使用它，你可以体会到它精炼的好处。\
-无论你的战斗对象是其他玩家还是怪物...\
-你都会发现这个成果...\
+You will notice the benifits of upgrading\
+when it comes to hunting or killing others.\
 \
-<退出/@exit>\
+<Exit/@exit>\
+
 [~@getbackupgnow_ing]
 \\
-这个工作正忙着呢，请稍等片刻...\
+This work is busy, please wait a moment...\
 \
-<返回/@main>\
+<Back/@main>\
+
 [~@getbackupgnow_fail]
 \\
-以前你是不是寄存了很多东西?\
+Upgrade Failed...\
 如果你找我是为了取回你很\
 久前寄存在这里的物品，\
 那你还是回去吧，我可记\
 不起来了，这也过去太长时间了……\
 \
-<返回/@main>\
+<Back/@main>\

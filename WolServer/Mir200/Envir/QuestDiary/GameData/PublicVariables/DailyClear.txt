@@ -1,0 +1,4 @@
+[GLOBAL]
+NewPlayer=92
+MaximumOnline=1
+Occurred=<$TIME.HOUR>:<$TIME.MIN>

@@ -12,7 +12,7 @@ temprank $STR(S0)
 
 [@王城封号]
 #IF
-CHECKVAR HUMAN 救公主次数 = 0
+CHECKVAR HUMAN RescuePrincessNumber = 0
 #ACT
 break
 
@@ -22,43 +22,43 @@ break
 inc S0 \
 
 #IF
-CHECKVAR HUMAN 救公主次数 > 319
+CHECKVAR HUMAN RescuePrincessNumber > 319
 #ACT
 inc S0 神武大将军
 break
 
 #IF
-CHECKVAR HUMAN 救公主次数 > 159
+CHECKVAR HUMAN RescuePrincessNumber > 159
 #ACT
 inc S0 镇国将军
 break
 
 #IF
-CHECKVAR HUMAN 救公主次数 > 79
+CHECKVAR HUMAN RescuePrincessNumber > 79
 #ACT
 inc S0 神策将军
 break
 
 #IF
-CHECKVAR HUMAN 救公主次数 > 39
+CHECKVAR HUMAN RescuePrincessNumber > 39
 #ACT
 inc S0 威武将军
 break
 
 #IF
-CHECKVAR HUMAN 救公主次数 > 19
+CHECKVAR HUMAN RescuePrincessNumber > 19
 #ACT
 inc S0 侍卫统帅
 break
 
 #IF
-CHECKVAR HUMAN 救公主次数 > 9
+CHECKVAR HUMAN RescuePrincessNumber > 9
 #ACT
 inc S0 王城侍卫
 break
 
 #IF
-CHECKVAR HUMAN 救公主次数 > 0
+CHECKVAR HUMAN RescuePrincessNumber > 0
 #ACT
 inc S0 王城勇士
 
@@ -115,7 +115,7 @@ large $ATTACHEPOINT 99
 inc S0 初级学徒
 [@镇魔封号]
 #IF
-CHECKVAR HUMAN 神威狱次数 < 10
+CHECKVAR HUMAN DivinityPrisonNumber < 10
 #ACT
 break
 
@@ -125,43 +125,43 @@ break
 inc S0 \
 
 #IF
-CHECKVAR HUMAN 神威狱次数 > 69
+CHECKVAR HUMAN DivinityPrisonNumber > 69
 #ACT
 inc S0 神魔天帝
 break
 
 #IF
-CHECKVAR HUMAN 神威狱次数 > 59
+CHECKVAR HUMAN DivinityPrisonNumber > 59
 #ACT
 inc S0 御魔天帅
 break
 
 #IF
-CHECKVAR HUMAN 神威狱次数 > 49
+CHECKVAR HUMAN DivinityPrisonNumber > 49
 #ACT
 inc S0 御魔天将
 break
 
 #IF
-CHECKVAR HUMAN 神威狱次数 > 39
+CHECKVAR HUMAN DivinityPrisonNumber > 39
 #ACT
 inc S0 御魔天师
 break
 
 #IF
-CHECKVAR HUMAN 神威狱次数 > 29
+CHECKVAR HUMAN DivinityPrisonNumber > 29
 #ACT
 inc S0 镇魔天帅
 break
 
 #IF
-CHECKVAR HUMAN 神威狱次数 > 19
+CHECKVAR HUMAN DivinityPrisonNumber > 19
 #ACT
 inc S0 镇魔天将
 break
 
 #IF
-CHECKVAR HUMAN 神威狱次数 > 9
+CHECKVAR HUMAN DivinityPrisonNumber > 9
 #ACT
 inc S0 镇魔天师
 

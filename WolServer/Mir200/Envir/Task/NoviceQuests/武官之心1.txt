@@ -1,8 +1,0 @@
-[setup]
-stepcount = 4
-title = NoviceQuests--武官之心
-ID = 19
-stepDESC1 = <color=graygolden 任务目的：>去<将军坟东/@@goplace 0 777,393>杀5只尸卫后找<中州老兵/@@goto 0 老兵 468,226>\<color=graygolden 任务奖励：>		</@@!PIC2 10,951>经验：25000	\<color=graygolden 任务介绍:>\快去将军坟东杀5只尸卫吧，王城的百姓盼望着你胜利归来。
-stepDESC2 = {color=graygolden 任务目的：}去{将军坟东/@@goplace 0 777,393}杀5只尸卫后找{中州老兵/@@goto 0 老兵 468,226}\{color=graygolden 任务奖励：}		{/@@!PIC2 10,951}经验：25000	\{color=graygolden 任务介绍:}\还要杀<$HUMAN(RENWU001)>只尸卫。王城的百姓盼望你胜利归来。
-stepDESC3 = <color=graygolden 任务目的：>去<将军坟东/@@goplace 0 777,393>杀5只尸卫后找<中州老兵/@@goto 0 老兵 468,226>\<color=graygolden 任务奖励：>		</@@!PIC2 10,951>经验：25000	\<color=graygolden 任务介绍:>\你已经完成任务，王城的百姓盼望你胜利归来，回去找老兵复命吧。
-stepDESC4 = <color=graygolden 任务目的：>去<中州武馆/@@goplace 0 548,195>给<武馆教头/@@goto SH003 武馆教头 19,19>传达口信\<color=graygolden 任务奖励：>		</@@!PIC2 10,951>经验：25000	\<color=graygolden 任务介绍:>\你竟然安全地回来了？看来你真是一位勇士啊！回去告诉武\馆教头吧，他会给你奖励的。

@@ -112,10 +112,10 @@ break
 #IF
 random 1
 #ACT
-LOADVAR HUMAN 师父灵符奖励 ..\QuestDiary\GameData\个人变量\师父灵符奖励.txt
-LOADVAR HUMAN 师父经验奖励 ..\QuestDiary\GameData\个人变量\师父经验奖励.txt
-mov M0 $Human(师父经验奖励)
-mov M1 $Human(师父灵符奖励)
+LOADVAR HUMAN MasterMagicAwards ..\QuestDiary\GameData\个人变量\MasterMagicAwards.txt
+LOADVAR HUMAN MasterEXPAwards ..\QuestDiary\GameData\个人变量\MasterEXPAwards.txt
+mov M0 $Human(MasterEXPAwards)
+mov M1 $Human(MasterMagicAwards)
 DIV M0 1000
 DIV M1 10
 
@@ -138,8 +138,8 @@ large M0 0
 #ACT
 CHANGEEXP + $STR(M0)
 MULT M0 1000
-CalcVar Human 师父经验奖励 - $STR(M0)
-SaveVar HUMAN 师父经验奖励 ..\QuestDiary\GameData\个人变量\师父经验奖励.txt
+CalcVar Human MasterEXPAwards - $STR(M0)
+SaveVar HUMAN MasterEXPAwards ..\QuestDiary\GameData\个人变量\MasterEXPAwards.txt
 DIV M0 1000
 #SAY
 你领取了<$STR(M0)>经验！\
@@ -150,8 +150,8 @@ CHECKBAGSIZE $STR(M1)
 #ACT
 give 灵符 $STR(M1)
 MULT M1 10
-CalcVar Human 师父灵符奖励 - $STR(M1)
-SaveVar HUMAN 师父灵符奖励 ..\QuestDiary\GameData\个人变量\师父灵符奖励.txt
+CalcVar Human MasterMagicAwards - $STR(M1)
+SaveVar HUMAN MasterMagicAwards ..\QuestDiary\GameData\个人变量\MasterMagicAwards.txt
 DIV M1 10
 #SAY
 你领取了<$STR(M1)>个灵符！\
@@ -162,8 +162,8 @@ CHECKBAGSIZE 10
 #ACT
 give 灵符 10
 dec M1 10 
-CalcVar Human 师父灵符奖励 - 100
-SaveVar HUMAN 师父灵符奖励 ..\QuestDiary\GameData\个人变量\师父灵符奖励.txt
+CalcVar Human MasterMagicAwards - 100
+SaveVar HUMAN MasterMagicAwards ..\QuestDiary\GameData\个人变量\MasterMagicAwards.txt
 #SAY
 你领取了10个灵符！\
 还剩<$STR(M1)>个未领取\

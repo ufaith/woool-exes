@@ -4,7 +4,6 @@
 random 1
 #ACT
 ReadRandomStr ..\QuestDiary\GameData\各种排行\军机令.txt S0 0
-CLEARNAMELIST ..\QuestDiary\GameData\个人变量\军机令今日次数.txt
 mov S2
 mov S3
 mov S4

@@ -2,7 +2,7 @@
 这是具有神秘炼制能力的青龙神炉。\
 现在可以投入矿石，一同炼制赤金了。\
 \
-<炼制赤金/@give1>\
+<RefinePureGold/@give1>\
 <取回炼制成品/@get1>\
 <炼制方法介绍/@howto>\
 <Exit/@exit>\
@@ -18,7 +18,7 @@
 
 [@give2]
 #IF
-CHECKVAR HUMAN 炼制赤金 > 0
+CHECKVAR HUMAN RefinePureGold > 0
 #ACT
 break
 #SAY
@@ -32,7 +32,7 @@ checkitem 铁矿 4
 #ACT
 take 金矿 66
 take 铁矿 66
-CALCVAR HUMAN 炼制赤金 + 20
+CALCVAR HUMAN RefinePureGold + 20
 goto @投入木材
 break
 #ELSESAY
@@ -62,7 +62,7 @@ break
 
 [@get1]
 #IF
-CHECKVAR HUMAN 炼制赤金 < 1
+CHECKVAR HUMAN RefinePureGold < 1
 #ACT
 break
 #SAY
@@ -70,7 +70,7 @@ break
 <Exit/@exit>
 
 #IF
-CHECKVAR HUMAN 炼制赤金 > 10
+CHECKVAR HUMAN RefinePureGold > 10
 #ACT
 break
 #SAY
@@ -78,7 +78,7 @@ break
 <Exit/@exit>
 #ELSEACT
 give 赤金 1
-CALCVAR HUMAN 炼制赤金 = 0
+CALCVAR HUMAN RefinePureGold = 0
 #ELSESAY
 已经成功领取了物品，现在可以再次投入材料炼制。\
 <返回/@main>\

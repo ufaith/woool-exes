@@ -71,17 +71,6 @@ FORMATSTR S2 #32#32#32#32此塔为#32%s#32的通灵塔\#32#32#32#32此塔于%s年%s月%s日建
 FORMATSTR S3 %s|跃马\通灵卫士|54|%s|3600 <$STR(S1)>|<$STR(S0)>
 FORMATSTR S4 %s|%s|%s <$M>|<$X>|<$Y>
 CLEARNAMELIST ..\QuestDiary\GameData\PsychicRecord.txt
-;INSERTVARLIST 0 $STR(S2) ..\QuestDiary\通灵塔\通灵记录.txt
-;INSERTVARLIST 1 $STR(S3) ..\QuestDiary\通灵塔\通灵记录.txt
-;INSERTVARLIST 2 $STR(S4) ..\QuestDiary\通灵塔\通灵记录.txt
-;BuildGuildTower $M $STR(P2) $STR(P3) 1 $GUILDNAME
-;MobNpc $STR(S1) 跃马\通灵卫士 54 $STR(S0) 9999999
-;DELLASTDROPITEM
-;SENDMSG 5 你已经顺利把通灵塔建造在跃马平原地表上
-;break
-;#ELSEACT
-;SENDMSG 5 该物品只能在跃马平原地表上使用
-;break
 
 ;Removes effect.
 
@@ -295,7 +284,7 @@ equal P0 0
 break
 
 #IF
-CHECKVARLIST $HUMANINFO[$PARAM(21)].$M ..\QuestDiary\GameRead\禁止传送地图.txt
+CHECKVARLIST $HUMANINFO[$PARAM(21)].$M ..\QuestDiary\GameRead\ProhibitTransferMaps.txt
 #ACT
 SENDMSG 5 "Other maps can not use the unity of husband and wife"
 break
@@ -356,7 +345,7 @@ SENDMSG 5 "You have not the establishment friend relationship with each other"
 break
 
 #IF
-CHECKVARLIST $HUMANINFO[$PARAM(21)].$M ..\QuestDiary\GameRead\禁止传送地图.txt
+CHECKVARLIST $HUMANINFO[$PARAM(21)].$M ..\QuestDiary\GameRead\ProhibitTransferMaps.txt
 #ACT
 SENDMSG 5 "he other maps can not use the hand-foot-one"
 break
@@ -712,7 +701,7 @@ break
 
 #IF
 equal $PARAM(2) 圣灵精华
-CHECKVARLIST $ITEMINFO[$PARAM(1)].NAME ..\QuestDiary\GameRead\其它宝石.txt
+CHECKVARLIST $ITEMINFO[$PARAM(1)].NAME ..\QuestDiary\GameRead\OtherStones.txt
 #ACT
 break
 #CALL [\Features\SpiritGem.txt] @圣灵宝石

@@ -1,6 +1,0 @@
-[setup]
-stepcount = 2
-title = NoviceQuests--RecapturesSoul
-ID = 38
-stepDESC1 = <color=graygolden 任务目的：>去<将军坟南/@@goplace 0 28,346>杀尸卫勇士夺回地魂灵石给<王城史官/@@goto 0 史官 475,150>\<color=graygolden 任务奖励：>\</@@!PIC 地魂灵石>		</@@!PIC2 10,951>经验：50000\<color=graygolden 任务介绍:>\    快去将军坟南杀死尸卫勇士，你就能得到地魂灵石了。\这种灵石对于修炼元神分身的人，将有神奇的帮助。
-stepDESC2 = <color=graygolden 任务奖励：>\</@@!PIC 地魂灵石>		</@@!PIC2 10,951>经验：50000\<color=graygolden 任务介绍:>\    恭喜你成功拿到地魂灵石，快去找<史官/@@goto 0 史官 475,150>复命吧。

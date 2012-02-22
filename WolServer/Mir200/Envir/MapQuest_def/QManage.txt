@@ -6,12 +6,12 @@
 #CALL [\Features\System\BackgroundVariable.txt] @ReadBackgroundVariables
 
 [@GuildVar]
-#CALL [\Features\System\GuildVariable.txt] @声明行会变量
-#CALL [\Features\System\GuildVariable.txt] @读取行会变量
+#CALL [\Features\System\GuildVariable.txt] @StatementVariable
+#CALL [\Features\System\GuildVariable.txt] @ReadVariables
 
 [@Initialize]
-#CALL [\Features\System\IndividualVariable.txt] @声明个人变量
-#CALL [\Features\System\IndividualVariable.txt] @读取个人变量
+#CALL [\Features\System\IndividualVariable.txt] @PersonalVariables
+#CALL [\Features\System\IndividualVariable.txt] @IndividualVariables
 
 [@Login] PNEUMA
 #IF
@@ -23,71 +23,11 @@ break
 #IF
 #CALL [\Features\System\MainLogin.txt] @MainLogin
 
-[@新手上线]
+[@0CleanData]
 #IF
 random 1
-#ACT
-give 回城神石1 1
-give 超级天山雪莲2 1
-BAGSIZE 66
-Gmexecute 使用物品 传世宝典
-
-#IF
-CHECKMAPNAME 0
-#ACT
-AddTask 21
-goto @新人广告
-break
-
-#IF
-CHECKMAPNAME 1
-#ACT
-AddTask 4
-goto @新人广告
-break
-
-[@新人广告]
-#IF
-ISNEWHUMAN
-checkjob warrior
-#ACT
-SENDMSG 0 "Welcome to Dragon WoOOL new Warrior [<$USERNAME>]!"
-SENDMSG 14 "Welcome to Dragon WoOOL new Warrior [<$USERNAME>]!"
-break
-#IF
-ISNEWHUMAN
-checkjob wizard
-#ACT
-SENDMSG 0 "Welcome to Dragon WoOOL new Wizard [<$USERNAME>]!"
-SENDMSG 14 "Welcome to Dragon WoOOL new Wizard [<$USERNAME>]!"
-break
-#IF
-ISNEWHUMAN
-checkjob taoist
-#ACT
-SENDMSG 0 "Welcome to Dragon WoOOL new Taoist [<$USERNAME>]!"
-SENDMSG 14 "Welcome to Dragon WoOOL new Taoist [<$USERNAME>]!"
-break
-
-#IF
-!ISCASTLEMASTER
-checkitem SupremeSlayer 1
-#ACT
-take SupremeSlayer 66
-SENDMSG 5 "You have lost the Extreme Dragon Slayer!"
-
-#IF
-!ISCASTLEMASTER
-checkitemw SupremeSlayer 1
-#ACT
-takew SupremeSlayer 66
-SENDMSG 5 "You have lost the Extreme Dragon Slayer!"
-
-[@0点清理数据]
-#IF
-random 1
-#CALL [\Features\StartingTrigger\自定义变量保存.txt] @自定义变量保存
-#CALL [\Features\System\IndividualVariable.txt] @读取个人变量
+#CALL [\Features\StartingTrigger\SaveCustomVariables.txt] @SaveCustomVariables
+#CALL [\Features\System\IndividualVariable.txt] @IndividualVariables
 
 [@江湖告急]
 #IF
@@ -95,141 +35,57 @@ CHECKOFGUILD $STR(A14)
 #ACT
 SENDMSG 5 <$STR(A13)>
 
-[@ReadBook1]
-#ACT
-SENDMSG 15 飞射快捷栏中镇魔符或镇魔神符可以召唤其他心魔帮助战斗
-SENDMSG 15 镇魔符和镇魔神符可以维持被召唤心魔的战斗力
-SENDMSG 15 快速激发心魔战斗力可以换来一段时间的强力攻击
-SENDMSG 15 如有问题彩虹精灵将随时提供查询服务
-SENDMSG 15 Ctrl+P可以呼出心魔控制界面
-SENDMSG 15 神威狱试炼场以体验为主，各种奖励请到神威狱中获取
-
-[@礼物一计]
-#IF
-Check [49] 0
-#ACT
-SET [49] 1
-CHANGEEXP + 500000
-GIVE 月光宝盒(小) 1
-UPGRADEUSERITEM $PARAM(10) 59 = 1
-GIVE 治疗神水 1
-UPGRADEUSERITEM $PARAM(10) 59 = 1
-give 金币 100000
-#SAY
-　　恭喜你获得了:<COLOR=GREEN 月光宝盒(小)、治疗神水>，得知您修炼\
-进展十分顺利，举国上下，万分欣喜。\
-10分钟后，您将收到第2份礼物：<COLOR=GREEN 双倍经验包天卡、回城神石>\
-各1个。国王期望着您的成长，请继续努力。\
-请您不要离开游戏\\
-<COLOR=GREEN (领取前，请保持包裹里至少有2个空位)>\\
-　　<好的，谢谢/@exit>
-
-
-[@礼物二计]
-#IF
-Check [50] 0
-#ACT
-SET [50] 1
-give 金币 200000
-give 双倍经验包天卡 1
-UPGRADEUSERITEM $PARAM(10) 59 = 1
-give 回城神石 1
-UPGRADEUSERITEM $PARAM(10) 59 = 1
-CALCVAR HUMAN 炼狱时间时 + 5
-SENDMSG 5 炼狱体验卡为你充值了5小时炼狱时间，你当前炼狱时间剩余：<$HUMAN(炼狱时间时)>小时<$HUMAN(炼狱时间秒)>秒
-#SAY
-　　恭喜你获得了:<COLOR=GREEN 双倍经验包天卡、回城神石>，得知您修炼\
-进展十分顺利，举国上下，万分欣喜。\
-10分钟后，您将收到第2份礼物：<COLOR=GREEN 灵兽石、御兽天袍(衣)>\
-各1个。国王期望着您的成长，请继续努力。\
-请您不要离开游戏\\
-<COLOR=GREEN (领取前，请保持包裹里至少有2个空位)>\\
-　　<好的，谢谢/@exit>
-
-
-[@礼物三计]
-#IF
-Check [51] 0
-#SAY
-　　恭喜你获得了:<COLOR=GREEN 灵兽石、御兽天袍(衣)>各1个。\
-传世大陆还有很秘密需要你去探索，但是前提是你必须拥有强\
-大的能力和装备，<COLOR=GREEN 新手关怀大使>正好准备了\
-一份丰厚的大礼，你可以花少量的元宝即可获得，每个玩家\
-只有一次这样的机会。\\
-　　<好的，谢谢/@exit>
-#ACT
-SET [51] 1
-SET [48] 1
-GIVE 豹魔石 1
-UPGRADEUSERITEM $PARAM(10) 59 = 1
-UPGRADEUSERITEM $PARAM(10) 8 = 1
-UPGRADEUSERITEM $PARAM(10) 9 = 1
-UPGRADEUSERITEM $PARAM(10) 27 = 1
-MOV M0 $PARAM(10)
-#CALL [\Features\Cleverness\RecognizeHost.txt] @灵兽加属性
-SENDMSG 18 所有在线礼物领取完毕，祝福你游戏愉快！
-#IF
-gender MAN
-#ACT
-GIVE 御兽天袍 1
-break
-#IF
-gender WOMAN
-#ACT
-GIVE 御兽天衣 1
-break
-
 [@每分触发]
 #IF
 CHECKVAR HUMAN 凝结中符石 > 0
 #CALL [\Merchant\Blacksmith\MysteriousRunes.txt] @凝结记时
 
 #IF
-CHECKVAR HUMAN 还魂记时 > 0
+CHECKVAR HUMAN Revival > 0
 #ACT
-CALCVAR HUMAN 还魂记时 - 1
+CALCVAR HUMAN Revival - 1
 
 #IF
-CHECKVAR HUMAN 炼制玄铁 > 0
+CHECKVAR HUMAN RefineDarksteel > 0
 #ACT
-CALCVAR HUMAN 炼制玄铁 - 1
+CALCVAR HUMAN RefineDarksteel - 1
 
 #IF
-CHECKVAR HUMAN 炼制雪银 > 0
+CHECKVAR HUMAN RefineSilver > 0
 #ACT
-CALCVAR HUMAN 炼制雪银 - 1
+CALCVAR HUMAN RefineSilver - 1
 
 #IF
-CHECKVAR HUMAN 炼制赤金 > 0
+CHECKVAR HUMAN RefinePureGold > 0
 #ACT
-CALCVAR HUMAN 炼制赤金 - 1
+CALCVAR HUMAN RefinePureGold - 1
 
 #IF
-CHECKVAR HUMAN 炼制神饰 > 0
+CHECKVAR HUMAN RefineDecoration > 0
 #ACT
-CALCVAR HUMAN 炼制神饰 - 1
+CALCVAR HUMAN RefineDecoration - 1
 
 [@炼狱时间]
 #IF
 random 1
 #ACT
-CALCVAR HUMAN 炼狱时间秒 - 1
+CALCVAR HUMAN PurgatoryTimeSeconds - 1
 
 #IF
-CHECKVAR HUMAN 炼狱时间秒 < 1
+CHECKVAR HUMAN PurgatoryTimeSeconds < 1
 #ACT
-CALCVAR HUMAN 炼狱时间秒 = 0
+CALCVAR HUMAN PurgatoryTimeSeconds = 0
 
 #IF
-CHECKVAR HUMAN 炼狱时间时 > 0
-CHECKVAR HUMAN 炼狱时间秒 < 1
+CHECKVAR HUMAN PurgatoryTime > 0
+CHECKVAR HUMAN PurgatoryTimeSeconds < 1
 #ACT
-CALCVAR HUMAN 炼狱时间时 - 1
-CALCVAR HUMAN 炼狱时间秒 = 3600
+CALCVAR HUMAN PurgatoryTime - 1
+CALCVAR HUMAN PurgatoryTimeSeconds = 3600
 
 #IF
 CHECKGAMEGOLD < 1
-CHECKVAR HUMAN 炼狱时间秒 < 1
+CHECKVAR HUMAN PurgatoryTimeSeconds < 1
 #ACT
 mapmove 0 469 224
 goto @显示炼狱时间
@@ -237,19 +93,12 @@ break
 
 #IF
 CHECKGAMEGOLD > 0
-CHECKVAR HUMAN 炼狱时间秒 < 1
+CHECKVAR HUMAN PurgatoryTimeSeconds < 1
 #ACT
 GAMEGOLD - 1
-CALCVAR HUMAN 炼狱时间时 + 2
+CALCVAR HUMAN PurgatoryTime + 2
 SENDMSG 5 由于您的炼狱时间不足，系统已自动扣除1元宝来转换成您的炼狱时间！
 goto @显示炼狱时间
-
-
-[@0点清理数据]
-#IF
-random 1
-#CALL [\Features\StartingTrigger\自定义变量保存.txt] @自定义变量保存
-#CALL [\Features\System\IndividualVariable.txt] @读取个人变量
 
 [@江湖告急]
 #IF
